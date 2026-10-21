@@ -38,15 +38,18 @@ public final class PvServiceProto extends com.google.protobuf.GeneratedFile {
       "\n\023pv/pv_service.proto\022\022fusion.ai.proto.p" +
       "v\032\034google/api/annotations.proto\032\027google/" +
       "api/client.proto\032\033google/protobuf/empty." +
-      "proto\032\023pv/pv_message.proto2{\n\tPvService\022" +
-      "n\n\014UploadPvData\022\'.fusion.ai.proto.pv.Upl" +
-      "oadPvDataRequest\032\026.google.protobuf.Empty" +
-      "\"\035\332A\001*\202\323\344\223\002\023\"\016/3rd-api/v2/pv:\001*B\253\001\n\026com." +
-      "fusion.ai.proto.pvB\016PvServiceProtoP\001Z\025fu" +
-      "sion.ai.proto.pv;pv\242\002\004FAPP\252\002\022Fusion.Ai.P" +
-      "roto.Pv\312\002\022Fusion\\Ai\\Proto\\Pv\342\002\036Fusion\\Ai" +
-      "\\Proto\\Pv\\GPBMetadata\352\002\025Fusion::Ai::Prot" +
-      "o::Pvb\006proto3"
+      "proto\032\023pv/pv_message.proto2\354\001\n\tPvService" +
+      "\022n\n\014UploadPvData\022\'.fusion.ai.proto.pv.Up" +
+      "loadPvDataRequest\032\026.google.protobuf.Empt" +
+      "y\"\035\332A\001*\202\323\344\223\002\023\"\016/3rd-api/v2/pv:\001*\022o\n\nPull" +
+      "PvData\022%.fusion.ai.proto.pv.PullPvDataRe" +
+      "quest\032\026.google.protobuf.Empty\"\"\332A\001*\202\323\344\223\002" +
+      "\030\"\023/3rd-api/v2/pv/pull:\001*B\253\001\n\026com.fusion" +
+      ".ai.proto.pvB\016PvServiceProtoP\001Z\025fusion.a" +
+      "i.proto.pv;pv\242\002\004FAPP\252\002\022Fusion.Ai.Proto.P" +
+      "v\312\002\022Fusion\\Ai\\Proto\\Pv\342\002\036Fusion\\Ai\\Proto" +
+      "\\Pv\\GPBMetadata\352\002\025Fusion::Ai::Proto::Pvb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

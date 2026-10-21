@@ -188,6 +188,61 @@ func (x *PvPowerPoint) GetPv() float32 {
 	return 0
 }
 
+// Package message 拉取光伏预测数据消息定义
+type PullPvDataRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 算法业务注册唯一标识
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 光伏功率数据列表
+	Data          *PvPowerData `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PullPvDataRequest) Reset() {
+	*x = PullPvDataRequest{}
+	mi := &file_pv_pv_message_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PullPvDataRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PullPvDataRequest) ProtoMessage() {}
+
+func (x *PullPvDataRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_pv_pv_message_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PullPvDataRequest.ProtoReflect.Descriptor instead.
+func (*PullPvDataRequest) Descriptor() ([]byte, []int) {
+	return file_pv_pv_message_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *PullPvDataRequest) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *PullPvDataRequest) GetData() *PvPowerData {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 var File_pv_pv_message_proto protoreflect.FileDescriptor
 
 const file_pv_pv_message_proto_rawDesc = "" +
@@ -202,7 +257,10 @@ const file_pv_pv_message_proto_rawDesc = "" +
 	"\ttimestamp\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\ttimestamp\x12\x1a\n" +
 	"\x02pv\x18\x02 \x01(\x02B\n" +
 	"\xbaH\a\n" +
-	"\x05-\x00\x00\x00\x00R\x02pvB\xab\x01\n" +
+	"\x05-\x00\x00\x00\x00R\x02pv\"}\n" +
+	"\x11PullPvDataRequest\x123\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x123\n" +
+	"\x04data\x18\x02 \x01(\v2\x1f.fusion.ai.proto.pv.PvPowerDataR\x04dataB\xab\x01\n" +
 	"\x16com.fusion.ai.proto.pvB\x0ePvMessageProtoP\x01Z\x15fusion.ai.proto.pv;pv\xa2\x02\x04FAPP\xaa\x02\x12Fusion.Ai.Proto.Pv\xca\x02\x12Fusion\\Ai\\Proto\\Pv\xe2\x02\x1eFusion\\Ai\\Proto\\Pv\\GPBMetadata\xea\x02\x15Fusion::Ai::Proto::Pvb\x06proto3"
 
 var (
@@ -217,20 +275,22 @@ func file_pv_pv_message_proto_rawDescGZIP() []byte {
 	return file_pv_pv_message_proto_rawDescData
 }
 
-var file_pv_pv_message_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_pv_pv_message_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_pv_pv_message_proto_goTypes = []any{
 	(*UploadPvDataRequest)(nil), // 0: fusion.ai.proto.pv.UploadPvDataRequest
 	(*PvPowerData)(nil),         // 1: fusion.ai.proto.pv.PvPowerData
 	(*PvPowerPoint)(nil),        // 2: fusion.ai.proto.pv.PvPowerPoint
+	(*PullPvDataRequest)(nil),   // 3: fusion.ai.proto.pv.PullPvDataRequest
 }
 var file_pv_pv_message_proto_depIdxs = []int32{
 	1, // 0: fusion.ai.proto.pv.UploadPvDataRequest.data:type_name -> fusion.ai.proto.pv.PvPowerData
 	2, // 1: fusion.ai.proto.pv.PvPowerData.pv_list:type_name -> fusion.ai.proto.pv.PvPowerPoint
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	1, // 2: fusion.ai.proto.pv.PullPvDataRequest.data:type_name -> fusion.ai.proto.pv.PvPowerData
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_pv_pv_message_proto_init() }
@@ -244,7 +304,7 @@ func file_pv_pv_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_pv_pv_message_proto_rawDesc), len(file_pv_pv_message_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

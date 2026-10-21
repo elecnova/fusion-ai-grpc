@@ -50,6 +50,14 @@ namespace fusion {
 namespace ai {
 namespace proto {
 namespace pv {
+class PullPvDataRequest;
+struct PullPvDataRequestGlobalsTypeInternal;
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+extern PullPvDataRequestGlobalsTypeInternal PullPvDataRequest_globals_;
+extern const ::google::protobuf::internal::ClassDataFull PullPvDataRequest_class_data_;
+#else
+extern const PullPvDataRequestGlobalsTypeInternal PullPvDataRequest_globals_;
+#endif  // PROTOBUF_MESSAGE_GLOBALS
 class PvPowerData;
 struct PvPowerDataGlobalsTypeInternal;
 #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -738,6 +746,229 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UploadPvDataRequest final : public 
   union { Impl_ _impl_; };
   friend struct ::TableStruct_pv_2fpv_5fmessage_2eproto;
 };
+// -------------------------------------------------------------------
+
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PullPvDataRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.pv.PullPvDataRequest) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline PullPvDataRequest() : PullPvDataRequest(nullptr) {}
+  ~PullPvDataRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(PullPvDataRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(PullPvDataRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr PullPvDataRequest(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline PullPvDataRequest(const PullPvDataRequest& from) : PullPvDataRequest(nullptr, from) {}
+  inline PullPvDataRequest(PullPvDataRequest&& from) noexcept : PullPvDataRequest(nullptr, ::std::move(from)) {}
+  inline PullPvDataRequest& operator=(const PullPvDataRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PullPvDataRequest& operator=(PullPvDataRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const PullPvDataRequest& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<PullPvDataRequest>(&PullPvDataRequest_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 3;
+  friend void swap(PullPvDataRequest& a, PullPvDataRequest& b) { a.Swap(&b); }
+  inline void Swap(PullPvDataRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PullPvDataRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] PullPvDataRequest* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<PullPvDataRequest>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const PullPvDataRequest& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const PullPvDataRequest& from) { PullPvDataRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(PullPvDataRequest* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.pv.PullPvDataRequest"; }
+
+  explicit PullPvDataRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  PullPvDataRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const PullPvDataRequest& from);
+  PullPvDataRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, PullPvDataRequest&& from) noexcept
+      : PullPvDataRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRegistrationIdFieldNumber = 1,
+    kDataFieldNumber = 2,
+  };
+  // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+  void clear_registration_id() ;
+  [[nodiscard]] const ::std::string& registration_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_registration_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_registration_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_registration_id();
+  void set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_registration_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_registration_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
+
+  public:
+  // .fusion.ai.proto.pv.PvPowerData data = 2 [json_name = "data"];
+  [[nodiscard]] bool has_data() const;
+  void clear_data() ;
+  [[nodiscard]] const ::fusion::ai::proto::pv::PvPowerData& data() const;
+  [[nodiscard]] ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE release_data();
+  ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NONNULL mutable_data();
+  void set_allocated_data(::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_data(::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE value);
+  ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE unsafe_arena_release_data();
+
+  private:
+  const ::fusion::ai::proto::pv::PvPowerData& _internal_data() const;
+  ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NONNULL _internal_mutable_data();
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.pv.PullPvDataRequest)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<1, 2,
+                          1, 60,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const PullPvDataRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr registration_id_;
+    ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE data_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_pv_2fpv_5fmessage_2eproto;
+};
 
 // ===================================================================
 
@@ -1026,6 +1257,172 @@ inline float PvPowerPoint::_internal_pv() const {
 inline void PvPowerPoint::_internal_set_pv(float value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pv_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// PullPvDataRequest
+
+// string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+inline void PullPvDataRequest::clear_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::std::string& PullPvDataRequest::registration_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.PullPvDataRequest.registration_id)
+  return _internal_registration_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void PullPvDataRequest::set_registration_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  _impl_.registration_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.PullPvDataRequest.registration_id)
+}
+inline ::std::string* PROTOBUF_NONNULL PullPvDataRequest::mutable_registration_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::std::string* _s = _internal_mutable_registration_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.PullPvDataRequest.registration_id)
+  return _s;
+}
+inline const ::std::string& PullPvDataRequest::_internal_registration_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.registration_id_.Get();
+}
+inline void PullPvDataRequest::_internal_set_registration_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL PullPvDataRequest::_internal_mutable_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.registration_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE PullPvDataRequest::release_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.PullPvDataRequest.registration_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  auto* released = _impl_.registration_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void PullPvDataRequest::set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  }
+  _impl_.registration_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.registration_id_.IsDefault()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.PullPvDataRequest.registration_id)
+}
+
+// .fusion.ai.proto.pv.PvPowerData data = 2 [json_name = "data"];
+inline bool PullPvDataRequest::has_data() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
+  PROTOBUF_ASSUME(!value || _impl_.data_ != nullptr);
+  return value;
+}
+inline void PullPvDataRequest::clear_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.data_ != nullptr) _impl_.data_->Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline const ::fusion::ai::proto::pv::PvPowerData& PullPvDataRequest::_internal_data() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::fusion::ai::proto::pv::PvPowerData* p = _impl_.data_;
+  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::pv::PvPowerData>(&::fusion::ai::proto::pv::PvPowerData_globals_);
+}
+inline const ::fusion::ai::proto::pv::PvPowerData& PullPvDataRequest::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.PullPvDataRequest.data)
+  return _internal_data();
+}
+inline void PullPvDataRequest::unsafe_arena_set_allocated_data(
+    ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.data_);
+  }
+  _impl_.data_ = reinterpret_cast<::fusion::ai::proto::pv::PvPowerData*>(value);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.pv.PullPvDataRequest.data)
+}
+inline ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE PullPvDataRequest::release_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::fusion::ai::proto::pv::PvPowerData* released = _impl_.data_;
+  _impl_.data_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE PullPvDataRequest::unsafe_arena_release_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.PullPvDataRequest.data)
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::fusion::ai::proto::pv::PvPowerData* temp = _impl_.data_;
+  _impl_.data_ = nullptr;
+  return temp;
+}
+inline ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NONNULL PullPvDataRequest::_internal_mutable_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.data_ == nullptr) {
+    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::pv::PvPowerData>(GetArena());
+    _impl_.data_ = reinterpret_cast<::fusion::ai::proto::pv::PvPowerData*>(p);
+  }
+  return _impl_.data_;
+}
+inline ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NONNULL PullPvDataRequest::mutable_data()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::fusion::ai::proto::pv::PvPowerData* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.PullPvDataRequest.data)
+  return _msg;
+}
+inline void PullPvDataRequest::set_allocated_data(::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.data_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+
+  _impl_.data_ = reinterpret_cast<::fusion::ai::proto::pv::PvPowerData*>(value);
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.PullPvDataRequest.data)
 }
 
 #ifdef __GNUC__

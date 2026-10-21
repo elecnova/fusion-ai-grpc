@@ -17,14 +17,14 @@ import { file_google_api_annotations } from "../google/api/annotations_pb";
 import { file_google_api_client } from "../google/api/client_pb";
 import type { EmptySchema } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_empty } from "@bufbuild/protobuf/wkt";
-import type { UploadPvDataRequestSchema } from "./pv_message_pb";
+import type { PullPvDataRequestSchema, UploadPvDataRequestSchema } from "./pv_message_pb";
 import { file_pv_pv_message } from "./pv_message_pb";
 
 /**
  * Describes the file pv/pv_service.proto.
  */
 export const file_pv_pv_service: GenFile = /*@__PURE__*/
-  fileDesc("ChNwdi9wdl9zZXJ2aWNlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYyewoJUHZTZXJ2aWNlEm4KDFVwbG9hZFB2RGF0YRInLmZ1c2lvbi5haS5wcm90by5wdi5VcGxvYWRQdkRhdGFSZXF1ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Ih3aQQEqgtPkkwITOgEqIg4vM3JkLWFwaS92Mi9wdkKrAQoWY29tLmZ1c2lvbi5haS5wcm90by5wdkIOUHZTZXJ2aWNlUHJvdG9QAVoVZnVzaW9uLmFpLnByb3RvLnB2O3B2ogIERkFQUKoCEkZ1c2lvbi5BaS5Qcm90by5QdsoCEkZ1c2lvblxBaVxQcm90b1xQduICHkZ1c2lvblxBaVxQcm90b1xQdlxHUEJNZXRhZGF0YeoCFUZ1c2lvbjo6QWk6OlByb3RvOjpQdmIGcHJvdG8z", [file_google_api_annotations, file_google_api_client, file_google_protobuf_empty, file_pv_pv_message]);
+  fileDesc("ChNwdi9wdl9zZXJ2aWNlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYy7AEKCVB2U2VydmljZRJuCgxVcGxvYWRQdkRhdGESJy5mdXNpb24uYWkucHJvdG8ucHYuVXBsb2FkUHZEYXRhUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSId2kEBKoLT5JMCEzoBKiIOLzNyZC1hcGkvdjIvcHYSbwoKUHVsbFB2RGF0YRIlLmZ1c2lvbi5haS5wcm90by5wdi5QdWxsUHZEYXRhUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIi2kEBKoLT5JMCGDoBKiITLzNyZC1hcGkvdjIvcHYvcHVsbEKrAQoWY29tLmZ1c2lvbi5haS5wcm90by5wdkIOUHZTZXJ2aWNlUHJvdG9QAVoVZnVzaW9uLmFpLnByb3RvLnB2O3B2ogIERkFQUKoCEkZ1c2lvbi5BaS5Qcm90by5QdsoCEkZ1c2lvblxBaVxQcm90b1xQduICHkZ1c2lvblxBaVxQcm90b1xQdlxHUEJNZXRhZGF0YeoCFUZ1c2lvbjo6QWk6OlByb3RvOjpQdmIGcHJvdG8z", [file_google_api_annotations, file_google_api_client, file_google_protobuf_empty, file_pv_pv_message]);
 
 /**
  * Package pv_service 光伏服务接口定义
@@ -33,13 +33,23 @@ export const file_pv_pv_service: GenFile = /*@__PURE__*/
  */
 export const PvService: GenService<{
   /**
-   * 创建光伏数据
+   * 算法平台接收光伏数据
    *
    * @generated from rpc fusion.ai.proto.pv.PvService.UploadPvData
    */
   uploadPvData: {
     methodKind: "unary";
     input: typeof UploadPvDataRequestSchema;
+    output: typeof EmptySchema;
+  },
+  /**
+   * 算法平台拉取光伏数据
+   *
+   * @generated from rpc fusion.ai.proto.pv.PvService.PullPvData
+   */
+  pullPvData: {
+    methodKind: "unary";
+    input: typeof PullPvDataRequestSchema;
     output: typeof EmptySchema;
   },
 }> = /*@__PURE__*/

@@ -41,6 +41,11 @@ public final class PvMessageProto extends com.google.protobuf.GeneratedFile {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_fusion_ai_proto_pv_PvPowerPoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_fusion_ai_proto_pv_PullPvDataRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_fusion_ai_proto_pv_PullPvDataRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -59,12 +64,15 @@ public final class PvMessageProto extends com.google.protobuf.GeneratedFile {
       "werData\022:\n\007pv_list\030\001 \003(\0132 .fusion.ai.pro" +
       "to.pv.PvPowerPointR\007pv_list\"Q\n\014PvPowerPo" +
       "int\022%\n\ttimestamp\030\001 \001(\003B\007\272H\004\"\002 \000R\ttimesta" +
-      "mp\022\032\n\002pv\030\002 \001(\002B\n\272H\007\n\005-\000\000\000\000R\002pvB\253\001\n\026com.f" +
-      "usion.ai.proto.pvB\016PvMessageProtoP\001Z\025fus" +
-      "ion.ai.proto.pv;pv\242\002\004FAPP\252\002\022Fusion.Ai.Pr" +
-      "oto.Pv\312\002\022Fusion\\Ai\\Proto\\Pv\342\002\036Fusion\\Ai\\" +
-      "Proto\\Pv\\GPBMetadata\352\002\025Fusion::Ai::Proto" +
-      "::Pvb\006proto3"
+      "mp\022\032\n\002pv\030\002 \001(\002B\n\272H\007\n\005-\000\000\000\000R\002pv\"}\n\021PullPv" +
+      "DataRequest\0223\n\017registration_id\030\001 \001(\tB\t\272H" +
+      "\006r\004\020\001\030@R\017registration_id\0223\n\004data\030\002 \001(\0132\037" +
+      ".fusion.ai.proto.pv.PvPowerDataR\004dataB\253\001" +
+      "\n\026com.fusion.ai.proto.pvB\016PvMessageProto" +
+      "P\001Z\025fusion.ai.proto.pv;pv\242\002\004FAPP\252\002\022Fusio" +
+      "n.Ai.Proto.Pv\312\002\022Fusion\\Ai\\Proto\\Pv\342\002\036Fus" +
+      "ion\\Ai\\Proto\\Pv\\GPBMetadata\352\002\025Fusion::Ai" +
+      "::Proto::Pvb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -90,6 +98,12 @@ public final class PvMessageProto extends com.google.protobuf.GeneratedFile {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_pv_PvPowerPoint_descriptor,
         new java.lang.String[] { "Timestamp", "Pv", });
+    internal_static_fusion_ai_proto_pv_PullPvDataRequest_descriptor =
+      getDescriptor().getMessageType(3);
+    internal_static_fusion_ai_proto_pv_PullPvDataRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_fusion_ai_proto_pv_PullPvDataRequest_descriptor,
+        new java.lang.String[] { "RegistrationId", "Data", });
     descriptor.resolveAllFeaturesImmutable();
     com.buf.validate.ValidateProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

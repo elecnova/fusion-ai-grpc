@@ -21,7 +21,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file pv/pv_message.proto.
  */
 export const file_pv_pv_message: GenFile = /*@__PURE__*/
-  fileDesc("ChNwdi9wdl9tZXNzYWdlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYieQoTVXBsb2FkUHZEYXRhUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEi0KBGRhdGEYAiABKAsyHy5mdXNpb24uYWkucHJvdG8ucHYuUHZQb3dlckRhdGEiSQoLUHZQb3dlckRhdGESOgoHcHZfbGlzdBgBIAMoCzIgLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyUG9pbnRSB3B2X2xpc3QiQgoMUHZQb3dlclBvaW50EhoKCXRpbWVzdGFtcBgBIAEoA0IHukgEIgIgABIWCgJwdhgCIAEoAkIKukgHCgUtAAAAAEKrAQoWY29tLmZ1c2lvbi5haS5wcm90by5wdkIOUHZNZXNzYWdlUHJvdG9QAVoVZnVzaW9uLmFpLnByb3RvLnB2O3B2ogIERkFQUKoCEkZ1c2lvbi5BaS5Qcm90by5QdsoCEkZ1c2lvblxBaVxQcm90b1xQduICHkZ1c2lvblxBaVxQcm90b1xQdlxHUEJNZXRhZGF0YeoCFUZ1c2lvbjo6QWk6OlByb3RvOjpQdmIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("ChNwdi9wdl9tZXNzYWdlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYieQoTVXBsb2FkUHZEYXRhUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEi0KBGRhdGEYAiABKAsyHy5mdXNpb24uYWkucHJvdG8ucHYuUHZQb3dlckRhdGEiSQoLUHZQb3dlckRhdGESOgoHcHZfbGlzdBgBIAMoCzIgLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyUG9pbnRSB3B2X2xpc3QiQgoMUHZQb3dlclBvaW50EhoKCXRpbWVzdGFtcBgBIAEoA0IHukgEIgIgABIWCgJwdhgCIAEoAkIKukgHCgUtAAAAACJ3ChFQdWxsUHZEYXRhUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEi0KBGRhdGEYAiABKAsyHy5mdXNpb24uYWkucHJvdG8ucHYuUHZQb3dlckRhdGFCqwEKFmNvbS5mdXNpb24uYWkucHJvdG8ucHZCDlB2TWVzc2FnZVByb3RvUAFaFWZ1c2lvbi5haS5wcm90by5wdjtwdqICBEZBUFCqAhJGdXNpb24uQWkuUHJvdG8uUHbKAhJGdXNpb25cQWlcUHJvdG9cUHbiAh5GdXNpb25cQWlcUHJvdG9cUHZcR1BCTWV0YWRhdGHqAhVGdXNpb246OkFpOjpQcm90bzo6UHZiBnByb3RvMw", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
  * Package message 光伏预测数据上报消息定义
@@ -99,4 +99,32 @@ export type PvPowerPoint = Message<"fusion.ai.proto.pv.PvPowerPoint"> & {
  */
 export const PvPowerPointSchema: GenMessage<PvPowerPoint> = /*@__PURE__*/
   messageDesc(file_pv_pv_message, 2);
+
+/**
+ * Package message 拉取光伏预测数据消息定义
+ *
+ * @generated from message fusion.ai.proto.pv.PullPvDataRequest
+ */
+export type PullPvDataRequest = Message<"fusion.ai.proto.pv.PullPvDataRequest"> & {
+  /**
+   * 算法业务注册唯一标识
+   *
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 光伏功率数据列表
+   *
+   * @generated from field: fusion.ai.proto.pv.PvPowerData data = 2;
+   */
+  data?: PvPowerData | undefined;
+};
+
+/**
+ * Describes the message fusion.ai.proto.pv.PullPvDataRequest.
+ * Use `create(PullPvDataRequestSchema)` to create a new message.
+ */
+export const PullPvDataRequestSchema: GenMessage<PullPvDataRequest> = /*@__PURE__*/
+  messageDesc(file_pv_pv_message, 3);
 

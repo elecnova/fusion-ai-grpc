@@ -30,6 +30,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	PvService_UploadPvData_FullMethodName = "/fusion.ai.proto.pv.PvService/UploadPvData"
+	PvService_PullPvData_FullMethodName   = "/fusion.ai.proto.pv.PvService/PullPvData"
 )
 
 // PvServiceClient is the client API for PvService service.
@@ -38,8 +39,10 @@ const (
 //
 // Package pv_service 光伏服务接口定义
 type PvServiceClient interface {
-	// 创建光伏数据
+	// 算法平台接收光伏数据
 	UploadPvData(ctx context.Context, in *UploadPvDataRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// 算法平台拉取光伏数据
+	PullPvData(ctx context.Context, in *PullPvDataRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
 type pvServiceClient struct {
@@ -60,14 +63,26 @@ func (c *pvServiceClient) UploadPvData(ctx context.Context, in *UploadPvDataRequ
 	return out, nil
 }
 
+func (c *pvServiceClient) PullPvData(ctx context.Context, in *PullPvDataRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, PvService_PullPvData_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PvServiceServer is the server API for PvService service.
 // All implementations must embed UnimplementedPvServiceServer
 // for forward compatibility.
 //
 // Package pv_service 光伏服务接口定义
 type PvServiceServer interface {
-	// 创建光伏数据
+	// 算法平台接收光伏数据
 	UploadPvData(context.Context, *UploadPvDataRequest) (*emptypb.Empty, error)
+	// 算法平台拉取光伏数据
+	PullPvData(context.Context, *PullPvDataRequest) (*emptypb.Empty, error)
 	mustEmbedUnimplementedPvServiceServer()
 }
 
@@ -80,6 +95,9 @@ type UnimplementedPvServiceServer struct{}
 
 func (UnimplementedPvServiceServer) UploadPvData(context.Context, *UploadPvDataRequest) (*emptypb.Empty, error) {
 	return nil, status.Error(codes.Unimplemented, "method UploadPvData not implemented")
+}
+func (UnimplementedPvServiceServer) PullPvData(context.Context, *PullPvDataRequest) (*emptypb.Empty, error) {
+	return nil, status.Error(codes.Unimplemented, "method PullPvData not implemented")
 }
 func (UnimplementedPvServiceServer) mustEmbedUnimplementedPvServiceServer() {}
 func (UnimplementedPvServiceServer) testEmbeddedByValue()                   {}
@@ -120,6 +138,24 @@ func _PvService_UploadPvData_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PvService_PullPvData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PullPvDataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PvServiceServer).PullPvData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: PvService_PullPvData_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PvServiceServer).PullPvData(ctx, req.(*PullPvDataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // PvService_ServiceDesc is the grpc.ServiceDesc for PvService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -130,6 +166,10 @@ var PvService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UploadPvData",
 			Handler:    _PvService_UploadPvData_Handler,
+		},
+		{
+			MethodName: "PullPvData",
+			Handler:    _PvService_PullPvData_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
