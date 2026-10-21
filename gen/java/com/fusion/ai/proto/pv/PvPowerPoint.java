@@ -7,7 +7,7 @@ package com.fusion.ai.proto.pv;
 
 /**
  * <pre>
- * 算法预测数据明细
+ * 光伏功率数据明细
  * </pre>
  *
  * Protobuf type {@code fusion.ai.proto.pv.PvPowerPoint}
@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 算法预测数据明细
+   * 光伏功率数据明细
    * </pre>
    *
    * Protobuf type {@code fusion.ai.proto.pv.PvPowerPoint}

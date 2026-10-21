@@ -73,7 +73,7 @@ export const PvPowerDataSchema: GenMessage<PvPowerData> = /*@__PURE__*/
   messageDesc(file_pv_pv_message, 1);
 
 /**
- * 算法预测数据明细
+ * 光伏功率数据明细
  *
  * @generated from message fusion.ai.proto.pv.PvPowerPoint
  */

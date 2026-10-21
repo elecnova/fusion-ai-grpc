@@ -133,7 +133,7 @@ func (x *PvPowerData) GetPvList() []*PvPowerPoint {
 	return nil
 }
 
-// 算法预测数据明细
+// 光伏功率数据明细
 type PvPowerPoint struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 时间戳，Unix 秒级时间戳

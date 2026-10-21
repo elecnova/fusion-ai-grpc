@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * 算法预测数据明细
+ * 光伏功率数据明细
  *
  * Generated from protobuf message <code>fusion.ai.proto.pv.PvPowerPoint</code>
  */
