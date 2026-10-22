@@ -19,7 +19,7 @@ import (
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
+	_ "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	unsafe "unsafe"
 )
@@ -35,19 +35,19 @@ var File_site_site_service_proto protoreflect.FileDescriptor
 
 const file_site_site_service_proto_rawDesc = "" +
 	"\n" +
-	"\x17site/site_service.proto\x12\x14fusion.ai.proto.site\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x17site/site_message.proto2}\n" +
-	"\vSiteService\x12n\n" +
+	"\x17site/site_service.proto\x12\x14fusion.ai.proto.site\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x17site/site_message.proto2\x90\x01\n" +
+	"\vSiteService\x12\x80\x01\n" +
 	"\n" +
-	"CreateSite\x12'.fusion.ai.proto.site.CreateSiteRequest\x1a\x16.google.protobuf.Empty\"\x1f\xdaA\x01*\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/3rd-api/v2/siteB\xbb\x01\n" +
+	"CreateSite\x12'.fusion.ai.proto.site.CreateSiteRequest\x1a(.fusion.ai.proto.site.CreateSiteResponse\"\x1f\xdaA\x01*\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/3rd-api/v1/siteB\xbb\x01\n" +
 	"\x18com.fusion.ai.proto.siteB\x10SiteServiceProtoP\x01Z\x19fusion.ai.proto.site;site\xa2\x02\x04FAPS\xaa\x02\x14Fusion.Ai.Proto.Site\xca\x02\x14Fusion\\Ai\\Proto\\Site\xe2\x02 Fusion\\Ai\\Proto\\Site\\GPBMetadata\xea\x02\x17Fusion::Ai::Proto::Siteb\x06proto3"
 
 var file_site_site_service_proto_goTypes = []any{
-	(*CreateSiteRequest)(nil), // 0: fusion.ai.proto.site.CreateSiteRequest
-	(*emptypb.Empty)(nil),     // 1: google.protobuf.Empty
+	(*CreateSiteRequest)(nil),  // 0: fusion.ai.proto.site.CreateSiteRequest
+	(*CreateSiteResponse)(nil), // 1: fusion.ai.proto.site.CreateSiteResponse
 }
 var file_site_site_service_proto_depIdxs = []int32{
 	0, // 0: fusion.ai.proto.site.SiteService.CreateSite:input_type -> fusion.ai.proto.site.CreateSiteRequest
-	1, // 1: fusion.ai.proto.site.SiteService.CreateSite:output_type -> google.protobuf.Empty
+	1, // 1: fusion.ai.proto.site.SiteService.CreateSite:output_type -> fusion.ai.proto.site.CreateSiteResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

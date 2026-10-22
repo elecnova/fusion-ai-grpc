@@ -38,16 +38,16 @@ public final class SiteServiceProto extends com.google.protobuf.GeneratedFile {
       "\n\027site/site_service.proto\022\024fusion.ai.pro" +
       "to.site\032\034google/api/annotations.proto\032\027g" +
       "oogle/api/client.proto\032\033google/protobuf/" +
-      "empty.proto\032\027site/site_message.proto2}\n\013" +
-      "SiteService\022n\n\nCreateSite\022\'.fusion.ai.pr" +
-      "oto.site.CreateSiteRequest\032\026.google.prot" +
-      "obuf.Empty\"\037\332A\001*\202\323\344\223\002\025\"\020/3rd-api/v2/site" +
-      ":\001*B\273\001\n\030com.fusion.ai.proto.siteB\020SiteSe" +
-      "rviceProtoP\001Z\031fusion.ai.proto.site;site\242" +
-      "\002\004FAPS\252\002\024Fusion.Ai.Proto.Site\312\002\024Fusion\\A" +
-      "i\\Proto\\Site\342\002 Fusion\\Ai\\Proto\\Site\\GPBM" +
-      "etadata\352\002\027Fusion::Ai::Proto::Siteb\006proto" +
-      "3"
+      "empty.proto\032\027site/site_message.proto2\220\001\n" +
+      "\013SiteService\022\200\001\n\nCreateSite\022\'.fusion.ai." +
+      "proto.site.CreateSiteRequest\032(.fusion.ai" +
+      ".proto.site.CreateSiteResponse\"\037\332A\001*\202\323\344\223" +
+      "\002\025\"\020/3rd-api/v1/site:\001*B\273\001\n\030com.fusion.a" +
+      "i.proto.siteB\020SiteServiceProtoP\001Z\031fusion" +
+      ".ai.proto.site;site\242\002\004FAPS\252\002\024Fusion.Ai.P" +
+      "roto.Site\312\002\024Fusion\\Ai\\Proto\\Site\342\002 Fusio" +
+      "n\\Ai\\Proto\\Site\\GPBMetadata\352\002\027Fusion::Ai" +
+      "::Proto::Siteb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

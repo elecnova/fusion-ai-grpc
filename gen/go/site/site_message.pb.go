@@ -32,15 +32,13 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Package message 场站-创建场站消息定义
+// Package message 场站注册-首次注册消息请求定义
 type CreateSiteRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// 算法业务注册唯一标识
-	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	// 算法业务类型
-	ServiceType string `protobuf:"bytes,2,opt,name=service_type,proto3" json:"service_type,omitempty"`
+	// 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
+	ServiceType string `protobuf:"bytes,1,opt,name=service_type,proto3" json:"service_type,omitempty"`
 	// 场站唯一 ID
-	SiteId string `protobuf:"bytes,3,opt,name=site_id,proto3" json:"site_id,omitempty"`
+	SiteId string `protobuf:"bytes,2,opt,name=site_id,proto3" json:"site_id,omitempty"`
 	// 场站显示名称
 	SiteName string `protobuf:"bytes,4,opt,name=site_name,proto3" json:"site_name,omitempty"`
 	// 时区名称，例如 Asia/Shanghai
@@ -101,13 +99,6 @@ func (x *CreateSiteRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateSiteRequest.ProtoReflect.Descriptor instead.
 func (*CreateSiteRequest) Descriptor() ([]byte, []int) {
 	return file_site_site_message_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *CreateSiteRequest) GetRegistrationId() string {
-	if x != nil {
-		return x.RegistrationId
-	}
-	return ""
 }
 
 func (x *CreateSiteRequest) GetServiceType() string {
@@ -222,15 +213,105 @@ func (x *CreateSiteRequest) GetUpdateTime() string {
 	return ""
 }
 
+// Package message 场站注册-首次注册消息响应定义
+type CreateSiteResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 处理状态：success 成功，error 失败
+	State string `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	// 五位业务码：成功为 00000，异常对应场景码表
+	Code string `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
+	// 处理结果说明，客户端不得依赖提示文字判断业务结果
+	Message string `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	// 算法业务注册唯一标识，首次注册由算法服务生成
+	RegistrationId string `protobuf:"bytes,4,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 创建时间，带时区的 ISO 8601 格式，创建后保持不变
+	CreatedAt string `protobuf:"bytes,5,opt,name=created_at,proto3" json:"created_at,omitempty"`
+	// 更新时间，带时区的 ISO 8601 格式，配置实际更新后刷新
+	UpdatedAt     string `protobuf:"bytes,6,opt,name=updated_at,proto3" json:"updated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateSiteResponse) Reset() {
+	*x = CreateSiteResponse{}
+	mi := &file_site_site_message_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateSiteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSiteResponse) ProtoMessage() {}
+
+func (x *CreateSiteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_site_site_message_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSiteResponse.ProtoReflect.Descriptor instead.
+func (*CreateSiteResponse) Descriptor() ([]byte, []int) {
+	return file_site_site_message_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *CreateSiteResponse) GetState() string {
+	if x != nil {
+		return x.State
+	}
+	return ""
+}
+
+func (x *CreateSiteResponse) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *CreateSiteResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *CreateSiteResponse) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *CreateSiteResponse) GetCreatedAt() string {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return ""
+}
+
+func (x *CreateSiteResponse) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
 var File_site_site_message_proto protoreflect.FileDescriptor
 
 const file_site_site_message_proto_rawDesc = "" +
 	"\n" +
-	"\x17site/site_message.proto\x12\x14fusion.ai.proto.site\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdb\x06\n" +
-	"\x11CreateSiteRequest\x121\n" +
-	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x18@R\x0fregistration_id\x12-\n" +
-	"\fservice_type\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18<R\fservice_type\x12#\n" +
-	"\asite_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18<R\asite_id\x12%\n" +
+	"\x17site/site_message.proto\x12\x14fusion.ai.proto.site\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa8\x06\n" +
+	"\x11CreateSiteRequest\x12-\n" +
+	"\fservice_type\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\fservice_type\x12#\n" +
+	"\asite_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18<R\asite_id\x12%\n" +
 	"\tsite_name\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18xR\tsite_name\x12#\n" +
 	"\btimezone\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18@R\btimezone\x125\n" +
 	"\tlongitude\x18\x06 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x123\n" +
@@ -250,7 +331,19 @@ const file_site_site_message_proto_rawDesc = "" +
 	"\t_tilt_degB\x0e\n" +
 	"\f_azimuth_degB\n" +
 	"\n" +
-	"\b_hisdaysB\xbb\x01\n" +
+	"\b_hisdays\"\x90\x02\n" +
+	"\x12CreateSiteResponse\x12+\n" +
+	"\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\asuccessR\x05errorR\x05state\x12%\n" +
+	"\x04code\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
+	"^[0-9]{5}$R\x04code\x12!\n" +
+	"\amessage\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\amessage\x121\n" +
+	"\x0fregistration_id\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12'\n" +
+	"\n" +
+	"created_at\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
+	"created_at\x12'\n" +
+	"\n" +
+	"updated_at\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
+	"updated_atB\xbb\x01\n" +
 	"\x18com.fusion.ai.proto.siteB\x10SiteMessageProtoP\x01Z\x19fusion.ai.proto.site;site\xa2\x02\x04FAPS\xaa\x02\x14Fusion.Ai.Proto.Site\xca\x02\x14Fusion\\Ai\\Proto\\Site\xe2\x02 Fusion\\Ai\\Proto\\Site\\GPBMetadata\xea\x02\x17Fusion::Ai::Proto::Siteb\x06proto3"
 
 var (
@@ -265,9 +358,10 @@ func file_site_site_message_proto_rawDescGZIP() []byte {
 	return file_site_site_message_proto_rawDescData
 }
 
-var file_site_site_message_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_site_site_message_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_site_site_message_proto_goTypes = []any{
-	(*CreateSiteRequest)(nil), // 0: fusion.ai.proto.site.CreateSiteRequest
+	(*CreateSiteRequest)(nil),  // 0: fusion.ai.proto.site.CreateSiteRequest
+	(*CreateSiteResponse)(nil), // 1: fusion.ai.proto.site.CreateSiteResponse
 }
 var file_site_site_message_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -289,7 +383,7 @@ func file_site_site_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_site_site_message_proto_rawDesc), len(file_site_site_message_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

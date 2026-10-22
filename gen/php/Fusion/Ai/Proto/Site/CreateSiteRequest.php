@@ -10,28 +10,22 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Package message 场站-创建场站消息定义
+ * Package message 场站注册-首次注册消息请求定义
  *
  * Generated from protobuf message <code>fusion.ai.proto.site.CreateSiteRequest</code>
  */
 class CreateSiteRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 算法业务注册唯一标识
+     * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
      *
-     * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
-     */
-    protected $registration_id = '';
-    /**
-     * 算法业务类型
-     *
-     * Generated from protobuf field <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = {</code>
      */
     protected $service_type = '';
     /**
      * 场站唯一 ID
      *
-     * Generated from protobuf field <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = {</code>
      */
     protected $site_id = '';
     /**
@@ -125,10 +119,8 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $registration_id
-     *           算法业务注册唯一标识
      *     @type string $service_type
-     *           算法业务类型
+     *           算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
      *     @type string $site_id
      *           场站唯一 ID
      *     @type string $site_name
@@ -168,35 +160,9 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 算法业务注册唯一标识
+     * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
      *
-     * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
-     * @return string
-     */
-    public function getRegistrationId()
-    {
-        return $this->registration_id;
-    }
-
-    /**
-     * 算法业务注册唯一标识
-     *
-     * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRegistrationId(string $var)
-    {
-        GPBUtil::checkString($var, true);
-        $this->registration_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * 算法业务类型
-     *
-     * Generated from protobuf field <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getServiceType()
@@ -205,9 +171,9 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 算法业务类型
+     * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
      *
-     * Generated from protobuf field <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -222,7 +188,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站唯一 ID
      *
-     * Generated from protobuf field <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getSiteId()
@@ -233,7 +199,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站唯一 ID
      *
-     * Generated from protobuf field <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

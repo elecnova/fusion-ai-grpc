@@ -21,32 +21,25 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file site/site_message.proto.
  */
 export const file_site_site_message: GenFile = /*@__PURE__*/
-  fileDesc("ChdzaXRlL3NpdGVfbWVzc2FnZS5wcm90bxIUZnVzaW9uLmFpLnByb3RvLnNpdGUimwYKEUNyZWF0ZVNpdGVSZXF1ZXN0EjEKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIHukgEcgIYQFIPcmVnaXN0cmF0aW9uX2lkEi0KDHNlcnZpY2VfdHlwZRgCIAEoCUIJukgGcgQQARg8UgxzZXJ2aWNlX3R5cGUSIwoHc2l0ZV9pZBgDIAEoCUIJukgGcgQQARg8UgdzaXRlX2lkEiUKCXNpdGVfbmFtZRgEIAEoCUIHukgEcgIYeFIJc2l0ZV9uYW1lEhkKCHRpbWV6b25lGAUgASgJQge6SARyAhhAEioKCWxvbmdpdHVkZRgGIAEoAUIXukgUEhIZAAAAAACAZkApAAAAAACAZsASKQoIbGF0aXR1ZGUYByABKAFCF7pIFBISGQAAAAAAgFZAKQAAAAAAgFbAEjgKCHRpbHRfZGVnGAggASgBQhe6SBQSEhkAAAAAAIBWQCkAAAAAAAAAAEgAUgh0aWx0X2RlZ4gBARI+CgthemltdXRoX2RlZxgJIAEoAUIXukgUEhIZAAAAAACAdkApAAAAAAAAAABIAVILYXppbXV0aF9kZWeIAQESKAoHcmF0ZWRfcBgKIAEoAUIOukgLEgkhAAAAAAAAAABSB3JhdGVkX3ASKQoLZ3JhbnVsYXJpdHkYCyADKAVCFLpIEZIBDhgBIgoaCDAFMA8wHjA8Ei0KC2RhdGFfc291cmNlGAwgASgFQgu6SAgaBjABMAIwA1ILZGF0YV9zb3VyY2USKgoLc291cmNlX2F0dHIYDSABKAlCCLpIBXIDGIAQUgtzb3VyY2VfYXR0chIcCglvcGVyYXRpb24YDiABKAVCCbpIBhoEMAEwAhIdCgdoaXNkYXlzGA8gASgFQge6SAQaAiAASAKIAQESKwoMY3JlYXRlZF90aW1lGBAgASgJQge6SARyAhgoUgxjcmVhdGVkX3RpbWUSKQoLdXBkYXRlX3RpbWUYESABKAlCB7pIBHICGChSC3VwZGF0ZV90aW1lQgsKCV90aWx0X2RlZ0IOCgxfYXppbXV0aF9kZWdCCgoIX2hpc2RheXNCuwEKGGNvbS5mdXNpb24uYWkucHJvdG8uc2l0ZUIQU2l0ZU1lc3NhZ2VQcm90b1ABWhlmdXNpb24uYWkucHJvdG8uc2l0ZTtzaXRlogIERkFQU6oCFEZ1c2lvbi5BaS5Qcm90by5TaXRlygIURnVzaW9uXEFpXFByb3RvXFNpdGXiAiBGdXNpb25cQWlcUHJvdG9cU2l0ZVxHUEJNZXRhZGF0YeoCF0Z1c2lvbjo6QWk6OlByb3RvOjpTaXRlYgZwcm90bzM", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("ChdzaXRlL3NpdGVfbWVzc2FnZS5wcm90bxIUZnVzaW9uLmFpLnByb3RvLnNpdGUi6AUKEUNyZWF0ZVNpdGVSZXF1ZXN0Ei0KDHNlcnZpY2VfdHlwZRgBIAEoCUIJukgGcgQQARhkUgxzZXJ2aWNlX3R5cGUSIwoHc2l0ZV9pZBgCIAEoCUIJukgGcgQQARg8UgdzaXRlX2lkEiUKCXNpdGVfbmFtZRgEIAEoCUIHukgEcgIYeFIJc2l0ZV9uYW1lEhkKCHRpbWV6b25lGAUgASgJQge6SARyAhhAEioKCWxvbmdpdHVkZRgGIAEoAUIXukgUEhIZAAAAAACAZkApAAAAAACAZsASKQoIbGF0aXR1ZGUYByABKAFCF7pIFBISGQAAAAAAgFZAKQAAAAAAgFbAEjgKCHRpbHRfZGVnGAggASgBQhe6SBQSEhkAAAAAAIBWQCkAAAAAAAAAAEgAUgh0aWx0X2RlZ4gBARI+CgthemltdXRoX2RlZxgJIAEoAUIXukgUEhIZAAAAAACAdkApAAAAAAAAAABIAVILYXppbXV0aF9kZWeIAQESKAoHcmF0ZWRfcBgKIAEoAUIOukgLEgkhAAAAAAAAAABSB3JhdGVkX3ASKQoLZ3JhbnVsYXJpdHkYCyADKAVCFLpIEZIBDhgBIgoaCDAFMA8wHjA8Ei0KC2RhdGFfc291cmNlGAwgASgFQgu6SAgaBjABMAIwA1ILZGF0YV9zb3VyY2USKgoLc291cmNlX2F0dHIYDSABKAlCCLpIBXIDGIAQUgtzb3VyY2VfYXR0chIcCglvcGVyYXRpb24YDiABKAVCCbpIBhoEMAEwAhIdCgdoaXNkYXlzGA8gASgFQge6SAQaAiAASAKIAQESKwoMY3JlYXRlZF90aW1lGBAgASgJQge6SARyAhgoUgxjcmVhdGVkX3RpbWUSKQoLdXBkYXRlX3RpbWUYESABKAlCB7pIBHICGChSC3VwZGF0ZV90aW1lQgsKCV90aWx0X2RlZ0IOCgxfYXppbXV0aF9kZWdCCgoIX2hpc2RheXMi+gEKEkNyZWF0ZVNpdGVSZXNwb25zZRIkCgVzdGF0ZRgBIAEoCUIVukgSchBSB3N1Y2Nlc3NSBWVycm9yEh8KBGNvZGUYAiABKAlCEbpIDnIMMgpeWzAtOV17NX0kEhgKB21lc3NhZ2UYAyABKAlCB7pIBHICEAESMQoPcmVnaXN0cmF0aW9uX2lkGAQgASgJQge6SARyAhABUg9yZWdpc3RyYXRpb25faWQSJwoKY3JlYXRlZF9hdBgFIAEoCUIHukgEcgIQAVIKY3JlYXRlZF9hdBInCgp1cGRhdGVkX2F0GAYgASgJQge6SARyAhABUgp1cGRhdGVkX2F0QrsBChhjb20uZnVzaW9uLmFpLnByb3RvLnNpdGVCEFNpdGVNZXNzYWdlUHJvdG9QAVoZZnVzaW9uLmFpLnByb3RvLnNpdGU7c2l0ZaICBEZBUFOqAhRGdXNpb24uQWkuUHJvdG8uU2l0ZcoCFEZ1c2lvblxBaVxQcm90b1xTaXRl4gIgRnVzaW9uXEFpXFByb3RvXFNpdGVcR1BCTWV0YWRhdGHqAhdGdXNpb246OkFpOjpQcm90bzo6U2l0ZWIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
- * Package message 场站-创建场站消息定义
+ * Package message 场站注册-首次注册消息请求定义
  *
  * @generated from message fusion.ai.proto.site.CreateSiteRequest
  */
 export type CreateSiteRequest = Message<"fusion.ai.proto.site.CreateSiteRequest"> & {
   /**
-   * 算法业务注册唯一标识
+   * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
    *
-   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
-   */
-  registrationId: string;
-
-  /**
-   * 算法业务类型
-   *
-   * @generated from field: string service_type = 2 [json_name = "service_type"];
+   * @generated from field: string service_type = 1 [json_name = "service_type"];
    */
   serviceType: string;
 
   /**
    * 场站唯一 ID
    *
-   * @generated from field: string site_id = 3 [json_name = "site_id"];
+   * @generated from field: string site_id = 2 [json_name = "site_id"];
    */
   siteId: string;
 
@@ -155,4 +148,60 @@ export type CreateSiteRequest = Message<"fusion.ai.proto.site.CreateSiteRequest"
  */
 export const CreateSiteRequestSchema: GenMessage<CreateSiteRequest> = /*@__PURE__*/
   messageDesc(file_site_site_message, 0);
+
+/**
+ * Package message 场站注册-首次注册消息响应定义
+ *
+ * @generated from message fusion.ai.proto.site.CreateSiteResponse
+ */
+export type CreateSiteResponse = Message<"fusion.ai.proto.site.CreateSiteResponse"> & {
+  /**
+   * 处理状态：success 成功，error 失败
+   *
+   * @generated from field: string state = 1;
+   */
+  state: string;
+
+  /**
+   * 五位业务码：成功为 00000，异常对应场景码表
+   *
+   * @generated from field: string code = 2;
+   */
+  code: string;
+
+  /**
+   * 处理结果说明，客户端不得依赖提示文字判断业务结果
+   *
+   * @generated from field: string message = 3;
+   */
+  message: string;
+
+  /**
+   * 算法业务注册唯一标识，首次注册由算法服务生成
+   *
+   * @generated from field: string registration_id = 4 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 创建时间，带时区的 ISO 8601 格式，创建后保持不变
+   *
+   * @generated from field: string created_at = 5 [json_name = "created_at"];
+   */
+  createdAt: string;
+
+  /**
+   * 更新时间，带时区的 ISO 8601 格式，配置实际更新后刷新
+   *
+   * @generated from field: string updated_at = 6 [json_name = "updated_at"];
+   */
+  updatedAt: string;
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.CreateSiteResponse.
+ * Use `create(CreateSiteResponseSchema)` to create a new message.
+ */
+export const CreateSiteResponseSchema: GenMessage<CreateSiteResponse> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 1);
 

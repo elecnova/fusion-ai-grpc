@@ -12,39 +12,19 @@ public interface CreateSiteRequestOrBuilder extends
 
   /**
    * <pre>
-   * 算法业务注册唯一标识
+   * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
    * </pre>
    *
-   * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-   * @return The registrationId.
-   */
-  java.lang.String getRegistrationId();
-  /**
-   * <pre>
-   * 算法业务注册唯一标识
-   * </pre>
-   *
-   * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for registrationId.
-   */
-  com.google.protobuf.ByteString
-      getRegistrationIdBytes();
-
-  /**
-   * <pre>
-   * 算法业务类型
-   * </pre>
-   *
-   * <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
+   * <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
    * @return The serviceType.
    */
   java.lang.String getServiceType();
   /**
    * <pre>
-   * 算法业务类型
+   * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
    * </pre>
    *
-   * <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
+   * <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
    * @return The bytes for serviceType.
    */
   com.google.protobuf.ByteString
@@ -55,7 +35,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 场站唯一 ID
    * </pre>
    *
-   * <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+   * <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
    * @return The siteId.
    */
   java.lang.String getSiteId();
@@ -64,7 +44,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 场站唯一 ID
    * </pre>
    *
-   * <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+   * <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for siteId.
    */
   com.google.protobuf.ByteString

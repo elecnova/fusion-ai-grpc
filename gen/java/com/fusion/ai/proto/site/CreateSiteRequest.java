@@ -7,7 +7,7 @@ package com.fusion.ai.proto.site;
 
 /**
  * <pre>
- * Package message 场站-创建场站消息定义
+ * Package message 场站注册-首次注册消息请求定义
  * </pre>
  *
  * Protobuf type {@code fusion.ai.proto.site.CreateSiteRequest}
@@ -32,7 +32,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateSiteRequest() {
-    registrationId_ = "";
     serviceType_ = "";
     siteId_ = "";
     siteName_ = "";
@@ -62,62 +61,15 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int REGISTRATION_ID_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object registrationId_ = "";
-  /**
-   * <pre>
-   * 算法业务注册唯一标识
-   * </pre>
-   *
-   * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-   * @return The registrationId.
-   */
-  @java.lang.Override
-  public java.lang.String getRegistrationId() {
-    java.lang.Object ref = registrationId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      registrationId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 算法业务注册唯一标识
-   * </pre>
-   *
-   * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for registrationId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRegistrationIdBytes() {
-    java.lang.Object ref = registrationId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      registrationId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SERVICE_TYPE_FIELD_NUMBER = 2;
+  public static final int SERVICE_TYPE_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceType_ = "";
   /**
    * <pre>
-   * 算法业务类型
+   * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
    * </pre>
    *
-   * <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
+   * <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
    * @return The serviceType.
    */
   @java.lang.Override
@@ -135,10 +87,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 算法业务类型
+   * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
    * </pre>
    *
-   * <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
+   * <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
    * @return The bytes for serviceType.
    */
   @java.lang.Override
@@ -156,7 +108,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SITE_ID_FIELD_NUMBER = 3;
+  public static final int SITE_ID_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
   private volatile java.lang.Object siteId_ = "";
   /**
@@ -164,7 +116,7 @@ private static final long serialVersionUID = 0L;
    * 场站唯一 ID
    * </pre>
    *
-   * <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+   * <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
    * @return The siteId.
    */
   @java.lang.Override
@@ -185,7 +137,7 @@ private static final long serialVersionUID = 0L;
    * 场站唯一 ID
    * </pre>
    *
-   * <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+   * <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for siteId.
    */
   @java.lang.Override
@@ -651,14 +603,11 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, registrationId_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceType_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, serviceType_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, serviceType_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, siteId_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, siteId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, siteName_);
@@ -710,14 +659,11 @@ private static final long serialVersionUID = 0L;
   }
   private int computeSerializedSize_0() {
     int size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, registrationId_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceType_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, serviceType_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, serviceType_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, siteId_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, siteId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, siteName_);
@@ -804,8 +750,6 @@ private static final long serialVersionUID = 0L;
     }
     com.fusion.ai.proto.site.CreateSiteRequest other = (com.fusion.ai.proto.site.CreateSiteRequest) obj;
 
-    if (!getRegistrationId()
-        .equals(other.getRegistrationId())) return false;
     if (!getServiceType()
         .equals(other.getServiceType())) return false;
     if (!getSiteId()
@@ -863,8 +807,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + REGISTRATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRegistrationId().hashCode();
     hash = (37 * hash) + SERVICE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getServiceType().hashCode();
     hash = (37 * hash) + SITE_ID_FIELD_NUMBER;
@@ -1009,7 +951,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Package message 场站-创建场站消息定义
+   * Package message 场站注册-首次注册消息请求定义
    * </pre>
    *
    * Protobuf type {@code fusion.ai.proto.site.CreateSiteRequest}
@@ -1045,7 +987,6 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      registrationId_ = "";
       serviceType_ = "";
       siteId_ = "";
       siteName_ = "";
@@ -1096,59 +1037,56 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.fusion.ai.proto.site.CreateSiteRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.registrationId_ = registrationId_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.serviceType_ = serviceType_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.siteId_ = siteId_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.siteName_ = siteName_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.timezone_ = timezone_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.longitude_ = longitude_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.latitude_ = latitude_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.tiltDeg_ = tiltDeg_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.azimuthDeg_ = azimuthDeg_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.ratedP_ = ratedP_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         granularity_.makeImmutable();
         result.granularity_ = granularity_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.dataSource_ = dataSource_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.sourceAttr_ = sourceAttr_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.operation_ = operation_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.hisdays_ = hisdays_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.createdTime_ = createdTime_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.updateTime_ = updateTime_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1166,29 +1104,24 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.fusion.ai.proto.site.CreateSiteRequest other) {
       if (other == com.fusion.ai.proto.site.CreateSiteRequest.getDefaultInstance()) return this;
-      if (!other.getRegistrationId().isEmpty()) {
-        registrationId_ = other.registrationId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       if (!other.getServiceType().isEmpty()) {
         serviceType_ = other.serviceType_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSiteId().isEmpty()) {
         siteId_ = other.siteId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSiteName().isEmpty()) {
         siteName_ = other.siteName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTimezone().isEmpty()) {
         timezone_ = other.timezone_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (java.lang.Double.doubleToRawLongBits(other.getLongitude()) != 0) {
@@ -1210,7 +1143,7 @@ private static final long serialVersionUID = 0L;
         if (granularity_.isEmpty()) {
           granularity_ = other.granularity_;
           granularity_.makeImmutable();
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000200;
         } else {
           ensureGranularityIsMutable();
           granularity_.addAll(other.granularity_);
@@ -1222,7 +1155,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getSourceAttr().isEmpty()) {
         sourceAttr_ = other.sourceAttr_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.getOperation() != 0) {
@@ -1233,12 +1166,12 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCreatedTime().isEmpty()) {
         createdTime_ = other.createdTime_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getUpdateTime().isEmpty()) {
         updateTime_ = other.updateTime_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1266,53 +1199,48 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              registrationId_ = input.readStringRequireUtf8();
+              serviceType_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
-              serviceType_ = input.readStringRequireUtf8();
+              siteId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
-            case 26: {
-              siteId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 26
             case 34: {
               siteName_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               break;
             } // case 34
             case 42: {
               timezone_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000008;
               break;
             } // case 42
             case 49: {
               longitude_ = input.readDouble();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000010;
               break;
             } // case 49
             case 57: {
               latitude_ = input.readDouble();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               break;
             } // case 57
             case 65: {
               tiltDeg_ = input.readDouble();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000040;
               break;
             } // case 65
             case 73: {
               azimuthDeg_ = input.readDouble();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000080;
               break;
             } // case 73
             case 81: {
               ratedP_ = input.readDouble();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000100;
               break;
             } // case 81
             case 88: {
@@ -1333,32 +1261,32 @@ private static final long serialVersionUID = 0L;
             } // case 90
             case 96: {
               dataSource_ = input.readInt32();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00000400;
               break;
             } // case 96
             case 106: {
               sourceAttr_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00000800;
               break;
             } // case 106
             case 112: {
               operation_ = input.readInt32();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00001000;
               break;
             } // case 112
             case 120: {
               hisdays_ = input.readInt32();
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00002000;
               break;
             } // case 120
             case 130: {
               createdTime_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
+              bitField0_ |= 0x00004000;
               break;
             } // case 130
             case 138: {
               updateTime_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00008000;
               break;
             } // case 138
             default: {
@@ -1378,105 +1306,13 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object registrationId_ = "";
-    /**
-     * <pre>
-     * 算法业务注册唯一标识
-     * </pre>
-     *
-     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @return The registrationId.
-     */
-    public java.lang.String getRegistrationId() {
-      java.lang.Object ref = registrationId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        registrationId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 算法业务注册唯一标识
-     * </pre>
-     *
-     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for registrationId.
-     */
-    public com.google.protobuf.ByteString
-        getRegistrationIdBytes() {
-      java.lang.Object ref = registrationId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        registrationId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 算法业务注册唯一标识
-     * </pre>
-     *
-     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @param value The registrationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRegistrationId(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-      registrationId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 算法业务注册唯一标识
-     * </pre>
-     *
-     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRegistrationId() {
-      registrationId_ = getDefaultInstance().getRegistrationId();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 算法业务注册唯一标识
-     * </pre>
-     *
-     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for registrationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRegistrationIdBytes(
-        com.google.protobuf.ByteString value) {
-      java.util.Objects.requireNonNull(value);
-      checkByteStringIsUtf8(value);
-      registrationId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object serviceType_ = "";
     /**
      * <pre>
-     * 算法业务类型
+     * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
      * </pre>
      *
-     * <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
+     * <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
      * @return The serviceType.
      */
     public java.lang.String getServiceType() {
@@ -1493,10 +1329,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 算法业务类型
+     * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
      * </pre>
      *
-     * <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
+     * <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
      * @return The bytes for serviceType.
      */
     public com.google.protobuf.ByteString
@@ -1514,10 +1350,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 算法业务类型
+     * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
      * </pre>
      *
-     * <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
+     * <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
      * @param value The serviceType to set.
      * @return This builder for chaining.
      */
@@ -1525,30 +1361,30 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       serviceType_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 算法业务类型
+     * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
      * </pre>
      *
-     * <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
+     * <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearServiceType() {
       serviceType_ = getDefaultInstance().getServiceType();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 算法业务类型
+     * 算法业务类型(多个目标用逗号隔开。登记本场站业务： 光伏预测-pv_prediction 负荷预测-load_prediction 储能预测-ess_prediction)
      * </pre>
      *
-     * <code>string service_type = 2 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
+     * <code>string service_type = 1 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for serviceType to set.
      * @return This builder for chaining.
      */
@@ -1557,7 +1393,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       serviceType_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1568,7 +1404,7 @@ private static final long serialVersionUID = 0L;
      * 场站唯一 ID
      * </pre>
      *
-     * <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @return The siteId.
      */
     public java.lang.String getSiteId() {
@@ -1588,7 +1424,7 @@ private static final long serialVersionUID = 0L;
      * 场站唯一 ID
      * </pre>
      *
-     * <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @return The bytes for siteId.
      */
     public com.google.protobuf.ByteString
@@ -1609,7 +1445,7 @@ private static final long serialVersionUID = 0L;
      * 场站唯一 ID
      * </pre>
      *
-     * <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @param value The siteId to set.
      * @return This builder for chaining.
      */
@@ -1617,7 +1453,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       siteId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1626,12 +1462,12 @@ private static final long serialVersionUID = 0L;
      * 场站唯一 ID
      * </pre>
      *
-     * <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSiteId() {
       siteId_ = getDefaultInstance().getSiteId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1640,7 +1476,7 @@ private static final long serialVersionUID = 0L;
      * 场站唯一 ID
      * </pre>
      *
-     * <code>string site_id = 3 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 2 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for siteId to set.
      * @return This builder for chaining.
      */
@@ -1649,7 +1485,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       siteId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1709,7 +1545,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       siteName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1723,7 +1559,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSiteName() {
       siteName_ = getDefaultInstance().getSiteName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1741,7 +1577,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       siteName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1801,7 +1637,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       timezone_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1815,7 +1651,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTimezone() {
       timezone_ = getDefaultInstance().getTimezone();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1833,7 +1669,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       timezone_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1863,7 +1699,7 @@ private static final long serialVersionUID = 0L;
     public Builder setLongitude(double value) {
 
       longitude_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1876,7 +1712,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearLongitude() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       longitude_ = 0D;
       onChanged();
       return this;
@@ -1907,7 +1743,7 @@ private static final long serialVersionUID = 0L;
     public Builder setLatitude(double value) {
 
       latitude_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1920,7 +1756,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearLatitude() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       latitude_ = 0D;
       onChanged();
       return this;
@@ -1937,7 +1773,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasTiltDeg() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <pre>
@@ -1963,7 +1799,7 @@ private static final long serialVersionUID = 0L;
     public Builder setTiltDeg(double value) {
 
       tiltDeg_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1976,7 +1812,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearTiltDeg() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       tiltDeg_ = 0D;
       onChanged();
       return this;
@@ -1993,7 +1829,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasAzimuthDeg() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <pre>
@@ -2019,7 +1855,7 @@ private static final long serialVersionUID = 0L;
     public Builder setAzimuthDeg(double value) {
 
       azimuthDeg_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2032,7 +1868,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearAzimuthDeg() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       azimuthDeg_ = 0D;
       onChanged();
       return this;
@@ -2063,7 +1899,7 @@ private static final long serialVersionUID = 0L;
     public Builder setRatedP(double value) {
 
       ratedP_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2076,7 +1912,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearRatedP() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       ratedP_ = 0D;
       onChanged();
       return this;
@@ -2087,7 +1923,7 @@ private static final long serialVersionUID = 0L;
       if (!granularity_.isModifiable()) {
         granularity_ = makeMutableCopy(granularity_);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
     }
     /**
      * <pre>
@@ -2140,7 +1976,7 @@ private static final long serialVersionUID = 0L;
 
       ensureGranularityIsMutable();
       granularity_.setInt(index, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2157,7 +1993,7 @@ private static final long serialVersionUID = 0L;
 
       ensureGranularityIsMutable();
       granularity_.addInt(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2175,7 +2011,7 @@ private static final long serialVersionUID = 0L;
       ensureGranularityIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, granularity_);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2189,7 +2025,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearGranularity() {
       granularity_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2219,7 +2055,7 @@ private static final long serialVersionUID = 0L;
     public Builder setDataSource(int value) {
 
       dataSource_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2232,7 +2068,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDataSource() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       dataSource_ = 0;
       onChanged();
       return this;
@@ -2293,7 +2129,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       sourceAttr_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2307,7 +2143,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSourceAttr() {
       sourceAttr_ = getDefaultInstance().getSourceAttr();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2325,7 +2161,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       sourceAttr_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2355,7 +2191,7 @@ private static final long serialVersionUID = 0L;
     public Builder setOperation(int value) {
 
       operation_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2368,7 +2204,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearOperation() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00001000);
       operation_ = 0;
       onChanged();
       return this;
@@ -2385,7 +2221,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasHisdays() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <pre>
@@ -2411,7 +2247,7 @@ private static final long serialVersionUID = 0L;
     public Builder setHisdays(int value) {
 
       hisdays_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2424,7 +2260,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearHisdays() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       hisdays_ = 0;
       onChanged();
       return this;
@@ -2485,7 +2321,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       createdTime_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -2499,7 +2335,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCreatedTime() {
       createdTime_ = getDefaultInstance().getCreatedTime();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -2517,7 +2353,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       createdTime_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -2577,7 +2413,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       updateTime_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -2591,7 +2427,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUpdateTime() {
       updateTime_ = getDefaultInstance().getUpdateTime();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -2609,7 +2445,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       updateTime_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

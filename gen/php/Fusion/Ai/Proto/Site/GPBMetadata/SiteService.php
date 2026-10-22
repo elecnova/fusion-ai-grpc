@@ -20,7 +20,7 @@ class SiteService
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         \Fusion\Ai\Proto\Site\GPBMetadata\SiteMessage::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xC3\x03\x0A\x17site/site_service.proto\x12\x14fusion.ai.proto.site\x1A\x17google/api/client.proto\x1A\x1Bgoogle/protobuf/empty.proto\x1A\x17site/site_message.proto2}\x0A\x0BSiteService\x12n\x0A\x0ACreateSite\x12'.fusion.ai.proto.site.CreateSiteRequest\x1A\x16.google.protobuf.Empty\"\x1F\xDAA\x01*\x82\xD3\xE4\x93\x02\x15\"\x10/3rd-api/v2/site:\x01*B\xBB\x01\x0A\x18com.fusion.ai.proto.siteB\x10SiteServiceProtoP\x01Z\x19fusion.ai.proto.site;site\xA2\x02\x04FAPS\xAA\x02\x14Fusion.Ai.Proto.Site\xCA\x02\x14Fusion\\Ai\\Proto\\Site\xE2\x02 Fusion\\Ai\\Proto\\Site\\GPBMetadata\xEA\x02\x17Fusion::Ai::Proto::Siteb\x06proto3"
+            "\x0A\xD7\x03\x0A\x17site/site_service.proto\x12\x14fusion.ai.proto.site\x1A\x17google/api/client.proto\x1A\x1Bgoogle/protobuf/empty.proto\x1A\x17site/site_message.proto2\x90\x01\x0A\x0BSiteService\x12\x80\x01\x0A\x0ACreateSite\x12'.fusion.ai.proto.site.CreateSiteRequest\x1A(.fusion.ai.proto.site.CreateSiteResponse\"\x1F\xDAA\x01*\x82\xD3\xE4\x93\x02\x15\"\x10/3rd-api/v1/site:\x01*B\xBB\x01\x0A\x18com.fusion.ai.proto.siteB\x10SiteServiceProtoP\x01Z\x19fusion.ai.proto.site;site\xA2\x02\x04FAPS\xAA\x02\x14Fusion.Ai.Proto.Site\xCA\x02\x14Fusion\\Ai\\Proto\\Site\xE2\x02 Fusion\\Ai\\Proto\\Site\\GPBMetadata\xEA\x02\x17Fusion::Ai::Proto::Siteb\x06proto3"
         , true);
 
         static::$is_initialized = true;

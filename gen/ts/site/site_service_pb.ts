@@ -15,16 +15,15 @@ import type { GenFile, GenService } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_google_api_annotations } from "../google/api/annotations_pb";
 import { file_google_api_client } from "../google/api/client_pb";
-import type { EmptySchema } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_empty } from "@bufbuild/protobuf/wkt";
-import type { CreateSiteRequestSchema } from "./site_message_pb";
+import type { CreateSiteRequestSchema, CreateSiteResponseSchema } from "./site_message_pb";
 import { file_site_site_message } from "./site_message_pb";
 
 /**
  * Describes the file site/site_service.proto.
  */
 export const file_site_site_service: GenFile = /*@__PURE__*/
-  fileDesc("ChdzaXRlL3NpdGVfc2VydmljZS5wcm90bxIUZnVzaW9uLmFpLnByb3RvLnNpdGUyfQoLU2l0ZVNlcnZpY2USbgoKQ3JlYXRlU2l0ZRInLmZ1c2lvbi5haS5wcm90by5zaXRlLkNyZWF0ZVNpdGVSZXF1ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Ih/aQQEqgtPkkwIVOgEqIhAvM3JkLWFwaS92Mi9zaXRlQrsBChhjb20uZnVzaW9uLmFpLnByb3RvLnNpdGVCEFNpdGVTZXJ2aWNlUHJvdG9QAVoZZnVzaW9uLmFpLnByb3RvLnNpdGU7c2l0ZaICBEZBUFOqAhRGdXNpb24uQWkuUHJvdG8uU2l0ZcoCFEZ1c2lvblxBaVxQcm90b1xTaXRl4gIgRnVzaW9uXEFpXFByb3RvXFNpdGVcR1BCTWV0YWRhdGHqAhdGdXNpb246OkFpOjpQcm90bzo6U2l0ZWIGcHJvdG8z", [file_google_api_annotations, file_google_api_client, file_google_protobuf_empty, file_site_site_message]);
+  fileDesc("ChdzaXRlL3NpdGVfc2VydmljZS5wcm90bxIUZnVzaW9uLmFpLnByb3RvLnNpdGUykAEKC1NpdGVTZXJ2aWNlEoABCgpDcmVhdGVTaXRlEicuZnVzaW9uLmFpLnByb3RvLnNpdGUuQ3JlYXRlU2l0ZVJlcXVlc3QaKC5mdXNpb24uYWkucHJvdG8uc2l0ZS5DcmVhdGVTaXRlUmVzcG9uc2UiH9pBASqC0+STAhU6ASoiEC8zcmQtYXBpL3YxL3NpdGVCuwEKGGNvbS5mdXNpb24uYWkucHJvdG8uc2l0ZUIQU2l0ZVNlcnZpY2VQcm90b1ABWhlmdXNpb24uYWkucHJvdG8uc2l0ZTtzaXRlogIERkFQU6oCFEZ1c2lvbi5BaS5Qcm90by5TaXRlygIURnVzaW9uXEFpXFByb3RvXFNpdGXiAiBGdXNpb25cQWlcUHJvdG9cU2l0ZVxHUEJNZXRhZGF0YeoCF0Z1c2lvbjo6QWk6OlByb3RvOjpTaXRlYgZwcm90bzM", [file_google_api_annotations, file_google_api_client, file_google_protobuf_empty, file_site_site_message]);
 
 /**
  * Package site_service 场站服务接口定义
@@ -33,14 +32,14 @@ export const file_site_site_service: GenFile = /*@__PURE__*/
  */
 export const SiteService: GenService<{
   /**
-   * 创建场站
+   * 场站注册-首次注册
    *
    * @generated from rpc fusion.ai.proto.site.SiteService.CreateSite
    */
   createSite: {
     methodKind: "unary";
     input: typeof CreateSiteRequestSchema;
-    output: typeof EmptySchema;
+    output: typeof CreateSiteResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_site_site_service, 0);

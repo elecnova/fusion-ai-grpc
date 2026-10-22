@@ -28,7 +28,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from site import site_message_pb2 as site_dot_site__message__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17site/site_service.proto\x12\x14\x66usion.ai.proto.site\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x17site/site_message.proto2}\n\x0bSiteService\x12n\n\nCreateSite\x12\'.fusion.ai.proto.site.CreateSiteRequest\x1a\x16.google.protobuf.Empty\"\x1f\xda\x41\x01*\x82\xd3\xe4\x93\x02\x15\"\x10/3rd-api/v2/site:\x01*B\xbb\x01\n\x18\x63om.fusion.ai.proto.siteB\x10SiteServiceProtoP\x01Z\x19\x66usion.ai.proto.site;site\xa2\x02\x04\x46\x41PS\xaa\x02\x14\x46usion.Ai.Proto.Site\xca\x02\x14\x46usion\\Ai\\Proto\\Site\xe2\x02 Fusion\\Ai\\Proto\\Site\\GPBMetadata\xea\x02\x17\x46usion::Ai::Proto::Siteb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17site/site_service.proto\x12\x14\x66usion.ai.proto.site\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x17site/site_message.proto2\x90\x01\n\x0bSiteService\x12\x80\x01\n\nCreateSite\x12\'.fusion.ai.proto.site.CreateSiteRequest\x1a(.fusion.ai.proto.site.CreateSiteResponse\"\x1f\xda\x41\x01*\x82\xd3\xe4\x93\x02\x15\"\x10/3rd-api/v1/site:\x01*B\xbb\x01\n\x18\x63om.fusion.ai.proto.siteB\x10SiteServiceProtoP\x01Z\x19\x66usion.ai.proto.site;site\xa2\x02\x04\x46\x41PS\xaa\x02\x14\x46usion.Ai.Proto.Site\xca\x02\x14\x46usion\\Ai\\Proto\\Site\xe2\x02 Fusion\\Ai\\Proto\\Site\\GPBMetadata\xea\x02\x17\x46usion::Ai::Proto::Siteb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,7 +37,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\030com.fusion.ai.proto.siteB\020SiteServiceProtoP\001Z\031fusion.ai.proto.site;site\242\002\004FAPS\252\002\024Fusion.Ai.Proto.Site\312\002\024Fusion\\Ai\\Proto\\Site\342\002 Fusion\\Ai\\Proto\\Site\\GPBMetadata\352\002\027Fusion::Ai::Proto::Site'
   _globals['_SITESERVICE'].methods_by_name['CreateSite']._loaded_options = None
-  _globals['_SITESERVICE'].methods_by_name['CreateSite']._serialized_options = b'\332A\001*\202\323\344\223\002\025\"\020/3rd-api/v2/site:\001*'
-  _globals['_SITESERVICE']._serialized_start=158
-  _globals['_SITESERVICE']._serialized_end=283
+  _globals['_SITESERVICE'].methods_by_name['CreateSite']._serialized_options = b'\332A\001*\202\323\344\223\002\025\"\020/3rd-api/v1/site:\001*'
+  _globals['_SITESERVICE']._serialized_start=159
+  _globals['_SITESERVICE']._serialized_end=303
 # @@protoc_insertion_point(module_scope)

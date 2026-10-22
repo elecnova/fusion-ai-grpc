@@ -20,7 +20,6 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -38,8 +37,8 @@ const (
 //
 // Package site_service 场站服务接口定义
 type SiteServiceClient interface {
-	// 创建场站
-	CreateSite(ctx context.Context, in *CreateSiteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// 场站注册-首次注册
+	CreateSite(ctx context.Context, in *CreateSiteRequest, opts ...grpc.CallOption) (*CreateSiteResponse, error)
 }
 
 type siteServiceClient struct {
@@ -50,9 +49,9 @@ func NewSiteServiceClient(cc grpc.ClientConnInterface) SiteServiceClient {
 	return &siteServiceClient{cc}
 }
 
-func (c *siteServiceClient) CreateSite(ctx context.Context, in *CreateSiteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *siteServiceClient) CreateSite(ctx context.Context, in *CreateSiteRequest, opts ...grpc.CallOption) (*CreateSiteResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(emptypb.Empty)
+	out := new(CreateSiteResponse)
 	err := c.cc.Invoke(ctx, SiteService_CreateSite_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -66,8 +65,8 @@ func (c *siteServiceClient) CreateSite(ctx context.Context, in *CreateSiteReques
 //
 // Package site_service 场站服务接口定义
 type SiteServiceServer interface {
-	// 创建场站
-	CreateSite(context.Context, *CreateSiteRequest) (*emptypb.Empty, error)
+	// 场站注册-首次注册
+	CreateSite(context.Context, *CreateSiteRequest) (*CreateSiteResponse, error)
 	mustEmbedUnimplementedSiteServiceServer()
 }
 
@@ -78,7 +77,7 @@ type SiteServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedSiteServiceServer struct{}
 
-func (UnimplementedSiteServiceServer) CreateSite(context.Context, *CreateSiteRequest) (*emptypb.Empty, error) {
+func (UnimplementedSiteServiceServer) CreateSite(context.Context, *CreateSiteRequest) (*CreateSiteResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateSite not implemented")
 }
 func (UnimplementedSiteServiceServer) mustEmbedUnimplementedSiteServiceServer() {}
