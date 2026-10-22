@@ -67,31 +67,31 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 已保存经度，单位：度
      *
-     * Generated from protobuf field <code>optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {</code>
      */
     protected $longitude = null;
     /**
      * 已保存纬度，单位：度
      *
-     * Generated from protobuf field <code>optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {</code>
      */
     protected $latitude = null;
     /**
      * 光伏组件倾角，单位：度
      *
-     * Generated from protobuf field <code>optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
      */
     protected $tilt_deg = null;
     /**
      * 光伏组件方位角，单位：度
      *
-     * Generated from protobuf field <code>optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
      */
     protected $azimuth_deg = null;
     /**
      * 光伏额定功率，单位：kW；非适用业务可不返回
      *
-     * Generated from protobuf field <code>optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {</code>
      */
     protected $rated_p = null;
     /**
@@ -402,7 +402,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 已保存经度，单位：度
      *
-     * Generated from protobuf field <code>optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getLongitude()
@@ -423,7 +423,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 已保存经度，单位：度
      *
-     * Generated from protobuf field <code>optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -437,7 +437,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 已保存纬度，单位：度
      *
-     * Generated from protobuf field <code>optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getLatitude()
@@ -458,7 +458,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 已保存纬度，单位：度
      *
-     * Generated from protobuf field <code>optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -472,7 +472,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件倾角，单位：度
      *
-     * Generated from protobuf field <code>optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getTiltDeg()
@@ -493,7 +493,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件倾角，单位：度
      *
-     * Generated from protobuf field <code>optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -507,7 +507,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件方位角，单位：度
      *
-     * Generated from protobuf field <code>optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getAzimuthDeg()
@@ -528,7 +528,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件方位角，单位：度
      *
-     * Generated from protobuf field <code>optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -542,7 +542,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 光伏额定功率，单位：kW；非适用业务可不返回
      *
-     * Generated from protobuf field <code>optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getRatedP()
@@ -563,7 +563,7 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     /**
      * 光伏额定功率，单位：kW；非适用业务可不返回
      *
-     * Generated from protobuf field <code>optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */

@@ -656,54 +656,54 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   ::std::string* PROTOBUF_NONNULL _internal_mutable_source_attr();
 
   public:
-  // float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+  // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
   void clear_longitude() ;
-  [[nodiscard]] float longitude() const;
-  void set_longitude(float value);
+  [[nodiscard]] double longitude() const;
+  void set_longitude(double value);
 
   private:
-  float _internal_longitude() const;
-  void _internal_set_longitude(float value);
+  double _internal_longitude() const;
+  void _internal_set_longitude(double value);
 
   public:
-  // float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+  // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
   void clear_latitude() ;
-  [[nodiscard]] float latitude() const;
-  void set_latitude(float value);
+  [[nodiscard]] double latitude() const;
+  void set_latitude(double value);
 
   private:
-  float _internal_latitude() const;
-  void _internal_set_latitude(float value);
+  double _internal_latitude() const;
+  void _internal_set_latitude(double value);
 
   public:
-  // float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+  // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
   void clear_tilt_deg() ;
-  [[nodiscard]] float tilt_deg() const;
-  void set_tilt_deg(float value);
+  [[nodiscard]] double tilt_deg() const;
+  void set_tilt_deg(double value);
 
   private:
-  float _internal_tilt_deg() const;
-  void _internal_set_tilt_deg(float value);
+  double _internal_tilt_deg() const;
+  void _internal_set_tilt_deg(double value);
 
   public:
-  // float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
   void clear_azimuth_deg() ;
-  [[nodiscard]] float azimuth_deg() const;
-  void set_azimuth_deg(float value);
+  [[nodiscard]] double azimuth_deg() const;
+  void set_azimuth_deg(double value);
 
   private:
-  float _internal_azimuth_deg() const;
-  void _internal_set_azimuth_deg(float value);
+  double _internal_azimuth_deg() const;
+  void _internal_set_azimuth_deg(double value);
 
   public:
-  // float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+  // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
   void clear_rated_p() ;
-  [[nodiscard]] float rated_p() const;
-  void set_rated_p(float value);
+  [[nodiscard]] double rated_p() const;
+  void set_rated_p(double value);
 
   private:
-  float _internal_rated_p() const;
-  void _internal_set_rated_p(float value);
+  double _internal_rated_p() const;
+  void _internal_set_rated_p(double value);
 
   public:
   // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
@@ -775,11 +775,11 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
     ::google::protobuf::internal::ArenaStringPtr site_name_;
     ::google::protobuf::internal::ArenaStringPtr timezone_;
     ::google::protobuf::internal::ArenaStringPtr source_attr_;
-    float longitude_;
-    float latitude_;
-    float tilt_deg_;
-    float azimuth_deg_;
-    float rated_p_;
+    double longitude_;
+    double latitude_;
+    double tilt_deg_;
+    double azimuth_deg_;
+    double rated_p_;
     ::int32_t data_source_;
     ::int32_t operation_;
     ::int32_t hisdays_;
@@ -1144,59 +1144,59 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::go
   ::std::string* PROTOBUF_NONNULL _internal_mutable_updated_at();
 
   public:
-  // optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
+  // optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
   [[nodiscard]] bool has_longitude() const;
   void clear_longitude() ;
-  [[nodiscard]] float longitude() const;
-  void set_longitude(float value);
+  [[nodiscard]] double longitude() const;
+  void set_longitude(double value);
 
   private:
-  float _internal_longitude() const;
-  void _internal_set_longitude(float value);
+  double _internal_longitude() const;
+  void _internal_set_longitude(double value);
 
   public:
-  // optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
+  // optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
   [[nodiscard]] bool has_latitude() const;
   void clear_latitude() ;
-  [[nodiscard]] float latitude() const;
-  void set_latitude(float value);
+  [[nodiscard]] double latitude() const;
+  void set_latitude(double value);
 
   private:
-  float _internal_latitude() const;
-  void _internal_set_latitude(float value);
+  double _internal_latitude() const;
+  void _internal_set_latitude(double value);
 
   public:
-  // optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
+  // optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
   [[nodiscard]] bool has_tilt_deg() const;
   void clear_tilt_deg() ;
-  [[nodiscard]] float tilt_deg() const;
-  void set_tilt_deg(float value);
+  [[nodiscard]] double tilt_deg() const;
+  void set_tilt_deg(double value);
 
   private:
-  float _internal_tilt_deg() const;
-  void _internal_set_tilt_deg(float value);
+  double _internal_tilt_deg() const;
+  void _internal_set_tilt_deg(double value);
 
   public:
-  // optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  // optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
   [[nodiscard]] bool has_azimuth_deg() const;
   void clear_azimuth_deg() ;
-  [[nodiscard]] float azimuth_deg() const;
-  void set_azimuth_deg(float value);
+  [[nodiscard]] double azimuth_deg() const;
+  void set_azimuth_deg(double value);
 
   private:
-  float _internal_azimuth_deg() const;
-  void _internal_set_azimuth_deg(float value);
+  double _internal_azimuth_deg() const;
+  void _internal_set_azimuth_deg(double value);
 
   public:
-  // optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
+  // optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
   [[nodiscard]] bool has_rated_p() const;
   void clear_rated_p() ;
-  [[nodiscard]] float rated_p() const;
-  void set_rated_p(float value);
+  [[nodiscard]] double rated_p() const;
+  void set_rated_p(double value);
 
   private:
-  float _internal_rated_p() const;
-  void _internal_set_rated_p(float value);
+  double _internal_rated_p() const;
+  void _internal_set_rated_p(double value);
 
   public:
   // int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {
@@ -1276,11 +1276,11 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::go
     ::google::protobuf::internal::ArenaStringPtr source_attr_;
     ::google::protobuf::internal::ArenaStringPtr created_at_;
     ::google::protobuf::internal::ArenaStringPtr updated_at_;
-    float longitude_;
-    float latitude_;
-    float tilt_deg_;
-    float azimuth_deg_;
-    float rated_p_;
+    double longitude_;
+    double latitude_;
+    double tilt_deg_;
+    double azimuth_deg_;
+    double rated_p_;
     ::int32_t data_source_;
     ::int32_t operation_;
     ::int32_t hisdays_;
@@ -4213,122 +4213,122 @@ inline void UpdateSiteRequest::set_allocated_timezone(::std::string* PROTOBUF_NU
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.UpdateSiteRequest.timezone)
 }
 
-// float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+// double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
 inline void UpdateSiteRequest::clear_longitude() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.longitude_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
 }
-inline float UpdateSiteRequest::longitude() const {
+inline double UpdateSiteRequest::longitude() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.UpdateSiteRequest.longitude)
   return _internal_longitude();
 }
-inline void UpdateSiteRequest::set_longitude(float value) {
+inline void UpdateSiteRequest::set_longitude(double value) {
   _internal_set_longitude(value);
   SetHasBit(_impl_._has_bits_[0], 0x00000020U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.UpdateSiteRequest.longitude)
 }
-inline float UpdateSiteRequest::_internal_longitude() const {
+inline double UpdateSiteRequest::_internal_longitude() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.longitude_;
 }
-inline void UpdateSiteRequest::_internal_set_longitude(float value) {
+inline void UpdateSiteRequest::_internal_set_longitude(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.longitude_ = value;
 }
 
-// float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+// double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
 inline void UpdateSiteRequest::clear_latitude() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.latitude_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
 }
-inline float UpdateSiteRequest::latitude() const {
+inline double UpdateSiteRequest::latitude() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.UpdateSiteRequest.latitude)
   return _internal_latitude();
 }
-inline void UpdateSiteRequest::set_latitude(float value) {
+inline void UpdateSiteRequest::set_latitude(double value) {
   _internal_set_latitude(value);
   SetHasBit(_impl_._has_bits_[0], 0x00000040U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.UpdateSiteRequest.latitude)
 }
-inline float UpdateSiteRequest::_internal_latitude() const {
+inline double UpdateSiteRequest::_internal_latitude() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.latitude_;
 }
-inline void UpdateSiteRequest::_internal_set_latitude(float value) {
+inline void UpdateSiteRequest::_internal_set_latitude(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.latitude_ = value;
 }
 
-// float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+// double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
 inline void UpdateSiteRequest::clear_tilt_deg() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tilt_deg_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
 }
-inline float UpdateSiteRequest::tilt_deg() const {
+inline double UpdateSiteRequest::tilt_deg() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.UpdateSiteRequest.tilt_deg)
   return _internal_tilt_deg();
 }
-inline void UpdateSiteRequest::set_tilt_deg(float value) {
+inline void UpdateSiteRequest::set_tilt_deg(double value) {
   _internal_set_tilt_deg(value);
   SetHasBit(_impl_._has_bits_[0], 0x00000080U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.UpdateSiteRequest.tilt_deg)
 }
-inline float UpdateSiteRequest::_internal_tilt_deg() const {
+inline double UpdateSiteRequest::_internal_tilt_deg() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.tilt_deg_;
 }
-inline void UpdateSiteRequest::_internal_set_tilt_deg(float value) {
+inline void UpdateSiteRequest::_internal_set_tilt_deg(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tilt_deg_ = value;
 }
 
-// float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+// double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
 inline void UpdateSiteRequest::clear_azimuth_deg() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.azimuth_deg_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
 }
-inline float UpdateSiteRequest::azimuth_deg() const {
+inline double UpdateSiteRequest::azimuth_deg() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.UpdateSiteRequest.azimuth_deg)
   return _internal_azimuth_deg();
 }
-inline void UpdateSiteRequest::set_azimuth_deg(float value) {
+inline void UpdateSiteRequest::set_azimuth_deg(double value) {
   _internal_set_azimuth_deg(value);
   SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.UpdateSiteRequest.azimuth_deg)
 }
-inline float UpdateSiteRequest::_internal_azimuth_deg() const {
+inline double UpdateSiteRequest::_internal_azimuth_deg() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.azimuth_deg_;
 }
-inline void UpdateSiteRequest::_internal_set_azimuth_deg(float value) {
+inline void UpdateSiteRequest::_internal_set_azimuth_deg(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.azimuth_deg_ = value;
 }
 
-// float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+// double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
 inline void UpdateSiteRequest::clear_rated_p() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rated_p_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
 }
-inline float UpdateSiteRequest::rated_p() const {
+inline double UpdateSiteRequest::rated_p() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.UpdateSiteRequest.rated_p)
   return _internal_rated_p();
 }
-inline void UpdateSiteRequest::set_rated_p(float value) {
+inline void UpdateSiteRequest::set_rated_p(double value) {
   _internal_set_rated_p(value);
   SetHasBit(_impl_._has_bits_[0], 0x00000200U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.UpdateSiteRequest.rated_p)
 }
-inline float UpdateSiteRequest::_internal_rated_p() const {
+inline double UpdateSiteRequest::_internal_rated_p() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.rated_p_;
 }
-inline void UpdateSiteRequest::_internal_set_rated_p(float value) {
+inline void UpdateSiteRequest::_internal_set_rated_p(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rated_p_ = value;
 }
@@ -5876,7 +5876,7 @@ inline void GetSiteResponse::set_allocated_timezone(::std::string* PROTOBUF_NULL
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.timezone)
 }
 
-// optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
+// optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
 inline bool GetSiteResponse::has_longitude() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00001000U);
   return value;
@@ -5886,25 +5886,25 @@ inline void GetSiteResponse::clear_longitude() {
   _impl_.longitude_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
 }
-inline float GetSiteResponse::longitude() const {
+inline double GetSiteResponse::longitude() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.longitude)
   return _internal_longitude();
 }
-inline void GetSiteResponse::set_longitude(float value) {
+inline void GetSiteResponse::set_longitude(double value) {
   _internal_set_longitude(value);
   SetHasBit(_impl_._has_bits_[0], 0x00001000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.longitude)
 }
-inline float GetSiteResponse::_internal_longitude() const {
+inline double GetSiteResponse::_internal_longitude() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.longitude_;
 }
-inline void GetSiteResponse::_internal_set_longitude(float value) {
+inline void GetSiteResponse::_internal_set_longitude(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.longitude_ = value;
 }
 
-// optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
+// optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
 inline bool GetSiteResponse::has_latitude() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00002000U);
   return value;
@@ -5914,25 +5914,25 @@ inline void GetSiteResponse::clear_latitude() {
   _impl_.latitude_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00002000U);
 }
-inline float GetSiteResponse::latitude() const {
+inline double GetSiteResponse::latitude() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.latitude)
   return _internal_latitude();
 }
-inline void GetSiteResponse::set_latitude(float value) {
+inline void GetSiteResponse::set_latitude(double value) {
   _internal_set_latitude(value);
   SetHasBit(_impl_._has_bits_[0], 0x00002000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.latitude)
 }
-inline float GetSiteResponse::_internal_latitude() const {
+inline double GetSiteResponse::_internal_latitude() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.latitude_;
 }
-inline void GetSiteResponse::_internal_set_latitude(float value) {
+inline void GetSiteResponse::_internal_set_latitude(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.latitude_ = value;
 }
 
-// optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
+// optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
 inline bool GetSiteResponse::has_tilt_deg() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00004000U);
   return value;
@@ -5942,25 +5942,25 @@ inline void GetSiteResponse::clear_tilt_deg() {
   _impl_.tilt_deg_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00004000U);
 }
-inline float GetSiteResponse::tilt_deg() const {
+inline double GetSiteResponse::tilt_deg() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.tilt_deg)
   return _internal_tilt_deg();
 }
-inline void GetSiteResponse::set_tilt_deg(float value) {
+inline void GetSiteResponse::set_tilt_deg(double value) {
   _internal_set_tilt_deg(value);
   SetHasBit(_impl_._has_bits_[0], 0x00004000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.tilt_deg)
 }
-inline float GetSiteResponse::_internal_tilt_deg() const {
+inline double GetSiteResponse::_internal_tilt_deg() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.tilt_deg_;
 }
-inline void GetSiteResponse::_internal_set_tilt_deg(float value) {
+inline void GetSiteResponse::_internal_set_tilt_deg(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tilt_deg_ = value;
 }
 
-// optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
+// optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
 inline bool GetSiteResponse::has_azimuth_deg() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00008000U);
   return value;
@@ -5970,25 +5970,25 @@ inline void GetSiteResponse::clear_azimuth_deg() {
   _impl_.azimuth_deg_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00008000U);
 }
-inline float GetSiteResponse::azimuth_deg() const {
+inline double GetSiteResponse::azimuth_deg() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.azimuth_deg)
   return _internal_azimuth_deg();
 }
-inline void GetSiteResponse::set_azimuth_deg(float value) {
+inline void GetSiteResponse::set_azimuth_deg(double value) {
   _internal_set_azimuth_deg(value);
   SetHasBit(_impl_._has_bits_[0], 0x00008000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.azimuth_deg)
 }
-inline float GetSiteResponse::_internal_azimuth_deg() const {
+inline double GetSiteResponse::_internal_azimuth_deg() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.azimuth_deg_;
 }
-inline void GetSiteResponse::_internal_set_azimuth_deg(float value) {
+inline void GetSiteResponse::_internal_set_azimuth_deg(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.azimuth_deg_ = value;
 }
 
-// optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
+// optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
 inline bool GetSiteResponse::has_rated_p() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00010000U);
   return value;
@@ -5998,20 +5998,20 @@ inline void GetSiteResponse::clear_rated_p() {
   _impl_.rated_p_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00010000U);
 }
-inline float GetSiteResponse::rated_p() const {
+inline double GetSiteResponse::rated_p() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.rated_p)
   return _internal_rated_p();
 }
-inline void GetSiteResponse::set_rated_p(float value) {
+inline void GetSiteResponse::set_rated_p(double value) {
   _internal_set_rated_p(value);
   SetHasBit(_impl_._has_bits_[0], 0x00010000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.rated_p)
 }
-inline float GetSiteResponse::_internal_rated_p() const {
+inline double GetSiteResponse::_internal_rated_p() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.rated_p_;
 }
-inline void GetSiteResponse::_internal_set_rated_p(float value) {
+inline void GetSiteResponse::_internal_set_rated_p(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rated_p_ = value;
 }

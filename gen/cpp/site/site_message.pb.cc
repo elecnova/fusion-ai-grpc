@@ -281,25 +281,25 @@ constexpr UpdateSiteRequest::ParseTableT_ UpdateSiteRequest::InternalGeneratePar
       {::_pbi::TcParser::FastUS1,
        {26, 3, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.timezone_)}},
-      // float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {37, 5, 0,
+      // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {33, 5, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.longitude_)}},
-      // float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {45, 6, 0,
+      // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {41, 6, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.latitude_)}},
-      // float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {53, 7, 0,
+      // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {49, 7, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.tilt_deg_)}},
-      // float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {61, 8, 0,
+      // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {57, 8, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.azimuth_deg_)}},
-      // float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {69, 9, 0,
+      // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {65, 9, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.rated_p_)}},
       // repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {
       {::_pbi::TcParser::FastV32P1,
@@ -332,16 +332,16 @@ constexpr UpdateSiteRequest::ParseTableT_ UpdateSiteRequest::InternalGeneratePar
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.site_name_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
       // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.timezone_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.longitude_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-      // float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.latitude_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-      // float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.tilt_deg_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-      // float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.azimuth_deg_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-      // float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.rated_p_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.longitude_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.latitude_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.tilt_deg_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.azimuth_deg_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.rated_p_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
       // repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.granularity_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
       // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
@@ -546,25 +546,25 @@ constexpr GetSiteResponse::ParseTableT_ GetSiteResponse::InternalGenerateParseTa
       {::_pbi::TcParser::FastUS1,
        {66, 8, 0,
         PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.timezone_)}},
-      // optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {77, 12, 0,
+      // optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {73, 12, 0,
         PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.longitude_)}},
-      // optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {85, 13, 0,
+      // optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {81, 13, 0,
         PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.latitude_)}},
-      // optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {93, 14, 0,
+      // optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {89, 14, 0,
         PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.tilt_deg_)}},
-      // optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {101, 15, 0,
+      // optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {97, 15, 0,
         PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.azimuth_deg_)}},
-      // optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {109, 16, 0,
+      // optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {105, 16, 0,
         PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.rated_p_)}},
       // repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {
       {::_pbi::TcParser::FastV32P1,
@@ -624,16 +624,16 @@ constexpr GetSiteResponse::ParseTableT_ GetSiteResponse::InternalGenerateParseTa
       {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.site_name_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
       // string timezone = 8 [json_name = "timezone", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.timezone_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.longitude_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-      // optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.latitude_), _Internal::kHasBitsOffset + 13, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-      // optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.tilt_deg_), _Internal::kHasBitsOffset + 14, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-      // optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.azimuth_deg_), _Internal::kHasBitsOffset + 15, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-      // optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.rated_p_), _Internal::kHasBitsOffset + 16, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.longitude_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.latitude_), _Internal::kHasBitsOffset + 13, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.tilt_deg_), _Internal::kHasBitsOffset + 14, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.azimuth_deg_), _Internal::kHasBitsOffset + 15, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.rated_p_), _Internal::kHasBitsOffset + 16, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
       // repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.granularity_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
       // int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {
@@ -2139,69 +2139,71 @@ const char descriptor_table_protodef_site_2fsite_5fmessage_2eproto[] ABSL_ATTRIB
     " \001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_i"
     "d\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\ncre"
     "ated_at\030\005 \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nup"
-    "dated_at\030\006 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"\335\004\n\021"
+    "dated_at\030\006 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"\201\005\n\021"
     "UpdateSiteRequest\0221\n\017registration_id\030\001 \001"
     "(\tB\007\272H\004r\002\020\001R\017registration_id\022&\n\tsite_nam"
     "e\030\002 \001(\tB\010\272H\005r\003\030\310\001R\tsite_name\022#\n\010timezone"
-    "\030\003 \001(\tB\007\272H\004r\002\030@R\010timezone\022-\n\tlongitude\030\004"
-    " \001(\002B\017\272H\014\n\n\035\000\0004C-\000\0004\303R\tlongitude\022+\n\010lati"
-    "tude\030\005 \001(\002B\017\272H\014\n\n\035\000\000\264B-\000\000\264\302R\010latitude\022+\n"
-    "\010tilt_deg\030\006 \001(\002B\017\272H\014\n\n\035\000\000\264B-\000\000\000\000R\010tilt_d"
-    "eg\0221\n\013azimuth_deg\030\007 \001(\002B\017\272H\014\n\n\025\000\000\264C-\000\000\000\000"
-    "R\013azimuth_deg\022$\n\007rated_p\030\010 \001(\002B\n\272H\007\n\005%\000\000"
-    "\000\000R\007rated_p\022.\n\013granularity\030\t \003(\005B\014\272H\t\222\001\006"
-    "\"\004\032\002 \000R\013granularity\022-\n\013data_source\030\n \001(\005"
-    "B\013\272H\010\032\0060\0010\0020\003R\013data_source\022*\n\013source_att"
-    "r\030\013 \001(\tB\010\272H\005r\003\030\200\020R\013source_attr\022\'\n\toperat"
-    "ion\030\014 \001(\005B\t\272H\006\032\0040\0010\002R\toperation\022&\n\007hisda"
-    "ys\030\r \001(\005B\007\272H\004\032\002 \000H\000R\007hisdays\210\001\001B\n\n\010_hisd"
-    "ays\"\347\001\n\022UpdateSiteResponse\022+\n\005state\030\001 \001("
-    "\tB\025\272H\022r\020R\007successR\005errorR\005state\022%\n\004code\030"
-    "\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007messag"
-    "e\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registratio"
-    "n_id\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\n"
-    "updated_at\030\005 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"F\n"
-    "\021DeleteSiteRequest\0221\n\017registration_id\030\001 "
-    "\001(\tB\007\272H\004r\002\020\001R\017registration_id\"\362\001\n\022Delete"
-    "SiteResponse\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007succ"
-    "essR\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n"
-    "^[0-9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002"
-    "\020\001R\007message\0221\n\017registration_id\030\004 \001(\tB\007\272H"
-    "\004r\002\020\001R\017registration_id\022\030\n\007deleted\030\005 \001(\010R"
-    "\007deleted\022\030\n\007changed\030\006 \001(\010R\007changed\"3\n\016Ge"
-    "tSiteRequest\022!\n\007site_id\030\001 \001(\tB\007\272H\004r\002\020\001R\007"
-    "site_id\"H\n\023GetSiteByRegRequest\0221\n\017regist"
-    "ration_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017registration_i"
-    "d\"\346\007\n\017GetSiteResponse\022+\n\005state\030\001 \001(\tB\025\272H"
-    "\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002 \001(\t"
-    "B\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003 \001"
-    "(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_id\030"
-    "\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022+\n\014servi"
-    "ce_type\030\005 \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007"
-    "site_id\030\006 \001(\tB\007\272H\004r\002\020\001R\007site_id\022&\n\tsite_"
-    "name\030\007 \001(\tB\010\272H\005r\003\030\310\001R\tsite_name\022%\n\010timez"
-    "one\030\010 \001(\tB\t\272H\006r\004\020\001\030@R\010timezone\0222\n\tlongit"
-    "ude\030\t \001(\002B\017\272H\014\n\n\035\000\0004C-\000\0004\303H\000R\tlongitude\210"
-    "\001\001\0220\n\010latitude\030\n \001(\002B\017\272H\014\n\n\035\000\000\264B-\000\000\264\302H\001R"
-    "\010latitude\210\001\001\0220\n\010tilt_deg\030\013 \001(\002B\017\272H\014\n\n\035\000\000"
-    "\264B-\000\000\000\000H\002R\010tilt_deg\210\001\001\0226\n\013azimuth_deg\030\014 "
-    "\001(\002B\017\272H\014\n\n\025\000\000\264C-\000\000\000\000H\003R\013azimuth_deg\210\001\001\022)"
-    "\n\007rated_p\030\r \001(\002B\n\272H\007\n\005%\000\000\000\000H\004R\007rated_p\210\001"
-    "\001\022.\n\013granularity\030\016 \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013gr"
-    "anularity\022-\n\013data_source\030\017 \001(\005B\013\272H\010\032\0060\0010"
-    "\0020\003R\013data_source\022*\n\013source_attr\030\020 \001(\tB\010\272"
-    "H\005r\003\030\200\020R\013source_attr\022,\n\toperation\030\021 \001(\005B"
-    "\t\272H\006\032\0040\0010\002H\005R\toperation\210\001\001\022&\n\007hisdays\030\022 "
-    "\001(\005B\007\272H\004\032\002 \000H\006R\007hisdays\210\001\001\022\'\n\ncreated_at"
-    "\030\023 \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nupdated_a"
-    "t\030\024 \001(\tB\007\272H\004r\002\020\001R\nupdated_atB\014\n\n_longitu"
-    "deB\013\n\t_latitudeB\013\n\t_tilt_degB\016\n\014_azimuth"
-    "_degB\n\n\010_rated_pB\014\n\n_operationB\n\n\010_hisda"
-    "ysB\273\001\n\030com.fusion.ai.proto.siteB\020SiteMes"
-    "sageProtoP\001Z\031fusion.ai.proto.site;site\242\002"
-    "\004FAPS\252\002\024Fusion.Ai.Proto.Site\312\002\024Fusion\\Ai"
-    "\\Proto\\Site\342\002 Fusion\\Ai\\Proto\\Site\\GPBMe"
-    "tadata\352\002\027Fusion::Ai::Proto::Siteb\006proto3"
+    "\030\003 \001(\tB\007\272H\004r\002\030@R\010timezone\0225\n\tlongitude\030\004"
+    " \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300R\tlongitude"
+    "\0223\n\010latitude\030\005 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000"
+    "\200V\300R\010latitude\0223\n\010tilt_deg\030\006 \001(\001B\027\272H\024\022\022\031\000"
+    "\000\000\000\000\200V@)\000\000\000\000\000\000\000\000R\010tilt_deg\0229\n\013azimuth_de"
+    "g\030\007 \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000R\013azimut"
+    "h_deg\022(\n\007rated_p\030\010 \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000R\007"
+    "rated_p\022.\n\013granularity\030\t \003(\005B\014\272H\t\222\001\006\"\004\032\002"
+    " \000R\013granularity\022-\n\013data_source\030\n \001(\005B\013\272H"
+    "\010\032\0060\0010\0020\003R\013data_source\022*\n\013source_attr\030\013 "
+    "\001(\tB\010\272H\005r\003\030\200\020R\013source_attr\022\'\n\toperation\030"
+    "\014 \001(\005B\t\272H\006\032\0040\0010\002R\toperation\022&\n\007hisdays\030\r"
+    " \001(\005B\007\272H\004\032\002 \000H\000R\007hisdays\210\001\001B\n\n\010_hisdays\""
+    "\347\001\n\022UpdateSiteResponse\022+\n\005state\030\001 \001(\tB\025\272"
+    "H\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002 \001("
+    "\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003 "
+    "\001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_id"
+    "\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\nupda"
+    "ted_at\030\005 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"F\n\021Del"
+    "eteSiteRequest\0221\n\017registration_id\030\001 \001(\tB"
+    "\007\272H\004r\002\020\001R\017registration_id\"\362\001\n\022DeleteSite"
+    "Response\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007successR"
+    "\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-"
+    "9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007"
+    "message\0221\n\017registration_id\030\004 \001(\tB\007\272H\004r\002\020"
+    "\001R\017registration_id\022\030\n\007deleted\030\005 \001(\010R\007del"
+    "eted\022\030\n\007changed\030\006 \001(\010R\007changed\"3\n\016GetSit"
+    "eRequest\022!\n\007site_id\030\001 \001(\tB\007\272H\004r\002\020\001R\007site"
+    "_id\"H\n\023GetSiteByRegRequest\0221\n\017registrati"
+    "on_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017registration_id\"\202\010"
+    "\n\017GetSiteResponse\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R"
+    "\007successR\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H"
+    "\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007"
+    "\272H\004r\002\020\001R\007message\0221\n\017registration_id\030\004 \001("
+    "\tB\007\272H\004r\002\020\001R\017registration_id\022+\n\014service_t"
+    "ype\030\005 \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007site"
+    "_id\030\006 \001(\tB\007\272H\004r\002\020\001R\007site_id\022&\n\tsite_name"
+    "\030\007 \001(\tB\010\272H\005r\003\030\310\001R\tsite_name\022%\n\010timezone\030"
+    "\010 \001(\tB\t\272H\006r\004\020\001\030@R\010timezone\0222\n\tlongitude\030"
+    "\t \001(\001B\017\272H\014\n\n\035\000\0004C-\000\0004\303H\000R\tlongitude\210\001\001\0228"
+    "\n\010latitude\030\n \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V"
+    "\300H\001R\010latitude\210\001\001\0228\n\010tilt_deg\030\013 \001(\001B\027\272H\024\022"
+    "\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\002R\010tilt_deg\210\001\001\022>\n\013az"
+    "imuth_deg\030\014 \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000"
+    "H\003R\013azimuth_deg\210\001\001\022-\n\007rated_p\030\r \001(\001B\016\272H\013"
+    "\022\t!\000\000\000\000\000\000\000\000H\004R\007rated_p\210\001\001\022.\n\013granularity"
+    "\030\016 \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013granularity\022-\n\013dat"
+    "a_source\030\017 \001(\005B\013\272H\010\032\0060\0010\0020\003R\013data_source"
+    "\022*\n\013source_attr\030\020 \001(\tB\010\272H\005r\003\030\200\020R\013source_"
+    "attr\022,\n\toperation\030\021 \001(\005B\t\272H\006\032\0040\0010\002H\005R\top"
+    "eration\210\001\001\022&\n\007hisdays\030\022 \001(\005B\007\272H\004\032\002 \000H\006R\007"
+    "hisdays\210\001\001\022\'\n\ncreated_at\030\023 \001(\tB\007\272H\004r\002\020\001R"
+    "\ncreated_at\022\'\n\nupdated_at\030\024 \001(\tB\007\272H\004r\002\020\001"
+    "R\nupdated_atB\014\n\n_longitudeB\013\n\t_latitudeB"
+    "\013\n\t_tilt_degB\016\n\014_azimuth_degB\n\n\010_rated_p"
+    "B\014\n\n_operationB\n\n\010_hisdaysB\273\001\n\030com.fusio"
+    "n.ai.proto.siteB\020SiteMessageProtoP\001Z\031fus"
+    "ion.ai.proto.site;site\242\002\004FAPS\252\002\024Fusion.A"
+    "i.Proto.Site\312\002\024Fusion\\Ai\\Proto\\Site\342\002 Fu"
+    "sion\\Ai\\Proto\\Site\\GPBMetadata\352\002\027Fusion:"
+    ":Ai::Proto::Siteb\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_site_2fsite_5fmessage_2eproto_deps[2] = {
@@ -2212,7 +2214,7 @@ static ::absl::once_flag descriptor_table_site_2fsite_5fmessage_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_site_2fsite_5fmessage_2eproto = {
     false,
     false,
-    3680,
+    3744,
     descriptor_table_protodef_site_2fsite_5fmessage_2eproto,
     "site/site_message.proto",
     &descriptor_table_site_2fsite_5fmessage_2eproto_once,
@@ -3434,47 +3436,47 @@ PROTOBUF_NOINLINE void UpdateSiteRequest::Clear() {
     }
   }
 
-  // float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+  // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-    if (::absl::bit_cast<::uint32_t>(this_._internal_longitude()) != 0) {
+    if (::absl::bit_cast<::uint64_t>(this_._internal_longitude()) != 0) {
       target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
           4, this_._internal_longitude(), target);
     }
   }
 
-  // float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+  // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-    if (::absl::bit_cast<::uint32_t>(this_._internal_latitude()) != 0) {
+    if (::absl::bit_cast<::uint64_t>(this_._internal_latitude()) != 0) {
       target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
           5, this_._internal_latitude(), target);
     }
   }
 
-  // float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+  // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000080U)) {
-    if (::absl::bit_cast<::uint32_t>(this_._internal_tilt_deg()) != 0) {
+    if (::absl::bit_cast<::uint64_t>(this_._internal_tilt_deg()) != 0) {
       target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
           6, this_._internal_tilt_deg(), target);
     }
   }
 
-  // float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000100U)) {
-    if (::absl::bit_cast<::uint32_t>(this_._internal_azimuth_deg()) != 0) {
+    if (::absl::bit_cast<::uint64_t>(this_._internal_azimuth_deg()) != 0) {
       target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
           7, this_._internal_azimuth_deg(), target);
     }
   }
 
-  // float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+  // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000200U)) {
-    if (::absl::bit_cast<::uint32_t>(this_._internal_rated_p()) != 0) {
+    if (::absl::bit_cast<::uint64_t>(this_._internal_rated_p()) != 0) {
       target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
           8, this_._internal_rated_p(), target);
     }
   }
@@ -3584,36 +3586,36 @@ PROTOBUF_NOINLINE void UpdateSiteRequest::Clear() {
                                         this_._internal_source_attr());
       }
     }
-    // float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+    // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (::absl::bit_cast<::uint32_t>(this_._internal_longitude()) != 0) {
-        total_size += 5;
+      if (::absl::bit_cast<::uint64_t>(this_._internal_longitude()) != 0) {
+        total_size += 9;
       }
     }
-    // float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+    // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      if (::absl::bit_cast<::uint32_t>(this_._internal_latitude()) != 0) {
-        total_size += 5;
+      if (::absl::bit_cast<::uint64_t>(this_._internal_latitude()) != 0) {
+        total_size += 9;
       }
     }
-    // float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+    // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000080U)) {
-      if (::absl::bit_cast<::uint32_t>(this_._internal_tilt_deg()) != 0) {
-        total_size += 5;
+      if (::absl::bit_cast<::uint64_t>(this_._internal_tilt_deg()) != 0) {
+        total_size += 9;
       }
     }
   }
   if (BatchCheckHasBit(cached_has_bits, 0x00001f00U)) {
-    // float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+    // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000100U)) {
-      if (::absl::bit_cast<::uint32_t>(this_._internal_azimuth_deg()) != 0) {
-        total_size += 5;
+      if (::absl::bit_cast<::uint64_t>(this_._internal_azimuth_deg()) != 0) {
+        total_size += 9;
       }
     }
-    // float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+    // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000200U)) {
-      if (::absl::bit_cast<::uint32_t>(this_._internal_rated_p()) != 0) {
-        total_size += 5;
+      if (::absl::bit_cast<::uint64_t>(this_._internal_rated_p()) != 0) {
+        total_size += 9;
       }
     }
     // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
@@ -3694,29 +3696,29 @@ void UpdateSiteRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (::absl::bit_cast<::uint32_t>(from._internal_longitude()) != 0) {
+      if (::absl::bit_cast<::uint64_t>(from._internal_longitude()) != 0) {
         _this->_impl_.longitude_ = from._impl_.longitude_;
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      if (::absl::bit_cast<::uint32_t>(from._internal_latitude()) != 0) {
+      if (::absl::bit_cast<::uint64_t>(from._internal_latitude()) != 0) {
         _this->_impl_.latitude_ = from._impl_.latitude_;
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000080U)) {
-      if (::absl::bit_cast<::uint32_t>(from._internal_tilt_deg()) != 0) {
+      if (::absl::bit_cast<::uint64_t>(from._internal_tilt_deg()) != 0) {
         _this->_impl_.tilt_deg_ = from._impl_.tilt_deg_;
       }
     }
   }
   if (BatchCheckHasBit(cached_has_bits, 0x00001f00U)) {
     if (CheckHasBit(cached_has_bits, 0x00000100U)) {
-      if (::absl::bit_cast<::uint32_t>(from._internal_azimuth_deg()) != 0) {
+      if (::absl::bit_cast<::uint64_t>(from._internal_azimuth_deg()) != 0) {
         _this->_impl_.azimuth_deg_ = from._impl_.azimuth_deg_;
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000200U)) {
-      if (::absl::bit_cast<::uint32_t>(from._internal_rated_p()) != 0) {
+      if (::absl::bit_cast<::uint64_t>(from._internal_rated_p()) != 0) {
         _this->_impl_.rated_p_ = from._impl_.rated_p_;
       }
     }
@@ -5422,38 +5424,38 @@ PROTOBUF_NOINLINE void GetSiteResponse::Clear() {
     }
   }
 
-  // optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
+  // optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00001000U)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
         9, this_._internal_longitude(), target);
   }
 
-  // optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
+  // optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00002000U)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
         10, this_._internal_latitude(), target);
   }
 
-  // optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
+  // optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00004000U)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
         11, this_._internal_tilt_deg(), target);
   }
 
-  // optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  // optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00008000U)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
         12, this_._internal_azimuth_deg(), target);
   }
 
-  // optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
+  // optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00010000U)) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
         13, this_._internal_rated_p(), target);
   }
 
@@ -5544,7 +5546,7 @@ PROTOBUF_NOINLINE void GetSiteResponse::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += ::absl::popcount(0x0001f000U & cached_has_bits) * 5;
+  total_size += ::absl::popcount(0x0001f000U & cached_has_bits) * 9;
   if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
     // repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {

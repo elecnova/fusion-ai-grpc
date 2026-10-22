@@ -313,15 +313,15 @@ type UpdateSiteRequest struct {
 	// 场站时区，如 Asia/Shanghai
 	Timezone string `protobuf:"bytes,3,opt,name=timezone,proto3" json:"timezone,omitempty"`
 	// 场站经度，单位：度
-	Longitude float32 `protobuf:"fixed32,4,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	Longitude float64 `protobuf:"fixed64,4,opt,name=longitude,proto3" json:"longitude,omitempty"`
 	// 场站纬度，单位：度
-	Latitude float32 `protobuf:"fixed32,5,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Latitude float64 `protobuf:"fixed64,5,opt,name=latitude,proto3" json:"latitude,omitempty"`
 	// 光伏组件倾角，单位：度
-	TiltDeg float32 `protobuf:"fixed32,6,opt,name=tilt_deg,proto3" json:"tilt_deg,omitempty"`
+	TiltDeg float64 `protobuf:"fixed64,6,opt,name=tilt_deg,proto3" json:"tilt_deg,omitempty"`
 	// 光伏组件方位角，单位：度
-	AzimuthDeg float32 `protobuf:"fixed32,7,opt,name=azimuth_deg,proto3" json:"azimuth_deg,omitempty"`
+	AzimuthDeg float64 `protobuf:"fixed64,7,opt,name=azimuth_deg,proto3" json:"azimuth_deg,omitempty"`
 	// 光伏额定功率，单位：kW；非适用业务可不提供
-	RatedP float32 `protobuf:"fixed32,8,opt,name=rated_p,proto3" json:"rated_p,omitempty"`
+	RatedP float64 `protobuf:"fixed64,8,opt,name=rated_p,proto3" json:"rated_p,omitempty"`
 	// 预测步长列表，单位：分钟
 	Granularity []int32 `protobuf:"varint,9,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
 	// 数据源类型：1-pull，2-push，3-file
@@ -387,35 +387,35 @@ func (x *UpdateSiteRequest) GetTimezone() string {
 	return ""
 }
 
-func (x *UpdateSiteRequest) GetLongitude() float32 {
+func (x *UpdateSiteRequest) GetLongitude() float64 {
 	if x != nil {
 		return x.Longitude
 	}
 	return 0
 }
 
-func (x *UpdateSiteRequest) GetLatitude() float32 {
+func (x *UpdateSiteRequest) GetLatitude() float64 {
 	if x != nil {
 		return x.Latitude
 	}
 	return 0
 }
 
-func (x *UpdateSiteRequest) GetTiltDeg() float32 {
+func (x *UpdateSiteRequest) GetTiltDeg() float64 {
 	if x != nil {
 		return x.TiltDeg
 	}
 	return 0
 }
 
-func (x *UpdateSiteRequest) GetAzimuthDeg() float32 {
+func (x *UpdateSiteRequest) GetAzimuthDeg() float64 {
 	if x != nil {
 		return x.AzimuthDeg
 	}
 	return 0
 }
 
-func (x *UpdateSiteRequest) GetRatedP() float32 {
+func (x *UpdateSiteRequest) GetRatedP() float64 {
 	if x != nil {
 		return x.RatedP
 	}
@@ -787,15 +787,15 @@ type GetSiteResponse struct {
 	// 场站时区，如 Asia/Shanghai
 	Timezone string `protobuf:"bytes,8,opt,name=timezone,proto3" json:"timezone,omitempty"`
 	// 已保存经度，单位：度
-	Longitude *float32 `protobuf:"fixed32,9,opt,name=longitude,proto3,oneof" json:"longitude,omitempty"`
+	Longitude *float64 `protobuf:"fixed64,9,opt,name=longitude,proto3,oneof" json:"longitude,omitempty"`
 	// 已保存纬度，单位：度
-	Latitude *float32 `protobuf:"fixed32,10,opt,name=latitude,proto3,oneof" json:"latitude,omitempty"`
+	Latitude *float64 `protobuf:"fixed64,10,opt,name=latitude,proto3,oneof" json:"latitude,omitempty"`
 	// 光伏组件倾角，单位：度
-	TiltDeg *float32 `protobuf:"fixed32,11,opt,name=tilt_deg,proto3,oneof" json:"tilt_deg,omitempty"`
+	TiltDeg *float64 `protobuf:"fixed64,11,opt,name=tilt_deg,proto3,oneof" json:"tilt_deg,omitempty"`
 	// 光伏组件方位角，单位：度
-	AzimuthDeg *float32 `protobuf:"fixed32,12,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
+	AzimuthDeg *float64 `protobuf:"fixed64,12,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
 	// 光伏额定功率，单位：kW；非适用业务可不返回
-	RatedP *float32 `protobuf:"fixed32,13,opt,name=rated_p,proto3,oneof" json:"rated_p,omitempty"`
+	RatedP *float64 `protobuf:"fixed64,13,opt,name=rated_p,proto3,oneof" json:"rated_p,omitempty"`
 	// 保存的预测步长列表，单位：分钟
 	Granularity []int32 `protobuf:"varint,14,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
 	// 数据源类型：1-pull，2-push，3-file
@@ -900,35 +900,35 @@ func (x *GetSiteResponse) GetTimezone() string {
 	return ""
 }
 
-func (x *GetSiteResponse) GetLongitude() float32 {
+func (x *GetSiteResponse) GetLongitude() float64 {
 	if x != nil && x.Longitude != nil {
 		return *x.Longitude
 	}
 	return 0
 }
 
-func (x *GetSiteResponse) GetLatitude() float32 {
+func (x *GetSiteResponse) GetLatitude() float64 {
 	if x != nil && x.Latitude != nil {
 		return *x.Latitude
 	}
 	return 0
 }
 
-func (x *GetSiteResponse) GetTiltDeg() float32 {
+func (x *GetSiteResponse) GetTiltDeg() float64 {
 	if x != nil && x.TiltDeg != nil {
 		return *x.TiltDeg
 	}
 	return 0
 }
 
-func (x *GetSiteResponse) GetAzimuthDeg() float32 {
+func (x *GetSiteResponse) GetAzimuthDeg() float64 {
 	if x != nil && x.AzimuthDeg != nil {
 		return *x.AzimuthDeg
 	}
 	return 0
 }
 
-func (x *GetSiteResponse) GetRatedP() float32 {
+func (x *GetSiteResponse) GetRatedP() float64 {
 	if x != nil && x.RatedP != nil {
 		return *x.RatedP
 	}
@@ -1023,26 +1023,16 @@ const file_site_site_message_proto_rawDesc = "" +
 	"created_at\x12'\n" +
 	"\n" +
 	"updated_at\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
-	"updated_at\"\xdd\x04\n" +
+	"updated_at\"\x81\x05\n" +
 	"\x11UpdateSiteRequest\x121\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12&\n" +
 	"\tsite_name\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\tsite_name\x12#\n" +
-	"\btimezone\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18@R\btimezone\x12-\n" +
-	"\tlongitude\x18\x04 \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x1d\x00\x004C-\x00\x004\xc3R\tlongitude\x12+\n" +
-	"\blatitude\x18\x05 \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x1d\x00\x00\xb4B-\x00\x00\xb4\xc2R\blatitude\x12+\n" +
-	"\btilt_deg\x18\x06 \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x1d\x00\x00\xb4B-\x00\x00\x00\x00R\btilt_deg\x121\n" +
-	"\vazimuth_deg\x18\a \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x15\x00\x00\xb4C-\x00\x00\x00\x00R\vazimuth_deg\x12$\n" +
-	"\arated_p\x18\b \x01(\x02B\n" +
-	"\xbaH\a\n" +
-	"\x05%\x00\x00\x00\x00R\arated_p\x12.\n" +
+	"\btimezone\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18@R\btimezone\x125\n" +
+	"\tlongitude\x18\x04 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x123\n" +
+	"\blatitude\x18\x05 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x123\n" +
+	"\btilt_deg\x18\x06 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00R\btilt_deg\x129\n" +
+	"\vazimuth_deg\x18\a \x01(\x01B\x17\xbaH\x14\x12\x12\x11\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00R\vazimuth_deg\x12(\n" +
+	"\arated_p\x18\b \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00R\arated_p\x12.\n" +
 	"\vgranularity\x18\t \x03(\x05B\f\xbaH\t\x92\x01\x06\"\x04\x1a\x02 \x00R\vgranularity\x12-\n" +
 	"\vdata_source\x18\n" +
 	" \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03R\vdata_source\x12*\n" +
@@ -1073,7 +1063,7 @@ const file_site_site_message_proto_rawDesc = "" +
 	"\x0eGetSiteRequest\x12!\n" +
 	"\asite_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\asite_id\"H\n" +
 	"\x13GetSiteByRegRequest\x121\n" +
-	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\"\xe6\a\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\"\x82\b\n" +
 	"\x0fGetSiteResponse\x12+\n" +
 	"\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\asuccessR\x05errorR\x05state\x12%\n" +
 	"\x04code\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
@@ -1084,22 +1074,14 @@ const file_site_site_message_proto_rawDesc = "" +
 	"\asite_id\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\asite_id\x12&\n" +
 	"\tsite_name\x18\a \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\tsite_name\x12%\n" +
 	"\btimezone\x18\b \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\btimezone\x122\n" +
-	"\tlongitude\x18\t \x01(\x02B\x0f\xbaH\f\n" +
+	"\tlongitude\x18\t \x01(\x01B\x0f\xbaH\f\n" +
 	"\n" +
-	"\x1d\x00\x004C-\x00\x004\xc3H\x00R\tlongitude\x88\x01\x01\x120\n" +
+	"\x1d\x00\x004C-\x00\x004\xc3H\x00R\tlongitude\x88\x01\x01\x128\n" +
 	"\blatitude\x18\n" +
-	" \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x1d\x00\x00\xb4B-\x00\x00\xb4\xc2H\x01R\blatitude\x88\x01\x01\x120\n" +
-	"\btilt_deg\x18\v \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x1d\x00\x00\xb4B-\x00\x00\x00\x00H\x02R\btilt_deg\x88\x01\x01\x126\n" +
-	"\vazimuth_deg\x18\f \x01(\x02B\x0f\xbaH\f\n" +
-	"\n" +
-	"\x15\x00\x00\xb4C-\x00\x00\x00\x00H\x03R\vazimuth_deg\x88\x01\x01\x12)\n" +
-	"\arated_p\x18\r \x01(\x02B\n" +
-	"\xbaH\a\n" +
-	"\x05%\x00\x00\x00\x00H\x04R\arated_p\x88\x01\x01\x12.\n" +
+	" \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0H\x01R\blatitude\x88\x01\x01\x128\n" +
+	"\btilt_deg\x18\v \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\btilt_deg\x88\x01\x01\x12>\n" +
+	"\vazimuth_deg\x18\f \x01(\x01B\x17\xbaH\x14\x12\x12\x11\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00H\x03R\vazimuth_deg\x88\x01\x01\x12-\n" +
+	"\arated_p\x18\r \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x04R\arated_p\x88\x01\x01\x12.\n" +
 	"\vgranularity\x18\x0e \x03(\x05B\f\xbaH\t\x92\x01\x06\"\x04\x1a\x02 \x00R\vgranularity\x12-\n" +
 	"\vdata_source\x18\x0f \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03R\vdata_source\x12*\n" +
 	"\vsource_attr\x18\x10 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12,\n" +

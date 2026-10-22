@@ -175,7 +175,7 @@ public interface GetSiteResponseOrBuilder extends
    * 已保存经度，单位：度
    * </pre>
    *
-   * <code>optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+   * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
    * @return Whether the longitude field is set.
    */
   boolean hasLongitude();
@@ -184,17 +184,17 @@ public interface GetSiteResponseOrBuilder extends
    * 已保存经度，单位：度
    * </pre>
    *
-   * <code>optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+   * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
    * @return The longitude.
    */
-  float getLongitude();
+  double getLongitude();
 
   /**
    * <pre>
    * 已保存纬度，单位：度
    * </pre>
    *
-   * <code>optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+   * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
    * @return Whether the latitude field is set.
    */
   boolean hasLatitude();
@@ -203,17 +203,17 @@ public interface GetSiteResponseOrBuilder extends
    * 已保存纬度，单位：度
    * </pre>
    *
-   * <code>optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+   * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
    * @return The latitude.
    */
-  float getLatitude();
+  double getLatitude();
 
   /**
    * <pre>
    * 光伏组件倾角，单位：度
    * </pre>
    *
-   * <code>optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
    * @return Whether the tiltDeg field is set.
    */
   boolean hasTiltDeg();
@@ -222,17 +222,17 @@ public interface GetSiteResponseOrBuilder extends
    * 光伏组件倾角，单位：度
    * </pre>
    *
-   * <code>optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
    * @return The tiltDeg.
    */
-  float getTiltDeg();
+  double getTiltDeg();
 
   /**
    * <pre>
    * 光伏组件方位角，单位：度
    * </pre>
    *
-   * <code>optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
    * @return Whether the azimuthDeg field is set.
    */
   boolean hasAzimuthDeg();
@@ -241,17 +241,17 @@ public interface GetSiteResponseOrBuilder extends
    * 光伏组件方位角，单位：度
    * </pre>
    *
-   * <code>optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
    * @return The azimuthDeg.
    */
-  float getAzimuthDeg();
+  double getAzimuthDeg();
 
   /**
    * <pre>
    * 光伏额定功率，单位：kW；非适用业务可不返回
    * </pre>
    *
-   * <code>optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
    * @return Whether the ratedP field is set.
    */
   boolean hasRatedP();
@@ -260,10 +260,10 @@ public interface GetSiteResponseOrBuilder extends
    * 光伏额定功率，单位：kW；非适用业务可不返回
    * </pre>
    *
-   * <code>optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
    * @return The ratedP.
    */
-  float getRatedP();
+  double getRatedP();
 
   /**
    * <pre>

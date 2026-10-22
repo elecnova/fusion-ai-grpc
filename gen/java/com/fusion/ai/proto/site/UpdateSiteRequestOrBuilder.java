@@ -75,50 +75,50 @@ public interface UpdateSiteRequestOrBuilder extends
    * 场站经度，单位：度
    * </pre>
    *
-   * <code>float longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+   * <code>double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
    * @return The longitude.
    */
-  float getLongitude();
+  double getLongitude();
 
   /**
    * <pre>
    * 场站纬度，单位：度
    * </pre>
    *
-   * <code>float latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+   * <code>double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
    * @return The latitude.
    */
-  float getLatitude();
+  double getLatitude();
 
   /**
    * <pre>
    * 光伏组件倾角，单位：度
    * </pre>
    *
-   * <code>float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * <code>double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
    * @return The tiltDeg.
    */
-  float getTiltDeg();
+  double getTiltDeg();
 
   /**
    * <pre>
    * 光伏组件方位角，单位：度
    * </pre>
    *
-   * <code>float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * <code>double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
    * @return The azimuthDeg.
    */
-  float getAzimuthDeg();
+  double getAzimuthDeg();
 
   /**
    * <pre>
    * 光伏额定功率，单位：kW；非适用业务可不提供
    * </pre>
    *
-   * <code>float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * <code>double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
    * @return The ratedP.
    */
-  float getRatedP();
+  double getRatedP();
 
   /**
    * <pre>
