@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SITE_NAME_FIELD_NUMBER = 4;
+  public static final int SITE_NAME_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object siteName_ = "";
   /**
@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
    * 场站显示名称
    * </pre>
    *
-   * <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
    * @return The siteName.
    */
   @java.lang.Override
@@ -184,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * 场站显示名称
    * </pre>
    *
-   * <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
    * @return The bytes for siteName.
    */
   @java.lang.Override
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TIMEZONE_FIELD_NUMBER = 5;
+  public static final int TIMEZONE_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object timezone_ = "";
   /**
@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
    * 时区名称，例如 Asia/Shanghai
    * </pre>
    *
-   * <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
    * @return The timezone.
    */
   @java.lang.Override
@@ -231,7 +231,7 @@ private static final long serialVersionUID = 0L;
    * 时区名称，例如 Asia/Shanghai
    * </pre>
    *
-   * <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
    * @return The bytes for timezone.
    */
   @java.lang.Override
@@ -249,14 +249,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int LONGITUDE_FIELD_NUMBER = 6;
+  public static final int LONGITUDE_FIELD_NUMBER = 5;
   private double longitude_ = 0D;
   /**
    * <pre>
    * 经度，单位度，范围 [-180, 180]
    * </pre>
    *
-   * <code>double longitude = 6 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+   * <code>double longitude = 5 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
    * @return The longitude.
    */
   @java.lang.Override
@@ -264,14 +264,14 @@ private static final long serialVersionUID = 0L;
     return longitude_;
   }
 
-  public static final int LATITUDE_FIELD_NUMBER = 7;
+  public static final int LATITUDE_FIELD_NUMBER = 6;
   private double latitude_ = 0D;
   /**
    * <pre>
    * 纬度，单位度，范围 [-90, 90]
    * </pre>
    *
-   * <code>double latitude = 7 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+   * <code>double latitude = 6 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
    * @return The latitude.
    */
   @java.lang.Override
@@ -279,14 +279,14 @@ private static final long serialVersionUID = 0L;
     return latitude_;
   }
 
-  public static final int TILT_DEG_FIELD_NUMBER = 8;
+  public static final int TILT_DEG_FIELD_NUMBER = 7;
   private double tiltDeg_ = 0D;
   /**
    * <pre>
    * 光伏组件安装倾角，单位度，范围 [0, 90]
    * </pre>
    *
-   * <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
    * @return Whether the tiltDeg field is set.
    */
   @java.lang.Override
@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
    * 光伏组件安装倾角，单位度，范围 [0, 90]
    * </pre>
    *
-   * <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
    * @return The tiltDeg.
    */
   @java.lang.Override
@@ -306,14 +306,14 @@ private static final long serialVersionUID = 0L;
     return tiltDeg_;
   }
 
-  public static final int AZIMUTH_DEG_FIELD_NUMBER = 9;
+  public static final int AZIMUTH_DEG_FIELD_NUMBER = 8;
   private double azimuthDeg_ = 0D;
   /**
    * <pre>
    * 光伏组件安装方位角，单位度，范围 [0, 360]
    * </pre>
    *
-   * <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
    * @return Whether the azimuthDeg field is set.
    */
   @java.lang.Override
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
    * 光伏组件安装方位角，单位度，范围 [0, 360]
    * </pre>
    *
-   * <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
    * @return The azimuthDeg.
    */
   @java.lang.Override
@@ -333,14 +333,14 @@ private static final long serialVersionUID = 0L;
     return azimuthDeg_;
   }
 
-  public static final int RATED_P_FIELD_NUMBER = 10;
+  public static final int RATED_P_FIELD_NUMBER = 9;
   private double ratedP_ = 0D;
   /**
    * <pre>
    * 额定功率
    * </pre>
    *
-   * <code>double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
    * @return The ratedP.
    */
   @java.lang.Override
@@ -348,7 +348,7 @@ private static final long serialVersionUID = 0L;
     return ratedP_;
   }
 
-  public static final int GRANULARITY_FIELD_NUMBER = 11;
+  public static final int GRANULARITY_FIELD_NUMBER = 10;
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList granularity_ =
       emptyIntList();
@@ -357,7 +357,7 @@ private static final long serialVersionUID = 0L;
    * 支持的预测步长，单位分钟，可选 5、15、30、60
    * </pre>
    *
-   * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+   * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
    * @return A list containing the granularity.
    */
   @java.lang.Override
@@ -370,7 +370,7 @@ private static final long serialVersionUID = 0L;
    * 支持的预测步长，单位分钟，可选 5、15、30、60
    * </pre>
    *
-   * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+   * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
    * @return The count of granularity.
    */
   public int getGranularityCount() {
@@ -381,7 +381,7 @@ private static final long serialVersionUID = 0L;
    * 支持的预测步长，单位分钟，可选 5、15、30、60
    * </pre>
    *
-   * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+   * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The granularity at the given index.
    */
@@ -390,14 +390,14 @@ private static final long serialVersionUID = 0L;
   }
   private int granularityMemoizedSerializedSize = -1;
 
-  public static final int DATA_SOURCE_FIELD_NUMBER = 12;
+  public static final int DATA_SOURCE_FIELD_NUMBER = 11;
   private int dataSource_ = 0;
   /**
    * <pre>
    * 数据源类型：1-pull，2-push，3-file
    * </pre>
    *
-   * <code>int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+   * <code>int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
    * @return The dataSource.
    */
   @java.lang.Override
@@ -405,7 +405,7 @@ private static final long serialVersionUID = 0L;
     return dataSource_;
   }
 
-  public static final int SOURCE_ATTR_FIELD_NUMBER = 13;
+  public static final int SOURCE_ATTR_FIELD_NUMBER = 12;
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceAttr_ = "";
   /**
@@ -413,7 +413,7 @@ private static final long serialVersionUID = 0L;
    * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
    * </pre>
    *
-   * <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
    * @return The sourceAttr.
    */
   @java.lang.Override
@@ -434,7 +434,7 @@ private static final long serialVersionUID = 0L;
    * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
    * </pre>
    *
-   * <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
    * @return The bytes for sourceAttr.
    */
   @java.lang.Override
@@ -452,14 +452,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int OPERATION_FIELD_NUMBER = 14;
+  public static final int OPERATION_FIELD_NUMBER = 13;
   private int operation_ = 0;
   /**
    * <pre>
    * 操作类型：1-predict，2-train
    * </pre>
    *
-   * <code>int32 operation = 14 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
    * @return The operation.
    */
   @java.lang.Override
@@ -467,14 +467,14 @@ private static final long serialVersionUID = 0L;
     return operation_;
   }
 
-  public static final int HISDAYS_FIELD_NUMBER = 15;
+  public static final int HISDAYS_FIELD_NUMBER = 14;
   private int hisdays_ = 0;
   /**
    * <pre>
    * 历史数据天数，未指定时由业务层采用模型默认值
    * </pre>
    *
-   * <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
    * @return Whether the hisdays field is set.
    */
   @java.lang.Override
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
    * 历史数据天数，未指定时由业务层采用模型默认值
    * </pre>
    *
-   * <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
    * @return The hisdays.
    */
   @java.lang.Override
@@ -494,7 +494,7 @@ private static final long serialVersionUID = 0L;
     return hisdays_;
   }
 
-  public static final int CREATED_TIME_FIELD_NUMBER = 16;
+  public static final int CREATED_TIME_FIELD_NUMBER = 15;
   @SuppressWarnings("serial")
   private volatile java.lang.Object createdTime_ = "";
   /**
@@ -502,7 +502,7 @@ private static final long serialVersionUID = 0L;
    * 配置创建时间，ISO 8601 格式
    * </pre>
    *
-   * <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
+   * <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
    * @return The createdTime.
    */
   @java.lang.Override
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
    * 配置创建时间，ISO 8601 格式
    * </pre>
    *
-   * <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
+   * <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
    * @return The bytes for createdTime.
    */
   @java.lang.Override
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATE_TIME_FIELD_NUMBER = 17;
+  public static final int UPDATE_TIME_FIELD_NUMBER = 16;
   @SuppressWarnings("serial")
   private volatile java.lang.Object updateTime_ = "";
   /**
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
    * 配置更新时间，ISO 8601 格式
    * </pre>
    *
-   * <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
+   * <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
    * @return The updateTime.
    */
   @java.lang.Override
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
    * 配置更新时间，ISO 8601 格式
    * </pre>
    *
-   * <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
+   * <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
    * @return The bytes for updateTime.
    */
   @java.lang.Override
@@ -610,50 +610,50 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessage.writeString(output, 2, siteId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, siteName_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, siteName_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timezone_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, timezone_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, timezone_);
     }
     if (java.lang.Double.doubleToRawLongBits(longitude_) != 0) {
-      output.writeDouble(6, longitude_);
+      output.writeDouble(5, longitude_);
     }
     if (java.lang.Double.doubleToRawLongBits(latitude_) != 0) {
-      output.writeDouble(7, latitude_);
+      output.writeDouble(6, latitude_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeDouble(8, tiltDeg_);
+      output.writeDouble(7, tiltDeg_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeDouble(9, azimuthDeg_);
+      output.writeDouble(8, azimuthDeg_);
     }
     if (java.lang.Double.doubleToRawLongBits(ratedP_) != 0) {
-      output.writeDouble(10, ratedP_);
+      output.writeDouble(9, ratedP_);
     }
     if (getGranularityList().size() > 0) {
-      output.writeUInt32NoTag(90);
+      output.writeUInt32NoTag(82);
       output.writeUInt32NoTag(granularityMemoizedSerializedSize);
     }
     for (int i = 0; i < granularity_.size(); i++) {
       output.writeInt32NoTag(granularity_.getInt(i));
     }
     if (dataSource_ != 0) {
-      output.writeInt32(12, dataSource_);
+      output.writeInt32(11, dataSource_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceAttr_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 13, sourceAttr_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, sourceAttr_);
     }
     if (operation_ != 0) {
-      output.writeInt32(14, operation_);
+      output.writeInt32(13, operation_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeInt32(15, hisdays_);
+      output.writeInt32(14, hisdays_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdTime_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 16, createdTime_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, createdTime_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updateTime_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 17, updateTime_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 16, updateTime_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -666,30 +666,30 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, siteId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, siteName_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, siteName_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timezone_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, timezone_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, timezone_);
     }
     if (java.lang.Double.doubleToRawLongBits(longitude_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(6, longitude_);
+        .computeDoubleSize(5, longitude_);
     }
     if (java.lang.Double.doubleToRawLongBits(latitude_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(7, latitude_);
+        .computeDoubleSize(6, latitude_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(8, tiltDeg_);
+        .computeDoubleSize(7, tiltDeg_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(9, azimuthDeg_);
+        .computeDoubleSize(8, azimuthDeg_);
     }
     if (java.lang.Double.doubleToRawLongBits(ratedP_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(10, ratedP_);
+        .computeDoubleSize(9, ratedP_);
     }
     {
       int dataSize = 0;
@@ -707,24 +707,24 @@ private static final long serialVersionUID = 0L;
     }
     if (dataSource_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(12, dataSource_);
+        .computeInt32Size(11, dataSource_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceAttr_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(13, sourceAttr_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, sourceAttr_);
     }
     if (operation_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(14, operation_);
+        .computeInt32Size(13, operation_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(15, hisdays_);
+        .computeInt32Size(14, hisdays_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdTime_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(16, createdTime_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, createdTime_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updateTime_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(17, updateTime_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(16, updateTime_);
     }
     return size;
   }
@@ -1208,48 +1208,48 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
-            case 34: {
+            case 26: {
               siteName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
-            } // case 34
-            case 42: {
+            } // case 26
+            case 34: {
               timezone_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
-            } // case 42
-            case 49: {
+            } // case 34
+            case 41: {
               longitude_ = input.readDouble();
               bitField0_ |= 0x00000010;
               break;
-            } // case 49
-            case 57: {
+            } // case 41
+            case 49: {
               latitude_ = input.readDouble();
               bitField0_ |= 0x00000020;
               break;
-            } // case 57
-            case 65: {
+            } // case 49
+            case 57: {
               tiltDeg_ = input.readDouble();
               bitField0_ |= 0x00000040;
               break;
-            } // case 65
-            case 73: {
+            } // case 57
+            case 65: {
               azimuthDeg_ = input.readDouble();
               bitField0_ |= 0x00000080;
               break;
-            } // case 73
-            case 81: {
+            } // case 65
+            case 73: {
               ratedP_ = input.readDouble();
               bitField0_ |= 0x00000100;
               break;
-            } // case 81
-            case 88: {
+            } // case 73
+            case 80: {
               int v = input.readInt32();
               ensureGranularityIsMutable();
               granularity_.addInt(v);
               break;
-            } // case 88
-            case 90: {
+            } // case 80
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               ensureGranularityIsMutable();
@@ -1258,37 +1258,37 @@ private static final long serialVersionUID = 0L;
               }
               input.popLimit(limit);
               break;
-            } // case 90
-            case 96: {
+            } // case 82
+            case 88: {
               dataSource_ = input.readInt32();
               bitField0_ |= 0x00000400;
               break;
-            } // case 96
-            case 106: {
+            } // case 88
+            case 98: {
               sourceAttr_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000800;
               break;
-            } // case 106
-            case 112: {
+            } // case 98
+            case 104: {
               operation_ = input.readInt32();
               bitField0_ |= 0x00001000;
               break;
-            } // case 112
-            case 120: {
+            } // case 104
+            case 112: {
               hisdays_ = input.readInt32();
               bitField0_ |= 0x00002000;
               break;
-            } // case 120
-            case 130: {
+            } // case 112
+            case 122: {
               createdTime_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00004000;
               break;
-            } // case 130
-            case 138: {
+            } // case 122
+            case 130: {
               updateTime_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00008000;
               break;
-            } // case 138
+            } // case 130
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1496,7 +1496,7 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @return The siteName.
      */
     public java.lang.String getSiteName() {
@@ -1516,7 +1516,7 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @return The bytes for siteName.
      */
     public com.google.protobuf.ByteString
@@ -1537,7 +1537,7 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @param value The siteName to set.
      * @return This builder for chaining.
      */
@@ -1554,7 +1554,7 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSiteName() {
@@ -1568,7 +1568,7 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for siteName to set.
      * @return This builder for chaining.
      */
@@ -1588,7 +1588,7 @@ private static final long serialVersionUID = 0L;
      * 时区名称，例如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @return The timezone.
      */
     public java.lang.String getTimezone() {
@@ -1608,7 +1608,7 @@ private static final long serialVersionUID = 0L;
      * 时区名称，例如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @return The bytes for timezone.
      */
     public com.google.protobuf.ByteString
@@ -1629,7 +1629,7 @@ private static final long serialVersionUID = 0L;
      * 时区名称，例如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @param value The timezone to set.
      * @return This builder for chaining.
      */
@@ -1646,7 +1646,7 @@ private static final long serialVersionUID = 0L;
      * 时区名称，例如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTimezone() {
@@ -1660,7 +1660,7 @@ private static final long serialVersionUID = 0L;
      * 时区名称，例如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for timezone to set.
      * @return This builder for chaining.
      */
@@ -1680,7 +1680,7 @@ private static final long serialVersionUID = 0L;
      * 经度，单位度，范围 [-180, 180]
      * </pre>
      *
-     * <code>double longitude = 6 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+     * <code>double longitude = 5 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
      * @return The longitude.
      */
     @java.lang.Override
@@ -1692,7 +1692,7 @@ private static final long serialVersionUID = 0L;
      * 经度，单位度，范围 [-180, 180]
      * </pre>
      *
-     * <code>double longitude = 6 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+     * <code>double longitude = 5 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
      * @param value The longitude to set.
      * @return This builder for chaining.
      */
@@ -1708,7 +1708,7 @@ private static final long serialVersionUID = 0L;
      * 经度，单位度，范围 [-180, 180]
      * </pre>
      *
-     * <code>double longitude = 6 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+     * <code>double longitude = 5 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLongitude() {
@@ -1724,7 +1724,7 @@ private static final long serialVersionUID = 0L;
      * 纬度，单位度，范围 [-90, 90]
      * </pre>
      *
-     * <code>double latitude = 7 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+     * <code>double latitude = 6 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
      * @return The latitude.
      */
     @java.lang.Override
@@ -1736,7 +1736,7 @@ private static final long serialVersionUID = 0L;
      * 纬度，单位度，范围 [-90, 90]
      * </pre>
      *
-     * <code>double latitude = 7 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+     * <code>double latitude = 6 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
      * @param value The latitude to set.
      * @return This builder for chaining.
      */
@@ -1752,7 +1752,7 @@ private static final long serialVersionUID = 0L;
      * 纬度，单位度，范围 [-90, 90]
      * </pre>
      *
-     * <code>double latitude = 7 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+     * <code>double latitude = 6 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLatitude() {
@@ -1768,7 +1768,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件安装倾角，单位度，范围 [0, 90]
      * </pre>
      *
-     * <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
      * @return Whether the tiltDeg field is set.
      */
     @java.lang.Override
@@ -1780,7 +1780,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件安装倾角，单位度，范围 [0, 90]
      * </pre>
      *
-     * <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
      * @return The tiltDeg.
      */
     @java.lang.Override
@@ -1792,7 +1792,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件安装倾角，单位度，范围 [0, 90]
      * </pre>
      *
-     * <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
      * @param value The tiltDeg to set.
      * @return This builder for chaining.
      */
@@ -1808,7 +1808,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件安装倾角，单位度，范围 [0, 90]
      * </pre>
      *
-     * <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTiltDeg() {
@@ -1824,7 +1824,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件安装方位角，单位度，范围 [0, 360]
      * </pre>
      *
-     * <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
      * @return Whether the azimuthDeg field is set.
      */
     @java.lang.Override
@@ -1836,7 +1836,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件安装方位角，单位度，范围 [0, 360]
      * </pre>
      *
-     * <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
      * @return The azimuthDeg.
      */
     @java.lang.Override
@@ -1848,7 +1848,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件安装方位角，单位度，范围 [0, 360]
      * </pre>
      *
-     * <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
      * @param value The azimuthDeg to set.
      * @return This builder for chaining.
      */
@@ -1864,7 +1864,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件安装方位角，单位度，范围 [0, 360]
      * </pre>
      *
-     * <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearAzimuthDeg() {
@@ -1880,7 +1880,7 @@ private static final long serialVersionUID = 0L;
      * 额定功率
      * </pre>
      *
-     * <code>double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
      * @return The ratedP.
      */
     @java.lang.Override
@@ -1892,7 +1892,7 @@ private static final long serialVersionUID = 0L;
      * 额定功率
      * </pre>
      *
-     * <code>double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
      * @param value The ratedP to set.
      * @return This builder for chaining.
      */
@@ -1908,7 +1908,7 @@ private static final long serialVersionUID = 0L;
      * 额定功率
      * </pre>
      *
-     * <code>double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearRatedP() {
@@ -1930,7 +1930,7 @@ private static final long serialVersionUID = 0L;
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
-     * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+     * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
      * @return A list containing the granularity.
      */
     public java.util.List<java.lang.Integer>
@@ -1943,7 +1943,7 @@ private static final long serialVersionUID = 0L;
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
-     * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+     * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
      * @return The count of granularity.
      */
     public int getGranularityCount() {
@@ -1954,7 +1954,7 @@ private static final long serialVersionUID = 0L;
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
-     * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+     * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The granularity at the given index.
      */
@@ -1966,7 +1966,7 @@ private static final long serialVersionUID = 0L;
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
-     * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+     * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The granularity to set.
      * @return This builder for chaining.
@@ -1985,7 +1985,7 @@ private static final long serialVersionUID = 0L;
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
-     * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+     * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
      * @param value The granularity to add.
      * @return This builder for chaining.
      */
@@ -2002,7 +2002,7 @@ private static final long serialVersionUID = 0L;
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
-     * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+     * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
      * @param values The granularity to add.
      * @return This builder for chaining.
      */
@@ -2020,7 +2020,7 @@ private static final long serialVersionUID = 0L;
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
-     * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+     * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearGranularity() {
@@ -2036,7 +2036,7 @@ private static final long serialVersionUID = 0L;
      * 数据源类型：1-pull，2-push，3-file
      * </pre>
      *
-     * <code>int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+     * <code>int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
      * @return The dataSource.
      */
     @java.lang.Override
@@ -2048,7 +2048,7 @@ private static final long serialVersionUID = 0L;
      * 数据源类型：1-pull，2-push，3-file
      * </pre>
      *
-     * <code>int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+     * <code>int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
      * @param value The dataSource to set.
      * @return This builder for chaining.
      */
@@ -2064,7 +2064,7 @@ private static final long serialVersionUID = 0L;
      * 数据源类型：1-pull，2-push，3-file
      * </pre>
      *
-     * <code>int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+     * <code>int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDataSource() {
@@ -2080,7 +2080,7 @@ private static final long serialVersionUID = 0L;
      * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
      * </pre>
      *
-     * <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @return The sourceAttr.
      */
     public java.lang.String getSourceAttr() {
@@ -2100,7 +2100,7 @@ private static final long serialVersionUID = 0L;
      * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
      * </pre>
      *
-     * <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @return The bytes for sourceAttr.
      */
     public com.google.protobuf.ByteString
@@ -2121,7 +2121,7 @@ private static final long serialVersionUID = 0L;
      * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
      * </pre>
      *
-     * <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @param value The sourceAttr to set.
      * @return This builder for chaining.
      */
@@ -2138,7 +2138,7 @@ private static final long serialVersionUID = 0L;
      * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
      * </pre>
      *
-     * <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSourceAttr() {
@@ -2152,7 +2152,7 @@ private static final long serialVersionUID = 0L;
      * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
      * </pre>
      *
-     * <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for sourceAttr to set.
      * @return This builder for chaining.
      */
@@ -2172,7 +2172,7 @@ private static final long serialVersionUID = 0L;
      * 操作类型：1-predict，2-train
      * </pre>
      *
-     * <code>int32 operation = 14 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
      * @return The operation.
      */
     @java.lang.Override
@@ -2184,7 +2184,7 @@ private static final long serialVersionUID = 0L;
      * 操作类型：1-predict，2-train
      * </pre>
      *
-     * <code>int32 operation = 14 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
      * @param value The operation to set.
      * @return This builder for chaining.
      */
@@ -2200,7 +2200,7 @@ private static final long serialVersionUID = 0L;
      * 操作类型：1-predict，2-train
      * </pre>
      *
-     * <code>int32 operation = 14 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOperation() {
@@ -2216,7 +2216,7 @@ private static final long serialVersionUID = 0L;
      * 历史数据天数，未指定时由业务层采用模型默认值
      * </pre>
      *
-     * <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
      * @return Whether the hisdays field is set.
      */
     @java.lang.Override
@@ -2228,7 +2228,7 @@ private static final long serialVersionUID = 0L;
      * 历史数据天数，未指定时由业务层采用模型默认值
      * </pre>
      *
-     * <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
      * @return The hisdays.
      */
     @java.lang.Override
@@ -2240,7 +2240,7 @@ private static final long serialVersionUID = 0L;
      * 历史数据天数，未指定时由业务层采用模型默认值
      * </pre>
      *
-     * <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
      * @param value The hisdays to set.
      * @return This builder for chaining.
      */
@@ -2256,7 +2256,7 @@ private static final long serialVersionUID = 0L;
      * 历史数据天数，未指定时由业务层采用模型默认值
      * </pre>
      *
-     * <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearHisdays() {
@@ -2272,7 +2272,7 @@ private static final long serialVersionUID = 0L;
      * 配置创建时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
+     * <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
      * @return The createdTime.
      */
     public java.lang.String getCreatedTime() {
@@ -2292,7 +2292,7 @@ private static final long serialVersionUID = 0L;
      * 配置创建时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
+     * <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
      * @return The bytes for createdTime.
      */
     public com.google.protobuf.ByteString
@@ -2313,7 +2313,7 @@ private static final long serialVersionUID = 0L;
      * 配置创建时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
+     * <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
      * @param value The createdTime to set.
      * @return This builder for chaining.
      */
@@ -2330,7 +2330,7 @@ private static final long serialVersionUID = 0L;
      * 配置创建时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
+     * <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedTime() {
@@ -2344,7 +2344,7 @@ private static final long serialVersionUID = 0L;
      * 配置创建时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
+     * <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for createdTime to set.
      * @return This builder for chaining.
      */
@@ -2364,7 +2364,7 @@ private static final long serialVersionUID = 0L;
      * 配置更新时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
+     * <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
      * @return The updateTime.
      */
     public java.lang.String getUpdateTime() {
@@ -2384,7 +2384,7 @@ private static final long serialVersionUID = 0L;
      * 配置更新时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
+     * <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
      * @return The bytes for updateTime.
      */
     public com.google.protobuf.ByteString
@@ -2405,7 +2405,7 @@ private static final long serialVersionUID = 0L;
      * 配置更新时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
+     * <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
      * @param value The updateTime to set.
      * @return This builder for chaining.
      */
@@ -2422,7 +2422,7 @@ private static final long serialVersionUID = 0L;
      * 配置更新时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
+     * <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdateTime() {
@@ -2436,7 +2436,7 @@ private static final long serialVersionUID = 0L;
      * 配置更新时间，ISO 8601 格式
      * </pre>
      *
-     * <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
+     * <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for updateTime to set.
      * @return This builder for chaining.
      */

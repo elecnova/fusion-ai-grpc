@@ -31,85 +31,85 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站显示名称
      *
-     * Generated from protobuf field <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = {</code>
      */
     protected $site_name = '';
     /**
      * 时区名称，例如 Asia/Shanghai
      *
-     * Generated from protobuf field <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = {</code>
      */
     protected $timezone = '';
     /**
      * 经度，单位度，范围 [-180, 180]
      *
-     * Generated from protobuf field <code>double longitude = 6 [json_name = "longitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double longitude = 5 [json_name = "longitude", (.buf.validate.field) = {</code>
      */
     protected $longitude = 0.0;
     /**
      * 纬度，单位度，范围 [-90, 90]
      *
-     * Generated from protobuf field <code>double latitude = 7 [json_name = "latitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double latitude = 6 [json_name = "latitude", (.buf.validate.field) = {</code>
      */
     protected $latitude = 0.0;
     /**
      * 光伏组件安装倾角，单位度，范围 [0, 90]
      *
-     * Generated from protobuf field <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
      */
     protected $tilt_deg = null;
     /**
      * 光伏组件安装方位角，单位度，范围 [0, 360]
      *
-     * Generated from protobuf field <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
      */
     protected $azimuth_deg = null;
     /**
      * 额定功率
      *
-     * Generated from protobuf field <code>double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {</code>
      */
     protected $rated_p = 0.0;
     /**
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      *
-     * Generated from protobuf field <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {</code>
      */
     private $granularity;
     /**
      * 数据源类型：1-pull，2-push，3-file
      *
-     * Generated from protobuf field <code>int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = {</code>
      */
     protected $data_source = 0;
     /**
      * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
      *
-     * Generated from protobuf field <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = {</code>
      */
     protected $source_attr = '';
     /**
      * 操作类型：1-predict，2-train
      *
-     * Generated from protobuf field <code>int32 operation = 14 [json_name = "operation", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {</code>
      */
     protected $operation = 0;
     /**
      * 历史数据天数，未指定时由业务层采用模型默认值
      *
-     * Generated from protobuf field <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {</code>
      */
     protected $hisdays = null;
     /**
      * 配置创建时间，ISO 8601 格式
      *
-     * Generated from protobuf field <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = {</code>
      */
     protected $created_time = '';
     /**
      * 配置更新时间，ISO 8601 格式
      *
-     * Generated from protobuf field <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = {</code>
      */
     protected $update_time = '';
 
@@ -214,7 +214,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站显示名称
      *
-     * Generated from protobuf field <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getSiteName()
@@ -225,7 +225,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站显示名称
      *
-     * Generated from protobuf field <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -240,7 +240,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 时区名称，例如 Asia/Shanghai
      *
-     * Generated from protobuf field <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getTimezone()
@@ -251,7 +251,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 时区名称，例如 Asia/Shanghai
      *
-     * Generated from protobuf field <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -266,7 +266,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 经度，单位度，范围 [-180, 180]
      *
-     * Generated from protobuf field <code>double longitude = 6 [json_name = "longitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double longitude = 5 [json_name = "longitude", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getLongitude()
@@ -277,7 +277,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 经度，单位度，范围 [-180, 180]
      *
-     * Generated from protobuf field <code>double longitude = 6 [json_name = "longitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double longitude = 5 [json_name = "longitude", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -291,7 +291,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 纬度，单位度，范围 [-90, 90]
      *
-     * Generated from protobuf field <code>double latitude = 7 [json_name = "latitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double latitude = 6 [json_name = "latitude", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getLatitude()
@@ -302,7 +302,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 纬度，单位度，范围 [-90, 90]
      *
-     * Generated from protobuf field <code>double latitude = 7 [json_name = "latitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double latitude = 6 [json_name = "latitude", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -316,7 +316,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件安装倾角，单位度，范围 [0, 90]
      *
-     * Generated from protobuf field <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getTiltDeg()
@@ -337,7 +337,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件安装倾角，单位度，范围 [0, 90]
      *
-     * Generated from protobuf field <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -351,7 +351,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件安装方位角，单位度，范围 [0, 360]
      *
-     * Generated from protobuf field <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getAzimuthDeg()
@@ -372,7 +372,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件安装方位角，单位度，范围 [0, 360]
      *
-     * Generated from protobuf field <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -386,7 +386,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 额定功率
      *
-     * Generated from protobuf field <code>double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getRatedP()
@@ -397,7 +397,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 额定功率
      *
-     * Generated from protobuf field <code>double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -411,7 +411,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      *
-     * Generated from protobuf field <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {</code>
      * @return RepeatedField<int>
      */
     public function getGranularity()
@@ -422,7 +422,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 支持的预测步长，单位分钟，可选 5、15、30、60
      *
-     * Generated from protobuf field <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {</code>
      * @param int[] $var
      * @return $this
      */
@@ -437,7 +437,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 数据源类型：1-pull，2-push，3-file
      *
-     * Generated from protobuf field <code>int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = {</code>
      * @return int
      */
     public function getDataSource()
@@ -448,7 +448,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 数据源类型：1-pull，2-push，3-file
      *
-     * Generated from protobuf field <code>int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
@@ -463,7 +463,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
      *
-     * Generated from protobuf field <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getSourceAttr()
@@ -474,7 +474,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
      *
-     * Generated from protobuf field <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -489,7 +489,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 操作类型：1-predict，2-train
      *
-     * Generated from protobuf field <code>int32 operation = 14 [json_name = "operation", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {</code>
      * @return int
      */
     public function getOperation()
@@ -500,7 +500,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 操作类型：1-predict，2-train
      *
-     * Generated from protobuf field <code>int32 operation = 14 [json_name = "operation", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
@@ -515,7 +515,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 历史数据天数，未指定时由业务层采用模型默认值
      *
-     * Generated from protobuf field <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {</code>
      * @return int
      */
     public function getHisdays()
@@ -536,7 +536,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 历史数据天数，未指定时由业务层采用模型默认值
      *
-     * Generated from protobuf field <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
@@ -551,7 +551,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 配置创建时间，ISO 8601 格式
      *
-     * Generated from protobuf field <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getCreatedTime()
@@ -562,7 +562,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 配置创建时间，ISO 8601 格式
      *
-     * Generated from protobuf field <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -577,7 +577,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 配置更新时间，ISO 8601 格式
      *
-     * Generated from protobuf field <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getUpdateTime()
@@ -588,7 +588,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 配置更新时间，ISO 8601 格式
      *
-     * Generated from protobuf field <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */

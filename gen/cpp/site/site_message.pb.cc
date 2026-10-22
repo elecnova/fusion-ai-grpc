@@ -33,6 +33,20 @@ PROTOBUF_CONSTINIT ::google::protobuf::internal::ReflectionData
         {&::_pbi::kDescriptorMethods, &::descriptor_table_site_2fsite_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::site::CreateSiteResponse
         {&::_pbi::kDescriptorMethods, &::descriptor_table_site_2fsite_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::site::UpdateSiteRequest
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_site_2fsite_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::site::UpdateSiteResponse
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_site_2fsite_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::site::DeleteSiteRequest
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_site_2fsite_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::site::DeleteSiteResponse
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_site_2fsite_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::site::GetSiteRequest
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_site_2fsite_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::site::GetSiteByRegRequest
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_site_2fsite_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::site::GetSiteResponse
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_site_2fsite_5fmessage_2eproto, /* tracker*/ nullptr,},
 };
 }  // namespace
 #endif
@@ -40,6 +54,1389 @@ namespace fusion {
 namespace ai {
 namespace proto {
 namespace site {
+class UpdateSiteResponse::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<UpdateSiteResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_._has_bits_);
+};
+
+constexpr UpdateSiteResponse::ParseTableT_ UpdateSiteResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_._has_bits_),
+      0, // no _extensions_
+      5, 56,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967264,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      5,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::site::UpdateSiteResponse>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      {::_pbi::TcParser::MiniParse, {}},
+      // string state = 1 [json_name = "state", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.state_)}},
+      // string code = 2 [json_name = "code", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {18, 1, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.code_)}},
+      // string message = 3 [json_name = "message", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {26, 2, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.message_)}},
+      // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {34, 3, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.registration_id_)}},
+      // string updated_at = 5 [json_name = "updated_at", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {42, 4, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.updated_at_)}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string state = 1 [json_name = "state", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.state_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string code = 2 [json_name = "code", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.code_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string message = 3 [json_name = "message", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.message_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.registration_id_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string updated_at = 5 [json_name = "updated_at", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_.updated_at_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
+    {{
+      "\47\5\4\7\17\12\0\0"
+      "fusion.ai.proto.site.UpdateSiteResponse"
+      "state"
+      "code"
+      "message"
+      "registration_id"
+      "updated_at"
+    }},
+  };
+}
+
+
+inline constexpr UpdateSiteResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : state_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        code_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        message_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        registration_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        updated_at_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
+
+template <typename>
+constexpr UpdateSiteResponse::UpdateSiteResponse(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL UpdateSiteResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) UpdateSiteResponse(arena);
+}
+constexpr auto UpdateSiteResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(UpdateSiteResponse), alignof(UpdateSiteResponse));
+}
+constexpr auto UpdateSiteResponse::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &UpdateSiteResponse::MergeImpl,
+          Super_::GetNewImpl<UpdateSiteResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &UpdateSiteResponse::SharedDtor,
+          Super_::GetClearImpl<UpdateSiteResponse>(), &UpdateSiteResponse::ByteSizeLong,
+              &UpdateSiteResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(UpdateSiteResponse, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[3],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_site_2fsite_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct UpdateSiteResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr UpdateSiteResponseGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 UpdateSiteResponse_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(UpdateSiteResponse::InternalGenerateClassData_(
+            _default, &UpdateSiteResponse_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<UpdateSiteResponse>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~UpdateSiteResponseGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) UpdateSiteResponse _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<UpdateSiteResponse>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(UpdateSiteResponseGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST UpdateSiteResponseGlobalsTypeInternal UpdateSiteResponse_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* UpdateSiteResponse_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return UpdateSiteResponse_globals_.GetClassData();
+#else
+  return UpdateSiteResponse_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class UpdateSiteRequest::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<UpdateSiteRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_._has_bits_);
+};
+
+constexpr UpdateSiteRequest::ParseTableT_ UpdateSiteRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_._has_bits_),
+      0, // no _extensions_
+      13, 120,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294959104,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      13,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::site::UpdateSiteRequest>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      {::_pbi::TcParser::MiniParse, {}},
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {10, 1, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.registration_id_)}},
+      // string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {18, 2, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.site_name_)}},
+      // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {26, 3, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.timezone_)}},
+      // float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {37, 5, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.longitude_)}},
+      // float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {45, 6, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.latitude_)}},
+      // float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {53, 7, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.tilt_deg_)}},
+      // float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {61, 8, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.azimuth_deg_)}},
+      // float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {69, 9, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.rated_p_)}},
+      // repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastV32P1,
+       {74, 0, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.granularity_)}},
+      // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(UpdateSiteRequest, _impl_.data_source_), 10>(),
+       {80, 10, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.data_source_)}},
+      // string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {90, 4, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.source_attr_)}},
+      // int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(UpdateSiteRequest, _impl_.operation_), 11>(),
+       {96, 11, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.operation_)}},
+      // optional int32 hisdays = 13 [json_name = "hisdays", (.buf.validate.field) = {
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(UpdateSiteRequest, _impl_.hisdays_), 12>(),
+       {104, 12, 0,
+        PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.hisdays_)}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.registration_id_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.site_name_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.timezone_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.longitude_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.latitude_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.tilt_deg_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.azimuth_deg_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.rated_p_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.granularity_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
+      // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.data_source_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.source_attr_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.operation_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // optional int32 hisdays = 13 [json_name = "hisdays", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.hisdays_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    }},
+    // no aux_entries
+    {{
+      "\46\17\11\10\0\0\0\0\0\0\0\13\0\0\0\0"
+      "fusion.ai.proto.site.UpdateSiteRequest"
+      "registration_id"
+      "site_name"
+      "timezone"
+      "source_attr"
+    }},
+  };
+}
+
+
+inline constexpr UpdateSiteRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : granularity_ { visibility, ::_pbi::InternalMetadataOffset::Build<
+            ::fusion::ai::proto::site::UpdateSiteRequest,
+            PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.granularity_)>()
+         }
+        ,
+        registration_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        site_name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        timezone_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        source_attr_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        longitude_{0},
+        latitude_{0},
+        tilt_deg_{0},
+        azimuth_deg_{0},
+        rated_p_{0},
+        data_source_{0},
+        operation_{0},
+        hisdays_{0} {}
+
+template <typename>
+constexpr UpdateSiteRequest::UpdateSiteRequest(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL UpdateSiteRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) UpdateSiteRequest(arena);
+}
+constexpr auto UpdateSiteRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(UpdateSiteRequest), alignof(UpdateSiteRequest));
+}
+constexpr auto UpdateSiteRequest::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &UpdateSiteRequest::MergeImpl,
+          Super_::GetNewImpl<UpdateSiteRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &UpdateSiteRequest::SharedDtor,
+          Super_::GetClearImpl<UpdateSiteRequest>(), &UpdateSiteRequest::ByteSizeLong,
+              &UpdateSiteRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[2],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_site_2fsite_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct UpdateSiteRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr UpdateSiteRequestGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 UpdateSiteRequest_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(UpdateSiteRequest::InternalGenerateClassData_(
+            _default, &UpdateSiteRequest_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<UpdateSiteRequest>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~UpdateSiteRequestGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) UpdateSiteRequest _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<UpdateSiteRequest>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(UpdateSiteRequestGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST UpdateSiteRequestGlobalsTypeInternal UpdateSiteRequest_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* UpdateSiteRequest_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return UpdateSiteRequest_globals_.GetClassData();
+#else
+  return UpdateSiteRequest_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class GetSiteResponse::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<GetSiteResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_._has_bits_);
+};
+
+constexpr GetSiteResponse::ParseTableT_ GetSiteResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_._has_bits_),
+      0, // no _extensions_
+      20, 248,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4293918720,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      20,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::site::GetSiteResponse>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      {::_pbi::TcParser::MiniParse, {}},
+      // string state = 1 [json_name = "state", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {10, 1, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.state_)}},
+      // string code = 2 [json_name = "code", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {18, 2, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.code_)}},
+      // string message = 3 [json_name = "message", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {26, 3, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.message_)}},
+      // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {34, 4, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.registration_id_)}},
+      // string service_type = 5 [json_name = "service_type", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {42, 5, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.service_type_)}},
+      // string site_id = 6 [json_name = "site_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {50, 6, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.site_id_)}},
+      // string site_name = 7 [json_name = "site_name", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {58, 7, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.site_name_)}},
+      // string timezone = 8 [json_name = "timezone", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {66, 8, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.timezone_)}},
+      // optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {77, 12, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.longitude_)}},
+      // optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {85, 13, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.latitude_)}},
+      // optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {93, 14, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.tilt_deg_)}},
+      // optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {101, 15, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.azimuth_deg_)}},
+      // optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF32S1,
+       {109, 16, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.rated_p_)}},
+      // repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastV32P1,
+       {114, 0, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.granularity_)}},
+      // int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetSiteResponse, _impl_.data_source_), 17>(),
+       {120, 17, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.data_source_)}},
+      // string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS2,
+       {386, 9, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.source_attr_)}},
+      // optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastV32S2,
+       {392, 18, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.operation_)}},
+      // optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastV32S2,
+       {400, 19, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.hisdays_)}},
+      // string created_at = 19 [json_name = "created_at", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS2,
+       {410, 10, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.created_at_)}},
+      // string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS2,
+       {418, 11, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.updated_at_)}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string state = 1 [json_name = "state", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.state_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string code = 2 [json_name = "code", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.code_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string message = 3 [json_name = "message", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.message_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.registration_id_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string service_type = 5 [json_name = "service_type", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.service_type_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string site_id = 6 [json_name = "site_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.site_id_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string site_name = 7 [json_name = "site_name", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.site_name_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string timezone = 8 [json_name = "timezone", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.timezone_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.longitude_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.latitude_), _Internal::kHasBitsOffset + 13, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.tilt_deg_), _Internal::kHasBitsOffset + 14, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.azimuth_deg_), _Internal::kHasBitsOffset + 15, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.rated_p_), _Internal::kHasBitsOffset + 16, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.granularity_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
+      // int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.data_source_), _Internal::kHasBitsOffset + 17, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.source_attr_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.operation_), _Internal::kHasBitsOffset + 18, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.hisdays_), _Internal::kHasBitsOffset + 19, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // string created_at = 19 [json_name = "created_at", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.created_at_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.updated_at_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
+    {{
+      "\44\5\4\7\17\14\7\11\10\0\0\0\0\0\0\0\13\0\0\12\12\0\0\0"
+      "fusion.ai.proto.site.GetSiteResponse"
+      "state"
+      "code"
+      "message"
+      "registration_id"
+      "service_type"
+      "site_id"
+      "site_name"
+      "timezone"
+      "source_attr"
+      "created_at"
+      "updated_at"
+    }},
+  };
+}
+
+
+inline constexpr GetSiteResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : granularity_ { visibility, ::_pbi::InternalMetadataOffset::Build<
+            ::fusion::ai::proto::site::GetSiteResponse,
+            PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.granularity_)>()
+         }
+        ,
+        state_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        code_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        message_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        registration_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        service_type_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        site_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        site_name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        timezone_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        source_attr_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        created_at_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        updated_at_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        longitude_{0},
+        latitude_{0},
+        tilt_deg_{0},
+        azimuth_deg_{0},
+        rated_p_{0},
+        data_source_{0},
+        operation_{0},
+        hisdays_{0} {}
+
+template <typename>
+constexpr GetSiteResponse::GetSiteResponse(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL GetSiteResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) GetSiteResponse(arena);
+}
+constexpr auto GetSiteResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetSiteResponse), alignof(GetSiteResponse));
+}
+constexpr auto GetSiteResponse::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &GetSiteResponse::MergeImpl,
+          Super_::GetNewImpl<GetSiteResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &GetSiteResponse::SharedDtor,
+          Super_::GetClearImpl<GetSiteResponse>(), &GetSiteResponse::ByteSizeLong,
+              &GetSiteResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[8],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_site_2fsite_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct GetSiteResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr GetSiteResponseGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 GetSiteResponse_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(GetSiteResponse::InternalGenerateClassData_(
+            _default, &GetSiteResponse_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<GetSiteResponse>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~GetSiteResponseGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) GetSiteResponse _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetSiteResponse>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(GetSiteResponseGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetSiteResponseGlobalsTypeInternal GetSiteResponse_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* GetSiteResponse_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return GetSiteResponse_globals_.GetClassData();
+#else
+  return GetSiteResponse_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class GetSiteRequest::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<GetSiteRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(GetSiteRequest, _impl_._has_bits_);
+};
+
+constexpr GetSiteRequest::ParseTableT_ GetSiteRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(GetSiteRequest, _impl_._has_bits_),
+      0, // no _extensions_
+      1, 0,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967294,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      1,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::site::GetSiteRequest>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      // string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteRequest, _impl_.site_id_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteRequest, _impl_.site_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
+    {{
+      "\43\7\0\0\0\0\0\0"
+      "fusion.ai.proto.site.GetSiteRequest"
+      "site_id"
+    }},
+  };
+}
+
+
+inline constexpr GetSiteRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : site_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
+
+template <typename>
+constexpr GetSiteRequest::GetSiteRequest(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL GetSiteRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) GetSiteRequest(arena);
+}
+constexpr auto GetSiteRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetSiteRequest), alignof(GetSiteRequest));
+}
+constexpr auto GetSiteRequest::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &GetSiteRequest::MergeImpl,
+          Super_::GetNewImpl<GetSiteRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &GetSiteRequest::SharedDtor,
+          Super_::GetClearImpl<GetSiteRequest>(), &GetSiteRequest::ByteSizeLong,
+              &GetSiteRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(GetSiteRequest, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[6],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_site_2fsite_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct GetSiteRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr GetSiteRequestGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 GetSiteRequest_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(GetSiteRequest::InternalGenerateClassData_(
+            _default, &GetSiteRequest_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<GetSiteRequest>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~GetSiteRequestGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) GetSiteRequest _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetSiteRequest>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(GetSiteRequestGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetSiteRequestGlobalsTypeInternal GetSiteRequest_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* GetSiteRequest_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return GetSiteRequest_globals_.GetClassData();
+#else
+  return GetSiteRequest_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class GetSiteByRegRequest::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<GetSiteByRegRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(GetSiteByRegRequest, _impl_._has_bits_);
+};
+
+constexpr GetSiteByRegRequest::ParseTableT_ GetSiteByRegRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(GetSiteByRegRequest, _impl_._has_bits_),
+      0, // no _extensions_
+      1, 0,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967294,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      1,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::site::GetSiteByRegRequest>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(GetSiteByRegRequest, _impl_.registration_id_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetSiteByRegRequest, _impl_.registration_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
+    {{
+      "\50\17\0\0\0\0\0\0"
+      "fusion.ai.proto.site.GetSiteByRegRequest"
+      "registration_id"
+    }},
+  };
+}
+
+
+inline constexpr GetSiteByRegRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : registration_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
+
+template <typename>
+constexpr GetSiteByRegRequest::GetSiteByRegRequest(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL GetSiteByRegRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) GetSiteByRegRequest(arena);
+}
+constexpr auto GetSiteByRegRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetSiteByRegRequest), alignof(GetSiteByRegRequest));
+}
+constexpr auto GetSiteByRegRequest::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &GetSiteByRegRequest::MergeImpl,
+          Super_::GetNewImpl<GetSiteByRegRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &GetSiteByRegRequest::SharedDtor,
+          Super_::GetClearImpl<GetSiteByRegRequest>(), &GetSiteByRegRequest::ByteSizeLong,
+              &GetSiteByRegRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(GetSiteByRegRequest, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[7],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_site_2fsite_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct GetSiteByRegRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr GetSiteByRegRequestGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 GetSiteByRegRequest_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(GetSiteByRegRequest::InternalGenerateClassData_(
+            _default, &GetSiteByRegRequest_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<GetSiteByRegRequest>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~GetSiteByRegRequestGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) GetSiteByRegRequest _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetSiteByRegRequest>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(GetSiteByRegRequestGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetSiteByRegRequestGlobalsTypeInternal GetSiteByRegRequest_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* GetSiteByRegRequest_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return GetSiteByRegRequest_globals_.GetClassData();
+#else
+  return GetSiteByRegRequest_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class DeleteSiteResponse::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<DeleteSiteResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_._has_bits_);
+};
+
+constexpr DeleteSiteResponse::ParseTableT_ DeleteSiteResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_._has_bits_),
+      0, // no _extensions_
+      6, 56,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967232,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      6,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::site::DeleteSiteResponse>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      {::_pbi::TcParser::MiniParse, {}},
+      // string state = 1 [json_name = "state", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.state_)}},
+      // string code = 2 [json_name = "code", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {18, 1, 0,
+        PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.code_)}},
+      // string message = 3 [json_name = "message", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {26, 2, 0,
+        PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.message_)}},
+      // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {34, 3, 0,
+        PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.registration_id_)}},
+      // bool deleted = 5 [json_name = "deleted"];
+      {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(DeleteSiteResponse, _impl_.deleted_), 4>(),
+       {40, 4, 0,
+        PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.deleted_)}},
+      // bool changed = 6 [json_name = "changed"];
+      {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(DeleteSiteResponse, _impl_.changed_), 5>(),
+       {48, 5, 0,
+        PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.changed_)}},
+      {::_pbi::TcParser::MiniParse, {}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string state = 1 [json_name = "state", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.state_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string code = 2 [json_name = "code", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.code_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string message = 3 [json_name = "message", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.message_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.registration_id_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // bool deleted = 5 [json_name = "deleted"];
+      {PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.deleted_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+      // bool changed = 6 [json_name = "changed"];
+      {PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.changed_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    }},
+    // no aux_entries
+    {{
+      "\47\5\4\7\17\0\0\0"
+      "fusion.ai.proto.site.DeleteSiteResponse"
+      "state"
+      "code"
+      "message"
+      "registration_id"
+    }},
+  };
+}
+
+
+inline constexpr DeleteSiteResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : state_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        code_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        message_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        registration_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        deleted_{false},
+        changed_{false} {}
+
+template <typename>
+constexpr DeleteSiteResponse::DeleteSiteResponse(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL DeleteSiteResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) DeleteSiteResponse(arena);
+}
+constexpr auto DeleteSiteResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(DeleteSiteResponse), alignof(DeleteSiteResponse));
+}
+constexpr auto DeleteSiteResponse::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &DeleteSiteResponse::MergeImpl,
+          Super_::GetNewImpl<DeleteSiteResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &DeleteSiteResponse::SharedDtor,
+          Super_::GetClearImpl<DeleteSiteResponse>(), &DeleteSiteResponse::ByteSizeLong,
+              &DeleteSiteResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[5],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_site_2fsite_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct DeleteSiteResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr DeleteSiteResponseGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 DeleteSiteResponse_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(DeleteSiteResponse::InternalGenerateClassData_(
+            _default, &DeleteSiteResponse_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<DeleteSiteResponse>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~DeleteSiteResponseGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) DeleteSiteResponse _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<DeleteSiteResponse>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(DeleteSiteResponseGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST DeleteSiteResponseGlobalsTypeInternal DeleteSiteResponse_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* DeleteSiteResponse_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return DeleteSiteResponse_globals_.GetClassData();
+#else
+  return DeleteSiteResponse_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class DeleteSiteRequest::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<DeleteSiteRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(DeleteSiteRequest, _impl_._has_bits_);
+};
+
+constexpr DeleteSiteRequest::ParseTableT_ DeleteSiteRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(DeleteSiteRequest, _impl_._has_bits_),
+      0, // no _extensions_
+      1, 0,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967294,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      1,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::site::DeleteSiteRequest>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(DeleteSiteRequest, _impl_.registration_id_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(DeleteSiteRequest, _impl_.registration_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
+    {{
+      "\46\17\0\0\0\0\0\0"
+      "fusion.ai.proto.site.DeleteSiteRequest"
+      "registration_id"
+    }},
+  };
+}
+
+
+inline constexpr DeleteSiteRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : registration_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
+
+template <typename>
+constexpr DeleteSiteRequest::DeleteSiteRequest(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL DeleteSiteRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) DeleteSiteRequest(arena);
+}
+constexpr auto DeleteSiteRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(DeleteSiteRequest), alignof(DeleteSiteRequest));
+}
+constexpr auto DeleteSiteRequest::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &DeleteSiteRequest::MergeImpl,
+          Super_::GetNewImpl<DeleteSiteRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &DeleteSiteRequest::SharedDtor,
+          Super_::GetClearImpl<DeleteSiteRequest>(), &DeleteSiteRequest::ByteSizeLong,
+              &DeleteSiteRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(DeleteSiteRequest, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[4],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_site_2fsite_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct DeleteSiteRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr DeleteSiteRequestGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 DeleteSiteRequest_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(DeleteSiteRequest::InternalGenerateClassData_(
+            _default, &DeleteSiteRequest_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<DeleteSiteRequest>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~DeleteSiteRequestGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) DeleteSiteRequest _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<DeleteSiteRequest>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(DeleteSiteRequestGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST DeleteSiteRequestGlobalsTypeInternal DeleteSiteRequest_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* DeleteSiteRequest_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return DeleteSiteRequest_globals_.GetClassData();
+#else
+  return DeleteSiteRequest_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
 class CreateSiteResponse::_Internal {
  public:
   using HasBits = decltype(::std::declval<CreateSiteResponse>()._impl_._has_bits_);
@@ -249,9 +1646,9 @@ constexpr CreateSiteRequest::ParseTableT_ CreateSiteRequest::InternalGeneratePar
     {
       PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_._has_bits_),
       0, // no _extensions_
-      17, 248,  // max_field_number, fast_idx_mask
+      16, 120,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294836228,  // skipmap
+      4294901760,  // skipmap
       offsetof(ParseTableT_, field_entries),
       16,  // num_field_entries
       0,  // num_aux_entries
@@ -263,7 +1660,10 @@ constexpr CreateSiteRequest::ParseTableT_ CreateSiteRequest::InternalGeneratePar
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::site::CreateSiteRequest>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      {::_pbi::TcParser::MiniParse, {}},
+      // string update_time = 16 [json_name = "update_time", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS2,
+       {386, 7, 0,
+        PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.update_time_)}},
       // string service_type = 1 [json_name = "service_type", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
        {10, 1, 0,
@@ -272,77 +1672,58 @@ constexpr CreateSiteRequest::ParseTableT_ CreateSiteRequest::InternalGeneratePar
       {::_pbi::TcParser::FastUS1,
        {18, 2, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.site_id_)}},
-      {::_pbi::TcParser::MiniParse, {}},
-      // string site_name = 4 [json_name = "site_name", (.buf.validate.field) = {
+      // string site_name = 3 [json_name = "site_name", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
-       {34, 3, 0,
+       {26, 3, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.site_name_)}},
-      // string timezone = 5 [json_name = "timezone", (.buf.validate.field) = {
+      // string timezone = 4 [json_name = "timezone", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
-       {42, 4, 0,
+       {34, 4, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.timezone_)}},
-      // double longitude = 6 [json_name = "longitude", (.buf.validate.field) = {
+      // double longitude = 5 [json_name = "longitude", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
-       {49, 8, 0,
+       {41, 8, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.longitude_)}},
-      // double latitude = 7 [json_name = "latitude", (.buf.validate.field) = {
+      // double latitude = 6 [json_name = "latitude", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
-       {57, 9, 0,
+       {49, 9, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.latitude_)}},
-      // optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = {
+      // optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
-       {65, 10, 0,
+       {57, 10, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.tilt_deg_)}},
-      // optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      // optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
-       {73, 11, 0,
+       {65, 11, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.azimuth_deg_)}},
-      // double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = {
+      // double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
-       {81, 12, 0,
+       {73, 12, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.rated_p_)}},
-      // repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = {
+      // repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {
       {::_pbi::TcParser::FastV32P1,
-       {90, 0, 0,
+       {82, 0, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.granularity_)}},
-      // int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = {
+      // int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = {
       {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreateSiteRequest, _impl_.data_source_), 13>(),
-       {96, 13, 0,
+       {88, 13, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.data_source_)}},
-      // string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = {
+      // string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
-       {106, 5, 0,
+       {98, 5, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.source_attr_)}},
-      // int32 operation = 14 [json_name = "operation", (.buf.validate.field) = {
+      // int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
       {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreateSiteRequest, _impl_.operation_), 14>(),
-       {112, 14, 0,
+       {104, 14, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.operation_)}},
-      // optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = {
+      // optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {
       {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreateSiteRequest, _impl_.hisdays_), 15>(),
-       {120, 15, 0,
+       {112, 15, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.hisdays_)}},
-      // string created_time = 16 [json_name = "created_time", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastUS2,
-       {386, 6, 0,
+      // string created_time = 15 [json_name = "created_time", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {122, 6, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.created_time_)}},
-      // string update_time = 17 [json_name = "update_time", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastUS2,
-       {394, 7, 0,
-        PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.update_time_)}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
     }}, {{
       65535, 65535
     }}, {{
@@ -350,33 +1731,33 @@ constexpr CreateSiteRequest::ParseTableT_ CreateSiteRequest::InternalGeneratePar
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.service_type_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
       // string site_id = 2 [json_name = "site_id", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.site_id_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string site_name = 4 [json_name = "site_name", (.buf.validate.field) = {
+      // string site_name = 3 [json_name = "site_name", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.site_name_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string timezone = 5 [json_name = "timezone", (.buf.validate.field) = {
+      // string timezone = 4 [json_name = "timezone", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.timezone_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // double longitude = 6 [json_name = "longitude", (.buf.validate.field) = {
+      // double longitude = 5 [json_name = "longitude", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.longitude_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // double latitude = 7 [json_name = "latitude", (.buf.validate.field) = {
+      // double latitude = 6 [json_name = "latitude", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.latitude_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = {
+      // optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.tilt_deg_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      // optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.azimuth_deg_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = {
+      // double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.rated_p_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = {
+      // repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.granularity_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
-      // int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = {
+      // int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.data_source_), _Internal::kHasBitsOffset + 13, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = {
+      // string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.source_attr_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // int32 operation = 14 [json_name = "operation", (.buf.validate.field) = {
+      // int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.operation_), _Internal::kHasBitsOffset + 14, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = {
+      // optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.hisdays_), _Internal::kHasBitsOffset + 15, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // string created_time = 16 [json_name = "created_time", (.buf.validate.field) = {
+      // string created_time = 15 [json_name = "created_time", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.created_time_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string update_time = 17 [json_name = "update_time", (.buf.validate.field) = {
+      // string update_time = 16 [json_name = "update_time", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.update_time_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     }},
     // no aux_entries
@@ -586,17 +1967,146 @@ const ::uint32_t
         3,
         4,
         5,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_._has_bits_),
+        16, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.registration_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.site_name_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.timezone_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.longitude_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.latitude_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.tilt_deg_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.azimuth_deg_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.rated_p_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.granularity_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.data_source_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.source_attr_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.operation_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.hisdays_),
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        0,
+        10,
+        4,
+        11,
+        12,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteResponse, _impl_._has_bits_),
+        8, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteResponse, _impl_.state_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteResponse, _impl_.code_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteResponse, _impl_.message_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteResponse, _impl_.registration_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteResponse, _impl_.updated_at_),
+        0,
+        1,
+        2,
+        3,
+        4,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::DeleteSiteRequest, _impl_._has_bits_),
+        4, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::DeleteSiteRequest, _impl_.registration_id_),
+        0,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::DeleteSiteResponse, _impl_._has_bits_),
+        9, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::DeleteSiteResponse, _impl_.state_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::DeleteSiteResponse, _impl_.code_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::DeleteSiteResponse, _impl_.message_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::DeleteSiteResponse, _impl_.registration_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::DeleteSiteResponse, _impl_.deleted_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::DeleteSiteResponse, _impl_.changed_),
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteRequest, _impl_._has_bits_),
+        4, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteRequest, _impl_.site_id_),
+        0,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteByRegRequest, _impl_._has_bits_),
+        4, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteByRegRequest, _impl_.registration_id_),
+        0,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_._has_bits_),
+        23, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.state_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.code_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.message_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.registration_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.service_type_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.site_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.site_name_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.timezone_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.longitude_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.latitude_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.tilt_deg_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.azimuth_deg_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.rated_p_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.granularity_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.data_source_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.source_attr_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.operation_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.hisdays_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.created_at_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.updated_at_),
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        13,
+        14,
+        15,
+        16,
+        0,
+        17,
+        9,
+        18,
+        19,
+        10,
+        11,
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::fusion::ai::proto::site::CreateSiteRequest)},
         {35, sizeof(::fusion::ai::proto::site::CreateSiteResponse)},
+        {50, sizeof(::fusion::ai::proto::site::UpdateSiteRequest)},
+        {79, sizeof(::fusion::ai::proto::site::UpdateSiteResponse)},
+        {92, sizeof(::fusion::ai::proto::site::DeleteSiteRequest)},
+        {97, sizeof(::fusion::ai::proto::site::DeleteSiteResponse)},
+        {112, sizeof(::fusion::ai::proto::site::GetSiteRequest)},
+        {117, sizeof(::fusion::ai::proto::site::GetSiteByRegRequest)},
+        {122, sizeof(::fusion::ai::proto::site::GetSiteResponse)},
 };
 static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
     file_message_globals[] = {
         &::fusion::ai::proto::site::CreateSiteRequest_globals_,
         &::fusion::ai::proto::site::CreateSiteResponse_globals_,
+        &::fusion::ai::proto::site::UpdateSiteRequest_globals_,
+        &::fusion::ai::proto::site::UpdateSiteResponse_globals_,
+        &::fusion::ai::proto::site::DeleteSiteRequest_globals_,
+        &::fusion::ai::proto::site::DeleteSiteResponse_globals_,
+        &::fusion::ai::proto::site::GetSiteRequest_globals_,
+        &::fusion::ai::proto::site::GetSiteByRegRequest_globals_,
+        &::fusion::ai::proto::site::GetSiteResponse_globals_,
 };
 const char descriptor_table_protodef_site_2fsite_5fmessage_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
@@ -605,23 +2115,23 @@ const char descriptor_table_protodef_site_2fsite_5fmessage_2eproto[] ABSL_ATTRIB
     "ogle/protobuf/timestamp.proto\"\250\006\n\021Create"
     "SiteRequest\022-\n\014service_type\030\001 \001(\tB\t\272H\006r\004"
     "\020\001\030dR\014service_type\022#\n\007site_id\030\002 \001(\tB\t\272H\006"
-    "r\004\020\001\030<R\007site_id\022%\n\tsite_name\030\004 \001(\tB\007\272H\004r"
-    "\002\030xR\tsite_name\022#\n\010timezone\030\005 \001(\tB\007\272H\004r\002\030"
-    "@R\010timezone\0225\n\tlongitude\030\006 \001(\001B\027\272H\024\022\022\031\000\000"
-    "\000\000\000\200f@)\000\000\000\000\000\200f\300R\tlongitude\0223\n\010latitude\030\007"
+    "r\004\020\001\030<R\007site_id\022%\n\tsite_name\030\003 \001(\tB\007\272H\004r"
+    "\002\030xR\tsite_name\022#\n\010timezone\030\004 \001(\tB\007\272H\004r\002\030"
+    "@R\010timezone\0225\n\tlongitude\030\005 \001(\001B\027\272H\024\022\022\031\000\000"
+    "\000\000\000\200f@)\000\000\000\000\000\200f\300R\tlongitude\0223\n\010latitude\030\006"
     " \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300R\010latitude\022"
-    "8\n\010tilt_deg\030\010 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000"
-    "\000\000H\000R\010tilt_deg\210\001\001\022>\n\013azimuth_deg\030\t \001(\001B\027"
+    "8\n\010tilt_deg\030\007 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000"
+    "\000\000H\000R\010tilt_deg\210\001\001\022>\n\013azimuth_deg\030\010 \001(\001B\027"
     "\272H\024\022\022\031\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H\001R\013azimuth_deg\210\001"
-    "\001\022(\n\007rated_p\030\n \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000R\007rate"
-    "d_p\0226\n\013granularity\030\013 \003(\005B\024\272H\021\222\001\016\030\001\"\n\032\0100\005"
-    "0\0170\0360<R\013granularity\022-\n\013data_source\030\014 \001(\005"
+    "\001\022(\n\007rated_p\030\t \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000R\007rate"
+    "d_p\0226\n\013granularity\030\n \003(\005B\024\272H\021\222\001\016\030\001\"\n\032\0100\005"
+    "0\0170\0360<R\013granularity\022-\n\013data_source\030\013 \001(\005"
     "B\013\272H\010\032\0060\0010\0020\003R\013data_source\022*\n\013source_att"
-    "r\030\r \001(\tB\010\272H\005r\003\030\200\020R\013source_attr\022\'\n\toperat"
-    "ion\030\016 \001(\005B\t\272H\006\032\0040\0010\002R\toperation\022&\n\007hisda"
-    "ys\030\017 \001(\005B\007\272H\004\032\002 \000H\002R\007hisdays\210\001\001\022+\n\014creat"
-    "ed_time\030\020 \001(\tB\007\272H\004r\002\030(R\014created_time\022)\n\013"
-    "update_time\030\021 \001(\tB\007\272H\004r\002\030(R\013update_timeB"
+    "r\030\014 \001(\tB\010\272H\005r\003\030\200\020R\013source_attr\022\'\n\toperat"
+    "ion\030\r \001(\005B\t\272H\006\032\0040\0010\002R\toperation\022&\n\007hisda"
+    "ys\030\016 \001(\005B\007\272H\004\032\002 \000H\002R\007hisdays\210\001\001\022+\n\014creat"
+    "ed_time\030\017 \001(\tB\007\272H\004r\002\030(R\014created_time\022)\n\013"
+    "update_time\030\020 \001(\tB\007\272H\004r\002\030(R\013update_timeB"
     "\013\n\t_tilt_degB\016\n\014_azimuth_degB\n\n\010_hisdays"
     "\"\220\002\n\022CreateSiteResponse\022+\n\005state\030\001 \001(\tB\025"
     "\272H\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002 \001"
@@ -629,12 +2139,69 @@ const char descriptor_table_protodef_site_2fsite_5fmessage_2eproto[] ABSL_ATTRIB
     " \001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_i"
     "d\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\ncre"
     "ated_at\030\005 \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nup"
-    "dated_at\030\006 \001(\tB\007\272H\004r\002\020\001R\nupdated_atB\273\001\n\030"
-    "com.fusion.ai.proto.siteB\020SiteMessagePro"
-    "toP\001Z\031fusion.ai.proto.site;site\242\002\004FAPS\252\002"
-    "\024Fusion.Ai.Proto.Site\312\002\024Fusion\\Ai\\Proto\\"
-    "Site\342\002 Fusion\\Ai\\Proto\\Site\\GPBMetadata\352"
-    "\002\027Fusion::Ai::Proto::Siteb\006proto3"
+    "dated_at\030\006 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"\335\004\n\021"
+    "UpdateSiteRequest\0221\n\017registration_id\030\001 \001"
+    "(\tB\007\272H\004r\002\020\001R\017registration_id\022&\n\tsite_nam"
+    "e\030\002 \001(\tB\010\272H\005r\003\030\310\001R\tsite_name\022#\n\010timezone"
+    "\030\003 \001(\tB\007\272H\004r\002\030@R\010timezone\022-\n\tlongitude\030\004"
+    " \001(\002B\017\272H\014\n\n\035\000\0004C-\000\0004\303R\tlongitude\022+\n\010lati"
+    "tude\030\005 \001(\002B\017\272H\014\n\n\035\000\000\264B-\000\000\264\302R\010latitude\022+\n"
+    "\010tilt_deg\030\006 \001(\002B\017\272H\014\n\n\035\000\000\264B-\000\000\000\000R\010tilt_d"
+    "eg\0221\n\013azimuth_deg\030\007 \001(\002B\017\272H\014\n\n\025\000\000\264C-\000\000\000\000"
+    "R\013azimuth_deg\022$\n\007rated_p\030\010 \001(\002B\n\272H\007\n\005%\000\000"
+    "\000\000R\007rated_p\022.\n\013granularity\030\t \003(\005B\014\272H\t\222\001\006"
+    "\"\004\032\002 \000R\013granularity\022-\n\013data_source\030\n \001(\005"
+    "B\013\272H\010\032\0060\0010\0020\003R\013data_source\022*\n\013source_att"
+    "r\030\013 \001(\tB\010\272H\005r\003\030\200\020R\013source_attr\022\'\n\toperat"
+    "ion\030\014 \001(\005B\t\272H\006\032\0040\0010\002R\toperation\022&\n\007hisda"
+    "ys\030\r \001(\005B\007\272H\004\032\002 \000H\000R\007hisdays\210\001\001B\n\n\010_hisd"
+    "ays\"\347\001\n\022UpdateSiteResponse\022+\n\005state\030\001 \001("
+    "\tB\025\272H\022r\020R\007successR\005errorR\005state\022%\n\004code\030"
+    "\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007messag"
+    "e\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registratio"
+    "n_id\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\n"
+    "updated_at\030\005 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"F\n"
+    "\021DeleteSiteRequest\0221\n\017registration_id\030\001 "
+    "\001(\tB\007\272H\004r\002\020\001R\017registration_id\"\362\001\n\022Delete"
+    "SiteResponse\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007succ"
+    "essR\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n"
+    "^[0-9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002"
+    "\020\001R\007message\0221\n\017registration_id\030\004 \001(\tB\007\272H"
+    "\004r\002\020\001R\017registration_id\022\030\n\007deleted\030\005 \001(\010R"
+    "\007deleted\022\030\n\007changed\030\006 \001(\010R\007changed\"3\n\016Ge"
+    "tSiteRequest\022!\n\007site_id\030\001 \001(\tB\007\272H\004r\002\020\001R\007"
+    "site_id\"H\n\023GetSiteByRegRequest\0221\n\017regist"
+    "ration_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017registration_i"
+    "d\"\346\007\n\017GetSiteResponse\022+\n\005state\030\001 \001(\tB\025\272H"
+    "\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002 \001(\t"
+    "B\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003 \001"
+    "(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_id\030"
+    "\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022+\n\014servi"
+    "ce_type\030\005 \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007"
+    "site_id\030\006 \001(\tB\007\272H\004r\002\020\001R\007site_id\022&\n\tsite_"
+    "name\030\007 \001(\tB\010\272H\005r\003\030\310\001R\tsite_name\022%\n\010timez"
+    "one\030\010 \001(\tB\t\272H\006r\004\020\001\030@R\010timezone\0222\n\tlongit"
+    "ude\030\t \001(\002B\017\272H\014\n\n\035\000\0004C-\000\0004\303H\000R\tlongitude\210"
+    "\001\001\0220\n\010latitude\030\n \001(\002B\017\272H\014\n\n\035\000\000\264B-\000\000\264\302H\001R"
+    "\010latitude\210\001\001\0220\n\010tilt_deg\030\013 \001(\002B\017\272H\014\n\n\035\000\000"
+    "\264B-\000\000\000\000H\002R\010tilt_deg\210\001\001\0226\n\013azimuth_deg\030\014 "
+    "\001(\002B\017\272H\014\n\n\025\000\000\264C-\000\000\000\000H\003R\013azimuth_deg\210\001\001\022)"
+    "\n\007rated_p\030\r \001(\002B\n\272H\007\n\005%\000\000\000\000H\004R\007rated_p\210\001"
+    "\001\022.\n\013granularity\030\016 \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013gr"
+    "anularity\022-\n\013data_source\030\017 \001(\005B\013\272H\010\032\0060\0010"
+    "\0020\003R\013data_source\022*\n\013source_attr\030\020 \001(\tB\010\272"
+    "H\005r\003\030\200\020R\013source_attr\022,\n\toperation\030\021 \001(\005B"
+    "\t\272H\006\032\0040\0010\002H\005R\toperation\210\001\001\022&\n\007hisdays\030\022 "
+    "\001(\005B\007\272H\004\032\002 \000H\006R\007hisdays\210\001\001\022\'\n\ncreated_at"
+    "\030\023 \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nupdated_a"
+    "t\030\024 \001(\tB\007\272H\004r\002\020\001R\nupdated_atB\014\n\n_longitu"
+    "deB\013\n\t_latitudeB\013\n\t_tilt_degB\016\n\014_azimuth"
+    "_degB\n\n\010_rated_pB\014\n\n_operationB\n\n\010_hisda"
+    "ysB\273\001\n\030com.fusion.ai.proto.siteB\020SiteMes"
+    "sageProtoP\001Z\031fusion.ai.proto.site;site\242\002"
+    "\004FAPS\252\002\024Fusion.Ai.Proto.Site\312\002\024Fusion\\Ai"
+    "\\Proto\\Site\342\002 Fusion\\Ai\\Proto\\Site\\GPBMe"
+    "tadata\352\002\027Fusion::Ai::Proto::Siteb\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_site_2fsite_5fmessage_2eproto_deps[2] = {
@@ -645,13 +2212,13 @@ static ::absl::once_flag descriptor_table_site_2fsite_5fmessage_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_site_2fsite_5fmessage_2eproto = {
     false,
     false,
-    1393,
+    3680,
     descriptor_table_protodef_site_2fsite_5fmessage_2eproto,
     "site/site_message.proto",
     &descriptor_table_site_2fsite_5fmessage_2eproto_once,
     descriptor_table_site_2fsite_5fmessage_2eproto_deps,
     2,
-    2,
+    9,
     schemas,
     file_message_globals,
     TableStruct_site_2fsite_5fmessage_2eproto::offsets,
@@ -872,130 +2439,130 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
     }
   }
 
-  // string site_name = 4 [json_name = "site_name", (.buf.validate.field) = {
+  // string site_name = 3 [json_name = "site_name", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000008U)) {
     if (!this_._internal_site_name().empty()) {
       const ::std::string& _s = this_._internal_site_name();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.CreateSiteRequest.site_name");
-      target = stream->WriteStringMaybeAliased(4, _s, target);
+      target = stream->WriteStringMaybeAliased(3, _s, target);
     }
   }
 
-  // string timezone = 5 [json_name = "timezone", (.buf.validate.field) = {
+  // string timezone = 4 [json_name = "timezone", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000010U)) {
     if (!this_._internal_timezone().empty()) {
       const ::std::string& _s = this_._internal_timezone();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.CreateSiteRequest.timezone");
-      target = stream->WriteStringMaybeAliased(5, _s, target);
+      target = stream->WriteStringMaybeAliased(4, _s, target);
     }
   }
 
-  // double longitude = 6 [json_name = "longitude", (.buf.validate.field) = {
+  // double longitude = 5 [json_name = "longitude", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000100U)) {
     if (::absl::bit_cast<::uint64_t>(this_._internal_longitude()) != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          6, this_._internal_longitude(), target);
+          5, this_._internal_longitude(), target);
     }
   }
 
-  // double latitude = 7 [json_name = "latitude", (.buf.validate.field) = {
+  // double latitude = 6 [json_name = "latitude", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000200U)) {
     if (::absl::bit_cast<::uint64_t>(this_._internal_latitude()) != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          7, this_._internal_latitude(), target);
+          6, this_._internal_latitude(), target);
     }
   }
 
-  // optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = {
+  // optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000400U)) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        8, this_._internal_tilt_deg(), target);
+        7, this_._internal_tilt_deg(), target);
   }
 
-  // optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  // optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000800U)) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        9, this_._internal_azimuth_deg(), target);
+        8, this_._internal_azimuth_deg(), target);
   }
 
-  // double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = {
+  // double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00001000U)) {
     if (::absl::bit_cast<::uint64_t>(this_._internal_rated_p()) != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          10, this_._internal_rated_p(), target);
+          9, this_._internal_rated_p(), target);
     }
   }
 
-  // repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = {
+  // repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     {
       int byte_size = this_._impl_._granularity_cached_byte_size_.Get();
       if (byte_size > 0) {
         target = stream->WriteInt32Packed(
-            11, this_._internal_granularity(), byte_size, target);
+            10, this_._internal_granularity(), byte_size, target);
       }
     }
   }
 
-  // int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = {
+  // int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00002000U)) {
     if (this_._internal_data_source() != 0) {
       target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<12>(
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<11>(
               stream, this_._internal_data_source(), target);
     }
   }
 
-  // string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = {
+  // string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000020U)) {
     if (!this_._internal_source_attr().empty()) {
       const ::std::string& _s = this_._internal_source_attr();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.CreateSiteRequest.source_attr");
-      target = stream->WriteStringMaybeAliased(13, _s, target);
+      target = stream->WriteStringMaybeAliased(12, _s, target);
     }
   }
 
-  // int32 operation = 14 [json_name = "operation", (.buf.validate.field) = {
+  // int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00004000U)) {
     if (this_._internal_operation() != 0) {
       target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<14>(
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<13>(
               stream, this_._internal_operation(), target);
     }
   }
 
-  // optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = {
+  // optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00008000U)) {
     target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<15>(
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<14>(
             stream, this_._internal_hisdays(), target);
   }
 
-  // string created_time = 16 [json_name = "created_time", (.buf.validate.field) = {
+  // string created_time = 15 [json_name = "created_time", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000040U)) {
     if (!this_._internal_created_time().empty()) {
       const ::std::string& _s = this_._internal_created_time();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.CreateSiteRequest.created_time");
-      target = stream->WriteStringMaybeAliased(16, _s, target);
+      target = stream->WriteStringMaybeAliased(15, _s, target);
     }
   }
 
-  // string update_time = 17 [json_name = "update_time", (.buf.validate.field) = {
+  // string update_time = 16 [json_name = "update_time", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000080U)) {
     if (!this_._internal_update_time().empty()) {
       const ::std::string& _s = this_._internal_update_time();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.CreateSiteRequest.update_time");
-      target = stream->WriteStringMaybeAliased(17, _s, target);
+      target = stream->WriteStringMaybeAliased(16, _s, target);
     }
   }
 
@@ -1024,7 +2591,7 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
   cached_has_bits = this_._impl_._has_bits_[0];
   total_size += ::absl::popcount(0x00000c00U & cached_has_bits) * 9;
   if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
-    // repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = {
+    // repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       total_size +=
           ::_pbi::WireFormatLite::Int32SizeWithPackedTagSize(
@@ -1045,35 +2612,35 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
                                         this_._internal_site_id());
       }
     }
-    // string site_name = 4 [json_name = "site_name", (.buf.validate.field) = {
+    // string site_name = 3 [json_name = "site_name", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       if (!this_._internal_site_name().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_site_name());
       }
     }
-    // string timezone = 5 [json_name = "timezone", (.buf.validate.field) = {
+    // string timezone = 4 [json_name = "timezone", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
       if (!this_._internal_timezone().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_timezone());
       }
     }
-    // string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = {
+    // string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000020U)) {
       if (!this_._internal_source_attr().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_source_attr());
       }
     }
-    // string created_time = 16 [json_name = "created_time", (.buf.validate.field) = {
+    // string created_time = 15 [json_name = "created_time", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
       if (!this_._internal_created_time().empty()) {
-        total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_created_time());
       }
     }
-    // string update_time = 17 [json_name = "update_time", (.buf.validate.field) = {
+    // string update_time = 16 [json_name = "update_time", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000080U)) {
       if (!this_._internal_update_time().empty()) {
         total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1082,39 +2649,39 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
     }
   }
   if (BatchCheckHasBit(cached_has_bits, 0x0000f300U)) {
-    // double longitude = 6 [json_name = "longitude", (.buf.validate.field) = {
+    // double longitude = 5 [json_name = "longitude", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000100U)) {
       if (::absl::bit_cast<::uint64_t>(this_._internal_longitude()) != 0) {
         total_size += 9;
       }
     }
-    // double latitude = 7 [json_name = "latitude", (.buf.validate.field) = {
+    // double latitude = 6 [json_name = "latitude", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000200U)) {
       if (::absl::bit_cast<::uint64_t>(this_._internal_latitude()) != 0) {
         total_size += 9;
       }
     }
-    // double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = {
+    // double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00001000U)) {
       if (::absl::bit_cast<::uint64_t>(this_._internal_rated_p()) != 0) {
         total_size += 9;
       }
     }
-    // int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = {
+    // int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00002000U)) {
       if (this_._internal_data_source() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
             this_._internal_data_source());
       }
     }
-    // int32 operation = 14 [json_name = "operation", (.buf.validate.field) = {
+    // int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00004000U)) {
       if (this_._internal_operation() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
             this_._internal_operation());
       }
     }
-    // optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = {
+    // optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00008000U)) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this_._internal_hisdays());
@@ -1656,6 +3223,2626 @@ void CreateSiteResponse::InternalSwap(CreateSiteResponse* PROTOBUF_RESTRICT PROT
 }
 
 ::google::protobuf::Metadata CreateSiteResponse::GetMetadata() const {
+  return Super_::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+UpdateSiteRequest::UpdateSiteRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, UpdateSiteRequest_get_class_data()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.site.UpdateSiteRequest)
+}
+PROTOBUF_NDEBUG_INLINE UpdateSiteRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::site::UpdateSiteRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        granularity_ {
+          visibility, ::_pbi::InternalMetadataOffset::Build<
+              ::fusion::ai::proto::site::UpdateSiteRequest,
+              PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.granularity_)>()
+          , arena, from.granularity_
+        }
+        ,
+        registration_id_(arena, from.registration_id_),
+        site_name_(arena, from.site_name_),
+        timezone_(arena, from.timezone_),
+        source_attr_(arena, from.source_attr_) {}
+
+UpdateSiteRequest::UpdateSiteRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const UpdateSiteRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, UpdateSiteRequest_get_class_data()) {
+
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  UpdateSiteRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, longitude_),
+           reinterpret_cast<const char*>(&from._impl_) +
+               offsetof(Impl_, longitude_),
+           offsetof(Impl_, hisdays_) -
+               offsetof(Impl_, longitude_) +
+               sizeof(Impl_::hisdays_));
+
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.site.UpdateSiteRequest)
+}
+PROTOBUF_NDEBUG_INLINE UpdateSiteRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : granularity_ { visibility, ::_pbi::InternalMetadataOffset::Build<
+            ::fusion::ai::proto::site::UpdateSiteRequest,
+            PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::UpdateSiteRequest, _impl_.granularity_)>()
+         }
+        ,
+        registration_id_(arena),
+        site_name_(arena),
+        timezone_(arena),
+        source_attr_(arena) {}
+
+inline void UpdateSiteRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, longitude_),
+           0,
+           offsetof(Impl_, hisdays_) -
+               offsetof(Impl_, longitude_) +
+               sizeof(Impl_::hisdays_));
+}
+UpdateSiteRequest::~UpdateSiteRequest() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.site.UpdateSiteRequest)
+  SharedDtor(*this);
+}
+inline void UpdateSiteRequest::SharedDtor(MessageLite& self) {
+  UpdateSiteRequest& this_ = static_cast<UpdateSiteRequest&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.registration_id_.Destroy();
+  this_._impl_.site_name_.Destroy();
+  this_._impl_.timezone_.Destroy();
+  this_._impl_.source_attr_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull UpdateSiteRequest_class_data_ =
+        UpdateSiteRequest::InternalGenerateClassData_(UpdateSiteRequest_globals_._default);
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+UpdateSiteRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&UpdateSiteRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(UpdateSiteRequest_class_data_.tc_table);
+  return UpdateSiteRequest_class_data_.base();
+}
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+UpdateSiteRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&UpdateSiteRequest_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&UpdateSiteRequest_globals_));
+  return UpdateSiteRequest_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const UpdateSiteRequest::ParseTableT_
+    UpdateSiteRequest::_table_ =
+        UpdateSiteRequest::InternalGenerateParseTable_(UpdateSiteRequest_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void UpdateSiteRequest::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.site.UpdateSiteRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      _impl_.granularity_.Clear();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      this_._impl_.registration_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      this_._impl_.site_name_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      this_._impl_.timezone_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      this_._impl_.source_attr_.ClearNonDefaultToEmpty();
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x000000e0U)) {
+    ::memset(&this_._impl_.longitude_, 0,
+             static_cast<::size_t>(
+                 reinterpret_cast<char*>(&this_._impl_.tilt_deg_) -
+                 reinterpret_cast<char*>(&this_._impl_.longitude_)) +
+                 sizeof(_impl_.tilt_deg_));
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00001f00U)) {
+    ::memset(&this_._impl_.azimuth_deg_, 0,
+             static_cast<::size_t>(
+                 reinterpret_cast<char*>(&this_._impl_.hisdays_) -
+                 reinterpret_cast<char*>(&this_._impl_.azimuth_deg_)) +
+                 sizeof(_impl_.hisdays_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL UpdateSiteRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const UpdateSiteRequest& this_ = static_cast<const UpdateSiteRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL UpdateSiteRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const UpdateSiteRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.site.UpdateSiteRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.registration_id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+    if (!this_._internal_site_name().empty()) {
+      const ::std::string& _s = this_._internal_site_name();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.site_name");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+    if (!this_._internal_timezone().empty()) {
+      const ::std::string& _s = this_._internal_timezone();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.timezone");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+    if (::absl::bit_cast<::uint32_t>(this_._internal_longitude()) != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+          4, this_._internal_longitude(), target);
+    }
+  }
+
+  // float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+    if (::absl::bit_cast<::uint32_t>(this_._internal_latitude()) != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+          5, this_._internal_latitude(), target);
+    }
+  }
+
+  // float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+    if (::absl::bit_cast<::uint32_t>(this_._internal_tilt_deg()) != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+          6, this_._internal_tilt_deg(), target);
+    }
+  }
+
+  // float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+    if (::absl::bit_cast<::uint32_t>(this_._internal_azimuth_deg()) != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+          7, this_._internal_azimuth_deg(), target);
+    }
+  }
+
+  // float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+    if (::absl::bit_cast<::uint32_t>(this_._internal_rated_p()) != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+          8, this_._internal_rated_p(), target);
+    }
+  }
+
+  // repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    {
+      int byte_size = this_._impl_._granularity_cached_byte_size_.Get();
+      if (byte_size > 0) {
+        target = stream->WriteInt32Packed(
+            9, this_._internal_granularity(), byte_size, target);
+      }
+    }
+  }
+
+  // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+    if (this_._internal_data_source() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<10>(
+              stream, this_._internal_data_source(), target);
+    }
+  }
+
+  // string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (!this_._internal_source_attr().empty()) {
+      const ::std::string& _s = this_._internal_source_attr();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.source_attr");
+      target = stream->WriteStringMaybeAliased(11, _s, target);
+    }
+  }
+
+  // int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+    if (this_._internal_operation() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<12>(
+              stream, this_._internal_operation(), target);
+    }
+  }
+
+  // optional int32 hisdays = 13 [json_name = "hisdays", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<13>(
+            stream, this_._internal_hisdays(), target);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.site.UpdateSiteRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t UpdateSiteRequest::ByteSizeLong(const MessageLite& base) {
+  const UpdateSiteRequest& this_ = static_cast<const UpdateSiteRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t UpdateSiteRequest::ByteSizeLong() const {
+  const UpdateSiteRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.site.UpdateSiteRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
+    // repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      total_size +=
+          ::_pbi::WireFormatLite::Int32SizeWithPackedTagSize(
+              this_._internal_granularity(), 1,
+              this_._impl_._granularity_cached_byte_size_);
+    }
+    // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!this_._internal_registration_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_registration_id());
+      }
+    }
+    // string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!this_._internal_site_name().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_site_name());
+      }
+    }
+    // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!this_._internal_timezone().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_timezone());
+      }
+    }
+    // string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!this_._internal_source_attr().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_source_attr());
+      }
+    }
+    // float longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      if (::absl::bit_cast<::uint32_t>(this_._internal_longitude()) != 0) {
+        total_size += 5;
+      }
+    }
+    // float latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      if (::absl::bit_cast<::uint32_t>(this_._internal_latitude()) != 0) {
+        total_size += 5;
+      }
+    }
+    // float tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      if (::absl::bit_cast<::uint32_t>(this_._internal_tilt_deg()) != 0) {
+        total_size += 5;
+      }
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00001f00U)) {
+    // float azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+      if (::absl::bit_cast<::uint32_t>(this_._internal_azimuth_deg()) != 0) {
+        total_size += 5;
+      }
+    }
+    // float rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      if (::absl::bit_cast<::uint32_t>(this_._internal_rated_p()) != 0) {
+        total_size += 5;
+      }
+    }
+    // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+      if (this_._internal_data_source() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_data_source());
+      }
+    }
+    // int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+      if (this_._internal_operation() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_operation());
+      }
+    }
+    // optional int32 hisdays = 13 [json_name = "hisdays", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this_._internal_hisdays());
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void UpdateSiteRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<UpdateSiteRequest*>(&to_msg);
+  auto& from = static_cast<const UpdateSiteRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.site.UpdateSiteRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      _this->_internal_mutable_granularity()->MergeFrom(from._internal_granularity());
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!from._internal_registration_id().empty()) {
+        _this->_internal_set_registration_id(from._internal_registration_id());
+      } else {
+        if (_this->_impl_.registration_id_.IsDefault()) {
+          _this->_internal_set_registration_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!from._internal_site_name().empty()) {
+        _this->_internal_set_site_name(from._internal_site_name());
+      } else {
+        if (_this->_impl_.site_name_.IsDefault()) {
+          _this->_internal_set_site_name("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!from._internal_timezone().empty()) {
+        _this->_internal_set_timezone(from._internal_timezone());
+      } else {
+        if (_this->_impl_.timezone_.IsDefault()) {
+          _this->_internal_set_timezone("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!from._internal_source_attr().empty()) {
+        _this->_internal_set_source_attr(from._internal_source_attr());
+      } else {
+        if (_this->_impl_.source_attr_.IsDefault()) {
+          _this->_internal_set_source_attr("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      if (::absl::bit_cast<::uint32_t>(from._internal_longitude()) != 0) {
+        _this->_impl_.longitude_ = from._impl_.longitude_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      if (::absl::bit_cast<::uint32_t>(from._internal_latitude()) != 0) {
+        _this->_impl_.latitude_ = from._impl_.latitude_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      if (::absl::bit_cast<::uint32_t>(from._internal_tilt_deg()) != 0) {
+        _this->_impl_.tilt_deg_ = from._impl_.tilt_deg_;
+      }
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00001f00U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+      if (::absl::bit_cast<::uint32_t>(from._internal_azimuth_deg()) != 0) {
+        _this->_impl_.azimuth_deg_ = from._impl_.azimuth_deg_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      if (::absl::bit_cast<::uint32_t>(from._internal_rated_p()) != 0) {
+        _this->_impl_.rated_p_ = from._impl_.rated_p_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+      if (from._internal_data_source() != 0) {
+        _this->_impl_.data_source_ = from._impl_.data_source_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+      if (from._internal_operation() != 0) {
+        _this->_impl_.operation_ = from._impl_.operation_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+      _this->_impl_.hisdays_ = from._impl_.hisdays_;
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void UpdateSiteRequest::CopyFrom(const UpdateSiteRequest& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.site.UpdateSiteRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void UpdateSiteRequest::InternalSwap(UpdateSiteRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.granularity_.InternalSwap(&other->_impl_.granularity_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.site_name_, &other->_impl_.site_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.timezone_, &other->_impl_.timezone_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.source_attr_, &other->_impl_.source_attr_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.hisdays_)
+      + sizeof(UpdateSiteRequest::_impl_.hisdays_)
+      - PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.longitude_)>(
+          reinterpret_cast<char*>(&_impl_.longitude_),
+          reinterpret_cast<char*>(&other->_impl_.longitude_));
+}
+
+::google::protobuf::Metadata UpdateSiteRequest::GetMetadata() const {
+  return Super_::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+UpdateSiteResponse::UpdateSiteResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, UpdateSiteResponse_get_class_data()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.site.UpdateSiteResponse)
+}
+PROTOBUF_NDEBUG_INLINE UpdateSiteResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::site::UpdateSiteResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        state_(arena, from.state_),
+        code_(arena, from.code_),
+        message_(arena, from.message_),
+        registration_id_(arena, from.registration_id_),
+        updated_at_(arena, from.updated_at_) {}
+
+UpdateSiteResponse::UpdateSiteResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const UpdateSiteResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, UpdateSiteResponse_get_class_data()) {
+
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  UpdateSiteResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.site.UpdateSiteResponse)
+}
+PROTOBUF_NDEBUG_INLINE UpdateSiteResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : state_(arena),
+        code_(arena),
+        message_(arena),
+        registration_id_(arena),
+        updated_at_(arena) {}
+
+inline void UpdateSiteResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+UpdateSiteResponse::~UpdateSiteResponse() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.site.UpdateSiteResponse)
+  SharedDtor(*this);
+}
+inline void UpdateSiteResponse::SharedDtor(MessageLite& self) {
+  UpdateSiteResponse& this_ = static_cast<UpdateSiteResponse&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.state_.Destroy();
+  this_._impl_.code_.Destroy();
+  this_._impl_.message_.Destroy();
+  this_._impl_.registration_id_.Destroy();
+  this_._impl_.updated_at_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull UpdateSiteResponse_class_data_ =
+        UpdateSiteResponse::InternalGenerateClassData_(UpdateSiteResponse_globals_._default);
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+UpdateSiteResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&UpdateSiteResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(UpdateSiteResponse_class_data_.tc_table);
+  return UpdateSiteResponse_class_data_.base();
+}
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+UpdateSiteResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&UpdateSiteResponse_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&UpdateSiteResponse_globals_));
+  return UpdateSiteResponse_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const UpdateSiteResponse::ParseTableT_
+    UpdateSiteResponse::_table_ =
+        UpdateSiteResponse::InternalGenerateParseTable_(UpdateSiteResponse_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void UpdateSiteResponse::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.site.UpdateSiteResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      this_._impl_.state_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      this_._impl_.code_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      this_._impl_.message_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      this_._impl_.registration_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      this_._impl_.updated_at_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL UpdateSiteResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const UpdateSiteResponse& this_ = static_cast<const UpdateSiteResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL UpdateSiteResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const UpdateSiteResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.site.UpdateSiteResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // string state = 1 [json_name = "state", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!this_._internal_state().empty()) {
+      const ::std::string& _s = this_._internal_state();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteResponse.state");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string code = 2 [json_name = "code", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    if (!this_._internal_code().empty()) {
+      const ::std::string& _s = this_._internal_code();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteResponse.code");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string message = 3 [json_name = "message", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+    if (!this_._internal_message().empty()) {
+      const ::std::string& _s = this_._internal_message();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteResponse.message");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteResponse.registration_id");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
+  // string updated_at = 5 [json_name = "updated_at", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (!this_._internal_updated_at().empty()) {
+      const ::std::string& _s = this_._internal_updated_at();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteResponse.updated_at");
+      target = stream->WriteStringMaybeAliased(5, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.site.UpdateSiteResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t UpdateSiteResponse::ByteSizeLong(const MessageLite& base) {
+  const UpdateSiteResponse& this_ = static_cast<const UpdateSiteResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t UpdateSiteResponse::ByteSizeLong() const {
+  const UpdateSiteResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.site.UpdateSiteResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
+    // string state = 1 [json_name = "state", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!this_._internal_state().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_state());
+      }
+    }
+    // string code = 2 [json_name = "code", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!this_._internal_code().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_code());
+      }
+    }
+    // string message = 3 [json_name = "message", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!this_._internal_message().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_message());
+      }
+    }
+    // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!this_._internal_registration_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_registration_id());
+      }
+    }
+    // string updated_at = 5 [json_name = "updated_at", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!this_._internal_updated_at().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_updated_at());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void UpdateSiteResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<UpdateSiteResponse*>(&to_msg);
+  auto& from = static_cast<const UpdateSiteResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.site.UpdateSiteResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!from._internal_state().empty()) {
+        _this->_internal_set_state(from._internal_state());
+      } else {
+        if (_this->_impl_.state_.IsDefault()) {
+          _this->_internal_set_state("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!from._internal_code().empty()) {
+        _this->_internal_set_code(from._internal_code());
+      } else {
+        if (_this->_impl_.code_.IsDefault()) {
+          _this->_internal_set_code("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!from._internal_message().empty()) {
+        _this->_internal_set_message(from._internal_message());
+      } else {
+        if (_this->_impl_.message_.IsDefault()) {
+          _this->_internal_set_message("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!from._internal_registration_id().empty()) {
+        _this->_internal_set_registration_id(from._internal_registration_id());
+      } else {
+        if (_this->_impl_.registration_id_.IsDefault()) {
+          _this->_internal_set_registration_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!from._internal_updated_at().empty()) {
+        _this->_internal_set_updated_at(from._internal_updated_at());
+      } else {
+        if (_this->_impl_.updated_at_.IsDefault()) {
+          _this->_internal_set_updated_at("");
+        }
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void UpdateSiteResponse::CopyFrom(const UpdateSiteResponse& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.site.UpdateSiteResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void UpdateSiteResponse::InternalSwap(UpdateSiteResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.state_, &other->_impl_.state_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.code_, &other->_impl_.code_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.updated_at_, &other->_impl_.updated_at_, arena);
+}
+
+::google::protobuf::Metadata UpdateSiteResponse::GetMetadata() const {
+  return Super_::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+DeleteSiteRequest::DeleteSiteRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, DeleteSiteRequest_get_class_data()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.site.DeleteSiteRequest)
+}
+PROTOBUF_NDEBUG_INLINE DeleteSiteRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::site::DeleteSiteRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        registration_id_(arena, from.registration_id_) {}
+
+DeleteSiteRequest::DeleteSiteRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const DeleteSiteRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, DeleteSiteRequest_get_class_data()) {
+
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  DeleteSiteRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.site.DeleteSiteRequest)
+}
+PROTOBUF_NDEBUG_INLINE DeleteSiteRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : registration_id_(arena) {}
+
+inline void DeleteSiteRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+DeleteSiteRequest::~DeleteSiteRequest() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.site.DeleteSiteRequest)
+  SharedDtor(*this);
+}
+inline void DeleteSiteRequest::SharedDtor(MessageLite& self) {
+  DeleteSiteRequest& this_ = static_cast<DeleteSiteRequest&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.registration_id_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull DeleteSiteRequest_class_data_ =
+        DeleteSiteRequest::InternalGenerateClassData_(DeleteSiteRequest_globals_._default);
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+DeleteSiteRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&DeleteSiteRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(DeleteSiteRequest_class_data_.tc_table);
+  return DeleteSiteRequest_class_data_.base();
+}
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+DeleteSiteRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&DeleteSiteRequest_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&DeleteSiteRequest_globals_));
+  return DeleteSiteRequest_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const DeleteSiteRequest::ParseTableT_
+    DeleteSiteRequest::_table_ =
+        DeleteSiteRequest::InternalGenerateParseTable_(DeleteSiteRequest_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void DeleteSiteRequest::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.site.DeleteSiteRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    this_._impl_.registration_id_.ClearNonDefaultToEmpty();
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL DeleteSiteRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const DeleteSiteRequest& this_ = static_cast<const DeleteSiteRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL DeleteSiteRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const DeleteSiteRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.site.DeleteSiteRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.DeleteSiteRequest.registration_id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.site.DeleteSiteRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t DeleteSiteRequest::ByteSizeLong(const MessageLite& base) {
+  const DeleteSiteRequest& this_ = static_cast<const DeleteSiteRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t DeleteSiteRequest::ByteSizeLong() const {
+  const DeleteSiteRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.site.DeleteSiteRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+   {
+    // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!this_._internal_registration_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_registration_id());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void DeleteSiteRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<DeleteSiteRequest*>(&to_msg);
+  auto& from = static_cast<const DeleteSiteRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.site.DeleteSiteRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!from._internal_registration_id().empty()) {
+      _this->_internal_set_registration_id(from._internal_registration_id());
+    } else {
+      if (_this->_impl_.registration_id_.IsDefault()) {
+        _this->_internal_set_registration_id("");
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void DeleteSiteRequest::CopyFrom(const DeleteSiteRequest& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.site.DeleteSiteRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void DeleteSiteRequest::InternalSwap(DeleteSiteRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+}
+
+::google::protobuf::Metadata DeleteSiteRequest::GetMetadata() const {
+  return Super_::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+DeleteSiteResponse::DeleteSiteResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, DeleteSiteResponse_get_class_data()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.site.DeleteSiteResponse)
+}
+PROTOBUF_NDEBUG_INLINE DeleteSiteResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::site::DeleteSiteResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        state_(arena, from.state_),
+        code_(arena, from.code_),
+        message_(arena, from.message_),
+        registration_id_(arena, from.registration_id_) {}
+
+DeleteSiteResponse::DeleteSiteResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const DeleteSiteResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, DeleteSiteResponse_get_class_data()) {
+
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  DeleteSiteResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, deleted_),
+           reinterpret_cast<const char*>(&from._impl_) +
+               offsetof(Impl_, deleted_),
+           offsetof(Impl_, changed_) -
+               offsetof(Impl_, deleted_) +
+               sizeof(Impl_::changed_));
+
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.site.DeleteSiteResponse)
+}
+PROTOBUF_NDEBUG_INLINE DeleteSiteResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : state_(arena),
+        code_(arena),
+        message_(arena),
+        registration_id_(arena) {}
+
+inline void DeleteSiteResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, deleted_),
+           0,
+           offsetof(Impl_, changed_) -
+               offsetof(Impl_, deleted_) +
+               sizeof(Impl_::changed_));
+}
+DeleteSiteResponse::~DeleteSiteResponse() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.site.DeleteSiteResponse)
+  SharedDtor(*this);
+}
+inline void DeleteSiteResponse::SharedDtor(MessageLite& self) {
+  DeleteSiteResponse& this_ = static_cast<DeleteSiteResponse&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.state_.Destroy();
+  this_._impl_.code_.Destroy();
+  this_._impl_.message_.Destroy();
+  this_._impl_.registration_id_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull DeleteSiteResponse_class_data_ =
+        DeleteSiteResponse::InternalGenerateClassData_(DeleteSiteResponse_globals_._default);
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+DeleteSiteResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&DeleteSiteResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(DeleteSiteResponse_class_data_.tc_table);
+  return DeleteSiteResponse_class_data_.base();
+}
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+DeleteSiteResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&DeleteSiteResponse_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&DeleteSiteResponse_globals_));
+  return DeleteSiteResponse_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const DeleteSiteResponse::ParseTableT_
+    DeleteSiteResponse::_table_ =
+        DeleteSiteResponse::InternalGenerateParseTable_(DeleteSiteResponse_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void DeleteSiteResponse::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.site.DeleteSiteResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      this_._impl_.state_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      this_._impl_.code_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      this_._impl_.message_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      this_._impl_.registration_id_.ClearNonDefaultToEmpty();
+    }
+  }
+  ::memset(&this_._impl_.deleted_, 0,
+           static_cast<::size_t>(
+               reinterpret_cast<char*>(&this_._impl_.changed_) -
+               reinterpret_cast<char*>(&this_._impl_.deleted_)) +
+               sizeof(_impl_.changed_));
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL DeleteSiteResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const DeleteSiteResponse& this_ = static_cast<const DeleteSiteResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL DeleteSiteResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const DeleteSiteResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.site.DeleteSiteResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // string state = 1 [json_name = "state", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!this_._internal_state().empty()) {
+      const ::std::string& _s = this_._internal_state();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.DeleteSiteResponse.state");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string code = 2 [json_name = "code", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    if (!this_._internal_code().empty()) {
+      const ::std::string& _s = this_._internal_code();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.DeleteSiteResponse.code");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string message = 3 [json_name = "message", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+    if (!this_._internal_message().empty()) {
+      const ::std::string& _s = this_._internal_message();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.DeleteSiteResponse.message");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.DeleteSiteResponse.registration_id");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
+  // bool deleted = 5 [json_name = "deleted"];
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (this_._internal_deleted() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          5, this_._internal_deleted(), target);
+    }
+  }
+
+  // bool changed = 6 [json_name = "changed"];
+  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+    if (this_._internal_changed() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          6, this_._internal_changed(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.site.DeleteSiteResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t DeleteSiteResponse::ByteSizeLong(const MessageLite& base) {
+  const DeleteSiteResponse& this_ = static_cast<const DeleteSiteResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t DeleteSiteResponse::ByteSizeLong() const {
+  const DeleteSiteResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.site.DeleteSiteResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000003fU)) {
+    // string state = 1 [json_name = "state", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!this_._internal_state().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_state());
+      }
+    }
+    // string code = 2 [json_name = "code", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!this_._internal_code().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_code());
+      }
+    }
+    // string message = 3 [json_name = "message", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!this_._internal_message().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_message());
+      }
+    }
+    // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!this_._internal_registration_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_registration_id());
+      }
+    }
+    // bool deleted = 5 [json_name = "deleted"];
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (this_._internal_deleted() != 0) {
+        total_size += 2;
+      }
+    }
+    // bool changed = 6 [json_name = "changed"];
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      if (this_._internal_changed() != 0) {
+        total_size += 2;
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void DeleteSiteResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<DeleteSiteResponse*>(&to_msg);
+  auto& from = static_cast<const DeleteSiteResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.site.DeleteSiteResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000003fU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!from._internal_state().empty()) {
+        _this->_internal_set_state(from._internal_state());
+      } else {
+        if (_this->_impl_.state_.IsDefault()) {
+          _this->_internal_set_state("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!from._internal_code().empty()) {
+        _this->_internal_set_code(from._internal_code());
+      } else {
+        if (_this->_impl_.code_.IsDefault()) {
+          _this->_internal_set_code("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!from._internal_message().empty()) {
+        _this->_internal_set_message(from._internal_message());
+      } else {
+        if (_this->_impl_.message_.IsDefault()) {
+          _this->_internal_set_message("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!from._internal_registration_id().empty()) {
+        _this->_internal_set_registration_id(from._internal_registration_id());
+      } else {
+        if (_this->_impl_.registration_id_.IsDefault()) {
+          _this->_internal_set_registration_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (from._internal_deleted() != 0) {
+        _this->_impl_.deleted_ = from._impl_.deleted_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      if (from._internal_changed() != 0) {
+        _this->_impl_.changed_ = from._impl_.changed_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void DeleteSiteResponse::CopyFrom(const DeleteSiteResponse& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.site.DeleteSiteResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void DeleteSiteResponse::InternalSwap(DeleteSiteResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.state_, &other->_impl_.state_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.code_, &other->_impl_.code_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.changed_)
+      + sizeof(DeleteSiteResponse::_impl_.changed_)
+      - PROTOBUF_FIELD_OFFSET(DeleteSiteResponse, _impl_.deleted_)>(
+          reinterpret_cast<char*>(&_impl_.deleted_),
+          reinterpret_cast<char*>(&other->_impl_.deleted_));
+}
+
+::google::protobuf::Metadata DeleteSiteResponse::GetMetadata() const {
+  return Super_::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+GetSiteRequest::GetSiteRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetSiteRequest_get_class_data()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.site.GetSiteRequest)
+}
+PROTOBUF_NDEBUG_INLINE GetSiteRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::site::GetSiteRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        site_id_(arena, from.site_id_) {}
+
+GetSiteRequest::GetSiteRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const GetSiteRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetSiteRequest_get_class_data()) {
+
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  GetSiteRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.site.GetSiteRequest)
+}
+PROTOBUF_NDEBUG_INLINE GetSiteRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : site_id_(arena) {}
+
+inline void GetSiteRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+GetSiteRequest::~GetSiteRequest() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.site.GetSiteRequest)
+  SharedDtor(*this);
+}
+inline void GetSiteRequest::SharedDtor(MessageLite& self) {
+  GetSiteRequest& this_ = static_cast<GetSiteRequest&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.site_id_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull GetSiteRequest_class_data_ =
+        GetSiteRequest::InternalGenerateClassData_(GetSiteRequest_globals_._default);
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetSiteRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetSiteRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(GetSiteRequest_class_data_.tc_table);
+  return GetSiteRequest_class_data_.base();
+}
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetSiteRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetSiteRequest_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&GetSiteRequest_globals_));
+  return GetSiteRequest_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetSiteRequest::ParseTableT_
+    GetSiteRequest::_table_ =
+        GetSiteRequest::InternalGenerateParseTable_(GetSiteRequest_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void GetSiteRequest::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.site.GetSiteRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    this_._impl_.site_id_.ClearNonDefaultToEmpty();
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL GetSiteRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const GetSiteRequest& this_ = static_cast<const GetSiteRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL GetSiteRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const GetSiteRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.site.GetSiteRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!this_._internal_site_id().empty()) {
+      const ::std::string& _s = this_._internal_site_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteRequest.site_id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.site.GetSiteRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t GetSiteRequest::ByteSizeLong(const MessageLite& base) {
+  const GetSiteRequest& this_ = static_cast<const GetSiteRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t GetSiteRequest::ByteSizeLong() const {
+  const GetSiteRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.site.GetSiteRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+   {
+    // string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!this_._internal_site_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_site_id());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void GetSiteRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<GetSiteRequest*>(&to_msg);
+  auto& from = static_cast<const GetSiteRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.site.GetSiteRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!from._internal_site_id().empty()) {
+      _this->_internal_set_site_id(from._internal_site_id());
+    } else {
+      if (_this->_impl_.site_id_.IsDefault()) {
+        _this->_internal_set_site_id("");
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void GetSiteRequest::CopyFrom(const GetSiteRequest& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.site.GetSiteRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void GetSiteRequest::InternalSwap(GetSiteRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.site_id_, &other->_impl_.site_id_, arena);
+}
+
+::google::protobuf::Metadata GetSiteRequest::GetMetadata() const {
+  return Super_::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+GetSiteByRegRequest::GetSiteByRegRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetSiteByRegRequest_get_class_data()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.site.GetSiteByRegRequest)
+}
+PROTOBUF_NDEBUG_INLINE GetSiteByRegRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::site::GetSiteByRegRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        registration_id_(arena, from.registration_id_) {}
+
+GetSiteByRegRequest::GetSiteByRegRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const GetSiteByRegRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetSiteByRegRequest_get_class_data()) {
+
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  GetSiteByRegRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.site.GetSiteByRegRequest)
+}
+PROTOBUF_NDEBUG_INLINE GetSiteByRegRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : registration_id_(arena) {}
+
+inline void GetSiteByRegRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+GetSiteByRegRequest::~GetSiteByRegRequest() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.site.GetSiteByRegRequest)
+  SharedDtor(*this);
+}
+inline void GetSiteByRegRequest::SharedDtor(MessageLite& self) {
+  GetSiteByRegRequest& this_ = static_cast<GetSiteByRegRequest&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.registration_id_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull GetSiteByRegRequest_class_data_ =
+        GetSiteByRegRequest::InternalGenerateClassData_(GetSiteByRegRequest_globals_._default);
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetSiteByRegRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetSiteByRegRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(GetSiteByRegRequest_class_data_.tc_table);
+  return GetSiteByRegRequest_class_data_.base();
+}
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetSiteByRegRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetSiteByRegRequest_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&GetSiteByRegRequest_globals_));
+  return GetSiteByRegRequest_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetSiteByRegRequest::ParseTableT_
+    GetSiteByRegRequest::_table_ =
+        GetSiteByRegRequest::InternalGenerateParseTable_(GetSiteByRegRequest_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void GetSiteByRegRequest::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.site.GetSiteByRegRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    this_._impl_.registration_id_.ClearNonDefaultToEmpty();
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL GetSiteByRegRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const GetSiteByRegRequest& this_ = static_cast<const GetSiteByRegRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL GetSiteByRegRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const GetSiteByRegRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.site.GetSiteByRegRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteByRegRequest.registration_id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.site.GetSiteByRegRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t GetSiteByRegRequest::ByteSizeLong(const MessageLite& base) {
+  const GetSiteByRegRequest& this_ = static_cast<const GetSiteByRegRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t GetSiteByRegRequest::ByteSizeLong() const {
+  const GetSiteByRegRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.site.GetSiteByRegRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+   {
+    // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!this_._internal_registration_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_registration_id());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void GetSiteByRegRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<GetSiteByRegRequest*>(&to_msg);
+  auto& from = static_cast<const GetSiteByRegRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.site.GetSiteByRegRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!from._internal_registration_id().empty()) {
+      _this->_internal_set_registration_id(from._internal_registration_id());
+    } else {
+      if (_this->_impl_.registration_id_.IsDefault()) {
+        _this->_internal_set_registration_id("");
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void GetSiteByRegRequest::CopyFrom(const GetSiteByRegRequest& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.site.GetSiteByRegRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void GetSiteByRegRequest::InternalSwap(GetSiteByRegRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+}
+
+::google::protobuf::Metadata GetSiteByRegRequest::GetMetadata() const {
+  return Super_::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+GetSiteResponse::GetSiteResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetSiteResponse_get_class_data()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.site.GetSiteResponse)
+}
+PROTOBUF_NDEBUG_INLINE GetSiteResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::site::GetSiteResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        granularity_ {
+          visibility, ::_pbi::InternalMetadataOffset::Build<
+              ::fusion::ai::proto::site::GetSiteResponse,
+              PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.granularity_)>()
+          , arena, from.granularity_
+        }
+        ,
+        state_(arena, from.state_),
+        code_(arena, from.code_),
+        message_(arena, from.message_),
+        registration_id_(arena, from.registration_id_),
+        service_type_(arena, from.service_type_),
+        site_id_(arena, from.site_id_),
+        site_name_(arena, from.site_name_),
+        timezone_(arena, from.timezone_),
+        source_attr_(arena, from.source_attr_),
+        created_at_(arena, from.created_at_),
+        updated_at_(arena, from.updated_at_) {}
+
+GetSiteResponse::GetSiteResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const GetSiteResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetSiteResponse_get_class_data()) {
+
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  GetSiteResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, longitude_),
+           reinterpret_cast<const char*>(&from._impl_) +
+               offsetof(Impl_, longitude_),
+           offsetof(Impl_, hisdays_) -
+               offsetof(Impl_, longitude_) +
+               sizeof(Impl_::hisdays_));
+
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.site.GetSiteResponse)
+}
+PROTOBUF_NDEBUG_INLINE GetSiteResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : granularity_ { visibility, ::_pbi::InternalMetadataOffset::Build<
+            ::fusion::ai::proto::site::GetSiteResponse,
+            PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::site::GetSiteResponse, _impl_.granularity_)>()
+         }
+        ,
+        state_(arena),
+        code_(arena),
+        message_(arena),
+        registration_id_(arena),
+        service_type_(arena),
+        site_id_(arena),
+        site_name_(arena),
+        timezone_(arena),
+        source_attr_(arena),
+        created_at_(arena),
+        updated_at_(arena) {}
+
+inline void GetSiteResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, longitude_),
+           0,
+           offsetof(Impl_, hisdays_) -
+               offsetof(Impl_, longitude_) +
+               sizeof(Impl_::hisdays_));
+}
+GetSiteResponse::~GetSiteResponse() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.site.GetSiteResponse)
+  SharedDtor(*this);
+}
+inline void GetSiteResponse::SharedDtor(MessageLite& self) {
+  GetSiteResponse& this_ = static_cast<GetSiteResponse&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.state_.Destroy();
+  this_._impl_.code_.Destroy();
+  this_._impl_.message_.Destroy();
+  this_._impl_.registration_id_.Destroy();
+  this_._impl_.service_type_.Destroy();
+  this_._impl_.site_id_.Destroy();
+  this_._impl_.site_name_.Destroy();
+  this_._impl_.timezone_.Destroy();
+  this_._impl_.source_attr_.Destroy();
+  this_._impl_.created_at_.Destroy();
+  this_._impl_.updated_at_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull GetSiteResponse_class_data_ =
+        GetSiteResponse::InternalGenerateClassData_(GetSiteResponse_globals_._default);
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetSiteResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetSiteResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(GetSiteResponse_class_data_.tc_table);
+  return GetSiteResponse_class_data_.base();
+}
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetSiteResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetSiteResponse_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&GetSiteResponse_globals_));
+  return GetSiteResponse_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetSiteResponse::ParseTableT_
+    GetSiteResponse::_table_ =
+        GetSiteResponse::InternalGenerateParseTable_(GetSiteResponse_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void GetSiteResponse::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.site.GetSiteResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      _impl_.granularity_.Clear();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      this_._impl_.state_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      this_._impl_.code_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      this_._impl_.message_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      this_._impl_.registration_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      this_._impl_.service_type_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      this_._impl_.site_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      this_._impl_.site_name_.ClearNonDefaultToEmpty();
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00000f00U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+      this_._impl_.timezone_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      this_._impl_.source_attr_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+      this_._impl_.created_at_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+      this_._impl_.updated_at_.ClearNonDefaultToEmpty();
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x0000f000U)) {
+    ::memset(&this_._impl_.longitude_, 0,
+             static_cast<::size_t>(
+                 reinterpret_cast<char*>(&this_._impl_.azimuth_deg_) -
+                 reinterpret_cast<char*>(&this_._impl_.longitude_)) +
+                 sizeof(_impl_.azimuth_deg_));
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x000f0000U)) {
+    ::memset(&this_._impl_.rated_p_, 0,
+             static_cast<::size_t>(
+                 reinterpret_cast<char*>(&this_._impl_.hisdays_) -
+                 reinterpret_cast<char*>(&this_._impl_.rated_p_)) +
+                 sizeof(_impl_.hisdays_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL GetSiteResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const GetSiteResponse& this_ = static_cast<const GetSiteResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL GetSiteResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const GetSiteResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.site.GetSiteResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // string state = 1 [json_name = "state", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    if (!this_._internal_state().empty()) {
+      const ::std::string& _s = this_._internal_state();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.state");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string code = 2 [json_name = "code", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+    if (!this_._internal_code().empty()) {
+      const ::std::string& _s = this_._internal_code();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.code");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string message = 3 [json_name = "message", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+    if (!this_._internal_message().empty()) {
+      const ::std::string& _s = this_._internal_message();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.message");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.registration_id");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
+  // string service_type = 5 [json_name = "service_type", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+    if (!this_._internal_service_type().empty()) {
+      const ::std::string& _s = this_._internal_service_type();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.service_type");
+      target = stream->WriteStringMaybeAliased(5, _s, target);
+    }
+  }
+
+  // string site_id = 6 [json_name = "site_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+    if (!this_._internal_site_id().empty()) {
+      const ::std::string& _s = this_._internal_site_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.site_id");
+      target = stream->WriteStringMaybeAliased(6, _s, target);
+    }
+  }
+
+  // string site_name = 7 [json_name = "site_name", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+    if (!this_._internal_site_name().empty()) {
+      const ::std::string& _s = this_._internal_site_name();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.site_name");
+      target = stream->WriteStringMaybeAliased(7, _s, target);
+    }
+  }
+
+  // string timezone = 8 [json_name = "timezone", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+    if (!this_._internal_timezone().empty()) {
+      const ::std::string& _s = this_._internal_timezone();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.timezone");
+      target = stream->WriteStringMaybeAliased(8, _s, target);
+    }
+  }
+
+  // optional float longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        9, this_._internal_longitude(), target);
+  }
+
+  // optional float latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00002000U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        10, this_._internal_latitude(), target);
+  }
+
+  // optional float tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00004000U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        11, this_._internal_tilt_deg(), target);
+  }
+
+  // optional float azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00008000U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        12, this_._internal_azimuth_deg(), target);
+  }
+
+  // optional float rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00010000U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        13, this_._internal_rated_p(), target);
+  }
+
+  // repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    {
+      int byte_size = this_._impl_._granularity_cached_byte_size_.Get();
+      if (byte_size > 0) {
+        target = stream->WriteInt32Packed(
+            14, this_._internal_granularity(), byte_size, target);
+      }
+    }
+  }
+
+  // int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00020000U)) {
+    if (this_._internal_data_source() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<15>(
+              stream, this_._internal_data_source(), target);
+    }
+  }
+
+  // string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+    if (!this_._internal_source_attr().empty()) {
+      const ::std::string& _s = this_._internal_source_attr();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.source_attr");
+      target = stream->WriteStringMaybeAliased(16, _s, target);
+    }
+  }
+
+  // optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00040000U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        17, this_._internal_operation(), target);
+  }
+
+  // optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00080000U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        18, this_._internal_hisdays(), target);
+  }
+
+  // string created_at = 19 [json_name = "created_at", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+    if (!this_._internal_created_at().empty()) {
+      const ::std::string& _s = this_._internal_created_at();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.created_at");
+      target = stream->WriteStringMaybeAliased(19, _s, target);
+    }
+  }
+
+  // string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+    if (!this_._internal_updated_at().empty()) {
+      const ::std::string& _s = this_._internal_updated_at();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.GetSiteResponse.updated_at");
+      target = stream->WriteStringMaybeAliased(20, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.site.GetSiteResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t GetSiteResponse::ByteSizeLong(const MessageLite& base) {
+  const GetSiteResponse& this_ = static_cast<const GetSiteResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t GetSiteResponse::ByteSizeLong() const {
+  const GetSiteResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.site.GetSiteResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  total_size += ::absl::popcount(0x0001f000U & cached_has_bits) * 5;
+  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
+    // repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      total_size +=
+          ::_pbi::WireFormatLite::Int32SizeWithPackedTagSize(
+              this_._internal_granularity(), 1,
+              this_._impl_._granularity_cached_byte_size_);
+    }
+    // string state = 1 [json_name = "state", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!this_._internal_state().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_state());
+      }
+    }
+    // string code = 2 [json_name = "code", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!this_._internal_code().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_code());
+      }
+    }
+    // string message = 3 [json_name = "message", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!this_._internal_message().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_message());
+      }
+    }
+    // string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!this_._internal_registration_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_registration_id());
+      }
+    }
+    // string service_type = 5 [json_name = "service_type", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      if (!this_._internal_service_type().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_service_type());
+      }
+    }
+    // string site_id = 6 [json_name = "site_id", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      if (!this_._internal_site_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_site_id());
+      }
+    }
+    // string site_name = 7 [json_name = "site_name", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      if (!this_._internal_site_name().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_site_name());
+      }
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00000f00U)) {
+    // string timezone = 8 [json_name = "timezone", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+      if (!this_._internal_timezone().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_timezone());
+      }
+    }
+    // string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      if (!this_._internal_source_attr().empty()) {
+        total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_source_attr());
+      }
+    }
+    // string created_at = 19 [json_name = "created_at", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+      if (!this_._internal_created_at().empty()) {
+        total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_created_at());
+      }
+    }
+    // string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+      if (!this_._internal_updated_at().empty()) {
+        total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_updated_at());
+      }
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x000e0000U)) {
+    // int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00020000U)) {
+      if (this_._internal_data_source() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_data_source());
+      }
+    }
+    // optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00040000U)) {
+      total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                      this_._internal_operation());
+    }
+    // optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00080000U)) {
+      total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                      this_._internal_hisdays());
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void GetSiteResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<GetSiteResponse*>(&to_msg);
+  auto& from = static_cast<const GetSiteResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.site.GetSiteResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      _this->_internal_mutable_granularity()->MergeFrom(from._internal_granularity());
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!from._internal_state().empty()) {
+        _this->_internal_set_state(from._internal_state());
+      } else {
+        if (_this->_impl_.state_.IsDefault()) {
+          _this->_internal_set_state("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!from._internal_code().empty()) {
+        _this->_internal_set_code(from._internal_code());
+      } else {
+        if (_this->_impl_.code_.IsDefault()) {
+          _this->_internal_set_code("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!from._internal_message().empty()) {
+        _this->_internal_set_message(from._internal_message());
+      } else {
+        if (_this->_impl_.message_.IsDefault()) {
+          _this->_internal_set_message("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!from._internal_registration_id().empty()) {
+        _this->_internal_set_registration_id(from._internal_registration_id());
+      } else {
+        if (_this->_impl_.registration_id_.IsDefault()) {
+          _this->_internal_set_registration_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      if (!from._internal_service_type().empty()) {
+        _this->_internal_set_service_type(from._internal_service_type());
+      } else {
+        if (_this->_impl_.service_type_.IsDefault()) {
+          _this->_internal_set_service_type("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      if (!from._internal_site_id().empty()) {
+        _this->_internal_set_site_id(from._internal_site_id());
+      } else {
+        if (_this->_impl_.site_id_.IsDefault()) {
+          _this->_internal_set_site_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      if (!from._internal_site_name().empty()) {
+        _this->_internal_set_site_name(from._internal_site_name());
+      } else {
+        if (_this->_impl_.site_name_.IsDefault()) {
+          _this->_internal_set_site_name("");
+        }
+      }
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x0000ff00U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+      if (!from._internal_timezone().empty()) {
+        _this->_internal_set_timezone(from._internal_timezone());
+      } else {
+        if (_this->_impl_.timezone_.IsDefault()) {
+          _this->_internal_set_timezone("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      if (!from._internal_source_attr().empty()) {
+        _this->_internal_set_source_attr(from._internal_source_attr());
+      } else {
+        if (_this->_impl_.source_attr_.IsDefault()) {
+          _this->_internal_set_source_attr("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+      if (!from._internal_created_at().empty()) {
+        _this->_internal_set_created_at(from._internal_created_at());
+      } else {
+        if (_this->_impl_.created_at_.IsDefault()) {
+          _this->_internal_set_created_at("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+      if (!from._internal_updated_at().empty()) {
+        _this->_internal_set_updated_at(from._internal_updated_at());
+      } else {
+        if (_this->_impl_.updated_at_.IsDefault()) {
+          _this->_internal_set_updated_at("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+      _this->_impl_.longitude_ = from._impl_.longitude_;
+    }
+    if (CheckHasBit(cached_has_bits, 0x00002000U)) {
+      _this->_impl_.latitude_ = from._impl_.latitude_;
+    }
+    if (CheckHasBit(cached_has_bits, 0x00004000U)) {
+      _this->_impl_.tilt_deg_ = from._impl_.tilt_deg_;
+    }
+    if (CheckHasBit(cached_has_bits, 0x00008000U)) {
+      _this->_impl_.azimuth_deg_ = from._impl_.azimuth_deg_;
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x000f0000U)) {
+    if (CheckHasBit(cached_has_bits, 0x00010000U)) {
+      _this->_impl_.rated_p_ = from._impl_.rated_p_;
+    }
+    if (CheckHasBit(cached_has_bits, 0x00020000U)) {
+      if (from._internal_data_source() != 0) {
+        _this->_impl_.data_source_ = from._impl_.data_source_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00040000U)) {
+      _this->_impl_.operation_ = from._impl_.operation_;
+    }
+    if (CheckHasBit(cached_has_bits, 0x00080000U)) {
+      _this->_impl_.hisdays_ = from._impl_.hisdays_;
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void GetSiteResponse::CopyFrom(const GetSiteResponse& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.site.GetSiteResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void GetSiteResponse::InternalSwap(GetSiteResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.granularity_.InternalSwap(&other->_impl_.granularity_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.state_, &other->_impl_.state_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.code_, &other->_impl_.code_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.service_type_, &other->_impl_.service_type_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.site_id_, &other->_impl_.site_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.site_name_, &other->_impl_.site_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.timezone_, &other->_impl_.timezone_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.source_attr_, &other->_impl_.source_attr_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.created_at_, &other->_impl_.created_at_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.updated_at_, &other->_impl_.updated_at_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.hisdays_)
+      + sizeof(GetSiteResponse::_impl_.hisdays_)
+      - PROTOBUF_FIELD_OFFSET(GetSiteResponse, _impl_.longitude_)>(
+          reinterpret_cast<char*>(&_impl_.longitude_),
+          reinterpret_cast<char*>(&other->_impl_.longitude_));
+}
+
+::google::protobuf::Metadata GetSiteResponse::GetMetadata() const {
   return Super_::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)

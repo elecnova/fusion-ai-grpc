@@ -21,7 +21,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file site/site_message.proto.
  */
 export const file_site_site_message: GenFile = /*@__PURE__*/
-  fileDesc("ChdzaXRlL3NpdGVfbWVzc2FnZS5wcm90bxIUZnVzaW9uLmFpLnByb3RvLnNpdGUi6AUKEUNyZWF0ZVNpdGVSZXF1ZXN0Ei0KDHNlcnZpY2VfdHlwZRgBIAEoCUIJukgGcgQQARhkUgxzZXJ2aWNlX3R5cGUSIwoHc2l0ZV9pZBgCIAEoCUIJukgGcgQQARg8UgdzaXRlX2lkEiUKCXNpdGVfbmFtZRgEIAEoCUIHukgEcgIYeFIJc2l0ZV9uYW1lEhkKCHRpbWV6b25lGAUgASgJQge6SARyAhhAEioKCWxvbmdpdHVkZRgGIAEoAUIXukgUEhIZAAAAAACAZkApAAAAAACAZsASKQoIbGF0aXR1ZGUYByABKAFCF7pIFBISGQAAAAAAgFZAKQAAAAAAgFbAEjgKCHRpbHRfZGVnGAggASgBQhe6SBQSEhkAAAAAAIBWQCkAAAAAAAAAAEgAUgh0aWx0X2RlZ4gBARI+CgthemltdXRoX2RlZxgJIAEoAUIXukgUEhIZAAAAAACAdkApAAAAAAAAAABIAVILYXppbXV0aF9kZWeIAQESKAoHcmF0ZWRfcBgKIAEoAUIOukgLEgkhAAAAAAAAAABSB3JhdGVkX3ASKQoLZ3JhbnVsYXJpdHkYCyADKAVCFLpIEZIBDhgBIgoaCDAFMA8wHjA8Ei0KC2RhdGFfc291cmNlGAwgASgFQgu6SAgaBjABMAIwA1ILZGF0YV9zb3VyY2USKgoLc291cmNlX2F0dHIYDSABKAlCCLpIBXIDGIAQUgtzb3VyY2VfYXR0chIcCglvcGVyYXRpb24YDiABKAVCCbpIBhoEMAEwAhIdCgdoaXNkYXlzGA8gASgFQge6SAQaAiAASAKIAQESKwoMY3JlYXRlZF90aW1lGBAgASgJQge6SARyAhgoUgxjcmVhdGVkX3RpbWUSKQoLdXBkYXRlX3RpbWUYESABKAlCB7pIBHICGChSC3VwZGF0ZV90aW1lQgsKCV90aWx0X2RlZ0IOCgxfYXppbXV0aF9kZWdCCgoIX2hpc2RheXMi+gEKEkNyZWF0ZVNpdGVSZXNwb25zZRIkCgVzdGF0ZRgBIAEoCUIVukgSchBSB3N1Y2Nlc3NSBWVycm9yEh8KBGNvZGUYAiABKAlCEbpIDnIMMgpeWzAtOV17NX0kEhgKB21lc3NhZ2UYAyABKAlCB7pIBHICEAESMQoPcmVnaXN0cmF0aW9uX2lkGAQgASgJQge6SARyAhABUg9yZWdpc3RyYXRpb25faWQSJwoKY3JlYXRlZF9hdBgFIAEoCUIHukgEcgIQAVIKY3JlYXRlZF9hdBInCgp1cGRhdGVkX2F0GAYgASgJQge6SARyAhABUgp1cGRhdGVkX2F0QrsBChhjb20uZnVzaW9uLmFpLnByb3RvLnNpdGVCEFNpdGVNZXNzYWdlUHJvdG9QAVoZZnVzaW9uLmFpLnByb3RvLnNpdGU7c2l0ZaICBEZBUFOqAhRGdXNpb24uQWkuUHJvdG8uU2l0ZcoCFEZ1c2lvblxBaVxQcm90b1xTaXRl4gIgRnVzaW9uXEFpXFByb3RvXFNpdGVcR1BCTWV0YWRhdGHqAhdGdXNpb246OkFpOjpQcm90bzo6U2l0ZWIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("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bXV0aF9kZWeIAQESKQoHcmF0ZWRfcBgNIAEoAkIKukgHCgUlAAAAAEgEUgdyYXRlZF9wiAEBEiEKC2dyYW51bGFyaXR5GA4gAygFQgy6SAmSAQYiBBoCIAASLQoLZGF0YV9zb3VyY2UYDyABKAVCC7pICBoGMAEwAjADUgtkYXRhX3NvdXJjZRIqCgtzb3VyY2VfYXR0chgQIAEoCUIIukgFcgMYgBBSC3NvdXJjZV9hdHRyEiEKCW9wZXJhdGlvbhgRIAEoBUIJukgGGgQwATACSAWIAQESHQoHaGlzZGF5cxgSIAEoBUIHukgEGgIgAEgGiAEBEicKCmNyZWF0ZWRfYXQYEyABKAlCB7pIBHICEAFSCmNyZWF0ZWRfYXQSJwoKdXBkYXRlZF9hdBgUIAEoCUIHukgEcgIQAVIKdXBkYXRlZF9hdEIMCgpfbG9uZ2l0dWRlQgsKCV9sYXRpdHVkZUILCglfdGlsdF9kZWdCDgoMX2F6aW11dGhfZGVnQgoKCF9yYXRlZF9wQgwKCl9vcGVyYXRpb25CCgoIX2hpc2RheXNCuwEKGGNvbS5mdXNpb24uYWkucHJvdG8uc2l0ZUIQU2l0ZU1lc3NhZ2VQcm90b1ABWhlmdXNpb24uYWkucHJvdG8uc2l0ZTtzaXRlogIERkFQU6oCFEZ1c2lvbi5BaS5Qcm90by5TaXRlygIURnVzaW9uXEFpXFByb3RvXFNpdGXiAiBGdXNpb25cQWlcUHJvdG9cU2l0ZVxHUEJNZXRhZGF0YeoCF0Z1c2lvbjo6QWk6OlByb3RvOjpTaXRlYgZwcm90bzM", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
  * Package message 场站注册-首次注册消息请求定义
@@ -46,98 +46,98 @@ export type CreateSiteRequest = Message<"fusion.ai.proto.site.CreateSiteRequest"
   /**
    * 场站显示名称
    *
-   * @generated from field: string site_name = 4 [json_name = "site_name"];
+   * @generated from field: string site_name = 3 [json_name = "site_name"];
    */
   siteName: string;
 
   /**
    * 时区名称，例如 Asia/Shanghai
    *
-   * @generated from field: string timezone = 5;
+   * @generated from field: string timezone = 4;
    */
   timezone: string;
 
   /**
    * 经度，单位度，范围 [-180, 180]
    *
-   * @generated from field: double longitude = 6;
+   * @generated from field: double longitude = 5;
    */
   longitude: number;
 
   /**
    * 纬度，单位度，范围 [-90, 90]
    *
-   * @generated from field: double latitude = 7;
+   * @generated from field: double latitude = 6;
    */
   latitude: number;
 
   /**
    * 光伏组件安装倾角，单位度，范围 [0, 90]
    *
-   * @generated from field: optional double tilt_deg = 8 [json_name = "tilt_deg"];
+   * @generated from field: optional double tilt_deg = 7 [json_name = "tilt_deg"];
    */
   tiltDeg?: number | undefined;
 
   /**
    * 光伏组件安装方位角，单位度，范围 [0, 360]
    *
-   * @generated from field: optional double azimuth_deg = 9 [json_name = "azimuth_deg"];
+   * @generated from field: optional double azimuth_deg = 8 [json_name = "azimuth_deg"];
    */
   azimuthDeg?: number | undefined;
 
   /**
    * 额定功率
    *
-   * @generated from field: double rated_p = 10 [json_name = "rated_p"];
+   * @generated from field: double rated_p = 9 [json_name = "rated_p"];
    */
   ratedP: number;
 
   /**
    * 支持的预测步长，单位分钟，可选 5、15、30、60
    *
-   * @generated from field: repeated int32 granularity = 11;
+   * @generated from field: repeated int32 granularity = 10;
    */
   granularity: number[];
 
   /**
    * 数据源类型：1-pull，2-push，3-file
    *
-   * @generated from field: int32 data_source = 12 [json_name = "data_source"];
+   * @generated from field: int32 data_source = 11 [json_name = "data_source"];
    */
   dataSource: number;
 
   /**
    * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
    *
-   * @generated from field: string source_attr = 13 [json_name = "source_attr"];
+   * @generated from field: string source_attr = 12 [json_name = "source_attr"];
    */
   sourceAttr: string;
 
   /**
    * 操作类型：1-predict，2-train
    *
-   * @generated from field: int32 operation = 14;
+   * @generated from field: int32 operation = 13;
    */
   operation: number;
 
   /**
    * 历史数据天数，未指定时由业务层采用模型默认值
    *
-   * @generated from field: optional int32 hisdays = 15;
+   * @generated from field: optional int32 hisdays = 14;
    */
   hisdays?: number | undefined;
 
   /**
    * 配置创建时间，ISO 8601 格式
    *
-   * @generated from field: string created_time = 16 [json_name = "created_time"];
+   * @generated from field: string created_time = 15 [json_name = "created_time"];
    */
   createdTime: string;
 
   /**
    * 配置更新时间，ISO 8601 格式
    *
-   * @generated from field: string update_time = 17 [json_name = "update_time"];
+   * @generated from field: string update_time = 16 [json_name = "update_time"];
    */
   updateTime: string;
 };
@@ -204,4 +204,427 @@ export type CreateSiteResponse = Message<"fusion.ai.proto.site.CreateSiteRespons
  */
 export const CreateSiteResponseSchema: GenMessage<CreateSiteResponse> = /*@__PURE__*/
   messageDesc(file_site_site_message, 1);
+
+/**
+ * @generated from message fusion.ai.proto.site.UpdateSiteRequest
+ */
+export type UpdateSiteRequest = Message<"fusion.ai.proto.site.UpdateSiteRequest"> & {
+  /**
+   * 用于定位记录，不修改该标识
+   *
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 场站显示名称
+   *
+   * @generated from field: string site_name = 2 [json_name = "site_name"];
+   */
+  siteName: string;
+
+  /**
+   * 场站时区，如 Asia/Shanghai
+   *
+   * @generated from field: string timezone = 3;
+   */
+  timezone: string;
+
+  /**
+   * 场站经度，单位：度
+   *
+   * @generated from field: float longitude = 4;
+   */
+  longitude: number;
+
+  /**
+   * 场站纬度，单位：度
+   *
+   * @generated from field: float latitude = 5;
+   */
+  latitude: number;
+
+  /**
+   * 光伏组件倾角，单位：度
+   *
+   * @generated from field: float tilt_deg = 6 [json_name = "tilt_deg"];
+   */
+  tiltDeg: number;
+
+  /**
+   * 光伏组件方位角，单位：度
+   *
+   * @generated from field: float azimuth_deg = 7 [json_name = "azimuth_deg"];
+   */
+  azimuthDeg: number;
+
+  /**
+   * 光伏额定功率，单位：kW；非适用业务可不提供
+   *
+   * @generated from field: float rated_p = 8 [json_name = "rated_p"];
+   */
+  ratedP: number;
+
+  /**
+   * 预测步长列表，单位：分钟
+   *
+   * @generated from field: repeated int32 granularity = 9;
+   */
+  granularity: number[];
+
+  /**
+   * 数据源类型：1-pull，2-push，3-file
+   *
+   * @generated from field: int32 data_source = 10 [json_name = "data_source"];
+   */
+  dataSource: number;
+
+  /**
+   * 数据源地址或路径，返回时不得暴露凭据
+   *
+   * @generated from field: string source_attr = 11 [json_name = "source_attr"];
+   */
+  sourceAttr: string;
+
+  /**
+   * 运行类型：1-预测，2-训练
+   *
+   * @generated from field: int32 operation = 12;
+   */
+  operation: number;
+
+  /**
+   * 已保存历史天数；无值时不补默认值
+   *
+   * @generated from field: optional int32 hisdays = 13;
+   */
+  hisdays?: number | undefined;
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.UpdateSiteRequest.
+ * Use `create(UpdateSiteRequestSchema)` to create a new message.
+ */
+export const UpdateSiteRequestSchema: GenMessage<UpdateSiteRequest> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 2);
+
+/**
+ * Package message 场站注册-更新注册消息响应定义
+ *
+ * @generated from message fusion.ai.proto.site.UpdateSiteResponse
+ */
+export type UpdateSiteResponse = Message<"fusion.ai.proto.site.UpdateSiteResponse"> & {
+  /**
+   * 处理状态：success 成功，error 失败
+   *
+   * @generated from field: string state = 1;
+   */
+  state: string;
+
+  /**
+   * 五位业务码：成功为 00000，异常对应场景码表
+   *
+   * @generated from field: string code = 2;
+   */
+  code: string;
+
+  /**
+   * 处理结果说明，客户端不得依赖提示文字判断业务结果
+   *
+   * @generated from field: string message = 3;
+   */
+  message: string;
+
+  /**
+   * 算法业务注册唯一标识，首次注册由算法服务生成
+   *
+   * @generated from field: string registration_id = 4 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 更新时间，带时区的 ISO 8601 格式，配置实际更新后刷新
+   *
+   * @generated from field: string updated_at = 5 [json_name = "updated_at"];
+   */
+  updatedAt: string;
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.UpdateSiteResponse.
+ * Use `create(UpdateSiteResponseSchema)` to create a new message.
+ */
+export const UpdateSiteResponseSchema: GenMessage<UpdateSiteResponse> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 3);
+
+/**
+ * @generated from message fusion.ai.proto.site.DeleteSiteRequest
+ */
+export type DeleteSiteRequest = Message<"fusion.ai.proto.site.DeleteSiteRequest"> & {
+  /**
+   * 需要删除的注册标识
+   *
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
+   */
+  registrationId: string;
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.DeleteSiteRequest.
+ * Use `create(DeleteSiteRequestSchema)` to create a new message.
+ */
+export const DeleteSiteRequestSchema: GenMessage<DeleteSiteRequest> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 4);
+
+/**
+ * Package message 场站注册-删除注册消息响应定义
+ *
+ * @generated from message fusion.ai.proto.site.DeleteSiteResponse
+ */
+export type DeleteSiteResponse = Message<"fusion.ai.proto.site.DeleteSiteResponse"> & {
+  /**
+   * 处理状态：success 成功，error 失败
+   *
+   * @generated from field: string state = 1;
+   */
+  state: string;
+
+  /**
+   * 五位业务码：成功为 00000，异常见场景码表
+   *
+   * @generated from field: string code = 2;
+   */
+  code: string;
+
+  /**
+   * 本次操作结果说明
+   *
+   * @generated from field: string message = 3;
+   */
+  message: string;
+
+  /**
+   * 已删除的注册 ID
+   *
+   * @generated from field: string registration_id = 4 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 删除成功为 true
+   *
+   * @generated from field: bool deleted = 5;
+   */
+  deleted: boolean;
+
+  /**
+   * 本次成功注销产生变更为 true
+   *
+   * @generated from field: bool changed = 6;
+   */
+  changed: boolean;
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.DeleteSiteResponse.
+ * Use `create(DeleteSiteResponseSchema)` to create a new message.
+ */
+export const DeleteSiteResponseSchema: GenMessage<DeleteSiteResponse> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 5);
+
+/**
+ * Package message 场站注册-按场站ID查询场站消息请求定义
+ *
+ * @generated from message fusion.ai.proto.site.GetSiteRequest
+ */
+export type GetSiteRequest = Message<"fusion.ai.proto.site.GetSiteRequest"> & {
+  /**
+   * 需要查询的业务注册标识
+   *
+   * @generated from field: string site_id = 1 [json_name = "site_id"];
+   */
+  siteId: string;
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.GetSiteRequest.
+ * Use `create(GetSiteRequestSchema)` to create a new message.
+ */
+export const GetSiteRequestSchema: GenMessage<GetSiteRequest> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 6);
+
+/**
+ * Package message 场站注册-按注册ID查询场站消息请求定义
+ *
+ * @generated from message fusion.ai.proto.site.GetSiteByRegRequest
+ */
+export type GetSiteByRegRequest = Message<"fusion.ai.proto.site.GetSiteByRegRequest"> & {
+  /**
+   * 需要查询的业务注册标识
+   *
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
+   */
+  registrationId: string;
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.GetSiteByRegRequest.
+ * Use `create(GetSiteByRegRequestSchema)` to create a new message.
+ */
+export const GetSiteByRegRequestSchema: GenMessage<GetSiteByRegRequest> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 7);
+
+/**
+ * Package message 场站注册-查询场站消息响应定义
+ *
+ * @generated from message fusion.ai.proto.site.GetSiteResponse
+ */
+export type GetSiteResponse = Message<"fusion.ai.proto.site.GetSiteResponse"> & {
+  /**
+   * 处理状态：success 成功，error 失败
+   *
+   * @generated from field: string state = 1;
+   */
+  state: string;
+
+  /**
+   * 五位业务码：成功 00000，异常见场景码表
+   *
+   * @generated from field: string code = 2;
+   */
+  code: string;
+
+  /**
+   * 本次操作结果说明
+   *
+   * @generated from field: string message = 3;
+   */
+  message: string;
+
+  /**
+   * 固定注册标识，关联已保存的场站及算法业务配置
+   *
+   * @generated from field: string registration_id = 4 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 实际保存的服务标识，如 pv_prediction、load_prediction
+   *
+   * @generated from field: string service_type = 5 [json_name = "service_type"];
+   */
+  serviceType: string;
+
+  /**
+   * 场站唯一 ID
+   *
+   * @generated from field: string site_id = 6 [json_name = "site_id"];
+   */
+  siteId: string;
+
+  /**
+   * 场站显示名称
+   *
+   * @generated from field: string site_name = 7 [json_name = "site_name"];
+   */
+  siteName: string;
+
+  /**
+   * 场站时区，如 Asia/Shanghai
+   *
+   * @generated from field: string timezone = 8;
+   */
+  timezone: string;
+
+  /**
+   * 已保存经度，单位：度
+   *
+   * @generated from field: optional float longitude = 9;
+   */
+  longitude?: number | undefined;
+
+  /**
+   * 已保存纬度，单位：度
+   *
+   * @generated from field: optional float latitude = 10;
+   */
+  latitude?: number | undefined;
+
+  /**
+   * 光伏组件倾角，单位：度
+   *
+   * @generated from field: optional float tilt_deg = 11 [json_name = "tilt_deg"];
+   */
+  tiltDeg?: number | undefined;
+
+  /**
+   * 光伏组件方位角，单位：度
+   *
+   * @generated from field: optional float azimuth_deg = 12 [json_name = "azimuth_deg"];
+   */
+  azimuthDeg?: number | undefined;
+
+  /**
+   * 光伏额定功率，单位：kW；非适用业务可不返回
+   *
+   * @generated from field: optional float rated_p = 13 [json_name = "rated_p"];
+   */
+  ratedP?: number | undefined;
+
+  /**
+   * 保存的预测步长列表，单位：分钟
+   *
+   * @generated from field: repeated int32 granularity = 14;
+   */
+  granularity: number[];
+
+  /**
+   * 数据源类型：1-pull，2-push，3-file
+   *
+   * @generated from field: int32 data_source = 15 [json_name = "data_source"];
+   */
+  dataSource: number;
+
+  /**
+   * 数据源地址或路径；客户返回中不得暴露凭据
+   *
+   * @generated from field: string source_attr = 16 [json_name = "source_attr"];
+   */
+  sourceAttr: string;
+
+  /**
+   * 已保存运行类型：1-预测，2-训练
+   *
+   * @generated from field: optional int32 operation = 17;
+   */
+  operation?: number | undefined;
+
+  /**
+   * 已保存历史天数；无值时不补默认值
+   *
+   * @generated from field: optional int32 hisdays = 18;
+   */
+  hisdays?: number | undefined;
+
+  /**
+   * 创建时间，ISO 8601 带时区；创建后保持不变
+   *
+   * @generated from field: string created_at = 19 [json_name = "created_at"];
+   */
+  createdAt: string;
+
+  /**
+   * 最近配置更新时间，ISO 8601 带时区；查询不刷新
+   *
+   * @generated from field: string updated_at = 20 [json_name = "updated_at"];
+   */
+  updatedAt: string;
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.GetSiteResponse.
+ * Use `create(GetSiteResponseSchema)` to create a new message.
+ */
+export const GetSiteResponseSchema: GenMessage<GetSiteResponse> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 8);
 

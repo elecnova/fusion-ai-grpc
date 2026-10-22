@@ -55,7 +55,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 场站显示名称
    * </pre>
    *
-   * <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
    * @return The siteName.
    */
   java.lang.String getSiteName();
@@ -64,7 +64,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 场站显示名称
    * </pre>
    *
-   * <code>string site_name = 4 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * <code>string site_name = 3 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
    * @return The bytes for siteName.
    */
   com.google.protobuf.ByteString
@@ -75,7 +75,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 时区名称，例如 Asia/Shanghai
    * </pre>
    *
-   * <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
    * @return The timezone.
    */
   java.lang.String getTimezone();
@@ -84,7 +84,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 时区名称，例如 Asia/Shanghai
    * </pre>
    *
-   * <code>string timezone = 5 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * <code>string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
    * @return The bytes for timezone.
    */
   com.google.protobuf.ByteString
@@ -95,7 +95,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 经度，单位度，范围 [-180, 180]
    * </pre>
    *
-   * <code>double longitude = 6 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+   * <code>double longitude = 5 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
    * @return The longitude.
    */
   double getLongitude();
@@ -105,7 +105,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 纬度，单位度，范围 [-90, 90]
    * </pre>
    *
-   * <code>double latitude = 7 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+   * <code>double latitude = 6 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
    * @return The latitude.
    */
   double getLatitude();
@@ -115,7 +115,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 光伏组件安装倾角，单位度，范围 [0, 90]
    * </pre>
    *
-   * <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
    * @return Whether the tiltDeg field is set.
    */
   boolean hasTiltDeg();
@@ -124,7 +124,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 光伏组件安装倾角，单位度，范围 [0, 90]
    * </pre>
    *
-   * <code>optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double tilt_deg = 7 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
    * @return The tiltDeg.
    */
   double getTiltDeg();
@@ -134,7 +134,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 光伏组件安装方位角，单位度，范围 [0, 360]
    * </pre>
    *
-   * <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
    * @return Whether the azimuthDeg field is set.
    */
   boolean hasAzimuthDeg();
@@ -143,7 +143,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 光伏组件安装方位角，单位度，范围 [0, 360]
    * </pre>
    *
-   * <code>optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
    * @return The azimuthDeg.
    */
   double getAzimuthDeg();
@@ -153,7 +153,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 额定功率
    * </pre>
    *
-   * <code>double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
    * @return The ratedP.
    */
   double getRatedP();
@@ -163,7 +163,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 支持的预测步长，单位分钟，可选 5、15、30、60
    * </pre>
    *
-   * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+   * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
    * @return A list containing the granularity.
    */
   java.util.List<java.lang.Integer> getGranularityList();
@@ -172,7 +172,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 支持的预测步长，单位分钟，可选 5、15、30、60
    * </pre>
    *
-   * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+   * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
    * @return The count of granularity.
    */
   int getGranularityCount();
@@ -181,7 +181,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 支持的预测步长，单位分钟，可选 5、15、30、60
    * </pre>
    *
-   * <code>repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
+   * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The granularity at the given index.
    */
@@ -192,7 +192,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 数据源类型：1-pull，2-push，3-file
    * </pre>
    *
-   * <code>int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+   * <code>int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
    * @return The dataSource.
    */
   int getDataSource();
@@ -202,7 +202,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
    * </pre>
    *
-   * <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
    * @return The sourceAttr.
    */
   java.lang.String getSourceAttr();
@@ -211,7 +211,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 数据源属性：pull 对应外部接口地址，file 对应文件 URL
    * </pre>
    *
-   * <code>string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * <code>string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
    * @return The bytes for sourceAttr.
    */
   com.google.protobuf.ByteString
@@ -222,7 +222,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 操作类型：1-predict，2-train
    * </pre>
    *
-   * <code>int32 operation = 14 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
    * @return The operation.
    */
   int getOperation();
@@ -232,7 +232,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 历史数据天数，未指定时由业务层采用模型默认值
    * </pre>
    *
-   * <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
    * @return Whether the hisdays field is set.
    */
   boolean hasHisdays();
@@ -241,7 +241,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 历史数据天数，未指定时由业务层采用模型默认值
    * </pre>
    *
-   * <code>optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
    * @return The hisdays.
    */
   int getHisdays();
@@ -251,7 +251,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 配置创建时间，ISO 8601 格式
    * </pre>
    *
-   * <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
+   * <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
    * @return The createdTime.
    */
   java.lang.String getCreatedTime();
@@ -260,7 +260,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 配置创建时间，ISO 8601 格式
    * </pre>
    *
-   * <code>string created_time = 16 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
+   * <code>string created_time = 15 [json_name = "created_time", (.buf.validate.field) = { ... }</code>
    * @return The bytes for createdTime.
    */
   com.google.protobuf.ByteString
@@ -271,7 +271,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 配置更新时间，ISO 8601 格式
    * </pre>
    *
-   * <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
+   * <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
    * @return The updateTime.
    */
   java.lang.String getUpdateTime();
@@ -280,7 +280,7 @@ public interface CreateSiteRequestOrBuilder extends
    * 配置更新时间，ISO 8601 格式
    * </pre>
    *
-   * <code>string update_time = 17 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
+   * <code>string update_time = 16 [json_name = "update_time", (.buf.validate.field) = { ... }</code>
    * @return The bytes for updateTime.
    */
   com.google.protobuf.ByteString

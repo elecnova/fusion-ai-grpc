@@ -28,7 +28,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	SiteService_CreateSite_FullMethodName = "/fusion.ai.proto.site.SiteService/CreateSite"
+	SiteService_CreateSite_FullMethodName   = "/fusion.ai.proto.site.SiteService/CreateSite"
+	SiteService_UpdateSite_FullMethodName   = "/fusion.ai.proto.site.SiteService/UpdateSite"
+	SiteService_DeleteSite_FullMethodName   = "/fusion.ai.proto.site.SiteService/DeleteSite"
+	SiteService_GetSite_FullMethodName      = "/fusion.ai.proto.site.SiteService/GetSite"
+	SiteService_GetSiteByReg_FullMethodName = "/fusion.ai.proto.site.SiteService/GetSiteByReg"
 )
 
 // SiteServiceClient is the client API for SiteService service.
@@ -39,6 +43,14 @@ const (
 type SiteServiceClient interface {
 	// 场站注册-首次注册
 	CreateSite(ctx context.Context, in *CreateSiteRequest, opts ...grpc.CallOption) (*CreateSiteResponse, error)
+	// 场站注册-更新注册
+	UpdateSite(ctx context.Context, in *UpdateSiteRequest, opts ...grpc.CallOption) (*UpdateSiteResponse, error)
+	// 场站注册-删除注册
+	DeleteSite(ctx context.Context, in *DeleteSiteRequest, opts ...grpc.CallOption) (*DeleteSiteResponse, error)
+	// 场站注册-查询注册（按场站ID查询）
+	GetSite(ctx context.Context, in *GetSiteRequest, opts ...grpc.CallOption) (*GetSiteResponse, error)
+	// 场站注册-查询注册（按注册ID查询）
+	GetSiteByReg(ctx context.Context, in *GetSiteByRegRequest, opts ...grpc.CallOption) (*GetSiteResponse, error)
 }
 
 type siteServiceClient struct {
@@ -59,6 +71,46 @@ func (c *siteServiceClient) CreateSite(ctx context.Context, in *CreateSiteReques
 	return out, nil
 }
 
+func (c *siteServiceClient) UpdateSite(ctx context.Context, in *UpdateSiteRequest, opts ...grpc.CallOption) (*UpdateSiteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateSiteResponse)
+	err := c.cc.Invoke(ctx, SiteService_UpdateSite_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *siteServiceClient) DeleteSite(ctx context.Context, in *DeleteSiteRequest, opts ...grpc.CallOption) (*DeleteSiteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteSiteResponse)
+	err := c.cc.Invoke(ctx, SiteService_DeleteSite_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *siteServiceClient) GetSite(ctx context.Context, in *GetSiteRequest, opts ...grpc.CallOption) (*GetSiteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSiteResponse)
+	err := c.cc.Invoke(ctx, SiteService_GetSite_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *siteServiceClient) GetSiteByReg(ctx context.Context, in *GetSiteByRegRequest, opts ...grpc.CallOption) (*GetSiteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSiteResponse)
+	err := c.cc.Invoke(ctx, SiteService_GetSiteByReg_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SiteServiceServer is the server API for SiteService service.
 // All implementations must embed UnimplementedSiteServiceServer
 // for forward compatibility.
@@ -67,6 +119,14 @@ func (c *siteServiceClient) CreateSite(ctx context.Context, in *CreateSiteReques
 type SiteServiceServer interface {
 	// 场站注册-首次注册
 	CreateSite(context.Context, *CreateSiteRequest) (*CreateSiteResponse, error)
+	// 场站注册-更新注册
+	UpdateSite(context.Context, *UpdateSiteRequest) (*UpdateSiteResponse, error)
+	// 场站注册-删除注册
+	DeleteSite(context.Context, *DeleteSiteRequest) (*DeleteSiteResponse, error)
+	// 场站注册-查询注册（按场站ID查询）
+	GetSite(context.Context, *GetSiteRequest) (*GetSiteResponse, error)
+	// 场站注册-查询注册（按注册ID查询）
+	GetSiteByReg(context.Context, *GetSiteByRegRequest) (*GetSiteResponse, error)
 	mustEmbedUnimplementedSiteServiceServer()
 }
 
@@ -79,6 +139,18 @@ type UnimplementedSiteServiceServer struct{}
 
 func (UnimplementedSiteServiceServer) CreateSite(context.Context, *CreateSiteRequest) (*CreateSiteResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateSite not implemented")
+}
+func (UnimplementedSiteServiceServer) UpdateSite(context.Context, *UpdateSiteRequest) (*UpdateSiteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateSite not implemented")
+}
+func (UnimplementedSiteServiceServer) DeleteSite(context.Context, *DeleteSiteRequest) (*DeleteSiteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteSite not implemented")
+}
+func (UnimplementedSiteServiceServer) GetSite(context.Context, *GetSiteRequest) (*GetSiteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSite not implemented")
+}
+func (UnimplementedSiteServiceServer) GetSiteByReg(context.Context, *GetSiteByRegRequest) (*GetSiteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSiteByReg not implemented")
 }
 func (UnimplementedSiteServiceServer) mustEmbedUnimplementedSiteServiceServer() {}
 func (UnimplementedSiteServiceServer) testEmbeddedByValue()                     {}
@@ -119,6 +191,78 @@ func _SiteService_CreateSite_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SiteService_UpdateSite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSiteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SiteServiceServer).UpdateSite(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SiteService_UpdateSite_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SiteServiceServer).UpdateSite(ctx, req.(*UpdateSiteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SiteService_DeleteSite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteSiteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SiteServiceServer).DeleteSite(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SiteService_DeleteSite_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SiteServiceServer).DeleteSite(ctx, req.(*DeleteSiteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SiteService_GetSite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSiteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SiteServiceServer).GetSite(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SiteService_GetSite_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SiteServiceServer).GetSite(ctx, req.(*GetSiteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SiteService_GetSiteByReg_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSiteByRegRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SiteServiceServer).GetSiteByReg(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SiteService_GetSiteByReg_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SiteServiceServer).GetSiteByReg(ctx, req.(*GetSiteByRegRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SiteService_ServiceDesc is the grpc.ServiceDesc for SiteService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -129,6 +273,22 @@ var SiteService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateSite",
 			Handler:    _SiteService_CreateSite_Handler,
+		},
+		{
+			MethodName: "UpdateSite",
+			Handler:    _SiteService_UpdateSite_Handler,
+		},
+		{
+			MethodName: "DeleteSite",
+			Handler:    _SiteService_DeleteSite_Handler,
+		},
+		{
+			MethodName: "GetSite",
+			Handler:    _SiteService_GetSite_Handler,
+		},
+		{
+			MethodName: "GetSiteByReg",
+			Handler:    _SiteService_GetSiteByReg_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

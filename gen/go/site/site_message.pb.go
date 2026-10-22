@@ -40,33 +40,33 @@ type CreateSiteRequest struct {
 	// 场站唯一 ID
 	SiteId string `protobuf:"bytes,2,opt,name=site_id,proto3" json:"site_id,omitempty"`
 	// 场站显示名称
-	SiteName string `protobuf:"bytes,4,opt,name=site_name,proto3" json:"site_name,omitempty"`
+	SiteName string `protobuf:"bytes,3,opt,name=site_name,proto3" json:"site_name,omitempty"`
 	// 时区名称，例如 Asia/Shanghai
-	Timezone string `protobuf:"bytes,5,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	Timezone string `protobuf:"bytes,4,opt,name=timezone,proto3" json:"timezone,omitempty"`
 	// 经度，单位度，范围 [-180, 180]
-	Longitude float64 `protobuf:"fixed64,6,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	Longitude float64 `protobuf:"fixed64,5,opt,name=longitude,proto3" json:"longitude,omitempty"`
 	// 纬度，单位度，范围 [-90, 90]
-	Latitude float64 `protobuf:"fixed64,7,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Latitude float64 `protobuf:"fixed64,6,opt,name=latitude,proto3" json:"latitude,omitempty"`
 	// 光伏组件安装倾角，单位度，范围 [0, 90]
-	TiltDeg *float64 `protobuf:"fixed64,8,opt,name=tilt_deg,proto3,oneof" json:"tilt_deg,omitempty"`
+	TiltDeg *float64 `protobuf:"fixed64,7,opt,name=tilt_deg,proto3,oneof" json:"tilt_deg,omitempty"`
 	// 光伏组件安装方位角，单位度，范围 [0, 360]
-	AzimuthDeg *float64 `protobuf:"fixed64,9,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
+	AzimuthDeg *float64 `protobuf:"fixed64,8,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
 	// 额定功率
-	RatedP float64 `protobuf:"fixed64,10,opt,name=rated_p,proto3" json:"rated_p,omitempty"`
+	RatedP float64 `protobuf:"fixed64,9,opt,name=rated_p,proto3" json:"rated_p,omitempty"`
 	// 支持的预测步长，单位分钟，可选 5、15、30、60
-	Granularity []int32 `protobuf:"varint,11,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
+	Granularity []int32 `protobuf:"varint,10,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
 	// 数据源类型：1-pull，2-push，3-file
-	DataSource int32 `protobuf:"varint,12,opt,name=data_source,proto3" json:"data_source,omitempty"`
+	DataSource int32 `protobuf:"varint,11,opt,name=data_source,proto3" json:"data_source,omitempty"`
 	// 数据源属性：pull 对应外部接口地址，file 对应文件 URL
-	SourceAttr string `protobuf:"bytes,13,opt,name=source_attr,proto3" json:"source_attr,omitempty"`
+	SourceAttr string `protobuf:"bytes,12,opt,name=source_attr,proto3" json:"source_attr,omitempty"`
 	// 操作类型：1-predict，2-train
-	Operation int32 `protobuf:"varint,14,opt,name=operation,proto3" json:"operation,omitempty"`
+	Operation int32 `protobuf:"varint,13,opt,name=operation,proto3" json:"operation,omitempty"`
 	// 历史数据天数，未指定时由业务层采用模型默认值
-	Hisdays *int32 `protobuf:"varint,15,opt,name=hisdays,proto3,oneof" json:"hisdays,omitempty"`
+	Hisdays *int32 `protobuf:"varint,14,opt,name=hisdays,proto3,oneof" json:"hisdays,omitempty"`
 	// 配置创建时间，ISO 8601 格式
-	CreatedTime string `protobuf:"bytes,16,opt,name=created_time,proto3" json:"created_time,omitempty"`
+	CreatedTime string `protobuf:"bytes,15,opt,name=created_time,proto3" json:"created_time,omitempty"`
 	// 配置更新时间，ISO 8601 格式
-	UpdateTime    string `protobuf:"bytes,17,opt,name=update_time,proto3" json:"update_time,omitempty"`
+	UpdateTime    string `protobuf:"bytes,16,opt,name=update_time,proto3" json:"update_time,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -304,6 +304,686 @@ func (x *CreateSiteResponse) GetUpdatedAt() string {
 	return ""
 }
 
+type UpdateSiteRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 用于定位记录，不修改该标识
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 场站显示名称
+	SiteName string `protobuf:"bytes,2,opt,name=site_name,proto3" json:"site_name,omitempty"`
+	// 场站时区，如 Asia/Shanghai
+	Timezone string `protobuf:"bytes,3,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	// 场站经度，单位：度
+	Longitude float32 `protobuf:"fixed32,4,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	// 场站纬度，单位：度
+	Latitude float32 `protobuf:"fixed32,5,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	// 光伏组件倾角，单位：度
+	TiltDeg float32 `protobuf:"fixed32,6,opt,name=tilt_deg,proto3" json:"tilt_deg,omitempty"`
+	// 光伏组件方位角，单位：度
+	AzimuthDeg float32 `protobuf:"fixed32,7,opt,name=azimuth_deg,proto3" json:"azimuth_deg,omitempty"`
+	// 光伏额定功率，单位：kW；非适用业务可不提供
+	RatedP float32 `protobuf:"fixed32,8,opt,name=rated_p,proto3" json:"rated_p,omitempty"`
+	// 预测步长列表，单位：分钟
+	Granularity []int32 `protobuf:"varint,9,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
+	// 数据源类型：1-pull，2-push，3-file
+	DataSource int32 `protobuf:"varint,10,opt,name=data_source,proto3" json:"data_source,omitempty"`
+	// 数据源地址或路径，返回时不得暴露凭据
+	SourceAttr string `protobuf:"bytes,11,opt,name=source_attr,proto3" json:"source_attr,omitempty"`
+	// 运行类型：1-预测，2-训练
+	Operation int32 `protobuf:"varint,12,opt,name=operation,proto3" json:"operation,omitempty"`
+	// 已保存历史天数；无值时不补默认值
+	Hisdays       *int32 `protobuf:"varint,13,opt,name=hisdays,proto3,oneof" json:"hisdays,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateSiteRequest) Reset() {
+	*x = UpdateSiteRequest{}
+	mi := &file_site_site_message_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateSiteRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSiteRequest) ProtoMessage() {}
+
+func (x *UpdateSiteRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_site_site_message_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSiteRequest.ProtoReflect.Descriptor instead.
+func (*UpdateSiteRequest) Descriptor() ([]byte, []int) {
+	return file_site_site_message_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *UpdateSiteRequest) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *UpdateSiteRequest) GetSiteName() string {
+	if x != nil {
+		return x.SiteName
+	}
+	return ""
+}
+
+func (x *UpdateSiteRequest) GetTimezone() string {
+	if x != nil {
+		return x.Timezone
+	}
+	return ""
+}
+
+func (x *UpdateSiteRequest) GetLongitude() float32 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
+}
+
+func (x *UpdateSiteRequest) GetLatitude() float32 {
+	if x != nil {
+		return x.Latitude
+	}
+	return 0
+}
+
+func (x *UpdateSiteRequest) GetTiltDeg() float32 {
+	if x != nil {
+		return x.TiltDeg
+	}
+	return 0
+}
+
+func (x *UpdateSiteRequest) GetAzimuthDeg() float32 {
+	if x != nil {
+		return x.AzimuthDeg
+	}
+	return 0
+}
+
+func (x *UpdateSiteRequest) GetRatedP() float32 {
+	if x != nil {
+		return x.RatedP
+	}
+	return 0
+}
+
+func (x *UpdateSiteRequest) GetGranularity() []int32 {
+	if x != nil {
+		return x.Granularity
+	}
+	return nil
+}
+
+func (x *UpdateSiteRequest) GetDataSource() int32 {
+	if x != nil {
+		return x.DataSource
+	}
+	return 0
+}
+
+func (x *UpdateSiteRequest) GetSourceAttr() string {
+	if x != nil {
+		return x.SourceAttr
+	}
+	return ""
+}
+
+func (x *UpdateSiteRequest) GetOperation() int32 {
+	if x != nil {
+		return x.Operation
+	}
+	return 0
+}
+
+func (x *UpdateSiteRequest) GetHisdays() int32 {
+	if x != nil && x.Hisdays != nil {
+		return *x.Hisdays
+	}
+	return 0
+}
+
+// Package message 场站注册-更新注册消息响应定义
+type UpdateSiteResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 处理状态：success 成功，error 失败
+	State string `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	// 五位业务码：成功为 00000，异常对应场景码表
+	Code string `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
+	// 处理结果说明，客户端不得依赖提示文字判断业务结果
+	Message string `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	// 算法业务注册唯一标识，首次注册由算法服务生成
+	RegistrationId string `protobuf:"bytes,4,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 更新时间，带时区的 ISO 8601 格式，配置实际更新后刷新
+	UpdatedAt     string `protobuf:"bytes,5,opt,name=updated_at,proto3" json:"updated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateSiteResponse) Reset() {
+	*x = UpdateSiteResponse{}
+	mi := &file_site_site_message_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateSiteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSiteResponse) ProtoMessage() {}
+
+func (x *UpdateSiteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_site_site_message_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSiteResponse.ProtoReflect.Descriptor instead.
+func (*UpdateSiteResponse) Descriptor() ([]byte, []int) {
+	return file_site_site_message_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *UpdateSiteResponse) GetState() string {
+	if x != nil {
+		return x.State
+	}
+	return ""
+}
+
+func (x *UpdateSiteResponse) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *UpdateSiteResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *UpdateSiteResponse) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *UpdateSiteResponse) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type DeleteSiteRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 需要删除的注册标识
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *DeleteSiteRequest) Reset() {
+	*x = DeleteSiteRequest{}
+	mi := &file_site_site_message_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteSiteRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteSiteRequest) ProtoMessage() {}
+
+func (x *DeleteSiteRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_site_site_message_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteSiteRequest.ProtoReflect.Descriptor instead.
+func (*DeleteSiteRequest) Descriptor() ([]byte, []int) {
+	return file_site_site_message_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *DeleteSiteRequest) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+// Package message 场站注册-删除注册消息响应定义
+type DeleteSiteResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 处理状态：success 成功，error 失败
+	State string `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	// 五位业务码：成功为 00000，异常见场景码表
+	Code string `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
+	// 本次操作结果说明
+	Message string `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	// 已删除的注册 ID
+	RegistrationId string `protobuf:"bytes,4,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 删除成功为 true
+	Deleted bool `protobuf:"varint,5,opt,name=deleted,proto3" json:"deleted,omitempty"`
+	// 本次成功注销产生变更为 true
+	Changed       bool `protobuf:"varint,6,opt,name=changed,proto3" json:"changed,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteSiteResponse) Reset() {
+	*x = DeleteSiteResponse{}
+	mi := &file_site_site_message_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteSiteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteSiteResponse) ProtoMessage() {}
+
+func (x *DeleteSiteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_site_site_message_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteSiteResponse.ProtoReflect.Descriptor instead.
+func (*DeleteSiteResponse) Descriptor() ([]byte, []int) {
+	return file_site_site_message_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *DeleteSiteResponse) GetState() string {
+	if x != nil {
+		return x.State
+	}
+	return ""
+}
+
+func (x *DeleteSiteResponse) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *DeleteSiteResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *DeleteSiteResponse) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *DeleteSiteResponse) GetDeleted() bool {
+	if x != nil {
+		return x.Deleted
+	}
+	return false
+}
+
+func (x *DeleteSiteResponse) GetChanged() bool {
+	if x != nil {
+		return x.Changed
+	}
+	return false
+}
+
+// Package message 场站注册-按场站ID查询场站消息请求定义
+type GetSiteRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 需要查询的业务注册标识
+	SiteId        string `protobuf:"bytes,1,opt,name=site_id,proto3" json:"site_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSiteRequest) Reset() {
+	*x = GetSiteRequest{}
+	mi := &file_site_site_message_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSiteRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSiteRequest) ProtoMessage() {}
+
+func (x *GetSiteRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_site_site_message_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSiteRequest.ProtoReflect.Descriptor instead.
+func (*GetSiteRequest) Descriptor() ([]byte, []int) {
+	return file_site_site_message_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetSiteRequest) GetSiteId() string {
+	if x != nil {
+		return x.SiteId
+	}
+	return ""
+}
+
+// Package message 场站注册-按注册ID查询场站消息请求定义
+type GetSiteByRegRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 需要查询的业务注册标识
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *GetSiteByRegRequest) Reset() {
+	*x = GetSiteByRegRequest{}
+	mi := &file_site_site_message_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSiteByRegRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSiteByRegRequest) ProtoMessage() {}
+
+func (x *GetSiteByRegRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_site_site_message_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSiteByRegRequest.ProtoReflect.Descriptor instead.
+func (*GetSiteByRegRequest) Descriptor() ([]byte, []int) {
+	return file_site_site_message_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GetSiteByRegRequest) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+// Package message 场站注册-查询场站消息响应定义
+type GetSiteResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 处理状态：success 成功，error 失败
+	State string `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	// 五位业务码：成功 00000，异常见场景码表
+	Code string `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
+	// 本次操作结果说明
+	Message string `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	// 固定注册标识，关联已保存的场站及算法业务配置
+	RegistrationId string `protobuf:"bytes,4,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 实际保存的服务标识，如 pv_prediction、load_prediction
+	ServiceType string `protobuf:"bytes,5,opt,name=service_type,proto3" json:"service_type,omitempty"`
+	// 场站唯一 ID
+	SiteId string `protobuf:"bytes,6,opt,name=site_id,proto3" json:"site_id,omitempty"`
+	// 场站显示名称
+	SiteName string `protobuf:"bytes,7,opt,name=site_name,proto3" json:"site_name,omitempty"`
+	// 场站时区，如 Asia/Shanghai
+	Timezone string `protobuf:"bytes,8,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	// 已保存经度，单位：度
+	Longitude *float32 `protobuf:"fixed32,9,opt,name=longitude,proto3,oneof" json:"longitude,omitempty"`
+	// 已保存纬度，单位：度
+	Latitude *float32 `protobuf:"fixed32,10,opt,name=latitude,proto3,oneof" json:"latitude,omitempty"`
+	// 光伏组件倾角，单位：度
+	TiltDeg *float32 `protobuf:"fixed32,11,opt,name=tilt_deg,proto3,oneof" json:"tilt_deg,omitempty"`
+	// 光伏组件方位角，单位：度
+	AzimuthDeg *float32 `protobuf:"fixed32,12,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
+	// 光伏额定功率，单位：kW；非适用业务可不返回
+	RatedP *float32 `protobuf:"fixed32,13,opt,name=rated_p,proto3,oneof" json:"rated_p,omitempty"`
+	// 保存的预测步长列表，单位：分钟
+	Granularity []int32 `protobuf:"varint,14,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
+	// 数据源类型：1-pull，2-push，3-file
+	DataSource int32 `protobuf:"varint,15,opt,name=data_source,proto3" json:"data_source,omitempty"`
+	// 数据源地址或路径；客户返回中不得暴露凭据
+	SourceAttr string `protobuf:"bytes,16,opt,name=source_attr,proto3" json:"source_attr,omitempty"`
+	// 已保存运行类型：1-预测，2-训练
+	Operation *int32 `protobuf:"varint,17,opt,name=operation,proto3,oneof" json:"operation,omitempty"`
+	// 已保存历史天数；无值时不补默认值
+	Hisdays *int32 `protobuf:"varint,18,opt,name=hisdays,proto3,oneof" json:"hisdays,omitempty"`
+	// 创建时间，ISO 8601 带时区；创建后保持不变
+	CreatedAt string `protobuf:"bytes,19,opt,name=created_at,proto3" json:"created_at,omitempty"`
+	// 最近配置更新时间，ISO 8601 带时区；查询不刷新
+	UpdatedAt     string `protobuf:"bytes,20,opt,name=updated_at,proto3" json:"updated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSiteResponse) Reset() {
+	*x = GetSiteResponse{}
+	mi := &file_site_site_message_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSiteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSiteResponse) ProtoMessage() {}
+
+func (x *GetSiteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_site_site_message_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSiteResponse.ProtoReflect.Descriptor instead.
+func (*GetSiteResponse) Descriptor() ([]byte, []int) {
+	return file_site_site_message_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *GetSiteResponse) GetState() string {
+	if x != nil {
+		return x.State
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetServiceType() string {
+	if x != nil {
+		return x.ServiceType
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetSiteId() string {
+	if x != nil {
+		return x.SiteId
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetSiteName() string {
+	if x != nil {
+		return x.SiteName
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetTimezone() string {
+	if x != nil {
+		return x.Timezone
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetLongitude() float32 {
+	if x != nil && x.Longitude != nil {
+		return *x.Longitude
+	}
+	return 0
+}
+
+func (x *GetSiteResponse) GetLatitude() float32 {
+	if x != nil && x.Latitude != nil {
+		return *x.Latitude
+	}
+	return 0
+}
+
+func (x *GetSiteResponse) GetTiltDeg() float32 {
+	if x != nil && x.TiltDeg != nil {
+		return *x.TiltDeg
+	}
+	return 0
+}
+
+func (x *GetSiteResponse) GetAzimuthDeg() float32 {
+	if x != nil && x.AzimuthDeg != nil {
+		return *x.AzimuthDeg
+	}
+	return 0
+}
+
+func (x *GetSiteResponse) GetRatedP() float32 {
+	if x != nil && x.RatedP != nil {
+		return *x.RatedP
+	}
+	return 0
+}
+
+func (x *GetSiteResponse) GetGranularity() []int32 {
+	if x != nil {
+		return x.Granularity
+	}
+	return nil
+}
+
+func (x *GetSiteResponse) GetDataSource() int32 {
+	if x != nil {
+		return x.DataSource
+	}
+	return 0
+}
+
+func (x *GetSiteResponse) GetSourceAttr() string {
+	if x != nil {
+		return x.SourceAttr
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetOperation() int32 {
+	if x != nil && x.Operation != nil {
+		return *x.Operation
+	}
+	return 0
+}
+
+func (x *GetSiteResponse) GetHisdays() int32 {
+	if x != nil && x.Hisdays != nil {
+		return *x.Hisdays
+	}
+	return 0
+}
+
+func (x *GetSiteResponse) GetCreatedAt() string {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return ""
+}
+
+func (x *GetSiteResponse) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
 var File_site_site_message_proto protoreflect.FileDescriptor
 
 const file_site_site_message_proto_rawDesc = "" +
@@ -312,22 +992,22 @@ const file_site_site_message_proto_rawDesc = "" +
 	"\x11CreateSiteRequest\x12-\n" +
 	"\fservice_type\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\fservice_type\x12#\n" +
 	"\asite_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18<R\asite_id\x12%\n" +
-	"\tsite_name\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18xR\tsite_name\x12#\n" +
-	"\btimezone\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18@R\btimezone\x125\n" +
-	"\tlongitude\x18\x06 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x123\n" +
-	"\blatitude\x18\a \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x128\n" +
-	"\btilt_deg\x18\b \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00H\x00R\btilt_deg\x88\x01\x01\x12>\n" +
-	"\vazimuth_deg\x18\t \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00H\x01R\vazimuth_deg\x88\x01\x01\x12(\n" +
-	"\arated_p\x18\n" +
-	" \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00R\arated_p\x126\n" +
-	"\vgranularity\x18\v \x03(\x05B\x14\xbaH\x11\x92\x01\x0e\x18\x01\"\n" +
+	"\tsite_name\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18xR\tsite_name\x12#\n" +
+	"\btimezone\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18@R\btimezone\x125\n" +
+	"\tlongitude\x18\x05 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x123\n" +
+	"\blatitude\x18\x06 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x128\n" +
+	"\btilt_deg\x18\a \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00H\x00R\btilt_deg\x88\x01\x01\x12>\n" +
+	"\vazimuth_deg\x18\b \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00H\x01R\vazimuth_deg\x88\x01\x01\x12(\n" +
+	"\arated_p\x18\t \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00R\arated_p\x126\n" +
+	"\vgranularity\x18\n" +
+	" \x03(\x05B\x14\xbaH\x11\x92\x01\x0e\x18\x01\"\n" +
 	"\x1a\b0\x050\x0f0\x1e0<R\vgranularity\x12-\n" +
-	"\vdata_source\x18\f \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03R\vdata_source\x12*\n" +
-	"\vsource_attr\x18\r \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12'\n" +
-	"\toperation\x18\x0e \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02R\toperation\x12&\n" +
-	"\ahisdays\x18\x0f \x01(\x05B\a\xbaH\x04\x1a\x02 \x00H\x02R\ahisdays\x88\x01\x01\x12+\n" +
-	"\fcreated_time\x18\x10 \x01(\tB\a\xbaH\x04r\x02\x18(R\fcreated_time\x12)\n" +
-	"\vupdate_time\x18\x11 \x01(\tB\a\xbaH\x04r\x02\x18(R\vupdate_timeB\v\n" +
+	"\vdata_source\x18\v \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03R\vdata_source\x12*\n" +
+	"\vsource_attr\x18\f \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12'\n" +
+	"\toperation\x18\r \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02R\toperation\x12&\n" +
+	"\ahisdays\x18\x0e \x01(\x05B\a\xbaH\x04\x1a\x02 \x00H\x02R\ahisdays\x88\x01\x01\x12+\n" +
+	"\fcreated_time\x18\x0f \x01(\tB\a\xbaH\x04r\x02\x18(R\fcreated_time\x12)\n" +
+	"\vupdate_time\x18\x10 \x01(\tB\a\xbaH\x04r\x02\x18(R\vupdate_timeB\v\n" +
 	"\t_tilt_degB\x0e\n" +
 	"\f_azimuth_degB\n" +
 	"\n" +
@@ -343,7 +1023,105 @@ const file_site_site_message_proto_rawDesc = "" +
 	"created_at\x12'\n" +
 	"\n" +
 	"updated_at\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
-	"updated_atB\xbb\x01\n" +
+	"updated_at\"\xdd\x04\n" +
+	"\x11UpdateSiteRequest\x121\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12&\n" +
+	"\tsite_name\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\tsite_name\x12#\n" +
+	"\btimezone\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18@R\btimezone\x12-\n" +
+	"\tlongitude\x18\x04 \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x1d\x00\x004C-\x00\x004\xc3R\tlongitude\x12+\n" +
+	"\blatitude\x18\x05 \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x1d\x00\x00\xb4B-\x00\x00\xb4\xc2R\blatitude\x12+\n" +
+	"\btilt_deg\x18\x06 \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x1d\x00\x00\xb4B-\x00\x00\x00\x00R\btilt_deg\x121\n" +
+	"\vazimuth_deg\x18\a \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x15\x00\x00\xb4C-\x00\x00\x00\x00R\vazimuth_deg\x12$\n" +
+	"\arated_p\x18\b \x01(\x02B\n" +
+	"\xbaH\a\n" +
+	"\x05%\x00\x00\x00\x00R\arated_p\x12.\n" +
+	"\vgranularity\x18\t \x03(\x05B\f\xbaH\t\x92\x01\x06\"\x04\x1a\x02 \x00R\vgranularity\x12-\n" +
+	"\vdata_source\x18\n" +
+	" \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03R\vdata_source\x12*\n" +
+	"\vsource_attr\x18\v \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12'\n" +
+	"\toperation\x18\f \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02R\toperation\x12&\n" +
+	"\ahisdays\x18\r \x01(\x05B\a\xbaH\x04\x1a\x02 \x00H\x00R\ahisdays\x88\x01\x01B\n" +
+	"\n" +
+	"\b_hisdays\"\xe7\x01\n" +
+	"\x12UpdateSiteResponse\x12+\n" +
+	"\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\asuccessR\x05errorR\x05state\x12%\n" +
+	"\x04code\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
+	"^[0-9]{5}$R\x04code\x12!\n" +
+	"\amessage\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\amessage\x121\n" +
+	"\x0fregistration_id\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12'\n" +
+	"\n" +
+	"updated_at\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
+	"updated_at\"F\n" +
+	"\x11DeleteSiteRequest\x121\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\"\xf2\x01\n" +
+	"\x12DeleteSiteResponse\x12+\n" +
+	"\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\asuccessR\x05errorR\x05state\x12%\n" +
+	"\x04code\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
+	"^[0-9]{5}$R\x04code\x12!\n" +
+	"\amessage\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\amessage\x121\n" +
+	"\x0fregistration_id\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12\x18\n" +
+	"\adeleted\x18\x05 \x01(\bR\adeleted\x12\x18\n" +
+	"\achanged\x18\x06 \x01(\bR\achanged\"3\n" +
+	"\x0eGetSiteRequest\x12!\n" +
+	"\asite_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\asite_id\"H\n" +
+	"\x13GetSiteByRegRequest\x121\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\"\xe6\a\n" +
+	"\x0fGetSiteResponse\x12+\n" +
+	"\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\asuccessR\x05errorR\x05state\x12%\n" +
+	"\x04code\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
+	"^[0-9]{5}$R\x04code\x12!\n" +
+	"\amessage\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\amessage\x121\n" +
+	"\x0fregistration_id\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12+\n" +
+	"\fservice_type\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\fservice_type\x12!\n" +
+	"\asite_id\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\asite_id\x12&\n" +
+	"\tsite_name\x18\a \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\tsite_name\x12%\n" +
+	"\btimezone\x18\b \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\btimezone\x122\n" +
+	"\tlongitude\x18\t \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x1d\x00\x004C-\x00\x004\xc3H\x00R\tlongitude\x88\x01\x01\x120\n" +
+	"\blatitude\x18\n" +
+	" \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x1d\x00\x00\xb4B-\x00\x00\xb4\xc2H\x01R\blatitude\x88\x01\x01\x120\n" +
+	"\btilt_deg\x18\v \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x1d\x00\x00\xb4B-\x00\x00\x00\x00H\x02R\btilt_deg\x88\x01\x01\x126\n" +
+	"\vazimuth_deg\x18\f \x01(\x02B\x0f\xbaH\f\n" +
+	"\n" +
+	"\x15\x00\x00\xb4C-\x00\x00\x00\x00H\x03R\vazimuth_deg\x88\x01\x01\x12)\n" +
+	"\arated_p\x18\r \x01(\x02B\n" +
+	"\xbaH\a\n" +
+	"\x05%\x00\x00\x00\x00H\x04R\arated_p\x88\x01\x01\x12.\n" +
+	"\vgranularity\x18\x0e \x03(\x05B\f\xbaH\t\x92\x01\x06\"\x04\x1a\x02 \x00R\vgranularity\x12-\n" +
+	"\vdata_source\x18\x0f \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03R\vdata_source\x12*\n" +
+	"\vsource_attr\x18\x10 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12,\n" +
+	"\toperation\x18\x11 \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02H\x05R\toperation\x88\x01\x01\x12&\n" +
+	"\ahisdays\x18\x12 \x01(\x05B\a\xbaH\x04\x1a\x02 \x00H\x06R\ahisdays\x88\x01\x01\x12'\n" +
+	"\n" +
+	"created_at\x18\x13 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
+	"created_at\x12'\n" +
+	"\n" +
+	"updated_at\x18\x14 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
+	"updated_atB\f\n" +
+	"\n" +
+	"_longitudeB\v\n" +
+	"\t_latitudeB\v\n" +
+	"\t_tilt_degB\x0e\n" +
+	"\f_azimuth_degB\n" +
+	"\n" +
+	"\b_rated_pB\f\n" +
+	"\n" +
+	"_operationB\n" +
+	"\n" +
+	"\b_hisdaysB\xbb\x01\n" +
 	"\x18com.fusion.ai.proto.siteB\x10SiteMessageProtoP\x01Z\x19fusion.ai.proto.site;site\xa2\x02\x04FAPS\xaa\x02\x14Fusion.Ai.Proto.Site\xca\x02\x14Fusion\\Ai\\Proto\\Site\xe2\x02 Fusion\\Ai\\Proto\\Site\\GPBMetadata\xea\x02\x17Fusion::Ai::Proto::Siteb\x06proto3"
 
 var (
@@ -358,10 +1136,17 @@ func file_site_site_message_proto_rawDescGZIP() []byte {
 	return file_site_site_message_proto_rawDescData
 }
 
-var file_site_site_message_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_site_site_message_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_site_site_message_proto_goTypes = []any{
-	(*CreateSiteRequest)(nil),  // 0: fusion.ai.proto.site.CreateSiteRequest
-	(*CreateSiteResponse)(nil), // 1: fusion.ai.proto.site.CreateSiteResponse
+	(*CreateSiteRequest)(nil),   // 0: fusion.ai.proto.site.CreateSiteRequest
+	(*CreateSiteResponse)(nil),  // 1: fusion.ai.proto.site.CreateSiteResponse
+	(*UpdateSiteRequest)(nil),   // 2: fusion.ai.proto.site.UpdateSiteRequest
+	(*UpdateSiteResponse)(nil),  // 3: fusion.ai.proto.site.UpdateSiteResponse
+	(*DeleteSiteRequest)(nil),   // 4: fusion.ai.proto.site.DeleteSiteRequest
+	(*DeleteSiteResponse)(nil),  // 5: fusion.ai.proto.site.DeleteSiteResponse
+	(*GetSiteRequest)(nil),      // 6: fusion.ai.proto.site.GetSiteRequest
+	(*GetSiteByRegRequest)(nil), // 7: fusion.ai.proto.site.GetSiteByRegRequest
+	(*GetSiteResponse)(nil),     // 8: fusion.ai.proto.site.GetSiteResponse
 }
 var file_site_site_message_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -377,13 +1162,15 @@ func file_site_site_message_proto_init() {
 		return
 	}
 	file_site_site_message_proto_msgTypes[0].OneofWrappers = []any{}
+	file_site_site_message_proto_msgTypes[2].OneofWrappers = []any{}
+	file_site_site_message_proto_msgTypes[8].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_site_site_message_proto_rawDesc), len(file_site_site_message_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -16,14 +16,14 @@ import { fileDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_google_api_annotations } from "../google/api/annotations_pb";
 import { file_google_api_client } from "../google/api/client_pb";
 import { file_google_protobuf_empty } from "@bufbuild/protobuf/wkt";
-import type { CreateSiteRequestSchema, CreateSiteResponseSchema } from "./site_message_pb";
+import type { CreateSiteRequestSchema, CreateSiteResponseSchema, DeleteSiteRequestSchema, DeleteSiteResponseSchema, GetSiteByRegRequestSchema, GetSiteRequestSchema, GetSiteResponseSchema, UpdateSiteRequestSchema, UpdateSiteResponseSchema } from "./site_message_pb";
 import { file_site_site_message } from "./site_message_pb";
 
 /**
  * Describes the file site/site_service.proto.
  */
 export const file_site_site_service: GenFile = /*@__PURE__*/
-  fileDesc("ChdzaXRlL3NpdGVfc2VydmljZS5wcm90bxIUZnVzaW9uLmFpLnByb3RvLnNpdGUykAEKC1NpdGVTZXJ2aWNlEoABCgpDcmVhdGVTaXRlEicuZnVzaW9uLmFpLnByb3RvLnNpdGUuQ3JlYXRlU2l0ZVJlcXVlc3QaKC5mdXNpb24uYWkucHJvdG8uc2l0ZS5DcmVhdGVTaXRlUmVzcG9uc2UiH9pBASqC0+STAhU6ASoiEC8zcmQtYXBpL3YxL3NpdGVCuwEKGGNvbS5mdXNpb24uYWkucHJvdG8uc2l0ZUIQU2l0ZVNlcnZpY2VQcm90b1ABWhlmdXNpb24uYWkucHJvdG8uc2l0ZTtzaXRlogIERkFQU6oCFEZ1c2lvbi5BaS5Qcm90by5TaXRlygIURnVzaW9uXEFpXFByb3RvXFNpdGXiAiBGdXNpb25cQWlcUHJvdG9cU2l0ZVxHUEJNZXRhZGF0YeoCF0Z1c2lvbjo6QWk6OlByb3RvOjpTaXRlYgZwcm90bzM", [file_google_api_annotations, file_google_api_client, file_google_protobuf_empty, file_site_site_message]);
+  fileDesc("ChdzaXRlL3NpdGVfc2VydmljZS5wcm90bxIUZnVzaW9uLmFpLnByb3RvLnNpdGUy3wUKC1NpdGVTZXJ2aWNlEoABCgpDcmVhdGVTaXRlEicuZnVzaW9uLmFpLnByb3RvLnNpdGUuQ3JlYXRlU2l0ZVJlcXVlc3QaKC5mdXNpb24uYWkucHJvdG8uc2l0ZS5DcmVhdGVTaXRlUmVzcG9uc2UiH9pBASqC0+STAhU6ASoiEC8zcmQtYXBpL3YxL3NpdGUSgAEKClVwZGF0ZVNpdGUSJy5mdXNpb24uYWkucHJvdG8uc2l0ZS5VcGRhdGVTaXRlUmVxdWVzdBooLmZ1c2lvbi5haS5wcm90by5zaXRlLlVwZGF0ZVNpdGVSZXNwb25zZSIf2kEBKoLT5JMCFToBKhoQLzNyZC1hcGkvdjEvc2l0ZRKdAQoKRGVsZXRlU2l0ZRInLmZ1c2lvbi5haS5wcm90by5zaXRlLkRlbGV0ZVNpdGVSZXF1ZXN0GiguZnVzaW9uLmFpLnByb3RvLnNpdGUuRGVsZXRlU2l0ZVJlc3BvbnNlIjzaQQ9yZWdpc3RyYXRpb25faWSC0+STAiQqIi8zcmQtYXBpL3YxL3NpdGUve3JlZ2lzdHJhdGlvbl9pZH0ShAEKB0dldFNpdGUSJC5mdXNpb24uYWkucHJvdG8uc2l0ZS5HZXRTaXRlUmVxdWVzdBolLmZ1c2lvbi5haS5wcm90by5zaXRlLkdldFNpdGVSZXNwb25zZSIs2kEHc2l0ZV9pZILT5JMCHBIaLzNyZC1hcGkvdjEvc2l0ZS97c2l0ZV9pZH0SogEKDEdldFNpdGVCeVJlZxIpLmZ1c2lvbi5haS5wcm90by5zaXRlLkdldFNpdGVCeVJlZ1JlcXVlc3QaJS5mdXNpb24uYWkucHJvdG8uc2l0ZS5HZXRTaXRlUmVzcG9uc2UiQNpBD3JlZ2lzdHJhdGlvbl9pZILT5JMCKBImLzNyZC1hcGkvdjEvc2l0ZS9yZWcve3JlZ2lzdHJhdGlvbl9pZH1CuwEKGGNvbS5mdXNpb24uYWkucHJvdG8uc2l0ZUIQU2l0ZVNlcnZpY2VQcm90b1ABWhlmdXNpb24uYWkucHJvdG8uc2l0ZTtzaXRlogIERkFQU6oCFEZ1c2lvbi5BaS5Qcm90by5TaXRlygIURnVzaW9uXEFpXFByb3RvXFNpdGXiAiBGdXNpb25cQWlcUHJvdG9cU2l0ZVxHUEJNZXRhZGF0YeoCF0Z1c2lvbjo6QWk6OlByb3RvOjpTaXRlYgZwcm90bzM", [file_google_api_annotations, file_google_api_client, file_google_protobuf_empty, file_site_site_message]);
 
 /**
  * Package site_service 场站服务接口定义
@@ -40,6 +40,46 @@ export const SiteService: GenService<{
     methodKind: "unary";
     input: typeof CreateSiteRequestSchema;
     output: typeof CreateSiteResponseSchema;
+  },
+  /**
+   * 场站注册-更新注册
+   *
+   * @generated from rpc fusion.ai.proto.site.SiteService.UpdateSite
+   */
+  updateSite: {
+    methodKind: "unary";
+    input: typeof UpdateSiteRequestSchema;
+    output: typeof UpdateSiteResponseSchema;
+  },
+  /**
+   * 场站注册-删除注册
+   *
+   * @generated from rpc fusion.ai.proto.site.SiteService.DeleteSite
+   */
+  deleteSite: {
+    methodKind: "unary";
+    input: typeof DeleteSiteRequestSchema;
+    output: typeof DeleteSiteResponseSchema;
+  },
+  /**
+   * 场站注册-查询注册（按场站ID查询）
+   *
+   * @generated from rpc fusion.ai.proto.site.SiteService.GetSite
+   */
+  getSite: {
+    methodKind: "unary";
+    input: typeof GetSiteRequestSchema;
+    output: typeof GetSiteResponseSchema;
+  },
+  /**
+   * 场站注册-查询注册（按注册ID查询）
+   *
+   * @generated from rpc fusion.ai.proto.site.SiteService.GetSiteByReg
+   */
+  getSiteByReg: {
+    methodKind: "unary";
+    input: typeof GetSiteByRegRequestSchema;
+    output: typeof GetSiteResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_site_site_service, 0);
