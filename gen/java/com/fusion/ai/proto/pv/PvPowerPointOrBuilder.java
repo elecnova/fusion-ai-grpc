@@ -25,8 +25,8 @@ public interface PvPowerPointOrBuilder extends
    * 实际光伏功率，单位 kW，允许为 0，精度小数点后 3 位
    * </pre>
    *
-   * <code>float pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
+   * <code>double pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
    * @return The pv.
    */
-  float getPv();
+  double getPv();
 }

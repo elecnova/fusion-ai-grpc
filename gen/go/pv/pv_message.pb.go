@@ -139,7 +139,7 @@ type PvPowerPoint struct {
 	// 时间戳，Unix 秒级时间戳
 	Timestamp int64 `protobuf:"varint,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	// 实际光伏功率，单位 kW，允许为 0，精度小数点后 3 位
-	Pv            float32 `protobuf:"fixed32,2,opt,name=pv,proto3" json:"pv,omitempty"`
+	Pv            float64 `protobuf:"fixed64,2,opt,name=pv,proto3" json:"pv,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -181,7 +181,7 @@ func (x *PvPowerPoint) GetTimestamp() int64 {
 	return 0
 }
 
-func (x *PvPowerPoint) GetPv() float32 {
+func (x *PvPowerPoint) GetPv() float64 {
 	if x != nil {
 		return x.Pv
 	}
@@ -252,12 +252,10 @@ const file_pv_pv_message_proto_rawDesc = "" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x123\n" +
 	"\x04data\x18\x02 \x01(\v2\x1f.fusion.ai.proto.pv.PvPowerDataR\x04data\"I\n" +
 	"\vPvPowerData\x12:\n" +
-	"\apv_list\x18\x01 \x03(\v2 .fusion.ai.proto.pv.PvPowerPointR\apv_list\"Q\n" +
+	"\apv_list\x18\x01 \x03(\v2 .fusion.ai.proto.pv.PvPowerPointR\apv_list\"U\n" +
 	"\fPvPowerPoint\x12%\n" +
-	"\ttimestamp\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\ttimestamp\x12\x1a\n" +
-	"\x02pv\x18\x02 \x01(\x02B\n" +
-	"\xbaH\a\n" +
-	"\x05-\x00\x00\x00\x00R\x02pv\"}\n" +
+	"\ttimestamp\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\ttimestamp\x12\x1e\n" +
+	"\x02pv\x18\x02 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x02pv\"}\n" +
 	"\x11PullPvDataRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x123\n" +
 	"\x04data\x18\x02 \x01(\v2\x1f.fusion.ai.proto.pv.PvPowerDataR\x04dataB\xab\x01\n" +

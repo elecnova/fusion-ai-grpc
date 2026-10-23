@@ -262,14 +262,14 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PvPowerPoint final : public ::googl
   void _internal_set_timestamp(::int64_t value);
 
   public:
-  // float pv = 2 [json_name = "pv", (.buf.validate.field) = {
+  // double pv = 2 [json_name = "pv", (.buf.validate.field) = {
   void clear_pv() ;
-  [[nodiscard]] float pv() const;
-  void set_pv(float value);
+  [[nodiscard]] double pv() const;
+  void set_pv(double value);
 
   private:
-  float _internal_pv() const;
-  void _internal_set_pv(float value);
+  double _internal_pv() const;
+  void _internal_set_pv(double value);
 
   public:
   // @@protoc_insertion_point(class_scope:fusion.ai.proto.pv.PvPowerPoint)
@@ -306,7 +306,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PvPowerPoint final : public ::googl
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::int64_t timestamp_;
-    float pv_;
+    double pv_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1235,26 +1235,26 @@ inline void PvPowerPoint::_internal_set_timestamp(::int64_t value) {
   _impl_.timestamp_ = value;
 }
 
-// float pv = 2 [json_name = "pv", (.buf.validate.field) = {
+// double pv = 2 [json_name = "pv", (.buf.validate.field) = {
 inline void PvPowerPoint::clear_pv() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pv_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
 }
-inline float PvPowerPoint::pv() const {
+inline double PvPowerPoint::pv() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.PvPowerPoint.pv)
   return _internal_pv();
 }
-inline void PvPowerPoint::set_pv(float value) {
+inline void PvPowerPoint::set_pv(double value) {
   _internal_set_pv(value);
   SetHasBit(_impl_._has_bits_[0], 0x00000002U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.PvPowerPoint.pv)
 }
-inline float PvPowerPoint::_internal_pv() const {
+inline double PvPowerPoint::_internal_pv() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.pv_;
 }
-inline void PvPowerPoint::_internal_set_pv(float value) {
+inline void PvPowerPoint::_internal_set_pv(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pv_ = value;
 }

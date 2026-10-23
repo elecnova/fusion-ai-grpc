@@ -68,17 +68,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PV_FIELD_NUMBER = 2;
-  private float pv_ = 0F;
+  private double pv_ = 0D;
   /**
    * <pre>
    * 实际光伏功率，单位 kW，允许为 0，精度小数点后 3 位
    * </pre>
    *
-   * <code>float pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
+   * <code>double pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
    * @return The pv.
    */
   @java.lang.Override
-  public float getPv() {
+  public double getPv() {
     return pv_;
   }
 
@@ -99,8 +99,8 @@ private static final long serialVersionUID = 0L;
     if (timestamp_ != 0L) {
       output.writeInt64(1, timestamp_);
     }
-    if (java.lang.Float.floatToRawIntBits(pv_) != 0) {
-      output.writeFloat(2, pv_);
+    if (java.lang.Double.doubleToRawLongBits(pv_) != 0) {
+      output.writeDouble(2, pv_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -110,9 +110,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, timestamp_);
     }
-    if (java.lang.Float.floatToRawIntBits(pv_) != 0) {
+    if (java.lang.Double.doubleToRawLongBits(pv_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(2, pv_);
+        .computeDoubleSize(2, pv_);
     }
     return size;
   }
@@ -140,8 +140,8 @@ private static final long serialVersionUID = 0L;
 
     if (getTimestamp()
         != other.getTimestamp()) return false;
-    if (java.lang.Float.floatToIntBits(getPv())
-        != java.lang.Float.floatToIntBits(
+    if (java.lang.Double.doubleToLongBits(getPv())
+        != java.lang.Double.doubleToLongBits(
             other.getPv())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -158,8 +158,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTimestamp());
     hash = (37 * hash) + PV_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getPv());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getPv()));
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       timestamp_ = 0L;
-      pv_ = 0F;
+      pv_ = 0D;
       return this;
     }
 
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
       if (other.getTimestamp() != 0L) {
         setTimestamp(other.getTimestamp());
       }
-      if (java.lang.Float.floatToRawIntBits(other.getPv()) != 0) {
+      if (java.lang.Double.doubleToRawLongBits(other.getPv()) != 0) {
         setPv(other.getPv());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -385,11 +385,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
-            case 21: {
-              pv_ = input.readFloat();
+            case 17: {
+              pv_ = input.readDouble();
               bitField0_ |= 0x00000002;
               break;
-            } // case 21
+            } // case 17
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -451,17 +451,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float pv_ ;
+    private double pv_ ;
     /**
      * <pre>
      * 实际光伏功率，单位 kW，允许为 0，精度小数点后 3 位
      * </pre>
      *
-     * <code>float pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
+     * <code>double pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
      * @return The pv.
      */
     @java.lang.Override
-    public float getPv() {
+    public double getPv() {
       return pv_;
     }
     /**
@@ -469,11 +469,11 @@ private static final long serialVersionUID = 0L;
      * 实际光伏功率，单位 kW，允许为 0，精度小数点后 3 位
      * </pre>
      *
-     * <code>float pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
+     * <code>double pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
      * @param value The pv to set.
      * @return This builder for chaining.
      */
-    public Builder setPv(float value) {
+    public Builder setPv(double value) {
 
       pv_ = value;
       bitField0_ |= 0x00000002;
@@ -485,12 +485,12 @@ private static final long serialVersionUID = 0L;
      * 实际光伏功率，单位 kW，允许为 0，精度小数点后 3 位
      * </pre>
      *
-     * <code>float pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
+     * <code>double pv = 2 [json_name = "pv", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPv() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      pv_ = 0F;
+      pv_ = 0D;
       onChanged();
       return this;
     }

@@ -25,7 +25,7 @@ class PvPowerPoint extends \Google\Protobuf\Internal\Message
     /**
      * 实际光伏功率，单位 kW，允许为 0，精度小数点后 3 位
      *
-     * Generated from protobuf field <code>float pv = 2 [json_name = "pv", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double pv = 2 [json_name = "pv", (.buf.validate.field) = {</code>
      */
     protected $pv = 0.0;
 
@@ -76,7 +76,7 @@ class PvPowerPoint extends \Google\Protobuf\Internal\Message
     /**
      * 实际光伏功率，单位 kW，允许为 0，精度小数点后 3 位
      *
-     * Generated from protobuf field <code>float pv = 2 [json_name = "pv", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double pv = 2 [json_name = "pv", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getPv()
@@ -87,7 +87,7 @@ class PvPowerPoint extends \Google\Protobuf\Internal\Message
     /**
      * 实际光伏功率，单位 kW，允许为 0，精度小数点后 3 位
      *
-     * Generated from protobuf field <code>float pv = 2 [json_name = "pv", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>double pv = 2 [json_name = "pv", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */

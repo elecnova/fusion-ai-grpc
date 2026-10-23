@@ -70,9 +70,9 @@ constexpr PvPowerPoint::ParseTableT_ PvPowerPoint::InternalGenerateParseTable_(c
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::pv::PvPowerPoint>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      // float pv = 2 [json_name = "pv", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastF32S1,
-       {21, 1, 0,
+      // double pv = 2 [json_name = "pv", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastF64S1,
+       {17, 1, 0,
         PROTOBUF_FIELD_OFFSET(PvPowerPoint, _impl_.pv_)}},
       // int64 timestamp = 1 [json_name = "timestamp", (.buf.validate.field) = {
       {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(PvPowerPoint, _impl_.timestamp_), 0>(),
@@ -83,8 +83,8 @@ constexpr PvPowerPoint::ParseTableT_ PvPowerPoint::InternalGenerateParseTable_(c
     }}, {{
       // int64 timestamp = 1 [json_name = "timestamp", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(PvPowerPoint, _impl_.timestamp_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-      // float pv = 2 [json_name = "pv", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(PvPowerPoint, _impl_.pv_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+      // double pv = 2 [json_name = "pv", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(PvPowerPoint, _impl_.pv_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
     }},
     // no aux_entries
     {{
@@ -719,17 +719,17 @@ const char descriptor_table_protodef_pv_2fpv_5fmessage_2eproto[] ABSL_ATTRIBUTE_
     "\030@R\017registration_id\0223\n\004data\030\002 \001(\0132\037.fusi"
     "on.ai.proto.pv.PvPowerDataR\004data\"I\n\013PvPo"
     "werData\022:\n\007pv_list\030\001 \003(\0132 .fusion.ai.pro"
-    "to.pv.PvPowerPointR\007pv_list\"Q\n\014PvPowerPo"
+    "to.pv.PvPowerPointR\007pv_list\"U\n\014PvPowerPo"
     "int\022%\n\ttimestamp\030\001 \001(\003B\007\272H\004\"\002 \000R\ttimesta"
-    "mp\022\032\n\002pv\030\002 \001(\002B\n\272H\007\n\005-\000\000\000\000R\002pv\"}\n\021PullPv"
-    "DataRequest\0223\n\017registration_id\030\001 \001(\tB\t\272H"
-    "\006r\004\020\001\030@R\017registration_id\0223\n\004data\030\002 \001(\0132\037"
-    ".fusion.ai.proto.pv.PvPowerDataR\004dataB\253\001"
-    "\n\026com.fusion.ai.proto.pvB\016PvMessageProto"
-    "P\001Z\025fusion.ai.proto.pv;pv\242\002\004FAPP\252\002\022Fusio"
-    "n.Ai.Proto.Pv\312\002\022Fusion\\Ai\\Proto\\Pv\342\002\036Fus"
-    "ion\\Ai\\Proto\\Pv\\GPBMetadata\352\002\025Fusion::Ai"
-    "::Proto::Pvb\006proto3"
+    "mp\022\036\n\002pv\030\002 \001(\001B\016\272H\013\022\t)\000\000\000\000\000\000\000\000R\002pv\"}\n\021Pu"
+    "llPvDataRequest\0223\n\017registration_id\030\001 \001(\t"
+    "B\t\272H\006r\004\020\001\030@R\017registration_id\0223\n\004data\030\002 \001"
+    "(\0132\037.fusion.ai.proto.pv.PvPowerDataR\004dat"
+    "aB\253\001\n\026com.fusion.ai.proto.pvB\016PvMessageP"
+    "rotoP\001Z\025fusion.ai.proto.pv;pv\242\002\004FAPP\252\002\022F"
+    "usion.Ai.Proto.Pv\312\002\022Fusion\\Ai\\Proto\\Pv\342\002"
+    "\036Fusion\\Ai\\Proto\\Pv\\GPBMetadata\352\002\025Fusion"
+    "::Ai::Proto::Pvb\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_pv_2fpv_5fmessage_2eproto_deps[2] = {
@@ -740,7 +740,7 @@ static ::absl::once_flag descriptor_table_pv_2fpv_5fmessage_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_pv_2fpv_5fmessage_2eproto = {
     false,
     false,
-    699,
+    703,
     descriptor_table_protodef_pv_2fpv_5fmessage_2eproto,
     "pv/pv_message.proto",
     &descriptor_table_pv_2fpv_5fmessage_2eproto_once,
@@ -1341,11 +1341,11 @@ PROTOBUF_NOINLINE void PvPowerPoint::Clear() {
     }
   }
 
-  // float pv = 2 [json_name = "pv", (.buf.validate.field) = {
+  // double pv = 2 [json_name = "pv", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    if (::absl::bit_cast<::uint32_t>(this_._internal_pv()) != 0) {
+    if (::absl::bit_cast<::uint64_t>(this_._internal_pv()) != 0) {
       target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
           2, this_._internal_pv(), target);
     }
   }
@@ -1381,10 +1381,10 @@ PROTOBUF_NOINLINE void PvPowerPoint::Clear() {
             this_._internal_timestamp());
       }
     }
-    // float pv = 2 [json_name = "pv", (.buf.validate.field) = {
+    // double pv = 2 [json_name = "pv", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      if (::absl::bit_cast<::uint32_t>(this_._internal_pv()) != 0) {
-        total_size += 5;
+      if (::absl::bit_cast<::uint64_t>(this_._internal_pv()) != 0) {
+        total_size += 9;
       }
     }
   }
@@ -1412,7 +1412,7 @@ void PvPowerPoint::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      if (::absl::bit_cast<::uint32_t>(from._internal_pv()) != 0) {
+      if (::absl::bit_cast<::uint64_t>(from._internal_pv()) != 0) {
         _this->_impl_.pv_ = from._impl_.pv_;
       }
     }
