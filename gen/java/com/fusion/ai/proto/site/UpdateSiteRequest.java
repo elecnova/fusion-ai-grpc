@@ -109,7 +109,19 @@ private static final long serialVersionUID = 0L;
    * 场站显示名称
    * </pre>
    *
-   * <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * @return Whether the siteName field is set.
+   */
+  @java.lang.Override
+  public boolean hasSiteName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * 场站显示名称
+   * </pre>
+   *
+   * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
    * @return The siteName.
    */
   @java.lang.Override
@@ -130,7 +142,7 @@ private static final long serialVersionUID = 0L;
    * 场站显示名称
    * </pre>
    *
-   * <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
    * @return The bytes for siteName.
    */
   @java.lang.Override
@@ -156,7 +168,19 @@ private static final long serialVersionUID = 0L;
    * 场站时区，如 Asia/Shanghai
    * </pre>
    *
-   * <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * @return Whether the timezone field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimezone() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * 场站时区，如 Asia/Shanghai
+   * </pre>
+   *
+   * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
    * @return The timezone.
    */
   @java.lang.Override
@@ -177,7 +201,7 @@ private static final long serialVersionUID = 0L;
    * 场站时区，如 Asia/Shanghai
    * </pre>
    *
-   * <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
    * @return The bytes for timezone.
    */
   @java.lang.Override
@@ -202,7 +226,19 @@ private static final long serialVersionUID = 0L;
    * 场站经度，单位：度
    * </pre>
    *
-   * <code>double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+   * <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+   * @return Whether the longitude field is set.
+   */
+  @java.lang.Override
+  public boolean hasLongitude() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * 场站经度，单位：度
+   * </pre>
+   *
+   * <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
    * @return The longitude.
    */
   @java.lang.Override
@@ -217,7 +253,19 @@ private static final long serialVersionUID = 0L;
    * 场站纬度，单位：度
    * </pre>
    *
-   * <code>double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+   * <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+   * @return Whether the latitude field is set.
+   */
+  @java.lang.Override
+  public boolean hasLatitude() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <pre>
+   * 场站纬度，单位：度
+   * </pre>
+   *
+   * <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
    * @return The latitude.
    */
   @java.lang.Override
@@ -232,7 +280,19 @@ private static final long serialVersionUID = 0L;
    * 光伏组件倾角，单位：度
    * </pre>
    *
-   * <code>double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * @return Whether the tiltDeg field is set.
+   */
+  @java.lang.Override
+  public boolean hasTiltDeg() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <pre>
+   * 光伏组件倾角，单位：度
+   * </pre>
+   *
+   * <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
    * @return The tiltDeg.
    */
   @java.lang.Override
@@ -247,7 +307,19 @@ private static final long serialVersionUID = 0L;
    * 光伏组件方位角，单位：度
    * </pre>
    *
-   * <code>double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * @return Whether the azimuthDeg field is set.
+   */
+  @java.lang.Override
+  public boolean hasAzimuthDeg() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <pre>
+   * 光伏组件方位角，单位：度
+   * </pre>
+   *
+   * <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
    * @return The azimuthDeg.
    */
   @java.lang.Override
@@ -262,7 +334,19 @@ private static final long serialVersionUID = 0L;
    * 光伏额定功率，单位：kW；非适用业务可不提供
    * </pre>
    *
-   * <code>double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * @return Whether the ratedP field is set.
+   */
+  @java.lang.Override
+  public boolean hasRatedP() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <pre>
+   * 光伏额定功率，单位：kW；非适用业务可不提供
+   * </pre>
+   *
+   * <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
    * @return The ratedP.
    */
   @java.lang.Override
@@ -276,7 +360,7 @@ private static final long serialVersionUID = 0L;
       emptyIntList();
   /**
    * <pre>
-   * 预测步长列表，单位：分钟
+   * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
    * </pre>
    *
    * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -289,7 +373,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 预测步长列表，单位：分钟
+   * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
    * </pre>
    *
    * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -300,7 +384,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 预测步长列表，单位：分钟
+   * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
    * </pre>
    *
    * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -319,7 +403,19 @@ private static final long serialVersionUID = 0L;
    * 数据源类型：1-pull，2-push，3-file
    * </pre>
    *
-   * <code>int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+   * @return Whether the dataSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataSource() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   * <pre>
+   * 数据源类型：1-pull，2-push，3-file
+   * </pre>
+   *
+   * <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
    * @return The dataSource.
    */
   @java.lang.Override
@@ -335,7 +431,19 @@ private static final long serialVersionUID = 0L;
    * 数据源地址或路径，返回时不得暴露凭据
    * </pre>
    *
-   * <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * @return Whether the sourceAttr field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceAttr() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   * <pre>
+   * 数据源地址或路径，返回时不得暴露凭据
+   * </pre>
+   *
+   * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
    * @return The sourceAttr.
    */
   @java.lang.Override
@@ -356,7 +464,7 @@ private static final long serialVersionUID = 0L;
    * 数据源地址或路径，返回时不得暴露凭据
    * </pre>
    *
-   * <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
    * @return The bytes for sourceAttr.
    */
   @java.lang.Override
@@ -381,7 +489,19 @@ private static final long serialVersionUID = 0L;
    * 运行类型：1-预测，2-训练
    * </pre>
    *
-   * <code>int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * @return Whether the operation field is set.
+   */
+  @java.lang.Override
+  public boolean hasOperation() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   * <pre>
+   * 运行类型：1-预测，2-训练
+   * </pre>
+   *
+   * <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
    * @return The operation.
    */
   @java.lang.Override
@@ -401,7 +521,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasHisdays() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    * <pre>
@@ -434,25 +554,25 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, registrationId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, siteName_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timezone_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, timezone_);
     }
-    if (java.lang.Double.doubleToRawLongBits(longitude_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(4, longitude_);
     }
-    if (java.lang.Double.doubleToRawLongBits(latitude_) != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeDouble(5, latitude_);
     }
-    if (java.lang.Double.doubleToRawLongBits(tiltDeg_) != 0) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeDouble(6, tiltDeg_);
     }
-    if (java.lang.Double.doubleToRawLongBits(azimuthDeg_) != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeDouble(7, azimuthDeg_);
     }
-    if (java.lang.Double.doubleToRawLongBits(ratedP_) != 0) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeDouble(8, ratedP_);
     }
     if (getGranularityList().size() > 0) {
@@ -462,16 +582,16 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < granularity_.size(); i++) {
       output.writeInt32NoTag(granularity_.getInt(i));
     }
-    if (dataSource_ != 0) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(10, dataSource_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceAttr_)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, sourceAttr_);
     }
-    if (operation_ != 0) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt32(12, operation_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeInt32(13, hisdays_);
     }
     getUnknownFields().writeTo(output);
@@ -481,29 +601,29 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, registrationId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, siteName_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timezone_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, timezone_);
     }
-    if (java.lang.Double.doubleToRawLongBits(longitude_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(4, longitude_);
     }
-    if (java.lang.Double.doubleToRawLongBits(latitude_) != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, latitude_);
     }
-    if (java.lang.Double.doubleToRawLongBits(tiltDeg_) != 0) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(6, tiltDeg_);
     }
-    if (java.lang.Double.doubleToRawLongBits(azimuthDeg_) != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(7, azimuthDeg_);
     }
-    if (java.lang.Double.doubleToRawLongBits(ratedP_) != 0) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(8, ratedP_);
     }
@@ -521,18 +641,18 @@ private static final long serialVersionUID = 0L;
       }
       granularityMemoizedSerializedSize = dataSize;
     }
-    if (dataSource_ != 0) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, dataSource_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceAttr_)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, sourceAttr_);
     }
-    if (operation_ != 0) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(12, operation_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(13, hisdays_);
     }
@@ -562,33 +682,63 @@ private static final long serialVersionUID = 0L;
 
     if (!getRegistrationId()
         .equals(other.getRegistrationId())) return false;
-    if (!getSiteName()
-        .equals(other.getSiteName())) return false;
-    if (!getTimezone()
-        .equals(other.getTimezone())) return false;
-    if (java.lang.Double.doubleToLongBits(getLongitude())
-        != java.lang.Double.doubleToLongBits(
-            other.getLongitude())) return false;
-    if (java.lang.Double.doubleToLongBits(getLatitude())
-        != java.lang.Double.doubleToLongBits(
-            other.getLatitude())) return false;
-    if (java.lang.Double.doubleToLongBits(getTiltDeg())
-        != java.lang.Double.doubleToLongBits(
-            other.getTiltDeg())) return false;
-    if (java.lang.Double.doubleToLongBits(getAzimuthDeg())
-        != java.lang.Double.doubleToLongBits(
-            other.getAzimuthDeg())) return false;
-    if (java.lang.Double.doubleToLongBits(getRatedP())
-        != java.lang.Double.doubleToLongBits(
-            other.getRatedP())) return false;
+    if (hasSiteName() != other.hasSiteName()) return false;
+    if (hasSiteName()) {
+      if (!getSiteName()
+          .equals(other.getSiteName())) return false;
+    }
+    if (hasTimezone() != other.hasTimezone()) return false;
+    if (hasTimezone()) {
+      if (!getTimezone()
+          .equals(other.getTimezone())) return false;
+    }
+    if (hasLongitude() != other.hasLongitude()) return false;
+    if (hasLongitude()) {
+      if (java.lang.Double.doubleToLongBits(getLongitude())
+          != java.lang.Double.doubleToLongBits(
+              other.getLongitude())) return false;
+    }
+    if (hasLatitude() != other.hasLatitude()) return false;
+    if (hasLatitude()) {
+      if (java.lang.Double.doubleToLongBits(getLatitude())
+          != java.lang.Double.doubleToLongBits(
+              other.getLatitude())) return false;
+    }
+    if (hasTiltDeg() != other.hasTiltDeg()) return false;
+    if (hasTiltDeg()) {
+      if (java.lang.Double.doubleToLongBits(getTiltDeg())
+          != java.lang.Double.doubleToLongBits(
+              other.getTiltDeg())) return false;
+    }
+    if (hasAzimuthDeg() != other.hasAzimuthDeg()) return false;
+    if (hasAzimuthDeg()) {
+      if (java.lang.Double.doubleToLongBits(getAzimuthDeg())
+          != java.lang.Double.doubleToLongBits(
+              other.getAzimuthDeg())) return false;
+    }
+    if (hasRatedP() != other.hasRatedP()) return false;
+    if (hasRatedP()) {
+      if (java.lang.Double.doubleToLongBits(getRatedP())
+          != java.lang.Double.doubleToLongBits(
+              other.getRatedP())) return false;
+    }
     if (!getGranularityList()
         .equals(other.getGranularityList())) return false;
-    if (getDataSource()
-        != other.getDataSource()) return false;
-    if (!getSourceAttr()
-        .equals(other.getSourceAttr())) return false;
-    if (getOperation()
-        != other.getOperation()) return false;
+    if (hasDataSource() != other.hasDataSource()) return false;
+    if (hasDataSource()) {
+      if (getDataSource()
+          != other.getDataSource()) return false;
+    }
+    if (hasSourceAttr() != other.hasSourceAttr()) return false;
+    if (hasSourceAttr()) {
+      if (!getSourceAttr()
+          .equals(other.getSourceAttr())) return false;
+    }
+    if (hasOperation() != other.hasOperation()) return false;
+    if (hasOperation()) {
+      if (getOperation()
+          != other.getOperation()) return false;
+    }
     if (hasHisdays() != other.hasHisdays()) return false;
     if (hasHisdays()) {
       if (getHisdays()
@@ -607,35 +757,55 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + REGISTRATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRegistrationId().hashCode();
-    hash = (37 * hash) + SITE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getSiteName().hashCode();
-    hash = (37 * hash) + TIMEZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getTimezone().hashCode();
-    hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getLongitude()));
-    hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getLatitude()));
-    hash = (37 * hash) + TILT_DEG_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getTiltDeg()));
-    hash = (37 * hash) + AZIMUTH_DEG_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getAzimuthDeg()));
-    hash = (37 * hash) + RATED_P_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getRatedP()));
+    if (hasSiteName()) {
+      hash = (37 * hash) + SITE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getSiteName().hashCode();
+    }
+    if (hasTimezone()) {
+      hash = (37 * hash) + TIMEZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getTimezone().hashCode();
+    }
+    if (hasLongitude()) {
+      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLongitude()));
+    }
+    if (hasLatitude()) {
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLatitude()));
+    }
+    if (hasTiltDeg()) {
+      hash = (37 * hash) + TILT_DEG_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTiltDeg()));
+    }
+    if (hasAzimuthDeg()) {
+      hash = (37 * hash) + AZIMUTH_DEG_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getAzimuthDeg()));
+    }
+    if (hasRatedP()) {
+      hash = (37 * hash) + RATED_P_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRatedP()));
+    }
     if (getGranularityCount() > 0) {
       hash = (37 * hash) + GRANULARITY_FIELD_NUMBER;
       hash = (53 * hash) + getGranularityList().hashCode();
     }
-    hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
-    hash = (53 * hash) + getDataSource();
-    hash = (37 * hash) + SOURCE_ATTR_FIELD_NUMBER;
-    hash = (53 * hash) + getSourceAttr().hashCode();
-    hash = (37 * hash) + OPERATION_FIELD_NUMBER;
-    hash = (53 * hash) + getOperation();
+    if (hasDataSource()) {
+      hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getDataSource();
+    }
+    if (hasSourceAttr()) {
+      hash = (37 * hash) + SOURCE_ATTR_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceAttr().hashCode();
+    }
+    if (hasOperation()) {
+      hash = (37 * hash) + OPERATION_FIELD_NUMBER;
+      hash = (53 * hash) + getOperation();
+    }
     if (hasHisdays()) {
       hash = (37 * hash) + HISDAYS_FIELD_NUMBER;
       hash = (53 * hash) + getHisdays();
@@ -820,26 +990,34 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.registrationId_ = registrationId_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.siteName_ = siteName_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.timezone_ = timezone_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.longitude_ = longitude_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.latitude_ = latitude_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.tiltDeg_ = tiltDeg_;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.azimuthDeg_ = azimuthDeg_;
+        to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.ratedP_ = ratedP_;
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         granularity_.makeImmutable();
@@ -847,17 +1025,19 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.dataSource_ = dataSource_;
+        to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.sourceAttr_ = sourceAttr_;
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.operation_ = operation_;
+        to_bitField0_ |= 0x00000200;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.hisdays_ = hisdays_;
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -879,29 +1059,29 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getSiteName().isEmpty()) {
+      if (other.hasSiteName()) {
         siteName_ = other.siteName_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getTimezone().isEmpty()) {
+      if (other.hasTimezone()) {
         timezone_ = other.timezone_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getLongitude()) != 0) {
+      if (other.hasLongitude()) {
         setLongitude(other.getLongitude());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getLatitude()) != 0) {
+      if (other.hasLatitude()) {
         setLatitude(other.getLatitude());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getTiltDeg()) != 0) {
+      if (other.hasTiltDeg()) {
         setTiltDeg(other.getTiltDeg());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getAzimuthDeg()) != 0) {
+      if (other.hasAzimuthDeg()) {
         setAzimuthDeg(other.getAzimuthDeg());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getRatedP()) != 0) {
+      if (other.hasRatedP()) {
         setRatedP(other.getRatedP());
       }
       if (!other.granularity_.isEmpty()) {
@@ -915,15 +1095,15 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (other.getDataSource() != 0) {
+      if (other.hasDataSource()) {
         setDataSource(other.getDataSource());
       }
-      if (!other.getSourceAttr().isEmpty()) {
+      if (other.hasSourceAttr()) {
         sourceAttr_ = other.sourceAttr_;
         bitField0_ |= 0x00000400;
         onChanged();
       }
-      if (other.getOperation() != 0) {
+      if (other.hasOperation()) {
         setOperation(other.getOperation());
       }
       if (other.hasHisdays()) {
@@ -1144,7 +1324,18 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * @return Whether the siteName field is set.
+     */
+    public boolean hasSiteName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 场站显示名称
+     * </pre>
+     *
+     * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @return The siteName.
      */
     public java.lang.String getSiteName() {
@@ -1164,7 +1355,7 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @return The bytes for siteName.
      */
     public com.google.protobuf.ByteString
@@ -1185,7 +1376,7 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @param value The siteName to set.
      * @return This builder for chaining.
      */
@@ -1202,7 +1393,7 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSiteName() {
@@ -1216,7 +1407,7 @@ private static final long serialVersionUID = 0L;
      * 场站显示名称
      * </pre>
      *
-     * <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+     * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for siteName to set.
      * @return This builder for chaining.
      */
@@ -1236,7 +1427,18 @@ private static final long serialVersionUID = 0L;
      * 场站时区，如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * @return Whether the timezone field is set.
+     */
+    public boolean hasTimezone() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * 场站时区，如 Asia/Shanghai
+     * </pre>
+     *
+     * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @return The timezone.
      */
     public java.lang.String getTimezone() {
@@ -1256,7 +1458,7 @@ private static final long serialVersionUID = 0L;
      * 场站时区，如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @return The bytes for timezone.
      */
     public com.google.protobuf.ByteString
@@ -1277,7 +1479,7 @@ private static final long serialVersionUID = 0L;
      * 场站时区，如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @param value The timezone to set.
      * @return This builder for chaining.
      */
@@ -1294,7 +1496,7 @@ private static final long serialVersionUID = 0L;
      * 场站时区，如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTimezone() {
@@ -1308,7 +1510,7 @@ private static final long serialVersionUID = 0L;
      * 场站时区，如 Asia/Shanghai
      * </pre>
      *
-     * <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for timezone to set.
      * @return This builder for chaining.
      */
@@ -1328,7 +1530,19 @@ private static final long serialVersionUID = 0L;
      * 场站经度，单位：度
      * </pre>
      *
-     * <code>double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+     * <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+     * @return Whether the longitude field is set.
+     */
+    @java.lang.Override
+    public boolean hasLongitude() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * 场站经度，单位：度
+     * </pre>
+     *
+     * <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
      * @return The longitude.
      */
     @java.lang.Override
@@ -1340,7 +1554,7 @@ private static final long serialVersionUID = 0L;
      * 场站经度，单位：度
      * </pre>
      *
-     * <code>double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+     * <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
      * @param value The longitude to set.
      * @return This builder for chaining.
      */
@@ -1356,7 +1570,7 @@ private static final long serialVersionUID = 0L;
      * 场站经度，单位：度
      * </pre>
      *
-     * <code>double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+     * <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLongitude() {
@@ -1372,7 +1586,19 @@ private static final long serialVersionUID = 0L;
      * 场站纬度，单位：度
      * </pre>
      *
-     * <code>double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+     * <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+     * @return Whether the latitude field is set.
+     */
+    @java.lang.Override
+    public boolean hasLatitude() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     * 场站纬度，单位：度
+     * </pre>
+     *
+     * <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
      * @return The latitude.
      */
     @java.lang.Override
@@ -1384,7 +1610,7 @@ private static final long serialVersionUID = 0L;
      * 场站纬度，单位：度
      * </pre>
      *
-     * <code>double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+     * <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
      * @param value The latitude to set.
      * @return This builder for chaining.
      */
@@ -1400,7 +1626,7 @@ private static final long serialVersionUID = 0L;
      * 场站纬度，单位：度
      * </pre>
      *
-     * <code>double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+     * <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLatitude() {
@@ -1416,7 +1642,19 @@ private static final long serialVersionUID = 0L;
      * 光伏组件倾角，单位：度
      * </pre>
      *
-     * <code>double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+     * @return Whether the tiltDeg field is set.
+     */
+    @java.lang.Override
+    public boolean hasTiltDeg() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * 光伏组件倾角，单位：度
+     * </pre>
+     *
+     * <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
      * @return The tiltDeg.
      */
     @java.lang.Override
@@ -1428,7 +1666,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件倾角，单位：度
      * </pre>
      *
-     * <code>double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
      * @param value The tiltDeg to set.
      * @return This builder for chaining.
      */
@@ -1444,7 +1682,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件倾角，单位：度
      * </pre>
      *
-     * <code>double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTiltDeg() {
@@ -1460,7 +1698,19 @@ private static final long serialVersionUID = 0L;
      * 光伏组件方位角，单位：度
      * </pre>
      *
-     * <code>double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+     * @return Whether the azimuthDeg field is set.
+     */
+    @java.lang.Override
+    public boolean hasAzimuthDeg() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     * 光伏组件方位角，单位：度
+     * </pre>
+     *
+     * <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
      * @return The azimuthDeg.
      */
     @java.lang.Override
@@ -1472,7 +1722,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件方位角，单位：度
      * </pre>
      *
-     * <code>double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
      * @param value The azimuthDeg to set.
      * @return This builder for chaining.
      */
@@ -1488,7 +1738,7 @@ private static final long serialVersionUID = 0L;
      * 光伏组件方位角，单位：度
      * </pre>
      *
-     * <code>double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+     * <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearAzimuthDeg() {
@@ -1504,7 +1754,19 @@ private static final long serialVersionUID = 0L;
      * 光伏额定功率，单位：kW；非适用业务可不提供
      * </pre>
      *
-     * <code>double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * @return Whether the ratedP field is set.
+     */
+    @java.lang.Override
+    public boolean hasRatedP() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <pre>
+     * 光伏额定功率，单位：kW；非适用业务可不提供
+     * </pre>
+     *
+     * <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
      * @return The ratedP.
      */
     @java.lang.Override
@@ -1516,7 +1778,7 @@ private static final long serialVersionUID = 0L;
      * 光伏额定功率，单位：kW；非适用业务可不提供
      * </pre>
      *
-     * <code>double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
      * @param value The ratedP to set.
      * @return This builder for chaining.
      */
@@ -1532,7 +1794,7 @@ private static final long serialVersionUID = 0L;
      * 光伏额定功率，单位：kW；非适用业务可不提供
      * </pre>
      *
-     * <code>double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearRatedP() {
@@ -1551,7 +1813,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      * </pre>
      *
      * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1564,7 +1826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      * </pre>
      *
      * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1575,7 +1837,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      * </pre>
      *
      * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1587,7 +1849,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      * </pre>
      *
      * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1606,7 +1868,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      * </pre>
      *
      * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1623,7 +1885,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      * </pre>
      *
      * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1641,7 +1903,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      * </pre>
      *
      * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1660,7 +1922,19 @@ private static final long serialVersionUID = 0L;
      * 数据源类型：1-pull，2-push，3-file
      * </pre>
      *
-     * <code>int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+     * @return Whether the dataSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataSource() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <pre>
+     * 数据源类型：1-pull，2-push，3-file
+     * </pre>
+     *
+     * <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
      * @return The dataSource.
      */
     @java.lang.Override
@@ -1672,7 +1946,7 @@ private static final long serialVersionUID = 0L;
      * 数据源类型：1-pull，2-push，3-file
      * </pre>
      *
-     * <code>int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
      * @param value The dataSource to set.
      * @return This builder for chaining.
      */
@@ -1688,7 +1962,7 @@ private static final long serialVersionUID = 0L;
      * 数据源类型：1-pull，2-push，3-file
      * </pre>
      *
-     * <code>int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDataSource() {
@@ -1704,7 +1978,18 @@ private static final long serialVersionUID = 0L;
      * 数据源地址或路径，返回时不得暴露凭据
      * </pre>
      *
-     * <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * @return Whether the sourceAttr field is set.
+     */
+    public boolean hasSourceAttr() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <pre>
+     * 数据源地址或路径，返回时不得暴露凭据
+     * </pre>
+     *
+     * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @return The sourceAttr.
      */
     public java.lang.String getSourceAttr() {
@@ -1724,7 +2009,7 @@ private static final long serialVersionUID = 0L;
      * 数据源地址或路径，返回时不得暴露凭据
      * </pre>
      *
-     * <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @return The bytes for sourceAttr.
      */
     public com.google.protobuf.ByteString
@@ -1745,7 +2030,7 @@ private static final long serialVersionUID = 0L;
      * 数据源地址或路径，返回时不得暴露凭据
      * </pre>
      *
-     * <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @param value The sourceAttr to set.
      * @return This builder for chaining.
      */
@@ -1762,7 +2047,7 @@ private static final long serialVersionUID = 0L;
      * 数据源地址或路径，返回时不得暴露凭据
      * </pre>
      *
-     * <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSourceAttr() {
@@ -1776,7 +2061,7 @@ private static final long serialVersionUID = 0L;
      * 数据源地址或路径，返回时不得暴露凭据
      * </pre>
      *
-     * <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+     * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for sourceAttr to set.
      * @return This builder for chaining.
      */
@@ -1796,7 +2081,19 @@ private static final long serialVersionUID = 0L;
      * 运行类型：1-预测，2-训练
      * </pre>
      *
-     * <code>int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * @return Whether the operation field is set.
+     */
+    @java.lang.Override
+    public boolean hasOperation() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <pre>
+     * 运行类型：1-预测，2-训练
+     * </pre>
+     *
+     * <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
      * @return The operation.
      */
     @java.lang.Override
@@ -1808,7 +2105,7 @@ private static final long serialVersionUID = 0L;
      * 运行类型：1-预测，2-训练
      * </pre>
      *
-     * <code>int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
      * @param value The operation to set.
      * @return This builder for chaining.
      */
@@ -1824,7 +2121,7 @@ private static final long serialVersionUID = 0L;
      * 运行类型：1-预测，2-训练
      * </pre>
      *
-     * <code>int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOperation() {

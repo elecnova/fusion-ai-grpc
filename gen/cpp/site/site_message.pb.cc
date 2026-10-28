@@ -277,31 +277,31 @@ constexpr UpdateSiteRequest::ParseTableT_ UpdateSiteRequest::InternalGeneratePar
       {::_pbi::TcParser::FastUS1,
        {10, 1, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.registration_id_)}},
-      // string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+      // optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
        {18, 2, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.site_name_)}},
-      // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+      // optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
        {26, 3, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.timezone_)}},
-      // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+      // optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
        {33, 5, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.longitude_)}},
-      // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+      // optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
        {41, 6, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.latitude_)}},
-      // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+      // optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
        {49, 7, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.tilt_deg_)}},
-      // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      // optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
        {57, 8, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.azimuth_deg_)}},
-      // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+      // optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
        {65, 9, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.rated_p_)}},
@@ -309,15 +309,15 @@ constexpr UpdateSiteRequest::ParseTableT_ UpdateSiteRequest::InternalGeneratePar
       {::_pbi::TcParser::FastV32P1,
        {74, 0, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.granularity_)}},
-      // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+      // optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
       {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(UpdateSiteRequest, _impl_.data_source_), 10>(),
        {80, 10, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.data_source_)}},
-      // string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+      // optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
        {90, 4, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.source_attr_)}},
-      // int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+      // optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
       {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(UpdateSiteRequest, _impl_.operation_), 11>(),
        {96, 11, 0,
         PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.operation_)}},
@@ -332,27 +332,27 @@ constexpr UpdateSiteRequest::ParseTableT_ UpdateSiteRequest::InternalGeneratePar
     }}, {{
       // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.registration_id_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+      // optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.site_name_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+      // optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.timezone_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+      // optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.longitude_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+      // optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.latitude_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+      // optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.tilt_deg_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+      // optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.azimuth_deg_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+      // optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.rated_p_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
       // repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.granularity_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
-      // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+      // optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.data_source_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+      // optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.source_attr_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+      // optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.operation_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
       // optional int32 hisdays = 13 [json_name = "hisdays", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(UpdateSiteRequest, _impl_.hisdays_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
@@ -2689,101 +2689,106 @@ const char descriptor_table_protodef_site_2fsite_5fmessage_2eproto[] ABSL_ATTRIB
     " \001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_i"
     "d\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\ncre"
     "ated_at\030\005 \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nup"
-    "dated_at\030\006 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"\201\005\n\021"
+    "dated_at\030\006 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"\300\006\n\021"
     "UpdateSiteRequest\0221\n\017registration_id\030\001 \001"
-    "(\tB\007\272H\004r\002\020\001R\017registration_id\022&\n\tsite_nam"
-    "e\030\002 \001(\tB\010\272H\005r\003\030\310\001R\tsite_name\022#\n\010timezone"
-    "\030\003 \001(\tB\007\272H\004r\002\030@R\010timezone\0225\n\tlongitude\030\004"
-    " \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300R\tlongitude"
-    "\0223\n\010latitude\030\005 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000"
-    "\200V\300R\010latitude\0223\n\010tilt_deg\030\006 \001(\001B\027\272H\024\022\022\031\000"
-    "\000\000\000\000\200V@)\000\000\000\000\000\000\000\000R\010tilt_deg\0229\n\013azimuth_de"
-    "g\030\007 \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000R\013azimut"
-    "h_deg\022(\n\007rated_p\030\010 \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000R\007"
-    "rated_p\022.\n\013granularity\030\t \003(\005B\014\272H\t\222\001\006\"\004\032\002"
-    " \000R\013granularity\022-\n\013data_source\030\n \001(\005B\013\272H"
-    "\010\032\0060\0010\0020\003R\013data_source\022*\n\013source_attr\030\013 "
-    "\001(\tB\010\272H\005r\003\030\200\020R\013source_attr\022\'\n\toperation\030"
-    "\014 \001(\005B\t\272H\006\032\0040\0010\002R\toperation\022&\n\007hisdays\030\r"
-    " \001(\005B\007\272H\004\032\002 \000H\000R\007hisdays\210\001\001B\n\n\010_hisdays\""
-    "\347\001\n\022UpdateSiteResponse\022+\n\005state\030\001 \001(\tB\025\272"
-    "H\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002 \001("
-    "\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003 "
-    "\001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_id"
-    "\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\nupda"
-    "ted_at\030\005 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"F\n\021Del"
-    "eteSiteRequest\0221\n\017registration_id\030\001 \001(\tB"
-    "\007\272H\004r\002\020\001R\017registration_id\"\362\001\n\022DeleteSite"
-    "Response\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007successR"
-    "\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-"
-    "9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007"
-    "message\0221\n\017registration_id\030\004 \001(\tB\007\272H\004r\002\020"
-    "\001R\017registration_id\022\030\n\007deleted\030\005 \001(\010R\007del"
-    "eted\022\030\n\007changed\030\006 \001(\010R\007changed\"\246\007\n\020SiteR"
-    "egistration\0221\n\017registration_id\030\001 \001(\tB\007\272H"
-    "\004r\002\020\001R\017registration_id\022+\n\014service_type\030\002"
-    " \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007site_id\030\003"
-    " \001(\tB\007\272H\004r\002\020\001R\007site_id\022%\n\tsite_name\030\004 \001("
-    "\tB\007\272H\004r\002\030xR\tsite_name\022#\n\010timezone\030\005 \001(\tB"
-    "\007\272H\004r\002\030@R\010timezone\022:\n\tlongitude\030\006 \001(\001B\027\272"
+    "(\tB\007\272H\004r\002\020\001R\017registration_id\022+\n\tsite_nam"
+    "e\030\002 \001(\tB\010\272H\005r\003\030\310\001H\000R\tsite_name\210\001\001\022(\n\010tim"
+    "ezone\030\003 \001(\tB\007\272H\004r\002\030@H\001R\010timezone\210\001\001\022:\n\tl"
+    "ongitude\030\004 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300H"
+    "\002R\tlongitude\210\001\001\0228\n\010latitude\030\005 \001(\001B\027\272H\024\022\022"
+    "\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300H\003R\010latitude\210\001\001\0228\n\010til"
+    "t_deg\030\006 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\004R\010"
+    "tilt_deg\210\001\001\022>\n\013azimuth_deg\030\007 \001(\001B\027\272H\024\022\022\021"
+    "\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H\005R\013azimuth_deg\210\001\001\022-\n\007r"
+    "ated_p\030\010 \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000H\006R\007rated_p\210"
+    "\001\001\022.\n\013granularity\030\t \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013g"
+    "ranularity\0222\n\013data_source\030\n \001(\005B\013\272H\010\032\0060\001"
+    "0\0020\003H\007R\013data_source\210\001\001\022/\n\013source_attr\030\013 "
+    "\001(\tB\010\272H\005r\003\030\200\020H\010R\013source_attr\210\001\001\022,\n\topera"
+    "tion\030\014 \001(\005B\t\272H\006\032\0040\0010\002H\tR\toperation\210\001\001\022&\n"
+    "\007hisdays\030\r \001(\005B\007\272H\004\032\002 \000H\nR\007hisdays\210\001\001B\014\n"
+    "\n_site_nameB\013\n\t_timezoneB\014\n\n_longitudeB\013"
+    "\n\t_latitudeB\013\n\t_tilt_degB\016\n\014_azimuth_deg"
+    "B\n\n\010_rated_pB\016\n\014_data_sourceB\016\n\014_source_"
+    "attrB\014\n\n_operationB\n\n\010_hisdays\"\347\001\n\022Updat"
+    "eSiteResponse\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007suc"
+    "cessR\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142"
+    "\n^[0-9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r"
+    "\002\020\001R\007message\0221\n\017registration_id\030\004 \001(\tB\007\272"
+    "H\004r\002\020\001R\017registration_id\022\'\n\nupdated_at\030\005 "
+    "\001(\tB\007\272H\004r\002\020\001R\nupdated_at\"F\n\021DeleteSiteRe"
+    "quest\0221\n\017registration_id\030\001 \001(\tB\007\272H\004r\002\020\001R"
+    "\017registration_id\"\362\001\n\022DeleteSiteResponse\022"
+    "+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007successR\005errorR\005s"
+    "tate\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004c"
+    "ode\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\0221"
+    "\n\017registration_id\030\004 \001(\tB\007\272H\004r\002\020\001R\017regist"
+    "ration_id\022\030\n\007deleted\030\005 \001(\010R\007deleted\022\030\n\007c"
+    "hanged\030\006 \001(\010R\007changed\"\246\007\n\020SiteRegistrati"
+    "on\0221\n\017registration_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017re"
+    "gistration_id\022+\n\014service_type\030\002 \001(\tB\007\272H\004"
+    "r\002\020\001R\014service_type\022!\n\007site_id\030\003 \001(\tB\007\272H\004"
+    "r\002\020\001R\007site_id\022%\n\tsite_name\030\004 \001(\tB\007\272H\004r\002\030"
+    "xR\tsite_name\022#\n\010timezone\030\005 \001(\tB\007\272H\004r\002\030@R"
+    "\010timezone\022:\n\tlongitude\030\006 \001(\001B\027\272H\024\022\022\031\000\000\000\000"
+    "\000\200f@)\000\000\000\000\000\200f\300H\000R\tlongitude\210\001\001\0228\n\010latitud"
+    "e\030\007 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300H\001R\010lati"
+    "tude\210\001\001\0228\n\010tilt_deg\030\010 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V"
+    "@)\000\000\000\000\000\000\000\000H\002R\010tilt_deg\210\001\001\022>\n\013azimuth_deg"
+    "\030\t \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H\003R\013azimu"
+    "th_deg\210\001\001\022-\n\007rated_p\030\n \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000"
+    "\000\000H\004R\007rated_p\210\001\001\022.\n\013granularity\030\013 \003(\005B\014\272"
+    "H\t\222\001\006\"\004\032\002 \000R\013granularity\0222\n\013data_source\030"
+    "\014 \001(\005B\013\272H\010\032\0060\0010\0020\003H\005R\013data_source\210\001\001\022*\n\013"
+    "source_attr\030\r \001(\tB\010\272H\005r\003\030\200\020R\013source_attr"
+    "\022,\n\toperation\030\016 \001(\005B\t\272H\006\032\0040\0010\002H\006R\toperat"
+    "ion\210\001\001\022&\n\007hisdays\030\017 \001(\005B\007\272H\004\032\002 \000H\007R\007hisd"
+    "ays\210\001\001\022\'\n\ncreated_at\030\020 \001(\tB\007\272H\004r\002\020\001R\ncre"
+    "ated_at\022\'\n\nupdated_at\030\021 \001(\tB\007\272H\004r\002\020\001R\nup"
+    "dated_atB\014\n\n_longitudeB\013\n\t_latitudeB\013\n\t_"
+    "tilt_degB\016\n\014_azimuth_degB\n\n\010_rated_pB\016\n\014"
+    "_data_sourceB\014\n\n_operationB\n\n\010_hisdays\"3"
+    "\n\016GetSiteRequest\022!\n\007site_id\030\001 \001(\tB\007\272H\004r\002"
+    "\020\001R\007site_id\"H\n\023GetSiteByRegRequest\0221\n\017re"
+    "gistration_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017registrati"
+    "on_id\"\203\002\n\017GetSiteResponse\022+\n\005state\030\001 \001(\t"
+    "B\025\272H\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002"
+    " \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message"
+    "\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\022!\n\007site_id\030\004 \001("
+    "\tB\007\272H\004r\002\020\001R\007site_id\022V\n\rregistrations\030\005 \003"
+    "(\0132&.fusion.ai.proto.site.SiteRegistrati"
+    "onB\010\272H\005\222\001\002\020\003R\rregistrations\"\214\010\n\024GetSiteB"
+    "yRegResponse\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007succ"
+    "essR\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n"
+    "^[0-9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002"
+    "\020\001R\007message\0221\n\017registration_id\030\004 \001(\tB\007\272H"
+    "\004r\002\020\001R\017registration_id\022+\n\014service_type\030\005"
+    " \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007site_id\030\006"
+    " \001(\tB\007\272H\004r\002\020\001R\007site_id\022%\n\tsite_name\030\007 \001("
+    "\tB\007\272H\004r\002\030xR\tsite_name\022#\n\010timezone\030\010 \001(\tB"
+    "\007\272H\004r\002\030@R\010timezone\022:\n\tlongitude\030\t \001(\001B\027\272"
     "H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300H\000R\tlongitude\210\001\001\0228"
-    "\n\010latitude\030\007 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V"
-    "\300H\001R\010latitude\210\001\001\0228\n\010tilt_deg\030\010 \001(\001B\027\272H\024\022"
+    "\n\010latitude\030\n \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V"
+    "\300H\001R\010latitude\210\001\001\0228\n\010tilt_deg\030\013 \001(\001B\027\272H\024\022"
     "\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\002R\010tilt_deg\210\001\001\022>\n\013az"
-    "imuth_deg\030\t \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000"
-    "H\003R\013azimuth_deg\210\001\001\022-\n\007rated_p\030\n \001(\001B\016\272H\013"
+    "imuth_deg\030\014 \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000"
+    "H\003R\013azimuth_deg\210\001\001\022-\n\007rated_p\030\r \001(\001B\016\272H\013"
     "\022\t!\000\000\000\000\000\000\000\000H\004R\007rated_p\210\001\001\022.\n\013granularity"
-    "\030\013 \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013granularity\0222\n\013dat"
-    "a_source\030\014 \001(\005B\013\272H\010\032\0060\0010\0020\003H\005R\013data_sour"
-    "ce\210\001\001\022*\n\013source_attr\030\r \001(\tB\010\272H\005r\003\030\200\020R\013so"
-    "urce_attr\022,\n\toperation\030\016 \001(\005B\t\272H\006\032\0040\0010\002H"
-    "\006R\toperation\210\001\001\022&\n\007hisdays\030\017 \001(\005B\007\272H\004\032\002 "
-    "\000H\007R\007hisdays\210\001\001\022\'\n\ncreated_at\030\020 \001(\tB\007\272H\004"
-    "r\002\020\001R\ncreated_at\022\'\n\nupdated_at\030\021 \001(\tB\007\272H"
-    "\004r\002\020\001R\nupdated_atB\014\n\n_longitudeB\013\n\t_lati"
-    "tudeB\013\n\t_tilt_degB\016\n\014_azimuth_degB\n\n\010_ra"
-    "ted_pB\016\n\014_data_sourceB\014\n\n_operationB\n\n\010_"
-    "hisdays\"3\n\016GetSiteRequest\022!\n\007site_id\030\001 \001"
-    "(\tB\007\272H\004r\002\020\001R\007site_id\"H\n\023GetSiteByRegRequ"
-    "est\0221\n\017registration_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017r"
-    "egistration_id\"\203\002\n\017GetSiteResponse\022+\n\005st"
-    "ate\030\001 \001(\tB\025\272H\022r\020R\007successR\005errorR\005state\022"
-    "%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!"
-    "\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\022!\n\007sit"
-    "e_id\030\004 \001(\tB\007\272H\004r\002\020\001R\007site_id\022V\n\rregistra"
-    "tions\030\005 \003(\0132&.fusion.ai.proto.site.SiteR"
-    "egistrationB\010\272H\005\222\001\002\020\003R\rregistrations\"\214\010\n"
-    "\024GetSiteByRegResponse\022+\n\005state\030\001 \001(\tB\025\272H"
-    "\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002 \001(\t"
-    "B\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003 \001"
-    "(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_id\030"
-    "\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022+\n\014servi"
-    "ce_type\030\005 \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007"
-    "site_id\030\006 \001(\tB\007\272H\004r\002\020\001R\007site_id\022%\n\tsite_"
-    "name\030\007 \001(\tB\007\272H\004r\002\030xR\tsite_name\022#\n\010timezo"
-    "ne\030\010 \001(\tB\007\272H\004r\002\030@R\010timezone\022:\n\tlongitude"
-    "\030\t \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300H\000R\tlongi"
-    "tude\210\001\001\0228\n\010latitude\030\n \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V"
-    "@)\000\000\000\000\000\200V\300H\001R\010latitude\210\001\001\0228\n\010tilt_deg\030\013 "
-    "\001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\002R\010tilt_deg"
-    "\210\001\001\022>\n\013azimuth_deg\030\014 \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@"
-    ")\000\000\000\000\000\000\000\000H\003R\013azimuth_deg\210\001\001\022-\n\007rated_p\030\r"
-    " \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000H\004R\007rated_p\210\001\001\022.\n\013gr"
-    "anularity\030\016 \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013granulari"
-    "ty\022-\n\013data_source\030\017 \001(\005B\013\272H\010\032\0060\0010\0020\003R\013da"
-    "ta_source\022*\n\013source_attr\030\020 \001(\tB\010\272H\005r\003\030\200\020"
-    "R\013source_attr\022,\n\toperation\030\021 \001(\005B\t\272H\006\032\0040"
-    "\0010\002H\005R\toperation\210\001\001\022&\n\007hisdays\030\022 \001(\005B\007\272H"
-    "\004\032\002 \000H\006R\007hisdays\210\001\001\022\'\n\ncreated_at\030\023 \001(\tB"
-    "\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nupdated_at\030\024 \001(\t"
-    "B\007\272H\004r\002\020\001R\nupdated_atB\014\n\n_longitudeB\013\n\t_"
-    "latitudeB\013\n\t_tilt_degB\016\n\014_azimuth_degB\n\n"
-    "\010_rated_pB\014\n\n_operationB\n\n\010_hisdaysB\273\001\n\030"
-    "com.fusion.ai.proto.siteB\020SiteMessagePro"
-    "toP\001Z\031fusion.ai.proto.site;site\242\002\004FAPS\252\002"
-    "\024Fusion.Ai.Proto.Site\312\002\024Fusion\\Ai\\Proto\\"
-    "Site\342\002 Fusion\\Ai\\Proto\\Site\\GPBMetadata\352"
-    "\002\027Fusion::Ai::Proto::Siteb\006proto3"
+    "\030\016 \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013granularity\022-\n\013dat"
+    "a_source\030\017 \001(\005B\013\272H\010\032\0060\0010\0020\003R\013data_source"
+    "\022*\n\013source_attr\030\020 \001(\tB\010\272H\005r\003\030\200\020R\013source_"
+    "attr\022,\n\toperation\030\021 \001(\005B\t\272H\006\032\0040\0010\002H\005R\top"
+    "eration\210\001\001\022&\n\007hisdays\030\022 \001(\005B\007\272H\004\032\002 \000H\006R\007"
+    "hisdays\210\001\001\022\'\n\ncreated_at\030\023 \001(\tB\007\272H\004r\002\020\001R"
+    "\ncreated_at\022\'\n\nupdated_at\030\024 \001(\tB\007\272H\004r\002\020\001"
+    "R\nupdated_atB\014\n\n_longitudeB\013\n\t_latitudeB"
+    "\013\n\t_tilt_degB\016\n\014_azimuth_degB\n\n\010_rated_p"
+    "B\014\n\n_operationB\n\n\010_hisdaysB\273\001\n\030com.fusio"
+    "n.ai.proto.siteB\020SiteMessageProtoP\001Z\031fus"
+    "ion.ai.proto.site;site\242\002\004FAPS\252\002\024Fusion.A"
+    "i.Proto.Site\312\002\024Fusion\\Ai\\Proto\\Site\342\002 Fu"
+    "sion\\Ai\\Proto\\Site\\GPBMetadata\352\002\027Fusion:"
+    ":Ai::Proto::Siteb\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_site_2fsite_5fmessage_2eproto_deps[2] = {
@@ -2794,7 +2799,7 @@ static ::absl::once_flag descriptor_table_site_2fsite_5fmessage_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_site_2fsite_5fmessage_2eproto = {
     false,
     false,
-    4953,
+    5144,
     descriptor_table_protodef_site_2fsite_5fmessage_2eproto,
     "site/site_message.proto",
     &descriptor_table_site_2fsite_5fmessage_2eproto_once,
@@ -3996,69 +4001,55 @@ PROTOBUF_NOINLINE void UpdateSiteRequest::Clear() {
     }
   }
 
-  // string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+  // optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-    if (!this_._internal_site_name().empty()) {
-      const ::std::string& _s = this_._internal_site_name();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.site_name");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
-    }
+    const ::std::string& _s = this_._internal_site_name();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.site_name");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
-  // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+  // optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-    if (!this_._internal_timezone().empty()) {
-      const ::std::string& _s = this_._internal_timezone();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.timezone");
-      target = stream->WriteStringMaybeAliased(3, _s, target);
-    }
+    const ::std::string& _s = this_._internal_timezone();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.timezone");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
-  // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+  // optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-    if (::absl::bit_cast<::uint64_t>(this_._internal_longitude()) != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          4, this_._internal_longitude(), target);
-    }
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        4, this_._internal_longitude(), target);
   }
 
-  // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+  // optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-    if (::absl::bit_cast<::uint64_t>(this_._internal_latitude()) != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          5, this_._internal_latitude(), target);
-    }
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        5, this_._internal_latitude(), target);
   }
 
-  // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+  // optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000080U)) {
-    if (::absl::bit_cast<::uint64_t>(this_._internal_tilt_deg()) != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          6, this_._internal_tilt_deg(), target);
-    }
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        6, this_._internal_tilt_deg(), target);
   }
 
-  // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  // optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000100U)) {
-    if (::absl::bit_cast<::uint64_t>(this_._internal_azimuth_deg()) != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          7, this_._internal_azimuth_deg(), target);
-    }
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        7, this_._internal_azimuth_deg(), target);
   }
 
-  // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+  // optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000200U)) {
-    if (::absl::bit_cast<::uint64_t>(this_._internal_rated_p()) != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          8, this_._internal_rated_p(), target);
-    }
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        8, this_._internal_rated_p(), target);
   }
 
   // repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {
@@ -4072,32 +4063,26 @@ PROTOBUF_NOINLINE void UpdateSiteRequest::Clear() {
     }
   }
 
-  // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+  // optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000400U)) {
-    if (this_._internal_data_source() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<10>(
-              stream, this_._internal_data_source(), target);
-    }
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<10>(
+            stream, this_._internal_data_source(), target);
   }
 
-  // string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+  // optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-    if (!this_._internal_source_attr().empty()) {
-      const ::std::string& _s = this_._internal_source_attr();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.source_attr");
-      target = stream->WriteStringMaybeAliased(11, _s, target);
-    }
+    const ::std::string& _s = this_._internal_source_attr();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.site.UpdateSiteRequest.source_attr");
+    target = stream->WriteStringMaybeAliased(11, _s, target);
   }
 
-  // int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+  // optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000800U)) {
-    if (this_._internal_operation() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<12>(
-              stream, this_._internal_operation(), target);
-    }
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<12>(
+            stream, this_._internal_operation(), target);
   }
 
   // optional int32 hisdays = 13 [json_name = "hisdays", (.buf.validate.field) = {
@@ -4130,7 +4115,8 @@ PROTOBUF_NOINLINE void UpdateSiteRequest::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
+  total_size += ::absl::popcount(0x000003e0U & cached_has_bits) * 9;
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
     // repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       total_size +=
@@ -4145,72 +4131,32 @@ PROTOBUF_NOINLINE void UpdateSiteRequest::Clear() {
                                         this_._internal_registration_id());
       }
     }
-    // string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+    // optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      if (!this_._internal_site_name().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_site_name());
-      }
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_site_name());
     }
-    // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+    // optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      if (!this_._internal_timezone().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_timezone());
-      }
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_timezone());
     }
-    // string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+    // optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      if (!this_._internal_source_attr().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_source_attr());
-      }
-    }
-    // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (::absl::bit_cast<::uint64_t>(this_._internal_longitude()) != 0) {
-        total_size += 9;
-      }
-    }
-    // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      if (::absl::bit_cast<::uint64_t>(this_._internal_latitude()) != 0) {
-        total_size += 9;
-      }
-    }
-    // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
-      if (::absl::bit_cast<::uint64_t>(this_._internal_tilt_deg()) != 0) {
-        total_size += 9;
-      }
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_source_attr());
     }
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x00001f00U)) {
-    // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
-      if (::absl::bit_cast<::uint64_t>(this_._internal_azimuth_deg()) != 0) {
-        total_size += 9;
-      }
-    }
-    // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
-      if (::absl::bit_cast<::uint64_t>(this_._internal_rated_p()) != 0) {
-        total_size += 9;
-      }
-    }
-    // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+  if (BatchCheckHasBit(cached_has_bits, 0x00001c00U)) {
+    // optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000400U)) {
-      if (this_._internal_data_source() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-            this_._internal_data_source());
-      }
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this_._internal_data_source());
     }
-    // int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+    // optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000800U)) {
-      if (this_._internal_operation() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-            this_._internal_operation());
-      }
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this_._internal_operation());
     }
     // optional int32 hisdays = 13 [json_name = "hisdays", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00001000U)) {
@@ -4249,68 +4195,36 @@ void UpdateSiteRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      if (!from._internal_site_name().empty()) {
-        _this->_internal_set_site_name(from._internal_site_name());
-      } else {
-        if (_this->_impl_.site_name_.IsDefault()) {
-          _this->_internal_set_site_name("");
-        }
-      }
+      _this->_internal_set_site_name(from._internal_site_name());
     }
     if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      if (!from._internal_timezone().empty()) {
-        _this->_internal_set_timezone(from._internal_timezone());
-      } else {
-        if (_this->_impl_.timezone_.IsDefault()) {
-          _this->_internal_set_timezone("");
-        }
-      }
+      _this->_internal_set_timezone(from._internal_timezone());
     }
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      if (!from._internal_source_attr().empty()) {
-        _this->_internal_set_source_attr(from._internal_source_attr());
-      } else {
-        if (_this->_impl_.source_attr_.IsDefault()) {
-          _this->_internal_set_source_attr("");
-        }
-      }
+      _this->_internal_set_source_attr(from._internal_source_attr());
     }
     if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (::absl::bit_cast<::uint64_t>(from._internal_longitude()) != 0) {
-        _this->_impl_.longitude_ = from._impl_.longitude_;
-      }
+      _this->_impl_.longitude_ = from._impl_.longitude_;
     }
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      if (::absl::bit_cast<::uint64_t>(from._internal_latitude()) != 0) {
-        _this->_impl_.latitude_ = from._impl_.latitude_;
-      }
+      _this->_impl_.latitude_ = from._impl_.latitude_;
     }
     if (CheckHasBit(cached_has_bits, 0x00000080U)) {
-      if (::absl::bit_cast<::uint64_t>(from._internal_tilt_deg()) != 0) {
-        _this->_impl_.tilt_deg_ = from._impl_.tilt_deg_;
-      }
+      _this->_impl_.tilt_deg_ = from._impl_.tilt_deg_;
     }
   }
   if (BatchCheckHasBit(cached_has_bits, 0x00001f00U)) {
     if (CheckHasBit(cached_has_bits, 0x00000100U)) {
-      if (::absl::bit_cast<::uint64_t>(from._internal_azimuth_deg()) != 0) {
-        _this->_impl_.azimuth_deg_ = from._impl_.azimuth_deg_;
-      }
+      _this->_impl_.azimuth_deg_ = from._impl_.azimuth_deg_;
     }
     if (CheckHasBit(cached_has_bits, 0x00000200U)) {
-      if (::absl::bit_cast<::uint64_t>(from._internal_rated_p()) != 0) {
-        _this->_impl_.rated_p_ = from._impl_.rated_p_;
-      }
+      _this->_impl_.rated_p_ = from._impl_.rated_p_;
     }
     if (CheckHasBit(cached_has_bits, 0x00000400U)) {
-      if (from._internal_data_source() != 0) {
-        _this->_impl_.data_source_ = from._impl_.data_source_;
-      }
+      _this->_impl_.data_source_ = from._impl_.data_source_;
     }
     if (CheckHasBit(cached_has_bits, 0x00000800U)) {
-      if (from._internal_operation() != 0) {
-        _this->_impl_.operation_ = from._impl_.operation_;
-      }
+      _this->_impl_.operation_ = from._impl_.operation_;
     }
     if (CheckHasBit(cached_has_bits, 0x00001000U)) {
       _this->_impl_.hisdays_ = from._impl_.hisdays_;

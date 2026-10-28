@@ -35,7 +35,16 @@ public interface UpdateSiteRequestOrBuilder extends
    * 场站显示名称
    * </pre>
    *
-   * <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * @return Whether the siteName field is set.
+   */
+  boolean hasSiteName();
+  /**
+   * <pre>
+   * 场站显示名称
+   * </pre>
+   *
+   * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
    * @return The siteName.
    */
   java.lang.String getSiteName();
@@ -44,7 +53,7 @@ public interface UpdateSiteRequestOrBuilder extends
    * 场站显示名称
    * </pre>
    *
-   * <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
+   * <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
    * @return The bytes for siteName.
    */
   com.google.protobuf.ByteString
@@ -55,7 +64,16 @@ public interface UpdateSiteRequestOrBuilder extends
    * 场站时区，如 Asia/Shanghai
    * </pre>
    *
-   * <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * @return Whether the timezone field is set.
+   */
+  boolean hasTimezone();
+  /**
+   * <pre>
+   * 场站时区，如 Asia/Shanghai
+   * </pre>
+   *
+   * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
    * @return The timezone.
    */
   java.lang.String getTimezone();
@@ -64,7 +82,7 @@ public interface UpdateSiteRequestOrBuilder extends
    * 场站时区，如 Asia/Shanghai
    * </pre>
    *
-   * <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
    * @return The bytes for timezone.
    */
   com.google.protobuf.ByteString
@@ -75,7 +93,16 @@ public interface UpdateSiteRequestOrBuilder extends
    * 场站经度，单位：度
    * </pre>
    *
-   * <code>double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+   * <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
+   * @return Whether the longitude field is set.
+   */
+  boolean hasLongitude();
+  /**
+   * <pre>
+   * 场站经度，单位：度
+   * </pre>
+   *
+   * <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
    * @return The longitude.
    */
   double getLongitude();
@@ -85,7 +112,16 @@ public interface UpdateSiteRequestOrBuilder extends
    * 场站纬度，单位：度
    * </pre>
    *
-   * <code>double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+   * <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
+   * @return Whether the latitude field is set.
+   */
+  boolean hasLatitude();
+  /**
+   * <pre>
+   * 场站纬度，单位：度
+   * </pre>
+   *
+   * <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
    * @return The latitude.
    */
   double getLatitude();
@@ -95,7 +131,16 @@ public interface UpdateSiteRequestOrBuilder extends
    * 光伏组件倾角，单位：度
    * </pre>
    *
-   * <code>double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
+   * @return Whether the tiltDeg field is set.
+   */
+  boolean hasTiltDeg();
+  /**
+   * <pre>
+   * 光伏组件倾角，单位：度
+   * </pre>
+   *
+   * <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
    * @return The tiltDeg.
    */
   double getTiltDeg();
@@ -105,7 +150,16 @@ public interface UpdateSiteRequestOrBuilder extends
    * 光伏组件方位角，单位：度
    * </pre>
    *
-   * <code>double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
+   * @return Whether the azimuthDeg field is set.
+   */
+  boolean hasAzimuthDeg();
+  /**
+   * <pre>
+   * 光伏组件方位角，单位：度
+   * </pre>
+   *
+   * <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
    * @return The azimuthDeg.
    */
   double getAzimuthDeg();
@@ -115,14 +169,23 @@ public interface UpdateSiteRequestOrBuilder extends
    * 光伏额定功率，单位：kW；非适用业务可不提供
    * </pre>
    *
-   * <code>double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * @return Whether the ratedP field is set.
+   */
+  boolean hasRatedP();
+  /**
+   * <pre>
+   * 光伏额定功率，单位：kW；非适用业务可不提供
+   * </pre>
+   *
+   * <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
    * @return The ratedP.
    */
   double getRatedP();
 
   /**
    * <pre>
-   * 预测步长列表，单位：分钟
+   * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
    * </pre>
    *
    * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -131,7 +194,7 @@ public interface UpdateSiteRequestOrBuilder extends
   java.util.List<java.lang.Integer> getGranularityList();
   /**
    * <pre>
-   * 预测步长列表，单位：分钟
+   * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
    * </pre>
    *
    * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -140,7 +203,7 @@ public interface UpdateSiteRequestOrBuilder extends
   int getGranularityCount();
   /**
    * <pre>
-   * 预测步长列表，单位：分钟
+   * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
    * </pre>
    *
    * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -154,7 +217,16 @@ public interface UpdateSiteRequestOrBuilder extends
    * 数据源类型：1-pull，2-push，3-file
    * </pre>
    *
-   * <code>int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
+   * @return Whether the dataSource field is set.
+   */
+  boolean hasDataSource();
+  /**
+   * <pre>
+   * 数据源类型：1-pull，2-push，3-file
+   * </pre>
+   *
+   * <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
    * @return The dataSource.
    */
   int getDataSource();
@@ -164,7 +236,16 @@ public interface UpdateSiteRequestOrBuilder extends
    * 数据源地址或路径，返回时不得暴露凭据
    * </pre>
    *
-   * <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * @return Whether the sourceAttr field is set.
+   */
+  boolean hasSourceAttr();
+  /**
+   * <pre>
+   * 数据源地址或路径，返回时不得暴露凭据
+   * </pre>
+   *
+   * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
    * @return The sourceAttr.
    */
   java.lang.String getSourceAttr();
@@ -173,7 +254,7 @@ public interface UpdateSiteRequestOrBuilder extends
    * 数据源地址或路径，返回时不得暴露凭据
    * </pre>
    *
-   * <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
+   * <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
    * @return The bytes for sourceAttr.
    */
   com.google.protobuf.ByteString
@@ -184,7 +265,16 @@ public interface UpdateSiteRequestOrBuilder extends
    * 运行类型：1-预测，2-训练
    * </pre>
    *
-   * <code>int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * @return Whether the operation field is set.
+   */
+  boolean hasOperation();
+  /**
+   * <pre>
+   * 运行类型：1-预测，2-训练
+   * </pre>
+   *
+   * <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = { ... }</code>
    * @return The operation.
    */
   int getOperation();

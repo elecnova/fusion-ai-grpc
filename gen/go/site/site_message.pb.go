@@ -309,27 +309,27 @@ type UpdateSiteRequest struct {
 	// 用于定位记录，不修改该标识
 	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	// 场站显示名称
-	SiteName string `protobuf:"bytes,2,opt,name=site_name,proto3" json:"site_name,omitempty"`
+	SiteName *string `protobuf:"bytes,2,opt,name=site_name,proto3,oneof" json:"site_name,omitempty"`
 	// 场站时区，如 Asia/Shanghai
-	Timezone string `protobuf:"bytes,3,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	Timezone *string `protobuf:"bytes,3,opt,name=timezone,proto3,oneof" json:"timezone,omitempty"`
 	// 场站经度，单位：度
-	Longitude float64 `protobuf:"fixed64,4,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	Longitude *float64 `protobuf:"fixed64,4,opt,name=longitude,proto3,oneof" json:"longitude,omitempty"`
 	// 场站纬度，单位：度
-	Latitude float64 `protobuf:"fixed64,5,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Latitude *float64 `protobuf:"fixed64,5,opt,name=latitude,proto3,oneof" json:"latitude,omitempty"`
 	// 光伏组件倾角，单位：度
-	TiltDeg float64 `protobuf:"fixed64,6,opt,name=tilt_deg,proto3" json:"tilt_deg,omitempty"`
+	TiltDeg *float64 `protobuf:"fixed64,6,opt,name=tilt_deg,proto3,oneof" json:"tilt_deg,omitempty"`
 	// 光伏组件方位角，单位：度
-	AzimuthDeg float64 `protobuf:"fixed64,7,opt,name=azimuth_deg,proto3" json:"azimuth_deg,omitempty"`
+	AzimuthDeg *float64 `protobuf:"fixed64,7,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
 	// 光伏额定功率，单位：kW；非适用业务可不提供
-	RatedP float64 `protobuf:"fixed64,8,opt,name=rated_p,proto3" json:"rated_p,omitempty"`
-	// 预测步长列表，单位：分钟
+	RatedP *float64 `protobuf:"fixed64,8,opt,name=rated_p,proto3,oneof" json:"rated_p,omitempty"`
+	// 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
 	Granularity []int32 `protobuf:"varint,9,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
 	// 数据源类型：1-pull，2-push，3-file
-	DataSource int32 `protobuf:"varint,10,opt,name=data_source,proto3" json:"data_source,omitempty"`
+	DataSource *int32 `protobuf:"varint,10,opt,name=data_source,proto3,oneof" json:"data_source,omitempty"`
 	// 数据源地址或路径，返回时不得暴露凭据
-	SourceAttr string `protobuf:"bytes,11,opt,name=source_attr,proto3" json:"source_attr,omitempty"`
+	SourceAttr *string `protobuf:"bytes,11,opt,name=source_attr,proto3,oneof" json:"source_attr,omitempty"`
 	// 运行类型：1-预测，2-训练
-	Operation int32 `protobuf:"varint,12,opt,name=operation,proto3" json:"operation,omitempty"`
+	Operation *int32 `protobuf:"varint,12,opt,name=operation,proto3,oneof" json:"operation,omitempty"`
 	// 已保存历史天数；无值时不补默认值
 	Hisdays       *int32 `protobuf:"varint,13,opt,name=hisdays,proto3,oneof" json:"hisdays,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -374,50 +374,50 @@ func (x *UpdateSiteRequest) GetRegistrationId() string {
 }
 
 func (x *UpdateSiteRequest) GetSiteName() string {
-	if x != nil {
-		return x.SiteName
+	if x != nil && x.SiteName != nil {
+		return *x.SiteName
 	}
 	return ""
 }
 
 func (x *UpdateSiteRequest) GetTimezone() string {
-	if x != nil {
-		return x.Timezone
+	if x != nil && x.Timezone != nil {
+		return *x.Timezone
 	}
 	return ""
 }
 
 func (x *UpdateSiteRequest) GetLongitude() float64 {
-	if x != nil {
-		return x.Longitude
+	if x != nil && x.Longitude != nil {
+		return *x.Longitude
 	}
 	return 0
 }
 
 func (x *UpdateSiteRequest) GetLatitude() float64 {
-	if x != nil {
-		return x.Latitude
+	if x != nil && x.Latitude != nil {
+		return *x.Latitude
 	}
 	return 0
 }
 
 func (x *UpdateSiteRequest) GetTiltDeg() float64 {
-	if x != nil {
-		return x.TiltDeg
+	if x != nil && x.TiltDeg != nil {
+		return *x.TiltDeg
 	}
 	return 0
 }
 
 func (x *UpdateSiteRequest) GetAzimuthDeg() float64 {
-	if x != nil {
-		return x.AzimuthDeg
+	if x != nil && x.AzimuthDeg != nil {
+		return *x.AzimuthDeg
 	}
 	return 0
 }
 
 func (x *UpdateSiteRequest) GetRatedP() float64 {
-	if x != nil {
-		return x.RatedP
+	if x != nil && x.RatedP != nil {
+		return *x.RatedP
 	}
 	return 0
 }
@@ -430,22 +430,22 @@ func (x *UpdateSiteRequest) GetGranularity() []int32 {
 }
 
 func (x *UpdateSiteRequest) GetDataSource() int32 {
-	if x != nil {
-		return x.DataSource
+	if x != nil && x.DataSource != nil {
+		return *x.DataSource
 	}
 	return 0
 }
 
 func (x *UpdateSiteRequest) GetSourceAttr() string {
-	if x != nil {
-		return x.SourceAttr
+	if x != nil && x.SourceAttr != nil {
+		return *x.SourceAttr
 	}
 	return ""
 }
 
 func (x *UpdateSiteRequest) GetOperation() int32 {
-	if x != nil {
-		return x.Operation
+	if x != nil && x.Operation != nil {
+		return *x.Operation
 	}
 	return 0
 }
@@ -1295,22 +1295,37 @@ const file_site_site_message_proto_rawDesc = "" +
 	"created_at\x12'\n" +
 	"\n" +
 	"updated_at\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
-	"updated_at\"\x81\x05\n" +
+	"updated_at\"\xc0\x06\n" +
 	"\x11UpdateSiteRequest\x121\n" +
-	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12&\n" +
-	"\tsite_name\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\tsite_name\x12#\n" +
-	"\btimezone\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18@R\btimezone\x125\n" +
-	"\tlongitude\x18\x04 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x123\n" +
-	"\blatitude\x18\x05 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x123\n" +
-	"\btilt_deg\x18\x06 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00R\btilt_deg\x129\n" +
-	"\vazimuth_deg\x18\a \x01(\x01B\x17\xbaH\x14\x12\x12\x11\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00R\vazimuth_deg\x12(\n" +
-	"\arated_p\x18\b \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00R\arated_p\x12.\n" +
-	"\vgranularity\x18\t \x03(\x05B\f\xbaH\t\x92\x01\x06\"\x04\x1a\x02 \x00R\vgranularity\x12-\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12+\n" +
+	"\tsite_name\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01H\x00R\tsite_name\x88\x01\x01\x12(\n" +
+	"\btimezone\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18@H\x01R\btimezone\x88\x01\x01\x12:\n" +
+	"\tlongitude\x18\x04 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0H\x02R\tlongitude\x88\x01\x01\x128\n" +
+	"\blatitude\x18\x05 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0H\x03R\blatitude\x88\x01\x01\x128\n" +
+	"\btilt_deg\x18\x06 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00H\x04R\btilt_deg\x88\x01\x01\x12>\n" +
+	"\vazimuth_deg\x18\a \x01(\x01B\x17\xbaH\x14\x12\x12\x11\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00H\x05R\vazimuth_deg\x88\x01\x01\x12-\n" +
+	"\arated_p\x18\b \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x06R\arated_p\x88\x01\x01\x12.\n" +
+	"\vgranularity\x18\t \x03(\x05B\f\xbaH\t\x92\x01\x06\"\x04\x1a\x02 \x00R\vgranularity\x122\n" +
 	"\vdata_source\x18\n" +
-	" \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03R\vdata_source\x12*\n" +
-	"\vsource_attr\x18\v \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12'\n" +
-	"\toperation\x18\f \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02R\toperation\x12&\n" +
-	"\ahisdays\x18\r \x01(\x05B\a\xbaH\x04\x1a\x02 \x00H\x00R\ahisdays\x88\x01\x01B\n" +
+	" \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03H\aR\vdata_source\x88\x01\x01\x12/\n" +
+	"\vsource_attr\x18\v \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10H\bR\vsource_attr\x88\x01\x01\x12,\n" +
+	"\toperation\x18\f \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02H\tR\toperation\x88\x01\x01\x12&\n" +
+	"\ahisdays\x18\r \x01(\x05B\a\xbaH\x04\x1a\x02 \x00H\n" +
+	"R\ahisdays\x88\x01\x01B\f\n" +
+	"\n" +
+	"_site_nameB\v\n" +
+	"\t_timezoneB\f\n" +
+	"\n" +
+	"_longitudeB\v\n" +
+	"\t_latitudeB\v\n" +
+	"\t_tilt_degB\x0e\n" +
+	"\f_azimuth_degB\n" +
+	"\n" +
+	"\b_rated_pB\x0e\n" +
+	"\f_data_sourceB\x0e\n" +
+	"\f_source_attrB\f\n" +
+	"\n" +
+	"_operationB\n" +
 	"\n" +
 	"\b_hisdays\"\xe7\x01\n" +
 	"\x12UpdateSiteResponse\x12+\n" +

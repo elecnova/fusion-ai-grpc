@@ -627,7 +627,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
 
   public:
-  // string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+  // optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+  [[nodiscard]] bool has_site_name() const;
   void clear_site_name() ;
   [[nodiscard]] const ::std::string& site_name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -642,7 +643,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   ::std::string* PROTOBUF_NONNULL _internal_mutable_site_name();
 
   public:
-  // string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+  // optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+  [[nodiscard]] bool has_timezone() const;
   void clear_timezone() ;
   [[nodiscard]] const ::std::string& timezone() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -657,7 +659,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   ::std::string* PROTOBUF_NONNULL _internal_mutable_timezone();
 
   public:
-  // string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+  // optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+  [[nodiscard]] bool has_source_attr() const;
   void clear_source_attr() ;
   [[nodiscard]] const ::std::string& source_attr() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -672,7 +675,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   ::std::string* PROTOBUF_NONNULL _internal_mutable_source_attr();
 
   public:
-  // double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+  // optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+  [[nodiscard]] bool has_longitude() const;
   void clear_longitude() ;
   [[nodiscard]] double longitude() const;
   void set_longitude(double value);
@@ -682,7 +686,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   void _internal_set_longitude(double value);
 
   public:
-  // double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+  // optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+  [[nodiscard]] bool has_latitude() const;
   void clear_latitude() ;
   [[nodiscard]] double latitude() const;
   void set_latitude(double value);
@@ -692,7 +697,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   void _internal_set_latitude(double value);
 
   public:
-  // double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+  // optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+  [[nodiscard]] bool has_tilt_deg() const;
   void clear_tilt_deg() ;
   [[nodiscard]] double tilt_deg() const;
   void set_tilt_deg(double value);
@@ -702,7 +708,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   void _internal_set_tilt_deg(double value);
 
   public:
-  // double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  // optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  [[nodiscard]] bool has_azimuth_deg() const;
   void clear_azimuth_deg() ;
   [[nodiscard]] double azimuth_deg() const;
   void set_azimuth_deg(double value);
@@ -712,7 +719,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   void _internal_set_azimuth_deg(double value);
 
   public:
-  // double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+  // optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+  [[nodiscard]] bool has_rated_p() const;
   void clear_rated_p() ;
   [[nodiscard]] double rated_p() const;
   void set_rated_p(double value);
@@ -722,7 +730,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   void _internal_set_rated_p(double value);
 
   public:
-  // int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+  // optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+  [[nodiscard]] bool has_data_source() const;
   void clear_data_source() ;
   [[nodiscard]] ::int32_t data_source() const;
   void set_data_source(::int32_t value);
@@ -732,7 +741,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
   void _internal_set_data_source(::int32_t value);
 
   public:
-  // int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+  // optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+  [[nodiscard]] bool has_operation() const;
   void clear_operation() ;
   [[nodiscard]] ::int32_t operation() const;
   void set_operation(::int32_t value);
@@ -4831,7 +4841,11 @@ inline void UpdateSiteRequest::set_allocated_registration_id(::std::string* PROT
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.UpdateSiteRequest.registration_id)
 }
 
-// string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+// optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_site_name() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000004U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_site_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.site_name_.ClearToEmpty();
@@ -4895,7 +4909,11 @@ inline void UpdateSiteRequest::set_allocated_site_name(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.UpdateSiteRequest.site_name)
 }
 
-// string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+// optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_timezone() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_timezone() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.timezone_.ClearToEmpty();
@@ -4959,7 +4977,11 @@ inline void UpdateSiteRequest::set_allocated_timezone(::std::string* PROTOBUF_NU
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.UpdateSiteRequest.timezone)
 }
 
-// double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+// optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_longitude() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000020U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_longitude() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.longitude_ = 0;
@@ -4983,7 +5005,11 @@ inline void UpdateSiteRequest::_internal_set_longitude(double value) {
   _impl_.longitude_ = value;
 }
 
-// double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+// optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_latitude() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000040U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_latitude() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.latitude_ = 0;
@@ -5007,7 +5033,11 @@ inline void UpdateSiteRequest::_internal_set_latitude(double value) {
   _impl_.latitude_ = value;
 }
 
-// double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+// optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_tilt_deg() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000080U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_tilt_deg() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tilt_deg_ = 0;
@@ -5031,7 +5061,11 @@ inline void UpdateSiteRequest::_internal_set_tilt_deg(double value) {
   _impl_.tilt_deg_ = value;
 }
 
-// double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+// optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_azimuth_deg() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000100U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_azimuth_deg() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.azimuth_deg_ = 0;
@@ -5055,7 +5089,11 @@ inline void UpdateSiteRequest::_internal_set_azimuth_deg(double value) {
   _impl_.azimuth_deg_ = value;
 }
 
-// double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+// optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_rated_p() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000200U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_rated_p() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rated_p_ = 0;
@@ -5130,7 +5168,11 @@ UpdateSiteRequest::_internal_mutable_granularity() {
   return &_impl_.granularity_;
 }
 
-// int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+// optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_data_source() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000400U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_data_source() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.data_source_ = 0;
@@ -5154,7 +5196,11 @@ inline void UpdateSiteRequest::_internal_set_data_source(::int32_t value) {
   _impl_.data_source_ = value;
 }
 
-// string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+// optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_source_attr() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_source_attr() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.source_attr_.ClearToEmpty();
@@ -5218,7 +5264,11 @@ inline void UpdateSiteRequest::set_allocated_source_attr(::std::string* PROTOBUF
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.UpdateSiteRequest.source_attr)
 }
 
-// int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+// optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {
+inline bool UpdateSiteRequest::has_operation() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000800U);
+  return value;
+}
 inline void UpdateSiteRequest::clear_operation() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.operation_ = 0;

@@ -23,47 +23,47 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站显示名称
      *
-     * Generated from protobuf field <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {</code>
      */
-    protected $site_name = '';
+    protected $site_name = null;
     /**
      * 场站时区，如 Asia/Shanghai
      *
-     * Generated from protobuf field <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {</code>
      */
-    protected $timezone = '';
+    protected $timezone = null;
     /**
      * 场站经度，单位：度
      *
-     * Generated from protobuf field <code>double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {</code>
      */
-    protected $longitude = 0.0;
+    protected $longitude = null;
     /**
      * 场站纬度，单位：度
      *
-     * Generated from protobuf field <code>double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {</code>
      */
-    protected $latitude = 0.0;
+    protected $latitude = null;
     /**
      * 光伏组件倾角，单位：度
      *
-     * Generated from protobuf field <code>double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
      */
-    protected $tilt_deg = 0.0;
+    protected $tilt_deg = null;
     /**
      * 光伏组件方位角，单位：度
      *
-     * Generated from protobuf field <code>double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
      */
-    protected $azimuth_deg = 0.0;
+    protected $azimuth_deg = null;
     /**
      * 光伏额定功率，单位：kW；非适用业务可不提供
      *
-     * Generated from protobuf field <code>double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {</code>
      */
-    protected $rated_p = 0.0;
+    protected $rated_p = null;
     /**
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      *
      * Generated from protobuf field <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {</code>
      */
@@ -71,21 +71,21 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 数据源类型：1-pull，2-push，3-file
      *
-     * Generated from protobuf field <code>int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {</code>
      */
-    protected $data_source = 0;
+    protected $data_source = null;
     /**
      * 数据源地址或路径，返回时不得暴露凭据
      *
-     * Generated from protobuf field <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {</code>
      */
-    protected $source_attr = '';
+    protected $source_attr = null;
     /**
      * 运行类型：1-预测，2-训练
      *
-     * Generated from protobuf field <code>int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {</code>
      */
-    protected $operation = 0;
+    protected $operation = null;
     /**
      * 已保存历史天数；无值时不补默认值
      *
@@ -116,7 +116,7 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
      *     @type float $rated_p
      *           光伏额定功率，单位：kW；非适用业务可不提供
      *     @type int[] $granularity
-     *           预测步长列表，单位：分钟
+     *           预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      *     @type int $data_source
      *           数据源类型：1-pull，2-push，3-file
      *     @type string $source_attr
@@ -162,18 +162,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站显示名称
      *
-     * Generated from protobuf field <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getSiteName()
     {
-        return $this->site_name;
+        return isset($this->site_name) ? $this->site_name : '';
+    }
+
+    public function hasSiteName()
+    {
+        return isset($this->site_name);
+    }
+
+    public function clearSiteName()
+    {
+        unset($this->site_name);
     }
 
     /**
      * 场站显示名称
      *
-     * Generated from protobuf field <code>string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional string site_name = 2 [json_name = "site_name", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -188,18 +198,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站时区，如 Asia/Shanghai
      *
-     * Generated from protobuf field <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getTimezone()
     {
-        return $this->timezone;
+        return isset($this->timezone) ? $this->timezone : '';
+    }
+
+    public function hasTimezone()
+    {
+        return isset($this->timezone);
+    }
+
+    public function clearTimezone()
+    {
+        unset($this->timezone);
     }
 
     /**
      * 场站时区，如 Asia/Shanghai
      *
-     * Generated from protobuf field <code>string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional string timezone = 3 [json_name = "timezone", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -214,18 +234,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站经度，单位：度
      *
-     * Generated from protobuf field <code>double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getLongitude()
     {
-        return $this->longitude;
+        return isset($this->longitude) ? $this->longitude : 0.0;
+    }
+
+    public function hasLongitude()
+    {
+        return isset($this->longitude);
+    }
+
+    public function clearLongitude()
+    {
+        unset($this->longitude);
     }
 
     /**
      * 场站经度，单位：度
      *
-     * Generated from protobuf field <code>double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double longitude = 4 [json_name = "longitude", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -239,18 +269,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 场站纬度，单位：度
      *
-     * Generated from protobuf field <code>double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getLatitude()
     {
-        return $this->latitude;
+        return isset($this->latitude) ? $this->latitude : 0.0;
+    }
+
+    public function hasLatitude()
+    {
+        return isset($this->latitude);
+    }
+
+    public function clearLatitude()
+    {
+        unset($this->latitude);
     }
 
     /**
      * 场站纬度，单位：度
      *
-     * Generated from protobuf field <code>double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double latitude = 5 [json_name = "latitude", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -264,18 +304,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件倾角，单位：度
      *
-     * Generated from protobuf field <code>double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getTiltDeg()
     {
-        return $this->tilt_deg;
+        return isset($this->tilt_deg) ? $this->tilt_deg : 0.0;
+    }
+
+    public function hasTiltDeg()
+    {
+        return isset($this->tilt_deg);
+    }
+
+    public function clearTiltDeg()
+    {
+        unset($this->tilt_deg);
     }
 
     /**
      * 光伏组件倾角，单位：度
      *
-     * Generated from protobuf field <code>double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double tilt_deg = 6 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -289,18 +339,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 光伏组件方位角，单位：度
      *
-     * Generated from protobuf field <code>double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getAzimuthDeg()
     {
-        return $this->azimuth_deg;
+        return isset($this->azimuth_deg) ? $this->azimuth_deg : 0.0;
+    }
+
+    public function hasAzimuthDeg()
+    {
+        return isset($this->azimuth_deg);
+    }
+
+    public function clearAzimuthDeg()
+    {
+        unset($this->azimuth_deg);
     }
 
     /**
      * 光伏组件方位角，单位：度
      *
-     * Generated from protobuf field <code>double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double azimuth_deg = 7 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -314,18 +374,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 光伏额定功率，单位：kW；非适用业务可不提供
      *
-     * Generated from protobuf field <code>double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getRatedP()
     {
-        return $this->rated_p;
+        return isset($this->rated_p) ? $this->rated_p : 0.0;
+    }
+
+    public function hasRatedP()
+    {
+        return isset($this->rated_p);
+    }
+
+    public function clearRatedP()
+    {
+        unset($this->rated_p);
     }
 
     /**
      * 光伏额定功率，单位：kW；非适用业务可不提供
      *
-     * Generated from protobuf field <code>double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double rated_p = 8 [json_name = "rated_p", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -337,7 +407,7 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      *
      * Generated from protobuf field <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {</code>
      * @return RepeatedField<int>
@@ -348,7 +418,7 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预测步长列表，单位：分钟
+     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
      *
      * Generated from protobuf field <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {</code>
      * @param int[] $var
@@ -365,18 +435,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 数据源类型：1-pull，2-push，3-file
      *
-     * Generated from protobuf field <code>int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {</code>
      * @return int
      */
     public function getDataSource()
     {
-        return $this->data_source;
+        return isset($this->data_source) ? $this->data_source : 0;
+    }
+
+    public function hasDataSource()
+    {
+        return isset($this->data_source);
+    }
+
+    public function clearDataSource()
+    {
+        unset($this->data_source);
     }
 
     /**
      * 数据源类型：1-pull，2-push，3-file
      *
-     * Generated from protobuf field <code>int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 data_source = 10 [json_name = "data_source", (.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
@@ -391,18 +471,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 数据源地址或路径，返回时不得暴露凭据
      *
-     * Generated from protobuf field <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getSourceAttr()
     {
-        return $this->source_attr;
+        return isset($this->source_attr) ? $this->source_attr : '';
+    }
+
+    public function hasSourceAttr()
+    {
+        return isset($this->source_attr);
+    }
+
+    public function clearSourceAttr()
+    {
+        unset($this->source_attr);
     }
 
     /**
      * 数据源地址或路径，返回时不得暴露凭据
      *
-     * Generated from protobuf field <code>string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional string source_attr = 11 [json_name = "source_attr", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -417,18 +507,28 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     /**
      * 运行类型：1-预测，2-训练
      *
-     * Generated from protobuf field <code>int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {</code>
      * @return int
      */
     public function getOperation()
     {
-        return $this->operation;
+        return isset($this->operation) ? $this->operation : 0;
+    }
+
+    public function hasOperation()
+    {
+        return isset($this->operation);
+    }
+
+    public function clearOperation()
+    {
+        unset($this->operation);
     }
 
     /**
      * 运行类型：1-预测，2-训练
      *
-     * Generated from protobuf field <code>int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 operation = 12 [json_name = "operation", (.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */
