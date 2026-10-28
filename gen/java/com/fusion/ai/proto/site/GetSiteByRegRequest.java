@@ -58,7 +58,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object registrationId_ = "";
   /**
    * <pre>
-   * 需要查询的业务注册标识
+   * 注册唯一标识
    * </pre>
    *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 需要查询的业务注册标识
+   * 注册唯一标识
    * </pre>
    *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
@@ -403,7 +403,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object registrationId_ = "";
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 注册唯一标识
      * </pre>
      *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 注册唯一标识
      * </pre>
      *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
@@ -444,7 +444,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 注册唯一标识
      * </pre>
      *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
@@ -461,7 +461,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 注册唯一标识
      * </pre>
      *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
@@ -475,7 +475,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 注册唯一标识
      * </pre>
      *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>

@@ -17,7 +17,7 @@ use Google\Protobuf\RepeatedField;
 class GetSiteRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 需要查询的业务注册标识
+     * 场站唯一 ID
      *
      * Generated from protobuf field <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {</code>
      */
@@ -30,7 +30,7 @@ class GetSiteRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $site_id
-     *           需要查询的业务注册标识
+     *           场站唯一 ID
      * }
      */
     public function __construct($data = null)
@@ -40,7 +40,7 @@ class GetSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 需要查询的业务注册标识
+     * 场站唯一 ID
      *
      * Generated from protobuf field <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {</code>
      * @return string
@@ -51,7 +51,7 @@ class GetSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 需要查询的业务注册标识
+     * 场站唯一 ID
      *
      * Generated from protobuf field <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {</code>
      * @param string $var

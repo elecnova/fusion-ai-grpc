@@ -72,59 +72,19 @@ public interface GetSiteResponseOrBuilder extends
 
   /**
    * <pre>
-   * 固定注册标识，关联已保存的场站及算法业务配置
+   * 查询的场站 ID
    * </pre>
    *
-   * <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-   * @return The registrationId.
-   */
-  java.lang.String getRegistrationId();
-  /**
-   * <pre>
-   * 固定注册标识，关联已保存的场站及算法业务配置
-   * </pre>
-   *
-   * <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for registrationId.
-   */
-  com.google.protobuf.ByteString
-      getRegistrationIdBytes();
-
-  /**
-   * <pre>
-   * 实际保存的服务标识，如 pv_prediction、load_prediction
-   * </pre>
-   *
-   * <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
-   * @return The serviceType.
-   */
-  java.lang.String getServiceType();
-  /**
-   * <pre>
-   * 实际保存的服务标识，如 pv_prediction、load_prediction
-   * </pre>
-   *
-   * <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for serviceType.
-   */
-  com.google.protobuf.ByteString
-      getServiceTypeBytes();
-
-  /**
-   * <pre>
-   * 场站唯一 ID
-   * </pre>
-   *
-   * <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+   * <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
    * @return The siteId.
    */
   java.lang.String getSiteId();
   /**
    * <pre>
-   * 场站唯一 ID
+   * 查询的场站 ID
    * </pre>
    *
-   * <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+   * <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for siteId.
    */
   com.google.protobuf.ByteString
@@ -132,273 +92,45 @@ public interface GetSiteResponseOrBuilder extends
 
   /**
    * <pre>
-   * 场站显示名称
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
-   * @return The siteName.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
-  java.lang.String getSiteName();
+  java.util.List<com.fusion.ai.proto.site.SiteRegistration> 
+      getRegistrationsList();
   /**
    * <pre>
-   * 场站显示名称
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for siteName.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
-  com.google.protobuf.ByteString
-      getSiteNameBytes();
-
+  com.fusion.ai.proto.site.SiteRegistration getRegistrations(int index);
   /**
    * <pre>
-   * 场站时区，如 Asia/Shanghai
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
-   * @return The timezone.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
-  java.lang.String getTimezone();
+  int getRegistrationsCount();
   /**
    * <pre>
-   * 场站时区，如 Asia/Shanghai
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for timezone.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
-  com.google.protobuf.ByteString
-      getTimezoneBytes();
-
+  java.util.List<? extends com.fusion.ai.proto.site.SiteRegistrationOrBuilder> 
+      getRegistrationsOrBuilderList();
   /**
    * <pre>
-   * 已保存经度，单位：度
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
-   * @return Whether the longitude field is set.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
-  boolean hasLongitude();
-  /**
-   * <pre>
-   * 已保存经度，单位：度
-   * </pre>
-   *
-   * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
-   * @return The longitude.
-   */
-  double getLongitude();
-
-  /**
-   * <pre>
-   * 已保存纬度，单位：度
-   * </pre>
-   *
-   * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
-   * @return Whether the latitude field is set.
-   */
-  boolean hasLatitude();
-  /**
-   * <pre>
-   * 已保存纬度，单位：度
-   * </pre>
-   *
-   * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
-   * @return The latitude.
-   */
-  double getLatitude();
-
-  /**
-   * <pre>
-   * 光伏组件倾角，单位：度
-   * </pre>
-   *
-   * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
-   * @return Whether the tiltDeg field is set.
-   */
-  boolean hasTiltDeg();
-  /**
-   * <pre>
-   * 光伏组件倾角，单位：度
-   * </pre>
-   *
-   * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
-   * @return The tiltDeg.
-   */
-  double getTiltDeg();
-
-  /**
-   * <pre>
-   * 光伏组件方位角，单位：度
-   * </pre>
-   *
-   * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
-   * @return Whether the azimuthDeg field is set.
-   */
-  boolean hasAzimuthDeg();
-  /**
-   * <pre>
-   * 光伏组件方位角，单位：度
-   * </pre>
-   *
-   * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
-   * @return The azimuthDeg.
-   */
-  double getAzimuthDeg();
-
-  /**
-   * <pre>
-   * 光伏额定功率，单位：kW；非适用业务可不返回
-   * </pre>
-   *
-   * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
-   * @return Whether the ratedP field is set.
-   */
-  boolean hasRatedP();
-  /**
-   * <pre>
-   * 光伏额定功率，单位：kW；非适用业务可不返回
-   * </pre>
-   *
-   * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
-   * @return The ratedP.
-   */
-  double getRatedP();
-
-  /**
-   * <pre>
-   * 保存的预测步长列表，单位：分钟
-   * </pre>
-   *
-   * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-   * @return A list containing the granularity.
-   */
-  java.util.List<java.lang.Integer> getGranularityList();
-  /**
-   * <pre>
-   * 保存的预测步长列表，单位：分钟
-   * </pre>
-   *
-   * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-   * @return The count of granularity.
-   */
-  int getGranularityCount();
-  /**
-   * <pre>
-   * 保存的预测步长列表，单位：分钟
-   * </pre>
-   *
-   * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The granularity at the given index.
-   */
-  int getGranularity(int index);
-
-  /**
-   * <pre>
-   * 数据源类型：1-pull，2-push，3-file
-   * </pre>
-   *
-   * <code>int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
-   * @return The dataSource.
-   */
-  int getDataSource();
-
-  /**
-   * <pre>
-   * 数据源地址或路径；客户返回中不得暴露凭据
-   * </pre>
-   *
-   * <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
-   * @return The sourceAttr.
-   */
-  java.lang.String getSourceAttr();
-  /**
-   * <pre>
-   * 数据源地址或路径；客户返回中不得暴露凭据
-   * </pre>
-   *
-   * <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for sourceAttr.
-   */
-  com.google.protobuf.ByteString
-      getSourceAttrBytes();
-
-  /**
-   * <pre>
-   * 已保存运行类型：1-预测，2-训练
-   * </pre>
-   *
-   * <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = { ... }</code>
-   * @return Whether the operation field is set.
-   */
-  boolean hasOperation();
-  /**
-   * <pre>
-   * 已保存运行类型：1-预测，2-训练
-   * </pre>
-   *
-   * <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = { ... }</code>
-   * @return The operation.
-   */
-  int getOperation();
-
-  /**
-   * <pre>
-   * 已保存历史天数；无值时不补默认值
-   * </pre>
-   *
-   * <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
-   * @return Whether the hisdays field is set.
-   */
-  boolean hasHisdays();
-  /**
-   * <pre>
-   * 已保存历史天数；无值时不补默认值
-   * </pre>
-   *
-   * <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
-   * @return The hisdays.
-   */
-  int getHisdays();
-
-  /**
-   * <pre>
-   * 创建时间，ISO 8601 带时区；创建后保持不变
-   * </pre>
-   *
-   * <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = { ... }</code>
-   * @return The createdAt.
-   */
-  java.lang.String getCreatedAt();
-  /**
-   * <pre>
-   * 创建时间，ISO 8601 带时区；创建后保持不变
-   * </pre>
-   *
-   * <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for createdAt.
-   */
-  com.google.protobuf.ByteString
-      getCreatedAtBytes();
-
-  /**
-   * <pre>
-   * 最近配置更新时间，ISO 8601 带时区；查询不刷新
-   * </pre>
-   *
-   * <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = { ... }</code>
-   * @return The updatedAt.
-   */
-  java.lang.String getUpdatedAt();
-  /**
-   * <pre>
-   * 最近配置更新时间，ISO 8601 带时区；查询不刷新
-   * </pre>
-   *
-   * <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for updatedAt.
-   */
-  com.google.protobuf.ByteString
-      getUpdatedAtBytes();
+  com.fusion.ai.proto.site.SiteRegistrationOrBuilder getRegistrationsOrBuilder(
+      int index);
 }

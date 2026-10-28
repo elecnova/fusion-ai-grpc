@@ -47,10 +47,10 @@ type SiteServiceClient interface {
 	UpdateSite(ctx context.Context, in *UpdateSiteRequest, opts ...grpc.CallOption) (*UpdateSiteResponse, error)
 	// 场站注册-删除注册
 	DeleteSite(ctx context.Context, in *DeleteSiteRequest, opts ...grpc.CallOption) (*DeleteSiteResponse, error)
-	// 场站注册-查询注册（按场站ID查询）
+	// 场站注册-按场站ID查询：返回该站有效注册列表（0~3 条，每种 service_type 至多一行）
 	GetSite(ctx context.Context, in *GetSiteRequest, opts ...grpc.CallOption) (*GetSiteResponse, error)
-	// 场站注册-查询注册（按注册ID查询）
-	GetSiteByReg(ctx context.Context, in *GetSiteByRegRequest, opts ...grpc.CallOption) (*GetSiteResponse, error)
+	// 场站注册-按 registration_id 查询：返回单条注册
+	GetSiteByReg(ctx context.Context, in *GetSiteByRegRequest, opts ...grpc.CallOption) (*GetSiteByRegResponse, error)
 }
 
 type siteServiceClient struct {
@@ -101,9 +101,9 @@ func (c *siteServiceClient) GetSite(ctx context.Context, in *GetSiteRequest, opt
 	return out, nil
 }
 
-func (c *siteServiceClient) GetSiteByReg(ctx context.Context, in *GetSiteByRegRequest, opts ...grpc.CallOption) (*GetSiteResponse, error) {
+func (c *siteServiceClient) GetSiteByReg(ctx context.Context, in *GetSiteByRegRequest, opts ...grpc.CallOption) (*GetSiteByRegResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetSiteResponse)
+	out := new(GetSiteByRegResponse)
 	err := c.cc.Invoke(ctx, SiteService_GetSiteByReg_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -123,10 +123,10 @@ type SiteServiceServer interface {
 	UpdateSite(context.Context, *UpdateSiteRequest) (*UpdateSiteResponse, error)
 	// 场站注册-删除注册
 	DeleteSite(context.Context, *DeleteSiteRequest) (*DeleteSiteResponse, error)
-	// 场站注册-查询注册（按场站ID查询）
+	// 场站注册-按场站ID查询：返回该站有效注册列表（0~3 条，每种 service_type 至多一行）
 	GetSite(context.Context, *GetSiteRequest) (*GetSiteResponse, error)
-	// 场站注册-查询注册（按注册ID查询）
-	GetSiteByReg(context.Context, *GetSiteByRegRequest) (*GetSiteResponse, error)
+	// 场站注册-按 registration_id 查询：返回单条注册
+	GetSiteByReg(context.Context, *GetSiteByRegRequest) (*GetSiteByRegResponse, error)
 	mustEmbedUnimplementedSiteServiceServer()
 }
 
@@ -149,7 +149,7 @@ func (UnimplementedSiteServiceServer) DeleteSite(context.Context, *DeleteSiteReq
 func (UnimplementedSiteServiceServer) GetSite(context.Context, *GetSiteRequest) (*GetSiteResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetSite not implemented")
 }
-func (UnimplementedSiteServiceServer) GetSiteByReg(context.Context, *GetSiteByRegRequest) (*GetSiteResponse, error) {
+func (UnimplementedSiteServiceServer) GetSiteByReg(context.Context, *GetSiteByRegRequest) (*GetSiteByRegResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetSiteByReg not implemented")
 }
 func (UnimplementedSiteServiceServer) mustEmbedUnimplementedSiteServiceServer() {}

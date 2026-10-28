@@ -7,7 +7,7 @@ package com.fusion.ai.proto.site;
 
 /**
  * <pre>
- * Package message 场站注册-查询场站消息响应定义
+ * 按 site_id 查询响应：registrations 为列表，成功时 0~3 条（无注册为空数组，非 error）
  * </pre>
  *
  * Protobuf type {@code fusion.ai.proto.site.GetSiteResponse}
@@ -35,15 +35,8 @@ private static final long serialVersionUID = 0L;
     state_ = "";
     code_ = "";
     message_ = "";
-    registrationId_ = "";
-    serviceType_ = "";
     siteId_ = "";
-    siteName_ = "";
-    timezone_ = "";
-    granularity_ = emptyIntList();
-    sourceAttr_ = "";
-    createdAt_ = "";
-    updatedAt_ = "";
+    registrations_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -64,7 +57,6 @@ private static final long serialVersionUID = 0L;
             com.fusion.ai.proto.site.GetSiteResponse.class, com.fusion.ai.proto.site.GetSiteResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
@@ -206,109 +198,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int REGISTRATION_ID_FIELD_NUMBER = 4;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object registrationId_ = "";
-  /**
-   * <pre>
-   * 固定注册标识，关联已保存的场站及算法业务配置
-   * </pre>
-   *
-   * <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-   * @return The registrationId.
-   */
-  @java.lang.Override
-  public java.lang.String getRegistrationId() {
-    java.lang.Object ref = registrationId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      registrationId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 固定注册标识，关联已保存的场站及算法业务配置
-   * </pre>
-   *
-   * <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for registrationId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRegistrationIdBytes() {
-    java.lang.Object ref = registrationId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      registrationId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SERVICE_TYPE_FIELD_NUMBER = 5;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object serviceType_ = "";
-  /**
-   * <pre>
-   * 实际保存的服务标识，如 pv_prediction、load_prediction
-   * </pre>
-   *
-   * <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
-   * @return The serviceType.
-   */
-  @java.lang.Override
-  public java.lang.String getServiceType() {
-    java.lang.Object ref = serviceType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      serviceType_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 实际保存的服务标识，如 pv_prediction、load_prediction
-   * </pre>
-   *
-   * <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for serviceType.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getServiceTypeBytes() {
-    java.lang.Object ref = serviceType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      serviceType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SITE_ID_FIELD_NUMBER = 6;
+  public static final int SITE_ID_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object siteId_ = "";
   /**
    * <pre>
-   * 场站唯一 ID
+   * 查询的场站 ID
    * </pre>
    *
-   * <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+   * <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
    * @return The siteId.
    */
   @java.lang.Override
@@ -326,10 +224,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 场站唯一 ID
+   * 查询的场站 ID
    * </pre>
    *
-   * <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+   * <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for siteId.
    */
   @java.lang.Override
@@ -347,485 +245,65 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SITE_NAME_FIELD_NUMBER = 7;
+  public static final int REGISTRATIONS_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object siteName_ = "";
+  private java.util.List<com.fusion.ai.proto.site.SiteRegistration> registrations_;
   /**
    * <pre>
-   * 场站显示名称
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
-   * @return The siteName.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
-  public java.lang.String getSiteName() {
-    java.lang.Object ref = siteName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      siteName_ = s;
-      return s;
-    }
+  public java.util.List<com.fusion.ai.proto.site.SiteRegistration> getRegistrationsList() {
+    return registrations_;
   }
   /**
    * <pre>
-   * 场站显示名称
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for siteName.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSiteNameBytes() {
-    java.lang.Object ref = siteName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      siteName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public java.util.List<? extends com.fusion.ai.proto.site.SiteRegistrationOrBuilder> 
+      getRegistrationsOrBuilderList() {
+    return registrations_;
   }
-
-  public static final int TIMEZONE_FIELD_NUMBER = 8;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object timezone_ = "";
   /**
    * <pre>
-   * 场站时区，如 Asia/Shanghai
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
-   * @return The timezone.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
-  public java.lang.String getTimezone() {
-    java.lang.Object ref = timezone_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      timezone_ = s;
-      return s;
-    }
+  public int getRegistrationsCount() {
+    return registrations_.size();
   }
   /**
    * <pre>
-   * 场站时区，如 Asia/Shanghai
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for timezone.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTimezoneBytes() {
-    java.lang.Object ref = timezone_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      timezone_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.fusion.ai.proto.site.SiteRegistration getRegistrations(int index) {
+    return registrations_.get(index);
   }
-
-  public static final int LONGITUDE_FIELD_NUMBER = 9;
-  private double longitude_ = 0D;
   /**
    * <pre>
-   * 已保存经度，单位：度
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
    * </pre>
    *
-   * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
-   * @return Whether the longitude field is set.
+   * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
-  public boolean hasLongitude() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   * 已保存经度，单位：度
-   * </pre>
-   *
-   * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
-   * @return The longitude.
-   */
-  @java.lang.Override
-  public double getLongitude() {
-    return longitude_;
-  }
-
-  public static final int LATITUDE_FIELD_NUMBER = 10;
-  private double latitude_ = 0D;
-  /**
-   * <pre>
-   * 已保存纬度，单位：度
-   * </pre>
-   *
-   * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
-   * @return Whether the latitude field is set.
-   */
-  @java.lang.Override
-  public boolean hasLatitude() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   * 已保存纬度，单位：度
-   * </pre>
-   *
-   * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
-   * @return The latitude.
-   */
-  @java.lang.Override
-  public double getLatitude() {
-    return latitude_;
-  }
-
-  public static final int TILT_DEG_FIELD_NUMBER = 11;
-  private double tiltDeg_ = 0D;
-  /**
-   * <pre>
-   * 光伏组件倾角，单位：度
-   * </pre>
-   *
-   * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
-   * @return Whether the tiltDeg field is set.
-   */
-  @java.lang.Override
-  public boolean hasTiltDeg() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <pre>
-   * 光伏组件倾角，单位：度
-   * </pre>
-   *
-   * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
-   * @return The tiltDeg.
-   */
-  @java.lang.Override
-  public double getTiltDeg() {
-    return tiltDeg_;
-  }
-
-  public static final int AZIMUTH_DEG_FIELD_NUMBER = 12;
-  private double azimuthDeg_ = 0D;
-  /**
-   * <pre>
-   * 光伏组件方位角，单位：度
-   * </pre>
-   *
-   * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
-   * @return Whether the azimuthDeg field is set.
-   */
-  @java.lang.Override
-  public boolean hasAzimuthDeg() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <pre>
-   * 光伏组件方位角，单位：度
-   * </pre>
-   *
-   * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
-   * @return The azimuthDeg.
-   */
-  @java.lang.Override
-  public double getAzimuthDeg() {
-    return azimuthDeg_;
-  }
-
-  public static final int RATED_P_FIELD_NUMBER = 13;
-  private double ratedP_ = 0D;
-  /**
-   * <pre>
-   * 光伏额定功率，单位：kW；非适用业务可不返回
-   * </pre>
-   *
-   * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
-   * @return Whether the ratedP field is set.
-   */
-  @java.lang.Override
-  public boolean hasRatedP() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <pre>
-   * 光伏额定功率，单位：kW；非适用业务可不返回
-   * </pre>
-   *
-   * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
-   * @return The ratedP.
-   */
-  @java.lang.Override
-  public double getRatedP() {
-    return ratedP_;
-  }
-
-  public static final int GRANULARITY_FIELD_NUMBER = 14;
-  @SuppressWarnings("serial")
-  private com.google.protobuf.Internal.IntList granularity_ =
-      emptyIntList();
-  /**
-   * <pre>
-   * 保存的预测步长列表，单位：分钟
-   * </pre>
-   *
-   * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-   * @return A list containing the granularity.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Integer>
-      getGranularityList() {
-    return granularity_;
-  }
-  /**
-   * <pre>
-   * 保存的预测步长列表，单位：分钟
-   * </pre>
-   *
-   * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-   * @return The count of granularity.
-   */
-  public int getGranularityCount() {
-    return granularity_.size();
-  }
-  /**
-   * <pre>
-   * 保存的预测步长列表，单位：分钟
-   * </pre>
-   *
-   * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The granularity at the given index.
-   */
-  public int getGranularity(int index) {
-    return granularity_.getInt(index);
-  }
-  private int granularityMemoizedSerializedSize = -1;
-
-  public static final int DATA_SOURCE_FIELD_NUMBER = 15;
-  private int dataSource_ = 0;
-  /**
-   * <pre>
-   * 数据源类型：1-pull，2-push，3-file
-   * </pre>
-   *
-   * <code>int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
-   * @return The dataSource.
-   */
-  @java.lang.Override
-  public int getDataSource() {
-    return dataSource_;
-  }
-
-  public static final int SOURCE_ATTR_FIELD_NUMBER = 16;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object sourceAttr_ = "";
-  /**
-   * <pre>
-   * 数据源地址或路径；客户返回中不得暴露凭据
-   * </pre>
-   *
-   * <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
-   * @return The sourceAttr.
-   */
-  @java.lang.Override
-  public java.lang.String getSourceAttr() {
-    java.lang.Object ref = sourceAttr_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sourceAttr_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 数据源地址或路径；客户返回中不得暴露凭据
-   * </pre>
-   *
-   * <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for sourceAttr.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSourceAttrBytes() {
-    java.lang.Object ref = sourceAttr_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      sourceAttr_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int OPERATION_FIELD_NUMBER = 17;
-  private int operation_ = 0;
-  /**
-   * <pre>
-   * 已保存运行类型：1-预测，2-训练
-   * </pre>
-   *
-   * <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = { ... }</code>
-   * @return Whether the operation field is set.
-   */
-  @java.lang.Override
-  public boolean hasOperation() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <pre>
-   * 已保存运行类型：1-预测，2-训练
-   * </pre>
-   *
-   * <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = { ... }</code>
-   * @return The operation.
-   */
-  @java.lang.Override
-  public int getOperation() {
-    return operation_;
-  }
-
-  public static final int HISDAYS_FIELD_NUMBER = 18;
-  private int hisdays_ = 0;
-  /**
-   * <pre>
-   * 已保存历史天数；无值时不补默认值
-   * </pre>
-   *
-   * <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
-   * @return Whether the hisdays field is set.
-   */
-  @java.lang.Override
-  public boolean hasHisdays() {
-    return ((bitField0_ & 0x00000040) != 0);
-  }
-  /**
-   * <pre>
-   * 已保存历史天数；无值时不补默认值
-   * </pre>
-   *
-   * <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
-   * @return The hisdays.
-   */
-  @java.lang.Override
-  public int getHisdays() {
-    return hisdays_;
-  }
-
-  public static final int CREATED_AT_FIELD_NUMBER = 19;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object createdAt_ = "";
-  /**
-   * <pre>
-   * 创建时间，ISO 8601 带时区；创建后保持不变
-   * </pre>
-   *
-   * <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = { ... }</code>
-   * @return The createdAt.
-   */
-  @java.lang.Override
-  public java.lang.String getCreatedAt() {
-    java.lang.Object ref = createdAt_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      createdAt_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 创建时间，ISO 8601 带时区；创建后保持不变
-   * </pre>
-   *
-   * <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for createdAt.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCreatedAtBytes() {
-    java.lang.Object ref = createdAt_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      createdAt_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int UPDATED_AT_FIELD_NUMBER = 20;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object updatedAt_ = "";
-  /**
-   * <pre>
-   * 最近配置更新时间，ISO 8601 带时区；查询不刷新
-   * </pre>
-   *
-   * <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = { ... }</code>
-   * @return The updatedAt.
-   */
-  @java.lang.Override
-  public java.lang.String getUpdatedAt() {
-    java.lang.Object ref = updatedAt_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      updatedAt_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 最近配置更新时间，ISO 8601 带时区；查询不刷新
-   * </pre>
-   *
-   * <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for updatedAt.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUpdatedAtBytes() {
-    java.lang.Object ref = updatedAt_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      updatedAt_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.fusion.ai.proto.site.SiteRegistrationOrBuilder getRegistrationsOrBuilder(
+      int index) {
+    return registrations_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -842,7 +320,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(state_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, state_);
     }
@@ -852,60 +329,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, message_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, registrationId_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceType_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, serviceType_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, siteId_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, siteId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, siteName_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timezone_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 8, timezone_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeDouble(9, longitude_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeDouble(10, latitude_);
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeDouble(11, tiltDeg_);
-    }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeDouble(12, azimuthDeg_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeDouble(13, ratedP_);
-    }
-    if (getGranularityList().size() > 0) {
-      output.writeUInt32NoTag(114);
-      output.writeUInt32NoTag(granularityMemoizedSerializedSize);
-    }
-    for (int i = 0; i < granularity_.size(); i++) {
-      output.writeInt32NoTag(granularity_.getInt(i));
-    }
-    if (dataSource_ != 0) {
-      output.writeInt32(15, dataSource_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceAttr_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 16, sourceAttr_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeInt32(17, operation_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeInt32(18, hisdays_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 19, createdAt_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 20, updatedAt_);
+    for (int i = 0; i < registrations_.size(); i++) {
+      output.writeMessage(5, registrations_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -920,76 +348,18 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, message_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, registrationId_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceType_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, serviceType_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, siteId_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, siteId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, siteName_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timezone_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, timezone_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(9, longitude_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(10, latitude_);
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(11, tiltDeg_);
-    }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(12, azimuthDeg_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(13, ratedP_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < granularity_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt32SizeNoTag(granularity_.getInt(i));
-      }
-      size += dataSize;
-      if (!getGranularityList().isEmpty()) {
-        size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
-      }
-      granularityMemoizedSerializedSize = dataSize;
-    }
-    if (dataSource_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(15, dataSource_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceAttr_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(16, sourceAttr_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(17, operation_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(18, hisdays_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(19, createdAt_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(updatedAt_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(20, updatedAt_);
-    }
+
+        {
+          final int count = registrations_.size();
+          for (int i = 0; i < count; i++) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSizeNoTag(registrations_.get(i));
+          }
+          size += 1 * count;
+        }
     return size;
   }
   @java.lang.Override
@@ -1020,66 +390,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCode())) return false;
     if (!getMessage()
         .equals(other.getMessage())) return false;
-    if (!getRegistrationId()
-        .equals(other.getRegistrationId())) return false;
-    if (!getServiceType()
-        .equals(other.getServiceType())) return false;
     if (!getSiteId()
         .equals(other.getSiteId())) return false;
-    if (!getSiteName()
-        .equals(other.getSiteName())) return false;
-    if (!getTimezone()
-        .equals(other.getTimezone())) return false;
-    if (hasLongitude() != other.hasLongitude()) return false;
-    if (hasLongitude()) {
-      if (java.lang.Double.doubleToLongBits(getLongitude())
-          != java.lang.Double.doubleToLongBits(
-              other.getLongitude())) return false;
-    }
-    if (hasLatitude() != other.hasLatitude()) return false;
-    if (hasLatitude()) {
-      if (java.lang.Double.doubleToLongBits(getLatitude())
-          != java.lang.Double.doubleToLongBits(
-              other.getLatitude())) return false;
-    }
-    if (hasTiltDeg() != other.hasTiltDeg()) return false;
-    if (hasTiltDeg()) {
-      if (java.lang.Double.doubleToLongBits(getTiltDeg())
-          != java.lang.Double.doubleToLongBits(
-              other.getTiltDeg())) return false;
-    }
-    if (hasAzimuthDeg() != other.hasAzimuthDeg()) return false;
-    if (hasAzimuthDeg()) {
-      if (java.lang.Double.doubleToLongBits(getAzimuthDeg())
-          != java.lang.Double.doubleToLongBits(
-              other.getAzimuthDeg())) return false;
-    }
-    if (hasRatedP() != other.hasRatedP()) return false;
-    if (hasRatedP()) {
-      if (java.lang.Double.doubleToLongBits(getRatedP())
-          != java.lang.Double.doubleToLongBits(
-              other.getRatedP())) return false;
-    }
-    if (!getGranularityList()
-        .equals(other.getGranularityList())) return false;
-    if (getDataSource()
-        != other.getDataSource()) return false;
-    if (!getSourceAttr()
-        .equals(other.getSourceAttr())) return false;
-    if (hasOperation() != other.hasOperation()) return false;
-    if (hasOperation()) {
-      if (getOperation()
-          != other.getOperation()) return false;
-    }
-    if (hasHisdays() != other.hasHisdays()) return false;
-    if (hasHisdays()) {
-      if (getHisdays()
-          != other.getHisdays()) return false;
-    }
-    if (!getCreatedAt()
-        .equals(other.getCreatedAt())) return false;
-    if (!getUpdatedAt()
-        .equals(other.getUpdatedAt())) return false;
+    if (!getRegistrationsList()
+        .equals(other.getRegistrationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1097,61 +411,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCode().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
-    hash = (37 * hash) + REGISTRATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRegistrationId().hashCode();
-    hash = (37 * hash) + SERVICE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getServiceType().hashCode();
     hash = (37 * hash) + SITE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getSiteId().hashCode();
-    hash = (37 * hash) + SITE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getSiteName().hashCode();
-    hash = (37 * hash) + TIMEZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getTimezone().hashCode();
-    if (hasLongitude()) {
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongitude()));
+    if (getRegistrationsCount() > 0) {
+      hash = (37 * hash) + REGISTRATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRegistrationsList().hashCode();
     }
-    if (hasLatitude()) {
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLatitude()));
-    }
-    if (hasTiltDeg()) {
-      hash = (37 * hash) + TILT_DEG_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getTiltDeg()));
-    }
-    if (hasAzimuthDeg()) {
-      hash = (37 * hash) + AZIMUTH_DEG_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getAzimuthDeg()));
-    }
-    if (hasRatedP()) {
-      hash = (37 * hash) + RATED_P_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getRatedP()));
-    }
-    if (getGranularityCount() > 0) {
-      hash = (37 * hash) + GRANULARITY_FIELD_NUMBER;
-      hash = (53 * hash) + getGranularityList().hashCode();
-    }
-    hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
-    hash = (53 * hash) + getDataSource();
-    hash = (37 * hash) + SOURCE_ATTR_FIELD_NUMBER;
-    hash = (53 * hash) + getSourceAttr().hashCode();
-    if (hasOperation()) {
-      hash = (37 * hash) + OPERATION_FIELD_NUMBER;
-      hash = (53 * hash) + getOperation();
-    }
-    if (hasHisdays()) {
-      hash = (37 * hash) + HISDAYS_FIELD_NUMBER;
-      hash = (53 * hash) + getHisdays();
-    }
-    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getCreatedAt().hashCode();
-    hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getUpdatedAt().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1251,7 +516,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Package message 场站注册-查询场站消息响应定义
+   * 按 site_id 查询响应：registrations 为列表，成功时 0~3 条（无注册为空数组，非 error）
    * </pre>
    *
    * Protobuf type {@code fusion.ai.proto.site.GetSiteResponse}
@@ -1290,23 +555,14 @@ private static final long serialVersionUID = 0L;
       state_ = "";
       code_ = "";
       message_ = "";
-      registrationId_ = "";
-      serviceType_ = "";
       siteId_ = "";
-      siteName_ = "";
-      timezone_ = "";
-      longitude_ = 0D;
-      latitude_ = 0D;
-      tiltDeg_ = 0D;
-      azimuthDeg_ = 0D;
-      ratedP_ = 0D;
-      granularity_ = emptyIntList();
-      dataSource_ = 0;
-      sourceAttr_ = "";
-      operation_ = 0;
-      hisdays_ = 0;
-      createdAt_ = "";
-      updatedAt_ = "";
+      if (registrationsBuilder_ == null) {
+        registrations_ = java.util.Collections.emptyList();
+      } else {
+        registrations_ = null;
+        registrationsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -1333,9 +589,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.fusion.ai.proto.site.GetSiteResponse buildPartial() {
       com.fusion.ai.proto.site.GetSiteResponse result = new com.fusion.ai.proto.site.GetSiteResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.fusion.ai.proto.site.GetSiteResponse result) {
+      if (registrationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          registrations_ = java.util.Collections.unmodifiableList(registrations_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.registrations_ = registrations_;
+      } else {
+        result.registrations_ = registrationsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.fusion.ai.proto.site.GetSiteResponse result) {
@@ -1350,66 +619,8 @@ private static final long serialVersionUID = 0L;
         result.message_ = message_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.registrationId_ = registrationId_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.serviceType_ = serviceType_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.siteId_ = siteId_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.siteName_ = siteName_;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.timezone_ = timezone_;
-      }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.longitude_ = longitude_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.latitude_ = latitude_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.tiltDeg_ = tiltDeg_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.azimuthDeg_ = azimuthDeg_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.ratedP_ = ratedP_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        granularity_.makeImmutable();
-        result.granularity_ = granularity_;
-      }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.dataSource_ = dataSource_;
-      }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.sourceAttr_ = sourceAttr_;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.operation_ = operation_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.hisdays_ = hisdays_;
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.createdAt_ = createdAt_;
-      }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.updatedAt_ = updatedAt_;
-      }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1439,80 +650,36 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getRegistrationId().isEmpty()) {
-        registrationId_ = other.registrationId_;
+      if (!other.getSiteId().isEmpty()) {
+        siteId_ = other.siteId_;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (!other.getServiceType().isEmpty()) {
-        serviceType_ = other.serviceType_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
-      if (!other.getSiteId().isEmpty()) {
-        siteId_ = other.siteId_;
-        bitField0_ |= 0x00000020;
-        onChanged();
-      }
-      if (!other.getSiteName().isEmpty()) {
-        siteName_ = other.siteName_;
-        bitField0_ |= 0x00000040;
-        onChanged();
-      }
-      if (!other.getTimezone().isEmpty()) {
-        timezone_ = other.timezone_;
-        bitField0_ |= 0x00000080;
-        onChanged();
-      }
-      if (other.hasLongitude()) {
-        setLongitude(other.getLongitude());
-      }
-      if (other.hasLatitude()) {
-        setLatitude(other.getLatitude());
-      }
-      if (other.hasTiltDeg()) {
-        setTiltDeg(other.getTiltDeg());
-      }
-      if (other.hasAzimuthDeg()) {
-        setAzimuthDeg(other.getAzimuthDeg());
-      }
-      if (other.hasRatedP()) {
-        setRatedP(other.getRatedP());
-      }
-      if (!other.granularity_.isEmpty()) {
-        if (granularity_.isEmpty()) {
-          granularity_ = other.granularity_;
-          granularity_.makeImmutable();
-          bitField0_ |= 0x00002000;
-        } else {
-          ensureGranularityIsMutable();
-          granularity_.addAll(other.granularity_);
+      if (registrationsBuilder_ == null) {
+        if (!other.registrations_.isEmpty()) {
+          if (registrations_.isEmpty()) {
+            registrations_ = other.registrations_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureRegistrationsIsMutable();
+            registrations_.addAll(other.registrations_);
+          }
+          onChanged();
         }
-        onChanged();
-      }
-      if (other.getDataSource() != 0) {
-        setDataSource(other.getDataSource());
-      }
-      if (!other.getSourceAttr().isEmpty()) {
-        sourceAttr_ = other.sourceAttr_;
-        bitField0_ |= 0x00008000;
-        onChanged();
-      }
-      if (other.hasOperation()) {
-        setOperation(other.getOperation());
-      }
-      if (other.hasHisdays()) {
-        setHisdays(other.getHisdays());
-      }
-      if (!other.getCreatedAt().isEmpty()) {
-        createdAt_ = other.createdAt_;
-        bitField0_ |= 0x00040000;
-        onChanged();
-      }
-      if (!other.getUpdatedAt().isEmpty()) {
-        updatedAt_ = other.updatedAt_;
-        bitField0_ |= 0x00080000;
-        onChanged();
+      } else {
+        if (!other.registrations_.isEmpty()) {
+          if (registrationsBuilder_.isEmpty()) {
+            registrationsBuilder_.dispose();
+            registrationsBuilder_ = null;
+            registrations_ = other.registrations_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            registrationsBuilder_ = 
+              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                 internalGetRegistrationsFieldBuilder() : null;
+          } else {
+            registrationsBuilder_.addAllMessages(other.registrations_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1554,101 +721,23 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 26
             case 34: {
-              registrationId_ = input.readStringRequireUtf8();
+              siteId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
-              serviceType_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              com.fusion.ai.proto.site.SiteRegistration m =
+                  input.readMessage(
+                      com.fusion.ai.proto.site.SiteRegistration.parser(),
+                      extensionRegistry);
+              if (registrationsBuilder_ == null) {
+                ensureRegistrationsIsMutable();
+                registrations_.add(m);
+              } else {
+                registrationsBuilder_.addMessage(m);
+              }
               break;
             } // case 42
-            case 50: {
-              siteId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 50
-            case 58: {
-              siteName_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 58
-            case 66: {
-              timezone_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              break;
-            } // case 66
-            case 73: {
-              longitude_ = input.readDouble();
-              bitField0_ |= 0x00000100;
-              break;
-            } // case 73
-            case 81: {
-              latitude_ = input.readDouble();
-              bitField0_ |= 0x00000200;
-              break;
-            } // case 81
-            case 89: {
-              tiltDeg_ = input.readDouble();
-              bitField0_ |= 0x00000400;
-              break;
-            } // case 89
-            case 97: {
-              azimuthDeg_ = input.readDouble();
-              bitField0_ |= 0x00000800;
-              break;
-            } // case 97
-            case 105: {
-              ratedP_ = input.readDouble();
-              bitField0_ |= 0x00001000;
-              break;
-            } // case 105
-            case 112: {
-              int v = input.readInt32();
-              ensureGranularityIsMutable();
-              granularity_.addInt(v);
-              break;
-            } // case 112
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              ensureGranularityIsMutable();
-              while (input.getBytesUntilLimit() > 0) {
-                granularity_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            } // case 114
-            case 120: {
-              dataSource_ = input.readInt32();
-              bitField0_ |= 0x00004000;
-              break;
-            } // case 120
-            case 130: {
-              sourceAttr_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
-              break;
-            } // case 130
-            case 136: {
-              operation_ = input.readInt32();
-              bitField0_ |= 0x00010000;
-              break;
-            } // case 136
-            case 144: {
-              hisdays_ = input.readInt32();
-              bitField0_ |= 0x00020000;
-              break;
-            } // case 144
-            case 154: {
-              createdAt_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00040000;
-              break;
-            } // case 154
-            case 162: {
-              updatedAt_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00080000;
-              break;
-            } // case 162
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1942,197 +1031,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object registrationId_ = "";
-    /**
-     * <pre>
-     * 固定注册标识，关联已保存的场站及算法业务配置
-     * </pre>
-     *
-     * <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @return The registrationId.
-     */
-    public java.lang.String getRegistrationId() {
-      java.lang.Object ref = registrationId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        registrationId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 固定注册标识，关联已保存的场站及算法业务配置
-     * </pre>
-     *
-     * <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for registrationId.
-     */
-    public com.google.protobuf.ByteString
-        getRegistrationIdBytes() {
-      java.lang.Object ref = registrationId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        registrationId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 固定注册标识，关联已保存的场站及算法业务配置
-     * </pre>
-     *
-     * <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @param value The registrationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRegistrationId(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-      registrationId_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 固定注册标识，关联已保存的场站及算法业务配置
-     * </pre>
-     *
-     * <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRegistrationId() {
-      registrationId_ = getDefaultInstance().getRegistrationId();
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 固定注册标识，关联已保存的场站及算法业务配置
-     * </pre>
-     *
-     * <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for registrationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRegistrationIdBytes(
-        com.google.protobuf.ByteString value) {
-      java.util.Objects.requireNonNull(value);
-      checkByteStringIsUtf8(value);
-      registrationId_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object serviceType_ = "";
-    /**
-     * <pre>
-     * 实际保存的服务标识，如 pv_prediction、load_prediction
-     * </pre>
-     *
-     * <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
-     * @return The serviceType.
-     */
-    public java.lang.String getServiceType() {
-      java.lang.Object ref = serviceType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        serviceType_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 实际保存的服务标识，如 pv_prediction、load_prediction
-     * </pre>
-     *
-     * <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for serviceType.
-     */
-    public com.google.protobuf.ByteString
-        getServiceTypeBytes() {
-      java.lang.Object ref = serviceType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        serviceType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 实际保存的服务标识，如 pv_prediction、load_prediction
-     * </pre>
-     *
-     * <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
-     * @param value The serviceType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setServiceType(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-      serviceType_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 实际保存的服务标识，如 pv_prediction、load_prediction
-     * </pre>
-     *
-     * <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearServiceType() {
-      serviceType_ = getDefaultInstance().getServiceType();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 实际保存的服务标识，如 pv_prediction、load_prediction
-     * </pre>
-     *
-     * <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for serviceType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setServiceTypeBytes(
-        com.google.protobuf.ByteString value) {
-      java.util.Objects.requireNonNull(value);
-      checkByteStringIsUtf8(value);
-      serviceType_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object siteId_ = "";
     /**
      * <pre>
-     * 场站唯一 ID
+     * 查询的场站 ID
      * </pre>
      *
-     * <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @return The siteId.
      */
     public java.lang.String getSiteId() {
@@ -2149,10 +1054,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 场站唯一 ID
+     * 查询的场站 ID
      * </pre>
      *
-     * <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @return The bytes for siteId.
      */
     public com.google.protobuf.ByteString
@@ -2170,10 +1075,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 场站唯一 ID
+     * 查询的场站 ID
      * </pre>
      *
-     * <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @param value The siteId to set.
      * @return This builder for chaining.
      */
@@ -2181,30 +1086,30 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       siteId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 场站唯一 ID
+     * 查询的场站 ID
      * </pre>
      *
-     * <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSiteId() {
       siteId_ = getDefaultInstance().getSiteId();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 场站唯一 ID
+     * 查询的场站 ID
      * </pre>
      *
-     * <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
+     * <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for siteId to set.
      * @return This builder for chaining.
      */
@@ -2213,1017 +1118,315 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       siteId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
-    private java.lang.Object siteName_ = "";
+    private java.util.List<com.fusion.ai.proto.site.SiteRegistration> registrations_ =
+      java.util.Collections.emptyList();
+    private void ensureRegistrationsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        registrations_ = new java.util.ArrayList<com.fusion.ai.proto.site.SiteRegistration>(registrations_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+        com.fusion.ai.proto.site.SiteRegistration, com.fusion.ai.proto.site.SiteRegistration.Builder, com.fusion.ai.proto.site.SiteRegistrationOrBuilder> registrationsBuilder_;
+
     /**
      * <pre>
-     * 场站显示名称
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
-     * @return The siteName.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public java.lang.String getSiteName() {
-      java.lang.Object ref = siteName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        siteName_ = s;
-        return s;
+    public java.util.List<com.fusion.ai.proto.site.SiteRegistration> getRegistrationsList() {
+      if (registrationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(registrations_);
       } else {
-        return (java.lang.String) ref;
+        return registrationsBuilder_.getMessageList();
       }
     }
     /**
      * <pre>
-     * 场站显示名称
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for siteName.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public com.google.protobuf.ByteString
-        getSiteNameBytes() {
-      java.lang.Object ref = siteName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        siteName_ = b;
-        return b;
+    public int getRegistrationsCount() {
+      if (registrationsBuilder_ == null) {
+        return registrations_.size();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        return registrationsBuilder_.getCount();
       }
     }
     /**
      * <pre>
-     * 场站显示名称
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
-     * @param value The siteName to set.
-     * @return This builder for chaining.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public Builder setSiteName(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-      siteName_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 场站显示名称
-     * </pre>
-     *
-     * <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSiteName() {
-      siteName_ = getDefaultInstance().getSiteName();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 场站显示名称
-     * </pre>
-     *
-     * <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for siteName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSiteNameBytes(
-        com.google.protobuf.ByteString value) {
-      java.util.Objects.requireNonNull(value);
-      checkByteStringIsUtf8(value);
-      siteName_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object timezone_ = "";
-    /**
-     * <pre>
-     * 场站时区，如 Asia/Shanghai
-     * </pre>
-     *
-     * <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
-     * @return The timezone.
-     */
-    public java.lang.String getTimezone() {
-      java.lang.Object ref = timezone_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        timezone_ = s;
-        return s;
+    public com.fusion.ai.proto.site.SiteRegistration getRegistrations(int index) {
+      if (registrationsBuilder_ == null) {
+        return registrations_.get(index);
       } else {
-        return (java.lang.String) ref;
+        return registrationsBuilder_.getMessage(index);
       }
     }
     /**
      * <pre>
-     * 场站时区，如 Asia/Shanghai
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for timezone.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public com.google.protobuf.ByteString
-        getTimezoneBytes() {
-      java.lang.Object ref = timezone_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timezone_ = b;
-        return b;
+    public Builder setRegistrations(
+        int index, com.fusion.ai.proto.site.SiteRegistration value) {
+      if (registrationsBuilder_ == null) {
+        java.util.Objects.requireNonNull(value);
+        ensureRegistrationsIsMutable();
+        registrations_.set(index, value);
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        registrationsBuilder_.setMessage(index, value);
       }
-    }
-    /**
-     * <pre>
-     * 场站时区，如 Asia/Shanghai
-     * </pre>
-     *
-     * <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
-     * @param value The timezone to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTimezone(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-      timezone_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
       return this;
     }
     /**
      * <pre>
-     * 场站时区，如 Asia/Shanghai
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public Builder clearTimezone() {
-      timezone_ = getDefaultInstance().getTimezone();
-      bitField0_ = (bitField0_ & ~0x00000080);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 场站时区，如 Asia/Shanghai
-     * </pre>
-     *
-     * <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for timezone to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTimezoneBytes(
-        com.google.protobuf.ByteString value) {
-      java.util.Objects.requireNonNull(value);
-      checkByteStringIsUtf8(value);
-      timezone_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-
-    private double longitude_ ;
-    /**
-     * <pre>
-     * 已保存经度，单位：度
-     * </pre>
-     *
-     * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
-     * @return Whether the longitude field is set.
-     */
-    @java.lang.Override
-    public boolean hasLongitude() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <pre>
-     * 已保存经度，单位：度
-     * </pre>
-     *
-     * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
-     * @return The longitude.
-     */
-    @java.lang.Override
-    public double getLongitude() {
-      return longitude_;
-    }
-    /**
-     * <pre>
-     * 已保存经度，单位：度
-     * </pre>
-     *
-     * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
-     * @param value The longitude to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLongitude(double value) {
-
-      longitude_ = value;
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 已保存经度，单位：度
-     * </pre>
-     *
-     * <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLongitude() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      longitude_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private double latitude_ ;
-    /**
-     * <pre>
-     * 已保存纬度，单位：度
-     * </pre>
-     *
-     * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
-     * @return Whether the latitude field is set.
-     */
-    @java.lang.Override
-    public boolean hasLatitude() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <pre>
-     * 已保存纬度，单位：度
-     * </pre>
-     *
-     * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
-     * @return The latitude.
-     */
-    @java.lang.Override
-    public double getLatitude() {
-      return latitude_;
-    }
-    /**
-     * <pre>
-     * 已保存纬度，单位：度
-     * </pre>
-     *
-     * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
-     * @param value The latitude to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatitude(double value) {
-
-      latitude_ = value;
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 已保存纬度，单位：度
-     * </pre>
-     *
-     * <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLatitude() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      latitude_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private double tiltDeg_ ;
-    /**
-     * <pre>
-     * 光伏组件倾角，单位：度
-     * </pre>
-     *
-     * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
-     * @return Whether the tiltDeg field is set.
-     */
-    @java.lang.Override
-    public boolean hasTiltDeg() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <pre>
-     * 光伏组件倾角，单位：度
-     * </pre>
-     *
-     * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
-     * @return The tiltDeg.
-     */
-    @java.lang.Override
-    public double getTiltDeg() {
-      return tiltDeg_;
-    }
-    /**
-     * <pre>
-     * 光伏组件倾角，单位：度
-     * </pre>
-     *
-     * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
-     * @param value The tiltDeg to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTiltDeg(double value) {
-
-      tiltDeg_ = value;
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 光伏组件倾角，单位：度
-     * </pre>
-     *
-     * <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTiltDeg() {
-      bitField0_ = (bitField0_ & ~0x00000400);
-      tiltDeg_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private double azimuthDeg_ ;
-    /**
-     * <pre>
-     * 光伏组件方位角，单位：度
-     * </pre>
-     *
-     * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
-     * @return Whether the azimuthDeg field is set.
-     */
-    @java.lang.Override
-    public boolean hasAzimuthDeg() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <pre>
-     * 光伏组件方位角，单位：度
-     * </pre>
-     *
-     * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
-     * @return The azimuthDeg.
-     */
-    @java.lang.Override
-    public double getAzimuthDeg() {
-      return azimuthDeg_;
-    }
-    /**
-     * <pre>
-     * 光伏组件方位角，单位：度
-     * </pre>
-     *
-     * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
-     * @param value The azimuthDeg to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAzimuthDeg(double value) {
-
-      azimuthDeg_ = value;
-      bitField0_ |= 0x00000800;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 光伏组件方位角，单位：度
-     * </pre>
-     *
-     * <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAzimuthDeg() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      azimuthDeg_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private double ratedP_ ;
-    /**
-     * <pre>
-     * 光伏额定功率，单位：kW；非适用业务可不返回
-     * </pre>
-     *
-     * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
-     * @return Whether the ratedP field is set.
-     */
-    @java.lang.Override
-    public boolean hasRatedP() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <pre>
-     * 光伏额定功率，单位：kW；非适用业务可不返回
-     * </pre>
-     *
-     * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
-     * @return The ratedP.
-     */
-    @java.lang.Override
-    public double getRatedP() {
-      return ratedP_;
-    }
-    /**
-     * <pre>
-     * 光伏额定功率，单位：kW；非适用业务可不返回
-     * </pre>
-     *
-     * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
-     * @param value The ratedP to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRatedP(double value) {
-
-      ratedP_ = value;
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 光伏额定功率，单位：kW；非适用业务可不返回
-     * </pre>
-     *
-     * <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRatedP() {
-      bitField0_ = (bitField0_ & ~0x00001000);
-      ratedP_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Internal.IntList granularity_ = emptyIntList();
-    private void ensureGranularityIsMutable() {
-      if (!granularity_.isModifiable()) {
-        granularity_ = makeMutableCopy(granularity_);
-      }
-      bitField0_ |= 0x00002000;
-    }
-    /**
-     * <pre>
-     * 保存的预测步长列表，单位：分钟
-     * </pre>
-     *
-     * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-     * @return A list containing the granularity.
-     */
-    public java.util.List<java.lang.Integer>
-        getGranularityList() {
-      granularity_.makeImmutable();
-      return granularity_;
-    }
-    /**
-     * <pre>
-     * 保存的预测步长列表，单位：分钟
-     * </pre>
-     *
-     * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-     * @return The count of granularity.
-     */
-    public int getGranularityCount() {
-      return granularity_.size();
-    }
-    /**
-     * <pre>
-     * 保存的预测步长列表，单位：分钟
-     * </pre>
-     *
-     * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The granularity at the given index.
-     */
-    public int getGranularity(int index) {
-      return granularity_.getInt(index);
-    }
-    /**
-     * <pre>
-     * 保存的预测步长列表，单位：分钟
-     * </pre>
-     *
-     * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-     * @param index The index to set the value at.
-     * @param value The granularity to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGranularity(
-        int index, int value) {
-
-      ensureGranularityIsMutable();
-      granularity_.setInt(index, value);
-      bitField0_ |= 0x00002000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 保存的预测步长列表，单位：分钟
-     * </pre>
-     *
-     * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-     * @param value The granularity to add.
-     * @return This builder for chaining.
-     */
-    public Builder addGranularity(int value) {
-
-      ensureGranularityIsMutable();
-      granularity_.addInt(value);
-      bitField0_ |= 0x00002000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 保存的预测步长列表，单位：分钟
-     * </pre>
-     *
-     * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-     * @param values The granularity to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllGranularity(
-        java.lang.Iterable<? extends java.lang.Integer> values) {
-      ensureGranularityIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, granularity_);
-      bitField0_ |= 0x00002000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 保存的预测步长列表，单位：分钟
-     * </pre>
-     *
-     * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearGranularity() {
-      granularity_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00002000);
-      onChanged();
-      return this;
-    }
-
-    private int dataSource_ ;
-    /**
-     * <pre>
-     * 数据源类型：1-pull，2-push，3-file
-     * </pre>
-     *
-     * <code>int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
-     * @return The dataSource.
-     */
-    @java.lang.Override
-    public int getDataSource() {
-      return dataSource_;
-    }
-    /**
-     * <pre>
-     * 数据源类型：1-pull，2-push，3-file
-     * </pre>
-     *
-     * <code>int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
-     * @param value The dataSource to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDataSource(int value) {
-
-      dataSource_ = value;
-      bitField0_ |= 0x00004000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 数据源类型：1-pull，2-push，3-file
-     * </pre>
-     *
-     * <code>int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDataSource() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      dataSource_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object sourceAttr_ = "";
-    /**
-     * <pre>
-     * 数据源地址或路径；客户返回中不得暴露凭据
-     * </pre>
-     *
-     * <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
-     * @return The sourceAttr.
-     */
-    public java.lang.String getSourceAttr() {
-      java.lang.Object ref = sourceAttr_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sourceAttr_ = s;
-        return s;
+    public Builder setRegistrations(
+        int index, com.fusion.ai.proto.site.SiteRegistration.Builder builderForValue) {
+      if (registrationsBuilder_ == null) {
+        ensureRegistrationsIsMutable();
+        registrations_.set(index, builderForValue.build());
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        registrationsBuilder_.setMessage(index, builderForValue.build());
       }
+      return this;
     }
     /**
      * <pre>
-     * 数据源地址或路径；客户返回中不得暴露凭据
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for sourceAttr.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public com.google.protobuf.ByteString
-        getSourceAttrBytes() {
-      java.lang.Object ref = sourceAttr_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sourceAttr_ = b;
-        return b;
+    public Builder addRegistrations(com.fusion.ai.proto.site.SiteRegistration value) {
+      if (registrationsBuilder_ == null) {
+        java.util.Objects.requireNonNull(value);
+        ensureRegistrationsIsMutable();
+        registrations_.add(value);
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        registrationsBuilder_.addMessage(value);
       }
-    }
-    /**
-     * <pre>
-     * 数据源地址或路径；客户返回中不得暴露凭据
-     * </pre>
-     *
-     * <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
-     * @param value The sourceAttr to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSourceAttr(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-      sourceAttr_ = value;
-      bitField0_ |= 0x00008000;
-      onChanged();
       return this;
     }
     /**
      * <pre>
-     * 数据源地址或路径；客户返回中不得暴露凭据
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public Builder clearSourceAttr() {
-      sourceAttr_ = getDefaultInstance().getSourceAttr();
-      bitField0_ = (bitField0_ & ~0x00008000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 数据源地址或路径；客户返回中不得暴露凭据
-     * </pre>
-     *
-     * <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for sourceAttr to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSourceAttrBytes(
-        com.google.protobuf.ByteString value) {
-      java.util.Objects.requireNonNull(value);
-      checkByteStringIsUtf8(value);
-      sourceAttr_ = value;
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-
-    private int operation_ ;
-    /**
-     * <pre>
-     * 已保存运行类型：1-预测，2-训练
-     * </pre>
-     *
-     * <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = { ... }</code>
-     * @return Whether the operation field is set.
-     */
-    @java.lang.Override
-    public boolean hasOperation() {
-      return ((bitField0_ & 0x00010000) != 0);
-    }
-    /**
-     * <pre>
-     * 已保存运行类型：1-预测，2-训练
-     * </pre>
-     *
-     * <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = { ... }</code>
-     * @return The operation.
-     */
-    @java.lang.Override
-    public int getOperation() {
-      return operation_;
-    }
-    /**
-     * <pre>
-     * 已保存运行类型：1-预测，2-训练
-     * </pre>
-     *
-     * <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = { ... }</code>
-     * @param value The operation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOperation(int value) {
-
-      operation_ = value;
-      bitField0_ |= 0x00010000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 已保存运行类型：1-预测，2-训练
-     * </pre>
-     *
-     * <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOperation() {
-      bitField0_ = (bitField0_ & ~0x00010000);
-      operation_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int hisdays_ ;
-    /**
-     * <pre>
-     * 已保存历史天数；无值时不补默认值
-     * </pre>
-     *
-     * <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
-     * @return Whether the hisdays field is set.
-     */
-    @java.lang.Override
-    public boolean hasHisdays() {
-      return ((bitField0_ & 0x00020000) != 0);
-    }
-    /**
-     * <pre>
-     * 已保存历史天数；无值时不补默认值
-     * </pre>
-     *
-     * <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
-     * @return The hisdays.
-     */
-    @java.lang.Override
-    public int getHisdays() {
-      return hisdays_;
-    }
-    /**
-     * <pre>
-     * 已保存历史天数；无值时不补默认值
-     * </pre>
-     *
-     * <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
-     * @param value The hisdays to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHisdays(int value) {
-
-      hisdays_ = value;
-      bitField0_ |= 0x00020000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 已保存历史天数；无值时不补默认值
-     * </pre>
-     *
-     * <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearHisdays() {
-      bitField0_ = (bitField0_ & ~0x00020000);
-      hisdays_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object createdAt_ = "";
-    /**
-     * <pre>
-     * 创建时间，ISO 8601 带时区；创建后保持不变
-     * </pre>
-     *
-     * <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = { ... }</code>
-     * @return The createdAt.
-     */
-    public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        createdAt_ = s;
-        return s;
+    public Builder addRegistrations(
+        int index, com.fusion.ai.proto.site.SiteRegistration value) {
+      if (registrationsBuilder_ == null) {
+        java.util.Objects.requireNonNull(value);
+        ensureRegistrationsIsMutable();
+        registrations_.add(index, value);
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        registrationsBuilder_.addMessage(index, value);
       }
+      return this;
     }
     /**
      * <pre>
-     * 创建时间，ISO 8601 带时区；创建后保持不变
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for createdAt.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public com.google.protobuf.ByteString
-        getCreatedAtBytes() {
-      java.lang.Object ref = createdAt_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createdAt_ = b;
-        return b;
+    public Builder addRegistrations(
+        com.fusion.ai.proto.site.SiteRegistration.Builder builderForValue) {
+      if (registrationsBuilder_ == null) {
+        ensureRegistrationsIsMutable();
+        registrations_.add(builderForValue.build());
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        registrationsBuilder_.addMessage(builderForValue.build());
       }
-    }
-    /**
-     * <pre>
-     * 创建时间，ISO 8601 带时区；创建后保持不变
-     * </pre>
-     *
-     * <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = { ... }</code>
-     * @param value The createdAt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreatedAt(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-      createdAt_ = value;
-      bitField0_ |= 0x00040000;
-      onChanged();
       return this;
     }
     /**
      * <pre>
-     * 创建时间，ISO 8601 带时区；创建后保持不变
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public Builder clearCreatedAt() {
-      createdAt_ = getDefaultInstance().getCreatedAt();
-      bitField0_ = (bitField0_ & ~0x00040000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 创建时间，ISO 8601 带时区；创建后保持不变
-     * </pre>
-     *
-     * <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for createdAt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreatedAtBytes(
-        com.google.protobuf.ByteString value) {
-      java.util.Objects.requireNonNull(value);
-      checkByteStringIsUtf8(value);
-      createdAt_ = value;
-      bitField0_ |= 0x00040000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object updatedAt_ = "";
-    /**
-     * <pre>
-     * 最近配置更新时间，ISO 8601 带时区；查询不刷新
-     * </pre>
-     *
-     * <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = { ... }</code>
-     * @return The updatedAt.
-     */
-    public java.lang.String getUpdatedAt() {
-      java.lang.Object ref = updatedAt_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        updatedAt_ = s;
-        return s;
+    public Builder addRegistrations(
+        int index, com.fusion.ai.proto.site.SiteRegistration.Builder builderForValue) {
+      if (registrationsBuilder_ == null) {
+        ensureRegistrationsIsMutable();
+        registrations_.add(index, builderForValue.build());
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        registrationsBuilder_.addMessage(index, builderForValue.build());
       }
+      return this;
     }
     /**
      * <pre>
-     * 最近配置更新时间，ISO 8601 带时区；查询不刷新
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for updatedAt.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public com.google.protobuf.ByteString
-        getUpdatedAtBytes() {
-      java.lang.Object ref = updatedAt_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        updatedAt_ = b;
-        return b;
+    public Builder addAllRegistrations(
+        java.lang.Iterable<? extends com.fusion.ai.proto.site.SiteRegistration> values) {
+      if (registrationsBuilder_ == null) {
+        ensureRegistrationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, registrations_);
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        registrationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
+     * </pre>
+     *
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder clearRegistrations() {
+      if (registrationsBuilder_ == null) {
+        registrations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        registrationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
+     * </pre>
+     *
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder removeRegistrations(int index) {
+      if (registrationsBuilder_ == null) {
+        ensureRegistrationsIsMutable();
+        registrations_.remove(index);
+        onChanged();
+      } else {
+        registrationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
+     * </pre>
+     *
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
+     */
+    public com.fusion.ai.proto.site.SiteRegistration.Builder getRegistrationsBuilder(
+        int index) {
+      return internalGetRegistrationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
+     * </pre>
+     *
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
+     */
+    public com.fusion.ai.proto.site.SiteRegistrationOrBuilder getRegistrationsOrBuilder(
+        int index) {
+      if (registrationsBuilder_ == null) {
+        return registrations_.get(index);  } else {
+        return registrationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * 最近配置更新时间，ISO 8601 带时区；查询不刷新
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = { ... }</code>
-     * @param value The updatedAt to set.
-     * @return This builder for chaining.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public Builder setUpdatedAt(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-      updatedAt_ = value;
-      bitField0_ |= 0x00080000;
-      onChanged();
-      return this;
+    public java.util.List<? extends com.fusion.ai.proto.site.SiteRegistrationOrBuilder> 
+         getRegistrationsOrBuilderList() {
+      if (registrationsBuilder_ != null) {
+        return registrationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(registrations_);
+      }
     }
     /**
      * <pre>
-     * 最近配置更新时间，ISO 8601 带时区；查询不刷新
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public Builder clearUpdatedAt() {
-      updatedAt_ = getDefaultInstance().getUpdatedAt();
-      bitField0_ = (bitField0_ & ~0x00080000);
-      onChanged();
-      return this;
+    public com.fusion.ai.proto.site.SiteRegistration.Builder addRegistrationsBuilder() {
+      return internalGetRegistrationsFieldBuilder().addBuilder(
+          com.fusion.ai.proto.site.SiteRegistration.getDefaultInstance());
     }
     /**
      * <pre>
-     * 最近配置更新时间，ISO 8601 带时区；查询不刷新
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * </pre>
      *
-     * <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for updatedAt to set.
-     * @return This builder for chaining.
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
      */
-    public Builder setUpdatedAtBytes(
-        com.google.protobuf.ByteString value) {
-      java.util.Objects.requireNonNull(value);
-      checkByteStringIsUtf8(value);
-      updatedAt_ = value;
-      bitField0_ |= 0x00080000;
-      onChanged();
-      return this;
+    public com.fusion.ai.proto.site.SiteRegistration.Builder addRegistrationsBuilder(
+        int index) {
+      return internalGetRegistrationsFieldBuilder().addBuilder(
+          index, com.fusion.ai.proto.site.SiteRegistration.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
+     * </pre>
+     *
+     * <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = { ... }</code>
+     */
+    public java.util.List<com.fusion.ai.proto.site.SiteRegistration.Builder> 
+         getRegistrationsBuilderList() {
+      return internalGetRegistrationsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilder<
+        com.fusion.ai.proto.site.SiteRegistration, com.fusion.ai.proto.site.SiteRegistration.Builder, com.fusion.ai.proto.site.SiteRegistrationOrBuilder> 
+        internalGetRegistrationsFieldBuilder() {
+      if (registrationsBuilder_ == null) {
+        registrationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+            com.fusion.ai.proto.site.SiteRegistration, com.fusion.ai.proto.site.SiteRegistration.Builder, com.fusion.ai.proto.site.SiteRegistrationOrBuilder>(
+                registrations_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        registrations_ = null;
+      }
+      return registrationsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:fusion.ai.proto.site.GetSiteResponse)

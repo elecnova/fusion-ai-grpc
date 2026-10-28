@@ -58,7 +58,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object siteId_ = "";
   /**
    * <pre>
-   * 需要查询的业务注册标识
+   * 场站唯一 ID
    * </pre>
    *
    * <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 需要查询的业务注册标识
+   * 场站唯一 ID
    * </pre>
    *
    * <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
@@ -403,7 +403,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object siteId_ = "";
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 场站唯一 ID
      * </pre>
      *
      * <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 场站唯一 ID
      * </pre>
      *
      * <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
@@ -444,7 +444,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 场站唯一 ID
      * </pre>
      *
      * <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
@@ -461,7 +461,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 场站唯一 ID
      * </pre>
      *
      * <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
@@ -475,7 +475,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 需要查询的业务注册标识
+     * 场站唯一 ID
      * </pre>
      *
      * <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = { ... }</code>

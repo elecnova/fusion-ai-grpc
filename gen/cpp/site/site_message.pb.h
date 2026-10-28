@@ -90,6 +90,14 @@ extern const ::google::protobuf::internal::ClassDataFull GetSiteByRegRequest_cla
 #else
 extern const GetSiteByRegRequestGlobalsTypeInternal GetSiteByRegRequest_globals_;
 #endif  // PROTOBUF_MESSAGE_GLOBALS
+class GetSiteByRegResponse;
+struct GetSiteByRegResponseGlobalsTypeInternal;
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+extern GetSiteByRegResponseGlobalsTypeInternal GetSiteByRegResponse_globals_;
+extern const ::google::protobuf::internal::ClassDataFull GetSiteByRegResponse_class_data_;
+#else
+extern const GetSiteByRegResponseGlobalsTypeInternal GetSiteByRegResponse_globals_;
+#endif  // PROTOBUF_MESSAGE_GLOBALS
 class GetSiteRequest;
 struct GetSiteRequestGlobalsTypeInternal;
 #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -105,6 +113,14 @@ extern GetSiteResponseGlobalsTypeInternal GetSiteResponse_globals_;
 extern const ::google::protobuf::internal::ClassDataFull GetSiteResponse_class_data_;
 #else
 extern const GetSiteResponseGlobalsTypeInternal GetSiteResponse_globals_;
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+class SiteRegistration;
+struct SiteRegistrationGlobalsTypeInternal;
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+extern SiteRegistrationGlobalsTypeInternal SiteRegistration_globals_;
+extern const ::google::protobuf::internal::ClassDataFull SiteRegistration_class_data_;
+#else
+extern const SiteRegistrationGlobalsTypeInternal SiteRegistration_globals_;
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 class UpdateSiteRequest;
 struct UpdateSiteRequestGlobalsTypeInternal;
@@ -791,33 +807,33 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UpdateSiteRequest final : public ::
 };
 // -------------------------------------------------------------------
 
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.site.GetSiteResponse) */ {
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED SiteRegistration final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.site.SiteRegistration) */ {
   using Super_ = ::google::protobuf::Message;
 
  public:
-  inline GetSiteResponse() : GetSiteResponse(nullptr) {}
-  ~GetSiteResponse() PROTOBUF_FINAL;
+  inline SiteRegistration() : SiteRegistration(nullptr) {}
+  ~SiteRegistration() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(GetSiteResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+  void operator delete(SiteRegistration* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetSiteResponse));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(SiteRegistration));
   }
 #endif
 
   template <typename = void>
-  explicit constexpr GetSiteResponse(::google::protobuf::internal::ConstantInitialized,
+  explicit constexpr SiteRegistration(::google::protobuf::internal::ConstantInitialized,
                            const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
                                class_data);
 
-  inline GetSiteResponse(const GetSiteResponse& from) : GetSiteResponse(nullptr, from) {}
-  inline GetSiteResponse(GetSiteResponse&& from) noexcept : GetSiteResponse(nullptr, ::std::move(from)) {}
-  inline GetSiteResponse& operator=(const GetSiteResponse& from) {
+  inline SiteRegistration(const SiteRegistration& from) : SiteRegistration(nullptr, from) {}
+  inline SiteRegistration(SiteRegistration&& from) noexcept : SiteRegistration(nullptr, ::std::move(from)) {}
+  inline SiteRegistration& operator=(const SiteRegistration& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetSiteResponse& operator=(GetSiteResponse&& from) noexcept {
+  inline SiteRegistration& operator=(SiteRegistration&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -846,12 +862,12 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::go
   [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  [[nodiscard]] static const GetSiteResponse& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetSiteResponse>(&GetSiteResponse_globals_);
+  [[nodiscard]] static const SiteRegistration& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<SiteRegistration>(&SiteRegistration_globals_);
   }
-  static constexpr int kIndexInFileMessages = 8;
-  friend void swap(GetSiteResponse& a, GetSiteResponse& b) { a.Swap(&b); }
-  inline void Swap(GetSiteResponse* PROTOBUF_NONNULL other) {
+  static constexpr int kIndexInFileMessages = 6;
+  friend void swap(SiteRegistration& a, SiteRegistration& b) { a.Swap(&b); }
+  inline void Swap(SiteRegistration* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -859,7 +875,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::go
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetSiteResponse* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(SiteRegistration* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -867,14 +883,14 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::go
 
   // implements Message ----------------------------------------------
 
-  [[nodiscard]] GetSiteResponse* PROTOBUF_NONNULL
+  [[nodiscard]] SiteRegistration* PROTOBUF_NONNULL
   New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<GetSiteResponse>(arena);
+    return Super_::DefaultConstruct<SiteRegistration>(arena);
   }
   using Super_::CopyFrom;
-  void CopyFrom(const GetSiteResponse& from);
+  void CopyFrom(const SiteRegistration& from);
   using Super_::MergeFrom;
-  void MergeFrom(const GetSiteResponse& from) { GetSiteResponse::MergeImpl(*this, from); }
+  void MergeFrom(const SiteRegistration& from) { SiteRegistration::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -912,15 +928,672 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::go
   private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(GetSiteResponse* PROTOBUF_NONNULL other);
+  void InternalSwap(SiteRegistration* PROTOBUF_NONNULL other);
  private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.site.GetSiteResponse"; }
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.site.SiteRegistration"; }
 
-  explicit GetSiteResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  GetSiteResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetSiteResponse& from);
-  GetSiteResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetSiteResponse&& from) noexcept
-      : GetSiteResponse(arena) {
+  explicit SiteRegistration(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  SiteRegistration(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const SiteRegistration& from);
+  SiteRegistration(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, SiteRegistration&& from) noexcept
+      : SiteRegistration(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kGranularityFieldNumber = 11,
+    kRegistrationIdFieldNumber = 1,
+    kServiceTypeFieldNumber = 2,
+    kSiteIdFieldNumber = 3,
+    kSiteNameFieldNumber = 4,
+    kTimezoneFieldNumber = 5,
+    kSourceAttrFieldNumber = 13,
+    kCreatedAtFieldNumber = 16,
+    kUpdatedAtFieldNumber = 17,
+    kLongitudeFieldNumber = 6,
+    kLatitudeFieldNumber = 7,
+    kTiltDegFieldNumber = 8,
+    kAzimuthDegFieldNumber = 9,
+    kRatedPFieldNumber = 10,
+    kDataSourceFieldNumber = 12,
+    kOperationFieldNumber = 14,
+    kHisdaysFieldNumber = 15,
+  };
+  // repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = {
+  [[nodiscard]] int granularity_size() const;
+  private:
+  int _internal_granularity_size() const;
+
+  public:
+  void clear_granularity() ;
+  [[nodiscard]] ::int32_t granularity(int index) const;
+  void set_granularity(int index, ::int32_t value);
+  void add_granularity(::int32_t value);
+  [[nodiscard]] const ::google::protobuf::RepeatedField<::int32_t>& granularity()
+      const;
+  ::google::protobuf::RepeatedField<::int32_t>* PROTOBUF_NONNULL mutable_granularity();
+
+  private:
+  const ::google::protobuf::RepeatedField<::int32_t>& _internal_granularity() const;
+  ::google::protobuf::RepeatedField<::int32_t>* PROTOBUF_NONNULL _internal_mutable_granularity();
+
+  public:
+  // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+  void clear_registration_id() ;
+  [[nodiscard]] const ::std::string& registration_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_registration_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_registration_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_registration_id();
+  void set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_registration_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_registration_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
+
+  public:
+  // string service_type = 2 [json_name = "service_type", (.buf.validate.field) = {
+  void clear_service_type() ;
+  [[nodiscard]] const ::std::string& service_type() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_service_type(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_service_type();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_service_type();
+  void set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_service_type() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_service_type(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_service_type();
+
+  public:
+  // string site_id = 3 [json_name = "site_id", (.buf.validate.field) = {
+  void clear_site_id() ;
+  [[nodiscard]] const ::std::string& site_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_site_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_site_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_site_id();
+  void set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_site_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_site_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_site_id();
+
+  public:
+  // string site_name = 4 [json_name = "site_name", (.buf.validate.field) = {
+  void clear_site_name() ;
+  [[nodiscard]] const ::std::string& site_name() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_site_name(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_site_name();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_site_name();
+  void set_allocated_site_name(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_site_name() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_site_name(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_site_name();
+
+  public:
+  // string timezone = 5 [json_name = "timezone", (.buf.validate.field) = {
+  void clear_timezone() ;
+  [[nodiscard]] const ::std::string& timezone() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_timezone(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_timezone();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_timezone();
+  void set_allocated_timezone(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_timezone() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_timezone(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_timezone();
+
+  public:
+  // string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = {
+  void clear_source_attr() ;
+  [[nodiscard]] const ::std::string& source_attr() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_source_attr(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_source_attr();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_source_attr();
+  void set_allocated_source_attr(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_source_attr() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_source_attr(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_source_attr();
+
+  public:
+  // string created_at = 16 [json_name = "created_at", (.buf.validate.field) = {
+  void clear_created_at() ;
+  [[nodiscard]] const ::std::string& created_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_created_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_created_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_created_at();
+  void set_allocated_created_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_created_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_created_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_created_at();
+
+  public:
+  // string updated_at = 17 [json_name = "updated_at", (.buf.validate.field) = {
+  void clear_updated_at() ;
+  [[nodiscard]] const ::std::string& updated_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_updated_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_updated_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_updated_at();
+  void set_allocated_updated_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_updated_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_updated_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_updated_at();
+
+  public:
+  // optional double longitude = 6 [json_name = "longitude", (.buf.validate.field) = {
+  [[nodiscard]] bool has_longitude() const;
+  void clear_longitude() ;
+  [[nodiscard]] double longitude() const;
+  void set_longitude(double value);
+
+  private:
+  double _internal_longitude() const;
+  void _internal_set_longitude(double value);
+
+  public:
+  // optional double latitude = 7 [json_name = "latitude", (.buf.validate.field) = {
+  [[nodiscard]] bool has_latitude() const;
+  void clear_latitude() ;
+  [[nodiscard]] double latitude() const;
+  void set_latitude(double value);
+
+  private:
+  double _internal_latitude() const;
+  void _internal_set_latitude(double value);
+
+  public:
+  // optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = {
+  [[nodiscard]] bool has_tilt_deg() const;
+  void clear_tilt_deg() ;
+  [[nodiscard]] double tilt_deg() const;
+  void set_tilt_deg(double value);
+
+  private:
+  double _internal_tilt_deg() const;
+  void _internal_set_tilt_deg(double value);
+
+  public:
+  // optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = {
+  [[nodiscard]] bool has_azimuth_deg() const;
+  void clear_azimuth_deg() ;
+  [[nodiscard]] double azimuth_deg() const;
+  void set_azimuth_deg(double value);
+
+  private:
+  double _internal_azimuth_deg() const;
+  void _internal_set_azimuth_deg(double value);
+
+  public:
+  // optional double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = {
+  [[nodiscard]] bool has_rated_p() const;
+  void clear_rated_p() ;
+  [[nodiscard]] double rated_p() const;
+  void set_rated_p(double value);
+
+  private:
+  double _internal_rated_p() const;
+  void _internal_set_rated_p(double value);
+
+  public:
+  // optional int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = {
+  [[nodiscard]] bool has_data_source() const;
+  void clear_data_source() ;
+  [[nodiscard]] ::int32_t data_source() const;
+  void set_data_source(::int32_t value);
+
+  private:
+  ::int32_t _internal_data_source() const;
+  void _internal_set_data_source(::int32_t value);
+
+  public:
+  // optional int32 operation = 14 [json_name = "operation", (.buf.validate.field) = {
+  [[nodiscard]] bool has_operation() const;
+  void clear_operation() ;
+  [[nodiscard]] ::int32_t operation() const;
+  void set_operation(::int32_t value);
+
+  private:
+  ::int32_t _internal_operation() const;
+  void _internal_set_operation(::int32_t value);
+
+  public:
+  // optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = {
+  [[nodiscard]] bool has_hisdays() const;
+  void clear_hisdays() ;
+  [[nodiscard]] ::int32_t hisdays() const;
+  void set_hisdays(::int32_t value);
+
+  private:
+  ::int32_t _internal_hisdays() const;
+  void _internal_set_hisdays(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.site.SiteRegistration)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<5, 17,
+                          0, 144,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const SiteRegistration& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedField<::int32_t> granularity_;
+    ::google::protobuf::internal::ArenaStringPtr registration_id_;
+    ::google::protobuf::internal::ArenaStringPtr service_type_;
+    ::google::protobuf::internal::ArenaStringPtr site_id_;
+    ::google::protobuf::internal::ArenaStringPtr site_name_;
+    ::google::protobuf::internal::ArenaStringPtr timezone_;
+    ::google::protobuf::internal::ArenaStringPtr source_attr_;
+    ::google::protobuf::internal::ArenaStringPtr created_at_;
+    ::google::protobuf::internal::ArenaStringPtr updated_at_;
+    double longitude_;
+    double latitude_;
+    double tilt_deg_;
+    double azimuth_deg_;
+    double rated_p_;
+    ::int32_t data_source_;
+    ::int32_t operation_;
+    ::int32_t hisdays_;
+    ::google::protobuf::internal::CachedSize _granularity_cached_byte_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_site_2fsite_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.site.GetSiteRequest) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline GetSiteRequest() : GetSiteRequest(nullptr) {}
+  ~GetSiteRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(GetSiteRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetSiteRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr GetSiteRequest(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline GetSiteRequest(const GetSiteRequest& from) : GetSiteRequest(nullptr, from) {}
+  inline GetSiteRequest(GetSiteRequest&& from) noexcept : GetSiteRequest(nullptr, ::std::move(from)) {}
+  inline GetSiteRequest& operator=(const GetSiteRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetSiteRequest& operator=(GetSiteRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const GetSiteRequest& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetSiteRequest>(&GetSiteRequest_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 7;
+  friend void swap(GetSiteRequest& a, GetSiteRequest& b) { a.Swap(&b); }
+  inline void Swap(GetSiteRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetSiteRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] GetSiteRequest* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<GetSiteRequest>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const GetSiteRequest& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const GetSiteRequest& from) { GetSiteRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetSiteRequest* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.site.GetSiteRequest"; }
+
+  explicit GetSiteRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  GetSiteRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetSiteRequest& from);
+  GetSiteRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetSiteRequest&& from) noexcept
+      : GetSiteRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kSiteIdFieldNumber = 1,
+  };
+  // string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {
+  void clear_site_id() ;
+  [[nodiscard]] const ::std::string& site_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_site_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_site_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_site_id();
+  void set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_site_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_site_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_site_id();
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.site.GetSiteRequest)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<0, 1,
+                          0, 51,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const GetSiteRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr site_id_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_site_2fsite_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteByRegResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.site.GetSiteByRegResponse) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline GetSiteByRegResponse() : GetSiteByRegResponse(nullptr) {}
+  ~GetSiteByRegResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(GetSiteByRegResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetSiteByRegResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr GetSiteByRegResponse(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline GetSiteByRegResponse(const GetSiteByRegResponse& from) : GetSiteByRegResponse(nullptr, from) {}
+  inline GetSiteByRegResponse(GetSiteByRegResponse&& from) noexcept : GetSiteByRegResponse(nullptr, ::std::move(from)) {}
+  inline GetSiteByRegResponse& operator=(const GetSiteByRegResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetSiteByRegResponse& operator=(GetSiteByRegResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const GetSiteByRegResponse& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetSiteByRegResponse>(&GetSiteByRegResponse_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 10;
+  friend void swap(GetSiteByRegResponse& a, GetSiteByRegResponse& b) { a.Swap(&b); }
+  inline void Swap(GetSiteByRegResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetSiteByRegResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] GetSiteByRegResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<GetSiteByRegResponse>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const GetSiteByRegResponse& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const GetSiteByRegResponse& from) { GetSiteByRegResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetSiteByRegResponse* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.site.GetSiteByRegResponse"; }
+
+  explicit GetSiteByRegResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  GetSiteByRegResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetSiteByRegResponse& from);
+  GetSiteByRegResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetSiteByRegResponse&& from) noexcept
+      : GetSiteByRegResponse(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -1231,12 +1904,12 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::go
   void _internal_set_hisdays(::int32_t value);
 
   public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.site.GetSiteResponse)
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.site.GetSiteByRegResponse)
  private:
   class _Internal;
   using ParseTableT_ =
       ::google::protobuf::internal::TcParseTable<5, 20,
-                          0, 159,
+                          0, 164,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -1261,7 +1934,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::go
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const GetSiteResponse& from_msg);
+        const GetSiteByRegResponse& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::RepeatedField<::int32_t> granularity_;
@@ -1285,212 +1958,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::go
     ::int32_t operation_;
     ::int32_t hisdays_;
     ::google::protobuf::internal::CachedSize _granularity_cached_byte_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_site_2fsite_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.site.GetSiteRequest) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline GetSiteRequest() : GetSiteRequest(nullptr) {}
-  ~GetSiteRequest() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(GetSiteRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetSiteRequest));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr GetSiteRequest(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline GetSiteRequest(const GetSiteRequest& from) : GetSiteRequest(nullptr, from) {}
-  inline GetSiteRequest(GetSiteRequest&& from) noexcept : GetSiteRequest(nullptr, ::std::move(from)) {}
-  inline GetSiteRequest& operator=(const GetSiteRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline GetSiteRequest& operator=(GetSiteRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const GetSiteRequest& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetSiteRequest>(&GetSiteRequest_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 6;
-  friend void swap(GetSiteRequest& a, GetSiteRequest& b) { a.Swap(&b); }
-  inline void Swap(GetSiteRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(GetSiteRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] GetSiteRequest* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<GetSiteRequest>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const GetSiteRequest& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const GetSiteRequest& from) { GetSiteRequest::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(GetSiteRequest* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.site.GetSiteRequest"; }
-
-  explicit GetSiteRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  GetSiteRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetSiteRequest& from);
-  GetSiteRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetSiteRequest&& from) noexcept
-      : GetSiteRequest(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kSiteIdFieldNumber = 1,
-  };
-  // string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {
-  void clear_site_id() ;
-  [[nodiscard]] const ::std::string& site_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_site_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_site_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_site_id();
-  void set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_site_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_site_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_site_id();
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.site.GetSiteRequest)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<0, 1,
-                          0, 51,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const GetSiteRequest& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr site_id_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1556,7 +2023,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteByRegRequest final : public 
   [[nodiscard]] static const GetSiteByRegRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetSiteByRegRequest>(&GetSiteByRegRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 7;
+  static constexpr int kIndexInFileMessages = 8;
   friend void swap(GetSiteByRegRequest& a, GetSiteByRegRequest& b) { a.Swap(&b); }
   inline void Swap(GetSiteByRegRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2904,6 +3371,285 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateSiteRequest final : public ::
     ::int32_t operation_;
     ::int32_t hisdays_;
     ::google::protobuf::internal::CachedSize _granularity_cached_byte_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_site_2fsite_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetSiteResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.site.GetSiteResponse) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline GetSiteResponse() : GetSiteResponse(nullptr) {}
+  ~GetSiteResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(GetSiteResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetSiteResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr GetSiteResponse(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline GetSiteResponse(const GetSiteResponse& from) : GetSiteResponse(nullptr, from) {}
+  inline GetSiteResponse(GetSiteResponse&& from) noexcept : GetSiteResponse(nullptr, ::std::move(from)) {}
+  inline GetSiteResponse& operator=(const GetSiteResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetSiteResponse& operator=(GetSiteResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const GetSiteResponse& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetSiteResponse>(&GetSiteResponse_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 9;
+  friend void swap(GetSiteResponse& a, GetSiteResponse& b) { a.Swap(&b); }
+  inline void Swap(GetSiteResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetSiteResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] GetSiteResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<GetSiteResponse>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const GetSiteResponse& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const GetSiteResponse& from) { GetSiteResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetSiteResponse* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.site.GetSiteResponse"; }
+
+  explicit GetSiteResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  GetSiteResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetSiteResponse& from);
+  GetSiteResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetSiteResponse&& from) noexcept
+      : GetSiteResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRegistrationsFieldNumber = 5,
+    kStateFieldNumber = 1,
+    kCodeFieldNumber = 2,
+    kMessageFieldNumber = 3,
+    kSiteIdFieldNumber = 4,
+  };
+  // repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = {
+  [[nodiscard]] int registrations_size() const;
+  private:
+  int _internal_registrations_size() const;
+
+  public:
+  void clear_registrations() ;
+  [[nodiscard]] const ::fusion::ai::proto::site::SiteRegistration& registrations(int index) const;
+  [[nodiscard]] ::fusion::ai::proto::site::SiteRegistration* PROTOBUF_NONNULL mutable_registrations(int index);
+  ::fusion::ai::proto::site::SiteRegistration* PROTOBUF_NONNULL add_registrations();
+  [[nodiscard]] const ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::site::SiteRegistration>&
+  registrations() const;
+  [[nodiscard]] ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::site::SiteRegistration>* PROTOBUF_NONNULL
+  mutable_registrations();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::site::SiteRegistration>& _internal_registrations() const;
+  ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::site::SiteRegistration>* PROTOBUF_NONNULL _internal_mutable_registrations();
+
+  public:
+  // string state = 1 [json_name = "state", (.buf.validate.field) = {
+  void clear_state() ;
+  [[nodiscard]] const ::std::string& state() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_state(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_state();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_state();
+  void set_allocated_state(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_state() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_state(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_state();
+
+  public:
+  // string code = 2 [json_name = "code", (.buf.validate.field) = {
+  void clear_code() ;
+  [[nodiscard]] const ::std::string& code() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_code(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_code();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_code();
+  void set_allocated_code(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_code() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_code(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_code();
+
+  public:
+  // string message = 3 [json_name = "message", (.buf.validate.field) = {
+  void clear_message() ;
+  [[nodiscard]] const ::std::string& message() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_message(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_message();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_message();
+  void set_allocated_message(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_message() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_message(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_message();
+
+  public:
+  // string site_id = 4 [json_name = "site_id", (.buf.validate.field) = {
+  void clear_site_id() ;
+  [[nodiscard]] const ::std::string& site_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_site_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_site_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_site_id();
+  void set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_site_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_site_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_site_id();
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.site.GetSiteResponse)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<3, 5,
+                          1, 68,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const GetSiteResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField< ::fusion::ai::proto::site::SiteRegistration > registrations_;
+    ::google::protobuf::internal::ArenaStringPtr state_;
+    ::google::protobuf::internal::ArenaStringPtr code_;
+    ::google::protobuf::internal::ArenaStringPtr message_;
+    ::google::protobuf::internal::ArenaStringPtr site_id_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -5226,6 +5972,797 @@ inline void DeleteSiteResponse::_internal_set_changed(bool value) {
 
 // -------------------------------------------------------------------
 
+// SiteRegistration
+
+// string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+inline void SiteRegistration::clear_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline const ::std::string& SiteRegistration::registration_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.registration_id)
+  return _internal_registration_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SiteRegistration::set_registration_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  _impl_.registration_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.registration_id)
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::mutable_registration_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::std::string* _s = _internal_mutable_registration_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.SiteRegistration.registration_id)
+  return _s;
+}
+inline const ::std::string& SiteRegistration::_internal_registration_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.registration_id_.Get();
+}
+inline void SiteRegistration::_internal_set_registration_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::_internal_mutable_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.registration_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SiteRegistration::release_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.SiteRegistration.registration_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  auto* released = _impl_.registration_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SiteRegistration::set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+  _impl_.registration_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.registration_id_.IsDefault()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.SiteRegistration.registration_id)
+}
+
+// string service_type = 2 [json_name = "service_type", (.buf.validate.field) = {
+inline void SiteRegistration::clear_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.service_type_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+}
+inline const ::std::string& SiteRegistration::service_type() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.service_type)
+  return _internal_service_type();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SiteRegistration::set_service_type(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  _impl_.service_type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.service_type)
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::mutable_service_type()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ::std::string* _s = _internal_mutable_service_type();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.SiteRegistration.service_type)
+  return _s;
+}
+inline const ::std::string& SiteRegistration::_internal_service_type() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.service_type_.Get();
+}
+inline void SiteRegistration::_internal_set_service_type(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.service_type_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::_internal_mutable_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.service_type_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SiteRegistration::release_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.SiteRegistration.service_type)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000004U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  auto* released = _impl_.service_type_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.service_type_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SiteRegistration::set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  }
+  _impl_.service_type_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.service_type_.IsDefault()) {
+    _impl_.service_type_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.SiteRegistration.service_type)
+}
+
+// string site_id = 3 [json_name = "site_id", (.buf.validate.field) = {
+inline void SiteRegistration::clear_site_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+}
+inline const ::std::string& SiteRegistration::site_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.site_id)
+  return _internal_site_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SiteRegistration::set_site_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  _impl_.site_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.site_id)
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::mutable_site_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ::std::string* _s = _internal_mutable_site_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.SiteRegistration.site_id)
+  return _s;
+}
+inline const ::std::string& SiteRegistration::_internal_site_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.site_id_.Get();
+}
+inline void SiteRegistration::_internal_set_site_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::_internal_mutable_site_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.site_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SiteRegistration::release_site_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.SiteRegistration.site_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000008U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  auto* released = _impl_.site_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.site_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SiteRegistration::set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  }
+  _impl_.site_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.site_id_.IsDefault()) {
+    _impl_.site_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.SiteRegistration.site_id)
+}
+
+// string site_name = 4 [json_name = "site_name", (.buf.validate.field) = {
+inline void SiteRegistration::clear_site_name() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_name_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+}
+inline const ::std::string& SiteRegistration::site_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.site_name)
+  return _internal_site_name();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SiteRegistration::set_site_name(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  _impl_.site_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.site_name)
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::mutable_site_name()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  ::std::string* _s = _internal_mutable_site_name();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.SiteRegistration.site_name)
+  return _s;
+}
+inline const ::std::string& SiteRegistration::_internal_site_name() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.site_name_.Get();
+}
+inline void SiteRegistration::_internal_set_site_name(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_name_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::_internal_mutable_site_name() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.site_name_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SiteRegistration::release_site_name() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.SiteRegistration.site_name)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000010U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  auto* released = _impl_.site_name_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.site_name_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SiteRegistration::set_allocated_site_name(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  }
+  _impl_.site_name_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.site_name_.IsDefault()) {
+    _impl_.site_name_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.SiteRegistration.site_name)
+}
+
+// string timezone = 5 [json_name = "timezone", (.buf.validate.field) = {
+inline void SiteRegistration::clear_timezone() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.timezone_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+}
+inline const ::std::string& SiteRegistration::timezone() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.timezone)
+  return _internal_timezone();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SiteRegistration::set_timezone(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  _impl_.timezone_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.timezone)
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::mutable_timezone()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ::std::string* _s = _internal_mutable_timezone();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.SiteRegistration.timezone)
+  return _s;
+}
+inline const ::std::string& SiteRegistration::_internal_timezone() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.timezone_.Get();
+}
+inline void SiteRegistration::_internal_set_timezone(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.timezone_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::_internal_mutable_timezone() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.timezone_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SiteRegistration::release_timezone() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.SiteRegistration.timezone)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000020U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  auto* released = _impl_.timezone_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.timezone_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SiteRegistration::set_allocated_timezone(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  }
+  _impl_.timezone_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.timezone_.IsDefault()) {
+    _impl_.timezone_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.SiteRegistration.timezone)
+}
+
+// optional double longitude = 6 [json_name = "longitude", (.buf.validate.field) = {
+inline bool SiteRegistration::has_longitude() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000200U);
+  return value;
+}
+inline void SiteRegistration::clear_longitude() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.longitude_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
+}
+inline double SiteRegistration::longitude() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.longitude)
+  return _internal_longitude();
+}
+inline void SiteRegistration::set_longitude(double value) {
+  _internal_set_longitude(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000200U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.longitude)
+}
+inline double SiteRegistration::_internal_longitude() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.longitude_;
+}
+inline void SiteRegistration::_internal_set_longitude(double value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.longitude_ = value;
+}
+
+// optional double latitude = 7 [json_name = "latitude", (.buf.validate.field) = {
+inline bool SiteRegistration::has_latitude() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000400U);
+  return value;
+}
+inline void SiteRegistration::clear_latitude() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.latitude_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000400U);
+}
+inline double SiteRegistration::latitude() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.latitude)
+  return _internal_latitude();
+}
+inline void SiteRegistration::set_latitude(double value) {
+  _internal_set_latitude(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000400U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.latitude)
+}
+inline double SiteRegistration::_internal_latitude() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.latitude_;
+}
+inline void SiteRegistration::_internal_set_latitude(double value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.latitude_ = value;
+}
+
+// optional double tilt_deg = 8 [json_name = "tilt_deg", (.buf.validate.field) = {
+inline bool SiteRegistration::has_tilt_deg() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000800U);
+  return value;
+}
+inline void SiteRegistration::clear_tilt_deg() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.tilt_deg_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000800U);
+}
+inline double SiteRegistration::tilt_deg() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.tilt_deg)
+  return _internal_tilt_deg();
+}
+inline void SiteRegistration::set_tilt_deg(double value) {
+  _internal_set_tilt_deg(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000800U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.tilt_deg)
+}
+inline double SiteRegistration::_internal_tilt_deg() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.tilt_deg_;
+}
+inline void SiteRegistration::_internal_set_tilt_deg(double value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.tilt_deg_ = value;
+}
+
+// optional double azimuth_deg = 9 [json_name = "azimuth_deg", (.buf.validate.field) = {
+inline bool SiteRegistration::has_azimuth_deg() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00001000U);
+  return value;
+}
+inline void SiteRegistration::clear_azimuth_deg() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.azimuth_deg_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
+}
+inline double SiteRegistration::azimuth_deg() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.azimuth_deg)
+  return _internal_azimuth_deg();
+}
+inline void SiteRegistration::set_azimuth_deg(double value) {
+  _internal_set_azimuth_deg(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00001000U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.azimuth_deg)
+}
+inline double SiteRegistration::_internal_azimuth_deg() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.azimuth_deg_;
+}
+inline void SiteRegistration::_internal_set_azimuth_deg(double value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.azimuth_deg_ = value;
+}
+
+// optional double rated_p = 10 [json_name = "rated_p", (.buf.validate.field) = {
+inline bool SiteRegistration::has_rated_p() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00002000U);
+  return value;
+}
+inline void SiteRegistration::clear_rated_p() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.rated_p_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00002000U);
+}
+inline double SiteRegistration::rated_p() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.rated_p)
+  return _internal_rated_p();
+}
+inline void SiteRegistration::set_rated_p(double value) {
+  _internal_set_rated_p(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00002000U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.rated_p)
+}
+inline double SiteRegistration::_internal_rated_p() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.rated_p_;
+}
+inline void SiteRegistration::_internal_set_rated_p(double value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.rated_p_ = value;
+}
+
+// repeated int32 granularity = 11 [json_name = "granularity", (.buf.validate.field) = {
+inline int SiteRegistration::_internal_granularity_size() const {
+  return _internal_granularity().size();
+}
+inline int SiteRegistration::granularity_size() const {
+  return _internal_granularity_size();
+}
+inline void SiteRegistration::clear_granularity() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.granularity_.Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline ::int32_t SiteRegistration::granularity(int index) const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.granularity)
+  return _internal_granularity().Get(index);
+}
+inline void SiteRegistration::set_granularity(int index, ::int32_t value) {
+  _internal_mutable_granularity()->Set(index, value);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.granularity)
+}
+inline void SiteRegistration::add_granularity(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _internal_mutable_granularity()
+      ->InternalAddWithArena<const ::google::protobuf::MessageLite*>(
+          internal_visibility(), this, value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  // @@protoc_insertion_point(field_add:fusion.ai.proto.site.SiteRegistration.granularity)
+}
+inline const ::google::protobuf::RepeatedField<::int32_t>& SiteRegistration::granularity() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:fusion.ai.proto.site.SiteRegistration.granularity)
+  return _internal_granularity();
+}
+inline ::google::protobuf::RepeatedField<::int32_t>* PROTOBUF_NONNULL SiteRegistration::mutable_granularity()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  // @@protoc_insertion_point(field_mutable_list:fusion.ai.proto.site.SiteRegistration.granularity)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_granularity();
+}
+inline const ::google::protobuf::RepeatedField<::int32_t>&
+SiteRegistration::_internal_granularity() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.granularity_;
+}
+inline ::google::protobuf::RepeatedField<::int32_t>* PROTOBUF_NONNULL
+SiteRegistration::_internal_mutable_granularity() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.granularity_;
+}
+
+// optional int32 data_source = 12 [json_name = "data_source", (.buf.validate.field) = {
+inline bool SiteRegistration::has_data_source() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00004000U);
+  return value;
+}
+inline void SiteRegistration::clear_data_source() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.data_source_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00004000U);
+}
+inline ::int32_t SiteRegistration::data_source() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.data_source)
+  return _internal_data_source();
+}
+inline void SiteRegistration::set_data_source(::int32_t value) {
+  _internal_set_data_source(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00004000U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.data_source)
+}
+inline ::int32_t SiteRegistration::_internal_data_source() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.data_source_;
+}
+inline void SiteRegistration::_internal_set_data_source(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.data_source_ = value;
+}
+
+// string source_attr = 13 [json_name = "source_attr", (.buf.validate.field) = {
+inline void SiteRegistration::clear_source_attr() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.source_attr_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+}
+inline const ::std::string& SiteRegistration::source_attr() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.source_attr)
+  return _internal_source_attr();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SiteRegistration::set_source_attr(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  _impl_.source_attr_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.source_attr)
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::mutable_source_attr()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ::std::string* _s = _internal_mutable_source_attr();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.SiteRegistration.source_attr)
+  return _s;
+}
+inline const ::std::string& SiteRegistration::_internal_source_attr() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.source_attr_.Get();
+}
+inline void SiteRegistration::_internal_set_source_attr(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.source_attr_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::_internal_mutable_source_attr() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.source_attr_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SiteRegistration::release_source_attr() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.SiteRegistration.source_attr)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000040U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  auto* released = _impl_.source_attr_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.source_attr_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SiteRegistration::set_allocated_source_attr(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  }
+  _impl_.source_attr_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.source_attr_.IsDefault()) {
+    _impl_.source_attr_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.SiteRegistration.source_attr)
+}
+
+// optional int32 operation = 14 [json_name = "operation", (.buf.validate.field) = {
+inline bool SiteRegistration::has_operation() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00008000U);
+  return value;
+}
+inline void SiteRegistration::clear_operation() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.operation_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00008000U);
+}
+inline ::int32_t SiteRegistration::operation() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.operation)
+  return _internal_operation();
+}
+inline void SiteRegistration::set_operation(::int32_t value) {
+  _internal_set_operation(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00008000U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.operation)
+}
+inline ::int32_t SiteRegistration::_internal_operation() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.operation_;
+}
+inline void SiteRegistration::_internal_set_operation(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.operation_ = value;
+}
+
+// optional int32 hisdays = 15 [json_name = "hisdays", (.buf.validate.field) = {
+inline bool SiteRegistration::has_hisdays() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00010000U);
+  return value;
+}
+inline void SiteRegistration::clear_hisdays() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.hisdays_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00010000U);
+}
+inline ::int32_t SiteRegistration::hisdays() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.hisdays)
+  return _internal_hisdays();
+}
+inline void SiteRegistration::set_hisdays(::int32_t value) {
+  _internal_set_hisdays(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00010000U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.hisdays)
+}
+inline ::int32_t SiteRegistration::_internal_hisdays() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.hisdays_;
+}
+inline void SiteRegistration::_internal_set_hisdays(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.hisdays_ = value;
+}
+
+// string created_at = 16 [json_name = "created_at", (.buf.validate.field) = {
+inline void SiteRegistration::clear_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.created_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+}
+inline const ::std::string& SiteRegistration::created_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.created_at)
+  return _internal_created_at();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SiteRegistration::set_created_at(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  _impl_.created_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.created_at)
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::mutable_created_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  ::std::string* _s = _internal_mutable_created_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.SiteRegistration.created_at)
+  return _s;
+}
+inline const ::std::string& SiteRegistration::_internal_created_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.created_at_.Get();
+}
+inline void SiteRegistration::_internal_set_created_at(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.created_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::_internal_mutable_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.created_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SiteRegistration::release_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.SiteRegistration.created_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000080U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  auto* released = _impl_.created_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.created_at_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SiteRegistration::set_allocated_created_at(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  }
+  _impl_.created_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.created_at_.IsDefault()) {
+    _impl_.created_at_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.SiteRegistration.created_at)
+}
+
+// string updated_at = 17 [json_name = "updated_at", (.buf.validate.field) = {
+inline void SiteRegistration::clear_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.updated_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
+}
+inline const ::std::string& SiteRegistration::updated_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.SiteRegistration.updated_at)
+  return _internal_updated_at();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SiteRegistration::set_updated_at(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
+  _impl_.updated_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.SiteRegistration.updated_at)
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::mutable_updated_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
+  ::std::string* _s = _internal_mutable_updated_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.SiteRegistration.updated_at)
+  return _s;
+}
+inline const ::std::string& SiteRegistration::_internal_updated_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.updated_at_.Get();
+}
+inline void SiteRegistration::_internal_set_updated_at(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.updated_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SiteRegistration::_internal_mutable_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.updated_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SiteRegistration::release_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.SiteRegistration.updated_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000100U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
+  auto* released = _impl_.updated_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.updated_at_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SiteRegistration::set_allocated_updated_at(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000100U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
+  }
+  _impl_.updated_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.updated_at_.IsDefault()) {
+    _impl_.updated_at_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.SiteRegistration.updated_at)
+}
+
+// -------------------------------------------------------------------
+
 // GetSiteRequest
 
 // string site_id = 1 [json_name = "site_id", (.buf.validate.field) = {
@@ -5556,139 +7093,11 @@ inline void GetSiteResponse::set_allocated_message(::std::string* PROTOBUF_NULLA
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.message)
 }
 
-// string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
-inline void GetSiteResponse::clear_registration_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.registration_id_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-}
-inline const ::std::string& GetSiteResponse::registration_id() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.registration_id)
-  return _internal_registration_id();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void GetSiteResponse::set_registration_id(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  _impl_.registration_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.registration_id)
-}
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::mutable_registration_id()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  ::std::string* _s = _internal_mutable_registration_id();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteResponse.registration_id)
-  return _s;
-}
-inline const ::std::string& GetSiteResponse::_internal_registration_id() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.registration_id_.Get();
-}
-inline void GetSiteResponse::_internal_set_registration_id(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.registration_id_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::_internal_mutable_registration_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.registration_id_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_registration_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteResponse.registration_id)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000010U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  auto* released = _impl_.registration_id_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.registration_id_.Set("", GetArena());
-  }
-  return released;
-}
-inline void GetSiteResponse::set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  }
-  _impl_.registration_id_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.registration_id_.IsDefault()) {
-    _impl_.registration_id_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.registration_id)
-}
-
-// string service_type = 5 [json_name = "service_type", (.buf.validate.field) = {
-inline void GetSiteResponse::clear_service_type() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.service_type_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
-}
-inline const ::std::string& GetSiteResponse::service_type() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.service_type)
-  return _internal_service_type();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void GetSiteResponse::set_service_type(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
-  _impl_.service_type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.service_type)
-}
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::mutable_service_type()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
-  ::std::string* _s = _internal_mutable_service_type();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteResponse.service_type)
-  return _s;
-}
-inline const ::std::string& GetSiteResponse::_internal_service_type() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.service_type_.Get();
-}
-inline void GetSiteResponse::_internal_set_service_type(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.service_type_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::_internal_mutable_service_type() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.service_type_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_service_type() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteResponse.service_type)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000020U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
-  auto* released = _impl_.service_type_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.service_type_.Set("", GetArena());
-  }
-  return released;
-}
-inline void GetSiteResponse::set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000020U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
-  }
-  _impl_.service_type_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.service_type_.IsDefault()) {
-    _impl_.service_type_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.service_type)
-}
-
-// string site_id = 6 [json_name = "site_id", (.buf.validate.field) = {
+// string site_id = 4 [json_name = "site_id", (.buf.validate.field) = {
 inline void GetSiteResponse::clear_site_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.site_id_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
 }
 inline const ::std::string& GetSiteResponse::site_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -5698,13 +7107,13 @@ inline const ::std::string& GetSiteResponse::site_id() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void GetSiteResponse::set_site_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
   _impl_.site_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.site_id)
 }
 inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::mutable_site_id()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
   ::std::string* _s = _internal_mutable_site_id();
   // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteResponse.site_id)
   return _s;
@@ -5724,6 +7133,449 @@ inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::_internal_mutable_site_i
 inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_site_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteResponse.site_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000010U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  auto* released = _impl_.site_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.site_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetSiteResponse::set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  }
+  _impl_.site_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.site_id_.IsDefault()) {
+    _impl_.site_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.site_id)
+}
+
+// repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = {
+inline int GetSiteResponse::_internal_registrations_size() const {
+  return _internal_registrations().size();
+}
+inline int GetSiteResponse::registrations_size() const {
+  return _internal_registrations_size();
+}
+inline void GetSiteResponse::clear_registrations() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registrations_.Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::fusion::ai::proto::site::SiteRegistration& GetSiteResponse::registrations(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.registrations)
+  return _internal_registrations().Get(index);
+}
+inline ::fusion::ai::proto::site::SiteRegistration* PROTOBUF_NONNULL GetSiteResponse::mutable_registrations(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteResponse.registrations)
+  return _internal_mutable_registrations()->Mutable(index);
+}
+inline ::fusion::ai::proto::site::SiteRegistration* PROTOBUF_NONNULL GetSiteResponse::add_registrations()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::fusion::ai::proto::site::SiteRegistration* _add =
+      _internal_mutable_registrations()->InternalAddWithArena(
+          ::google::protobuf::MessageLite::internal_visibility(), GetArena());
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  // @@protoc_insertion_point(field_add:fusion.ai.proto.site.GetSiteResponse.registrations)
+  return _add;
+}
+inline const ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::site::SiteRegistration>& GetSiteResponse::registrations() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:fusion.ai.proto.site.GetSiteResponse.registrations)
+  return _internal_registrations();
+}
+inline ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::site::SiteRegistration>* PROTOBUF_NONNULL
+GetSiteResponse::mutable_registrations() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  // @@protoc_insertion_point(field_mutable_list:fusion.ai.proto.site.GetSiteResponse.registrations)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_registrations();
+}
+inline const ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::site::SiteRegistration>&
+GetSiteResponse::_internal_registrations() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.registrations_;
+}
+inline ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::site::SiteRegistration>* PROTOBUF_NONNULL
+GetSiteResponse::_internal_mutable_registrations() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.registrations_;
+}
+
+// -------------------------------------------------------------------
+
+// GetSiteByRegResponse
+
+// string state = 1 [json_name = "state", (.buf.validate.field) = {
+inline void GetSiteByRegResponse::clear_state() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.state_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline const ::std::string& GetSiteByRegResponse::state() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.state)
+  return _internal_state();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_state(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  _impl_.state_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.state)
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_state()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::std::string* _s = _internal_mutable_state();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.state)
+  return _s;
+}
+inline const ::std::string& GetSiteByRegResponse::_internal_state() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.state_.Get();
+}
+inline void GetSiteByRegResponse::_internal_set_state(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.state_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_state() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.state_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_state() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.state)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  auto* released = _impl_.state_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.state_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetSiteByRegResponse::set_allocated_state(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+  _impl_.state_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.state_.IsDefault()) {
+    _impl_.state_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.state)
+}
+
+// string code = 2 [json_name = "code", (.buf.validate.field) = {
+inline void GetSiteByRegResponse::clear_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.code_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+}
+inline const ::std::string& GetSiteByRegResponse::code() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.code)
+  return _internal_code();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_code(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  _impl_.code_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.code)
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_code()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ::std::string* _s = _internal_mutable_code();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.code)
+  return _s;
+}
+inline const ::std::string& GetSiteByRegResponse::_internal_code() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.code_.Get();
+}
+inline void GetSiteByRegResponse::_internal_set_code(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.code_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.code_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.code)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000004U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  auto* released = _impl_.code_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.code_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetSiteByRegResponse::set_allocated_code(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  }
+  _impl_.code_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.code_.IsDefault()) {
+    _impl_.code_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.code)
+}
+
+// string message = 3 [json_name = "message", (.buf.validate.field) = {
+inline void GetSiteByRegResponse::clear_message() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.message_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+}
+inline const ::std::string& GetSiteByRegResponse::message() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.message)
+  return _internal_message();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_message(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  _impl_.message_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.message)
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_message()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ::std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.message)
+  return _s;
+}
+inline const ::std::string& GetSiteByRegResponse::_internal_message() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.message_.Get();
+}
+inline void GetSiteByRegResponse::_internal_set_message(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.message_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_message() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.message_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_message() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.message)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000008U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  auto* released = _impl_.message_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.message_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetSiteByRegResponse::set_allocated_message(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  }
+  _impl_.message_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.message_.IsDefault()) {
+    _impl_.message_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.message)
+}
+
+// string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {
+inline void GetSiteByRegResponse::clear_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+}
+inline const ::std::string& GetSiteByRegResponse::registration_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.registration_id)
+  return _internal_registration_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_registration_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  _impl_.registration_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.registration_id)
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_registration_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  ::std::string* _s = _internal_mutable_registration_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.registration_id)
+  return _s;
+}
+inline const ::std::string& GetSiteByRegResponse::_internal_registration_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.registration_id_.Get();
+}
+inline void GetSiteByRegResponse::_internal_set_registration_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.registration_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.registration_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000010U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  auto* released = _impl_.registration_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetSiteByRegResponse::set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  }
+  _impl_.registration_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.registration_id_.IsDefault()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.registration_id)
+}
+
+// string service_type = 5 [json_name = "service_type", (.buf.validate.field) = {
+inline void GetSiteByRegResponse::clear_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.service_type_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+}
+inline const ::std::string& GetSiteByRegResponse::service_type() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.service_type)
+  return _internal_service_type();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_service_type(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  _impl_.service_type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.service_type)
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_service_type()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ::std::string* _s = _internal_mutable_service_type();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.service_type)
+  return _s;
+}
+inline const ::std::string& GetSiteByRegResponse::_internal_service_type() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.service_type_.Get();
+}
+inline void GetSiteByRegResponse::_internal_set_service_type(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.service_type_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.service_type_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.service_type)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000020U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  auto* released = _impl_.service_type_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.service_type_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetSiteByRegResponse::set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  }
+  _impl_.service_type_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.service_type_.IsDefault()) {
+    _impl_.service_type_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.service_type)
+}
+
+// string site_id = 6 [json_name = "site_id", (.buf.validate.field) = {
+inline void GetSiteByRegResponse::clear_site_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+}
+inline const ::std::string& GetSiteByRegResponse::site_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.site_id)
+  return _internal_site_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_site_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  _impl_.site_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.site_id)
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_site_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ::std::string* _s = _internal_mutable_site_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.site_id)
+  return _s;
+}
+inline const ::std::string& GetSiteByRegResponse::_internal_site_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.site_id_.Get();
+}
+inline void GetSiteByRegResponse::_internal_set_site_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_site_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.site_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_site_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.site_id)
   if (!CheckHasBit(_impl_._has_bits_[0], 0x00000040U)) {
     return nullptr;
   }
@@ -5734,7 +7586,7 @@ inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_site_id() {
   }
   return released;
 }
-inline void GetSiteResponse::set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value) {
+inline void GetSiteByRegResponse::set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     SetHasBit(_impl_._has_bits_[0], 0x00000040U);
@@ -5745,49 +7597,49 @@ inline void GetSiteResponse::set_allocated_site_id(::std::string* PROTOBUF_NULLA
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.site_id_.IsDefault()) {
     _impl_.site_id_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.site_id)
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.site_id)
 }
 
 // string site_name = 7 [json_name = "site_name", (.buf.validate.field) = {
-inline void GetSiteResponse::clear_site_name() {
+inline void GetSiteByRegResponse::clear_site_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.site_name_.ClearToEmpty();
   ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
 }
-inline const ::std::string& GetSiteResponse::site_name() const
+inline const ::std::string& GetSiteByRegResponse::site_name() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.site_name)
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.site_name)
   return _internal_site_name();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void GetSiteResponse::set_site_name(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_site_name(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   SetHasBit(_impl_._has_bits_[0], 0x00000080U);
   _impl_.site_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.site_name)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.site_name)
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::mutable_site_name()
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_site_name()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   SetHasBit(_impl_._has_bits_[0], 0x00000080U);
   ::std::string* _s = _internal_mutable_site_name();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteResponse.site_name)
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.site_name)
   return _s;
 }
-inline const ::std::string& GetSiteResponse::_internal_site_name() const {
+inline const ::std::string& GetSiteByRegResponse::_internal_site_name() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.site_name_.Get();
 }
-inline void GetSiteResponse::_internal_set_site_name(const ::std::string& value) {
+inline void GetSiteByRegResponse::_internal_set_site_name(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.site_name_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::_internal_mutable_site_name() {
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_site_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.site_name_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_site_name() {
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_site_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteResponse.site_name)
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.site_name)
   if (!CheckHasBit(_impl_._has_bits_[0], 0x00000080U)) {
     return nullptr;
   }
@@ -5798,7 +7650,7 @@ inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_site_name() {
   }
   return released;
 }
-inline void GetSiteResponse::set_allocated_site_name(::std::string* PROTOBUF_NULLABLE value) {
+inline void GetSiteByRegResponse::set_allocated_site_name(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     SetHasBit(_impl_._has_bits_[0], 0x00000080U);
@@ -5809,49 +7661,49 @@ inline void GetSiteResponse::set_allocated_site_name(::std::string* PROTOBUF_NUL
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.site_name_.IsDefault()) {
     _impl_.site_name_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.site_name)
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.site_name)
 }
 
 // string timezone = 8 [json_name = "timezone", (.buf.validate.field) = {
-inline void GetSiteResponse::clear_timezone() {
+inline void GetSiteByRegResponse::clear_timezone() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.timezone_.ClearToEmpty();
   ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
 }
-inline const ::std::string& GetSiteResponse::timezone() const
+inline const ::std::string& GetSiteByRegResponse::timezone() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.timezone)
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.timezone)
   return _internal_timezone();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void GetSiteResponse::set_timezone(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_timezone(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   _impl_.timezone_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.timezone)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.timezone)
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::mutable_timezone()
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_timezone()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   ::std::string* _s = _internal_mutable_timezone();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteResponse.timezone)
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.timezone)
   return _s;
 }
-inline const ::std::string& GetSiteResponse::_internal_timezone() const {
+inline const ::std::string& GetSiteByRegResponse::_internal_timezone() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.timezone_.Get();
 }
-inline void GetSiteResponse::_internal_set_timezone(const ::std::string& value) {
+inline void GetSiteByRegResponse::_internal_set_timezone(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.timezone_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::_internal_mutable_timezone() {
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_timezone() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.timezone_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_timezone() {
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_timezone() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteResponse.timezone)
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.timezone)
   if (!CheckHasBit(_impl_._has_bits_[0], 0x00000100U)) {
     return nullptr;
   }
@@ -5862,7 +7714,7 @@ inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_timezone() {
   }
   return released;
 }
-inline void GetSiteResponse::set_allocated_timezone(::std::string* PROTOBUF_NULLABLE value) {
+inline void GetSiteByRegResponse::set_allocated_timezone(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     SetHasBit(_impl_._has_bits_[0], 0x00000100U);
@@ -5873,264 +7725,264 @@ inline void GetSiteResponse::set_allocated_timezone(::std::string* PROTOBUF_NULL
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.timezone_.IsDefault()) {
     _impl_.timezone_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.timezone)
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.timezone)
 }
 
 // optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {
-inline bool GetSiteResponse::has_longitude() const {
+inline bool GetSiteByRegResponse::has_longitude() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00001000U);
   return value;
 }
-inline void GetSiteResponse::clear_longitude() {
+inline void GetSiteByRegResponse::clear_longitude() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.longitude_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
 }
-inline double GetSiteResponse::longitude() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.longitude)
+inline double GetSiteByRegResponse::longitude() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.longitude)
   return _internal_longitude();
 }
-inline void GetSiteResponse::set_longitude(double value) {
+inline void GetSiteByRegResponse::set_longitude(double value) {
   _internal_set_longitude(value);
   SetHasBit(_impl_._has_bits_[0], 0x00001000U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.longitude)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.longitude)
 }
-inline double GetSiteResponse::_internal_longitude() const {
+inline double GetSiteByRegResponse::_internal_longitude() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.longitude_;
 }
-inline void GetSiteResponse::_internal_set_longitude(double value) {
+inline void GetSiteByRegResponse::_internal_set_longitude(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.longitude_ = value;
 }
 
 // optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {
-inline bool GetSiteResponse::has_latitude() const {
+inline bool GetSiteByRegResponse::has_latitude() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00002000U);
   return value;
 }
-inline void GetSiteResponse::clear_latitude() {
+inline void GetSiteByRegResponse::clear_latitude() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.latitude_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00002000U);
 }
-inline double GetSiteResponse::latitude() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.latitude)
+inline double GetSiteByRegResponse::latitude() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.latitude)
   return _internal_latitude();
 }
-inline void GetSiteResponse::set_latitude(double value) {
+inline void GetSiteByRegResponse::set_latitude(double value) {
   _internal_set_latitude(value);
   SetHasBit(_impl_._has_bits_[0], 0x00002000U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.latitude)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.latitude)
 }
-inline double GetSiteResponse::_internal_latitude() const {
+inline double GetSiteByRegResponse::_internal_latitude() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.latitude_;
 }
-inline void GetSiteResponse::_internal_set_latitude(double value) {
+inline void GetSiteByRegResponse::_internal_set_latitude(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.latitude_ = value;
 }
 
 // optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {
-inline bool GetSiteResponse::has_tilt_deg() const {
+inline bool GetSiteByRegResponse::has_tilt_deg() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00004000U);
   return value;
 }
-inline void GetSiteResponse::clear_tilt_deg() {
+inline void GetSiteByRegResponse::clear_tilt_deg() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tilt_deg_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00004000U);
 }
-inline double GetSiteResponse::tilt_deg() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.tilt_deg)
+inline double GetSiteByRegResponse::tilt_deg() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.tilt_deg)
   return _internal_tilt_deg();
 }
-inline void GetSiteResponse::set_tilt_deg(double value) {
+inline void GetSiteByRegResponse::set_tilt_deg(double value) {
   _internal_set_tilt_deg(value);
   SetHasBit(_impl_._has_bits_[0], 0x00004000U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.tilt_deg)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.tilt_deg)
 }
-inline double GetSiteResponse::_internal_tilt_deg() const {
+inline double GetSiteByRegResponse::_internal_tilt_deg() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.tilt_deg_;
 }
-inline void GetSiteResponse::_internal_set_tilt_deg(double value) {
+inline void GetSiteByRegResponse::_internal_set_tilt_deg(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tilt_deg_ = value;
 }
 
 // optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {
-inline bool GetSiteResponse::has_azimuth_deg() const {
+inline bool GetSiteByRegResponse::has_azimuth_deg() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00008000U);
   return value;
 }
-inline void GetSiteResponse::clear_azimuth_deg() {
+inline void GetSiteByRegResponse::clear_azimuth_deg() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.azimuth_deg_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00008000U);
 }
-inline double GetSiteResponse::azimuth_deg() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.azimuth_deg)
+inline double GetSiteByRegResponse::azimuth_deg() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.azimuth_deg)
   return _internal_azimuth_deg();
 }
-inline void GetSiteResponse::set_azimuth_deg(double value) {
+inline void GetSiteByRegResponse::set_azimuth_deg(double value) {
   _internal_set_azimuth_deg(value);
   SetHasBit(_impl_._has_bits_[0], 0x00008000U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.azimuth_deg)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.azimuth_deg)
 }
-inline double GetSiteResponse::_internal_azimuth_deg() const {
+inline double GetSiteByRegResponse::_internal_azimuth_deg() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.azimuth_deg_;
 }
-inline void GetSiteResponse::_internal_set_azimuth_deg(double value) {
+inline void GetSiteByRegResponse::_internal_set_azimuth_deg(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.azimuth_deg_ = value;
 }
 
 // optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {
-inline bool GetSiteResponse::has_rated_p() const {
+inline bool GetSiteByRegResponse::has_rated_p() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00010000U);
   return value;
 }
-inline void GetSiteResponse::clear_rated_p() {
+inline void GetSiteByRegResponse::clear_rated_p() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rated_p_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00010000U);
 }
-inline double GetSiteResponse::rated_p() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.rated_p)
+inline double GetSiteByRegResponse::rated_p() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.rated_p)
   return _internal_rated_p();
 }
-inline void GetSiteResponse::set_rated_p(double value) {
+inline void GetSiteByRegResponse::set_rated_p(double value) {
   _internal_set_rated_p(value);
   SetHasBit(_impl_._has_bits_[0], 0x00010000U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.rated_p)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.rated_p)
 }
-inline double GetSiteResponse::_internal_rated_p() const {
+inline double GetSiteByRegResponse::_internal_rated_p() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.rated_p_;
 }
-inline void GetSiteResponse::_internal_set_rated_p(double value) {
+inline void GetSiteByRegResponse::_internal_set_rated_p(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rated_p_ = value;
 }
 
 // repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {
-inline int GetSiteResponse::_internal_granularity_size() const {
+inline int GetSiteByRegResponse::_internal_granularity_size() const {
   return _internal_granularity().size();
 }
-inline int GetSiteResponse::granularity_size() const {
+inline int GetSiteByRegResponse::granularity_size() const {
   return _internal_granularity_size();
 }
-inline void GetSiteResponse::clear_granularity() {
+inline void GetSiteByRegResponse::clear_granularity() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.granularity_.Clear();
   ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
 }
-inline ::int32_t GetSiteResponse::granularity(int index) const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.granularity)
+inline ::int32_t GetSiteByRegResponse::granularity(int index) const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.granularity)
   return _internal_granularity().Get(index);
 }
-inline void GetSiteResponse::set_granularity(int index, ::int32_t value) {
+inline void GetSiteByRegResponse::set_granularity(int index, ::int32_t value) {
   _internal_mutable_granularity()->Set(index, value);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.granularity)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.granularity)
 }
-inline void GetSiteResponse::add_granularity(::int32_t value) {
+inline void GetSiteByRegResponse::add_granularity(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _internal_mutable_granularity()
       ->InternalAddWithArena<const ::google::protobuf::MessageLite*>(
           internal_visibility(), this, value);
   SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  // @@protoc_insertion_point(field_add:fusion.ai.proto.site.GetSiteResponse.granularity)
+  // @@protoc_insertion_point(field_add:fusion.ai.proto.site.GetSiteByRegResponse.granularity)
 }
-inline const ::google::protobuf::RepeatedField<::int32_t>& GetSiteResponse::granularity() const
+inline const ::google::protobuf::RepeatedField<::int32_t>& GetSiteByRegResponse::granularity() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_list:fusion.ai.proto.site.GetSiteResponse.granularity)
+  // @@protoc_insertion_point(field_list:fusion.ai.proto.site.GetSiteByRegResponse.granularity)
   return _internal_granularity();
 }
-inline ::google::protobuf::RepeatedField<::int32_t>* PROTOBUF_NONNULL GetSiteResponse::mutable_granularity()
+inline ::google::protobuf::RepeatedField<::int32_t>* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_granularity()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  // @@protoc_insertion_point(field_mutable_list:fusion.ai.proto.site.GetSiteResponse.granularity)
+  // @@protoc_insertion_point(field_mutable_list:fusion.ai.proto.site.GetSiteByRegResponse.granularity)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _internal_mutable_granularity();
 }
 inline const ::google::protobuf::RepeatedField<::int32_t>&
-GetSiteResponse::_internal_granularity() const {
+GetSiteByRegResponse::_internal_granularity() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.granularity_;
 }
 inline ::google::protobuf::RepeatedField<::int32_t>* PROTOBUF_NONNULL
-GetSiteResponse::_internal_mutable_granularity() {
+GetSiteByRegResponse::_internal_mutable_granularity() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.granularity_;
 }
 
 // int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {
-inline void GetSiteResponse::clear_data_source() {
+inline void GetSiteByRegResponse::clear_data_source() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.data_source_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00020000U);
 }
-inline ::int32_t GetSiteResponse::data_source() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.data_source)
+inline ::int32_t GetSiteByRegResponse::data_source() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.data_source)
   return _internal_data_source();
 }
-inline void GetSiteResponse::set_data_source(::int32_t value) {
+inline void GetSiteByRegResponse::set_data_source(::int32_t value) {
   _internal_set_data_source(value);
   SetHasBit(_impl_._has_bits_[0], 0x00020000U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.data_source)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.data_source)
 }
-inline ::int32_t GetSiteResponse::_internal_data_source() const {
+inline ::int32_t GetSiteByRegResponse::_internal_data_source() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.data_source_;
 }
-inline void GetSiteResponse::_internal_set_data_source(::int32_t value) {
+inline void GetSiteByRegResponse::_internal_set_data_source(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.data_source_ = value;
 }
 
 // string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = {
-inline void GetSiteResponse::clear_source_attr() {
+inline void GetSiteByRegResponse::clear_source_attr() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.source_attr_.ClearToEmpty();
   ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
 }
-inline const ::std::string& GetSiteResponse::source_attr() const
+inline const ::std::string& GetSiteByRegResponse::source_attr() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.source_attr)
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.source_attr)
   return _internal_source_attr();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void GetSiteResponse::set_source_attr(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_source_attr(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   SetHasBit(_impl_._has_bits_[0], 0x00000200U);
   _impl_.source_attr_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.source_attr)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.source_attr)
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::mutable_source_attr()
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_source_attr()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   SetHasBit(_impl_._has_bits_[0], 0x00000200U);
   ::std::string* _s = _internal_mutable_source_attr();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteResponse.source_attr)
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.source_attr)
   return _s;
 }
-inline const ::std::string& GetSiteResponse::_internal_source_attr() const {
+inline const ::std::string& GetSiteByRegResponse::_internal_source_attr() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.source_attr_.Get();
 }
-inline void GetSiteResponse::_internal_set_source_attr(const ::std::string& value) {
+inline void GetSiteByRegResponse::_internal_set_source_attr(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.source_attr_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::_internal_mutable_source_attr() {
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_source_attr() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.source_attr_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_source_attr() {
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_source_attr() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteResponse.source_attr)
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.source_attr)
   if (!CheckHasBit(_impl_._has_bits_[0], 0x00000200U)) {
     return nullptr;
   }
@@ -6141,7 +7993,7 @@ inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_source_attr() {
   }
   return released;
 }
-inline void GetSiteResponse::set_allocated_source_attr(::std::string* PROTOBUF_NULLABLE value) {
+inline void GetSiteByRegResponse::set_allocated_source_attr(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     SetHasBit(_impl_._has_bits_[0], 0x00000200U);
@@ -6152,105 +8004,105 @@ inline void GetSiteResponse::set_allocated_source_attr(::std::string* PROTOBUF_N
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.source_attr_.IsDefault()) {
     _impl_.source_attr_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.source_attr)
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.source_attr)
 }
 
 // optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = {
-inline bool GetSiteResponse::has_operation() const {
+inline bool GetSiteByRegResponse::has_operation() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00040000U);
   return value;
 }
-inline void GetSiteResponse::clear_operation() {
+inline void GetSiteByRegResponse::clear_operation() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.operation_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00040000U);
 }
-inline ::int32_t GetSiteResponse::operation() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.operation)
+inline ::int32_t GetSiteByRegResponse::operation() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.operation)
   return _internal_operation();
 }
-inline void GetSiteResponse::set_operation(::int32_t value) {
+inline void GetSiteByRegResponse::set_operation(::int32_t value) {
   _internal_set_operation(value);
   SetHasBit(_impl_._has_bits_[0], 0x00040000U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.operation)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.operation)
 }
-inline ::int32_t GetSiteResponse::_internal_operation() const {
+inline ::int32_t GetSiteByRegResponse::_internal_operation() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.operation_;
 }
-inline void GetSiteResponse::_internal_set_operation(::int32_t value) {
+inline void GetSiteByRegResponse::_internal_set_operation(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.operation_ = value;
 }
 
 // optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = {
-inline bool GetSiteResponse::has_hisdays() const {
+inline bool GetSiteByRegResponse::has_hisdays() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00080000U);
   return value;
 }
-inline void GetSiteResponse::clear_hisdays() {
+inline void GetSiteByRegResponse::clear_hisdays() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.hisdays_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00080000U);
 }
-inline ::int32_t GetSiteResponse::hisdays() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.hisdays)
+inline ::int32_t GetSiteByRegResponse::hisdays() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.hisdays)
   return _internal_hisdays();
 }
-inline void GetSiteResponse::set_hisdays(::int32_t value) {
+inline void GetSiteByRegResponse::set_hisdays(::int32_t value) {
   _internal_set_hisdays(value);
   SetHasBit(_impl_._has_bits_[0], 0x00080000U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.hisdays)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.hisdays)
 }
-inline ::int32_t GetSiteResponse::_internal_hisdays() const {
+inline ::int32_t GetSiteByRegResponse::_internal_hisdays() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.hisdays_;
 }
-inline void GetSiteResponse::_internal_set_hisdays(::int32_t value) {
+inline void GetSiteByRegResponse::_internal_set_hisdays(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.hisdays_ = value;
 }
 
 // string created_at = 19 [json_name = "created_at", (.buf.validate.field) = {
-inline void GetSiteResponse::clear_created_at() {
+inline void GetSiteByRegResponse::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_.ClearToEmpty();
   ClearHasBit(_impl_._has_bits_[0], 0x00000400U);
 }
-inline const ::std::string& GetSiteResponse::created_at() const
+inline const ::std::string& GetSiteByRegResponse::created_at() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.created_at)
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.created_at)
   return _internal_created_at();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void GetSiteResponse::set_created_at(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_created_at(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   SetHasBit(_impl_._has_bits_[0], 0x00000400U);
   _impl_.created_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.created_at)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.created_at)
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::mutable_created_at()
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_created_at()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   SetHasBit(_impl_._has_bits_[0], 0x00000400U);
   ::std::string* _s = _internal_mutable_created_at();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteResponse.created_at)
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.created_at)
   return _s;
 }
-inline const ::std::string& GetSiteResponse::_internal_created_at() const {
+inline const ::std::string& GetSiteByRegResponse::_internal_created_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.created_at_.Get();
 }
-inline void GetSiteResponse::_internal_set_created_at(const ::std::string& value) {
+inline void GetSiteByRegResponse::_internal_set_created_at(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::_internal_mutable_created_at() {
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.created_at_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_created_at() {
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteResponse.created_at)
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.created_at)
   if (!CheckHasBit(_impl_._has_bits_[0], 0x00000400U)) {
     return nullptr;
   }
@@ -6261,7 +8113,7 @@ inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_created_at() {
   }
   return released;
 }
-inline void GetSiteResponse::set_allocated_created_at(::std::string* PROTOBUF_NULLABLE value) {
+inline void GetSiteByRegResponse::set_allocated_created_at(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     SetHasBit(_impl_._has_bits_[0], 0x00000400U);
@@ -6272,49 +8124,49 @@ inline void GetSiteResponse::set_allocated_created_at(::std::string* PROTOBUF_NU
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.created_at_.IsDefault()) {
     _impl_.created_at_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.created_at)
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.created_at)
 }
 
 // string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = {
-inline void GetSiteResponse::clear_updated_at() {
+inline void GetSiteByRegResponse::clear_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_.ClearToEmpty();
   ClearHasBit(_impl_._has_bits_[0], 0x00000800U);
 }
-inline const ::std::string& GetSiteResponse::updated_at() const
+inline const ::std::string& GetSiteByRegResponse::updated_at() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteResponse.updated_at)
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.site.GetSiteByRegResponse.updated_at)
   return _internal_updated_at();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void GetSiteResponse::set_updated_at(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void GetSiteByRegResponse::set_updated_at(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   SetHasBit(_impl_._has_bits_[0], 0x00000800U);
   _impl_.updated_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteResponse.updated_at)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.site.GetSiteByRegResponse.updated_at)
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::mutable_updated_at()
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::mutable_updated_at()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   SetHasBit(_impl_._has_bits_[0], 0x00000800U);
   ::std::string* _s = _internal_mutable_updated_at();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteResponse.updated_at)
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.site.GetSiteByRegResponse.updated_at)
   return _s;
 }
-inline const ::std::string& GetSiteResponse::_internal_updated_at() const {
+inline const ::std::string& GetSiteByRegResponse::_internal_updated_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.updated_at_.Get();
 }
-inline void GetSiteResponse::_internal_set_updated_at(const ::std::string& value) {
+inline void GetSiteByRegResponse::_internal_set_updated_at(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL GetSiteResponse::_internal_mutable_updated_at() {
+inline ::std::string* PROTOBUF_NONNULL GetSiteByRegResponse::_internal_mutable_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.updated_at_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_updated_at() {
+inline ::std::string* PROTOBUF_NULLABLE GetSiteByRegResponse::release_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteResponse.updated_at)
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.site.GetSiteByRegResponse.updated_at)
   if (!CheckHasBit(_impl_._has_bits_[0], 0x00000800U)) {
     return nullptr;
   }
@@ -6325,7 +8177,7 @@ inline ::std::string* PROTOBUF_NULLABLE GetSiteResponse::release_updated_at() {
   }
   return released;
 }
-inline void GetSiteResponse::set_allocated_updated_at(::std::string* PROTOBUF_NULLABLE value) {
+inline void GetSiteByRegResponse::set_allocated_updated_at(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     SetHasBit(_impl_._has_bits_[0], 0x00000800U);
@@ -6336,7 +8188,7 @@ inline void GetSiteResponse::set_allocated_updated_at(::std::string* PROTOBUF_NU
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.updated_at_.IsDefault()) {
     _impl_.updated_at_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteResponse.updated_at)
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.GetSiteByRegResponse.updated_at)
 }
 
 #ifdef __GNUC__

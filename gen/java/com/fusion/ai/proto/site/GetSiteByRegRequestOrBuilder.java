@@ -12,7 +12,7 @@ public interface GetSiteByRegRequestOrBuilder extends
 
   /**
    * <pre>
-   * 需要查询的业务注册标识
+   * 注册唯一标识
    * </pre>
    *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
@@ -21,7 +21,7 @@ public interface GetSiteByRegRequestOrBuilder extends
   java.lang.String getRegistrationId();
   /**
    * <pre>
-   * 需要查询的业务注册标识
+   * 注册唯一标识
    * </pre>
    *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>

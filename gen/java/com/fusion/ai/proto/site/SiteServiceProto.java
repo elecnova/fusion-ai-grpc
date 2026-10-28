@@ -38,7 +38,7 @@ public final class SiteServiceProto extends com.google.protobuf.GeneratedFile {
       "\n\027site/site_service.proto\022\024fusion.ai.pro" +
       "to.site\032\034google/api/annotations.proto\032\027g" +
       "oogle/api/client.proto\032\033google/protobuf/" +
-      "empty.proto\032\027site/site_message.proto2\337\005\n" +
+      "empty.proto\032\027site/site_message.proto2\344\005\n" +
       "\013SiteService\022\200\001\n\nCreateSite\022\'.fusion.ai." +
       "proto.site.CreateSiteRequest\032(.fusion.ai" +
       ".proto.site.CreateSiteResponse\"\037\332A\001*\202\323\344\223" +
@@ -53,16 +53,16 @@ public final class SiteServiceProto extends com.google.protobuf.GeneratedFile {
       "etSite\022$.fusion.ai.proto.site.GetSiteReq" +
       "uest\032%.fusion.ai.proto.site.GetSiteRespo" +
       "nse\",\332A\007site_id\202\323\344\223\002\034\022\032/3rd-api/v1/site/" +
-      "{site_id}\022\242\001\n\014GetSiteByReg\022).fusion.ai.p" +
-      "roto.site.GetSiteByRegRequest\032%.fusion.a" +
-      "i.proto.site.GetSiteResponse\"@\332A\017registr" +
-      "ation_id\202\323\344\223\002(\022&/3rd-api/v1/site/reg/{re" +
-      "gistration_id}B\273\001\n\030com.fusion.ai.proto.s" +
-      "iteB\020SiteServiceProtoP\001Z\031fusion.ai.proto" +
-      ".site;site\242\002\004FAPS\252\002\024Fusion.Ai.Proto.Site" +
-      "\312\002\024Fusion\\Ai\\Proto\\Site\342\002 Fusion\\Ai\\Prot" +
-      "o\\Site\\GPBMetadata\352\002\027Fusion::Ai::Proto::" +
-      "Siteb\006proto3"
+      "{site_id}\022\247\001\n\014GetSiteByReg\022).fusion.ai.p" +
+      "roto.site.GetSiteByRegRequest\032*.fusion.a" +
+      "i.proto.site.GetSiteByRegResponse\"@\332A\017re" +
+      "gistration_id\202\323\344\223\002(\022&/3rd-api/v1/site/re" +
+      "g/{registration_id}B\273\001\n\030com.fusion.ai.pr" +
+      "oto.siteB\020SiteServiceProtoP\001Z\031fusion.ai." +
+      "proto.site;site\242\002\004FAPS\252\002\024Fusion.Ai.Proto" +
+      ".Site\312\002\024Fusion\\Ai\\Proto\\Site\342\002 Fusion\\Ai" +
+      "\\Proto\\Site\\GPBMetadata\352\002\027Fusion::Ai::Pr" +
+      "oto::Siteb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

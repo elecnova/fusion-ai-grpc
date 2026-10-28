@@ -57,6 +57,11 @@ public final class SiteMessageProto extends com.google.protobuf.GeneratedFile {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_fusion_ai_proto_site_DeleteSiteResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_fusion_ai_proto_site_SiteRegistration_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_fusion_ai_proto_site_SiteRegistration_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_fusion_ai_proto_site_GetSiteRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -71,6 +76,11 @@ public final class SiteMessageProto extends com.google.protobuf.GeneratedFile {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_fusion_ai_proto_site_GetSiteResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_fusion_ai_proto_site_GetSiteByRegResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_fusion_ai_proto_site_GetSiteByRegResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -139,41 +149,71 @@ public final class SiteMessageProto extends com.google.protobuf.GeneratedFile {
       "9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007" +
       "message\0221\n\017registration_id\030\004 \001(\tB\007\272H\004r\002\020" +
       "\001R\017registration_id\022\030\n\007deleted\030\005 \001(\010R\007del" +
-      "eted\022\030\n\007changed\030\006 \001(\010R\007changed\"3\n\016GetSit" +
-      "eRequest\022!\n\007site_id\030\001 \001(\tB\007\272H\004r\002\020\001R\007site" +
-      "_id\"H\n\023GetSiteByRegRequest\0221\n\017registrati" +
-      "on_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017registration_id\"\202\010" +
-      "\n\017GetSiteResponse\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R" +
-      "\007successR\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H" +
-      "\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007" +
-      "\272H\004r\002\020\001R\007message\0221\n\017registration_id\030\004 \001(" +
-      "\tB\007\272H\004r\002\020\001R\017registration_id\022+\n\014service_t" +
-      "ype\030\005 \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007site" +
-      "_id\030\006 \001(\tB\007\272H\004r\002\020\001R\007site_id\022&\n\tsite_name" +
-      "\030\007 \001(\tB\010\272H\005r\003\030\310\001R\tsite_name\022%\n\010timezone\030" +
-      "\010 \001(\tB\t\272H\006r\004\020\001\030@R\010timezone\0222\n\tlongitude\030" +
-      "\t \001(\001B\017\272H\014\n\n\035\000\0004C-\000\0004\303H\000R\tlongitude\210\001\001\0228" +
-      "\n\010latitude\030\n \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V" +
-      "\300H\001R\010latitude\210\001\001\0228\n\010tilt_deg\030\013 \001(\001B\027\272H\024\022" +
+      "eted\022\030\n\007changed\030\006 \001(\010R\007changed\"\246\007\n\020SiteR" +
+      "egistration\0221\n\017registration_id\030\001 \001(\tB\007\272H" +
+      "\004r\002\020\001R\017registration_id\022+\n\014service_type\030\002" +
+      " \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007site_id\030\003" +
+      " \001(\tB\007\272H\004r\002\020\001R\007site_id\022%\n\tsite_name\030\004 \001(" +
+      "\tB\007\272H\004r\002\030xR\tsite_name\022#\n\010timezone\030\005 \001(\tB" +
+      "\007\272H\004r\002\030@R\010timezone\022:\n\tlongitude\030\006 \001(\001B\027\272" +
+      "H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300H\000R\tlongitude\210\001\001\0228" +
+      "\n\010latitude\030\007 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V" +
+      "\300H\001R\010latitude\210\001\001\0228\n\010tilt_deg\030\010 \001(\001B\027\272H\024\022" +
       "\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\002R\010tilt_deg\210\001\001\022>\n\013az" +
-      "imuth_deg\030\014 \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000" +
-      "H\003R\013azimuth_deg\210\001\001\022-\n\007rated_p\030\r \001(\001B\016\272H\013" +
+      "imuth_deg\030\t \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000" +
+      "H\003R\013azimuth_deg\210\001\001\022-\n\007rated_p\030\n \001(\001B\016\272H\013" +
       "\022\t!\000\000\000\000\000\000\000\000H\004R\007rated_p\210\001\001\022.\n\013granularity" +
-      "\030\016 \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013granularity\022-\n\013dat" +
-      "a_source\030\017 \001(\005B\013\272H\010\032\0060\0010\0020\003R\013data_source" +
-      "\022*\n\013source_attr\030\020 \001(\tB\010\272H\005r\003\030\200\020R\013source_" +
-      "attr\022,\n\toperation\030\021 \001(\005B\t\272H\006\032\0040\0010\002H\005R\top" +
-      "eration\210\001\001\022&\n\007hisdays\030\022 \001(\005B\007\272H\004\032\002 \000H\006R\007" +
-      "hisdays\210\001\001\022\'\n\ncreated_at\030\023 \001(\tB\007\272H\004r\002\020\001R" +
-      "\ncreated_at\022\'\n\nupdated_at\030\024 \001(\tB\007\272H\004r\002\020\001" +
-      "R\nupdated_atB\014\n\n_longitudeB\013\n\t_latitudeB" +
-      "\013\n\t_tilt_degB\016\n\014_azimuth_degB\n\n\010_rated_p" +
-      "B\014\n\n_operationB\n\n\010_hisdaysB\273\001\n\030com.fusio" +
-      "n.ai.proto.siteB\020SiteMessageProtoP\001Z\031fus" +
-      "ion.ai.proto.site;site\242\002\004FAPS\252\002\024Fusion.A" +
-      "i.Proto.Site\312\002\024Fusion\\Ai\\Proto\\Site\342\002 Fu" +
-      "sion\\Ai\\Proto\\Site\\GPBMetadata\352\002\027Fusion:" +
-      ":Ai::Proto::Siteb\006proto3"
+      "\030\013 \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013granularity\0222\n\013dat" +
+      "a_source\030\014 \001(\005B\013\272H\010\032\0060\0010\0020\003H\005R\013data_sour" +
+      "ce\210\001\001\022*\n\013source_attr\030\r \001(\tB\010\272H\005r\003\030\200\020R\013so" +
+      "urce_attr\022,\n\toperation\030\016 \001(\005B\t\272H\006\032\0040\0010\002H" +
+      "\006R\toperation\210\001\001\022&\n\007hisdays\030\017 \001(\005B\007\272H\004\032\002 " +
+      "\000H\007R\007hisdays\210\001\001\022\'\n\ncreated_at\030\020 \001(\tB\007\272H\004" +
+      "r\002\020\001R\ncreated_at\022\'\n\nupdated_at\030\021 \001(\tB\007\272H" +
+      "\004r\002\020\001R\nupdated_atB\014\n\n_longitudeB\013\n\t_lati" +
+      "tudeB\013\n\t_tilt_degB\016\n\014_azimuth_degB\n\n\010_ra" +
+      "ted_pB\016\n\014_data_sourceB\014\n\n_operationB\n\n\010_" +
+      "hisdays\"3\n\016GetSiteRequest\022!\n\007site_id\030\001 \001" +
+      "(\tB\007\272H\004r\002\020\001R\007site_id\"H\n\023GetSiteByRegRequ" +
+      "est\0221\n\017registration_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017r" +
+      "egistration_id\"\203\002\n\017GetSiteResponse\022+\n\005st" +
+      "ate\030\001 \001(\tB\025\272H\022r\020R\007successR\005errorR\005state\022" +
+      "%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!" +
+      "\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\022!\n\007sit" +
+      "e_id\030\004 \001(\tB\007\272H\004r\002\020\001R\007site_id\022V\n\rregistra" +
+      "tions\030\005 \003(\0132&.fusion.ai.proto.site.SiteR" +
+      "egistrationB\010\272H\005\222\001\002\020\003R\rregistrations\"\214\010\n" +
+      "\024GetSiteByRegResponse\022+\n\005state\030\001 \001(\tB\025\272H" +
+      "\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002 \001(\t" +
+      "B\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003 \001" +
+      "(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_id\030" +
+      "\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022+\n\014servi" +
+      "ce_type\030\005 \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007" +
+      "site_id\030\006 \001(\tB\007\272H\004r\002\020\001R\007site_id\022%\n\tsite_" +
+      "name\030\007 \001(\tB\007\272H\004r\002\030xR\tsite_name\022#\n\010timezo" +
+      "ne\030\010 \001(\tB\007\272H\004r\002\030@R\010timezone\022:\n\tlongitude" +
+      "\030\t \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300H\000R\tlongi" +
+      "tude\210\001\001\0228\n\010latitude\030\n \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V" +
+      "@)\000\000\000\000\000\200V\300H\001R\010latitude\210\001\001\0228\n\010tilt_deg\030\013 " +
+      "\001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\002R\010tilt_deg" +
+      "\210\001\001\022>\n\013azimuth_deg\030\014 \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@" +
+      ")\000\000\000\000\000\000\000\000H\003R\013azimuth_deg\210\001\001\022-\n\007rated_p\030\r" +
+      " \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000H\004R\007rated_p\210\001\001\022.\n\013gr" +
+      "anularity\030\016 \003(\005B\014\272H\t\222\001\006\"\004\032\002 \000R\013granulari" +
+      "ty\022-\n\013data_source\030\017 \001(\005B\013\272H\010\032\0060\0010\0020\003R\013da" +
+      "ta_source\022*\n\013source_attr\030\020 \001(\tB\010\272H\005r\003\030\200\020" +
+      "R\013source_attr\022,\n\toperation\030\021 \001(\005B\t\272H\006\032\0040" +
+      "\0010\002H\005R\toperation\210\001\001\022&\n\007hisdays\030\022 \001(\005B\007\272H" +
+      "\004\032\002 \000H\006R\007hisdays\210\001\001\022\'\n\ncreated_at\030\023 \001(\tB" +
+      "\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nupdated_at\030\024 \001(\t" +
+      "B\007\272H\004r\002\020\001R\nupdated_atB\014\n\n_longitudeB\013\n\t_" +
+      "latitudeB\013\n\t_tilt_degB\016\n\014_azimuth_degB\n\n" +
+      "\010_rated_pB\014\n\n_operationB\n\n\010_hisdaysB\273\001\n\030" +
+      "com.fusion.ai.proto.siteB\020SiteMessagePro" +
+      "toP\001Z\031fusion.ai.proto.site;site\242\002\004FAPS\252\002" +
+      "\024Fusion.Ai.Proto.Site\312\002\024Fusion\\Ai\\Proto\\" +
+      "Site\342\002 Fusion\\Ai\\Proto\\Site\\GPBMetadata\352" +
+      "\002\027Fusion::Ai::Proto::Siteb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -217,23 +257,35 @@ public final class SiteMessageProto extends com.google.protobuf.GeneratedFile {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_site_DeleteSiteResponse_descriptor,
         new java.lang.String[] { "State", "Code", "Message", "RegistrationId", "Deleted", "Changed", });
-    internal_static_fusion_ai_proto_site_GetSiteRequest_descriptor =
+    internal_static_fusion_ai_proto_site_SiteRegistration_descriptor =
       getDescriptor().getMessageType(6);
+    internal_static_fusion_ai_proto_site_SiteRegistration_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_fusion_ai_proto_site_SiteRegistration_descriptor,
+        new java.lang.String[] { "RegistrationId", "ServiceType", "SiteId", "SiteName", "Timezone", "Longitude", "Latitude", "TiltDeg", "AzimuthDeg", "RatedP", "Granularity", "DataSource", "SourceAttr", "Operation", "Hisdays", "CreatedAt", "UpdatedAt", });
+    internal_static_fusion_ai_proto_site_GetSiteRequest_descriptor =
+      getDescriptor().getMessageType(7);
     internal_static_fusion_ai_proto_site_GetSiteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_site_GetSiteRequest_descriptor,
         new java.lang.String[] { "SiteId", });
     internal_static_fusion_ai_proto_site_GetSiteByRegRequest_descriptor =
-      getDescriptor().getMessageType(7);
+      getDescriptor().getMessageType(8);
     internal_static_fusion_ai_proto_site_GetSiteByRegRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_site_GetSiteByRegRequest_descriptor,
         new java.lang.String[] { "RegistrationId", });
     internal_static_fusion_ai_proto_site_GetSiteResponse_descriptor =
-      getDescriptor().getMessageType(8);
+      getDescriptor().getMessageType(9);
     internal_static_fusion_ai_proto_site_GetSiteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_site_GetSiteResponse_descriptor,
+        new java.lang.String[] { "State", "Code", "Message", "SiteId", "Registrations", });
+    internal_static_fusion_ai_proto_site_GetSiteByRegResponse_descriptor =
+      getDescriptor().getMessageType(10);
+    internal_static_fusion_ai_proto_site_GetSiteByRegResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_fusion_ai_proto_site_GetSiteByRegResponse_descriptor,
         new java.lang.String[] { "State", "Code", "Message", "RegistrationId", "ServiceType", "SiteId", "SiteName", "Timezone", "Longitude", "Latitude", "TiltDeg", "AzimuthDeg", "RatedP", "Granularity", "DataSource", "SourceAttr", "Operation", "Hisdays", "CreatedAt", "UpdatedAt", });
     descriptor.resolveAllFeaturesImmutable();
     com.buf.validate.ValidateProto.getDescriptor();

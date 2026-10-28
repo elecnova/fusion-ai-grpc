@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Package message 场站注册-查询场站消息响应定义
+ * 按 site_id 查询响应：registrations 为列表，成功时 0~3 条（无注册为空数组，非 error）
  *
  * Generated from protobuf message <code>fusion.ai.proto.site.GetSiteResponse</code>
  */
@@ -35,107 +35,17 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
      */
     protected $message = '';
     /**
-     * 固定注册标识，关联已保存的场站及算法业务配置
+     * 查询的场站 ID
      *
-     * Generated from protobuf field <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {</code>
-     */
-    protected $registration_id = '';
-    /**
-     * 实际保存的服务标识，如 pv_prediction、load_prediction
-     *
-     * Generated from protobuf field <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = {</code>
-     */
-    protected $service_type = '';
-    /**
-     * 场站唯一 ID
-     *
-     * Generated from protobuf field <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = {</code>
      */
     protected $site_id = '';
     /**
-     * 场站显示名称
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      *
-     * Generated from protobuf field <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = {</code>
      */
-    protected $site_name = '';
-    /**
-     * 场站时区，如 Asia/Shanghai
-     *
-     * Generated from protobuf field <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = {</code>
-     */
-    protected $timezone = '';
-    /**
-     * 已保存经度，单位：度
-     *
-     * Generated from protobuf field <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {</code>
-     */
-    protected $longitude = null;
-    /**
-     * 已保存纬度，单位：度
-     *
-     * Generated from protobuf field <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {</code>
-     */
-    protected $latitude = null;
-    /**
-     * 光伏组件倾角，单位：度
-     *
-     * Generated from protobuf field <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
-     */
-    protected $tilt_deg = null;
-    /**
-     * 光伏组件方位角，单位：度
-     *
-     * Generated from protobuf field <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
-     */
-    protected $azimuth_deg = null;
-    /**
-     * 光伏额定功率，单位：kW；非适用业务可不返回
-     *
-     * Generated from protobuf field <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {</code>
-     */
-    protected $rated_p = null;
-    /**
-     * 保存的预测步长列表，单位：分钟
-     *
-     * Generated from protobuf field <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {</code>
-     */
-    private $granularity;
-    /**
-     * 数据源类型：1-pull，2-push，3-file
-     *
-     * Generated from protobuf field <code>int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {</code>
-     */
-    protected $data_source = 0;
-    /**
-     * 数据源地址或路径；客户返回中不得暴露凭据
-     *
-     * Generated from protobuf field <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = {</code>
-     */
-    protected $source_attr = '';
-    /**
-     * 已保存运行类型：1-预测，2-训练
-     *
-     * Generated from protobuf field <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = {</code>
-     */
-    protected $operation = null;
-    /**
-     * 已保存历史天数；无值时不补默认值
-     *
-     * Generated from protobuf field <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = {</code>
-     */
-    protected $hisdays = null;
-    /**
-     * 创建时间，ISO 8601 带时区；创建后保持不变
-     *
-     * Generated from protobuf field <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = {</code>
-     */
-    protected $created_at = '';
-    /**
-     * 最近配置更新时间，ISO 8601 带时区；查询不刷新
-     *
-     * Generated from protobuf field <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = {</code>
-     */
-    protected $updated_at = '';
+    private $registrations;
 
     /**
      * Constructor.
@@ -149,40 +59,10 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
      *           五位业务码：成功 00000，异常见场景码表
      *     @type string $message
      *           本次操作结果说明
-     *     @type string $registration_id
-     *           固定注册标识，关联已保存的场站及算法业务配置
-     *     @type string $service_type
-     *           实际保存的服务标识，如 pv_prediction、load_prediction
      *     @type string $site_id
-     *           场站唯一 ID
-     *     @type string $site_name
-     *           场站显示名称
-     *     @type string $timezone
-     *           场站时区，如 Asia/Shanghai
-     *     @type float $longitude
-     *           已保存经度，单位：度
-     *     @type float $latitude
-     *           已保存纬度，单位：度
-     *     @type float $tilt_deg
-     *           光伏组件倾角，单位：度
-     *     @type float $azimuth_deg
-     *           光伏组件方位角，单位：度
-     *     @type float $rated_p
-     *           光伏额定功率，单位：kW；非适用业务可不返回
-     *     @type int[] $granularity
-     *           保存的预测步长列表，单位：分钟
-     *     @type int $data_source
-     *           数据源类型：1-pull，2-push，3-file
-     *     @type string $source_attr
-     *           数据源地址或路径；客户返回中不得暴露凭据
-     *     @type int $operation
-     *           已保存运行类型：1-预测，2-训练
-     *     @type int $hisdays
-     *           已保存历史天数；无值时不补默认值
-     *     @type string $created_at
-     *           创建时间，ISO 8601 带时区；创建后保持不变
-     *     @type string $updated_at
-     *           最近配置更新时间，ISO 8601 带时区；查询不刷新
+     *           查询的场站 ID
+     *     @type \Fusion\Ai\Proto\Site\SiteRegistration[] $registrations
+     *           该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      * }
      */
     public function __construct($data = null)
@@ -270,61 +150,9 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 固定注册标识，关联已保存的场站及算法业务配置
+     * 查询的场站 ID
      *
-     * Generated from protobuf field <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {</code>
-     * @return string
-     */
-    public function getRegistrationId()
-    {
-        return $this->registration_id;
-    }
-
-    /**
-     * 固定注册标识，关联已保存的场站及算法业务配置
-     *
-     * Generated from protobuf field <code>string registration_id = 4 [json_name = "registration_id", (.buf.validate.field) = {</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRegistrationId(string $var)
-    {
-        GPBUtil::checkString($var, true);
-        $this->registration_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * 实际保存的服务标识，如 pv_prediction、load_prediction
-     *
-     * Generated from protobuf field <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = {</code>
-     * @return string
-     */
-    public function getServiceType()
-    {
-        return $this->service_type;
-    }
-
-    /**
-     * 实际保存的服务标识，如 pv_prediction、load_prediction
-     *
-     * Generated from protobuf field <code>string service_type = 5 [json_name = "service_type", (.buf.validate.field) = {</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setServiceType(string $var)
-    {
-        GPBUtil::checkString($var, true);
-        $this->service_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * 场站唯一 ID
-     *
-     * Generated from protobuf field <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = {</code>
      * @return string
      */
     public function getSiteId()
@@ -333,9 +161,9 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 场站唯一 ID
+     * 查询的场站 ID
      *
-     * Generated from protobuf field <code>string site_id = 6 [json_name = "site_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string site_id = 4 [json_name = "site_id", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
@@ -348,430 +176,27 @@ class GetSiteResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 场站显示名称
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      *
-     * Generated from protobuf field <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = {</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = {</code>
+     * @return RepeatedField<\Fusion\Ai\Proto\Site\SiteRegistration>
      */
-    public function getSiteName()
+    public function getRegistrations()
     {
-        return $this->site_name;
+        return $this->registrations;
     }
 
     /**
-     * 场站显示名称
+     * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
      *
-     * Generated from protobuf field <code>string site_name = 7 [json_name = "site_name", (.buf.validate.field) = {</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.site.SiteRegistration registrations = 5 [json_name = "registrations", (.buf.validate.field) = {</code>
+     * @param \Fusion\Ai\Proto\Site\SiteRegistration[] $var
      * @return $this
      */
-    public function setSiteName(string $var)
+    public function setRegistrations(array|RepeatedField $var)
     {
-        GPBUtil::checkString($var, true);
-        $this->site_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * 场站时区，如 Asia/Shanghai
-     *
-     * Generated from protobuf field <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = {</code>
-     * @return string
-     */
-    public function getTimezone()
-    {
-        return $this->timezone;
-    }
-
-    /**
-     * 场站时区，如 Asia/Shanghai
-     *
-     * Generated from protobuf field <code>string timezone = 8 [json_name = "timezone", (.buf.validate.field) = {</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTimezone(string $var)
-    {
-        GPBUtil::checkString($var, true);
-        $this->timezone = $var;
-
-        return $this;
-    }
-
-    /**
-     * 已保存经度，单位：度
-     *
-     * Generated from protobuf field <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {</code>
-     * @return float
-     */
-    public function getLongitude()
-    {
-        return isset($this->longitude) ? $this->longitude : 0.0;
-    }
-
-    public function hasLongitude()
-    {
-        return isset($this->longitude);
-    }
-
-    public function clearLongitude()
-    {
-        unset($this->longitude);
-    }
-
-    /**
-     * 已保存经度，单位：度
-     *
-     * Generated from protobuf field <code>optional double longitude = 9 [json_name = "longitude", (.buf.validate.field) = {</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setLongitude(float $var)
-    {
-        $this->longitude = $var;
-
-        return $this;
-    }
-
-    /**
-     * 已保存纬度，单位：度
-     *
-     * Generated from protobuf field <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {</code>
-     * @return float
-     */
-    public function getLatitude()
-    {
-        return isset($this->latitude) ? $this->latitude : 0.0;
-    }
-
-    public function hasLatitude()
-    {
-        return isset($this->latitude);
-    }
-
-    public function clearLatitude()
-    {
-        unset($this->latitude);
-    }
-
-    /**
-     * 已保存纬度，单位：度
-     *
-     * Generated from protobuf field <code>optional double latitude = 10 [json_name = "latitude", (.buf.validate.field) = {</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setLatitude(float $var)
-    {
-        $this->latitude = $var;
-
-        return $this;
-    }
-
-    /**
-     * 光伏组件倾角，单位：度
-     *
-     * Generated from protobuf field <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
-     * @return float
-     */
-    public function getTiltDeg()
-    {
-        return isset($this->tilt_deg) ? $this->tilt_deg : 0.0;
-    }
-
-    public function hasTiltDeg()
-    {
-        return isset($this->tilt_deg);
-    }
-
-    public function clearTiltDeg()
-    {
-        unset($this->tilt_deg);
-    }
-
-    /**
-     * 光伏组件倾角，单位：度
-     *
-     * Generated from protobuf field <code>optional double tilt_deg = 11 [json_name = "tilt_deg", (.buf.validate.field) = {</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setTiltDeg(float $var)
-    {
-        $this->tilt_deg = $var;
-
-        return $this;
-    }
-
-    /**
-     * 光伏组件方位角，单位：度
-     *
-     * Generated from protobuf field <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
-     * @return float
-     */
-    public function getAzimuthDeg()
-    {
-        return isset($this->azimuth_deg) ? $this->azimuth_deg : 0.0;
-    }
-
-    public function hasAzimuthDeg()
-    {
-        return isset($this->azimuth_deg);
-    }
-
-    public function clearAzimuthDeg()
-    {
-        unset($this->azimuth_deg);
-    }
-
-    /**
-     * 光伏组件方位角，单位：度
-     *
-     * Generated from protobuf field <code>optional double azimuth_deg = 12 [json_name = "azimuth_deg", (.buf.validate.field) = {</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setAzimuthDeg(float $var)
-    {
-        $this->azimuth_deg = $var;
-
-        return $this;
-    }
-
-    /**
-     * 光伏额定功率，单位：kW；非适用业务可不返回
-     *
-     * Generated from protobuf field <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {</code>
-     * @return float
-     */
-    public function getRatedP()
-    {
-        return isset($this->rated_p) ? $this->rated_p : 0.0;
-    }
-
-    public function hasRatedP()
-    {
-        return isset($this->rated_p);
-    }
-
-    public function clearRatedP()
-    {
-        unset($this->rated_p);
-    }
-
-    /**
-     * 光伏额定功率，单位：kW；非适用业务可不返回
-     *
-     * Generated from protobuf field <code>optional double rated_p = 13 [json_name = "rated_p", (.buf.validate.field) = {</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setRatedP(float $var)
-    {
-        $this->rated_p = $var;
-
-        return $this;
-    }
-
-    /**
-     * 保存的预测步长列表，单位：分钟
-     *
-     * Generated from protobuf field <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {</code>
-     * @return RepeatedField<int>
-     */
-    public function getGranularity()
-    {
-        return $this->granularity;
-    }
-
-    /**
-     * 保存的预测步长列表，单位：分钟
-     *
-     * Generated from protobuf field <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = {</code>
-     * @param int[] $var
-     * @return $this
-     */
-    public function setGranularity(array|RepeatedField $var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::INT32);
-        $this->granularity = $arr;
-
-        return $this;
-    }
-
-    /**
-     * 数据源类型：1-pull，2-push，3-file
-     *
-     * Generated from protobuf field <code>int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {</code>
-     * @return int
-     */
-    public function getDataSource()
-    {
-        return $this->data_source;
-    }
-
-    /**
-     * 数据源类型：1-pull，2-push，3-file
-     *
-     * Generated from protobuf field <code>int32 data_source = 15 [json_name = "data_source", (.buf.validate.field) = {</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setDataSource(int $var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->data_source = $var;
-
-        return $this;
-    }
-
-    /**
-     * 数据源地址或路径；客户返回中不得暴露凭据
-     *
-     * Generated from protobuf field <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = {</code>
-     * @return string
-     */
-    public function getSourceAttr()
-    {
-        return $this->source_attr;
-    }
-
-    /**
-     * 数据源地址或路径；客户返回中不得暴露凭据
-     *
-     * Generated from protobuf field <code>string source_attr = 16 [json_name = "source_attr", (.buf.validate.field) = {</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSourceAttr(string $var)
-    {
-        GPBUtil::checkString($var, true);
-        $this->source_attr = $var;
-
-        return $this;
-    }
-
-    /**
-     * 已保存运行类型：1-预测，2-训练
-     *
-     * Generated from protobuf field <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = {</code>
-     * @return int
-     */
-    public function getOperation()
-    {
-        return isset($this->operation) ? $this->operation : 0;
-    }
-
-    public function hasOperation()
-    {
-        return isset($this->operation);
-    }
-
-    public function clearOperation()
-    {
-        unset($this->operation);
-    }
-
-    /**
-     * 已保存运行类型：1-预测，2-训练
-     *
-     * Generated from protobuf field <code>optional int32 operation = 17 [json_name = "operation", (.buf.validate.field) = {</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setOperation(int $var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->operation = $var;
-
-        return $this;
-    }
-
-    /**
-     * 已保存历史天数；无值时不补默认值
-     *
-     * Generated from protobuf field <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = {</code>
-     * @return int
-     */
-    public function getHisdays()
-    {
-        return isset($this->hisdays) ? $this->hisdays : 0;
-    }
-
-    public function hasHisdays()
-    {
-        return isset($this->hisdays);
-    }
-
-    public function clearHisdays()
-    {
-        unset($this->hisdays);
-    }
-
-    /**
-     * 已保存历史天数；无值时不补默认值
-     *
-     * Generated from protobuf field <code>optional int32 hisdays = 18 [json_name = "hisdays", (.buf.validate.field) = {</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setHisdays(int $var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->hisdays = $var;
-
-        return $this;
-    }
-
-    /**
-     * 创建时间，ISO 8601 带时区；创建后保持不变
-     *
-     * Generated from protobuf field <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = {</code>
-     * @return string
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * 创建时间，ISO 8601 带时区；创建后保持不变
-     *
-     * Generated from protobuf field <code>string created_at = 19 [json_name = "created_at", (.buf.validate.field) = {</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCreatedAt(string $var)
-    {
-        GPBUtil::checkString($var, true);
-        $this->created_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * 最近配置更新时间，ISO 8601 带时区；查询不刷新
-     *
-     * Generated from protobuf field <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = {</code>
-     * @return string
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-
-    /**
-     * 最近配置更新时间，ISO 8601 带时区；查询不刷新
-     *
-     * Generated from protobuf field <code>string updated_at = 20 [json_name = "updated_at", (.buf.validate.field) = {</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUpdatedAt(string $var)
-    {
-        GPBUtil::checkString($var, true);
-        $this->updated_at = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Fusion\Ai\Proto\Site\SiteRegistration::class);
+        $this->registrations = $arr;
 
         return $this;
     }

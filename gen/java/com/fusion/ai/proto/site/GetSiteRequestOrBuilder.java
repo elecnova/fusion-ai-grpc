@@ -12,7 +12,7 @@ public interface GetSiteRequestOrBuilder extends
 
   /**
    * <pre>
-   * 需要查询的业务注册标识
+   * 场站唯一 ID
    * </pre>
    *
    * <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = { ... }</code>
@@ -21,7 +21,7 @@ public interface GetSiteRequestOrBuilder extends
   java.lang.String getSiteId();
   /**
    * <pre>
-   * 需要查询的业务注册标识
+   * 场站唯一 ID
    * </pre>
    *
    * <code>string site_id = 1 [json_name = "site_id", (.buf.validate.field) = { ... }</code>

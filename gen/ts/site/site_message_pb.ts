@@ -21,7 +21,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file site/site_message.proto.
  */
 export const file_site_site_message: GenFile = /*@__PURE__*/
-  fileDesc("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X2RlZ4gBARI+CgthemltdXRoX2RlZxgMIAEoAUIXukgUEhIRAAAAAACAdkApAAAAAAAAAABIA1ILYXppbXV0aF9kZWeIAQESLQoHcmF0ZWRfcBgNIAEoAUIOukgLEgkhAAAAAAAAAABIBFIHcmF0ZWRfcIgBARIhCgtncmFudWxhcml0eRgOIAMoBUIMukgJkgEGIgQaAiAAEi0KC2RhdGFfc291cmNlGA8gASgFQgu6SAgaBjABMAIwA1ILZGF0YV9zb3VyY2USKgoLc291cmNlX2F0dHIYECABKAlCCLpIBXIDGIAQUgtzb3VyY2VfYXR0chIhCglvcGVyYXRpb24YESABKAVCCbpIBhoEMAEwAkgFiAEBEh0KB2hpc2RheXMYEiABKAVCB7pIBBoCIABIBogBARInCgpjcmVhdGVkX2F0GBMgASgJQge6SARyAhABUgpjcmVhdGVkX2F0EicKCnVwZGF0ZWRfYXQYFCABKAlCB7pIBHICEAFSCnVwZGF0ZWRfYXRCDAoKX2xvbmdpdHVkZUILCglfbGF0aXR1ZGVCCwoJX3RpbHRfZGVnQg4KDF9hemltdXRoX2RlZ0IKCghfcmF0ZWRfcEIMCgpfb3BlcmF0aW9uQgoKCF9oaXNkYXlzQrsBChhjb20uZnVzaW9uLmFpLnByb3RvLnNpdGVCEFNpdGVNZXNzYWdlUHJvdG9QAVoZZnVzaW9uLmFpLnByb3RvLnNpdGU7c2l0ZaICBEZBUFOqAhRGdXNpb24uQWkuUHJvdG8uU2l0ZcoCFEZ1c2lvblxBaVxQcm90b1xTaXRl4gIgRnVzaW9uXEFpXFByb3RvXFNpdGVcR1BCTWV0YWRhdGHqAhdGdXNpb246OkFpOjpQcm90bzo6U2l0ZWIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("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dHIYDSABKAlCCLpIBXIDGIAQUgtzb3VyY2VfYXR0chIhCglvcGVyYXRpb24YDiABKAVCCbpIBhoEMAEwAkgGiAEBEh0KB2hpc2RheXMYDyABKAVCB7pIBBoCIABIB4gBARInCgpjcmVhdGVkX2F0GBAgASgJQge6SARyAhABUgpjcmVhdGVkX2F0EicKCnVwZGF0ZWRfYXQYESABKAlCB7pIBHICEAFSCnVwZGF0ZWRfYXRCDAoKX2xvbmdpdHVkZUILCglfbGF0aXR1ZGVCCwoJX3RpbHRfZGVnQg4KDF9hemltdXRoX2RlZ0IKCghfcmF0ZWRfcEIOCgxfZGF0YV9zb3VyY2VCDAoKX29wZXJhdGlvbkIKCghfaGlzZGF5cyIzCg5HZXRTaXRlUmVxdWVzdBIhCgdzaXRlX2lkGAEgASgJQge6SARyAhABUgdzaXRlX2lkIkgKE0dldFNpdGVCeVJlZ1JlcXVlc3QSMQoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQge6SARyAhABUg9yZWdpc3RyYXRpb25faWQi3gEKD0dldFNpdGVSZXNwb25zZRIkCgVzdGF0ZRgBIAEoCUIVukgSchBSB3N1Y2Nlc3NSBWVycm9yEh8KBGNvZGUYAiABKAlCEbpIDnIMMgpeWzAtOV17NX0kEhgKB21lc3NhZ2UYAyABKAlCB7pIBHICEAESIQoHc2l0ZV9pZBgEIAEoCUIHukgEcgIQAVIHc2l0ZV9pZBJHCg1yZWdpc3RyYXRpb25zGAUgAygLMiYuZnVzaW9uLmFpLnByb3RvLnNpdGUuU2l0ZVJlZ2lzdHJhdGlvbkIIukgFkgECEAMitgcKFEdldFNpdGVCeVJlZ1Jlc3BvbnNlEiQKBXN0YXRlGAEgASgJQhW6SBJyEFIHc3VjY2Vzc1IFZXJyb3ISHwoEY29kZRgCIAEoCUIRukgOcgwyCl5bMC05XXs1fSQSGAoHbWVzc2FnZRgDIAEoCUIHukgEcgIQARIxCg9yZWdpc3RyYXRpb25faWQYBCABKAlCB7pIBHICEAFSD3JlZ2lzdHJhdGlvbl9pZBIrCgxzZXJ2aWNlX3R5cGUYBSABKAlCB7pIBHICEAFSDHNlcnZpY2VfdHlwZRIhCgdzaXRlX2lkGAYgASgJQge6SARyAhABUgdzaXRlX2lkEiUKCXNpdGVfbmFtZRgHIAEoCUIHukgEcgIYeFIJc2l0ZV9uYW1lEhkKCHRpbWV6b25lGAggASgJQge6SARyAhhAEi8KCWxvbmdpdHVkZRgJIAEoAUIXukgUEhIZAAAAAACAZkApAAAAAACAZsBIAIgBARIuCghsYXRpdHVkZRgKIAEoAUIXukgUEhIZAAAAAACAVkApAAAAAACAVsBIAYgBARI4Cgh0aWx0X2RlZxgLIAEoAUIXukgUEhIZAAAAAACAVkApAAAAAAAAAABIAlIIdGlsdF9kZWeIAQESPgoLYXppbXV0aF9kZWcYDCABKAFCF7pIFBISEQAAAAAAgHZAKQAAAAAAAAAASANSC2F6aW11dGhfZGVniAEBEi0KB3JhdGVkX3AYDSABKAFCDrpICxIJIQAAAAAAAAAASARSB3JhdGVkX3CIAQESIQoLZ3JhbnVsYXJpdHkYDiADKAVCDLpICZIBBiIEGgIgABItCgtkYXRhX3NvdXJjZRgPIAEoBUILukgIGgYwATACMANSC2RhdGFfc291cmNlEioKC3NvdXJjZV9hdHRyGBAgASgJQgi6SAVyAxiAEFILc291cmNlX2F0dHISIQoJb3BlcmF0aW9uGBEgASgFQgm6SAYaBDABMAJIBYgBARIdCgdoaXNkYXlzGBIgASgFQge6SAQaAiAASAaIAQESJwoKY3JlYXRlZF9hdBgTIAEoCUIHukgEcgIQAVIKY3JlYXRlZF9hdBInCgp1cGRhdGVkX2F0GBQgASgJQge6SARyAhABUgp1cGRhdGVkX2F0QgwKCl9sb25naXR1ZGVCCwoJX2xhdGl0dWRlQgsKCV90aWx0X2RlZ0IOCgxfYXppbXV0aF9kZWdCCgoIX3JhdGVkX3BCDAoKX29wZXJhdGlvbkIKCghfaGlzZGF5c0K7AQoYY29tLmZ1c2lvbi5haS5wcm90by5zaXRlQhBTaXRlTWVzc2FnZVByb3RvUAFaGWZ1c2lvbi5haS5wcm90by5zaXRlO3NpdGWiAgRGQVBTqgIURnVzaW9uLkFpLlByb3RvLlNpdGXKAhRGdXNpb25cQWlcUHJvdG9cU2l0ZeICIEZ1c2lvblxBaVxQcm90b1xTaXRlXEdQQk1ldGFkYXRh6gIXRnVzaW9uOjpBaTo6UHJvdG86OlNpdGViBnByb3RvMw", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
  * Package message 场站注册-首次注册消息请求定义
@@ -433,13 +433,146 @@ export const DeleteSiteResponseSchema: GenMessage<DeleteSiteResponse> = /*@__PUR
   messageDesc(file_site_site_message, 5);
 
 /**
+ * 单条场站算法注册（site_id + service_type 唯一；pv/load/ess 最多 3 类）
+ *
+ * @generated from message fusion.ai.proto.site.SiteRegistration
+ */
+export type SiteRegistration = Message<"fusion.ai.proto.site.SiteRegistration"> & {
+  /**
+   * 固定注册标识
+   *
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 算法业务类型，如 pv_prediction、load_prediction
+   *
+   * @generated from field: string service_type = 2 [json_name = "service_type"];
+   */
+  serviceType: string;
+
+  /**
+   * 场站唯一 ID
+   *
+   * @generated from field: string site_id = 3 [json_name = "site_id"];
+   */
+  siteId: string;
+
+  /**
+   * 场站显示名称
+   *
+   * @generated from field: string site_name = 4 [json_name = "site_name"];
+   */
+  siteName: string;
+
+  /**
+   * 场站时区，如 Asia/Shanghai
+   *
+   * @generated from field: string timezone = 5;
+   */
+  timezone: string;
+
+  /**
+   * 已保存经度，单位：度
+   *
+   * @generated from field: optional double longitude = 6;
+   */
+  longitude?: number | undefined;
+
+  /**
+   * 已保存纬度，单位：度
+   *
+   * @generated from field: optional double latitude = 7;
+   */
+  latitude?: number | undefined;
+
+  /**
+   * 光伏组件倾角，单位：度
+   *
+   * @generated from field: optional double tilt_deg = 8 [json_name = "tilt_deg"];
+   */
+  tiltDeg?: number | undefined;
+
+  /**
+   * 光伏组件方位角，单位：度
+   *
+   * @generated from field: optional double azimuth_deg = 9 [json_name = "azimuth_deg"];
+   */
+  azimuthDeg?: number | undefined;
+
+  /**
+   * 光伏额定功率，单位：kW；非适用业务可不返回
+   *
+   * @generated from field: optional double rated_p = 10 [json_name = "rated_p"];
+   */
+  ratedP?: number | undefined;
+
+  /**
+   * 保存的预测步长列表，单位：分钟
+   *
+   * @generated from field: repeated int32 granularity = 11;
+   */
+  granularity: number[];
+
+  /**
+   * 数据源类型：1-pull，2-push，3-file
+   *
+   * @generated from field: optional int32 data_source = 12 [json_name = "data_source"];
+   */
+  dataSource?: number | undefined;
+
+  /**
+   * 数据源地址或路径；返回中不得暴露凭据
+   *
+   * @generated from field: string source_attr = 13 [json_name = "source_attr"];
+   */
+  sourceAttr: string;
+
+  /**
+   * 已保存运行类型：1-预测，2-训练
+   *
+   * @generated from field: optional int32 operation = 14;
+   */
+  operation?: number | undefined;
+
+  /**
+   * 已保存历史天数；无值时不补默认值
+   *
+   * @generated from field: optional int32 hisdays = 15;
+   */
+  hisdays?: number | undefined;
+
+  /**
+   * 创建时间，ISO 8601 带时区；创建后保持不变
+   *
+   * @generated from field: string created_at = 16 [json_name = "created_at"];
+   */
+  createdAt: string;
+
+  /**
+   * 最近配置更新时间，ISO 8601 带时区；查询不刷新
+   *
+   * @generated from field: string updated_at = 17 [json_name = "updated_at"];
+   */
+  updatedAt: string;
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.SiteRegistration.
+ * Use `create(SiteRegistrationSchema)` to create a new message.
+ */
+export const SiteRegistrationSchema: GenMessage<SiteRegistration> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 6);
+
+/**
  * Package message 场站注册-按场站ID查询场站消息请求定义
  *
  * @generated from message fusion.ai.proto.site.GetSiteRequest
  */
 export type GetSiteRequest = Message<"fusion.ai.proto.site.GetSiteRequest"> & {
   /**
-   * 需要查询的业务注册标识
+   * 场站唯一 ID
    *
    * @generated from field: string site_id = 1 [json_name = "site_id"];
    */
@@ -451,7 +584,7 @@ export type GetSiteRequest = Message<"fusion.ai.proto.site.GetSiteRequest"> & {
  * Use `create(GetSiteRequestSchema)` to create a new message.
  */
 export const GetSiteRequestSchema: GenMessage<GetSiteRequest> = /*@__PURE__*/
-  messageDesc(file_site_site_message, 6);
+  messageDesc(file_site_site_message, 7);
 
 /**
  * Package message 场站注册-按注册ID查询场站消息请求定义
@@ -460,7 +593,7 @@ export const GetSiteRequestSchema: GenMessage<GetSiteRequest> = /*@__PURE__*/
  */
 export type GetSiteByRegRequest = Message<"fusion.ai.proto.site.GetSiteByRegRequest"> & {
   /**
-   * 需要查询的业务注册标识
+   * 注册唯一标识
    *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
@@ -472,14 +605,63 @@ export type GetSiteByRegRequest = Message<"fusion.ai.proto.site.GetSiteByRegRequ
  * Use `create(GetSiteByRegRequestSchema)` to create a new message.
  */
 export const GetSiteByRegRequestSchema: GenMessage<GetSiteByRegRequest> = /*@__PURE__*/
-  messageDesc(file_site_site_message, 7);
+  messageDesc(file_site_site_message, 8);
 
 /**
- * Package message 场站注册-查询场站消息响应定义
+ * 按 site_id 查询响应：registrations 为列表，成功时 0~3 条（无注册为空数组，非 error）
  *
  * @generated from message fusion.ai.proto.site.GetSiteResponse
  */
 export type GetSiteResponse = Message<"fusion.ai.proto.site.GetSiteResponse"> & {
+  /**
+   * 处理状态：success 成功，error 失败
+   *
+   * @generated from field: string state = 1;
+   */
+  state: string;
+
+  /**
+   * 五位业务码：成功 00000，异常见场景码表
+   *
+   * @generated from field: string code = 2;
+   */
+  code: string;
+
+  /**
+   * 本次操作结果说明
+   *
+   * @generated from field: string message = 3;
+   */
+  message: string;
+
+  /**
+   * 查询的场站 ID
+   *
+   * @generated from field: string site_id = 4 [json_name = "site_id"];
+   */
+  siteId: string;
+
+  /**
+   * 该场站下有效注册列表（至多 pv_prediction / load_prediction / ess_prediction 三条）
+   *
+   * @generated from field: repeated fusion.ai.proto.site.SiteRegistration registrations = 5;
+   */
+  registrations: SiteRegistration[];
+};
+
+/**
+ * Describes the message fusion.ai.proto.site.GetSiteResponse.
+ * Use `create(GetSiteResponseSchema)` to create a new message.
+ */
+export const GetSiteResponseSchema: GenMessage<GetSiteResponse> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 9);
+
+/**
+ * 按 registration_id 查询响应（单条，JSON 形态与改版前 GetSiteResponse 一致）
+ *
+ * @generated from message fusion.ai.proto.site.GetSiteByRegResponse
+ */
+export type GetSiteByRegResponse = Message<"fusion.ai.proto.site.GetSiteByRegResponse"> & {
   /**
    * 处理状态：success 成功，error 失败
    *
@@ -586,7 +768,7 @@ export type GetSiteResponse = Message<"fusion.ai.proto.site.GetSiteResponse"> & 
   dataSource: number;
 
   /**
-   * 数据源地址或路径；客户返回中不得暴露凭据
+   * 数据源地址或路径；返回中不得暴露凭据
    *
    * @generated from field: string source_attr = 16 [json_name = "source_attr"];
    */
@@ -622,9 +804,9 @@ export type GetSiteResponse = Message<"fusion.ai.proto.site.GetSiteResponse"> & 
 };
 
 /**
- * Describes the message fusion.ai.proto.site.GetSiteResponse.
- * Use `create(GetSiteResponseSchema)` to create a new message.
+ * Describes the message fusion.ai.proto.site.GetSiteByRegResponse.
+ * Use `create(GetSiteByRegResponseSchema)` to create a new message.
  */
-export const GetSiteResponseSchema: GenMessage<GetSiteResponse> = /*@__PURE__*/
-  messageDesc(file_site_site_message, 8);
+export const GetSiteByRegResponseSchema: GenMessage<GetSiteByRegResponse> = /*@__PURE__*/
+  messageDesc(file_site_site_message, 10);
 
