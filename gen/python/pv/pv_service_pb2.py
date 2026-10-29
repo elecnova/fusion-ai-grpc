@@ -28,7 +28,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from pv import pv_message_pb2 as pv_dot_pv__message__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13pv/pv_service.proto\x12\x12\x66usion.ai.proto.pv\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x13pv/pv_message.proto2\xec\x01\n\tPvService\x12n\n\x0cUploadPvData\x12\'.fusion.ai.proto.pv.UploadPvDataRequest\x1a\x16.google.protobuf.Empty\"\x1d\xda\x41\x01*\x82\xd3\xe4\x93\x02\x13\"\x0e/3rd-api/v2/pv:\x01*\x12o\n\nPullPvData\x12%.fusion.ai.proto.pv.PullPvDataRequest\x1a\x16.google.protobuf.Empty\"\"\xda\x41\x01*\x82\xd3\xe4\x93\x02\x18\"\x13/3rd-api/v2/pv/pull:\x01*B\xab\x01\n\x16\x63om.fusion.ai.proto.pvB\x0ePvServiceProtoP\x01Z\x15\x66usion.ai.proto.pv;pv\xa2\x02\x04\x46\x41PP\xaa\x02\x12\x46usion.Ai.Proto.Pv\xca\x02\x12\x46usion\\Ai\\Proto\\Pv\xe2\x02\x1e\x46usion\\Ai\\Proto\\Pv\\GPBMetadata\xea\x02\x15\x46usion::Ai::Proto::Pvb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13pv/pv_service.proto\x12\x12\x66usion.ai.proto.pv\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x13pv/pv_message.proto2\x92\x03\n\tPvService\x12n\n\x0cUploadPvData\x12\'.fusion.ai.proto.pv.UploadPvDataRequest\x1a\x16.google.protobuf.Empty\"\x1d\xda\x41\x01*\x82\xd3\xe4\x93\x02\x13\"\x0e/3rd-api/v2/pv:\x01*\x12o\n\nPullPvData\x12%.fusion.ai.proto.pv.PullPvDataRequest\x1a\x16.google.protobuf.Empty\"\"\xda\x41\x01*\x82\xd3\xe4\x93\x02\x18\"\x13/3rd-api/v2/pv/pull:\x01*\x12\xa3\x01\n\x10GetPvPredictions\x12+.fusion.ai.proto.pv.GetPvPredictionsRequest\x1a,.fusion.ai.proto.pv.GetPvPredictionsResponse\"4\xda\x41\x0fregistration_id\x82\xd3\xe4\x93\x02\x1c\x12\x1a/3rd-api/v1/pv/predictionsB\xab\x01\n\x16\x63om.fusion.ai.proto.pvB\x0ePvServiceProtoP\x01Z\x15\x66usion.ai.proto.pv;pv\xa2\x02\x04\x46\x41PP\xaa\x02\x12\x46usion.Ai.Proto.Pv\xca\x02\x12\x46usion\\Ai\\Proto\\Pv\xe2\x02\x1e\x46usion\\Ai\\Proto\\Pv\\GPBMetadata\xea\x02\x15\x46usion::Ai::Proto::Pvb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,6 +40,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PVSERVICE'].methods_by_name['UploadPvData']._serialized_options = b'\332A\001*\202\323\344\223\002\023\"\016/3rd-api/v2/pv:\001*'
   _globals['_PVSERVICE'].methods_by_name['PullPvData']._loaded_options = None
   _globals['_PVSERVICE'].methods_by_name['PullPvData']._serialized_options = b'\332A\001*\202\323\344\223\002\030\"\023/3rd-api/v2/pv/pull:\001*'
+  _globals['_PVSERVICE'].methods_by_name['GetPvPredictions']._loaded_options = None
+  _globals['_PVSERVICE'].methods_by_name['GetPvPredictions']._serialized_options = b'\332A\017registration_id\202\323\344\223\002\034\022\032/3rd-api/v1/pv/predictions'
   _globals['_PVSERVICE']._serialized_start=149
-  _globals['_PVSERVICE']._serialized_end=385
+  _globals['_PVSERVICE']._serialized_end=551
 # @@protoc_insertion_point(module_scope)

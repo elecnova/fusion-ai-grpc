@@ -50,6 +50,22 @@ namespace fusion {
 namespace ai {
 namespace proto {
 namespace pv {
+class GetPvPredictionsRequest;
+struct GetPvPredictionsRequestGlobalsTypeInternal;
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+extern GetPvPredictionsRequestGlobalsTypeInternal GetPvPredictionsRequest_globals_;
+extern const ::google::protobuf::internal::ClassDataFull GetPvPredictionsRequest_class_data_;
+#else
+extern const GetPvPredictionsRequestGlobalsTypeInternal GetPvPredictionsRequest_globals_;
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+class GetPvPredictionsResponse;
+struct GetPvPredictionsResponseGlobalsTypeInternal;
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+extern GetPvPredictionsResponseGlobalsTypeInternal GetPvPredictionsResponse_globals_;
+extern const ::google::protobuf::internal::ClassDataFull GetPvPredictionsResponse_class_data_;
+#else
+extern const GetPvPredictionsResponseGlobalsTypeInternal GetPvPredictionsResponse_globals_;
+#endif  // PROTOBUF_MESSAGE_GLOBALS
 class PullPvDataRequest;
 struct PullPvDataRequestGlobalsTypeInternal;
 #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -307,6 +323,243 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PvPowerPoint final : public ::googl
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::int64_t timestamp_;
     double pv_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_pv_2fpv_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPvPredictionsRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.pv.GetPvPredictionsRequest) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline GetPvPredictionsRequest() : GetPvPredictionsRequest(nullptr) {}
+  ~GetPvPredictionsRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(GetPvPredictionsRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetPvPredictionsRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr GetPvPredictionsRequest(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline GetPvPredictionsRequest(const GetPvPredictionsRequest& from) : GetPvPredictionsRequest(nullptr, from) {}
+  inline GetPvPredictionsRequest(GetPvPredictionsRequest&& from) noexcept : GetPvPredictionsRequest(nullptr, ::std::move(from)) {}
+  inline GetPvPredictionsRequest& operator=(const GetPvPredictionsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetPvPredictionsRequest& operator=(GetPvPredictionsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const GetPvPredictionsRequest& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetPvPredictionsRequest>(&GetPvPredictionsRequest_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 3;
+  friend void swap(GetPvPredictionsRequest& a, GetPvPredictionsRequest& b) { a.Swap(&b); }
+  inline void Swap(GetPvPredictionsRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetPvPredictionsRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] GetPvPredictionsRequest* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<GetPvPredictionsRequest>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const GetPvPredictionsRequest& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const GetPvPredictionsRequest& from) { GetPvPredictionsRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetPvPredictionsRequest* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.pv.GetPvPredictionsRequest"; }
+
+  explicit GetPvPredictionsRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  GetPvPredictionsRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetPvPredictionsRequest& from);
+  GetPvPredictionsRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetPvPredictionsRequest&& from) noexcept
+      : GetPvPredictionsRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRegistrationIdFieldNumber = 1,
+    kCallIdFieldNumber = 3,
+    kGranularityFieldNumber = 2,
+  };
+  // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+  void clear_registration_id() ;
+  [[nodiscard]] const ::std::string& registration_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_registration_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_registration_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_registration_id();
+  void set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_registration_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_registration_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
+
+  public:
+  // optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
+  [[nodiscard]] bool has_call_id() const;
+  void clear_call_id() ;
+  [[nodiscard]] const ::std::string& call_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_call_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_call_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_call_id();
+  void set_allocated_call_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_call_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_call_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_call_id();
+
+  public:
+  // optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
+  [[nodiscard]] bool has_granularity() const;
+  void clear_granularity() ;
+  [[nodiscard]] ::int32_t granularity() const;
+  void set_granularity(::int32_t value);
+
+  private:
+  ::int32_t _internal_granularity() const;
+  void _internal_set_granularity(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.pv.GetPvPredictionsRequest)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<2, 3,
+                          0, 73,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const GetPvPredictionsRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr registration_id_;
+    ::google::protobuf::internal::ArenaStringPtr call_id_;
+    ::int32_t granularity_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -806,7 +1059,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PullPvDataRequest final : public ::
   [[nodiscard]] static const PullPvDataRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<PullPvDataRequest>(&PullPvDataRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 3;
+  static constexpr int kIndexInFileMessages = 5;
   friend void swap(PullPvDataRequest& a, PullPvDataRequest& b) { a.Swap(&b); }
   inline void Swap(PullPvDataRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -964,6 +1217,321 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PullPvDataRequest final : public ::
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr registration_id_;
     ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE data_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_pv_2fpv_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPvPredictionsResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.pv.GetPvPredictionsResponse) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline GetPvPredictionsResponse() : GetPvPredictionsResponse(nullptr) {}
+  ~GetPvPredictionsResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(GetPvPredictionsResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetPvPredictionsResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr GetPvPredictionsResponse(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline GetPvPredictionsResponse(const GetPvPredictionsResponse& from) : GetPvPredictionsResponse(nullptr, from) {}
+  inline GetPvPredictionsResponse(GetPvPredictionsResponse&& from) noexcept : GetPvPredictionsResponse(nullptr, ::std::move(from)) {}
+  inline GetPvPredictionsResponse& operator=(const GetPvPredictionsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetPvPredictionsResponse& operator=(GetPvPredictionsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const GetPvPredictionsResponse& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetPvPredictionsResponse>(&GetPvPredictionsResponse_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 4;
+  friend void swap(GetPvPredictionsResponse& a, GetPvPredictionsResponse& b) { a.Swap(&b); }
+  inline void Swap(GetPvPredictionsResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetPvPredictionsResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] GetPvPredictionsResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<GetPvPredictionsResponse>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const GetPvPredictionsResponse& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const GetPvPredictionsResponse& from) { GetPvPredictionsResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetPvPredictionsResponse* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.pv.GetPvPredictionsResponse"; }
+
+  explicit GetPvPredictionsResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  GetPvPredictionsResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetPvPredictionsResponse& from);
+  GetPvPredictionsResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetPvPredictionsResponse&& from) noexcept
+      : GetPvPredictionsResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kStateFieldNumber = 1,
+    kCodeFieldNumber = 2,
+    kMessageFieldNumber = 3,
+    kRegistrationIdFieldNumber = 4,
+    kCallIdFieldNumber = 5,
+    kDataFieldNumber = 8,
+    kCreatedAtFieldNumber = 7,
+    kGranularityFieldNumber = 6,
+  };
+  // string state = 1 [json_name = "state", (.buf.validate.field) = {
+  void clear_state() ;
+  [[nodiscard]] const ::std::string& state() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_state(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_state();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_state();
+  void set_allocated_state(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_state() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_state(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_state();
+
+  public:
+  // string code = 2 [json_name = "code", (.buf.validate.field) = {
+  void clear_code() ;
+  [[nodiscard]] const ::std::string& code() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_code(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_code();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_code();
+  void set_allocated_code(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_code() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_code(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_code();
+
+  public:
+  // string message = 3 [json_name = "message", (.buf.validate.field) = {
+  void clear_message() ;
+  [[nodiscard]] const ::std::string& message() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_message(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_message();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_message();
+  void set_allocated_message(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_message() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_message(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_message();
+
+  public:
+  // string registration_id = 4 [json_name = "registration_id"];
+  void clear_registration_id() ;
+  [[nodiscard]] const ::std::string& registration_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_registration_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_registration_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_registration_id();
+  void set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_registration_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_registration_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
+
+  public:
+  // string call_id = 5 [json_name = "call_id"];
+  void clear_call_id() ;
+  [[nodiscard]] const ::std::string& call_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_call_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_call_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_call_id();
+  void set_allocated_call_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_call_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_call_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_call_id();
+
+  public:
+  // .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
+  [[nodiscard]] bool has_data() const;
+  void clear_data() ;
+  [[nodiscard]] const ::fusion::ai::proto::pv::PvPowerData& data() const;
+  [[nodiscard]] ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE release_data();
+  ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NONNULL mutable_data();
+  void set_allocated_data(::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_data(::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE value);
+  ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE unsafe_arena_release_data();
+
+  private:
+  const ::fusion::ai::proto::pv::PvPowerData& _internal_data() const;
+  ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NONNULL _internal_mutable_data();
+
+  public:
+  // int64 created_at = 7 [json_name = "created_at"];
+  void clear_created_at() ;
+  [[nodiscard]] ::int64_t created_at() const;
+  void set_created_at(::int64_t value);
+
+  private:
+  ::int64_t _internal_created_at() const;
+  void _internal_set_created_at(::int64_t value);
+
+  public:
+  // int32 granularity = 6 [json_name = "granularity"];
+  void clear_granularity() ;
+  [[nodiscard]] ::int32_t granularity() const;
+  void set_granularity(::int32_t value);
+
+  private:
+  ::int32_t _internal_granularity() const;
+  void _internal_set_granularity(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.pv.GetPvPredictionsResponse)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<3, 8,
+                          1, 98,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const GetPvPredictionsResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr state_;
+    ::google::protobuf::internal::ArenaStringPtr code_;
+    ::google::protobuf::internal::ArenaStringPtr message_;
+    ::google::protobuf::internal::ArenaStringPtr registration_id_;
+    ::google::protobuf::internal::ArenaStringPtr call_id_;
+    ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE data_;
+    ::int64_t created_at_;
+    ::int32_t granularity_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1257,6 +1825,640 @@ inline double PvPowerPoint::_internal_pv() const {
 inline void PvPowerPoint::_internal_set_pv(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pv_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// GetPvPredictionsRequest
+
+// string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+inline void GetPvPredictionsRequest::clear_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::std::string& GetPvPredictionsRequest::registration_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsRequest.registration_id)
+  return _internal_registration_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetPvPredictionsRequest::set_registration_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  _impl_.registration_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsRequest.registration_id)
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsRequest::mutable_registration_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::std::string* _s = _internal_mutable_registration_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.GetPvPredictionsRequest.registration_id)
+  return _s;
+}
+inline const ::std::string& GetPvPredictionsRequest::_internal_registration_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.registration_id_.Get();
+}
+inline void GetPvPredictionsRequest::_internal_set_registration_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsRequest::_internal_mutable_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.registration_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetPvPredictionsRequest::release_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.GetPvPredictionsRequest.registration_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  auto* released = _impl_.registration_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetPvPredictionsRequest::set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  }
+  _impl_.registration_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.registration_id_.IsDefault()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.GetPvPredictionsRequest.registration_id)
+}
+
+// optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
+inline bool GetPvPredictionsRequest::has_granularity() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000004U);
+  return value;
+}
+inline void GetPvPredictionsRequest::clear_granularity() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.granularity_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+}
+inline ::int32_t GetPvPredictionsRequest::granularity() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsRequest.granularity)
+  return _internal_granularity();
+}
+inline void GetPvPredictionsRequest::set_granularity(::int32_t value) {
+  _internal_set_granularity(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsRequest.granularity)
+}
+inline ::int32_t GetPvPredictionsRequest::_internal_granularity() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.granularity_;
+}
+inline void GetPvPredictionsRequest::_internal_set_granularity(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.granularity_ = value;
+}
+
+// optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
+inline bool GetPvPredictionsRequest::has_call_id() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
+  return value;
+}
+inline void GetPvPredictionsRequest::clear_call_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.call_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline const ::std::string& GetPvPredictionsRequest::call_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsRequest.call_id)
+  return _internal_call_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetPvPredictionsRequest::set_call_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  _impl_.call_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsRequest.call_id)
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsRequest::mutable_call_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::std::string* _s = _internal_mutable_call_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.GetPvPredictionsRequest.call_id)
+  return _s;
+}
+inline const ::std::string& GetPvPredictionsRequest::_internal_call_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.call_id_.Get();
+}
+inline void GetPvPredictionsRequest::_internal_set_call_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.call_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsRequest::_internal_mutable_call_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.call_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetPvPredictionsRequest::release_call_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.GetPvPredictionsRequest.call_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  auto* released = _impl_.call_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.call_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetPvPredictionsRequest::set_allocated_call_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+  _impl_.call_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.call_id_.IsDefault()) {
+    _impl_.call_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.GetPvPredictionsRequest.call_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetPvPredictionsResponse
+
+// string state = 1 [json_name = "state", (.buf.validate.field) = {
+inline void GetPvPredictionsResponse::clear_state() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.state_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::std::string& GetPvPredictionsResponse::state() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsResponse.state)
+  return _internal_state();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetPvPredictionsResponse::set_state(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  _impl_.state_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsResponse.state)
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::mutable_state()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::std::string* _s = _internal_mutable_state();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.GetPvPredictionsResponse.state)
+  return _s;
+}
+inline const ::std::string& GetPvPredictionsResponse::_internal_state() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.state_.Get();
+}
+inline void GetPvPredictionsResponse::_internal_set_state(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.state_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::_internal_mutable_state() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.state_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetPvPredictionsResponse::release_state() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.GetPvPredictionsResponse.state)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  auto* released = _impl_.state_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.state_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetPvPredictionsResponse::set_allocated_state(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  }
+  _impl_.state_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.state_.IsDefault()) {
+    _impl_.state_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.GetPvPredictionsResponse.state)
+}
+
+// string code = 2 [json_name = "code", (.buf.validate.field) = {
+inline void GetPvPredictionsResponse::clear_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.code_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline const ::std::string& GetPvPredictionsResponse::code() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsResponse.code)
+  return _internal_code();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetPvPredictionsResponse::set_code(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  _impl_.code_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsResponse.code)
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::mutable_code()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::std::string* _s = _internal_mutable_code();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.GetPvPredictionsResponse.code)
+  return _s;
+}
+inline const ::std::string& GetPvPredictionsResponse::_internal_code() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.code_.Get();
+}
+inline void GetPvPredictionsResponse::_internal_set_code(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.code_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::_internal_mutable_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.code_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetPvPredictionsResponse::release_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.GetPvPredictionsResponse.code)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  auto* released = _impl_.code_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.code_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetPvPredictionsResponse::set_allocated_code(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+  _impl_.code_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.code_.IsDefault()) {
+    _impl_.code_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.GetPvPredictionsResponse.code)
+}
+
+// string message = 3 [json_name = "message", (.buf.validate.field) = {
+inline void GetPvPredictionsResponse::clear_message() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.message_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+}
+inline const ::std::string& GetPvPredictionsResponse::message() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsResponse.message)
+  return _internal_message();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetPvPredictionsResponse::set_message(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  _impl_.message_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsResponse.message)
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::mutable_message()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ::std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.GetPvPredictionsResponse.message)
+  return _s;
+}
+inline const ::std::string& GetPvPredictionsResponse::_internal_message() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.message_.Get();
+}
+inline void GetPvPredictionsResponse::_internal_set_message(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.message_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::_internal_mutable_message() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.message_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetPvPredictionsResponse::release_message() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.GetPvPredictionsResponse.message)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000004U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  auto* released = _impl_.message_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.message_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetPvPredictionsResponse::set_allocated_message(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  }
+  _impl_.message_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.message_.IsDefault()) {
+    _impl_.message_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.GetPvPredictionsResponse.message)
+}
+
+// string registration_id = 4 [json_name = "registration_id"];
+inline void GetPvPredictionsResponse::clear_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+}
+inline const ::std::string& GetPvPredictionsResponse::registration_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsResponse.registration_id)
+  return _internal_registration_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetPvPredictionsResponse::set_registration_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  _impl_.registration_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsResponse.registration_id)
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::mutable_registration_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ::std::string* _s = _internal_mutable_registration_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.GetPvPredictionsResponse.registration_id)
+  return _s;
+}
+inline const ::std::string& GetPvPredictionsResponse::_internal_registration_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.registration_id_.Get();
+}
+inline void GetPvPredictionsResponse::_internal_set_registration_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::_internal_mutable_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.registration_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetPvPredictionsResponse::release_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.GetPvPredictionsResponse.registration_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000008U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  auto* released = _impl_.registration_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetPvPredictionsResponse::set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  }
+  _impl_.registration_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.registration_id_.IsDefault()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.GetPvPredictionsResponse.registration_id)
+}
+
+// string call_id = 5 [json_name = "call_id"];
+inline void GetPvPredictionsResponse::clear_call_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.call_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+}
+inline const ::std::string& GetPvPredictionsResponse::call_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsResponse.call_id)
+  return _internal_call_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetPvPredictionsResponse::set_call_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  _impl_.call_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsResponse.call_id)
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::mutable_call_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  ::std::string* _s = _internal_mutable_call_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.GetPvPredictionsResponse.call_id)
+  return _s;
+}
+inline const ::std::string& GetPvPredictionsResponse::_internal_call_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.call_id_.Get();
+}
+inline void GetPvPredictionsResponse::_internal_set_call_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.call_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetPvPredictionsResponse::_internal_mutable_call_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.call_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetPvPredictionsResponse::release_call_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.GetPvPredictionsResponse.call_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000010U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  auto* released = _impl_.call_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.call_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetPvPredictionsResponse::set_allocated_call_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  }
+  _impl_.call_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.call_id_.IsDefault()) {
+    _impl_.call_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.GetPvPredictionsResponse.call_id)
+}
+
+// int32 granularity = 6 [json_name = "granularity"];
+inline void GetPvPredictionsResponse::clear_granularity() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.granularity_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+}
+inline ::int32_t GetPvPredictionsResponse::granularity() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsResponse.granularity)
+  return _internal_granularity();
+}
+inline void GetPvPredictionsResponse::set_granularity(::int32_t value) {
+  _internal_set_granularity(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsResponse.granularity)
+}
+inline ::int32_t GetPvPredictionsResponse::_internal_granularity() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.granularity_;
+}
+inline void GetPvPredictionsResponse::_internal_set_granularity(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.granularity_ = value;
+}
+
+// int64 created_at = 7 [json_name = "created_at"];
+inline void GetPvPredictionsResponse::clear_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.created_at_ = ::int64_t{0};
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+}
+inline ::int64_t GetPvPredictionsResponse::created_at() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsResponse.created_at)
+  return _internal_created_at();
+}
+inline void GetPvPredictionsResponse::set_created_at(::int64_t value) {
+  _internal_set_created_at(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.pv.GetPvPredictionsResponse.created_at)
+}
+inline ::int64_t GetPvPredictionsResponse::_internal_created_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.created_at_;
+}
+inline void GetPvPredictionsResponse::_internal_set_created_at(::int64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.created_at_ = value;
+}
+
+// .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
+inline bool GetPvPredictionsResponse::has_data() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000020U);
+  PROTOBUF_ASSUME(!value || _impl_.data_ != nullptr);
+  return value;
+}
+inline void GetPvPredictionsResponse::clear_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.data_ != nullptr) _impl_.data_->Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+}
+inline const ::fusion::ai::proto::pv::PvPowerData& GetPvPredictionsResponse::_internal_data() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::fusion::ai::proto::pv::PvPowerData* p = _impl_.data_;
+  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::pv::PvPowerData>(&::fusion::ai::proto::pv::PvPowerData_globals_);
+}
+inline const ::fusion::ai::proto::pv::PvPowerData& GetPvPredictionsResponse::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.pv.GetPvPredictionsResponse.data)
+  return _internal_data();
+}
+inline void GetPvPredictionsResponse::unsafe_arena_set_allocated_data(
+    ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.data_);
+  }
+  _impl_.data_ = reinterpret_cast<::fusion::ai::proto::pv::PvPowerData*>(value);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.pv.GetPvPredictionsResponse.data)
+}
+inline ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE GetPvPredictionsResponse::release_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ::fusion::ai::proto::pv::PvPowerData* released = _impl_.data_;
+  _impl_.data_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE GetPvPredictionsResponse::unsafe_arena_release_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.pv.GetPvPredictionsResponse.data)
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ::fusion::ai::proto::pv::PvPowerData* temp = _impl_.data_;
+  _impl_.data_ = nullptr;
+  return temp;
+}
+inline ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NONNULL GetPvPredictionsResponse::_internal_mutable_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.data_ == nullptr) {
+    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::pv::PvPowerData>(GetArena());
+    _impl_.data_ = reinterpret_cast<::fusion::ai::proto::pv::PvPowerData*>(p);
+  }
+  return _impl_.data_;
+}
+inline ::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NONNULL GetPvPredictionsResponse::mutable_data()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ::fusion::ai::proto::pv::PvPowerData* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.pv.GetPvPredictionsResponse.data)
+  return _msg;
+}
+inline void GetPvPredictionsResponse::set_allocated_data(::fusion::ai::proto::pv::PvPowerData* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.data_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  }
+
+  _impl_.data_ = reinterpret_cast<::fusion::ai::proto::pv::PvPowerData*>(value);
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.pv.GetPvPredictionsResponse.data)
 }
 
 // -------------------------------------------------------------------

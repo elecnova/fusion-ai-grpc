@@ -17,14 +17,14 @@ import { file_google_api_annotations } from "../google/api/annotations_pb";
 import { file_google_api_client } from "../google/api/client_pb";
 import type { EmptySchema } from "@bufbuild/protobuf/wkt";
 import { file_google_protobuf_empty } from "@bufbuild/protobuf/wkt";
-import type { PullPvDataRequestSchema, UploadPvDataRequestSchema } from "./pv_message_pb";
+import type { GetPvPredictionsRequestSchema, GetPvPredictionsResponseSchema, PullPvDataRequestSchema, UploadPvDataRequestSchema } from "./pv_message_pb";
 import { file_pv_pv_message } from "./pv_message_pb";
 
 /**
  * Describes the file pv/pv_service.proto.
  */
 export const file_pv_pv_service: GenFile = /*@__PURE__*/
-  fileDesc("ChNwdi9wdl9zZXJ2aWNlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYy7AEKCVB2U2VydmljZRJuCgxVcGxvYWRQdkRhdGESJy5mdXNpb24uYWkucHJvdG8ucHYuVXBsb2FkUHZEYXRhUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSId2kEBKoLT5JMCEzoBKiIOLzNyZC1hcGkvdjIvcHYSbwoKUHVsbFB2RGF0YRIlLmZ1c2lvbi5haS5wcm90by5wdi5QdWxsUHZEYXRhUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIi2kEBKoLT5JMCGDoBKiITLzNyZC1hcGkvdjIvcHYvcHVsbEKrAQoWY29tLmZ1c2lvbi5haS5wcm90by5wdkIOUHZTZXJ2aWNlUHJvdG9QAVoVZnVzaW9uLmFpLnByb3RvLnB2O3B2ogIERkFQUKoCEkZ1c2lvbi5BaS5Qcm90by5QdsoCEkZ1c2lvblxBaVxQcm90b1xQduICHkZ1c2lvblxBaVxQcm90b1xQdlxHUEJNZXRhZGF0YeoCFUZ1c2lvbjo6QWk6OlByb3RvOjpQdmIGcHJvdG8z", [file_google_api_annotations, file_google_api_client, file_google_protobuf_empty, file_pv_pv_message]);
+  fileDesc("ChNwdi9wdl9zZXJ2aWNlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYykgMKCVB2U2VydmljZRJuCgxVcGxvYWRQdkRhdGESJy5mdXNpb24uYWkucHJvdG8ucHYuVXBsb2FkUHZEYXRhUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSId2kEBKoLT5JMCEzoBKiIOLzNyZC1hcGkvdjIvcHYSbwoKUHVsbFB2RGF0YRIlLmZ1c2lvbi5haS5wcm90by5wdi5QdWxsUHZEYXRhUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIi2kEBKoLT5JMCGDoBKiITLzNyZC1hcGkvdjIvcHYvcHVsbBKjAQoQR2V0UHZQcmVkaWN0aW9ucxIrLmZ1c2lvbi5haS5wcm90by5wdi5HZXRQdlByZWRpY3Rpb25zUmVxdWVzdBosLmZ1c2lvbi5haS5wcm90by5wdi5HZXRQdlByZWRpY3Rpb25zUmVzcG9uc2UiNNpBD3JlZ2lzdHJhdGlvbl9pZILT5JMCHBIaLzNyZC1hcGkvdjEvcHYvcHJlZGljdGlvbnNCqwEKFmNvbS5mdXNpb24uYWkucHJvdG8ucHZCDlB2U2VydmljZVByb3RvUAFaFWZ1c2lvbi5haS5wcm90by5wdjtwdqICBEZBUFCqAhJGdXNpb24uQWkuUHJvdG8uUHbKAhJGdXNpb25cQWlcUHJvdG9cUHbiAh5GdXNpb25cQWlcUHJvdG9cUHZcR1BCTWV0YWRhdGHqAhVGdXNpb246OkFpOjpQcm90bzo6UHZiBnByb3RvMw", [file_google_api_annotations, file_google_api_client, file_google_protobuf_empty, file_pv_pv_message]);
 
 /**
  * Package pv_service 光伏服务接口定义
@@ -51,6 +51,16 @@ export const PvService: GenService<{
     methodKind: "unary";
     input: typeof PullPvDataRequestSchema;
     output: typeof EmptySchema;
+  },
+  /**
+   * 8.2 查询光伏预测结果（算法写入 PG，本平台只读）
+   *
+   * @generated from rpc fusion.ai.proto.pv.PvService.GetPvPredictions
+   */
+  getPvPredictions: {
+    methodKind: "unary";
+    input: typeof GetPvPredictionsRequestSchema;
+    output: typeof GetPvPredictionsResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_pv_pv_service, 0);

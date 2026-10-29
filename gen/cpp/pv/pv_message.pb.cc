@@ -35,6 +35,10 @@ PROTOBUF_CONSTINIT ::google::protobuf::internal::ReflectionData
         {&::_pbi::kDescriptorMethods, &::descriptor_table_pv_2fpv_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::pv::PvPowerPoint
         {&::_pbi::kDescriptorMethods, &::descriptor_table_pv_2fpv_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::pv::GetPvPredictionsRequest
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_pv_2fpv_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::pv::GetPvPredictionsResponse
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_pv_2fpv_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::pv::PullPvDataRequest
         {&::_pbi::kDescriptorMethods, &::descriptor_table_pv_2fpv_5fmessage_2eproto, /* tracker*/ nullptr,},
 };
@@ -187,6 +191,169 @@ const ::_pbi::ClassData* PvPowerPoint_get_class_data() {
   return PvPowerPoint_globals_.GetClassData();
 #else
   return PvPowerPoint_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class GetPvPredictionsRequest::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<GetPvPredictionsRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_._has_bits_);
+};
+
+constexpr GetPvPredictionsRequest::ParseTableT_ GetPvPredictionsRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_._has_bits_),
+      0, // no _extensions_
+      3, 24,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967288,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      3,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::pv::GetPvPredictionsRequest>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      {::_pbi::TcParser::MiniParse, {}},
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.registration_id_)}},
+      // optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetPvPredictionsRequest, _impl_.granularity_), 2>(),
+       {16, 2, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.granularity_)}},
+      // optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {26, 1, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.call_id_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.registration_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.granularity_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.call_id_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
+    {{
+      "\52\17\0\7\0\0\0\0"
+      "fusion.ai.proto.pv.GetPvPredictionsRequest"
+      "registration_id"
+      "call_id"
+    }},
+  };
+}
+
+
+inline constexpr GetPvPredictionsRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : registration_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        call_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        granularity_{0} {}
+
+template <typename>
+constexpr GetPvPredictionsRequest::GetPvPredictionsRequest(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL GetPvPredictionsRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) GetPvPredictionsRequest(arena);
+}
+constexpr auto GetPvPredictionsRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetPvPredictionsRequest), alignof(GetPvPredictionsRequest));
+}
+constexpr auto GetPvPredictionsRequest::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &GetPvPredictionsRequest::MergeImpl,
+          Super_::GetNewImpl<GetPvPredictionsRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &GetPvPredictionsRequest::SharedDtor,
+          Super_::GetClearImpl<GetPvPredictionsRequest>(), &GetPvPredictionsRequest::ByteSizeLong,
+              &GetPvPredictionsRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[3],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_pv_2fpv_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct GetPvPredictionsRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr GetPvPredictionsRequestGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 GetPvPredictionsRequest_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(GetPvPredictionsRequest::InternalGenerateClassData_(
+            _default, &GetPvPredictionsRequest_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<GetPvPredictionsRequest>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~GetPvPredictionsRequestGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) GetPvPredictionsRequest _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetPvPredictionsRequest>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequestGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetPvPredictionsRequestGlobalsTypeInternal GetPvPredictionsRequest_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* GetPvPredictionsRequest_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return GetPvPredictionsRequest_globals_.GetClassData();
+#else
+  return GetPvPredictionsRequest_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -606,7 +773,7 @@ constexpr auto PullPvDataRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[3],
+      &file_reflection_data[5],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_pv_2fpv_5fmessage_2eproto,
@@ -657,6 +824,218 @@ const ::_pbi::ClassData* PullPvDataRequest_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
+class GetPvPredictionsResponse::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<GetPvPredictionsResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_._has_bits_);
+};
+
+constexpr GetPvPredictionsResponse::ParseTableT_ GetPvPredictionsResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_._has_bits_),
+      0, // no _extensions_
+      8, 56,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967040,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      8,  // num_field_entries
+      1,  // num_aux_entries
+      offsetof(ParseTableT_, aux_entries),
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::pv::GetPvPredictionsResponse>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      // .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
+      {::_pbi::TcParser::FastMtS1,
+       {66, 5, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.data_)}},
+      // string state = 1 [json_name = "state", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.state_)}},
+      // string code = 2 [json_name = "code", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {18, 1, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.code_)}},
+      // string message = 3 [json_name = "message", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {26, 2, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.message_)}},
+      // string registration_id = 4 [json_name = "registration_id"];
+      {::_pbi::TcParser::FastUS1,
+       {34, 3, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.registration_id_)}},
+      // string call_id = 5 [json_name = "call_id"];
+      {::_pbi::TcParser::FastUS1,
+       {42, 4, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.call_id_)}},
+      // int32 granularity = 6 [json_name = "granularity"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetPvPredictionsResponse, _impl_.granularity_), 7>(),
+       {48, 7, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.granularity_)}},
+      // int64 created_at = 7 [json_name = "created_at"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(GetPvPredictionsResponse, _impl_.created_at_), 6>(),
+       {56, 6, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.created_at_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string state = 1 [json_name = "state", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.state_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string code = 2 [json_name = "code", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.code_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string message = 3 [json_name = "message", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.message_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string registration_id = 4 [json_name = "registration_id"];
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.registration_id_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string call_id = 5 [json_name = "call_id"];
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.call_id_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // int32 granularity = 6 [json_name = "granularity"];
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.granularity_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // int64 created_at = 7 [json_name = "created_at"];
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.created_at_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+      // .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.data_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    }},
+    {{
+        #ifndef PROTOBUF_MESSAGE_GLOBALS
+        {::_pbi::TcParser::GetTable<::fusion::ai::proto::pv::PvPowerData>()},
+        #else
+        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::pv::PvPowerData_globals_},
+        #endif
+    }},
+    {{
+      "\53\5\4\7\17\7\0\0\0\0\0\0\0\0\0\0"
+      "fusion.ai.proto.pv.GetPvPredictionsResponse"
+      "state"
+      "code"
+      "message"
+      "registration_id"
+      "call_id"
+    }},
+  };
+}
+
+
+inline constexpr GetPvPredictionsResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : state_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        code_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        message_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        registration_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        call_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        data_{nullptr},
+        created_at_{::int64_t{0}},
+        granularity_{0} {}
+
+template <typename>
+constexpr GetPvPredictionsResponse::GetPvPredictionsResponse(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL GetPvPredictionsResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) GetPvPredictionsResponse(arena);
+}
+constexpr auto GetPvPredictionsResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetPvPredictionsResponse), alignof(GetPvPredictionsResponse));
+}
+constexpr auto GetPvPredictionsResponse::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &GetPvPredictionsResponse::MergeImpl,
+          Super_::GetNewImpl<GetPvPredictionsResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &GetPvPredictionsResponse::SharedDtor,
+          Super_::GetClearImpl<GetPvPredictionsResponse>(), &GetPvPredictionsResponse::ByteSizeLong,
+              &GetPvPredictionsResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[4],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_pv_2fpv_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct GetPvPredictionsResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr GetPvPredictionsResponseGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 GetPvPredictionsResponse_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(GetPvPredictionsResponse::InternalGenerateClassData_(
+            _default, &GetPvPredictionsResponse_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<GetPvPredictionsResponse>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~GetPvPredictionsResponseGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) GetPvPredictionsResponse _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetPvPredictionsResponse>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponseGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetPvPredictionsResponseGlobalsTypeInternal GetPvPredictionsResponse_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* GetPvPredictionsResponse_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return GetPvPredictionsResponse_globals_.GetClassData();
+#else
+  return GetPvPredictionsResponse_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
 }  // namespace pv
 }  // namespace proto
 }  // namespace ai
@@ -688,6 +1067,34 @@ const ::uint32_t
         0,
         1,
         0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_._has_bits_),
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.registration_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.granularity_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.call_id_),
+        0,
+        2,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_._has_bits_),
+        11, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.state_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.code_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.message_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.registration_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.call_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.granularity_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.created_at_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.data_),
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        6,
+        5,
+        0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::PullPvDataRequest, _impl_._has_bits_),
         5, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::PullPvDataRequest, _impl_.registration_id_),
@@ -701,13 +1108,17 @@ static const ::_pbi::MigrationSchema
         {0, sizeof(::fusion::ai::proto::pv::UploadPvDataRequest)},
         {7, sizeof(::fusion::ai::proto::pv::PvPowerData)},
         {12, sizeof(::fusion::ai::proto::pv::PvPowerPoint)},
-        {19, sizeof(::fusion::ai::proto::pv::PullPvDataRequest)},
+        {19, sizeof(::fusion::ai::proto::pv::GetPvPredictionsRequest)},
+        {28, sizeof(::fusion::ai::proto::pv::GetPvPredictionsResponse)},
+        {47, sizeof(::fusion::ai::proto::pv::PullPvDataRequest)},
 };
 static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
     file_message_globals[] = {
         &::fusion::ai::proto::pv::UploadPvDataRequest_globals_,
         &::fusion::ai::proto::pv::PvPowerData_globals_,
         &::fusion::ai::proto::pv::PvPowerPoint_globals_,
+        &::fusion::ai::proto::pv::GetPvPredictionsRequest_globals_,
+        &::fusion::ai::proto::pv::GetPvPredictionsResponse_globals_,
         &::fusion::ai::proto::pv::PullPvDataRequest_globals_,
 };
 const char descriptor_table_protodef_pv_2fpv_5fmessage_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
@@ -721,15 +1132,29 @@ const char descriptor_table_protodef_pv_2fpv_5fmessage_2eproto[] ABSL_ATTRIBUTE_
     "werData\022:\n\007pv_list\030\001 \003(\0132 .fusion.ai.pro"
     "to.pv.PvPowerPointR\007pv_list\"U\n\014PvPowerPo"
     "int\022%\n\ttimestamp\030\001 \001(\003B\007\272H\004\"\002 \000R\ttimesta"
-    "mp\022\036\n\002pv\030\002 \001(\001B\016\272H\013\022\t)\000\000\000\000\000\000\000\000R\002pv\"}\n\021Pu"
-    "llPvDataRequest\0223\n\017registration_id\030\001 \001(\t"
-    "B\t\272H\006r\004\020\001\030@R\017registration_id\0223\n\004data\030\002 \001"
-    "(\0132\037.fusion.ai.proto.pv.PvPowerDataR\004dat"
-    "aB\253\001\n\026com.fusion.ai.proto.pvB\016PvMessageP"
-    "rotoP\001Z\025fusion.ai.proto.pv;pv\242\002\004FAPP\252\002\022F"
-    "usion.Ai.Proto.Pv\312\002\022Fusion\\Ai\\Proto\\Pv\342\002"
-    "\036Fusion\\Ai\\Proto\\Pv\\GPBMetadata\352\002\025Fusion"
-    "::Ai::Proto::Pvb\006proto3"
+    "mp\022\036\n\002pv\030\002 \001(\001B\016\272H\013\022\t)\000\000\000\000\000\000\000\000R\002pv\"\310\001\n\027G"
+    "etPvPredictionsRequest\0223\n\017registration_i"
+    "d\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\0224\n\013g"
+    "ranularity\030\002 \001(\005B\r\272H\n\032\0100\0050\0170\0360<H\000R\013granu"
+    "larity\210\001\001\022&\n\007call_id\030\003 \001(\tB\007\272H\004r\002\030@H\001R\007c"
+    "all_id\210\001\001B\016\n\014_granularityB\n\n\010_call_id\"\314\002"
+    "\n\030GetPvPredictionsResponse\022+\n\005state\030\001 \001("
+    "\tB\025\272H\022r\020R\007successR\005errorR\005state\022%\n\004code\030"
+    "\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007messag"
+    "e\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\022(\n\017registratio"
+    "n_id\030\004 \001(\tR\017registration_id\022\030\n\007call_id\030\005"
+    " \001(\tR\007call_id\022 \n\013granularity\030\006 \001(\005R\013gran"
+    "ularity\022\036\n\ncreated_at\030\007 \001(\003R\ncreated_at\022"
+    "3\n\004data\030\010 \001(\0132\037.fusion.ai.proto.pv.PvPow"
+    "erDataR\004data\"}\n\021PullPvDataRequest\0223\n\017reg"
+    "istration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registrat"
+    "ion_id\0223\n\004data\030\002 \001(\0132\037.fusion.ai.proto.p"
+    "v.PvPowerDataR\004dataB\253\001\n\026com.fusion.ai.pr"
+    "oto.pvB\016PvMessageProtoP\001Z\025fusion.ai.prot"
+    "o.pv;pv\242\002\004FAPP\252\002\022Fusion.Ai.Proto.Pv\312\002\022Fu"
+    "sion\\Ai\\Proto\\Pv\342\002\036Fusion\\Ai\\Proto\\Pv\\GP"
+    "BMetadata\352\002\025Fusion::Ai::Proto::Pvb\006proto"
+    "3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_pv_2fpv_5fmessage_2eproto_deps[2] = {
@@ -740,13 +1165,13 @@ static ::absl::once_flag descriptor_table_pv_2fpv_5fmessage_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_pv_2fpv_5fmessage_2eproto = {
     false,
     false,
-    703,
+    1241,
     descriptor_table_protodef_pv_2fpv_5fmessage_2eproto,
     "pv/pv_message.proto",
     &descriptor_table_pv_2fpv_5fmessage_2eproto_once,
     descriptor_table_pv_2fpv_5fmessage_2eproto_deps,
     2,
-    4,
+    6,
     schemas,
     file_message_globals,
     TableStruct_pv_2fpv_5fmessage_2eproto::offsets,
@@ -1443,6 +1868,706 @@ void PvPowerPoint::InternalSwap(PvPowerPoint* PROTOBUF_RESTRICT PROTOBUF_NONNULL
 }
 
 ::google::protobuf::Metadata PvPowerPoint::GetMetadata() const {
+  return Super_::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+GetPvPredictionsRequest::GetPvPredictionsRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetPvPredictionsRequest_get_class_data()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.pv.GetPvPredictionsRequest)
+}
+PROTOBUF_NDEBUG_INLINE GetPvPredictionsRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::pv::GetPvPredictionsRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        registration_id_(arena, from.registration_id_),
+        call_id_(arena, from.call_id_) {}
+
+GetPvPredictionsRequest::GetPvPredictionsRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const GetPvPredictionsRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetPvPredictionsRequest_get_class_data()) {
+
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  GetPvPredictionsRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.granularity_ = from._impl_.granularity_;
+
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.pv.GetPvPredictionsRequest)
+}
+PROTOBUF_NDEBUG_INLINE GetPvPredictionsRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : registration_id_(arena),
+        call_id_(arena) {}
+
+inline void GetPvPredictionsRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.granularity_ = {};
+}
+GetPvPredictionsRequest::~GetPvPredictionsRequest() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.pv.GetPvPredictionsRequest)
+  SharedDtor(*this);
+}
+inline void GetPvPredictionsRequest::SharedDtor(MessageLite& self) {
+  GetPvPredictionsRequest& this_ = static_cast<GetPvPredictionsRequest&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.registration_id_.Destroy();
+  this_._impl_.call_id_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull GetPvPredictionsRequest_class_data_ =
+        GetPvPredictionsRequest::InternalGenerateClassData_(GetPvPredictionsRequest_globals_._default);
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetPvPredictionsRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetPvPredictionsRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(GetPvPredictionsRequest_class_data_.tc_table);
+  return GetPvPredictionsRequest_class_data_.base();
+}
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetPvPredictionsRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetPvPredictionsRequest_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&GetPvPredictionsRequest_globals_));
+  return GetPvPredictionsRequest_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetPvPredictionsRequest::ParseTableT_
+    GetPvPredictionsRequest::_table_ =
+        GetPvPredictionsRequest::InternalGenerateParseTable_(GetPvPredictionsRequest_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void GetPvPredictionsRequest::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.pv.GetPvPredictionsRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      this_._impl_.registration_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      this_._impl_.call_id_.ClearNonDefaultToEmpty();
+    }
+  }
+  this_._impl_.granularity_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL GetPvPredictionsRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const GetPvPredictionsRequest& this_ = static_cast<const GetPvPredictionsRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL GetPvPredictionsRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const GetPvPredictionsRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.pv.GetPvPredictionsRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsRequest.registration_id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<2>(
+            stream, this_._internal_granularity(), target);
+  }
+
+  // optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    const ::std::string& _s = this_._internal_call_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsRequest.call_id");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.pv.GetPvPredictionsRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t GetPvPredictionsRequest::ByteSizeLong(const MessageLite& base) {
+  const GetPvPredictionsRequest& this_ = static_cast<const GetPvPredictionsRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t GetPvPredictionsRequest::ByteSizeLong() const {
+  const GetPvPredictionsRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.pv.GetPvPredictionsRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+    // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!this_._internal_registration_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_registration_id());
+      }
+    }
+    // optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_call_id());
+    }
+    // optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this_._internal_granularity());
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void GetPvPredictionsRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<GetPvPredictionsRequest*>(&to_msg);
+  auto& from = static_cast<const GetPvPredictionsRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.pv.GetPvPredictionsRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!from._internal_registration_id().empty()) {
+        _this->_internal_set_registration_id(from._internal_registration_id());
+      } else {
+        if (_this->_impl_.registration_id_.IsDefault()) {
+          _this->_internal_set_registration_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      _this->_internal_set_call_id(from._internal_call_id());
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      _this->_impl_.granularity_ = from._impl_.granularity_;
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void GetPvPredictionsRequest::CopyFrom(const GetPvPredictionsRequest& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.pv.GetPvPredictionsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void GetPvPredictionsRequest::InternalSwap(GetPvPredictionsRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.call_id_, &other->_impl_.call_id_, arena);
+  swap(_impl_.granularity_, other->_impl_.granularity_);
+}
+
+::google::protobuf::Metadata GetPvPredictionsRequest::GetMetadata() const {
+  return Super_::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+GetPvPredictionsResponse::GetPvPredictionsResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetPvPredictionsResponse_get_class_data()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.pv.GetPvPredictionsResponse)
+}
+PROTOBUF_NDEBUG_INLINE GetPvPredictionsResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::pv::GetPvPredictionsResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        state_(arena, from.state_),
+        code_(arena, from.code_),
+        message_(arena, from.message_),
+        registration_id_(arena, from.registration_id_),
+        call_id_(arena, from.call_id_) {}
+
+GetPvPredictionsResponse::GetPvPredictionsResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const GetPvPredictionsResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : Super_(arena, GetPvPredictionsResponse_get_class_data()) {
+
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : Super_(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  GetPvPredictionsResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.data_ = (CheckHasBit(cached_has_bits, 0x00000020U))
+                 ? Super_::CopyConstruct(arena, *from._impl_.data_)
+                 : nullptr;
+  ::memcpy(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, created_at_),
+           reinterpret_cast<const char*>(&from._impl_) +
+               offsetof(Impl_, created_at_),
+           offsetof(Impl_, granularity_) -
+               offsetof(Impl_, created_at_) +
+               sizeof(Impl_::granularity_));
+
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.pv.GetPvPredictionsResponse)
+}
+PROTOBUF_NDEBUG_INLINE GetPvPredictionsResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : state_(arena),
+        code_(arena),
+        message_(arena),
+        registration_id_(arena),
+        call_id_(arena) {}
+
+inline void GetPvPredictionsResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, data_),
+           0,
+           offsetof(Impl_, granularity_) -
+               offsetof(Impl_, data_) +
+               sizeof(Impl_::granularity_));
+}
+GetPvPredictionsResponse::~GetPvPredictionsResponse() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.pv.GetPvPredictionsResponse)
+  SharedDtor(*this);
+}
+inline void GetPvPredictionsResponse::SharedDtor(MessageLite& self) {
+  GetPvPredictionsResponse& this_ = static_cast<GetPvPredictionsResponse&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.state_.Destroy();
+  this_._impl_.code_.Destroy();
+  this_._impl_.message_.Destroy();
+  this_._impl_.registration_id_.Destroy();
+  this_._impl_.call_id_.Destroy();
+  delete this_._impl_.data_;
+  this_._impl_.~Impl_();
+}
+
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull GetPvPredictionsResponse_class_data_ =
+        GetPvPredictionsResponse::InternalGenerateClassData_(GetPvPredictionsResponse_globals_._default);
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetPvPredictionsResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetPvPredictionsResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(GetPvPredictionsResponse_class_data_.tc_table);
+  return GetPvPredictionsResponse_class_data_.base();
+}
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+GetPvPredictionsResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetPvPredictionsResponse_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&GetPvPredictionsResponse_globals_));
+  return GetPvPredictionsResponse_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetPvPredictionsResponse::ParseTableT_
+    GetPvPredictionsResponse::_table_ =
+        GetPvPredictionsResponse::InternalGenerateParseTable_(GetPvPredictionsResponse_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void GetPvPredictionsResponse::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.pv.GetPvPredictionsResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000003fU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      this_._impl_.state_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      this_._impl_.code_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      this_._impl_.message_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      this_._impl_.registration_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      this_._impl_.call_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      ABSL_DCHECK(this_._impl_.data_ != nullptr);
+      this_._impl_.data_->Clear();
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x000000c0U)) {
+    ::memset(&this_._impl_.created_at_, 0,
+             static_cast<::size_t>(
+                 reinterpret_cast<char*>(&this_._impl_.granularity_) -
+                 reinterpret_cast<char*>(&this_._impl_.created_at_)) +
+                 sizeof(_impl_.granularity_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL GetPvPredictionsResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const GetPvPredictionsResponse& this_ = static_cast<const GetPvPredictionsResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL GetPvPredictionsResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const GetPvPredictionsResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.pv.GetPvPredictionsResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // string state = 1 [json_name = "state", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!this_._internal_state().empty()) {
+      const ::std::string& _s = this_._internal_state();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsResponse.state");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string code = 2 [json_name = "code", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    if (!this_._internal_code().empty()) {
+      const ::std::string& _s = this_._internal_code();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsResponse.code");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string message = 3 [json_name = "message", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+    if (!this_._internal_message().empty()) {
+      const ::std::string& _s = this_._internal_message();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsResponse.message");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // string registration_id = 4 [json_name = "registration_id"];
+  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsResponse.registration_id");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
+  // string call_id = 5 [json_name = "call_id"];
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (!this_._internal_call_id().empty()) {
+      const ::std::string& _s = this_._internal_call_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsResponse.call_id");
+      target = stream->WriteStringMaybeAliased(5, _s, target);
+    }
+  }
+
+  // int32 granularity = 6 [json_name = "granularity"];
+  if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+    if (this_._internal_granularity() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<6>(
+              stream, this_._internal_granularity(), target);
+    }
+  }
+
+  // int64 created_at = 7 [json_name = "created_at"];
+  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+    if (this_._internal_created_at() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<7>(
+              stream, this_._internal_created_at(), target);
+    }
+  }
+
+  // .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
+  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        8, *this_._impl_.data_, this_._impl_.data_->GetCachedSize(), target,
+        stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.pv.GetPvPredictionsResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t GetPvPredictionsResponse::ByteSizeLong(const MessageLite& base) {
+  const GetPvPredictionsResponse& this_ = static_cast<const GetPvPredictionsResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t GetPvPredictionsResponse::ByteSizeLong() const {
+  const GetPvPredictionsResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.pv.GetPvPredictionsResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
+    // string state = 1 [json_name = "state", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!this_._internal_state().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_state());
+      }
+    }
+    // string code = 2 [json_name = "code", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!this_._internal_code().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_code());
+      }
+    }
+    // string message = 3 [json_name = "message", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!this_._internal_message().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_message());
+      }
+    }
+    // string registration_id = 4 [json_name = "registration_id"];
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!this_._internal_registration_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_registration_id());
+      }
+    }
+    // string call_id = 5 [json_name = "call_id"];
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!this_._internal_call_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_call_id());
+      }
+    }
+    // .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.data_);
+    }
+    // int64 created_at = 7 [json_name = "created_at"];
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      if (this_._internal_created_at() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+            this_._internal_created_at());
+      }
+    }
+    // int32 granularity = 6 [json_name = "granularity"];
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      if (this_._internal_granularity() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_granularity());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void GetPvPredictionsResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<GetPvPredictionsResponse*>(&to_msg);
+  auto& from = static_cast<const GetPvPredictionsResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  ::google::protobuf::Arena* arena = _this->GetArena();
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.pv.GetPvPredictionsResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!from._internal_state().empty()) {
+        _this->_internal_set_state(from._internal_state());
+      } else {
+        if (_this->_impl_.state_.IsDefault()) {
+          _this->_internal_set_state("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!from._internal_code().empty()) {
+        _this->_internal_set_code(from._internal_code());
+      } else {
+        if (_this->_impl_.code_.IsDefault()) {
+          _this->_internal_set_code("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!from._internal_message().empty()) {
+        _this->_internal_set_message(from._internal_message());
+      } else {
+        if (_this->_impl_.message_.IsDefault()) {
+          _this->_internal_set_message("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!from._internal_registration_id().empty()) {
+        _this->_internal_set_registration_id(from._internal_registration_id());
+      } else {
+        if (_this->_impl_.registration_id_.IsDefault()) {
+          _this->_internal_set_registration_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!from._internal_call_id().empty()) {
+        _this->_internal_set_call_id(from._internal_call_id());
+      } else {
+        if (_this->_impl_.call_id_.IsDefault()) {
+          _this->_internal_set_call_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      ABSL_DCHECK(from._impl_.data_ != nullptr);
+      if (_this->_impl_.data_ == nullptr) {
+        _this->_impl_.data_ = Super_::CopyConstruct(arena, *from._impl_.data_);
+      } else {
+        _this->_impl_.data_->MergeFrom(*from._impl_.data_);
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      if (from._internal_created_at() != 0) {
+        _this->_impl_.created_at_ = from._impl_.created_at_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      if (from._internal_granularity() != 0) {
+        _this->_impl_.granularity_ = from._impl_.granularity_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void GetPvPredictionsResponse::CopyFrom(const GetPvPredictionsResponse& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.pv.GetPvPredictionsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void GetPvPredictionsResponse::InternalSwap(GetPvPredictionsResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.state_, &other->_impl_.state_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.code_, &other->_impl_.code_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.call_id_, &other->_impl_.call_id_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.granularity_)
+      + sizeof(GetPvPredictionsResponse::_impl_.granularity_)
+      - PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.data_)>(
+          reinterpret_cast<char*>(&_impl_.data_),
+          reinterpret_cast<char*>(&other->_impl_.data_));
+}
+
+::google::protobuf::Metadata GetPvPredictionsResponse::GetMetadata() const {
   return Super_::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

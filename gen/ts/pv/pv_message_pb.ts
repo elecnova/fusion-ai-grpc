@@ -21,7 +21,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file pv/pv_message.proto.
  */
 export const file_pv_pv_message: GenFile = /*@__PURE__*/
-  fileDesc("ChNwdi9wdl9tZXNzYWdlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYieQoTVXBsb2FkUHZEYXRhUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEi0KBGRhdGEYAiABKAsyHy5mdXNpb24uYWkucHJvdG8ucHYuUHZQb3dlckRhdGEiSQoLUHZQb3dlckRhdGESOgoHcHZfbGlzdBgBIAMoCzIgLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyUG9pbnRSB3B2X2xpc3QiRgoMUHZQb3dlclBvaW50EhoKCXRpbWVzdGFtcBgBIAEoA0IHukgEIgIgABIaCgJwdhgCIAEoAUIOukgLEgkpAAAAAAAAAAAidwoRUHVsbFB2RGF0YVJlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBItCgRkYXRhGAIgASgLMh8uZnVzaW9uLmFpLnByb3RvLnB2LlB2UG93ZXJEYXRhQqsBChZjb20uZnVzaW9uLmFpLnByb3RvLnB2Qg5Qdk1lc3NhZ2VQcm90b1ABWhVmdXNpb24uYWkucHJvdG8ucHY7cHaiAgRGQVBQqgISRnVzaW9uLkFpLlByb3RvLlB2ygISRnVzaW9uXEFpXFByb3RvXFB24gIeRnVzaW9uXEFpXFByb3RvXFB2XEdQQk1ldGFkYXRh6gIVRnVzaW9uOjpBaTo6UHJvdG86OlB2YgZwcm90bzM", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("ChNwdi9wdl9tZXNzYWdlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYieQoTVXBsb2FkUHZEYXRhUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEi0KBGRhdGEYAiABKAsyHy5mdXNpb24uYWkucHJvdG8ucHYuUHZQb3dlckRhdGEiSQoLUHZQb3dlckRhdGESOgoHcHZfbGlzdBgBIAMoCzIgLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyUG9pbnRSB3B2X2xpc3QiRgoMUHZQb3dlclBvaW50EhoKCXRpbWVzdGFtcBgBIAEoA0IHukgEIgIgABIaCgJwdhgCIAEoAUIOukgLEgkpAAAAAAAAAAAiuwEKF0dldFB2UHJlZGljdGlvbnNSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSJwoLZ3JhbnVsYXJpdHkYAiABKAVCDbpIChoIMAUwDzAeMDxIAIgBARImCgdjYWxsX2lkGAMgASgJQge6SARyAhhASAFSB2NhbGxfaWSIAQFCDgoMX2dyYW51bGFyaXR5QgoKCF9jYWxsX2lkIqMCChhHZXRQdlByZWRpY3Rpb25zUmVzcG9uc2USJAoFc3RhdGUYASABKAlCFbpIEnIQUgdzdWNjZXNzUgVlcnJvchIfCgRjb2RlGAIgASgJQhG6SA5yDDIKXlswLTldezV9JBIYCgdtZXNzYWdlGAMgASgJQge6SARyAhABEigKD3JlZ2lzdHJhdGlvbl9pZBgEIAEoCVIPcmVnaXN0cmF0aW9uX2lkEhgKB2NhbGxfaWQYBSABKAlSB2NhbGxfaWQSEwoLZ3JhbnVsYXJpdHkYBiABKAUSHgoKY3JlYXRlZF9hdBgHIAEoA1IKY3JlYXRlZF9hdBItCgRkYXRhGAggASgLMh8uZnVzaW9uLmFpLnByb3RvLnB2LlB2UG93ZXJEYXRhIncKEVB1bGxQdkRhdGFSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSLQoEZGF0YRgCIAEoCzIfLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyRGF0YUKrAQoWY29tLmZ1c2lvbi5haS5wcm90by5wdkIOUHZNZXNzYWdlUHJvdG9QAVoVZnVzaW9uLmFpLnByb3RvLnB2O3B2ogIERkFQUKoCEkZ1c2lvbi5BaS5Qcm90by5QdsoCEkZ1c2lvblxBaVxQcm90b1xQduICHkZ1c2lvblxBaVxQcm90b1xQdlxHUEJNZXRhZGF0YeoCFUZ1c2lvbjo6QWk6OlByb3RvOjpQdmIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
  * Package message 光伏预测数据上报消息定义
@@ -101,6 +101,101 @@ export const PvPowerPointSchema: GenMessage<PvPowerPoint> = /*@__PURE__*/
   messageDesc(file_pv_pv_message, 2);
 
 /**
+ * 8.2 查询光伏预测结果
+ *
+ * @generated from message fusion.ai.proto.pv.GetPvPredictionsRequest
+ */
+export type GetPvPredictionsRequest = Message<"fusion.ai.proto.pv.GetPvPredictionsRequest"> & {
+  /**
+   * 算法业务注册唯一标识
+   *
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 预测步长（分钟），可选；未传时按注册配置默认（优先 15，其次 5/30/60）
+   *
+   * @generated from field: optional int32 granularity = 2;
+   */
+  granularity?: number | undefined;
+
+  /**
+   * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+   *
+   * @generated from field: optional string call_id = 3 [json_name = "call_id"];
+   */
+  callId?: string | undefined;
+};
+
+/**
+ * Describes the message fusion.ai.proto.pv.GetPvPredictionsRequest.
+ * Use `create(GetPvPredictionsRequestSchema)` to create a new message.
+ */
+export const GetPvPredictionsRequestSchema: GenMessage<GetPvPredictionsRequest> = /*@__PURE__*/
+  messageDesc(file_pv_pv_message, 3);
+
+/**
+ * @generated from message fusion.ai.proto.pv.GetPvPredictionsResponse
+ */
+export type GetPvPredictionsResponse = Message<"fusion.ai.proto.pv.GetPvPredictionsResponse"> & {
+  /**
+   * @generated from field: string state = 1;
+   */
+  state: string;
+
+  /**
+   * @generated from field: string code = 2;
+   */
+  code: string;
+
+  /**
+   * @generated from field: string message = 3;
+   */
+  message: string;
+
+  /**
+   * @generated from field: string registration_id = 4 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 本次预测调用 UUID
+   *
+   * @generated from field: string call_id = 5 [json_name = "call_id"];
+   */
+  callId: string;
+
+  /**
+   * 预测步长（分钟），如 5、15、30、60
+   *
+   * @generated from field: int32 granularity = 6;
+   */
+  granularity: number;
+
+  /**
+   * 结果入库时间，Unix 毫秒
+   *
+   * @generated from field: int64 created_at = 7 [json_name = "created_at"];
+   */
+  createdAt: bigint;
+
+  /**
+   * 预测功率曲线
+   *
+   * @generated from field: fusion.ai.proto.pv.PvPowerData data = 8;
+   */
+  data?: PvPowerData | undefined;
+};
+
+/**
+ * Describes the message fusion.ai.proto.pv.GetPvPredictionsResponse.
+ * Use `create(GetPvPredictionsResponseSchema)` to create a new message.
+ */
+export const GetPvPredictionsResponseSchema: GenMessage<GetPvPredictionsResponse> = /*@__PURE__*/
+  messageDesc(file_pv_pv_message, 4);
+
+/**
  * Package message 拉取光伏预测数据消息定义
  *
  * @generated from message fusion.ai.proto.pv.PullPvDataRequest
@@ -126,5 +221,5 @@ export type PullPvDataRequest = Message<"fusion.ai.proto.pv.PullPvDataRequest"> 
  * Use `create(PullPvDataRequestSchema)` to create a new message.
  */
 export const PullPvDataRequestSchema: GenMessage<PullPvDataRequest> = /*@__PURE__*/
-  messageDesc(file_pv_pv_message, 3);
+  messageDesc(file_pv_pv_message, 5);
 

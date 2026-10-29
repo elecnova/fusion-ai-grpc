@@ -188,6 +188,174 @@ func (x *PvPowerPoint) GetPv() float64 {
 	return 0
 }
 
+// 8.2 查询光伏预测结果
+type GetPvPredictionsRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 算法业务注册唯一标识
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 预测步长（分钟），可选；未传时按注册配置默认（优先 15，其次 5/30/60）
+	Granularity *int32 `protobuf:"varint,2,opt,name=granularity,proto3,oneof" json:"granularity,omitempty"`
+	// 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+	CallId        *string `protobuf:"bytes,3,opt,name=call_id,proto3,oneof" json:"call_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPvPredictionsRequest) Reset() {
+	*x = GetPvPredictionsRequest{}
+	mi := &file_pv_pv_message_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPvPredictionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPvPredictionsRequest) ProtoMessage() {}
+
+func (x *GetPvPredictionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_pv_pv_message_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPvPredictionsRequest.ProtoReflect.Descriptor instead.
+func (*GetPvPredictionsRequest) Descriptor() ([]byte, []int) {
+	return file_pv_pv_message_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *GetPvPredictionsRequest) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *GetPvPredictionsRequest) GetGranularity() int32 {
+	if x != nil && x.Granularity != nil {
+		return *x.Granularity
+	}
+	return 0
+}
+
+func (x *GetPvPredictionsRequest) GetCallId() string {
+	if x != nil && x.CallId != nil {
+		return *x.CallId
+	}
+	return ""
+}
+
+type GetPvPredictionsResponse struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	State          string                 `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	Code           string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
+	Message        string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	RegistrationId string                 `protobuf:"bytes,4,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 本次预测调用 UUID
+	CallId string `protobuf:"bytes,5,opt,name=call_id,proto3" json:"call_id,omitempty"`
+	// 预测步长（分钟），如 5、15、30、60
+	Granularity int32 `protobuf:"varint,6,opt,name=granularity,proto3" json:"granularity,omitempty"`
+	// 结果入库时间，Unix 毫秒
+	CreatedAt int64 `protobuf:"varint,7,opt,name=created_at,proto3" json:"created_at,omitempty"`
+	// 预测功率曲线
+	Data          *PvPowerData `protobuf:"bytes,8,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPvPredictionsResponse) Reset() {
+	*x = GetPvPredictionsResponse{}
+	mi := &file_pv_pv_message_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPvPredictionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPvPredictionsResponse) ProtoMessage() {}
+
+func (x *GetPvPredictionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_pv_pv_message_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPvPredictionsResponse.ProtoReflect.Descriptor instead.
+func (*GetPvPredictionsResponse) Descriptor() ([]byte, []int) {
+	return file_pv_pv_message_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *GetPvPredictionsResponse) GetState() string {
+	if x != nil {
+		return x.State
+	}
+	return ""
+}
+
+func (x *GetPvPredictionsResponse) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *GetPvPredictionsResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *GetPvPredictionsResponse) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *GetPvPredictionsResponse) GetCallId() string {
+	if x != nil {
+		return x.CallId
+	}
+	return ""
+}
+
+func (x *GetPvPredictionsResponse) GetGranularity() int32 {
+	if x != nil {
+		return x.Granularity
+	}
+	return 0
+}
+
+func (x *GetPvPredictionsResponse) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+func (x *GetPvPredictionsResponse) GetData() *PvPowerData {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 // Package message 拉取光伏预测数据消息定义
 type PullPvDataRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
@@ -201,7 +369,7 @@ type PullPvDataRequest struct {
 
 func (x *PullPvDataRequest) Reset() {
 	*x = PullPvDataRequest{}
-	mi := &file_pv_pv_message_proto_msgTypes[3]
+	mi := &file_pv_pv_message_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -213,7 +381,7 @@ func (x *PullPvDataRequest) String() string {
 func (*PullPvDataRequest) ProtoMessage() {}
 
 func (x *PullPvDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pv_pv_message_proto_msgTypes[3]
+	mi := &file_pv_pv_message_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -226,7 +394,7 @@ func (x *PullPvDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PullPvDataRequest.ProtoReflect.Descriptor instead.
 func (*PullPvDataRequest) Descriptor() ([]byte, []int) {
-	return file_pv_pv_message_proto_rawDescGZIP(), []int{3}
+	return file_pv_pv_message_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *PullPvDataRequest) GetRegistrationId() string {
@@ -255,7 +423,27 @@ const file_pv_pv_message_proto_rawDesc = "" +
 	"\apv_list\x18\x01 \x03(\v2 .fusion.ai.proto.pv.PvPowerPointR\apv_list\"U\n" +
 	"\fPvPowerPoint\x12%\n" +
 	"\ttimestamp\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\ttimestamp\x12\x1e\n" +
-	"\x02pv\x18\x02 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x02pv\"}\n" +
+	"\x02pv\x18\x02 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x02pv\"\xc8\x01\n" +
+	"\x17GetPvPredictionsRequest\x123\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x124\n" +
+	"\vgranularity\x18\x02 \x01(\x05B\r\xbaH\n" +
+	"\x1a\b0\x050\x0f0\x1e0<H\x00R\vgranularity\x88\x01\x01\x12&\n" +
+	"\acall_id\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18@H\x01R\acall_id\x88\x01\x01B\x0e\n" +
+	"\f_granularityB\n" +
+	"\n" +
+	"\b_call_id\"\xcc\x02\n" +
+	"\x18GetPvPredictionsResponse\x12+\n" +
+	"\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\asuccessR\x05errorR\x05state\x12%\n" +
+	"\x04code\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
+	"^[0-9]{5}$R\x04code\x12!\n" +
+	"\amessage\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\amessage\x12(\n" +
+	"\x0fregistration_id\x18\x04 \x01(\tR\x0fregistration_id\x12\x18\n" +
+	"\acall_id\x18\x05 \x01(\tR\acall_id\x12 \n" +
+	"\vgranularity\x18\x06 \x01(\x05R\vgranularity\x12\x1e\n" +
+	"\n" +
+	"created_at\x18\a \x01(\x03R\n" +
+	"created_at\x123\n" +
+	"\x04data\x18\b \x01(\v2\x1f.fusion.ai.proto.pv.PvPowerDataR\x04data\"}\n" +
 	"\x11PullPvDataRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x123\n" +
 	"\x04data\x18\x02 \x01(\v2\x1f.fusion.ai.proto.pv.PvPowerDataR\x04dataB\xab\x01\n" +
@@ -273,22 +461,25 @@ func file_pv_pv_message_proto_rawDescGZIP() []byte {
 	return file_pv_pv_message_proto_rawDescData
 }
 
-var file_pv_pv_message_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_pv_pv_message_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_pv_pv_message_proto_goTypes = []any{
-	(*UploadPvDataRequest)(nil), // 0: fusion.ai.proto.pv.UploadPvDataRequest
-	(*PvPowerData)(nil),         // 1: fusion.ai.proto.pv.PvPowerData
-	(*PvPowerPoint)(nil),        // 2: fusion.ai.proto.pv.PvPowerPoint
-	(*PullPvDataRequest)(nil),   // 3: fusion.ai.proto.pv.PullPvDataRequest
+	(*UploadPvDataRequest)(nil),      // 0: fusion.ai.proto.pv.UploadPvDataRequest
+	(*PvPowerData)(nil),              // 1: fusion.ai.proto.pv.PvPowerData
+	(*PvPowerPoint)(nil),             // 2: fusion.ai.proto.pv.PvPowerPoint
+	(*GetPvPredictionsRequest)(nil),  // 3: fusion.ai.proto.pv.GetPvPredictionsRequest
+	(*GetPvPredictionsResponse)(nil), // 4: fusion.ai.proto.pv.GetPvPredictionsResponse
+	(*PullPvDataRequest)(nil),        // 5: fusion.ai.proto.pv.PullPvDataRequest
 }
 var file_pv_pv_message_proto_depIdxs = []int32{
 	1, // 0: fusion.ai.proto.pv.UploadPvDataRequest.data:type_name -> fusion.ai.proto.pv.PvPowerData
 	2, // 1: fusion.ai.proto.pv.PvPowerData.pv_list:type_name -> fusion.ai.proto.pv.PvPowerPoint
-	1, // 2: fusion.ai.proto.pv.PullPvDataRequest.data:type_name -> fusion.ai.proto.pv.PvPowerData
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	1, // 2: fusion.ai.proto.pv.GetPvPredictionsResponse.data:type_name -> fusion.ai.proto.pv.PvPowerData
+	1, // 3: fusion.ai.proto.pv.PullPvDataRequest.data:type_name -> fusion.ai.proto.pv.PvPowerData
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_pv_pv_message_proto_init() }
@@ -296,13 +487,14 @@ func file_pv_pv_message_proto_init() {
 	if File_pv_pv_message_proto != nil {
 		return
 	}
+	file_pv_pv_message_proto_msgTypes[3].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_pv_pv_message_proto_rawDesc), len(file_pv_pv_message_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

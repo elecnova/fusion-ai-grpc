@@ -35,25 +35,30 @@ var File_pv_pv_service_proto protoreflect.FileDescriptor
 
 const file_pv_pv_service_proto_rawDesc = "" +
 	"\n" +
-	"\x13pv/pv_service.proto\x12\x12fusion.ai.proto.pv\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x13pv/pv_message.proto2\xec\x01\n" +
+	"\x13pv/pv_service.proto\x12\x12fusion.ai.proto.pv\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x13pv/pv_message.proto2\x92\x03\n" +
 	"\tPvService\x12n\n" +
 	"\fUploadPvData\x12'.fusion.ai.proto.pv.UploadPvDataRequest\x1a\x16.google.protobuf.Empty\"\x1d\xdaA\x01*\x82\xd3\xe4\x93\x02\x13:\x01*\"\x0e/3rd-api/v2/pv\x12o\n" +
 	"\n" +
-	"PullPvData\x12%.fusion.ai.proto.pv.PullPvDataRequest\x1a\x16.google.protobuf.Empty\"\"\xdaA\x01*\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/3rd-api/v2/pv/pullB\xab\x01\n" +
+	"PullPvData\x12%.fusion.ai.proto.pv.PullPvDataRequest\x1a\x16.google.protobuf.Empty\"\"\xdaA\x01*\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/3rd-api/v2/pv/pull\x12\xa3\x01\n" +
+	"\x10GetPvPredictions\x12+.fusion.ai.proto.pv.GetPvPredictionsRequest\x1a,.fusion.ai.proto.pv.GetPvPredictionsResponse\"4\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02\x1c\x12\x1a/3rd-api/v1/pv/predictionsB\xab\x01\n" +
 	"\x16com.fusion.ai.proto.pvB\x0ePvServiceProtoP\x01Z\x15fusion.ai.proto.pv;pv\xa2\x02\x04FAPP\xaa\x02\x12Fusion.Ai.Proto.Pv\xca\x02\x12Fusion\\Ai\\Proto\\Pv\xe2\x02\x1eFusion\\Ai\\Proto\\Pv\\GPBMetadata\xea\x02\x15Fusion::Ai::Proto::Pvb\x06proto3"
 
 var file_pv_pv_service_proto_goTypes = []any{
-	(*UploadPvDataRequest)(nil), // 0: fusion.ai.proto.pv.UploadPvDataRequest
-	(*PullPvDataRequest)(nil),   // 1: fusion.ai.proto.pv.PullPvDataRequest
-	(*emptypb.Empty)(nil),       // 2: google.protobuf.Empty
+	(*UploadPvDataRequest)(nil),      // 0: fusion.ai.proto.pv.UploadPvDataRequest
+	(*PullPvDataRequest)(nil),        // 1: fusion.ai.proto.pv.PullPvDataRequest
+	(*GetPvPredictionsRequest)(nil),  // 2: fusion.ai.proto.pv.GetPvPredictionsRequest
+	(*emptypb.Empty)(nil),            // 3: google.protobuf.Empty
+	(*GetPvPredictionsResponse)(nil), // 4: fusion.ai.proto.pv.GetPvPredictionsResponse
 }
 var file_pv_pv_service_proto_depIdxs = []int32{
 	0, // 0: fusion.ai.proto.pv.PvService.UploadPvData:input_type -> fusion.ai.proto.pv.UploadPvDataRequest
 	1, // 1: fusion.ai.proto.pv.PvService.PullPvData:input_type -> fusion.ai.proto.pv.PullPvDataRequest
-	2, // 2: fusion.ai.proto.pv.PvService.UploadPvData:output_type -> google.protobuf.Empty
-	2, // 3: fusion.ai.proto.pv.PvService.PullPvData:output_type -> google.protobuf.Empty
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	2, // 2: fusion.ai.proto.pv.PvService.GetPvPredictions:input_type -> fusion.ai.proto.pv.GetPvPredictionsRequest
+	3, // 3: fusion.ai.proto.pv.PvService.UploadPvData:output_type -> google.protobuf.Empty
+	3, // 4: fusion.ai.proto.pv.PvService.PullPvData:output_type -> google.protobuf.Empty
+	4, // 5: fusion.ai.proto.pv.PvService.GetPvPredictions:output_type -> fusion.ai.proto.pv.GetPvPredictionsResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
