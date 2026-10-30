@@ -7,7 +7,7 @@ package com.fusion.ai.proto.pv;
 
 /**
  * <pre>
- * 8.2 查询光伏预测结果
+ * 8.2 查询光伏预测结果（Influx；未传时间则站点本地「今天」全天，见各时间字段注释）
  * </pre>
  *
  * Protobuf type {@code fusion.ai.proto.pv.GetPvPredictionsRequest}
@@ -33,7 +33,8 @@ private static final long serialVersionUID = 0L;
   }
   private GetPvPredictionsRequest() {
     registrationId_ = "";
-    callId_ = "";
+    localDate_ = "";
+    timezone_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -129,59 +130,172 @@ private static final long serialVersionUID = 0L;
     return granularity_;
   }
 
-  public static final int CALL_ID_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object callId_ = "";
+  public static final int START_TS_MS_FIELD_NUMBER = 10;
+  private long startTsMs_ = 0L;
   /**
    * <pre>
-   * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+   * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start &lt; end
    * </pre>
    *
-   * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-   * @return Whether the callId field is set.
+   * <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = { ... }</code>
+   * @return Whether the startTsMs field is set.
    */
   @java.lang.Override
-  public boolean hasCallId() {
+  public boolean hasStartTsMs() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
-   * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+   * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start &lt; end
    * </pre>
    *
-   * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-   * @return The callId.
+   * <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = { ... }</code>
+   * @return The startTsMs.
    */
   @java.lang.Override
-  public java.lang.String getCallId() {
-    java.lang.Object ref = callId_;
+  public long getStartTsMs() {
+    return startTsMs_;
+  }
+
+  public static final int END_TS_MS_FIELD_NUMBER = 11;
+  private long endTsMs_ = 0L;
+  /**
+   * <pre>
+   * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+   * </pre>
+   *
+   * <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = { ... }</code>
+   * @return Whether the endTsMs field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndTsMs() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+   * </pre>
+   *
+   * <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = { ... }</code>
+   * @return The endTsMs.
+   */
+  @java.lang.Override
+  public long getEndTsMs() {
+    return endTsMs_;
+  }
+
+  public static final int LOCAL_DATE_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object localDate_ = "";
+  /**
+   * <pre>
+   * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+   * </pre>
+   *
+   * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+   * @return Whether the localDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalDate() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <pre>
+   * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+   * </pre>
+   *
+   * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+   * @return The localDate.
+   */
+  @java.lang.Override
+  public java.lang.String getLocalDate() {
+    java.lang.Object ref = localDate_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      callId_ = s;
+      localDate_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+   * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
    * </pre>
    *
-   * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for callId.
+   * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for localDate.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getCallIdBytes() {
-    java.lang.Object ref = callId_;
+      getLocalDateBytes() {
+    java.lang.Object ref = localDate_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      callId_ = b;
+      localDate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TIMEZONE_FIELD_NUMBER = 13;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timezone_ = "";
+  /**
+   * <pre>
+   * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+   * </pre>
+   *
+   * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * @return Whether the timezone field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimezone() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <pre>
+   * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+   * </pre>
+   *
+   * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * @return The timezone.
+   */
+  @java.lang.Override
+  public java.lang.String getTimezone() {
+    java.lang.Object ref = timezone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      timezone_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+   * </pre>
+   *
+   * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for timezone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTimezoneBytes() {
+    java.lang.Object ref = timezone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      timezone_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -209,7 +323,16 @@ private static final long serialVersionUID = 0L;
       output.writeInt32(2, granularity_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, callId_);
+      output.writeInt64(10, startTsMs_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt64(11, endTsMs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, localDate_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, timezone_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -223,7 +346,18 @@ private static final long serialVersionUID = 0L;
         .computeInt32Size(2, granularity_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, callId_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(10, startTsMs_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(11, endTsMs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, localDate_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(13, timezone_);
     }
     return size;
   }
@@ -256,10 +390,25 @@ private static final long serialVersionUID = 0L;
       if (getGranularity()
           != other.getGranularity()) return false;
     }
-    if (hasCallId() != other.hasCallId()) return false;
-    if (hasCallId()) {
-      if (!getCallId()
-          .equals(other.getCallId())) return false;
+    if (hasStartTsMs() != other.hasStartTsMs()) return false;
+    if (hasStartTsMs()) {
+      if (getStartTsMs()
+          != other.getStartTsMs()) return false;
+    }
+    if (hasEndTsMs() != other.hasEndTsMs()) return false;
+    if (hasEndTsMs()) {
+      if (getEndTsMs()
+          != other.getEndTsMs()) return false;
+    }
+    if (hasLocalDate() != other.hasLocalDate()) return false;
+    if (hasLocalDate()) {
+      if (!getLocalDate()
+          .equals(other.getLocalDate())) return false;
+    }
+    if (hasTimezone() != other.hasTimezone()) return false;
+    if (hasTimezone()) {
+      if (!getTimezone()
+          .equals(other.getTimezone())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -278,9 +427,23 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + GRANULARITY_FIELD_NUMBER;
       hash = (53 * hash) + getGranularity();
     }
-    if (hasCallId()) {
-      hash = (37 * hash) + CALL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCallId().hashCode();
+    if (hasStartTsMs()) {
+      hash = (37 * hash) + START_TS_MS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStartTsMs());
+    }
+    if (hasEndTsMs()) {
+      hash = (37 * hash) + END_TS_MS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getEndTsMs());
+    }
+    if (hasLocalDate()) {
+      hash = (37 * hash) + LOCAL_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalDate().hashCode();
+    }
+    if (hasTimezone()) {
+      hash = (37 * hash) + TIMEZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getTimezone().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -381,7 +544,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 8.2 查询光伏预测结果
+   * 8.2 查询光伏预测结果（Influx；未传时间则站点本地「今天」全天，见各时间字段注释）
    * </pre>
    *
    * Protobuf type {@code fusion.ai.proto.pv.GetPvPredictionsRequest}
@@ -419,7 +582,10 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       registrationId_ = "";
       granularity_ = 0;
-      callId_ = "";
+      startTsMs_ = 0L;
+      endTsMs_ = 0L;
+      localDate_ = "";
+      timezone_ = "";
       return this;
     }
 
@@ -462,8 +628,20 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.callId_ = callId_;
+        result.startTsMs_ = startTsMs_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.endTsMs_ = endTsMs_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.localDate_ = localDate_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.timezone_ = timezone_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -488,9 +666,20 @@ private static final long serialVersionUID = 0L;
       if (other.hasGranularity()) {
         setGranularity(other.getGranularity());
       }
-      if (other.hasCallId()) {
-        callId_ = other.callId_;
-        bitField0_ |= 0x00000004;
+      if (other.hasStartTsMs()) {
+        setStartTsMs(other.getStartTsMs());
+      }
+      if (other.hasEndTsMs()) {
+        setEndTsMs(other.getEndTsMs());
+      }
+      if (other.hasLocalDate()) {
+        localDate_ = other.localDate_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.hasTimezone()) {
+        timezone_ = other.timezone_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -527,11 +716,26 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 16
-            case 26: {
-              callId_ = input.readStringRequireUtf8();
+            case 80: {
+              startTsMs_ = input.readInt64();
               bitField0_ |= 0x00000004;
               break;
-            } // case 26
+            } // case 80
+            case 88: {
+              endTsMs_ = input.readInt64();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 88
+            case 98: {
+              localDate_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 98
+            case 106: {
+              timezone_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 106
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -697,33 +901,145 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object callId_ = "";
+    private long startTsMs_ ;
     /**
      * <pre>
-     * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start &lt; end
      * </pre>
      *
-     * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-     * @return Whether the callId field is set.
+     * <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = { ... }</code>
+     * @return Whether the startTsMs field is set.
      */
-    public boolean hasCallId() {
+    @java.lang.Override
+    public boolean hasStartTsMs() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <pre>
-     * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start &lt; end
      * </pre>
      *
-     * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-     * @return The callId.
+     * <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = { ... }</code>
+     * @return The startTsMs.
      */
-    public java.lang.String getCallId() {
-      java.lang.Object ref = callId_;
+    @java.lang.Override
+    public long getStartTsMs() {
+      return startTsMs_;
+    }
+    /**
+     * <pre>
+     * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start &lt; end
+     * </pre>
+     *
+     * <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = { ... }</code>
+     * @param value The startTsMs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartTsMs(long value) {
+
+      startTsMs_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start &lt; end
+     * </pre>
+     *
+     * <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStartTsMs() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      startTsMs_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long endTsMs_ ;
+    /**
+     * <pre>
+     * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+     * </pre>
+     *
+     * <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = { ... }</code>
+     * @return Whether the endTsMs field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndTsMs() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+     * </pre>
+     *
+     * <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = { ... }</code>
+     * @return The endTsMs.
+     */
+    @java.lang.Override
+    public long getEndTsMs() {
+      return endTsMs_;
+    }
+    /**
+     * <pre>
+     * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+     * </pre>
+     *
+     * <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = { ... }</code>
+     * @param value The endTsMs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndTsMs(long value) {
+
+      endTsMs_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+     * </pre>
+     *
+     * <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEndTsMs() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      endTsMs_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object localDate_ = "";
+    /**
+     * <pre>
+     * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+     * </pre>
+     *
+     * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+     * @return Whether the localDate field is set.
+     */
+    public boolean hasLocalDate() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+     * </pre>
+     *
+     * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+     * @return The localDate.
+     */
+    public java.lang.String getLocalDate() {
+      java.lang.Object ref = localDate_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        callId_ = s;
+        localDate_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -731,20 +1047,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
      * </pre>
      *
-     * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for callId.
+     * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+     * @return The bytes for localDate.
      */
     public com.google.protobuf.ByteString
-        getCallIdBytes() {
-      java.lang.Object ref = callId_;
+        getLocalDateBytes() {
+      java.lang.Object ref = localDate_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        callId_ = b;
+        localDate_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -752,50 +1068,153 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
      * </pre>
      *
-     * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-     * @param value The callId to set.
+     * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+     * @param value The localDate to set.
      * @return This builder for chaining.
      */
-    public Builder setCallId(
+    public Builder setLocalDate(
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
-      callId_ = value;
-      bitField0_ |= 0x00000004;
+      localDate_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
      * </pre>
      *
-     * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
+     * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearCallId() {
-      callId_ = getDefaultInstance().getCallId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+    public Builder clearLocalDate() {
+      localDate_ = getDefaultInstance().getLocalDate();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
      * </pre>
      *
-     * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for callId to set.
+     * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+     * @param value The bytes for localDate to set.
      * @return This builder for chaining.
      */
-    public Builder setCallIdBytes(
+    public Builder setLocalDateBytes(
         com.google.protobuf.ByteString value) {
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
-      callId_ = value;
-      bitField0_ |= 0x00000004;
+      localDate_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object timezone_ = "";
+    /**
+     * <pre>
+     * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+     * </pre>
+     *
+     * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * @return Whether the timezone field is set.
+     */
+    public boolean hasTimezone() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+     * </pre>
+     *
+     * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * @return The timezone.
+     */
+    public java.lang.String getTimezone() {
+      java.lang.Object ref = timezone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        timezone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+     * </pre>
+     *
+     * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * @return The bytes for timezone.
+     */
+    public com.google.protobuf.ByteString
+        getTimezoneBytes() {
+      java.lang.Object ref = timezone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        timezone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+     * </pre>
+     *
+     * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * @param value The timezone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimezone(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      timezone_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+     * </pre>
+     *
+     * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTimezone() {
+      timezone_ = getDefaultInstance().getTimezone();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+     * </pre>
+     *
+     * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+     * @param value The bytes for timezone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimezoneBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      timezone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -60,43 +60,13 @@ public interface GetPvPredictionsResponseOrBuilder extends
 
   /**
    * <pre>
-   * 本次预测调用 UUID
-   * </pre>
-   *
-   * <code>string call_id = 5 [json_name = "call_id"];</code>
-   * @return The callId.
-   */
-  java.lang.String getCallId();
-  /**
-   * <pre>
-   * 本次预测调用 UUID
-   * </pre>
-   *
-   * <code>string call_id = 5 [json_name = "call_id"];</code>
-   * @return The bytes for callId.
-   */
-  com.google.protobuf.ByteString
-      getCallIdBytes();
-
-  /**
-   * <pre>
-   * 预测步长（分钟），如 5、15、30、60
+   * 预测步长（分钟）
    * </pre>
    *
    * <code>int32 granularity = 6 [json_name = "granularity"];</code>
    * @return The granularity.
    */
   int getGranularity();
-
-  /**
-   * <pre>
-   * 结果入库时间，Unix 毫秒
-   * </pre>
-   *
-   * <code>int64 created_at = 7 [json_name = "created_at"];</code>
-   * @return The createdAt.
-   */
-  long getCreatedAt();
 
   /**
    * <pre>
@@ -124,4 +94,40 @@ public interface GetPvPredictionsResponseOrBuilder extends
    * <code>.fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];</code>
    */
   com.fusion.ai.proto.pv.PvPowerDataOrBuilder getDataOrBuilder();
+
+  /**
+   * <pre>
+   * 实际查询时间窗，Unix 毫秒（左闭右开）
+   * </pre>
+   *
+   * <code>int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];</code>
+   * @return The queryStartTsMs.
+   */
+  long getQueryStartTsMs();
+
+  /**
+   * <code>int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];</code>
+   * @return The queryEndTsMs.
+   */
+  long getQueryEndTsMs();
+
+  /**
+   * <pre>
+   * 解析时间窗使用的 IANA 时区
+   * </pre>
+   *
+   * <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+   * @return The queryTimezone.
+   */
+  java.lang.String getQueryTimezone();
+  /**
+   * <pre>
+   * 解析时间窗使用的 IANA 时区
+   * </pre>
+   *
+   * <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+   * @return The bytes for queryTimezone.
+   */
+  com.google.protobuf.ByteString
+      getQueryTimezoneBytes();
 }

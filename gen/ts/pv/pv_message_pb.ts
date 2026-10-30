@@ -21,7 +21,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file pv/pv_message.proto.
  */
 export const file_pv_pv_message: GenFile = /*@__PURE__*/
-  fileDesc("ChNwdi9wdl9tZXNzYWdlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYieQoTVXBsb2FkUHZEYXRhUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEi0KBGRhdGEYAiABKAsyHy5mdXNpb24uYWkucHJvdG8ucHYuUHZQb3dlckRhdGEiSQoLUHZQb3dlckRhdGESOgoHcHZfbGlzdBgBIAMoCzIgLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyUG9pbnRSB3B2X2xpc3QiRgoMUHZQb3dlclBvaW50EhoKCXRpbWVzdGFtcBgBIAEoA0IHukgEIgIgABIaCgJwdhgCIAEoAUIOukgLEgkpAAAAAAAAAAAiuwEKF0dldFB2UHJlZGljdGlvbnNSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSJwoLZ3JhbnVsYXJpdHkYAiABKAVCDbpIChoIMAUwDzAeMDxIAIgBARImCgdjYWxsX2lkGAMgASgJQge6SARyAhhASAFSB2NhbGxfaWSIAQFCDgoMX2dyYW51bGFyaXR5QgoKCF9jYWxsX2lkIqMCChhHZXRQdlByZWRpY3Rpb25zUmVzcG9uc2USJAoFc3RhdGUYASABKAlCFbpIEnIQUgdzdWNjZXNzUgVlcnJvchIfCgRjb2RlGAIgASgJQhG6SA5yDDIKXlswLTldezV9JBIYCgdtZXNzYWdlGAMgASgJQge6SARyAhABEigKD3JlZ2lzdHJhdGlvbl9pZBgEIAEoCVIPcmVnaXN0cmF0aW9uX2lkEhgKB2NhbGxfaWQYBSABKAlSB2NhbGxfaWQSEwoLZ3JhbnVsYXJpdHkYBiABKAUSHgoKY3JlYXRlZF9hdBgHIAEoA1IKY3JlYXRlZF9hdBItCgRkYXRhGAggASgLMh8uZnVzaW9uLmFpLnByb3RvLnB2LlB2UG93ZXJEYXRhIncKEVB1bGxQdkRhdGFSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSLQoEZGF0YRgCIAEoCzIfLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyRGF0YUKrAQoWY29tLmZ1c2lvbi5haS5wcm90by5wdkIOUHZNZXNzYWdlUHJvdG9QAVoVZnVzaW9uLmFpLnByb3RvLnB2O3B2ogIERkFQUKoCEkZ1c2lvbi5BaS5Qcm90by5QdsoCEkZ1c2lvblxBaVxQcm90b1xQduICHkZ1c2lvblxBaVxQcm90b1xQdlxHUEJNZXRhZGF0YeoCFUZ1c2lvbjo6QWk6OlByb3RvOjpQdmIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("ChNwdi9wdl9tZXNzYWdlLnByb3RvEhJmdXNpb24uYWkucHJvdG8ucHYieQoTVXBsb2FkUHZEYXRhUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEi0KBGRhdGEYAiABKAsyHy5mdXNpb24uYWkucHJvdG8ucHYuUHZQb3dlckRhdGEiSQoLUHZQb3dlckRhdGESOgoHcHZfbGlzdBgBIAMoCzIgLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyUG9pbnRSB3B2X2xpc3QiRgoMUHZQb3dlclBvaW50EhoKCXRpbWVzdGFtcBgBIAEoA0IHukgEIgIgABIaCgJwdhgCIAEoAUIOukgLEgkpAAAAAAAAAAAiiQMKF0dldFB2UHJlZGljdGlvbnNSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSJwoLZ3JhbnVsYXJpdHkYAiABKAVCDbpIChoIMAUwDzAeMDxIAIgBARIuCgtzdGFydF90c19tcxgKIAEoA0IHukgEIgIgAEgBUgtzdGFydF90c19tc4gBARIqCgllbmRfdHNfbXMYCyABKANCB7pIBCICIABIAlIJZW5kX3RzX21ziAEBEkgKCmxvY2FsX2RhdGUYDCABKAlCI7pIIHIeMhxeWzAtOV17NH0tWzAtOV17Mn0tWzAtOV17Mn0kSANSCmxvY2FsX2RhdGWIAQESIAoIdGltZXpvbmUYDSABKAlCCbpIBnIEEAEYQEgEiAEBQg4KDF9ncmFudWxhcml0eUIOCgxfc3RhcnRfdHNfbXNCDAoKX2VuZF90c19tc0INCgtfbG9jYWxfZGF0ZUILCglfdGltZXpvbmUi6QIKGEdldFB2UHJlZGljdGlvbnNSZXNwb25zZRIkCgVzdGF0ZRgBIAEoCUIVukgSchBSB3N1Y2Nlc3NSBWVycm9yEh8KBGNvZGUYAiABKAlCEbpIDnIMMgpeWzAtOV17NX0kEhgKB21lc3NhZ2UYAyABKAlCB7pIBHICEAESKAoPcmVnaXN0cmF0aW9uX2lkGAQgASgJUg9yZWdpc3RyYXRpb25faWQSEwoLZ3JhbnVsYXJpdHkYBiABKAUSLQoEZGF0YRgIIAEoCzIfLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyRGF0YRIsChFxdWVyeV9zdGFydF90c19tcxgJIAEoA1IRcXVlcnlfc3RhcnRfdHNfbXMSKAoPcXVlcnlfZW5kX3RzX21zGAogASgDUg9xdWVyeV9lbmRfdHNfbXMSJgoOcXVlcnlfdGltZXpvbmUYCyABKAlSDnF1ZXJ5X3RpbWV6b25lIncKEVB1bGxQdkRhdGFSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSLQoEZGF0YRgCIAEoCzIfLmZ1c2lvbi5haS5wcm90by5wdi5QdlBvd2VyRGF0YUKrAQoWY29tLmZ1c2lvbi5haS5wcm90by5wdkIOUHZNZXNzYWdlUHJvdG9QAVoVZnVzaW9uLmFpLnByb3RvLnB2O3B2ogIERkFQUKoCEkZ1c2lvbi5BaS5Qcm90by5QdsoCEkZ1c2lvblxBaVxQcm90b1xQduICHkZ1c2lvblxBaVxQcm90b1xQdlxHUEJNZXRhZGF0YeoCFUZ1c2lvbjo6QWk6OlByb3RvOjpQdmIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
  * Package message 光伏预测数据上报消息定义
@@ -101,7 +101,7 @@ export const PvPowerPointSchema: GenMessage<PvPowerPoint> = /*@__PURE__*/
   messageDesc(file_pv_pv_message, 2);
 
 /**
- * 8.2 查询光伏预测结果
+ * 8.2 查询光伏预测结果（Influx；未传时间则站点本地「今天」全天，见各时间字段注释）
  *
  * @generated from message fusion.ai.proto.pv.GetPvPredictionsRequest
  */
@@ -121,11 +121,32 @@ export type GetPvPredictionsRequest = Message<"fusion.ai.proto.pv.GetPvPredictio
   granularity?: number | undefined;
 
   /**
-   * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+   * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start < end
    *
-   * @generated from field: optional string call_id = 3 [json_name = "call_id"];
+   * @generated from field: optional int64 start_ts_ms = 10 [json_name = "start_ts_ms"];
    */
-  callId?: string | undefined;
+  startTsMs?: bigint | undefined;
+
+  /**
+   * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+   *
+   * @generated from field: optional int64 end_ts_ms = 11 [json_name = "end_ts_ms"];
+   */
+  endTsMs?: bigint | undefined;
+
+  /**
+   * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+   *
+   * @generated from field: optional string local_date = 12 [json_name = "local_date"];
+   */
+  localDate?: string | undefined;
+
+  /**
+   * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+   *
+   * @generated from field: optional string timezone = 13;
+   */
+  timezone?: string | undefined;
 };
 
 /**
@@ -160,25 +181,11 @@ export type GetPvPredictionsResponse = Message<"fusion.ai.proto.pv.GetPvPredicti
   registrationId: string;
 
   /**
-   * 本次预测调用 UUID
-   *
-   * @generated from field: string call_id = 5 [json_name = "call_id"];
-   */
-  callId: string;
-
-  /**
-   * 预测步长（分钟），如 5、15、30、60
+   * 预测步长（分钟）
    *
    * @generated from field: int32 granularity = 6;
    */
   granularity: number;
-
-  /**
-   * 结果入库时间，Unix 毫秒
-   *
-   * @generated from field: int64 created_at = 7 [json_name = "created_at"];
-   */
-  createdAt: bigint;
 
   /**
    * 预测功率曲线
@@ -186,6 +193,25 @@ export type GetPvPredictionsResponse = Message<"fusion.ai.proto.pv.GetPvPredicti
    * @generated from field: fusion.ai.proto.pv.PvPowerData data = 8;
    */
   data?: PvPowerData | undefined;
+
+  /**
+   * 实际查询时间窗，Unix 毫秒（左闭右开）
+   *
+   * @generated from field: int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];
+   */
+  queryStartTsMs: bigint;
+
+  /**
+   * @generated from field: int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];
+   */
+  queryEndTsMs: bigint;
+
+  /**
+   * 解析时间窗使用的 IANA 时区
+   *
+   * @generated from field: string query_timezone = 11 [json_name = "query_timezone"];
+   */
+  queryTimezone: string;
 };
 
 /**

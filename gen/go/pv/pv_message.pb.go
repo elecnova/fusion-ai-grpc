@@ -188,15 +188,21 @@ func (x *PvPowerPoint) GetPv() float64 {
 	return 0
 }
 
-// 8.2 查询光伏预测结果
+// 8.2 查询光伏预测结果（Influx；未传时间则站点本地「今天」全天，见各时间字段注释）
 type GetPvPredictionsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 算法业务注册唯一标识
 	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	// 预测步长（分钟），可选；未传时按注册配置默认（优先 15，其次 5/30/60）
 	Granularity *int32 `protobuf:"varint,2,opt,name=granularity,proto3,oneof" json:"granularity,omitempty"`
-	// 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
-	CallId        *string `protobuf:"bytes,3,opt,name=call_id,proto3,oneof" json:"call_id,omitempty"`
+	// 查询起始，Unix 毫秒；与 end_ts_ms 成对；start < end
+	StartTsMs *int64 `protobuf:"varint,10,opt,name=start_ts_ms,proto3,oneof" json:"start_ts_ms,omitempty"`
+	// 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+	EndTsMs *int64 `protobuf:"varint,11,opt,name=end_ts_ms,proto3,oneof" json:"end_ts_ms,omitempty"`
+	// 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+	LocalDate *string `protobuf:"bytes,12,opt,name=local_date,proto3,oneof" json:"local_date,omitempty"`
+	// IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+	Timezone      *string `protobuf:"bytes,13,opt,name=timezone,proto3,oneof" json:"timezone,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -245,9 +251,30 @@ func (x *GetPvPredictionsRequest) GetGranularity() int32 {
 	return 0
 }
 
-func (x *GetPvPredictionsRequest) GetCallId() string {
-	if x != nil && x.CallId != nil {
-		return *x.CallId
+func (x *GetPvPredictionsRequest) GetStartTsMs() int64 {
+	if x != nil && x.StartTsMs != nil {
+		return *x.StartTsMs
+	}
+	return 0
+}
+
+func (x *GetPvPredictionsRequest) GetEndTsMs() int64 {
+	if x != nil && x.EndTsMs != nil {
+		return *x.EndTsMs
+	}
+	return 0
+}
+
+func (x *GetPvPredictionsRequest) GetLocalDate() string {
+	if x != nil && x.LocalDate != nil {
+		return *x.LocalDate
+	}
+	return ""
+}
+
+func (x *GetPvPredictionsRequest) GetTimezone() string {
+	if x != nil && x.Timezone != nil {
+		return *x.Timezone
 	}
 	return ""
 }
@@ -258,14 +285,15 @@ type GetPvPredictionsResponse struct {
 	Code           string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
 	Message        string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	RegistrationId string                 `protobuf:"bytes,4,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	// 本次预测调用 UUID
-	CallId string `protobuf:"bytes,5,opt,name=call_id,proto3" json:"call_id,omitempty"`
-	// 预测步长（分钟），如 5、15、30、60
+	// 预测步长（分钟）
 	Granularity int32 `protobuf:"varint,6,opt,name=granularity,proto3" json:"granularity,omitempty"`
-	// 结果入库时间，Unix 毫秒
-	CreatedAt int64 `protobuf:"varint,7,opt,name=created_at,proto3" json:"created_at,omitempty"`
 	// 预测功率曲线
-	Data          *PvPowerData `protobuf:"bytes,8,opt,name=data,proto3" json:"data,omitempty"`
+	Data *PvPowerData `protobuf:"bytes,8,opt,name=data,proto3" json:"data,omitempty"`
+	// 实际查询时间窗，Unix 毫秒（左闭右开）
+	QueryStartTsMs int64 `protobuf:"varint,9,opt,name=query_start_ts_ms,proto3" json:"query_start_ts_ms,omitempty"`
+	QueryEndTsMs   int64 `protobuf:"varint,10,opt,name=query_end_ts_ms,proto3" json:"query_end_ts_ms,omitempty"`
+	// 解析时间窗使用的 IANA 时区
+	QueryTimezone string `protobuf:"bytes,11,opt,name=query_timezone,proto3" json:"query_timezone,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -328,23 +356,9 @@ func (x *GetPvPredictionsResponse) GetRegistrationId() string {
 	return ""
 }
 
-func (x *GetPvPredictionsResponse) GetCallId() string {
-	if x != nil {
-		return x.CallId
-	}
-	return ""
-}
-
 func (x *GetPvPredictionsResponse) GetGranularity() int32 {
 	if x != nil {
 		return x.Granularity
-	}
-	return 0
-}
-
-func (x *GetPvPredictionsResponse) GetCreatedAt() int64 {
-	if x != nil {
-		return x.CreatedAt
 	}
 	return 0
 }
@@ -354,6 +368,27 @@ func (x *GetPvPredictionsResponse) GetData() *PvPowerData {
 		return x.Data
 	}
 	return nil
+}
+
+func (x *GetPvPredictionsResponse) GetQueryStartTsMs() int64 {
+	if x != nil {
+		return x.QueryStartTsMs
+	}
+	return 0
+}
+
+func (x *GetPvPredictionsResponse) GetQueryEndTsMs() int64 {
+	if x != nil {
+		return x.QueryEndTsMs
+	}
+	return 0
+}
+
+func (x *GetPvPredictionsResponse) GetQueryTimezone() string {
+	if x != nil {
+		return x.QueryTimezone
+	}
+	return ""
 }
 
 // Package message 拉取光伏预测数据消息定义
@@ -423,27 +458,36 @@ const file_pv_pv_message_proto_rawDesc = "" +
 	"\apv_list\x18\x01 \x03(\v2 .fusion.ai.proto.pv.PvPowerPointR\apv_list\"U\n" +
 	"\fPvPowerPoint\x12%\n" +
 	"\ttimestamp\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\ttimestamp\x12\x1e\n" +
-	"\x02pv\x18\x02 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x02pv\"\xc8\x01\n" +
+	"\x02pv\x18\x02 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x02pv\"\xa0\x03\n" +
 	"\x17GetPvPredictionsRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x124\n" +
 	"\vgranularity\x18\x02 \x01(\x05B\r\xbaH\n" +
-	"\x1a\b0\x050\x0f0\x1e0<H\x00R\vgranularity\x88\x01\x01\x12&\n" +
-	"\acall_id\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18@H\x01R\acall_id\x88\x01\x01B\x0e\n" +
-	"\f_granularityB\n" +
+	"\x1a\b0\x050\x0f0\x1e0<H\x00R\vgranularity\x88\x01\x01\x12.\n" +
+	"\vstart_ts_ms\x18\n" +
+	" \x01(\x03B\a\xbaH\x04\"\x02 \x00H\x01R\vstart_ts_ms\x88\x01\x01\x12*\n" +
+	"\tend_ts_ms\x18\v \x01(\x03B\a\xbaH\x04\"\x02 \x00H\x02R\tend_ts_ms\x88\x01\x01\x12H\n" +
 	"\n" +
-	"\b_call_id\"\xcc\x02\n" +
+	"local_date\x18\f \x01(\tB#\xbaH r\x1e2\x1c^[0-9]{4}-[0-9]{2}-[0-9]{2}$H\x03R\n" +
+	"local_date\x88\x01\x01\x12*\n" +
+	"\btimezone\x18\r \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@H\x04R\btimezone\x88\x01\x01B\x0e\n" +
+	"\f_granularityB\x0e\n" +
+	"\f_start_ts_msB\f\n" +
+	"\n" +
+	"_end_ts_msB\r\n" +
+	"\v_local_dateB\v\n" +
+	"\t_timezone\"\x92\x03\n" +
 	"\x18GetPvPredictionsResponse\x12+\n" +
 	"\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\asuccessR\x05errorR\x05state\x12%\n" +
 	"\x04code\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
 	"^[0-9]{5}$R\x04code\x12!\n" +
 	"\amessage\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\amessage\x12(\n" +
-	"\x0fregistration_id\x18\x04 \x01(\tR\x0fregistration_id\x12\x18\n" +
-	"\acall_id\x18\x05 \x01(\tR\acall_id\x12 \n" +
-	"\vgranularity\x18\x06 \x01(\x05R\vgranularity\x12\x1e\n" +
-	"\n" +
-	"created_at\x18\a \x01(\x03R\n" +
-	"created_at\x123\n" +
-	"\x04data\x18\b \x01(\v2\x1f.fusion.ai.proto.pv.PvPowerDataR\x04data\"}\n" +
+	"\x0fregistration_id\x18\x04 \x01(\tR\x0fregistration_id\x12 \n" +
+	"\vgranularity\x18\x06 \x01(\x05R\vgranularity\x123\n" +
+	"\x04data\x18\b \x01(\v2\x1f.fusion.ai.proto.pv.PvPowerDataR\x04data\x12,\n" +
+	"\x11query_start_ts_ms\x18\t \x01(\x03R\x11query_start_ts_ms\x12(\n" +
+	"\x0fquery_end_ts_ms\x18\n" +
+	" \x01(\x03R\x0fquery_end_ts_ms\x12&\n" +
+	"\x0equery_timezone\x18\v \x01(\tR\x0equery_timezone\"}\n" +
 	"\x11PullPvDataRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x123\n" +
 	"\x04data\x18\x02 \x01(\v2\x1f.fusion.ai.proto.pv.PvPowerDataR\x04dataB\xab\x01\n" +

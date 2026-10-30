@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * 8.2 查询光伏预测结果
+ * 8.2 查询光伏预测结果（Influx；未传时间则站点本地「今天」全天，见各时间字段注释）
  *
  * Generated from protobuf message <code>fusion.ai.proto.pv.GetPvPredictionsRequest</code>
  */
@@ -29,11 +29,29 @@ class GetPvPredictionsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $granularity = null;
     /**
-     * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start < end
      *
-     * Generated from protobuf field <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = {</code>
      */
-    protected $call_id = null;
+    protected $start_ts_ms = null;
+    /**
+     * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+     *
+     * Generated from protobuf field <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = {</code>
+     */
+    protected $end_ts_ms = null;
+    /**
+     * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+     *
+     * Generated from protobuf field <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = {</code>
+     */
+    protected $local_date = null;
+    /**
+     * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+     *
+     * Generated from protobuf field <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = {</code>
+     */
+    protected $timezone = null;
 
     /**
      * Constructor.
@@ -45,8 +63,14 @@ class GetPvPredictionsRequest extends \Google\Protobuf\Internal\Message
      *           算法业务注册唯一标识
      *     @type int $granularity
      *           预测步长（分钟），可选；未传时按注册配置默认（优先 15，其次 5/30/60）
-     *     @type string $call_id
-     *           预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     *     @type int|string $start_ts_ms
+     *           查询起始，Unix 毫秒；与 end_ts_ms 成对；start < end
+     *     @type int|string $end_ts_ms
+     *           查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+     *     @type string $local_date
+     *           本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+     *     @type string $timezone
+     *           IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
      * }
      */
     public function __construct($data = null)
@@ -118,37 +142,145 @@ class GetPvPredictionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start < end
      *
-     * Generated from protobuf field <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {</code>
-     * @return string
+     * Generated from protobuf field <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = {</code>
+     * @return int|string
      */
-    public function getCallId()
+    public function getStartTsMs()
     {
-        return isset($this->call_id) ? $this->call_id : '';
+        return isset($this->start_ts_ms) ? $this->start_ts_ms : GPBUtil::compatibleInt64(0, '0');
     }
 
-    public function hasCallId()
+    public function hasStartTsMs()
     {
-        return isset($this->call_id);
+        return isset($this->start_ts_ms);
     }
 
-    public function clearCallId()
+    public function clearStartTsMs()
     {
-        unset($this->call_id);
+        unset($this->start_ts_ms);
     }
 
     /**
-     * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+     * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start < end
      *
-     * Generated from protobuf field <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = {</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setStartTsMs(int|string $var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->start_ts_ms = $var;
+
+        return $this;
+    }
+
+    /**
+     * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+     *
+     * Generated from protobuf field <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = {</code>
+     * @return int|string
+     */
+    public function getEndTsMs()
+    {
+        return isset($this->end_ts_ms) ? $this->end_ts_ms : GPBUtil::compatibleInt64(0, '0');
+    }
+
+    public function hasEndTsMs()
+    {
+        return isset($this->end_ts_ms);
+    }
+
+    public function clearEndTsMs()
+    {
+        unset($this->end_ts_ms);
+    }
+
+    /**
+     * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+     *
+     * Generated from protobuf field <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = {</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setEndTsMs(int|string $var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->end_ts_ms = $var;
+
+        return $this;
+    }
+
+    /**
+     * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+     *
+     * Generated from protobuf field <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = {</code>
+     * @return string
+     */
+    public function getLocalDate()
+    {
+        return isset($this->local_date) ? $this->local_date : '';
+    }
+
+    public function hasLocalDate()
+    {
+        return isset($this->local_date);
+    }
+
+    public function clearLocalDate()
+    {
+        unset($this->local_date);
+    }
+
+    /**
+     * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+     *
+     * Generated from protobuf field <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
-    public function setCallId(string $var)
+    public function setLocalDate(string $var)
     {
         GPBUtil::checkString($var, true);
-        $this->call_id = $var;
+        $this->local_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+     *
+     * Generated from protobuf field <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = {</code>
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return isset($this->timezone) ? $this->timezone : '';
+    }
+
+    public function hasTimezone()
+    {
+        return isset($this->timezone);
+    }
+
+    public function clearTimezone()
+    {
+        unset($this->timezone);
+    }
+
+    /**
+     * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+     *
+     * Generated from protobuf field <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTimezone(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->timezone = $var;
 
         return $this;
     }

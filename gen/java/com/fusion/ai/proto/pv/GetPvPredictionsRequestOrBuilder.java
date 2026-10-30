@@ -51,30 +51,97 @@ public interface GetPvPredictionsRequestOrBuilder extends
 
   /**
    * <pre>
-   * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+   * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start &lt; end
    * </pre>
    *
-   * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-   * @return Whether the callId field is set.
+   * <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = { ... }</code>
+   * @return Whether the startTsMs field is set.
    */
-  boolean hasCallId();
+  boolean hasStartTsMs();
   /**
    * <pre>
-   * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+   * 查询起始，Unix 毫秒；与 end_ts_ms 成对；start &lt; end
    * </pre>
    *
-   * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-   * @return The callId.
+   * <code>optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = { ... }</code>
+   * @return The startTsMs.
    */
-  java.lang.String getCallId();
+  long getStartTsMs();
+
   /**
    * <pre>
-   * 预测调用批次 ID；未传时返回该 registration_id + granularity 下最新一条
+   * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
    * </pre>
    *
-   * <code>optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for callId.
+   * <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = { ... }</code>
+   * @return Whether the endTsMs field is set.
+   */
+  boolean hasEndTsMs();
+  /**
+   * <pre>
+   * 查询结束，Unix 毫秒（左闭右开）；与 start_ts_ms 成对
+   * </pre>
+   *
+   * <code>optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = { ... }</code>
+   * @return The endTsMs.
+   */
+  long getEndTsMs();
+
+  /**
+   * <pre>
+   * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+   * </pre>
+   *
+   * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+   * @return Whether the localDate field is set.
+   */
+  boolean hasLocalDate();
+  /**
+   * <pre>
+   * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+   * </pre>
+   *
+   * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+   * @return The localDate.
+   */
+  java.lang.String getLocalDate();
+  /**
+   * <pre>
+   * 本地日历日 YYYY-MM-DD；与 timezone 成对；勿与 start/end 同时传
+   * </pre>
+   *
+   * <code>optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for localDate.
    */
   com.google.protobuf.ByteString
-      getCallIdBytes();
+      getLocalDateBytes();
+
+  /**
+   * <pre>
+   * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+   * </pre>
+   *
+   * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * @return Whether the timezone field is set.
+   */
+  boolean hasTimezone();
+  /**
+   * <pre>
+   * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+   * </pre>
+   *
+   * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * @return The timezone.
+   */
+  java.lang.String getTimezone();
+  /**
+   * <pre>
+   * IANA 时区；有 local_date 时必填；仅传时区时可指定「今天」所用时区
+   * </pre>
+   *
+   * <code>optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for timezone.
+   */
+  com.google.protobuf.ByteString
+      getTimezoneBytes();
 }

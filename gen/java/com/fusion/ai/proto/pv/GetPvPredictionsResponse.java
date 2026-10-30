@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
     code_ = "";
     message_ = "";
     registrationId_ = "";
-    callId_ = "";
+    queryTimezone_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -210,58 +210,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CALL_ID_FIELD_NUMBER = 5;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object callId_ = "";
-  /**
-   * <pre>
-   * 本次预测调用 UUID
-   * </pre>
-   *
-   * <code>string call_id = 5 [json_name = "call_id"];</code>
-   * @return The callId.
-   */
-  @java.lang.Override
-  public java.lang.String getCallId() {
-    java.lang.Object ref = callId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      callId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 本次预测调用 UUID
-   * </pre>
-   *
-   * <code>string call_id = 5 [json_name = "call_id"];</code>
-   * @return The bytes for callId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCallIdBytes() {
-    java.lang.Object ref = callId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      callId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int GRANULARITY_FIELD_NUMBER = 6;
   private int granularity_ = 0;
   /**
    * <pre>
-   * 预测步长（分钟），如 5、15、30、60
+   * 预测步长（分钟）
    * </pre>
    *
    * <code>int32 granularity = 6 [json_name = "granularity"];</code>
@@ -270,21 +223,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public int getGranularity() {
     return granularity_;
-  }
-
-  public static final int CREATED_AT_FIELD_NUMBER = 7;
-  private long createdAt_ = 0L;
-  /**
-   * <pre>
-   * 结果入库时间，Unix 毫秒
-   * </pre>
-   *
-   * <code>int64 created_at = 7 [json_name = "created_at"];</code>
-   * @return The createdAt.
-   */
-  @java.lang.Override
-  public long getCreatedAt() {
-    return createdAt_;
   }
 
   public static final int DATA_FIELD_NUMBER = 8;
@@ -325,6 +263,79 @@ private static final long serialVersionUID = 0L;
     return data_ == null ? com.fusion.ai.proto.pv.PvPowerData.getDefaultInstance() : data_;
   }
 
+  public static final int QUERY_START_TS_MS_FIELD_NUMBER = 9;
+  private long queryStartTsMs_ = 0L;
+  /**
+   * <pre>
+   * 实际查询时间窗，Unix 毫秒（左闭右开）
+   * </pre>
+   *
+   * <code>int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];</code>
+   * @return The queryStartTsMs.
+   */
+  @java.lang.Override
+  public long getQueryStartTsMs() {
+    return queryStartTsMs_;
+  }
+
+  public static final int QUERY_END_TS_MS_FIELD_NUMBER = 10;
+  private long queryEndTsMs_ = 0L;
+  /**
+   * <code>int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];</code>
+   * @return The queryEndTsMs.
+   */
+  @java.lang.Override
+  public long getQueryEndTsMs() {
+    return queryEndTsMs_;
+  }
+
+  public static final int QUERY_TIMEZONE_FIELD_NUMBER = 11;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object queryTimezone_ = "";
+  /**
+   * <pre>
+   * 解析时间窗使用的 IANA 时区
+   * </pre>
+   *
+   * <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+   * @return The queryTimezone.
+   */
+  @java.lang.Override
+  public java.lang.String getQueryTimezone() {
+    java.lang.Object ref = queryTimezone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      queryTimezone_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 解析时间窗使用的 IANA 时区
+   * </pre>
+   *
+   * <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+   * @return The bytes for queryTimezone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getQueryTimezoneBytes() {
+    java.lang.Object ref = queryTimezone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      queryTimezone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -351,17 +362,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, registrationId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(callId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, callId_);
-    }
     if (granularity_ != 0) {
       output.writeInt32(6, granularity_);
     }
-    if (createdAt_ != 0L) {
-      output.writeInt64(7, createdAt_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(8, getData());
+    }
+    if (queryStartTsMs_ != 0L) {
+      output.writeInt64(9, queryStartTsMs_);
+    }
+    if (queryEndTsMs_ != 0L) {
+      output.writeInt64(10, queryEndTsMs_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(queryTimezone_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, queryTimezone_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -379,20 +393,24 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, registrationId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(callId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, callId_);
-    }
     if (granularity_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, granularity_);
     }
-    if (createdAt_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, createdAt_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getData());
+    }
+    if (queryStartTsMs_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, queryStartTsMs_);
+    }
+    if (queryEndTsMs_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(10, queryEndTsMs_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(queryTimezone_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, queryTimezone_);
     }
     return size;
   }
@@ -426,17 +444,19 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMessage())) return false;
     if (!getRegistrationId()
         .equals(other.getRegistrationId())) return false;
-    if (!getCallId()
-        .equals(other.getCallId())) return false;
     if (getGranularity()
         != other.getGranularity()) return false;
-    if (getCreatedAt()
-        != other.getCreatedAt()) return false;
     if (hasData() != other.hasData()) return false;
     if (hasData()) {
       if (!getData()
           .equals(other.getData())) return false;
     }
+    if (getQueryStartTsMs()
+        != other.getQueryStartTsMs()) return false;
+    if (getQueryEndTsMs()
+        != other.getQueryEndTsMs()) return false;
+    if (!getQueryTimezone()
+        .equals(other.getQueryTimezone())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -456,17 +476,20 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + REGISTRATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRegistrationId().hashCode();
-    hash = (37 * hash) + CALL_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCallId().hashCode();
     hash = (37 * hash) + GRANULARITY_FIELD_NUMBER;
     hash = (53 * hash) + getGranularity();
-    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCreatedAt());
     if (hasData()) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
     }
+    hash = (37 * hash) + QUERY_START_TS_MS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getQueryStartTsMs());
+    hash = (37 * hash) + QUERY_END_TS_MS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getQueryEndTsMs());
+    hash = (37 * hash) + QUERY_TIMEZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getQueryTimezone().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -608,14 +631,15 @@ private static final long serialVersionUID = 0L;
       code_ = "";
       message_ = "";
       registrationId_ = "";
-      callId_ = "";
       granularity_ = 0;
-      createdAt_ = 0L;
       data_ = null;
       if (dataBuilder_ != null) {
         dataBuilder_.dispose();
         dataBuilder_ = null;
       }
+      queryStartTsMs_ = 0L;
+      queryEndTsMs_ = 0L;
+      queryTimezone_ = "";
       return this;
     }
 
@@ -662,20 +686,23 @@ private static final long serialVersionUID = 0L;
         result.registrationId_ = registrationId_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.callId_ = callId_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.granularity_ = granularity_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.createdAt_ = createdAt_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.data_ = dataBuilder_ == null
             ? data_
             : dataBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.queryStartTsMs_ = queryStartTsMs_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.queryEndTsMs_ = queryEndTsMs_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.queryTimezone_ = queryTimezone_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -712,19 +739,22 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (!other.getCallId().isEmpty()) {
-        callId_ = other.callId_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
       if (other.getGranularity() != 0) {
         setGranularity(other.getGranularity());
       }
-      if (other.getCreatedAt() != 0L) {
-        setCreatedAt(other.getCreatedAt());
-      }
       if (other.hasData()) {
         mergeData(other.getData());
+      }
+      if (other.getQueryStartTsMs() != 0L) {
+        setQueryStartTsMs(other.getQueryStartTsMs());
+      }
+      if (other.getQueryEndTsMs() != 0L) {
+        setQueryEndTsMs(other.getQueryEndTsMs());
+      }
+      if (!other.getQueryTimezone().isEmpty()) {
+        queryTimezone_ = other.queryTimezone_;
+        bitField0_ |= 0x00000100;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -770,28 +800,33 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
-            case 42: {
-              callId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              break;
-            } // case 42
             case 48: {
               granularity_ = input.readInt32();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000010;
               break;
             } // case 48
-            case 56: {
-              createdAt_ = input.readInt64();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 56
             case 66: {
               input.readMessage(
                   internalGetDataFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000020;
               break;
             } // case 66
+            case 72: {
+              queryStartTsMs_ = input.readInt64();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 72
+            case 80: {
+              queryEndTsMs_ = input.readInt64();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 80
+            case 90: {
+              queryTimezone_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 90
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1097,102 +1132,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object callId_ = "";
-    /**
-     * <pre>
-     * 本次预测调用 UUID
-     * </pre>
-     *
-     * <code>string call_id = 5 [json_name = "call_id"];</code>
-     * @return The callId.
-     */
-    public java.lang.String getCallId() {
-      java.lang.Object ref = callId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        callId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 本次预测调用 UUID
-     * </pre>
-     *
-     * <code>string call_id = 5 [json_name = "call_id"];</code>
-     * @return The bytes for callId.
-     */
-    public com.google.protobuf.ByteString
-        getCallIdBytes() {
-      java.lang.Object ref = callId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        callId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 本次预测调用 UUID
-     * </pre>
-     *
-     * <code>string call_id = 5 [json_name = "call_id"];</code>
-     * @param value The callId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCallId(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-      callId_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 本次预测调用 UUID
-     * </pre>
-     *
-     * <code>string call_id = 5 [json_name = "call_id"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCallId() {
-      callId_ = getDefaultInstance().getCallId();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 本次预测调用 UUID
-     * </pre>
-     *
-     * <code>string call_id = 5 [json_name = "call_id"];</code>
-     * @param value The bytes for callId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCallIdBytes(
-        com.google.protobuf.ByteString value) {
-      java.util.Objects.requireNonNull(value);
-      checkByteStringIsUtf8(value);
-      callId_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
     private int granularity_ ;
     /**
      * <pre>
-     * 预测步长（分钟），如 5、15、30、60
+     * 预测步长（分钟）
      * </pre>
      *
      * <code>int32 granularity = 6 [json_name = "granularity"];</code>
@@ -1204,7 +1147,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 预测步长（分钟），如 5、15、30、60
+     * 预测步长（分钟）
      * </pre>
      *
      * <code>int32 granularity = 6 [json_name = "granularity"];</code>
@@ -1214,65 +1157,21 @@ private static final long serialVersionUID = 0L;
     public Builder setGranularity(int value) {
 
       granularity_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 预测步长（分钟），如 5、15、30、60
+     * 预测步长（分钟）
      * </pre>
      *
      * <code>int32 granularity = 6 [json_name = "granularity"];</code>
      * @return This builder for chaining.
      */
     public Builder clearGranularity() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       granularity_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private long createdAt_ ;
-    /**
-     * <pre>
-     * 结果入库时间，Unix 毫秒
-     * </pre>
-     *
-     * <code>int64 created_at = 7 [json_name = "created_at"];</code>
-     * @return The createdAt.
-     */
-    @java.lang.Override
-    public long getCreatedAt() {
-      return createdAt_;
-    }
-    /**
-     * <pre>
-     * 结果入库时间，Unix 毫秒
-     * </pre>
-     *
-     * <code>int64 created_at = 7 [json_name = "created_at"];</code>
-     * @param value The createdAt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreatedAt(long value) {
-
-      createdAt_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 结果入库时间，Unix 毫秒
-     * </pre>
-     *
-     * <code>int64 created_at = 7 [json_name = "created_at"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCreatedAt() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      createdAt_ = 0L;
       onChanged();
       return this;
     }
@@ -1289,7 +1188,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the data field is set.
      */
     public boolean hasData() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
@@ -1320,7 +1219,7 @@ private static final long serialVersionUID = 0L;
       } else {
         dataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1338,7 +1237,7 @@ private static final long serialVersionUID = 0L;
       } else {
         dataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1351,7 +1250,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeData(com.fusion.ai.proto.pv.PvPowerData value) {
       if (dataBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0) &&
+        if (((bitField0_ & 0x00000020) != 0) &&
           data_ != null &&
           data_ != com.fusion.ai.proto.pv.PvPowerData.getDefaultInstance()) {
           getDataBuilder().mergeFrom(value);
@@ -1362,7 +1261,7 @@ private static final long serialVersionUID = 0L;
         dataBuilder_.mergeFrom(value);
       }
       if (data_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1375,7 +1274,7 @@ private static final long serialVersionUID = 0L;
      * <code>.fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];</code>
      */
     public Builder clearData() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000020);
       data_ = null;
       if (dataBuilder_ != null) {
         dataBuilder_.dispose();
@@ -1392,7 +1291,7 @@ private static final long serialVersionUID = 0L;
      * <code>.fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];</code>
      */
     public com.fusion.ai.proto.pv.PvPowerData.Builder getDataBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetDataFieldBuilder().getBuilder();
     }
@@ -1430,6 +1329,174 @@ private static final long serialVersionUID = 0L;
         data_ = null;
       }
       return dataBuilder_;
+    }
+
+    private long queryStartTsMs_ ;
+    /**
+     * <pre>
+     * 实际查询时间窗，Unix 毫秒（左闭右开）
+     * </pre>
+     *
+     * <code>int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];</code>
+     * @return The queryStartTsMs.
+     */
+    @java.lang.Override
+    public long getQueryStartTsMs() {
+      return queryStartTsMs_;
+    }
+    /**
+     * <pre>
+     * 实际查询时间窗，Unix 毫秒（左闭右开）
+     * </pre>
+     *
+     * <code>int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];</code>
+     * @param value The queryStartTsMs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryStartTsMs(long value) {
+
+      queryStartTsMs_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 实际查询时间窗，Unix 毫秒（左闭右开）
+     * </pre>
+     *
+     * <code>int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQueryStartTsMs() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      queryStartTsMs_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long queryEndTsMs_ ;
+    /**
+     * <code>int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];</code>
+     * @return The queryEndTsMs.
+     */
+    @java.lang.Override
+    public long getQueryEndTsMs() {
+      return queryEndTsMs_;
+    }
+    /**
+     * <code>int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];</code>
+     * @param value The queryEndTsMs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryEndTsMs(long value) {
+
+      queryEndTsMs_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQueryEndTsMs() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      queryEndTsMs_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object queryTimezone_ = "";
+    /**
+     * <pre>
+     * 解析时间窗使用的 IANA 时区
+     * </pre>
+     *
+     * <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+     * @return The queryTimezone.
+     */
+    public java.lang.String getQueryTimezone() {
+      java.lang.Object ref = queryTimezone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryTimezone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 解析时间窗使用的 IANA 时区
+     * </pre>
+     *
+     * <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+     * @return The bytes for queryTimezone.
+     */
+    public com.google.protobuf.ByteString
+        getQueryTimezoneBytes() {
+      java.lang.Object ref = queryTimezone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        queryTimezone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 解析时间窗使用的 IANA 时区
+     * </pre>
+     *
+     * <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+     * @param value The queryTimezone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryTimezone(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      queryTimezone_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 解析时间窗使用的 IANA 时区
+     * </pre>
+     *
+     * <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQueryTimezone() {
+      queryTimezone_ = getDefaultInstance().getQueryTimezone();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 解析时间窗使用的 IANA 时区
+     * </pre>
+     *
+     * <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+     * @param value The bytes for queryTimezone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryTimezoneBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      queryTimezone_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:fusion.ai.proto.pv.GetPvPredictionsResponse)

@@ -74,29 +74,36 @@ public final class PvMessageProto extends com.google.protobuf.GeneratedFile {
       "werData\022:\n\007pv_list\030\001 \003(\0132 .fusion.ai.pro" +
       "to.pv.PvPowerPointR\007pv_list\"U\n\014PvPowerPo" +
       "int\022%\n\ttimestamp\030\001 \001(\003B\007\272H\004\"\002 \000R\ttimesta" +
-      "mp\022\036\n\002pv\030\002 \001(\001B\016\272H\013\022\t)\000\000\000\000\000\000\000\000R\002pv\"\310\001\n\027G" +
+      "mp\022\036\n\002pv\030\002 \001(\001B\016\272H\013\022\t)\000\000\000\000\000\000\000\000R\002pv\"\240\003\n\027G" +
       "etPvPredictionsRequest\0223\n\017registration_i" +
       "d\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\0224\n\013g" +
       "ranularity\030\002 \001(\005B\r\272H\n\032\0100\0050\0170\0360<H\000R\013granu" +
-      "larity\210\001\001\022&\n\007call_id\030\003 \001(\tB\007\272H\004r\002\030@H\001R\007c" +
-      "all_id\210\001\001B\016\n\014_granularityB\n\n\010_call_id\"\314\002" +
-      "\n\030GetPvPredictionsResponse\022+\n\005state\030\001 \001(" +
-      "\tB\025\272H\022r\020R\007successR\005errorR\005state\022%\n\004code\030" +
-      "\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007messag" +
-      "e\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\022(\n\017registratio" +
-      "n_id\030\004 \001(\tR\017registration_id\022\030\n\007call_id\030\005" +
-      " \001(\tR\007call_id\022 \n\013granularity\030\006 \001(\005R\013gran" +
-      "ularity\022\036\n\ncreated_at\030\007 \001(\003R\ncreated_at\022" +
-      "3\n\004data\030\010 \001(\0132\037.fusion.ai.proto.pv.PvPow" +
-      "erDataR\004data\"}\n\021PullPvDataRequest\0223\n\017reg" +
-      "istration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registrat" +
-      "ion_id\0223\n\004data\030\002 \001(\0132\037.fusion.ai.proto.p" +
-      "v.PvPowerDataR\004dataB\253\001\n\026com.fusion.ai.pr" +
-      "oto.pvB\016PvMessageProtoP\001Z\025fusion.ai.prot" +
-      "o.pv;pv\242\002\004FAPP\252\002\022Fusion.Ai.Proto.Pv\312\002\022Fu" +
-      "sion\\Ai\\Proto\\Pv\342\002\036Fusion\\Ai\\Proto\\Pv\\GP" +
-      "BMetadata\352\002\025Fusion::Ai::Proto::Pvb\006proto" +
-      "3"
+      "larity\210\001\001\022.\n\013start_ts_ms\030\n \001(\003B\007\272H\004\"\002 \000H" +
+      "\001R\013start_ts_ms\210\001\001\022*\n\tend_ts_ms\030\013 \001(\003B\007\272H" +
+      "\004\"\002 \000H\002R\tend_ts_ms\210\001\001\022H\n\nlocal_date\030\014 \001(" +
+      "\tB#\272H r\0362\034^[0-9]{4}-[0-9]{2}-[0-9]{2}$H\003" +
+      "R\nlocal_date\210\001\001\022*\n\010timezone\030\r \001(\tB\t\272H\006r\004" +
+      "\020\001\030@H\004R\010timezone\210\001\001B\016\n\014_granularityB\016\n\014_" +
+      "start_ts_msB\014\n\n_end_ts_msB\r\n\013_local_date" +
+      "B\013\n\t_timezone\"\222\003\n\030GetPvPredictionsRespon" +
+      "se\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007successR\005error" +
+      "R\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$" +
+      "R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007messag" +
+      "e\022(\n\017registration_id\030\004 \001(\tR\017registration" +
+      "_id\022 \n\013granularity\030\006 \001(\005R\013granularity\0223\n" +
+      "\004data\030\010 \001(\0132\037.fusion.ai.proto.pv.PvPower" +
+      "DataR\004data\022,\n\021query_start_ts_ms\030\t \001(\003R\021q" +
+      "uery_start_ts_ms\022(\n\017query_end_ts_ms\030\n \001(" +
+      "\003R\017query_end_ts_ms\022&\n\016query_timezone\030\013 \001" +
+      "(\tR\016query_timezone\"}\n\021PullPvDataRequest\022" +
+      "3\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017reg" +
+      "istration_id\0223\n\004data\030\002 \001(\0132\037.fusion.ai.p" +
+      "roto.pv.PvPowerDataR\004dataB\253\001\n\026com.fusion" +
+      ".ai.proto.pvB\016PvMessageProtoP\001Z\025fusion.a" +
+      "i.proto.pv;pv\242\002\004FAPP\252\002\022Fusion.Ai.Proto.P" +
+      "v\312\002\022Fusion\\Ai\\Proto\\Pv\342\002\036Fusion\\Ai\\Proto" +
+      "\\Pv\\GPBMetadata\352\002\025Fusion::Ai::Proto::Pvb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -127,13 +134,13 @@ public final class PvMessageProto extends com.google.protobuf.GeneratedFile {
     internal_static_fusion_ai_proto_pv_GetPvPredictionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_pv_GetPvPredictionsRequest_descriptor,
-        new java.lang.String[] { "RegistrationId", "Granularity", "CallId", });
+        new java.lang.String[] { "RegistrationId", "Granularity", "StartTsMs", "EndTsMs", "LocalDate", "Timezone", });
     internal_static_fusion_ai_proto_pv_GetPvPredictionsResponse_descriptor =
       getDescriptor().getMessageType(4);
     internal_static_fusion_ai_proto_pv_GetPvPredictionsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_pv_GetPvPredictionsResponse_descriptor,
-        new java.lang.String[] { "State", "Code", "Message", "RegistrationId", "CallId", "Granularity", "CreatedAt", "Data", });
+        new java.lang.String[] { "State", "Code", "Message", "RegistrationId", "Granularity", "Data", "QueryStartTsMs", "QueryEndTsMs", "QueryTimezone", });
     internal_static_fusion_ai_proto_pv_PullPvDataRequest_descriptor =
       getDescriptor().getMessageType(5);
     internal_static_fusion_ai_proto_pv_PullPvDataRequest_fieldAccessorTable = new

@@ -207,11 +207,11 @@ constexpr GetPvPredictionsRequest::ParseTableT_ GetPvPredictionsRequest::Interna
     {
       PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_._has_bits_),
       0, // no _extensions_
-      3, 24,  // max_field_number, fast_idx_mask
+      13, 56,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967288,  // skipmap
+      4294959612,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      3,  // num_field_entries
+      6,  // num_field_entries
       0,  // num_aux_entries
       offsetof(ParseTableT_, field_names),  // no aux_entries
       class_data,
@@ -227,29 +227,46 @@ constexpr GetPvPredictionsRequest::ParseTableT_ GetPvPredictionsRequest::Interna
        {10, 0, 0,
         PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.registration_id_)}},
       // optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetPvPredictionsRequest, _impl_.granularity_), 2>(),
-       {16, 2, 0,
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetPvPredictionsRequest, _impl_.granularity_), 5>(),
+       {16, 5, 0,
         PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.granularity_)}},
-      // optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
+      // optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = {
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(GetPvPredictionsRequest, _impl_.end_ts_ms_), 4>(),
+       {88, 4, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.end_ts_ms_)}},
+      // optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
-       {26, 1, 0,
-        PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.call_id_)}},
+       {98, 1, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.local_date_)}},
+      // optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = {
+      {::_pbi::TcParser::FastUS1,
+       {106, 2, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.timezone_)}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
     }}, {{
       65535, 65535
     }}, {{
       // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.registration_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
       // optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.granularity_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.call_id_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.granularity_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.start_ts_ms_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+      // optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.end_ts_ms_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+      // optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.local_date_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.timezone_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     }},
     // no aux_entries
     {{
-      "\52\17\0\7\0\0\0\0"
+      "\52\17\0\0\0\12\10\0"
       "fusion.ai.proto.pv.GetPvPredictionsRequest"
       "registration_id"
-      "call_id"
+      "local_date"
+      "timezone"
     }},
   };
 }
@@ -261,9 +278,14 @@ inline constexpr GetPvPredictionsRequest::Impl_::Impl_(
       : registration_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        call_id_(
+        local_date_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        timezone_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        start_ts_ms_{::int64_t{0}},
+        end_ts_ms_{::int64_t{0}},
         granularity_{0} {}
 
 template <typename>
@@ -836,11 +858,11 @@ constexpr GetPvPredictionsResponse::ParseTableT_ GetPvPredictionsResponse::Inter
     {
       PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_._has_bits_),
       0, // no _extensions_
-      8, 56,  // max_field_number, fast_idx_mask
+      11, 120,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967040,  // skipmap
+      4294965328,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      8,  // num_field_entries
+      9,  // num_field_entries
       1,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
@@ -850,10 +872,7 @@ constexpr GetPvPredictionsResponse::ParseTableT_ GetPvPredictionsResponse::Inter
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::pv::GetPvPredictionsResponse>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      // .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
-      {::_pbi::TcParser::FastMtS1,
-       {66, 5, 0,
-        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.data_)}},
+      {::_pbi::TcParser::MiniParse, {}},
       // string state = 1 [json_name = "state", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
        {10, 0, 0,
@@ -870,18 +889,32 @@ constexpr GetPvPredictionsResponse::ParseTableT_ GetPvPredictionsResponse::Inter
       {::_pbi::TcParser::FastUS1,
        {34, 3, 0,
         PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.registration_id_)}},
-      // string call_id = 5 [json_name = "call_id"];
-      {::_pbi::TcParser::FastUS1,
-       {42, 4, 0,
-        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.call_id_)}},
+      {::_pbi::TcParser::MiniParse, {}},
       // int32 granularity = 6 [json_name = "granularity"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetPvPredictionsResponse, _impl_.granularity_), 7>(),
-       {48, 7, 0,
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetPvPredictionsResponse, _impl_.granularity_), 8>(),
+       {48, 8, 0,
         PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.granularity_)}},
-      // int64 created_at = 7 [json_name = "created_at"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(GetPvPredictionsResponse, _impl_.created_at_), 6>(),
-       {56, 6, 0,
-        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.created_at_)}},
+      {::_pbi::TcParser::MiniParse, {}},
+      // .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
+      {::_pbi::TcParser::FastMtS1,
+       {66, 5, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.data_)}},
+      // int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(GetPvPredictionsResponse, _impl_.query_start_ts_ms_), 6>(),
+       {72, 6, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.query_start_ts_ms_)}},
+      // int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(GetPvPredictionsResponse, _impl_.query_end_ts_ms_), 7>(),
+       {80, 7, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.query_end_ts_ms_)}},
+      // string query_timezone = 11 [json_name = "query_timezone"];
+      {::_pbi::TcParser::FastUS1,
+       {90, 4, 0,
+        PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.query_timezone_)}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
     }}, {{
       65535, 65535
     }}, {{
@@ -893,14 +926,16 @@ constexpr GetPvPredictionsResponse::ParseTableT_ GetPvPredictionsResponse::Inter
       {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.message_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
       // string registration_id = 4 [json_name = "registration_id"];
       {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.registration_id_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string call_id = 5 [json_name = "call_id"];
-      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.call_id_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
       // int32 granularity = 6 [json_name = "granularity"];
-      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.granularity_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // int64 created_at = 7 [json_name = "created_at"];
-      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.created_at_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.granularity_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
       // .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
       {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.data_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.query_start_ts_ms_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+      // int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.query_end_ts_ms_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+      // string query_timezone = 11 [json_name = "query_timezone"];
+      {PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.query_timezone_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     }},
     {{
         #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -910,13 +945,13 @@ constexpr GetPvPredictionsResponse::ParseTableT_ GetPvPredictionsResponse::Inter
         #endif
     }},
     {{
-      "\53\5\4\7\17\7\0\0\0\0\0\0\0\0\0\0"
+      "\53\5\4\7\17\0\0\0\0\16\0\0\0\0\0\0"
       "fusion.ai.proto.pv.GetPvPredictionsResponse"
       "state"
       "code"
       "message"
       "registration_id"
-      "call_id"
+      "query_timezone"
     }},
   };
 }
@@ -937,11 +972,12 @@ inline constexpr GetPvPredictionsResponse::Impl_::Impl_(
         registration_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        call_id_(
+        query_timezone_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         data_{nullptr},
-        created_at_{::int64_t{0}},
+        query_start_ts_ms_{::int64_t{0}},
+        query_end_ts_ms_{::int64_t{0}},
         granularity_{0} {}
 
 template <typename>
@@ -1068,32 +1104,40 @@ const ::uint32_t
         1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_._has_bits_),
-        6, // hasbit index offset
+        9, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.registration_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.granularity_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.call_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.start_ts_ms_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.end_ts_ms_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.local_date_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsRequest, _impl_.timezone_),
         0,
-        2,
+        5,
+        3,
+        4,
         1,
+        2,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_._has_bits_),
-        11, // hasbit index offset
+        12, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.state_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.code_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.message_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.registration_id_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.call_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.granularity_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.created_at_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.data_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.query_start_ts_ms_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.query_end_ts_ms_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::GetPvPredictionsResponse, _impl_.query_timezone_),
         0,
         1,
         2,
         3,
-        4,
-        7,
-        6,
+        8,
         5,
+        6,
+        7,
+        4,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::pv::PullPvDataRequest, _impl_._has_bits_),
         5, // hasbit index offset
@@ -1109,8 +1153,8 @@ static const ::_pbi::MigrationSchema
         {7, sizeof(::fusion::ai::proto::pv::PvPowerData)},
         {12, sizeof(::fusion::ai::proto::pv::PvPowerPoint)},
         {19, sizeof(::fusion::ai::proto::pv::GetPvPredictionsRequest)},
-        {28, sizeof(::fusion::ai::proto::pv::GetPvPredictionsResponse)},
-        {47, sizeof(::fusion::ai::proto::pv::PullPvDataRequest)},
+        {34, sizeof(::fusion::ai::proto::pv::GetPvPredictionsResponse)},
+        {55, sizeof(::fusion::ai::proto::pv::PullPvDataRequest)},
 };
 static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
     file_message_globals[] = {
@@ -1132,29 +1176,36 @@ const char descriptor_table_protodef_pv_2fpv_5fmessage_2eproto[] ABSL_ATTRIBUTE_
     "werData\022:\n\007pv_list\030\001 \003(\0132 .fusion.ai.pro"
     "to.pv.PvPowerPointR\007pv_list\"U\n\014PvPowerPo"
     "int\022%\n\ttimestamp\030\001 \001(\003B\007\272H\004\"\002 \000R\ttimesta"
-    "mp\022\036\n\002pv\030\002 \001(\001B\016\272H\013\022\t)\000\000\000\000\000\000\000\000R\002pv\"\310\001\n\027G"
+    "mp\022\036\n\002pv\030\002 \001(\001B\016\272H\013\022\t)\000\000\000\000\000\000\000\000R\002pv\"\240\003\n\027G"
     "etPvPredictionsRequest\0223\n\017registration_i"
     "d\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\0224\n\013g"
     "ranularity\030\002 \001(\005B\r\272H\n\032\0100\0050\0170\0360<H\000R\013granu"
-    "larity\210\001\001\022&\n\007call_id\030\003 \001(\tB\007\272H\004r\002\030@H\001R\007c"
-    "all_id\210\001\001B\016\n\014_granularityB\n\n\010_call_id\"\314\002"
-    "\n\030GetPvPredictionsResponse\022+\n\005state\030\001 \001("
-    "\tB\025\272H\022r\020R\007successR\005errorR\005state\022%\n\004code\030"
-    "\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007messag"
-    "e\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\022(\n\017registratio"
-    "n_id\030\004 \001(\tR\017registration_id\022\030\n\007call_id\030\005"
-    " \001(\tR\007call_id\022 \n\013granularity\030\006 \001(\005R\013gran"
-    "ularity\022\036\n\ncreated_at\030\007 \001(\003R\ncreated_at\022"
-    "3\n\004data\030\010 \001(\0132\037.fusion.ai.proto.pv.PvPow"
-    "erDataR\004data\"}\n\021PullPvDataRequest\0223\n\017reg"
-    "istration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registrat"
-    "ion_id\0223\n\004data\030\002 \001(\0132\037.fusion.ai.proto.p"
-    "v.PvPowerDataR\004dataB\253\001\n\026com.fusion.ai.pr"
-    "oto.pvB\016PvMessageProtoP\001Z\025fusion.ai.prot"
-    "o.pv;pv\242\002\004FAPP\252\002\022Fusion.Ai.Proto.Pv\312\002\022Fu"
-    "sion\\Ai\\Proto\\Pv\342\002\036Fusion\\Ai\\Proto\\Pv\\GP"
-    "BMetadata\352\002\025Fusion::Ai::Proto::Pvb\006proto"
-    "3"
+    "larity\210\001\001\022.\n\013start_ts_ms\030\n \001(\003B\007\272H\004\"\002 \000H"
+    "\001R\013start_ts_ms\210\001\001\022*\n\tend_ts_ms\030\013 \001(\003B\007\272H"
+    "\004\"\002 \000H\002R\tend_ts_ms\210\001\001\022H\n\nlocal_date\030\014 \001("
+    "\tB#\272H r\0362\034^[0-9]{4}-[0-9]{2}-[0-9]{2}$H\003"
+    "R\nlocal_date\210\001\001\022*\n\010timezone\030\r \001(\tB\t\272H\006r\004"
+    "\020\001\030@H\004R\010timezone\210\001\001B\016\n\014_granularityB\016\n\014_"
+    "start_ts_msB\014\n\n_end_ts_msB\r\n\013_local_date"
+    "B\013\n\t_timezone\"\222\003\n\030GetPvPredictionsRespon"
+    "se\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007successR\005error"
+    "R\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$"
+    "R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007messag"
+    "e\022(\n\017registration_id\030\004 \001(\tR\017registration"
+    "_id\022 \n\013granularity\030\006 \001(\005R\013granularity\0223\n"
+    "\004data\030\010 \001(\0132\037.fusion.ai.proto.pv.PvPower"
+    "DataR\004data\022,\n\021query_start_ts_ms\030\t \001(\003R\021q"
+    "uery_start_ts_ms\022(\n\017query_end_ts_ms\030\n \001("
+    "\003R\017query_end_ts_ms\022&\n\016query_timezone\030\013 \001"
+    "(\tR\016query_timezone\"}\n\021PullPvDataRequest\022"
+    "3\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017reg"
+    "istration_id\0223\n\004data\030\002 \001(\0132\037.fusion.ai.p"
+    "roto.pv.PvPowerDataR\004dataB\253\001\n\026com.fusion"
+    ".ai.proto.pvB\016PvMessageProtoP\001Z\025fusion.a"
+    "i.proto.pv;pv\242\002\004FAPP\252\002\022Fusion.Ai.Proto.P"
+    "v\312\002\022Fusion\\Ai\\Proto\\Pv\342\002\036Fusion\\Ai\\Proto"
+    "\\Pv\\GPBMetadata\352\002\025Fusion::Ai::Proto::Pvb"
+    "\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_pv_2fpv_5fmessage_2eproto_deps[2] = {
@@ -1165,7 +1216,7 @@ static ::absl::once_flag descriptor_table_pv_2fpv_5fmessage_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_pv_2fpv_5fmessage_2eproto = {
     false,
     false,
-    1241,
+    1527,
     descriptor_table_protodef_pv_2fpv_5fmessage_2eproto,
     "pv/pv_message.proto",
     &descriptor_table_pv_2fpv_5fmessage_2eproto_once,
@@ -1887,7 +1938,8 @@ PROTOBUF_NDEBUG_INLINE GetPvPredictionsRequest::Impl_::Impl_(
     [[maybe_unused]] const ::fusion::ai::proto::pv::GetPvPredictionsRequest& from_msg)
       : _has_bits_{from._has_bits_},
         registration_id_(arena, from.registration_id_),
-        call_id_(arena, from.call_id_) {}
+        local_date_(arena, from.local_date_),
+        timezone_(arena, from.timezone_) {}
 
 GetPvPredictionsRequest::GetPvPredictionsRequest(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -1903,7 +1955,13 @@ GetPvPredictionsRequest::GetPvPredictionsRequest(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  _impl_.granularity_ = from._impl_.granularity_;
+  ::memcpy(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, start_ts_ms_),
+           reinterpret_cast<const char*>(&from._impl_) +
+               offsetof(Impl_, start_ts_ms_),
+           offsetof(Impl_, granularity_) -
+               offsetof(Impl_, start_ts_ms_) +
+               sizeof(Impl_::granularity_));
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.pv.GetPvPredictionsRequest)
 }
@@ -1911,11 +1969,17 @@ PROTOBUF_NDEBUG_INLINE GetPvPredictionsRequest::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : registration_id_(arena),
-        call_id_(arena) {}
+        local_date_(arena),
+        timezone_(arena) {}
 
 inline void GetPvPredictionsRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.granularity_ = {};
+  ::memset(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, start_ts_ms_),
+           0,
+           offsetof(Impl_, granularity_) -
+               offsetof(Impl_, start_ts_ms_) +
+               sizeof(Impl_::granularity_));
 }
 GetPvPredictionsRequest::~GetPvPredictionsRequest() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.pv.GetPvPredictionsRequest)
@@ -1929,7 +1993,8 @@ inline void GetPvPredictionsRequest::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.registration_id_.Destroy();
-  this_._impl_.call_id_.Destroy();
+  this_._impl_.local_date_.Destroy();
+  this_._impl_.timezone_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -1966,15 +2031,24 @@ PROTOBUF_NOINLINE void GetPvPredictionsRequest::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       this_._impl_.registration_id_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      this_._impl_.call_id_.ClearNonDefaultToEmpty();
+      this_._impl_.local_date_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      this_._impl_.timezone_.ClearNonDefaultToEmpty();
     }
   }
-  this_._impl_.granularity_ = 0;
+  if (BatchCheckHasBit(cached_has_bits, 0x00000038U)) {
+    ::memset(&this_._impl_.start_ts_ms_, 0,
+             static_cast<::size_t>(
+                 reinterpret_cast<char*>(&this_._impl_.granularity_) -
+                 reinterpret_cast<char*>(&this_._impl_.start_ts_ms_)) +
+                 sizeof(_impl_.granularity_));
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -2009,18 +2083,40 @@ PROTOBUF_NOINLINE void GetPvPredictionsRequest::Clear() {
   }
 
   // optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
-  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
     target =
         ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<2>(
             stream, this_._internal_granularity(), target);
   }
 
-  // optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
+  // optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<10>(
+            stream, this_._internal_start_ts_ms(), target);
+  }
+
+  // optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<11>(
+            stream, this_._internal_end_ts_ms(), target);
+  }
+
+  // optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    const ::std::string& _s = this_._internal_call_id();
+    const ::std::string& _s = this_._internal_local_date();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsRequest.call_id");
-    target = stream->WriteStringMaybeAliased(3, _s, target);
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsRequest.local_date");
+    target = stream->WriteStringMaybeAliased(12, _s, target);
+  }
+
+  // optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = {
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+    const ::std::string& _s = this_._internal_timezone();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsRequest.timezone");
+    target = stream->WriteStringMaybeAliased(13, _s, target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -2046,7 +2142,7 @@ PROTOBUF_NOINLINE void GetPvPredictionsRequest::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000003fU)) {
     // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!this_._internal_registration_id().empty()) {
@@ -2054,13 +2150,28 @@ PROTOBUF_NOINLINE void GetPvPredictionsRequest::Clear() {
                                         this_._internal_registration_id());
       }
     }
-    // optional string call_id = 3 [json_name = "call_id", (.buf.validate.field) = {
+    // optional string local_date = 12 [json_name = "local_date", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_call_id());
+                                      this_._internal_local_date());
+    }
+    // optional string timezone = 13 [json_name = "timezone", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_timezone());
+    }
+    // optional int64 start_ts_ms = 10 [json_name = "start_ts_ms", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+          this_._internal_start_ts_ms());
+    }
+    // optional int64 end_ts_ms = 11 [json_name = "end_ts_ms", (.buf.validate.field) = {
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+          this_._internal_end_ts_ms());
     }
     // optional int32 granularity = 2 [json_name = "granularity", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this_._internal_granularity());
     }
@@ -2082,7 +2193,7 @@ void GetPvPredictionsRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000003fU)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!from._internal_registration_id().empty()) {
         _this->_internal_set_registration_id(from._internal_registration_id());
@@ -2093,9 +2204,18 @@ void GetPvPredictionsRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      _this->_internal_set_call_id(from._internal_call_id());
+      _this->_internal_set_local_date(from._internal_local_date());
     }
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      _this->_internal_set_timezone(from._internal_timezone());
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      _this->_impl_.start_ts_ms_ = from._impl_.start_ts_ms_;
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      _this->_impl_.end_ts_ms_ = from._impl_.end_ts_ms_;
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
       _this->_impl_.granularity_ = from._impl_.granularity_;
     }
   }
@@ -2119,8 +2239,14 @@ void GetPvPredictionsRequest::InternalSwap(GetPvPredictionsRequest* PROTOBUF_RES
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.call_id_, &other->_impl_.call_id_, arena);
-  swap(_impl_.granularity_, other->_impl_.granularity_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.local_date_, &other->_impl_.local_date_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.timezone_, &other->_impl_.timezone_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.granularity_)
+      + sizeof(GetPvPredictionsRequest::_impl_.granularity_)
+      - PROTOBUF_FIELD_OFFSET(GetPvPredictionsRequest, _impl_.start_ts_ms_)>(
+          reinterpret_cast<char*>(&_impl_.start_ts_ms_),
+          reinterpret_cast<char*>(&other->_impl_.start_ts_ms_));
 }
 
 ::google::protobuf::Metadata GetPvPredictionsRequest::GetMetadata() const {
@@ -2146,7 +2272,7 @@ PROTOBUF_NDEBUG_INLINE GetPvPredictionsResponse::Impl_::Impl_(
         code_(arena, from.code_),
         message_(arena, from.message_),
         registration_id_(arena, from.registration_id_),
-        call_id_(arena, from.call_id_) {}
+        query_timezone_(arena, from.query_timezone_) {}
 
 GetPvPredictionsResponse::GetPvPredictionsResponse(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -2167,11 +2293,11 @@ GetPvPredictionsResponse::GetPvPredictionsResponse(
                  ? Super_::CopyConstruct(arena, *from._impl_.data_)
                  : nullptr;
   ::memcpy(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, created_at_),
+               offsetof(Impl_, query_start_ts_ms_),
            reinterpret_cast<const char*>(&from._impl_) +
-               offsetof(Impl_, created_at_),
+               offsetof(Impl_, query_start_ts_ms_),
            offsetof(Impl_, granularity_) -
-               offsetof(Impl_, created_at_) +
+               offsetof(Impl_, query_start_ts_ms_) +
                sizeof(Impl_::granularity_));
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.pv.GetPvPredictionsResponse)
@@ -2183,7 +2309,7 @@ PROTOBUF_NDEBUG_INLINE GetPvPredictionsResponse::Impl_::Impl_(
         code_(arena),
         message_(arena),
         registration_id_(arena),
-        call_id_(arena) {}
+        query_timezone_(arena) {}
 
 inline void GetPvPredictionsResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -2209,7 +2335,7 @@ inline void GetPvPredictionsResponse::SharedDtor(MessageLite& self) {
   this_._impl_.code_.Destroy();
   this_._impl_.message_.Destroy();
   this_._impl_.registration_id_.Destroy();
-  this_._impl_.call_id_.Destroy();
+  this_._impl_.query_timezone_.Destroy();
   delete this_._impl_.data_;
   this_._impl_.~Impl_();
 }
@@ -2261,7 +2387,7 @@ PROTOBUF_NOINLINE void GetPvPredictionsResponse::Clear() {
       this_._impl_.registration_id_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      this_._impl_.call_id_.ClearNonDefaultToEmpty();
+      this_._impl_.query_timezone_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000020U)) {
       ABSL_DCHECK(this_._impl_.data_ != nullptr);
@@ -2269,12 +2395,13 @@ PROTOBUF_NOINLINE void GetPvPredictionsResponse::Clear() {
     }
   }
   if (BatchCheckHasBit(cached_has_bits, 0x000000c0U)) {
-    ::memset(&this_._impl_.created_at_, 0,
+    ::memset(&this_._impl_.query_start_ts_ms_, 0,
              static_cast<::size_t>(
-                 reinterpret_cast<char*>(&this_._impl_.granularity_) -
-                 reinterpret_cast<char*>(&this_._impl_.created_at_)) +
-                 sizeof(_impl_.granularity_));
+                 reinterpret_cast<char*>(&this_._impl_.query_end_ts_ms_) -
+                 reinterpret_cast<char*>(&this_._impl_.query_start_ts_ms_)) +
+                 sizeof(_impl_.query_end_ts_ms_));
   }
+  this_._impl_.granularity_ = 0;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -2338,31 +2465,12 @@ PROTOBUF_NOINLINE void GetPvPredictionsResponse::Clear() {
     }
   }
 
-  // string call_id = 5 [json_name = "call_id"];
-  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-    if (!this_._internal_call_id().empty()) {
-      const ::std::string& _s = this_._internal_call_id();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsResponse.call_id");
-      target = stream->WriteStringMaybeAliased(5, _s, target);
-    }
-  }
-
   // int32 granularity = 6 [json_name = "granularity"];
-  if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+  if (CheckHasBit(cached_has_bits, 0x00000100U)) {
     if (this_._internal_granularity() != 0) {
       target =
           ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<6>(
               stream, this_._internal_granularity(), target);
-    }
-  }
-
-  // int64 created_at = 7 [json_name = "created_at"];
-  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-    if (this_._internal_created_at() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<7>(
-              stream, this_._internal_created_at(), target);
     }
   }
 
@@ -2371,6 +2479,34 @@ PROTOBUF_NOINLINE void GetPvPredictionsResponse::Clear() {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         8, *this_._impl_.data_, this_._impl_.data_->GetCachedSize(), target,
         stream);
+  }
+
+  // int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];
+  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+    if (this_._internal_query_start_ts_ms() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<9>(
+              stream, this_._internal_query_start_ts_ms(), target);
+    }
+  }
+
+  // int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];
+  if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+    if (this_._internal_query_end_ts_ms() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<10>(
+              stream, this_._internal_query_end_ts_ms(), target);
+    }
+  }
+
+  // string query_timezone = 11 [json_name = "query_timezone"];
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (!this_._internal_query_timezone().empty()) {
+      const ::std::string& _s = this_._internal_query_timezone();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.pv.GetPvPredictionsResponse.query_timezone");
+      target = stream->WriteStringMaybeAliased(11, _s, target);
+    }
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -2425,11 +2561,11 @@ PROTOBUF_NOINLINE void GetPvPredictionsResponse::Clear() {
                                         this_._internal_registration_id());
       }
     }
-    // string call_id = 5 [json_name = "call_id"];
+    // string query_timezone = 11 [json_name = "query_timezone"];
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      if (!this_._internal_call_id().empty()) {
+      if (!this_._internal_query_timezone().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_call_id());
+                                        this_._internal_query_timezone());
       }
     }
     // .fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];
@@ -2437,15 +2573,24 @@ PROTOBUF_NOINLINE void GetPvPredictionsResponse::Clear() {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.data_);
     }
-    // int64 created_at = 7 [json_name = "created_at"];
+    // int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      if (this_._internal_created_at() != 0) {
+      if (this_._internal_query_start_ts_ms() != 0) {
         total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
-            this_._internal_created_at());
+            this_._internal_query_start_ts_ms());
       }
     }
-    // int32 granularity = 6 [json_name = "granularity"];
+    // int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];
     if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      if (this_._internal_query_end_ts_ms() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+            this_._internal_query_end_ts_ms());
+      }
+    }
+  }
+   {
+    // int32 granularity = 6 [json_name = "granularity"];
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
       if (this_._internal_granularity() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
             this_._internal_granularity());
@@ -2508,11 +2653,11 @@ void GetPvPredictionsResponse::MergeImpl(::google::protobuf::MessageLite& to_msg
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      if (!from._internal_call_id().empty()) {
-        _this->_internal_set_call_id(from._internal_call_id());
+      if (!from._internal_query_timezone().empty()) {
+        _this->_internal_set_query_timezone(from._internal_query_timezone());
       } else {
-        if (_this->_impl_.call_id_.IsDefault()) {
-          _this->_internal_set_call_id("");
+        if (_this->_impl_.query_timezone_.IsDefault()) {
+          _this->_internal_set_query_timezone("");
         }
       }
     }
@@ -2525,14 +2670,19 @@ void GetPvPredictionsResponse::MergeImpl(::google::protobuf::MessageLite& to_msg
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      if (from._internal_created_at() != 0) {
-        _this->_impl_.created_at_ = from._impl_.created_at_;
+      if (from._internal_query_start_ts_ms() != 0) {
+        _this->_impl_.query_start_ts_ms_ = from._impl_.query_start_ts_ms_;
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000080U)) {
-      if (from._internal_granularity() != 0) {
-        _this->_impl_.granularity_ = from._impl_.granularity_;
+      if (from._internal_query_end_ts_ms() != 0) {
+        _this->_impl_.query_end_ts_ms_ = from._impl_.query_end_ts_ms_;
       }
+    }
+  }
+  if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+    if (from._internal_granularity() != 0) {
+      _this->_impl_.granularity_ = from._impl_.granularity_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -2558,7 +2708,7 @@ void GetPvPredictionsResponse::InternalSwap(GetPvPredictionsResponse* PROTOBUF_R
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.code_, &other->_impl_.code_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.call_id_, &other->_impl_.call_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.query_timezone_, &other->_impl_.query_timezone_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetPvPredictionsResponse, _impl_.granularity_)
       + sizeof(GetPvPredictionsResponse::_impl_.granularity_)

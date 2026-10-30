@@ -44,7 +44,7 @@ type PvServiceClient interface {
 	UploadPvData(ctx context.Context, in *UploadPvDataRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// 算法平台拉取光伏数据
 	PullPvData(ctx context.Context, in *PullPvDataRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	// 8.2 查询光伏预测结果（算法写入 PG，本平台只读）
+	// 8.2 查询光伏预测结果（Influx 只读；时间可选，默认站点本地今天全天）
 	GetPvPredictions(ctx context.Context, in *GetPvPredictionsRequest, opts ...grpc.CallOption) (*GetPvPredictionsResponse, error)
 }
 
@@ -96,7 +96,7 @@ type PvServiceServer interface {
 	UploadPvData(context.Context, *UploadPvDataRequest) (*emptypb.Empty, error)
 	// 算法平台拉取光伏数据
 	PullPvData(context.Context, *PullPvDataRequest) (*emptypb.Empty, error)
-	// 8.2 查询光伏预测结果（算法写入 PG，本平台只读）
+	// 8.2 查询光伏预测结果（Influx 只读；时间可选，默认站点本地今天全天）
 	GetPvPredictions(context.Context, *GetPvPredictionsRequest) (*GetPvPredictionsResponse, error)
 	mustEmbedUnimplementedPvServiceServer()
 }

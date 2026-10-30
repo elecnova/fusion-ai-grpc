@@ -26,7 +26,7 @@ from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13pv/pv_message.proto\x12\x12\x66usion.ai.proto.pv\x1a\x1b\x62uf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x7f\n\x13UploadPvDataRequest\x12\x33\n\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12\x33\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1f.fusion.ai.proto.pv.PvPowerDataR\x04\x64\x61ta\"I\n\x0bPvPowerData\x12:\n\x07pv_list\x18\x01 \x03(\x0b\x32 .fusion.ai.proto.pv.PvPowerPointR\x07pv_list\"U\n\x0cPvPowerPoint\x12%\n\ttimestamp\x18\x01 \x01(\x03\x42\x07\xbaH\x04\"\x02 \x00R\ttimestamp\x12\x1e\n\x02pv\x18\x02 \x01(\x01\x42\x0e\xbaH\x0b\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x02pv\"\xc8\x01\n\x17GetPvPredictionsRequest\x12\x33\n\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12\x34\n\x0bgranularity\x18\x02 \x01(\x05\x42\r\xbaH\n\x1a\x08\x30\x05\x30\x0f\x30\x1e\x30<H\x00R\x0bgranularity\x88\x01\x01\x12&\n\x07\x63\x61ll_id\x18\x03 \x01(\tB\x07\xbaH\x04r\x02\x18@H\x01R\x07\x63\x61ll_id\x88\x01\x01\x42\x0e\n\x0c_granularityB\n\n\x08_call_id\"\xcc\x02\n\x18GetPvPredictionsResponse\x12+\n\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\x07successR\x05\x65rrorR\x05state\x12%\n\x04\x63ode\x18\x02 \x01(\tB\x11\xbaH\x0er\x0c\x32\n^[0-9]{5}$R\x04\x63ode\x12!\n\x07message\x18\x03 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\x07message\x12(\n\x0fregistration_id\x18\x04 \x01(\tR\x0fregistration_id\x12\x18\n\x07\x63\x61ll_id\x18\x05 \x01(\tR\x07\x63\x61ll_id\x12 \n\x0bgranularity\x18\x06 \x01(\x05R\x0bgranularity\x12\x1e\n\ncreated_at\x18\x07 \x01(\x03R\ncreated_at\x12\x33\n\x04\x64\x61ta\x18\x08 \x01(\x0b\x32\x1f.fusion.ai.proto.pv.PvPowerDataR\x04\x64\x61ta\"}\n\x11PullPvDataRequest\x12\x33\n\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12\x33\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1f.fusion.ai.proto.pv.PvPowerDataR\x04\x64\x61taB\xab\x01\n\x16\x63om.fusion.ai.proto.pvB\x0ePvMessageProtoP\x01Z\x15\x66usion.ai.proto.pv;pv\xa2\x02\x04\x46\x41PP\xaa\x02\x12\x46usion.Ai.Proto.Pv\xca\x02\x12\x46usion\\Ai\\Proto\\Pv\xe2\x02\x1e\x46usion\\Ai\\Proto\\Pv\\GPBMetadata\xea\x02\x15\x46usion::Ai::Proto::Pvb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13pv/pv_message.proto\x12\x12\x66usion.ai.proto.pv\x1a\x1b\x62uf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x7f\n\x13UploadPvDataRequest\x12\x33\n\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12\x33\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1f.fusion.ai.proto.pv.PvPowerDataR\x04\x64\x61ta\"I\n\x0bPvPowerData\x12:\n\x07pv_list\x18\x01 \x03(\x0b\x32 .fusion.ai.proto.pv.PvPowerPointR\x07pv_list\"U\n\x0cPvPowerPoint\x12%\n\ttimestamp\x18\x01 \x01(\x03\x42\x07\xbaH\x04\"\x02 \x00R\ttimestamp\x12\x1e\n\x02pv\x18\x02 \x01(\x01\x42\x0e\xbaH\x0b\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x02pv\"\xa0\x03\n\x17GetPvPredictionsRequest\x12\x33\n\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12\x34\n\x0bgranularity\x18\x02 \x01(\x05\x42\r\xbaH\n\x1a\x08\x30\x05\x30\x0f\x30\x1e\x30<H\x00R\x0bgranularity\x88\x01\x01\x12.\n\x0bstart_ts_ms\x18\n \x01(\x03\x42\x07\xbaH\x04\"\x02 \x00H\x01R\x0bstart_ts_ms\x88\x01\x01\x12*\n\tend_ts_ms\x18\x0b \x01(\x03\x42\x07\xbaH\x04\"\x02 \x00H\x02R\tend_ts_ms\x88\x01\x01\x12H\n\nlocal_date\x18\x0c \x01(\tB#\xbaH r\x1e\x32\x1c^[0-9]{4}-[0-9]{2}-[0-9]{2}$H\x03R\nlocal_date\x88\x01\x01\x12*\n\x08timezone\x18\r \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@H\x04R\x08timezone\x88\x01\x01\x42\x0e\n\x0c_granularityB\x0e\n\x0c_start_ts_msB\x0c\n\n_end_ts_msB\r\n\x0b_local_dateB\x0b\n\t_timezone\"\x92\x03\n\x18GetPvPredictionsResponse\x12+\n\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\x07successR\x05\x65rrorR\x05state\x12%\n\x04\x63ode\x18\x02 \x01(\tB\x11\xbaH\x0er\x0c\x32\n^[0-9]{5}$R\x04\x63ode\x12!\n\x07message\x18\x03 \x01(\tB\x07\xbaH\x04r\x02\x10\x01R\x07message\x12(\n\x0fregistration_id\x18\x04 \x01(\tR\x0fregistration_id\x12 \n\x0bgranularity\x18\x06 \x01(\x05R\x0bgranularity\x12\x33\n\x04\x64\x61ta\x18\x08 \x01(\x0b\x32\x1f.fusion.ai.proto.pv.PvPowerDataR\x04\x64\x61ta\x12,\n\x11query_start_ts_ms\x18\t \x01(\x03R\x11query_start_ts_ms\x12(\n\x0fquery_end_ts_ms\x18\n \x01(\x03R\x0fquery_end_ts_ms\x12&\n\x0equery_timezone\x18\x0b \x01(\tR\x0equery_timezone\"}\n\x11PullPvDataRequest\x12\x33\n\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12\x33\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1f.fusion.ai.proto.pv.PvPowerDataR\x04\x64\x61taB\xab\x01\n\x16\x63om.fusion.ai.proto.pvB\x0ePvMessageProtoP\x01Z\x15\x66usion.ai.proto.pv;pv\xa2\x02\x04\x46\x41PP\xaa\x02\x12\x46usion.Ai.Proto.Pv\xca\x02\x12\x46usion\\Ai\\Proto\\Pv\xe2\x02\x1e\x46usion\\Ai\\Proto\\Pv\\GPBMetadata\xea\x02\x15\x46usion::Ai::Proto::Pvb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,8 +44,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['registration_id']._serialized_options = b'\272H\006r\004\020\001\030@'
   _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['granularity']._loaded_options = None
   _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['granularity']._serialized_options = b'\272H\n\032\0100\0050\0170\0360<'
-  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['call_id']._loaded_options = None
-  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['call_id']._serialized_options = b'\272H\004r\002\030@'
+  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['start_ts_ms']._loaded_options = None
+  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['start_ts_ms']._serialized_options = b'\272H\004\"\002 \000'
+  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['end_ts_ms']._loaded_options = None
+  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['end_ts_ms']._serialized_options = b'\272H\004\"\002 \000'
+  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['local_date']._loaded_options = None
+  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['local_date']._serialized_options = b'\272H r\0362\034^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
+  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['timezone']._loaded_options = None
+  _globals['_GETPVPREDICTIONSREQUEST'].fields_by_name['timezone']._serialized_options = b'\272H\006r\004\020\001\030@'
   _globals['_GETPVPREDICTIONSRESPONSE'].fields_by_name['state']._loaded_options = None
   _globals['_GETPVPREDICTIONSRESPONSE'].fields_by_name['state']._serialized_options = b'\272H\022r\020R\007successR\005error'
   _globals['_GETPVPREDICTIONSRESPONSE'].fields_by_name['code']._loaded_options = None
@@ -61,9 +67,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PVPOWERPOINT']._serialized_start=309
   _globals['_PVPOWERPOINT']._serialized_end=394
   _globals['_GETPVPREDICTIONSREQUEST']._serialized_start=397
-  _globals['_GETPVPREDICTIONSREQUEST']._serialized_end=597
-  _globals['_GETPVPREDICTIONSRESPONSE']._serialized_start=600
-  _globals['_GETPVPREDICTIONSRESPONSE']._serialized_end=932
-  _globals['_PULLPVDATAREQUEST']._serialized_start=934
-  _globals['_PULLPVDATAREQUEST']._serialized_end=1059
+  _globals['_GETPVPREDICTIONSREQUEST']._serialized_end=813
+  _globals['_GETPVPREDICTIONSRESPONSE']._serialized_start=816
+  _globals['_GETPVPREDICTIONSRESPONSE']._serialized_end=1218
+  _globals['_PULLPVDATAREQUEST']._serialized_start=1220
+  _globals['_PULLPVDATAREQUEST']._serialized_end=1345
 # @@protoc_insertion_point(module_scope)

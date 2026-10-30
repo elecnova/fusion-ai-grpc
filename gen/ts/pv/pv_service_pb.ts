@@ -53,7 +53,7 @@ export const PvService: GenService<{
     output: typeof EmptySchema;
   },
   /**
-   * 8.2 查询光伏预测结果（算法写入 PG，本平台只读）
+   * 8.2 查询光伏预测结果（Influx 只读；时间可选，默认站点本地今天全天）
    *
    * @generated from rpc fusion.ai.proto.pv.PvService.GetPvPredictions
    */

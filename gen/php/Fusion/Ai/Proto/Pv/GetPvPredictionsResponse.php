@@ -31,29 +31,33 @@ class GetPvPredictionsResponse extends \Google\Protobuf\Internal\Message
      */
     protected $registration_id = '';
     /**
-     * 本次预测调用 UUID
-     *
-     * Generated from protobuf field <code>string call_id = 5 [json_name = "call_id"];</code>
-     */
-    protected $call_id = '';
-    /**
-     * 预测步长（分钟），如 5、15、30、60
+     * 预测步长（分钟）
      *
      * Generated from protobuf field <code>int32 granularity = 6 [json_name = "granularity"];</code>
      */
     protected $granularity = 0;
-    /**
-     * 结果入库时间，Unix 毫秒
-     *
-     * Generated from protobuf field <code>int64 created_at = 7 [json_name = "created_at"];</code>
-     */
-    protected $created_at = 0;
     /**
      * 预测功率曲线
      *
      * Generated from protobuf field <code>.fusion.ai.proto.pv.PvPowerData data = 8 [json_name = "data"];</code>
      */
     protected $data = null;
+    /**
+     * 实际查询时间窗，Unix 毫秒（左闭右开）
+     *
+     * Generated from protobuf field <code>int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];</code>
+     */
+    protected $query_start_ts_ms = 0;
+    /**
+     * Generated from protobuf field <code>int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];</code>
+     */
+    protected $query_end_ts_ms = 0;
+    /**
+     * 解析时间窗使用的 IANA 时区
+     *
+     * Generated from protobuf field <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+     */
+    protected $query_timezone = '';
 
     /**
      * Constructor.
@@ -65,14 +69,15 @@ class GetPvPredictionsResponse extends \Google\Protobuf\Internal\Message
      *     @type string $code
      *     @type string $message
      *     @type string $registration_id
-     *     @type string $call_id
-     *           本次预测调用 UUID
      *     @type int $granularity
-     *           预测步长（分钟），如 5、15、30、60
-     *     @type int|string $created_at
-     *           结果入库时间，Unix 毫秒
+     *           预测步长（分钟）
      *     @type \Fusion\Ai\Proto\Pv\PvPowerData $data
      *           预测功率曲线
+     *     @type int|string $query_start_ts_ms
+     *           实际查询时间窗，Unix 毫秒（左闭右开）
+     *     @type int|string $query_end_ts_ms
+     *     @type string $query_timezone
+     *           解析时间窗使用的 IANA 时区
      * }
      */
     public function __construct($data = null)
@@ -170,33 +175,7 @@ class GetPvPredictionsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 本次预测调用 UUID
-     *
-     * Generated from protobuf field <code>string call_id = 5 [json_name = "call_id"];</code>
-     * @return string
-     */
-    public function getCallId()
-    {
-        return $this->call_id;
-    }
-
-    /**
-     * 本次预测调用 UUID
-     *
-     * Generated from protobuf field <code>string call_id = 5 [json_name = "call_id"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCallId(string $var)
-    {
-        GPBUtil::checkString($var, true);
-        $this->call_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * 预测步长（分钟），如 5、15、30、60
+     * 预测步长（分钟）
      *
      * Generated from protobuf field <code>int32 granularity = 6 [json_name = "granularity"];</code>
      * @return int
@@ -207,7 +186,7 @@ class GetPvPredictionsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预测步长（分钟），如 5、15、30、60
+     * 预测步长（分钟）
      *
      * Generated from protobuf field <code>int32 granularity = 6 [json_name = "granularity"];</code>
      * @param int $var
@@ -217,32 +196,6 @@ class GetPvPredictionsResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->granularity = $var;
-
-        return $this;
-    }
-
-    /**
-     * 结果入库时间，Unix 毫秒
-     *
-     * Generated from protobuf field <code>int64 created_at = 7 [json_name = "created_at"];</code>
-     * @return int|string
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * 结果入库时间，Unix 毫秒
-     *
-     * Generated from protobuf field <code>int64 created_at = 7 [json_name = "created_at"];</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setCreatedAt(int|string $var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->created_at = $var;
 
         return $this;
     }
@@ -278,6 +231,80 @@ class GetPvPredictionsResponse extends \Google\Protobuf\Internal\Message
     public function setData(\Fusion\Ai\Proto\Pv\PvPowerData|null $var)
     {
         $this->data = $var;
+
+        return $this;
+    }
+
+    /**
+     * 实际查询时间窗，Unix 毫秒（左闭右开）
+     *
+     * Generated from protobuf field <code>int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];</code>
+     * @return int|string
+     */
+    public function getQueryStartTsMs()
+    {
+        return $this->query_start_ts_ms;
+    }
+
+    /**
+     * 实际查询时间窗，Unix 毫秒（左闭右开）
+     *
+     * Generated from protobuf field <code>int64 query_start_ts_ms = 9 [json_name = "query_start_ts_ms"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setQueryStartTsMs(int|string $var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->query_start_ts_ms = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];</code>
+     * @return int|string
+     */
+    public function getQueryEndTsMs()
+    {
+        return $this->query_end_ts_ms;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 query_end_ts_ms = 10 [json_name = "query_end_ts_ms"];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setQueryEndTsMs(int|string $var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->query_end_ts_ms = $var;
+
+        return $this;
+    }
+
+    /**
+     * 解析时间窗使用的 IANA 时区
+     *
+     * Generated from protobuf field <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+     * @return string
+     */
+    public function getQueryTimezone()
+    {
+        return $this->query_timezone;
+    }
+
+    /**
+     * 解析时间窗使用的 IANA 时区
+     *
+     * Generated from protobuf field <code>string query_timezone = 11 [json_name = "query_timezone"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQueryTimezone(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->query_timezone = $var;
 
         return $this;
     }
