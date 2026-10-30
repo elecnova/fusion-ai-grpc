@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
       emptyIntList();
   /**
    * <pre>
-   * 保存的预测步长列表，单位：分钟
+   * 支持的预测步长，单位分钟，可选 5、15、30、60
    * </pre>
    *
    * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -595,7 +595,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 保存的预测步长列表，单位：分钟
+   * 支持的预测步长，单位分钟，可选 5、15、30、60
    * </pre>
    *
    * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 保存的预测步长列表，单位：分钟
+   * 支持的预测步长，单位分钟，可选 5、15、30、60
    * </pre>
    *
    * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -2691,7 +2691,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 保存的预测步长列表，单位：分钟
+     * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -2704,7 +2704,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 保存的预测步长列表，单位：分钟
+     * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -2715,7 +2715,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 保存的预测步长列表，单位：分钟
+     * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -2727,7 +2727,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 保存的预测步长列表，单位：分钟
+     * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -2746,7 +2746,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 保存的预测步长列表，单位：分钟
+     * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -2763,7 +2763,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 保存的预测步长列表，单位：分钟
+     * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -2781,7 +2781,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 保存的预测步长列表，单位：分钟
+     * 支持的预测步长，单位分钟，可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 14 [json_name = "granularity", (.buf.validate.field) = { ... }</code>

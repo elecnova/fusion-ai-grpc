@@ -185,7 +185,7 @@ public interface UpdateSiteRequestOrBuilder extends
 
   /**
    * <pre>
-   * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
+   * 支持的预测步长，单位分钟，可选 5、15、30、60（出现该字段即表示更新整表，含空数组）
    * </pre>
    *
    * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -194,7 +194,7 @@ public interface UpdateSiteRequestOrBuilder extends
   java.util.List<java.lang.Integer> getGranularityList();
   /**
    * <pre>
-   * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
+   * 支持的预测步长，单位分钟，可选 5、15、30、60（出现该字段即表示更新整表，含空数组）
    * </pre>
    *
    * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -203,7 +203,7 @@ public interface UpdateSiteRequestOrBuilder extends
   int getGranularityCount();
   /**
    * <pre>
-   * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
+   * 支持的预测步长，单位分钟，可选 5、15、30、60（出现该字段即表示更新整表，含空数组）
    * </pre>
    *
    * <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = { ... }</code>

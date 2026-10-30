@@ -63,7 +63,7 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
      */
     protected $rated_p = null;
     /**
-     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
+     * 支持的预测步长，单位分钟，可选 5、15、30、60（出现该字段即表示更新整表，含空数组）
      *
      * Generated from protobuf field <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {</code>
      */
@@ -116,7 +116,7 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
      *     @type float $rated_p
      *           光伏额定功率，单位：kW；非适用业务可不提供
      *     @type int[] $granularity
-     *           预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
+     *           支持的预测步长，单位分钟，可选 5、15、30、60（出现该字段即表示更新整表，含空数组）
      *     @type int $data_source
      *           数据源类型：1-pull，2-push，3-file
      *     @type string $source_attr
@@ -407,7 +407,7 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
+     * 支持的预测步长，单位分钟，可选 5、15、30、60（出现该字段即表示更新整表，含空数组）
      *
      * Generated from protobuf field <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {</code>
      * @return RepeatedField<int>
@@ -418,7 +418,7 @@ class UpdateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
+     * 支持的预测步长，单位分钟，可选 5、15、30、60（出现该字段即表示更新整表，含空数组）
      *
      * Generated from protobuf field <code>repeated int32 granularity = 9 [json_name = "granularity", (.buf.validate.field) = {</code>
      * @param int[] $var

@@ -322,7 +322,7 @@ type UpdateSiteRequest struct {
 	AzimuthDeg *float64 `protobuf:"fixed64,7,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
 	// 光伏额定功率，单位：kW；非适用业务可不提供
 	RatedP *float64 `protobuf:"fixed64,8,opt,name=rated_p,proto3,oneof" json:"rated_p,omitempty"`
-	// 预测步长列表，单位：分钟（出现该字段即表示更新整表，含空数组）
+	// 支持的预测步长，单位分钟，可选 5、15、30、60（出现该字段即表示更新整表，含空数组）
 	Granularity []int32 `protobuf:"varint,9,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
 	// 数据源类型：1-pull，2-push，3-file
 	DataSource *int32 `protobuf:"varint,10,opt,name=data_source,proto3,oneof" json:"data_source,omitempty"`
@@ -698,7 +698,7 @@ type SiteRegistration struct {
 	AzimuthDeg *float64 `protobuf:"fixed64,9,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
 	// 光伏额定功率，单位：kW；非适用业务可不返回
 	RatedP *float64 `protobuf:"fixed64,10,opt,name=rated_p,proto3,oneof" json:"rated_p,omitempty"`
-	// 保存的预测步长列表，单位：分钟
+	// 支持的预测步长，单位分钟，可选 5、15、30、60
 	Granularity []int32 `protobuf:"varint,11,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
 	// 数据源类型：1-pull，2-push，3-file
 	DataSource *int32 `protobuf:"varint,12,opt,name=data_source,proto3,oneof" json:"data_source,omitempty"`
@@ -1068,7 +1068,7 @@ type GetSiteByRegResponse struct {
 	AzimuthDeg *float64 `protobuf:"fixed64,12,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
 	// 光伏额定功率，单位：kW；非适用业务可不返回
 	RatedP *float64 `protobuf:"fixed64,13,opt,name=rated_p,proto3,oneof" json:"rated_p,omitempty"`
-	// 保存的预测步长列表，单位：分钟
+	// 支持的预测步长，单位分钟，可选 5、15、30、60
 	Granularity []int32 `protobuf:"varint,14,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
 	// 数据源类型：1-pull，2-push，3-file
 	DataSource int32 `protobuf:"varint,15,opt,name=data_source,proto3" json:"data_source,omitempty"`
@@ -1295,7 +1295,7 @@ const file_site_site_message_proto_rawDesc = "" +
 	"created_at\x12'\n" +
 	"\n" +
 	"updated_at\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\n" +
-	"updated_at\"\xc0\x06\n" +
+	"updated_at\"\xc8\x06\n" +
 	"\x11UpdateSiteRequest\x121\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12+\n" +
 	"\tsite_name\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01H\x00R\tsite_name\x88\x01\x01\x12(\n" +
@@ -1304,8 +1304,9 @@ const file_site_site_message_proto_rawDesc = "" +
 	"\blatitude\x18\x05 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0H\x03R\blatitude\x88\x01\x01\x128\n" +
 	"\btilt_deg\x18\x06 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00H\x04R\btilt_deg\x88\x01\x01\x12>\n" +
 	"\vazimuth_deg\x18\a \x01(\x01B\x17\xbaH\x14\x12\x12\x11\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00H\x05R\vazimuth_deg\x88\x01\x01\x12-\n" +
-	"\arated_p\x18\b \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x06R\arated_p\x88\x01\x01\x12.\n" +
-	"\vgranularity\x18\t \x03(\x05B\f\xbaH\t\x92\x01\x06\"\x04\x1a\x02 \x00R\vgranularity\x122\n" +
+	"\arated_p\x18\b \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x06R\arated_p\x88\x01\x01\x126\n" +
+	"\vgranularity\x18\t \x03(\x05B\x14\xbaH\x11\x92\x01\x0e\x18\x01\"\n" +
+	"\x1a\b0\x050\x0f0\x1e0<R\vgranularity\x122\n" +
 	"\vdata_source\x18\n" +
 	" \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03H\aR\vdata_source\x88\x01\x01\x12/\n" +
 	"\vsource_attr\x18\v \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10H\bR\vsource_attr\x88\x01\x01\x12,\n" +
@@ -1346,7 +1347,7 @@ const file_site_site_message_proto_rawDesc = "" +
 	"\amessage\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\amessage\x121\n" +
 	"\x0fregistration_id\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12\x18\n" +
 	"\adeleted\x18\x05 \x01(\bR\adeleted\x12\x18\n" +
-	"\achanged\x18\x06 \x01(\bR\achanged\"\xa6\a\n" +
+	"\achanged\x18\x06 \x01(\bR\achanged\"\xae\a\n" +
 	"\x10SiteRegistration\x121\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\x12+\n" +
 	"\fservice_type\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\fservice_type\x12!\n" +
@@ -1358,8 +1359,9 @@ const file_site_site_message_proto_rawDesc = "" +
 	"\btilt_deg\x18\b \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\btilt_deg\x88\x01\x01\x12>\n" +
 	"\vazimuth_deg\x18\t \x01(\x01B\x17\xbaH\x14\x12\x12\x11\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00H\x03R\vazimuth_deg\x88\x01\x01\x12-\n" +
 	"\arated_p\x18\n" +
-	" \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x04R\arated_p\x88\x01\x01\x12.\n" +
-	"\vgranularity\x18\v \x03(\x05B\f\xbaH\t\x92\x01\x06\"\x04\x1a\x02 \x00R\vgranularity\x122\n" +
+	" \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x04R\arated_p\x88\x01\x01\x126\n" +
+	"\vgranularity\x18\v \x03(\x05B\x14\xbaH\x11\x92\x01\x0e\x18\x01\"\n" +
+	"\x1a\b0\x050\x0f0\x1e0<R\vgranularity\x122\n" +
 	"\vdata_source\x18\f \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03H\x05R\vdata_source\x88\x01\x01\x12*\n" +
 	"\vsource_attr\x18\r \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12,\n" +
 	"\toperation\x18\x0e \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02H\x06R\toperation\x88\x01\x01\x12&\n" +
@@ -1392,7 +1394,7 @@ const file_site_site_message_proto_rawDesc = "" +
 	"^[0-9]{5}$R\x04code\x12!\n" +
 	"\amessage\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\amessage\x12!\n" +
 	"\asite_id\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\asite_id\x12V\n" +
-	"\rregistrations\x18\x05 \x03(\v2&.fusion.ai.proto.site.SiteRegistrationB\b\xbaH\x05\x92\x01\x02\x10\x03R\rregistrations\"\x8c\b\n" +
+	"\rregistrations\x18\x05 \x03(\v2&.fusion.ai.proto.site.SiteRegistrationB\b\xbaH\x05\x92\x01\x02\x10\x03R\rregistrations\"\x94\b\n" +
 	"\x14GetSiteByRegResponse\x12+\n" +
 	"\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\asuccessR\x05errorR\x05state\x12%\n" +
 	"\x04code\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
@@ -1408,8 +1410,9 @@ const file_site_site_message_proto_rawDesc = "" +
 	" \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0H\x01R\blatitude\x88\x01\x01\x128\n" +
 	"\btilt_deg\x18\v \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\btilt_deg\x88\x01\x01\x12>\n" +
 	"\vazimuth_deg\x18\f \x01(\x01B\x17\xbaH\x14\x12\x12\x11\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00H\x03R\vazimuth_deg\x88\x01\x01\x12-\n" +
-	"\arated_p\x18\r \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x04R\arated_p\x88\x01\x01\x12.\n" +
-	"\vgranularity\x18\x0e \x03(\x05B\f\xbaH\t\x92\x01\x06\"\x04\x1a\x02 \x00R\vgranularity\x12-\n" +
+	"\arated_p\x18\r \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x04R\arated_p\x88\x01\x01\x126\n" +
+	"\vgranularity\x18\x0e \x03(\x05B\x14\xbaH\x11\x92\x01\x0e\x18\x01\"\n" +
+	"\x1a\b0\x050\x0f0\x1e0<R\vgranularity\x12-\n" +
 	"\vdata_source\x18\x0f \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03R\vdata_source\x12*\n" +
 	"\vsource_attr\x18\x10 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12,\n" +
 	"\toperation\x18\x11 \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02H\x05R\toperation\x88\x01\x01\x12&\n" +
