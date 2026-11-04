@@ -796,158 +796,6 @@ const ::_pbi::ClassData* UploadBackfillFileRequest_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
-class RetryFailedWeatherSyncResponse::_Internal {
- public:
-  using HasBits = decltype(::std::declval<RetryFailedWeatherSyncResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._has_bits_);
-};
-
-constexpr RetryFailedWeatherSyncResponse::ParseTableT_ RetryFailedWeatherSyncResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._has_bits_),
-      0, // no _extensions_
-      2, 8,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967292,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      2,  // num_field_entries
-      0,  // num_aux_entries
-      offsetof(ParseTableT_, field_names),  // no aux_entries
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RetryFailedWeatherSyncResponse, _impl_.status_), 1>(),
-       {16, 1, 0,
-        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_)}},
-      // string run_id = 1 [json_name = "run_id"];
-      {::_pbi::TcParser::FastUS1,
-       {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.run_id_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // string run_id = 1 [json_name = "run_id"];
-      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.run_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
-      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    }},
-    // no aux_entries
-    {{
-      "\75\6\0\0\0\0\0\0"
-      "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse"
-      "run_id"
-    }},
-  };
-}
-
-
-inline constexpr RetryFailedWeatherSyncResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : run_id_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        status_{static_cast< ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus >(0)} {}
-
-template <typename>
-constexpr RetryFailedWeatherSyncResponse::RetryFailedWeatherSyncResponse(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL RetryFailedWeatherSyncResponse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) RetryFailedWeatherSyncResponse(arena);
-}
-constexpr auto RetryFailedWeatherSyncResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(RetryFailedWeatherSyncResponse), alignof(RetryFailedWeatherSyncResponse));
-}
-constexpr auto RetryFailedWeatherSyncResponse::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &RetryFailedWeatherSyncResponse::MergeImpl,
-          Super_::GetNewImpl<RetryFailedWeatherSyncResponse>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &RetryFailedWeatherSyncResponse::SharedDtor,
-          Super_::GetClearImpl<RetryFailedWeatherSyncResponse>(), &RetryFailedWeatherSyncResponse::ByteSizeLong,
-              &RetryFailedWeatherSyncResponse::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[30],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct RetryFailedWeatherSyncResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr RetryFailedWeatherSyncResponseGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 RetryFailedWeatherSyncResponse_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(RetryFailedWeatherSyncResponse::InternalGenerateClassData_(
-            _default, &RetryFailedWeatherSyncResponse_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedWeatherSyncResponse>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~RetryFailedWeatherSyncResponseGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) RetryFailedWeatherSyncResponse _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedWeatherSyncResponse>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponseGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST RetryFailedWeatherSyncResponseGlobalsTypeInternal RetryFailedWeatherSyncResponse_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* RetryFailedWeatherSyncResponse_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return RetryFailedWeatherSyncResponse_globals_.GetClassData();
-#else
-  return RetryFailedWeatherSyncResponse_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
 class RetryFailedWeatherSyncRequest::_Internal {
  public:
   using HasBits = decltype(::std::declval<RetryFailedWeatherSyncRequest>()._impl_._has_bits_);
@@ -4942,6 +4790,172 @@ const ::_pbi::ClassData* WeatherSiteView_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
+class RetryFailedWeatherSyncResponse::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<RetryFailedWeatherSyncResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._has_bits_);
+};
+
+constexpr RetryFailedWeatherSyncResponse::ParseTableT_ RetryFailedWeatherSyncResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._has_bits_),
+      0, // no _extensions_
+      3, 24,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967288,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      3,  // num_field_entries
+      1,  // num_aux_entries
+      offsetof(ParseTableT_, aux_entries),
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      {::_pbi::TcParser::MiniParse, {}},
+      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+      {::_pbi::TcParser::FastMtS1,
+       {10, 1, 0,
+        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.header_)}},
+      // string run_id = 2 [json_name = "run_id"];
+      {::_pbi::TcParser::FastUS1,
+       {18, 0, 0,
+        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.run_id_)}},
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RetryFailedWeatherSyncResponse, _impl_.status_), 2>(),
+       {24, 2, 0,
+        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.header_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // string run_id = 2 [json_name = "run_id"];
+      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.run_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
+      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+    }},
+    {{
+        #ifndef PROTOBUF_MESSAGE_GLOBALS
+        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>()},
+        #else
+        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_},
+        #endif
+    }},
+    {{
+      "\75\0\6\0\0\0\0\0"
+      "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse"
+      "run_id"
+    }},
+  };
+}
+
+
+inline constexpr RetryFailedWeatherSyncResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : run_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        header_{nullptr},
+        status_{static_cast< ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus >(0)} {}
+
+template <typename>
+constexpr RetryFailedWeatherSyncResponse::RetryFailedWeatherSyncResponse(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL RetryFailedWeatherSyncResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) RetryFailedWeatherSyncResponse(arena);
+}
+constexpr auto RetryFailedWeatherSyncResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(RetryFailedWeatherSyncResponse), alignof(RetryFailedWeatherSyncResponse));
+}
+constexpr auto RetryFailedWeatherSyncResponse::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &RetryFailedWeatherSyncResponse::MergeImpl,
+          Super_::GetNewImpl<RetryFailedWeatherSyncResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &RetryFailedWeatherSyncResponse::SharedDtor,
+          Super_::GetClearImpl<RetryFailedWeatherSyncResponse>(), &RetryFailedWeatherSyncResponse::ByteSizeLong,
+              &RetryFailedWeatherSyncResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[30],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct RetryFailedWeatherSyncResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr RetryFailedWeatherSyncResponseGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 RetryFailedWeatherSyncResponse_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(RetryFailedWeatherSyncResponse::InternalGenerateClassData_(
+            _default, &RetryFailedWeatherSyncResponse_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedWeatherSyncResponse>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~RetryFailedWeatherSyncResponseGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) RetryFailedWeatherSyncResponse _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedWeatherSyncResponse>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponseGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST RetryFailedWeatherSyncResponseGlobalsTypeInternal RetryFailedWeatherSyncResponse_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* RetryFailedWeatherSyncResponse_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return RetryFailedWeatherSyncResponse_globals_.GetClassData();
+#else
+  return RetryFailedWeatherSyncResponse_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
 class PipelineStats::_Internal {
  public:
   using HasBits = decltype(::std::declval<PipelineStats>()._impl_._has_bits_);
@@ -6357,12 +6371,12 @@ constexpr GetWeatherSyncRunResponse::ParseTableT_ GetWeatherSyncRunResponse::Int
     {
       PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_._has_bits_),
       0, // no _extensions_
-      1, 0,  // max_field_number, fast_idx_mask
+      2, 8,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967294,  // skipmap
+      4294967292,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      1,  // num_field_entries
-      1,  // num_aux_entries
+      2,  // num_field_entries
+      2,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
       nullptr,  // post_loop_handler
@@ -6371,17 +6385,28 @@ constexpr GetWeatherSyncRunResponse::ParseTableT_ GetWeatherSyncRunResponse::Int
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
+      {::_pbi::TcParser::FastMtS1,
+       {18, 1, 1,
+        PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_)}},
+      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
       {::_pbi::TcParser::FastMtS1,
        {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_)}},
+        PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.header_)}},
     }}, {{
       65535, 65535
     }}, {{
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
-      {PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+      {PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.header_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
+      {PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_), _Internal::kHasBitsOffset + 1, 1, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     }},
     {{
+        #ifndef PROTOBUF_MESSAGE_GLOBALS
+        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>()},
+        #else
+        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_},
+        #endif
         #ifndef PROTOBUF_MESSAGE_GLOBALS
         {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::WeatherSyncRunView>()},
         #else
@@ -6397,7 +6422,8 @@ constexpr GetWeatherSyncRunResponse::ParseTableT_ GetWeatherSyncRunResponse::Int
 inline constexpr GetWeatherSyncRunResponse::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     ::_pbi::ConstantInitialized) noexcept
-      : run_{nullptr} {}
+      : header_{nullptr},
+        run_{nullptr} {}
 
 template <typename>
 constexpr GetWeatherSyncRunResponse::GetWeatherSyncRunResponse(::_pbi::ConstantInitialized,
@@ -7536,9 +7562,11 @@ const ::uint32_t
         1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse, _impl_._has_bits_),
-        4, // hasbit index offset
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse, _impl_.header_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse, _impl_.run_),
         0,
+        1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchSyncWeatherRequest, _impl_._has_bits_),
         10, // hasbit index offset
@@ -7587,11 +7615,13 @@ const ::uint32_t
         0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse, _impl_._has_bits_),
-        5, // hasbit index offset
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse, _impl_.header_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse, _impl_.run_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse, _impl_.status_),
-        0,
         1,
+        0,
+        2,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobRequest, _impl_._has_bits_),
         6, // hasbit index offset
@@ -7706,23 +7736,23 @@ static const ::_pbi::MigrationSchema
         {253, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSiteResponse)},
         {258, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSyncRunRequest)},
         {265, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse)},
-        {270, sizeof(::fusion::ai::proto::data_readiness::BatchSyncWeatherRequest)},
-        {287, sizeof(::fusion::ai::proto::data_readiness::WeatherSyncPartialError)},
-        {296, sizeof(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse)},
-        {311, sizeof(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncRequest)},
-        {316, sizeof(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse)},
-        {323, sizeof(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobRequest)},
-        {332, sizeof(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse)},
-        {345, sizeof(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateRequest)},
-        {346, sizeof(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse)},
-        {357, sizeof(::fusion::ai::proto::data_readiness::CreateDataBackfillJobRequest)},
-        {368, sizeof(::fusion::ai::proto::data_readiness::CreateDataBackfillJobResponse)},
-        {373, sizeof(::fusion::ai::proto::data_readiness::UploadBackfillFileRequest)},
-        {382, sizeof(::fusion::ai::proto::data_readiness::UploadBackfillFileResponse)},
-        {387, sizeof(::fusion::ai::proto::data_readiness::BatchPullPowerRequest)},
-        {392, sizeof(::fusion::ai::proto::data_readiness::BatchPullPowerResponse)},
-        {397, sizeof(::fusion::ai::proto::data_readiness::RetryFailedPullPowerRequest)},
-        {402, sizeof(::fusion::ai::proto::data_readiness::RetryFailedPullPowerResponse)},
+        {272, sizeof(::fusion::ai::proto::data_readiness::BatchSyncWeatherRequest)},
+        {289, sizeof(::fusion::ai::proto::data_readiness::WeatherSyncPartialError)},
+        {298, sizeof(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse)},
+        {313, sizeof(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncRequest)},
+        {318, sizeof(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse)},
+        {327, sizeof(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobRequest)},
+        {336, sizeof(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse)},
+        {349, sizeof(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateRequest)},
+        {350, sizeof(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse)},
+        {361, sizeof(::fusion::ai::proto::data_readiness::CreateDataBackfillJobRequest)},
+        {372, sizeof(::fusion::ai::proto::data_readiness::CreateDataBackfillJobResponse)},
+        {377, sizeof(::fusion::ai::proto::data_readiness::UploadBackfillFileRequest)},
+        {386, sizeof(::fusion::ai::proto::data_readiness::UploadBackfillFileResponse)},
+        {391, sizeof(::fusion::ai::proto::data_readiness::BatchPullPowerRequest)},
+        {396, sizeof(::fusion::ai::proto::data_readiness::BatchPullPowerResponse)},
+        {401, sizeof(::fusion::ai::proto::data_readiness::RetryFailedPullPowerRequest)},
+        {406, sizeof(::fusion::ai::proto::data_readiness::RetryFailedPullPowerResponse)},
 };
 static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
     file_message_globals[] = {
@@ -7924,125 +7954,130 @@ const char descriptor_table_protodef_data_5freadiness_2fdata_5freadiness_5fmessa
     "ion.ai.proto.data_readiness.WeatherSiteV"
     "iewR\004site\"a\n\030GetWeatherSyncRunRequest\022\037\n"
     "\006run_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006run_id\022$\n\rinclud"
-    "e_tasks\030\002 \001(\010R\rinclude_tasks\"a\n\031GetWeath"
-    "erSyncRunResponse\022D\n\003run\030\001 \001(\01322.fusion."
-    "ai.proto.data_readiness.WeatherSyncRunVi"
-    "ewR\003run\"\305\004\n\027BatchSyncWeatherRequest\022=\n\020r"
+    "e_tasks\030\002 \001(\010R\rinclude_tasks\"\263\001\n\031GetWeat"
+    "herSyncRunResponse\022P\n\006header\030\001 \001(\01328.fus"
+    "ion.ai.proto.data_readiness.DataReadines"
+    "sReplyHeaderR\006header\022D\n\003run\030\002 \001(\01322.fusi"
+    "on.ai.proto.data_readiness.WeatherSyncRu"
+    "nViewR\003run\"\305\004\n\027BatchSyncWeatherRequest\022="
+    "\n\020registration_ids\030\001 \003(\tB\021\272H\016\222\001\013\020\364\003\"\006r\004\020"
+    "\001\030@R\020registration_ids\022\'\n\tpast_days\030\002 \001(\005"
+    "B\t\272H\006\032\004\030\016(\000R\tpast_days\022/\n\rforecast_days\030"
+    "\003 \001(\005B\t\272H\006\032\004\030\020(\000R\rforecast_days\022.\n\013provi"
+    "der_id\030\004 \001(\tB\007\272H\004r\002\030@H\000R\013provider_id\210\001\001\022"
+    "M\n\004mode\030\005 \001(\0162/.fusion.ai.proto.data_rea"
+    "diness.WeatherSyncModeB\010\272H\005\202\001\002\020\001R\004mode\022V"
+    "\n\007trigger\030\006 \001(\01622.fusion.ai.proto.data_r"
+    "eadiness.WeatherSyncTriggerB\010\272H\005\202\001\002\020\001R\007t"
+    "rigger\0228\n\017retry_of_run_id\030\007 \001(\tB\t\272H\006r\004\020\001"
+    "\030@H\001R\017retry_of_run_id\210\001\001:\\\272HY\032W\n\025weather"
+    "_sync_mode_set\022.mode must not be WEATHER"
+    "_SYNC_MODE_UNSPECIFIED\032\016this.mode != 0B\016"
+    "\n\014_provider_idB\022\n\020_retry_of_run_id\"\201\001\n\027W"
+    "eatherSyncPartialError\022(\n\017registration_i"
+    "d\030\001 \001(\tR\017registration_id\022\"\n\014location_key"
+    "\030\002 \001(\tR\014location_key\022\030\n\007message\030\003 \001(\tR\007m"
+    "essage\"\365\002\n\030BatchSyncWeatherResponse\022P\n\006h"
+    "eader\030\001 \001(\01328.fusion.ai.proto.data_readi"
+    "ness.DataReadinessReplyHeaderR\006header\022\026\n"
+    "\006run_id\030\002 \001(\tR\006run_id\022L\n\006status\030\003 \001(\01624."
+    "fusion.ai.proto.data_readiness.WeatherSy"
+    "ncRunStatusR\006status\022\036\n\ntask_total\030\004 \001(\005R"
+    "\ntask_total\022 \n\013task_failed\030\005 \001(\005R\013task_f"
+    "ailed\022_\n\016partial_errors\030\006 \003(\01327.fusion.a"
+    "i.proto.data_readiness.WeatherSyncPartia"
+    "lErrorR\016partial_errors\"R\n\035RetryFailedWea"
+    "therSyncRequest\022&\n\006run_id\030\001 \001(\tB\t\272H\006r\004\020\001"
+    "\030@H\000R\006run_id\210\001\001B\t\n\007_run_id\"\330\001\n\036RetryFail"
+    "edWeatherSyncResponse\022P\n\006header\030\001 \001(\01328."
+    "fusion.ai.proto.data_readiness.DataReadi"
+    "nessReplyHeaderR\006header\022\026\n\006run_id\030\002 \001(\tR"
+    "\006run_id\022L\n\006status\030\003 \001(\01624.fusion.ai.prot"
+    "o.data_readiness.WeatherSyncRunStatusR\006s"
+    "tatus\"\243\001\n\"CreateWeatherExcelImportJobReq"
+    "uest\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@"
+    "R\017registration_id\022 \n\004file\030\002 \001(\014B\014\272H\tz\007\020\001"
+    "\030\200\200\200\031R\004file\022&\n\010filename\030\003 \001(\tB\n\272H\007r\005\020\001\030\377"
+    "\001R\010filename\"\311\002\n#CreateWeatherExcelImport"
+    "JobResponse\022P\n\006header\030\001 \001(\01328.fusion.ai."
+    "proto.data_readiness.DataReadinessReplyH"
+    "eaderR\006header\022\026\n\006job_id\030\002 \001(\tR\006job_id\022)\n"
+    "\raccepted_rows\030\003 \001(\005H\000R\raccepted_rows\210\001\001"
+    "\022%\n\013failed_rows\030\004 \001(\005H\001R\013failed_rows\210\001\001\022"
+    "/\n\020error_report_url\030\005 \001(\tH\002R\020error_repor"
+    "t_url\210\001\001B\020\n\016_accepted_rowsB\016\n\014_failed_ro"
+    "wsB\023\n\021_error_report_url\" \n\036GetWeatherExc"
+    "elTemplateRequest\"\307\001\n\037GetWeatherExcelTem"
+    "plateResponse\022P\n\006header\030\001 \001(\01328.fusion.a"
+    "i.proto.data_readiness.DataReadinessRepl"
+    "yHeaderR\006header\022\022\n\004file\030\002 \001(\014R\004file\022\032\n\010f"
+    "ilename\030\003 \001(\tR\010filename\022\"\n\014content_type\030"
+    "\004 \001(\tR\014content_type\"\322\002\n\034CreateDataBackfi"
+    "llJobRequest\0223\n\017registration_id\030\001 \001(\tB\t\272"
+    "H\006r\004\020\001\030@R\017registration_id\022#\n\010start_ms\030\002 "
+    "\001(\003B\007\272H\004\"\002 \000R\010start_ms\022\037\n\006end_ms\030\003 \001(\003B\007"
+    "\272H\004\"\002 \000R\006end_ms\022\?\n\017wait_timeout_ms\030\004 \001(\003"
+    "B\020\272H\r\"\013\030\200\210\262\240\002(\200\335\333\001H\000R\017wait_timeout_ms\210\001\001"
+    ":b\272H_\032]\n\030backfill_end_after_start\022$end_m"
+    "s must be greater than start_ms\032\033this.en"
+    "d_ms > this.start_msB\022\n\020_wait_timeout_ms"
+    "\"7\n\035CreateDataBackfillJobResponse\022\026\n\006job"
+    "_id\030\001 \001(\tR\006job_id\"\210\001\n\031UploadBackfillFile"
+    "Request\022!\n\006job_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\006job_"
+    "id\022 \n\004file\030\002 \001(\014B\014\272H\tz\007\020\001\030\200\200\200\031R\004file\022&\n\010"
+    "filename\030\003 \001(\tB\n\272H\007r\005\020\001\030\377\001R\010filename\"4\n\032"
+    "UploadBackfillFileResponse\022\026\n\006job_id\030\001 \001"
+    "(\tR\006job_id\"V\n\025BatchPullPowerRequest\022=\n\020r"
     "egistration_ids\030\001 \003(\tB\021\272H\016\222\001\013\020\364\003\"\006r\004\020\001\030@"
-    "R\020registration_ids\022\'\n\tpast_days\030\002 \001(\005B\t\272"
-    "H\006\032\004\030\016(\000R\tpast_days\022/\n\rforecast_days\030\003 \001"
-    "(\005B\t\272H\006\032\004\030\020(\000R\rforecast_days\022.\n\013provider"
-    "_id\030\004 \001(\tB\007\272H\004r\002\030@H\000R\013provider_id\210\001\001\022M\n\004"
-    "mode\030\005 \001(\0162/.fusion.ai.proto.data_readin"
-    "ess.WeatherSyncModeB\010\272H\005\202\001\002\020\001R\004mode\022V\n\007t"
-    "rigger\030\006 \001(\01622.fusion.ai.proto.data_read"
-    "iness.WeatherSyncTriggerB\010\272H\005\202\001\002\020\001R\007trig"
-    "ger\0228\n\017retry_of_run_id\030\007 \001(\tB\t\272H\006r\004\020\001\030@H"
-    "\001R\017retry_of_run_id\210\001\001:\\\272HY\032W\n\025weather_sy"
-    "nc_mode_set\022.mode must not be WEATHER_SY"
-    "NC_MODE_UNSPECIFIED\032\016this.mode != 0B\016\n\014_"
-    "provider_idB\022\n\020_retry_of_run_id\"\201\001\n\027Weat"
-    "herSyncPartialError\022(\n\017registration_id\030\001"
-    " \001(\tR\017registration_id\022\"\n\014location_key\030\002 "
-    "\001(\tR\014location_key\022\030\n\007message\030\003 \001(\tR\007mess"
-    "age\"\365\002\n\030BatchSyncWeatherResponse\022P\n\006head"
-    "er\030\001 \001(\01328.fusion.ai.proto.data_readines"
-    "s.DataReadinessReplyHeaderR\006header\022\026\n\006ru"
-    "n_id\030\002 \001(\tR\006run_id\022L\n\006status\030\003 \001(\01624.fus"
-    "ion.ai.proto.data_readiness.WeatherSyncR"
-    "unStatusR\006status\022\036\n\ntask_total\030\004 \001(\005R\nta"
-    "sk_total\022 \n\013task_failed\030\005 \001(\005R\013task_fail"
-    "ed\022_\n\016partial_errors\030\006 \003(\01327.fusion.ai.p"
-    "roto.data_readiness.WeatherSyncPartialEr"
-    "rorR\016partial_errors\"R\n\035RetryFailedWeathe"
-    "rSyncRequest\022&\n\006run_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@H"
-    "\000R\006run_id\210\001\001B\t\n\007_run_id\"\206\001\n\036RetryFailedW"
-    "eatherSyncResponse\022\026\n\006run_id\030\001 \001(\tR\006run_"
-    "id\022L\n\006status\030\002 \001(\01624.fusion.ai.proto.dat"
-    "a_readiness.WeatherSyncRunStatusR\006status"
-    "\"\243\001\n\"CreateWeatherExcelImportJobRequest\022"
-    "3\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017reg"
-    "istration_id\022 \n\004file\030\002 \001(\014B\014\272H\tz\007\020\001\030\200\200\200\031"
-    "R\004file\022&\n\010filename\030\003 \001(\tB\n\272H\007r\005\020\001\030\377\001R\010fi"
-    "lename\"\311\002\n#CreateWeatherExcelImportJobRe"
-    "sponse\022P\n\006header\030\001 \001(\01328.fusion.ai.proto"
-    ".data_readiness.DataReadinessReplyHeader"
-    "R\006header\022\026\n\006job_id\030\002 \001(\tR\006job_id\022)\n\racce"
-    "pted_rows\030\003 \001(\005H\000R\raccepted_rows\210\001\001\022%\n\013f"
-    "ailed_rows\030\004 \001(\005H\001R\013failed_rows\210\001\001\022/\n\020er"
-    "ror_report_url\030\005 \001(\tH\002R\020error_report_url"
-    "\210\001\001B\020\n\016_accepted_rowsB\016\n\014_failed_rowsB\023\n"
-    "\021_error_report_url\" \n\036GetWeatherExcelTem"
-    "plateRequest\"\307\001\n\037GetWeatherExcelTemplate"
-    "Response\022P\n\006header\030\001 \001(\01328.fusion.ai.pro"
-    "to.data_readiness.DataReadinessReplyHead"
-    "erR\006header\022\022\n\004file\030\002 \001(\014R\004file\022\032\n\010filena"
-    "me\030\003 \001(\tR\010filename\022\"\n\014content_type\030\004 \001(\t"
-    "R\014content_type\"\322\002\n\034CreateDataBackfillJob"
-    "Request\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020"
-    "\001\030@R\017registration_id\022#\n\010start_ms\030\002 \001(\003B\007"
-    "\272H\004\"\002 \000R\010start_ms\022\037\n\006end_ms\030\003 \001(\003B\007\272H\004\"\002"
-    " \000R\006end_ms\022\?\n\017wait_timeout_ms\030\004 \001(\003B\020\272H\r"
-    "\"\013\030\200\210\262\240\002(\200\335\333\001H\000R\017wait_timeout_ms\210\001\001:b\272H_"
-    "\032]\n\030backfill_end_after_start\022$end_ms mus"
-    "t be greater than start_ms\032\033this.end_ms "
-    "> this.start_msB\022\n\020_wait_timeout_ms\"7\n\035C"
-    "reateDataBackfillJobResponse\022\026\n\006job_id\030\001"
-    " \001(\tR\006job_id\"\210\001\n\031UploadBackfillFileReque"
-    "st\022!\n\006job_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\006job_id\022 \n"
-    "\004file\030\002 \001(\014B\014\272H\tz\007\020\001\030\200\200\200\031R\004file\022&\n\010filen"
-    "ame\030\003 \001(\tB\n\272H\007r\005\020\001\030\377\001R\010filename\"4\n\032Uploa"
-    "dBackfillFileResponse\022\026\n\006job_id\030\001 \001(\tR\006j"
-    "ob_id\"V\n\025BatchPullPowerRequest\022=\n\020regist"
-    "ration_ids\030\001 \003(\tB\021\272H\016\222\001\013\020\364\003\"\006r\004\020\001\030@R\020reg"
-    "istration_ids\"0\n\026BatchPullPowerResponse\022"
-    "\026\n\006run_id\030\001 \001(\tR\006run_id\"P\n\033RetryFailedPu"
-    "llPowerRequest\022&\n\006run_id\030\001 \001(\tB\t\272H\006r\004\020\001\030"
-    "@H\000R\006run_id\210\001\001B\t\n\007_run_id\"6\n\034RetryFailed"
-    "PullPowerResponse\022\026\n\006run_id\030\001 \001(\tR\006run_i"
-    "d*\363\001\n\017ReadinessStatus\022 \n\034READINESS_STATU"
-    "S_UNSPECIFIED\020\000\022\032\n\026READINESS_STATUS_READ"
-    "Y\020\001\022\036\n\032READINESS_STATUS_NEED_FILL\020\002\022\033\n\027R"
-    "EADINESS_STATUS_SEVERE\020\003\022$\n READINESS_ST"
-    "ATUS_WEATHER_MISSING\020\004\022\034\n\030READINESS_STAT"
-    "US_OFFLINE\020\005\022!\n\035READINESS_STATUS_PULL_UN"
-    "KNOWN\020\006*\232\001\n\rWeatherStatus\022\036\n\032WEATHER_STA"
-    "TUS_UNSPECIFIED\020\000\022\032\n\026WEATHER_STATUS_UNKN"
-    "OWN\020\001\022\025\n\021WEATHER_STATUS_OK\020\002\022\032\n\026WEATHER_"
-    "STATUS_DELAYED\020\003\022\032\n\026WEATHER_STATUS_MISSI"
-    "NG\020\004*k\n\nDataSource\022\033\n\027DATA_SOURCE_UNSPEC"
-    "IFIED\020\000\022\024\n\020DATA_SOURCE_PULL\020\001\022\024\n\020DATA_SO"
-    "URCE_PUSH\020\002\022\024\n\020DATA_SOURCE_FILE\020\003*\243\001\n\017We"
-    "atherSyncMode\022!\n\035WEATHER_SYNC_MODE_UNSPE"
-    "CIFIED\020\000\022\"\n\036WEATHER_SYNC_MODE_ALL_ELIGIB"
-    "LE\020\001\022%\n!WEATHER_SYNC_MODE_BY_REGISTRATIO"
-    "N\020\002\022\"\n\036WEATHER_SYNC_MODE_RETRY_FAILED\020\003*"
-    "\232\001\n\022WeatherSyncTrigger\022$\n WEATHER_SYNC_T"
-    "RIGGER_UNSPECIFIED\020\000\022\035\n\031WEATHER_SYNC_TRI"
-    "GGER_CRON\020\001\022\037\n\033WEATHER_SYNC_TRIGGER_MANU"
-    "AL\020\002\022\036\n\032WEATHER_SYNC_TRIGGER_RETRY\020\003*\342\001\n"
-    "\024WeatherSyncRunStatus\022\'\n#WEATHER_SYNC_RU"
-    "N_STATUS_UNSPECIFIED\020\000\022#\n\037WEATHER_SYNC_R"
-    "UN_STATUS_RUNNING\020\001\022%\n!WEATHER_SYNC_RUN_"
-    "STATUS_COMPLETED\020\002\0221\n-WEATHER_SYNC_RUN_S"
-    "TATUS_COMPLETED_WITH_ERRORS\020\003\022\"\n\036WEATHER"
-    "_SYNC_RUN_STATUS_FAILED\020\004*\376\001\n\025WeatherSyn"
-    "cTaskStatus\022(\n$WEATHER_SYNC_TASK_STATUS_"
-    "UNSPECIFIED\020\000\022$\n WEATHER_SYNC_TASK_STATU"
-    "S_PENDING\020\001\022$\n WEATHER_SYNC_TASK_STATUS_"
-    "RUNNING\020\002\022$\n WEATHER_SYNC_TASK_STATUS_SU"
-    "CCESS\020\003\022$\n WEATHER_SYNC_TASK_STATUS_PART"
-    "IAL\020\004\022#\n\037WEATHER_SYNC_TASK_STATUS_FAILED"
-    "\020\005*{\n\014HeatmapLevel\022\035\n\031HEATMAP_LEVEL_UNSP"
-    "ECIFIED\020\000\022\026\n\022HEATMAP_LEVEL_FULL\020\001\022\031\n\025HEA"
-    "TMAP_LEVEL_PARTIAL\020\002\022\031\n\025HEATMAP_LEVEL_MI"
-    "SSING\020\003B\206\002\n\"com.fusion.ai.proto.data_rea"
-    "dinessB\031DataReadinessMessageProtoP\001Z-fus"
-    "ion.ai.proto.data_readiness;data_readine"
-    "ss\242\002\004FAPD\252\002\035Fusion.Ai.Proto.DataReadines"
-    "s\312\002\035Fusion\\Ai\\Proto\\DataReadiness\342\002)Fusi"
-    "on\\Ai\\Proto\\DataReadiness\\GPBMetadata\352\002 "
-    "Fusion::Ai::Proto::DataReadinessb\006proto3"
+    "R\020registration_ids\"0\n\026BatchPullPowerResp"
+    "onse\022\026\n\006run_id\030\001 \001(\tR\006run_id\"P\n\033RetryFai"
+    "ledPullPowerRequest\022&\n\006run_id\030\001 \001(\tB\t\272H\006"
+    "r\004\020\001\030@H\000R\006run_id\210\001\001B\t\n\007_run_id\"6\n\034RetryF"
+    "ailedPullPowerResponse\022\026\n\006run_id\030\001 \001(\tR\006"
+    "run_id*\363\001\n\017ReadinessStatus\022 \n\034READINESS_"
+    "STATUS_UNSPECIFIED\020\000\022\032\n\026READINESS_STATUS"
+    "_READY\020\001\022\036\n\032READINESS_STATUS_NEED_FILL\020\002"
+    "\022\033\n\027READINESS_STATUS_SEVERE\020\003\022$\n READINE"
+    "SS_STATUS_WEATHER_MISSING\020\004\022\034\n\030READINESS"
+    "_STATUS_OFFLINE\020\005\022!\n\035READINESS_STATUS_PU"
+    "LL_UNKNOWN\020\006*\232\001\n\rWeatherStatus\022\036\n\032WEATHE"
+    "R_STATUS_UNSPECIFIED\020\000\022\032\n\026WEATHER_STATUS"
+    "_UNKNOWN\020\001\022\025\n\021WEATHER_STATUS_OK\020\002\022\032\n\026WEA"
+    "THER_STATUS_DELAYED\020\003\022\032\n\026WEATHER_STATUS_"
+    "MISSING\020\004*k\n\nDataSource\022\033\n\027DATA_SOURCE_U"
+    "NSPECIFIED\020\000\022\024\n\020DATA_SOURCE_PULL\020\001\022\024\n\020DA"
+    "TA_SOURCE_PUSH\020\002\022\024\n\020DATA_SOURCE_FILE\020\003*\243"
+    "\001\n\017WeatherSyncMode\022!\n\035WEATHER_SYNC_MODE_"
+    "UNSPECIFIED\020\000\022\"\n\036WEATHER_SYNC_MODE_ALL_E"
+    "LIGIBLE\020\001\022%\n!WEATHER_SYNC_MODE_BY_REGIST"
+    "RATION\020\002\022\"\n\036WEATHER_SYNC_MODE_RETRY_FAIL"
+    "ED\020\003*\232\001\n\022WeatherSyncTrigger\022$\n WEATHER_S"
+    "YNC_TRIGGER_UNSPECIFIED\020\000\022\035\n\031WEATHER_SYN"
+    "C_TRIGGER_CRON\020\001\022\037\n\033WEATHER_SYNC_TRIGGER"
+    "_MANUAL\020\002\022\036\n\032WEATHER_SYNC_TRIGGER_RETRY\020"
+    "\003*\342\001\n\024WeatherSyncRunStatus\022\'\n#WEATHER_SY"
+    "NC_RUN_STATUS_UNSPECIFIED\020\000\022#\n\037WEATHER_S"
+    "YNC_RUN_STATUS_RUNNING\020\001\022%\n!WEATHER_SYNC"
+    "_RUN_STATUS_COMPLETED\020\002\0221\n-WEATHER_SYNC_"
+    "RUN_STATUS_COMPLETED_WITH_ERRORS\020\003\022\"\n\036WE"
+    "ATHER_SYNC_RUN_STATUS_FAILED\020\004*\376\001\n\025Weath"
+    "erSyncTaskStatus\022(\n$WEATHER_SYNC_TASK_ST"
+    "ATUS_UNSPECIFIED\020\000\022$\n WEATHER_SYNC_TASK_"
+    "STATUS_PENDING\020\001\022$\n WEATHER_SYNC_TASK_ST"
+    "ATUS_RUNNING\020\002\022$\n WEATHER_SYNC_TASK_STAT"
+    "US_SUCCESS\020\003\022$\n WEATHER_SYNC_TASK_STATUS"
+    "_PARTIAL\020\004\022#\n\037WEATHER_SYNC_TASK_STATUS_F"
+    "AILED\020\005*{\n\014HeatmapLevel\022\035\n\031HEATMAP_LEVEL"
+    "_UNSPECIFIED\020\000\022\026\n\022HEATMAP_LEVEL_FULL\020\001\022\031"
+    "\n\025HEATMAP_LEVEL_PARTIAL\020\002\022\031\n\025HEATMAP_LEV"
+    "EL_MISSING\020\003B\206\002\n\"com.fusion.ai.proto.dat"
+    "a_readinessB\031DataReadinessMessageProtoP\001"
+    "Z-fusion.ai.proto.data_readiness;data_re"
+    "adiness\242\002\004FAPD\252\002\035Fusion.Ai.Proto.DataRea"
+    "diness\312\002\035Fusion\\Ai\\Proto\\DataReadiness\342\002"
+    ")Fusion\\Ai\\Proto\\DataReadiness\\GPBMetada"
+    "ta\352\002 Fusion::Ai::Proto::DataReadinessb\006p"
+    "roto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto_deps[2] = {
@@ -8053,7 +8088,7 @@ static ::absl::once_flag descriptor_table_data_5freadiness_2fdata_5freadiness_5f
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto = {
     false,
     false,
-    10840,
+    11005,
     descriptor_table_protodef_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
     "data_readiness/data_readiness_message.proto",
     &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto_once,
@@ -15361,7 +15396,10 @@ GetWeatherSyncRunResponse::GetWeatherSyncRunResponse(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.run_ = (CheckHasBit(cached_has_bits, 0x00000001U))
+  _impl_.header_ = (CheckHasBit(cached_has_bits, 0x00000001U))
+                 ? Super_::CopyConstruct(arena, *from._impl_.header_)
+                 : nullptr;
+  _impl_.run_ = (CheckHasBit(cached_has_bits, 0x00000002U))
                  ? Super_::CopyConstruct(arena, *from._impl_.run_)
                  : nullptr;
 
@@ -15374,7 +15412,12 @@ PROTOBUF_NDEBUG_INLINE GetWeatherSyncRunResponse::Impl_::Impl_(
 
 inline void GetWeatherSyncRunResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.run_ = {};
+  ::memset(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, header_),
+           0,
+           offsetof(Impl_, run_) -
+               offsetof(Impl_, header_) +
+               sizeof(Impl_::run_));
 }
 GetWeatherSyncRunResponse::~GetWeatherSyncRunResponse() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse)
@@ -15387,6 +15430,7 @@ inline void GetWeatherSyncRunResponse::SharedDtor(MessageLite& self) {
   }
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
+  delete this_._impl_.header_;
   delete this_._impl_.run_;
   this_._impl_.~Impl_();
 }
@@ -15424,9 +15468,15 @@ PROTOBUF_NOINLINE void GetWeatherSyncRunResponse::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    ABSL_DCHECK(this_._impl_.run_ != nullptr);
-    this_._impl_.run_->Clear();
+  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      ABSL_DCHECK(this_._impl_.header_ != nullptr);
+      this_._impl_.header_->Clear();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      ABSL_DCHECK(this_._impl_.run_ != nullptr);
+      this_._impl_.run_->Clear();
+    }
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -15451,10 +15501,17 @@ PROTOBUF_NOINLINE void GetWeatherSyncRunResponse::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
+  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        1, *this_._impl_.run_, this_._impl_.run_->GetCachedSize(), target,
+        1, *this_._impl_.header_, this_._impl_.header_->GetCachedSize(), target,
+        stream);
+  }
+
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        2, *this_._impl_.run_, this_._impl_.run_->GetCachedSize(), target,
         stream);
   }
 
@@ -15479,10 +15536,16 @@ PROTOBUF_NOINLINE void GetWeatherSyncRunResponse::Clear() {
 
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
-   {
-    // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
-    cached_has_bits = this_._impl_._has_bits_[0];
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
+    // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.header_);
+    }
+    // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.run_);
     }
@@ -15505,12 +15568,22 @@ void GetWeatherSyncRunResponse::MergeImpl(::google::protobuf::MessageLite& to_ms
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    ABSL_DCHECK(from._impl_.run_ != nullptr);
-    if (_this->_impl_.run_ == nullptr) {
-      _this->_impl_.run_ = Super_::CopyConstruct(arena, *from._impl_.run_);
-    } else {
-      _this->_impl_.run_->MergeFrom(*from._impl_.run_);
+  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      ABSL_DCHECK(from._impl_.header_ != nullptr);
+      if (_this->_impl_.header_ == nullptr) {
+        _this->_impl_.header_ = Super_::CopyConstruct(arena, *from._impl_.header_);
+      } else {
+        _this->_impl_.header_->MergeFrom(*from._impl_.header_);
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      ABSL_DCHECK(from._impl_.run_ != nullptr);
+      if (_this->_impl_.run_ == nullptr) {
+        _this->_impl_.run_ = Super_::CopyConstruct(arena, *from._impl_.run_);
+      } else {
+        _this->_impl_.run_->MergeFrom(*from._impl_.run_);
+      }
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -15530,7 +15603,12 @@ void GetWeatherSyncRunResponse::InternalSwap(GetWeatherSyncRunResponse* PROTOBUF
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  swap(_impl_.run_, other->_impl_.run_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_)
+      + sizeof(GetWeatherSyncRunResponse::_impl_.run_)
+      - PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.header_)>(
+          reinterpret_cast<char*>(&_impl_.header_),
+          reinterpret_cast<char*>(&other->_impl_.header_));
 }
 
 ::google::protobuf::Metadata GetWeatherSyncRunResponse::GetMetadata() const {
@@ -16798,6 +16876,10 @@ RetryFailedWeatherSyncResponse::RetryFailedWeatherSyncResponse(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.header_ = (CheckHasBit(cached_has_bits, 0x00000002U))
+                 ? Super_::CopyConstruct(arena, *from._impl_.header_)
+                 : nullptr;
   _impl_.status_ = from._impl_.status_;
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
@@ -16809,7 +16891,12 @@ PROTOBUF_NDEBUG_INLINE RetryFailedWeatherSyncResponse::Impl_::Impl_(
 
 inline void RetryFailedWeatherSyncResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.status_ = {};
+  ::memset(reinterpret_cast<char*>(&_impl_) +
+               offsetof(Impl_, header_),
+           0,
+           offsetof(Impl_, status_) -
+               offsetof(Impl_, header_) +
+               sizeof(Impl_::status_));
 }
 RetryFailedWeatherSyncResponse::~RetryFailedWeatherSyncResponse() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
@@ -16823,6 +16910,7 @@ inline void RetryFailedWeatherSyncResponse::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.run_id_.Destroy();
+  delete this_._impl_.header_;
   this_._impl_.~Impl_();
 }
 
@@ -16859,8 +16947,14 @@ PROTOBUF_NOINLINE void RetryFailedWeatherSyncResponse::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    this_._impl_.run_id_.ClearNonDefaultToEmpty();
+  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      this_._impl_.run_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      ABSL_DCHECK(this_._impl_.header_ != nullptr);
+      this_._impl_.header_->Clear();
+    }
   }
   this_._impl_.status_ = 0;
   _impl_._has_bits_.Clear();
@@ -16886,22 +16980,29 @@ PROTOBUF_NOINLINE void RetryFailedWeatherSyncResponse::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // string run_id = 1 [json_name = "run_id"];
+  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        1, *this_._impl_.header_, this_._impl_.header_->GetCachedSize(), target,
+        stream);
+  }
+
+  // string run_id = 2 [json_name = "run_id"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     if (!this_._internal_run_id().empty()) {
       const ::std::string& _s = this_._internal_run_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.run_id");
-      target = stream->WriteStringMaybeAliased(1, _s, target);
+      target = stream->WriteStringMaybeAliased(2, _s, target);
     }
   }
 
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
-  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
     if (this_._internal_status() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          2, this_._internal_status(), target);
+          3, this_._internal_status(), target);
     }
   }
 
@@ -16928,16 +17029,21 @@ PROTOBUF_NOINLINE void RetryFailedWeatherSyncResponse::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    // string run_id = 1 [json_name = "run_id"];
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+    // string run_id = 2 [json_name = "run_id"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!this_._internal_run_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_run_id());
       }
     }
-    // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
+    // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.header_);
+    }
+    // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
       if (this_._internal_status() != 0) {
         total_size += 1 +
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_status());
@@ -16955,13 +17061,14 @@ void RetryFailedWeatherSyncResponse::MergeImpl(::google::protobuf::MessageLite& 
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     from.CheckHasBitConsistency();
   }
+  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!from._internal_run_id().empty()) {
         _this->_internal_set_run_id(from._internal_run_id());
@@ -16972,6 +17079,14 @@ void RetryFailedWeatherSyncResponse::MergeImpl(::google::protobuf::MessageLite& 
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      ABSL_DCHECK(from._impl_.header_ != nullptr);
+      if (_this->_impl_.header_ == nullptr) {
+        _this->_impl_.header_ = Super_::CopyConstruct(arena, *from._impl_.header_);
+      } else {
+        _this->_impl_.header_->MergeFrom(*from._impl_.header_);
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
       if (from._internal_status() != 0) {
         _this->_impl_.status_ = from._impl_.status_;
       }
@@ -16997,7 +17112,12 @@ void RetryFailedWeatherSyncResponse::InternalSwap(RetryFailedWeatherSyncResponse
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.run_id_, &other->_impl_.run_id_, arena);
-  swap(_impl_.status_, other->_impl_.status_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_)
+      + sizeof(RetryFailedWeatherSyncResponse::_impl_.status_)
+      - PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.header_)>(
+          reinterpret_cast<char*>(&_impl_.header_),
+          reinterpret_cast<char*>(&other->_impl_.header_));
 }
 
 ::google::protobuf::Metadata RetryFailedWeatherSyncResponse::GetMetadata() const {

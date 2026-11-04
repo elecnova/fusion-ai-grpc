@@ -1794,224 +1794,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UploadBackfillFileRequest final : p
 };
 // -------------------------------------------------------------------
 
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedWeatherSyncResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline RetryFailedWeatherSyncResponse() : RetryFailedWeatherSyncResponse(nullptr) {}
-  ~RetryFailedWeatherSyncResponse() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(RetryFailedWeatherSyncResponse));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr RetryFailedWeatherSyncResponse(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline RetryFailedWeatherSyncResponse(const RetryFailedWeatherSyncResponse& from) : RetryFailedWeatherSyncResponse(nullptr, from) {}
-  inline RetryFailedWeatherSyncResponse(RetryFailedWeatherSyncResponse&& from) noexcept : RetryFailedWeatherSyncResponse(nullptr, ::std::move(from)) {}
-  inline RetryFailedWeatherSyncResponse& operator=(const RetryFailedWeatherSyncResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline RetryFailedWeatherSyncResponse& operator=(RetryFailedWeatherSyncResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const RetryFailedWeatherSyncResponse& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<RetryFailedWeatherSyncResponse>(&RetryFailedWeatherSyncResponse_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 30;
-  friend void swap(RetryFailedWeatherSyncResponse& a, RetryFailedWeatherSyncResponse& b) { a.Swap(&b); }
-  inline void Swap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<RetryFailedWeatherSyncResponse>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const RetryFailedWeatherSyncResponse& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const RetryFailedWeatherSyncResponse& from) { RetryFailedWeatherSyncResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse"; }
-
-  explicit RetryFailedWeatherSyncResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  RetryFailedWeatherSyncResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const RetryFailedWeatherSyncResponse& from);
-  RetryFailedWeatherSyncResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, RetryFailedWeatherSyncResponse&& from) noexcept
-      : RetryFailedWeatherSyncResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kRunIdFieldNumber = 1,
-    kStatusFieldNumber = 2,
-  };
-  // string run_id = 1 [json_name = "run_id"];
-  void clear_run_id() ;
-  [[nodiscard]] const ::std::string& run_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_run_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_run_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_run_id();
-  void set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_run_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_run_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_run_id();
-
-  public:
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
-  void clear_status() ;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus status() const;
-  void set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
-
-  private:
-  ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus _internal_status() const;
-  void _internal_set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<1, 2,
-                          0, 76,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const RetryFailedWeatherSyncResponse& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr run_id_;
-    int status_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedWeatherSyncRequest final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest) */ {
   using Super_ = ::google::protobuf::Message;
@@ -7723,6 +7505,241 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED WeatherSiteView final : public ::go
 };
 // -------------------------------------------------------------------
 
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedWeatherSyncResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline RetryFailedWeatherSyncResponse() : RetryFailedWeatherSyncResponse(nullptr) {}
+  ~RetryFailedWeatherSyncResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(RetryFailedWeatherSyncResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr RetryFailedWeatherSyncResponse(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline RetryFailedWeatherSyncResponse(const RetryFailedWeatherSyncResponse& from) : RetryFailedWeatherSyncResponse(nullptr, from) {}
+  inline RetryFailedWeatherSyncResponse(RetryFailedWeatherSyncResponse&& from) noexcept : RetryFailedWeatherSyncResponse(nullptr, ::std::move(from)) {}
+  inline RetryFailedWeatherSyncResponse& operator=(const RetryFailedWeatherSyncResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RetryFailedWeatherSyncResponse& operator=(RetryFailedWeatherSyncResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const RetryFailedWeatherSyncResponse& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<RetryFailedWeatherSyncResponse>(&RetryFailedWeatherSyncResponse_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 30;
+  friend void swap(RetryFailedWeatherSyncResponse& a, RetryFailedWeatherSyncResponse& b) { a.Swap(&b); }
+  inline void Swap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<RetryFailedWeatherSyncResponse>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const RetryFailedWeatherSyncResponse& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const RetryFailedWeatherSyncResponse& from) { RetryFailedWeatherSyncResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse"; }
+
+  explicit RetryFailedWeatherSyncResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  RetryFailedWeatherSyncResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const RetryFailedWeatherSyncResponse& from);
+  RetryFailedWeatherSyncResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, RetryFailedWeatherSyncResponse&& from) noexcept
+      : RetryFailedWeatherSyncResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRunIdFieldNumber = 2,
+    kHeaderFieldNumber = 1,
+    kStatusFieldNumber = 3,
+  };
+  // string run_id = 2 [json_name = "run_id"];
+  void clear_run_id() ;
+  [[nodiscard]] const ::std::string& run_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_run_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_run_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_run_id();
+  void set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_run_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_run_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_run_id();
+
+  public:
+  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+  [[nodiscard]] bool has_header() const;
+  void clear_header() ;
+  [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& header() const;
+  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE release_header();
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL mutable_header();
+  void set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE unsafe_arena_release_header();
+
+  private:
+  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& _internal_header() const;
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL _internal_mutable_header();
+
+  public:
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
+  void clear_status() ;
+  [[nodiscard]] ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus status() const;
+  void set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
+
+  private:
+  ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus _internal_status() const;
+  void _internal_set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<2, 3,
+                          1, 76,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const RetryFailedWeatherSyncResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr run_id_;
+    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE header_;
+    int status_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PipelineStats final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.PipelineStats) */ {
   using Super_ = ::google::protobuf::Message;
@@ -9904,9 +9921,25 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSyncRunResponse final : p
 
   // accessors -------------------------------------------------------
   enum : int {
-    kRunFieldNumber = 1,
+    kHeaderFieldNumber = 1,
+    kRunFieldNumber = 2,
   };
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
+  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+  [[nodiscard]] bool has_header() const;
+  void clear_header() ;
+  [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& header() const;
+  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE release_header();
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL mutable_header();
+  void set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE unsafe_arena_release_header();
+
+  private:
+  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& _internal_header() const;
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL _internal_mutable_header();
+
+  public:
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
   [[nodiscard]] bool has_run() const;
   void clear_run() ;
   [[nodiscard]] const ::fusion::ai::proto::data_readiness::WeatherSyncRunView& run() const;
@@ -9925,8 +9958,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSyncRunResponse final : p
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<0, 1,
-                          1, 0,
+      ::google::protobuf::internal::TcParseTable<1, 2,
+                          2, 0,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -9954,6 +9987,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSyncRunResponse final : p
         const GetWeatherSyncRunResponse& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
+    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE header_;
     ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NULLABLE run_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -16306,16 +16340,114 @@ inline void GetWeatherSyncRunRequest::_internal_set_include_tasks(bool value) {
 
 // GetWeatherSyncRunResponse
 
-// .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
-inline bool GetWeatherSyncRunResponse::has_run() const {
+// .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+inline bool GetWeatherSyncRunResponse::has_header() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
+  PROTOBUF_ASSUME(!value || _impl_.header_ != nullptr);
+  return value;
+}
+inline void GetWeatherSyncRunResponse::clear_header() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.header_ != nullptr) _impl_.header_->Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& GetWeatherSyncRunResponse::_internal_header() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* p = _impl_.header_;
+  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(&::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_);
+}
+inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& GetWeatherSyncRunResponse::header() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
+  return _internal_header();
+}
+inline void GetWeatherSyncRunResponse::unsafe_arena_set_allocated_header(
+    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
+  }
+  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
+}
+inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE GetWeatherSyncRunResponse::release_header() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* released = _impl_.header_;
+  _impl_.header_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE GetWeatherSyncRunResponse::unsafe_arena_release_header() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* temp = _impl_.header_;
+  _impl_.header_ = nullptr;
+  return temp;
+}
+inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL GetWeatherSyncRunResponse::_internal_mutable_header() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.header_ == nullptr) {
+    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(GetArena());
+    _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(p);
+  }
+  return _impl_.header_;
+}
+inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL GetWeatherSyncRunResponse::mutable_header()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* _msg = _internal_mutable_header();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
+  return _msg;
+}
+inline void GetWeatherSyncRunResponse::set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  }
+
+  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
+}
+
+// .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
+inline bool GetWeatherSyncRunResponse::has_run() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
   PROTOBUF_ASSUME(!value || _impl_.run_ != nullptr);
   return value;
 }
 inline void GetWeatherSyncRunResponse::clear_run() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.run_ != nullptr) _impl_.run_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
 }
 inline const ::fusion::ai::proto::data_readiness::WeatherSyncRunView& GetWeatherSyncRunResponse::_internal_run() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
@@ -16334,16 +16466,16 @@ inline void GetWeatherSyncRunResponse::unsafe_arena_set_allocated_run(
   }
   _impl_.run_ = reinterpret_cast<::fusion::ai::proto::data_readiness::WeatherSyncRunView*>(value);
   if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run)
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NULLABLE GetWeatherSyncRunResponse::release_run() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
   ::fusion::ai::proto::data_readiness::WeatherSyncRunView* released = _impl_.run_;
   _impl_.run_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -16363,7 +16495,7 @@ inline ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NULLABL
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run)
 
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
   ::fusion::ai::proto::data_readiness::WeatherSyncRunView* temp = _impl_.run_;
   _impl_.run_ = nullptr;
   return temp;
@@ -16378,7 +16510,7 @@ inline ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NONNULL
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NONNULL GetWeatherSyncRunResponse::mutable_run()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
   ::fusion::ai::proto::data_readiness::WeatherSyncRunView* _msg = _internal_mutable_run();
   // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run)
   return _msg;
@@ -16395,9 +16527,9 @@ inline void GetWeatherSyncRunResponse::set_allocated_run(::fusion::ai::proto::da
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
   }
 
   _impl_.run_ = reinterpret_cast<::fusion::ai::proto::data_readiness::WeatherSyncRunView*>(value);
@@ -17277,7 +17409,105 @@ inline void RetryFailedWeatherSyncRequest::set_allocated_run_id(::std::string* P
 
 // RetryFailedWeatherSyncResponse
 
-// string run_id = 1 [json_name = "run_id"];
+// .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+inline bool RetryFailedWeatherSyncResponse::has_header() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
+  PROTOBUF_ASSUME(!value || _impl_.header_ != nullptr);
+  return value;
+}
+inline void RetryFailedWeatherSyncResponse::clear_header() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.header_ != nullptr) _impl_.header_->Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& RetryFailedWeatherSyncResponse::_internal_header() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* p = _impl_.header_;
+  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(&::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_);
+}
+inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& RetryFailedWeatherSyncResponse::header() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
+  return _internal_header();
+}
+inline void RetryFailedWeatherSyncResponse::unsafe_arena_set_allocated_header(
+    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
+  }
+  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
+}
+inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE RetryFailedWeatherSyncResponse::release_header() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* released = _impl_.header_;
+  _impl_.header_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE RetryFailedWeatherSyncResponse::unsafe_arena_release_header() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* temp = _impl_.header_;
+  _impl_.header_ = nullptr;
+  return temp;
+}
+inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL RetryFailedWeatherSyncResponse::_internal_mutable_header() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.header_ == nullptr) {
+    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(GetArena());
+    _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(p);
+  }
+  return _impl_.header_;
+}
+inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL RetryFailedWeatherSyncResponse::mutable_header()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* _msg = _internal_mutable_header();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
+  return _msg;
+}
+inline void RetryFailedWeatherSyncResponse::set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+
+  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
+}
+
+// string run_id = 2 [json_name = "run_id"];
 inline void RetryFailedWeatherSyncResponse::clear_run_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.run_id_.ClearToEmpty();
@@ -17341,11 +17571,11 @@ inline void RetryFailedWeatherSyncResponse::set_allocated_run_id(::std::string* 
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.run_id)
 }
 
-// .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
+// .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
 inline void RetryFailedWeatherSyncResponse::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus RetryFailedWeatherSyncResponse::status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status)
@@ -17353,7 +17583,7 @@ inline ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus RetryFailedWeat
 }
 inline void RetryFailedWeatherSyncResponse::set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value) {
   _internal_set_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status)
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus RetryFailedWeatherSyncResponse::_internal_status() const {

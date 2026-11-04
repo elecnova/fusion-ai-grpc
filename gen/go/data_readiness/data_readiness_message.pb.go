@@ -2146,8 +2146,9 @@ func (x *GetWeatherSyncRunRequest) GetIncludeTasks() bool {
 }
 
 type GetWeatherSyncRunResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Run           *WeatherSyncRunView    `protobuf:"bytes,1,opt,name=run,proto3" json:"run,omitempty"`
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Header        *DataReadinessReplyHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
+	Run           *WeatherSyncRunView       `protobuf:"bytes,2,opt,name=run,proto3" json:"run,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2180,6 +2181,13 @@ func (x *GetWeatherSyncRunResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetWeatherSyncRunResponse.ProtoReflect.Descriptor instead.
 func (*GetWeatherSyncRunResponse) Descriptor() ([]byte, []int) {
 	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *GetWeatherSyncRunResponse) GetHeader() *DataReadinessReplyHeader {
+	if x != nil {
+		return x.Header
+	}
+	return nil
 }
 
 func (x *GetWeatherSyncRunResponse) GetRun() *WeatherSyncRunView {
@@ -2470,9 +2478,10 @@ func (x *RetryFailedWeatherSyncRequest) GetRunId() string {
 }
 
 type RetryFailedWeatherSyncResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	RunId         string                 `protobuf:"bytes,1,opt,name=run_id,proto3" json:"run_id,omitempty"`
-	Status        WeatherSyncRunStatus   `protobuf:"varint,2,opt,name=status,proto3,enum=fusion.ai.proto.data_readiness.WeatherSyncRunStatus" json:"status,omitempty"`
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Header        *DataReadinessReplyHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
+	RunId         string                    `protobuf:"bytes,2,opt,name=run_id,proto3" json:"run_id,omitempty"`
+	Status        WeatherSyncRunStatus      `protobuf:"varint,3,opt,name=status,proto3,enum=fusion.ai.proto.data_readiness.WeatherSyncRunStatus" json:"status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2505,6 +2514,13 @@ func (x *RetryFailedWeatherSyncResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use RetryFailedWeatherSyncResponse.ProtoReflect.Descriptor instead.
 func (*RetryFailedWeatherSyncResponse) Descriptor() ([]byte, []int) {
 	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *RetryFailedWeatherSyncResponse) GetHeader() *DataReadinessReplyHeader {
+	if x != nil {
+		return x.Header
+	}
+	return nil
 }
 
 func (x *RetryFailedWeatherSyncResponse) GetRunId() string {
@@ -3317,9 +3333,10 @@ const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"\x04site\x18\x01 \x01(\v2/.fusion.ai.proto.data_readiness.WeatherSiteViewR\x04site\"a\n" +
 	"\x18GetWeatherSyncRunRequest\x12\x1f\n" +
 	"\x06run_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06run_id\x12$\n" +
-	"\rinclude_tasks\x18\x02 \x01(\bR\rinclude_tasks\"a\n" +
-	"\x19GetWeatherSyncRunResponse\x12D\n" +
-	"\x03run\x18\x01 \x01(\v22.fusion.ai.proto.data_readiness.WeatherSyncRunViewR\x03run\"\xc5\x04\n" +
+	"\rinclude_tasks\x18\x02 \x01(\bR\rinclude_tasks\"\xb3\x01\n" +
+	"\x19GetWeatherSyncRunResponse\x12P\n" +
+	"\x06header\x18\x01 \x01(\v28.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderR\x06header\x12D\n" +
+	"\x03run\x18\x02 \x01(\v22.fusion.ai.proto.data_readiness.WeatherSyncRunViewR\x03run\"\xc5\x04\n" +
 	"\x17BatchSyncWeatherRequest\x12=\n" +
 	"\x10registration_ids\x18\x01 \x03(\tB\x11\xbaH\x0e\x92\x01\v\x10\xf4\x03\"\x06r\x04\x10\x01\x18@R\x10registration_ids\x12'\n" +
 	"\tpast_days\x18\x02 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\x0e(\x00R\tpast_days\x12/\n" +
@@ -3346,10 +3363,11 @@ const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"\x0epartial_errors\x18\x06 \x03(\v27.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorR\x0epartial_errors\"R\n" +
 	"\x1dRetryFailedWeatherSyncRequest\x12&\n" +
 	"\x06run_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@H\x00R\x06run_id\x88\x01\x01B\t\n" +
-	"\a_run_id\"\x86\x01\n" +
-	"\x1eRetryFailedWeatherSyncResponse\x12\x16\n" +
-	"\x06run_id\x18\x01 \x01(\tR\x06run_id\x12L\n" +
-	"\x06status\x18\x02 \x01(\x0e24.fusion.ai.proto.data_readiness.WeatherSyncRunStatusR\x06status\"\xa3\x01\n" +
+	"\a_run_id\"\xd8\x01\n" +
+	"\x1eRetryFailedWeatherSyncResponse\x12P\n" +
+	"\x06header\x18\x01 \x01(\v28.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderR\x06header\x12\x16\n" +
+	"\x06run_id\x18\x02 \x01(\tR\x06run_id\x12L\n" +
+	"\x06status\x18\x03 \x01(\x0e24.fusion.ai.proto.data_readiness.WeatherSyncRunStatusR\x06status\"\xa3\x01\n" +
 	"\"CreateWeatherExcelImportJobRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12 \n" +
 	"\x04file\x18\x02 \x01(\fB\f\xbaH\tz\a\x10\x01\x18\x80\x80\x80\x19R\x04file\x12&\n" +
@@ -3550,20 +3568,22 @@ var file_data_readiness_data_readiness_message_proto_depIdxs = []int32{
 	2,  // 33: fusion.ai.proto.data_readiness.ExportDataGapsRequest.data_source:type_name -> fusion.ai.proto.data_readiness.DataSource
 	0,  // 34: fusion.ai.proto.data_readiness.ExportDataGapsRequest.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
 	17, // 35: fusion.ai.proto.data_readiness.GetWeatherSiteResponse.site:type_name -> fusion.ai.proto.data_readiness.WeatherSiteView
-	19, // 36: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunView
-	3,  // 37: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.mode:type_name -> fusion.ai.proto.data_readiness.WeatherSyncMode
-	4,  // 38: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.trigger:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTrigger
-	8,  // 39: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	5,  // 40: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
-	35, // 41: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.partial_errors:type_name -> fusion.ai.proto.data_readiness.WeatherSyncPartialError
-	5,  // 42: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
-	8,  // 43: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	8,  // 44: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	45, // [45:45] is the sub-list for method output_type
-	45, // [45:45] is the sub-list for method input_type
-	45, // [45:45] is the sub-list for extension type_name
-	45, // [45:45] is the sub-list for extension extendee
-	0,  // [0:45] is the sub-list for field type_name
+	8,  // 36: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
+	19, // 37: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunView
+	3,  // 38: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.mode:type_name -> fusion.ai.proto.data_readiness.WeatherSyncMode
+	4,  // 39: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.trigger:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTrigger
+	8,  // 40: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
+	5,  // 41: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
+	35, // 42: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.partial_errors:type_name -> fusion.ai.proto.data_readiness.WeatherSyncPartialError
+	8,  // 43: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
+	5,  // 44: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
+	8,  // 45: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
+	8,  // 46: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
+	47, // [47:47] is the sub-list for method output_type
+	47, // [47:47] is the sub-list for method input_type
+	47, // [47:47] is the sub-list for extension type_name
+	47, // [47:47] is the sub-list for extension extendee
+	0,  // [0:47] is the sub-list for field type_name
 }
 
 func init() { file_data_readiness_data_readiness_message_proto_init() }
