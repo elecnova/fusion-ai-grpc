@@ -4470,11 +4470,11 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::googl
   // accessors -------------------------------------------------------
   enum : int {
     kSiteCountFieldNumber = 1,
-    kReadyTodayFieldNumber = 2,
-    kNeedFillCountFieldNumber = 3,
-    kWeatherMissingCountFieldNumber = 4,
-    kPushSuccess24HPctFieldNumber = 5,
-    kAvgPushLatencyMsFieldNumber = 6,
+    kSiteDeltaWeekFieldNumber = 2,
+    kReadyTodayFieldNumber = 3,
+    kNeedFillCountFieldNumber = 4,
+    kWeatherMissingCountFieldNumber = 5,
+    kSitesWithGaps7DFieldNumber = 6,
   };
   // int32 site_count = 1 [json_name = "site_count"];
   void clear_site_count() ;
@@ -4486,7 +4486,18 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::googl
   void _internal_set_site_count(::int32_t value);
 
   public:
-  // int32 ready_today = 2 [json_name = "ready_today"];
+  // optional int32 site_delta_week = 2 [json_name = "site_delta_week"];
+  [[nodiscard]] bool has_site_delta_week() const;
+  void clear_site_delta_week() ;
+  [[nodiscard]] ::int32_t site_delta_week() const;
+  void set_site_delta_week(::int32_t value);
+
+  private:
+  ::int32_t _internal_site_delta_week() const;
+  void _internal_set_site_delta_week(::int32_t value);
+
+  public:
+  // int32 ready_today = 3 [json_name = "ready_today"];
   void clear_ready_today() ;
   [[nodiscard]] ::int32_t ready_today() const;
   void set_ready_today(::int32_t value);
@@ -4496,7 +4507,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::googl
   void _internal_set_ready_today(::int32_t value);
 
   public:
-  // int32 need_fill_count = 3 [json_name = "need_fill_count"];
+  // int32 need_fill_count = 4 [json_name = "need_fill_count"];
   void clear_need_fill_count() ;
   [[nodiscard]] ::int32_t need_fill_count() const;
   void set_need_fill_count(::int32_t value);
@@ -4506,7 +4517,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::googl
   void _internal_set_need_fill_count(::int32_t value);
 
   public:
-  // optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+  // optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];
   [[nodiscard]] bool has_weather_missing_count() const;
   void clear_weather_missing_count() ;
   [[nodiscard]] ::int32_t weather_missing_count() const;
@@ -4517,25 +4528,14 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::googl
   void _internal_set_weather_missing_count(::int32_t value);
 
   public:
-  // double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];
-  void clear_push_success_24h_pct() ;
-  [[nodiscard]] double push_success_24h_pct() const;
-  void set_push_success_24h_pct(double value);
+  // int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];
+  void clear_sites_with_gaps_7d() ;
+  [[nodiscard]] ::int32_t sites_with_gaps_7d() const;
+  void set_sites_with_gaps_7d(::int32_t value);
 
   private:
-  double _internal_push_success_24h_pct() const;
-  void _internal_set_push_success_24h_pct(double value);
-
-  public:
-  // optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];
-  [[nodiscard]] bool has_avg_push_latency_ms() const;
-  void clear_avg_push_latency_ms() ;
-  [[nodiscard]] ::int32_t avg_push_latency_ms() const;
-  void set_avg_push_latency_ms(::int32_t value);
-
-  private:
-  ::int32_t _internal_avg_push_latency_ms() const;
-  void _internal_set_avg_push_latency_ms(::int32_t value);
+  ::int32_t _internal_sites_with_gaps_7d() const;
+  void _internal_set_sites_with_gaps_7d(::int32_t value);
 
   public:
   // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.DataOverview)
@@ -4572,11 +4572,11 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::googl
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::int32_t site_count_;
+    ::int32_t site_delta_week_;
     ::int32_t ready_today_;
     ::int32_t need_fill_count_;
     ::int32_t weather_missing_count_;
-    double push_success_24h_pct_;
-    ::int32_t avg_push_latency_ms_;
+    ::int32_t sites_with_gaps_7d_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -9513,11 +9513,39 @@ inline void DataOverview::_internal_set_site_count(::int32_t value) {
   _impl_.site_count_ = value;
 }
 
-// int32 ready_today = 2 [json_name = "ready_today"];
+// optional int32 site_delta_week = 2 [json_name = "site_delta_week"];
+inline bool DataOverview::has_site_delta_week() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
+  return value;
+}
+inline void DataOverview::clear_site_delta_week() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_delta_week_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline ::int32_t DataOverview::site_delta_week() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataOverview.site_delta_week)
+  return _internal_site_delta_week();
+}
+inline void DataOverview::set_site_delta_week(::int32_t value) {
+  _internal_set_site_delta_week(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataOverview.site_delta_week)
+}
+inline ::int32_t DataOverview::_internal_site_delta_week() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.site_delta_week_;
+}
+inline void DataOverview::_internal_set_site_delta_week(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_delta_week_ = value;
+}
+
+// int32 ready_today = 3 [json_name = "ready_today"];
 inline void DataOverview::clear_ready_today() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.ready_today_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
 }
 inline ::int32_t DataOverview::ready_today() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataOverview.ready_today)
@@ -9525,7 +9553,7 @@ inline ::int32_t DataOverview::ready_today() const {
 }
 inline void DataOverview::set_ready_today(::int32_t value) {
   _internal_set_ready_today(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataOverview.ready_today)
 }
 inline ::int32_t DataOverview::_internal_ready_today() const {
@@ -9537,11 +9565,11 @@ inline void DataOverview::_internal_set_ready_today(::int32_t value) {
   _impl_.ready_today_ = value;
 }
 
-// int32 need_fill_count = 3 [json_name = "need_fill_count"];
+// int32 need_fill_count = 4 [json_name = "need_fill_count"];
 inline void DataOverview::clear_need_fill_count() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.need_fill_count_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
 }
 inline ::int32_t DataOverview::need_fill_count() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataOverview.need_fill_count)
@@ -9549,7 +9577,7 @@ inline ::int32_t DataOverview::need_fill_count() const {
 }
 inline void DataOverview::set_need_fill_count(::int32_t value) {
   _internal_set_need_fill_count(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataOverview.need_fill_count)
 }
 inline ::int32_t DataOverview::_internal_need_fill_count() const {
@@ -9561,15 +9589,15 @@ inline void DataOverview::_internal_set_need_fill_count(::int32_t value) {
   _impl_.need_fill_count_ = value;
 }
 
-// optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+// optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];
 inline bool DataOverview::has_weather_missing_count() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
   return value;
 }
 inline void DataOverview::clear_weather_missing_count() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.weather_missing_count_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
 }
 inline ::int32_t DataOverview::weather_missing_count() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataOverview.weather_missing_count)
@@ -9577,7 +9605,7 @@ inline ::int32_t DataOverview::weather_missing_count() const {
 }
 inline void DataOverview::set_weather_missing_count(::int32_t value) {
   _internal_set_weather_missing_count(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataOverview.weather_missing_count)
 }
 inline ::int32_t DataOverview::_internal_weather_missing_count() const {
@@ -9589,56 +9617,28 @@ inline void DataOverview::_internal_set_weather_missing_count(::int32_t value) {
   _impl_.weather_missing_count_ = value;
 }
 
-// double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];
-inline void DataOverview::clear_push_success_24h_pct() {
+// int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];
+inline void DataOverview::clear_sites_with_gaps_7d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.push_success_24h_pct_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-}
-inline double DataOverview::push_success_24h_pct() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataOverview.push_success_24h_pct)
-  return _internal_push_success_24h_pct();
-}
-inline void DataOverview::set_push_success_24h_pct(double value) {
-  _internal_set_push_success_24h_pct(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataOverview.push_success_24h_pct)
-}
-inline double DataOverview::_internal_push_success_24h_pct() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.push_success_24h_pct_;
-}
-inline void DataOverview::_internal_set_push_success_24h_pct(double value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.push_success_24h_pct_ = value;
-}
-
-// optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];
-inline bool DataOverview::has_avg_push_latency_ms() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000020U);
-  return value;
-}
-inline void DataOverview::clear_avg_push_latency_ms() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.avg_push_latency_ms_ = 0;
+  _impl_.sites_with_gaps_7d_ = 0;
   ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
 }
-inline ::int32_t DataOverview::avg_push_latency_ms() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataOverview.avg_push_latency_ms)
-  return _internal_avg_push_latency_ms();
+inline ::int32_t DataOverview::sites_with_gaps_7d() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataOverview.sites_with_gaps_7d)
+  return _internal_sites_with_gaps_7d();
 }
-inline void DataOverview::set_avg_push_latency_ms(::int32_t value) {
-  _internal_set_avg_push_latency_ms(value);
+inline void DataOverview::set_sites_with_gaps_7d(::int32_t value) {
+  _internal_set_sites_with_gaps_7d(value);
   SetHasBit(_impl_._has_bits_[0], 0x00000020U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataOverview.avg_push_latency_ms)
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataOverview.sites_with_gaps_7d)
 }
-inline ::int32_t DataOverview::_internal_avg_push_latency_ms() const {
+inline ::int32_t DataOverview::_internal_sites_with_gaps_7d() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.avg_push_latency_ms_;
+  return _impl_.sites_with_gaps_7d_;
 }
-inline void DataOverview::_internal_set_avg_push_latency_ms(::int32_t value) {
+inline void DataOverview::_internal_set_sites_with_gaps_7d(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.avg_push_latency_ms_ = value;
+  _impl_.sites_with_gaps_7d_ = value;
 }
 
 // -------------------------------------------------------------------

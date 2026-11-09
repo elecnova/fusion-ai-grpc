@@ -11,56 +11,80 @@ public interface DataOverviewOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 接入场站数（当前 service_type 有效注册）
+   * </pre>
+   *
    * <code>int32 site_count = 1 [json_name = "site_count"];</code>
    * @return The siteCount.
    */
   int getSiteCount();
 
   /**
-   * <code>int32 ready_today = 2 [json_name = "ready_today"];</code>
+   * <pre>
+   * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+   * </pre>
+   *
+   * <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+   * @return Whether the siteDeltaWeek field is set.
+   */
+  boolean hasSiteDeltaWeek();
+  /**
+   * <pre>
+   * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+   * </pre>
+   *
+   * <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+   * @return The siteDeltaWeek.
+   */
+  int getSiteDeltaWeek();
+
+  /**
+   * <pre>
+   * 今日就绪站数；就绪占比由前端 site_count 计算
+   * </pre>
+   *
+   * <code>int32 ready_today = 3 [json_name = "ready_today"];</code>
    * @return The readyToday.
    */
   int getReadyToday();
 
   /**
-   * <code>int32 need_fill_count = 3 [json_name = "need_fill_count"];</code>
+   * <pre>
+   * 今日待补齐（need_fill + severe 等需处理状态）
+   * </pre>
+   *
+   * <code>int32 need_fill_count = 4 [json_name = "need_fill_count"];</code>
    * @return The needFillCount.
    */
   int getNeedFillCount();
 
   /**
    * <pre>
-   * 仅 service_type=pv_prediction 时填写；其它业务不返回
+   * 天气缺测站数；仅 service_type=pv_prediction 时填写
    * </pre>
    *
-   * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+   * <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
    * @return Whether the weatherMissingCount field is set.
    */
   boolean hasWeatherMissingCount();
   /**
    * <pre>
-   * 仅 service_type=pv_prediction 时填写；其它业务不返回
+   * 天气缺测站数；仅 service_type=pv_prediction 时填写
    * </pre>
    *
-   * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+   * <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
    * @return The weatherMissingCount.
    */
   int getWeatherMissingCount();
 
   /**
-   * <code>double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];</code>
-   * @return The pushSuccess24hPct.
+   * <pre>
+   * 近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
+   * </pre>
+   *
+   * <code>int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];</code>
+   * @return The sitesWithGaps7d.
    */
-  double getPushSuccess24HPct();
-
-  /**
-   * <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
-   * @return Whether the avgPushLatencyMs field is set.
-   */
-  boolean hasAvgPushLatencyMs();
-  /**
-   * <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
-   * @return The avgPushLatencyMs.
-   */
-  int getAvgPushLatencyMs();
+  int getSitesWithGaps7D();
 }

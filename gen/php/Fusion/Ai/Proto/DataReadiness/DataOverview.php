@@ -10,38 +10,49 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * DataOverview 顶栏 KPI。原始功率固定 5min；天气 KPI 仅 pv 有值。
+ * DataOverview 顶栏 KPI（算法侧：有没有 / 今日是否可训可预测）。
+ * Push 成功率、写入延迟见 GetDataPipelineStats，不进本消息。
  *
  * Generated from protobuf message <code>fusion.ai.proto.data_readiness.DataOverview</code>
  */
 class DataOverview extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 接入场站数（当前 service_type 有效注册）
+     *
      * Generated from protobuf field <code>int32 site_count = 1 [json_name = "site_count"];</code>
      */
     protected $site_count = 0;
     /**
-     * Generated from protobuf field <code>int32 ready_today = 2 [json_name = "ready_today"];</code>
+     * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+     *
+     * Generated from protobuf field <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+     */
+    protected $site_delta_week = null;
+    /**
+     * 今日就绪站数；就绪占比由前端 site_count 计算
+     *
+     * Generated from protobuf field <code>int32 ready_today = 3 [json_name = "ready_today"];</code>
      */
     protected $ready_today = 0;
     /**
-     * Generated from protobuf field <code>int32 need_fill_count = 3 [json_name = "need_fill_count"];</code>
+     * 今日待补齐（need_fill + severe 等需处理状态）
+     *
+     * Generated from protobuf field <code>int32 need_fill_count = 4 [json_name = "need_fill_count"];</code>
      */
     protected $need_fill_count = 0;
     /**
-     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * 天气缺测站数；仅 service_type=pv_prediction 时填写
      *
-     * Generated from protobuf field <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * Generated from protobuf field <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
      */
     protected $weather_missing_count = null;
     /**
-     * Generated from protobuf field <code>double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];</code>
+     * 近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
+     *
+     * Generated from protobuf field <code>int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];</code>
      */
-    protected $push_success_24h_pct = 0.0;
-    /**
-     * Generated from protobuf field <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
-     */
-    protected $avg_push_latency_ms = null;
+    protected $sites_with_gaps_7d = 0;
 
     /**
      * Constructor.
@@ -50,12 +61,17 @@ class DataOverview extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $site_count
+     *           接入场站数（当前 service_type 有效注册）
+     *     @type int $site_delta_week
+     *           相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
      *     @type int $ready_today
+     *           今日就绪站数；就绪占比由前端 site_count 计算
      *     @type int $need_fill_count
+     *           今日待补齐（need_fill + severe 等需处理状态）
      *     @type int $weather_missing_count
-     *           仅 service_type=pv_prediction 时填写；其它业务不返回
-     *     @type float $push_success_24h_pct
-     *     @type int $avg_push_latency_ms
+     *           天气缺测站数；仅 service_type=pv_prediction 时填写
+     *     @type int $sites_with_gaps_7d
+     *           近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
      * }
      */
     public function __construct($data = null)
@@ -65,6 +81,8 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 接入场站数（当前 service_type 有效注册）
+     *
      * Generated from protobuf field <code>int32 site_count = 1 [json_name = "site_count"];</code>
      * @return int
      */
@@ -74,6 +92,8 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 接入场站数（当前 service_type 有效注册）
+     *
      * Generated from protobuf field <code>int32 site_count = 1 [json_name = "site_count"];</code>
      * @param int $var
      * @return $this
@@ -87,7 +107,45 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 ready_today = 2 [json_name = "ready_today"];</code>
+     * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+     *
+     * Generated from protobuf field <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+     * @return int
+     */
+    public function getSiteDeltaWeek()
+    {
+        return isset($this->site_delta_week) ? $this->site_delta_week : 0;
+    }
+
+    public function hasSiteDeltaWeek()
+    {
+        return isset($this->site_delta_week);
+    }
+
+    public function clearSiteDeltaWeek()
+    {
+        unset($this->site_delta_week);
+    }
+
+    /**
+     * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+     *
+     * Generated from protobuf field <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSiteDeltaWeek(int $var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->site_delta_week = $var;
+
+        return $this;
+    }
+
+    /**
+     * 今日就绪站数；就绪占比由前端 site_count 计算
+     *
+     * Generated from protobuf field <code>int32 ready_today = 3 [json_name = "ready_today"];</code>
      * @return int
      */
     public function getReadyToday()
@@ -96,7 +154,9 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 ready_today = 2 [json_name = "ready_today"];</code>
+     * 今日就绪站数；就绪占比由前端 site_count 计算
+     *
+     * Generated from protobuf field <code>int32 ready_today = 3 [json_name = "ready_today"];</code>
      * @param int $var
      * @return $this
      */
@@ -109,7 +169,9 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 need_fill_count = 3 [json_name = "need_fill_count"];</code>
+     * 今日待补齐（need_fill + severe 等需处理状态）
+     *
+     * Generated from protobuf field <code>int32 need_fill_count = 4 [json_name = "need_fill_count"];</code>
      * @return int
      */
     public function getNeedFillCount()
@@ -118,7 +180,9 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 need_fill_count = 3 [json_name = "need_fill_count"];</code>
+     * 今日待补齐（need_fill + severe 等需处理状态）
+     *
+     * Generated from protobuf field <code>int32 need_fill_count = 4 [json_name = "need_fill_count"];</code>
      * @param int $var
      * @return $this
      */
@@ -131,9 +195,9 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * 天气缺测站数；仅 service_type=pv_prediction 时填写
      *
-     * Generated from protobuf field <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * Generated from protobuf field <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
      * @return int
      */
     public function getWeatherMissingCount()
@@ -152,9 +216,9 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * 天气缺测站数；仅 service_type=pv_prediction 时填写
      *
-     * Generated from protobuf field <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * Generated from protobuf field <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
      * @param int $var
      * @return $this
      */
@@ -167,54 +231,27 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];</code>
-     * @return float
-     */
-    public function getPushSuccess24HPct()
-    {
-        return $this->push_success_24h_pct;
-    }
-
-    /**
-     * Generated from protobuf field <code>double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setPushSuccess24HPct(float $var)
-    {
-        $this->push_success_24h_pct = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
+     * 近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
+     *
+     * Generated from protobuf field <code>int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];</code>
      * @return int
      */
-    public function getAvgPushLatencyMs()
+    public function getSitesWithGaps7D()
     {
-        return isset($this->avg_push_latency_ms) ? $this->avg_push_latency_ms : 0;
-    }
-
-    public function hasAvgPushLatencyMs()
-    {
-        return isset($this->avg_push_latency_ms);
-    }
-
-    public function clearAvgPushLatencyMs()
-    {
-        unset($this->avg_push_latency_ms);
+        return $this->sites_with_gaps_7d;
     }
 
     /**
-     * Generated from protobuf field <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
+     * 近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
+     *
+     * Generated from protobuf field <code>int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];</code>
      * @param int $var
      * @return $this
      */
-    public function setAvgPushLatencyMs(int $var)
+    public function setSitesWithGaps7D(int $var)
     {
         GPBUtil::checkInt32($var);
-        $this->avg_push_latency_ms = $var;
+        $this->sites_with_gaps_7d = $var;
 
         return $this;
     }

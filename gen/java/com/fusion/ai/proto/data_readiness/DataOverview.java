@@ -7,7 +7,8 @@ package com.fusion.ai.proto.data_readiness;
 
 /**
  * <pre>
- * DataOverview 顶栏 KPI。原始功率固定 5min；天气 KPI 仅 pv 有值。
+ * DataOverview 顶栏 KPI（算法侧：有没有 / 今日是否可训可预测）。
+ * Push 成功率、写入延迟见 GetDataPipelineStats，不进本消息。
  * </pre>
  *
  * Protobuf type {@code fusion.ai.proto.data_readiness.DataOverview}
@@ -56,6 +57,10 @@ private static final long serialVersionUID = 0L;
   public static final int SITE_COUNT_FIELD_NUMBER = 1;
   private int siteCount_ = 0;
   /**
+   * <pre>
+   * 接入场站数（当前 service_type 有效注册）
+   * </pre>
+   *
    * <code>int32 site_count = 1 [json_name = "site_count"];</code>
    * @return The siteCount.
    */
@@ -64,10 +69,41 @@ private static final long serialVersionUID = 0L;
     return siteCount_;
   }
 
-  public static final int READY_TODAY_FIELD_NUMBER = 2;
+  public static final int SITE_DELTA_WEEK_FIELD_NUMBER = 2;
+  private int siteDeltaWeek_ = 0;
+  /**
+   * <pre>
+   * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+   * </pre>
+   *
+   * <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+   * @return Whether the siteDeltaWeek field is set.
+   */
+  @java.lang.Override
+  public boolean hasSiteDeltaWeek() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+   * </pre>
+   *
+   * <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+   * @return The siteDeltaWeek.
+   */
+  @java.lang.Override
+  public int getSiteDeltaWeek() {
+    return siteDeltaWeek_;
+  }
+
+  public static final int READY_TODAY_FIELD_NUMBER = 3;
   private int readyToday_ = 0;
   /**
-   * <code>int32 ready_today = 2 [json_name = "ready_today"];</code>
+   * <pre>
+   * 今日就绪站数；就绪占比由前端 site_count 计算
+   * </pre>
+   *
+   * <code>int32 ready_today = 3 [json_name = "ready_today"];</code>
    * @return The readyToday.
    */
   @java.lang.Override
@@ -75,10 +111,14 @@ private static final long serialVersionUID = 0L;
     return readyToday_;
   }
 
-  public static final int NEED_FILL_COUNT_FIELD_NUMBER = 3;
+  public static final int NEED_FILL_COUNT_FIELD_NUMBER = 4;
   private int needFillCount_ = 0;
   /**
-   * <code>int32 need_fill_count = 3 [json_name = "need_fill_count"];</code>
+   * <pre>
+   * 今日待补齐（need_fill + severe 等需处理状态）
+   * </pre>
+   *
+   * <code>int32 need_fill_count = 4 [json_name = "need_fill_count"];</code>
    * @return The needFillCount.
    */
   @java.lang.Override
@@ -86,26 +126,26 @@ private static final long serialVersionUID = 0L;
     return needFillCount_;
   }
 
-  public static final int WEATHER_MISSING_COUNT_FIELD_NUMBER = 4;
+  public static final int WEATHER_MISSING_COUNT_FIELD_NUMBER = 5;
   private int weatherMissingCount_ = 0;
   /**
    * <pre>
-   * 仅 service_type=pv_prediction 时填写；其它业务不返回
+   * 天气缺测站数；仅 service_type=pv_prediction 时填写
    * </pre>
    *
-   * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+   * <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
    * @return Whether the weatherMissingCount field is set.
    */
   @java.lang.Override
   public boolean hasWeatherMissingCount() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
-   * 仅 service_type=pv_prediction 时填写；其它业务不返回
+   * 天气缺测站数；仅 service_type=pv_prediction 时填写
    * </pre>
    *
-   * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+   * <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
    * @return The weatherMissingCount.
    */
   @java.lang.Override
@@ -113,34 +153,19 @@ private static final long serialVersionUID = 0L;
     return weatherMissingCount_;
   }
 
-  public static final int PUSH_SUCCESS_24H_PCT_FIELD_NUMBER = 5;
-  private double pushSuccess24HPct_ = 0D;
+  public static final int SITES_WITH_GAPS_7D_FIELD_NUMBER = 6;
+  private int sitesWithGaps7D_ = 0;
   /**
-   * <code>double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];</code>
-   * @return The pushSuccess24hPct.
+   * <pre>
+   * 近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
+   * </pre>
+   *
+   * <code>int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];</code>
+   * @return The sitesWithGaps7d.
    */
   @java.lang.Override
-  public double getPushSuccess24HPct() {
-    return pushSuccess24HPct_;
-  }
-
-  public static final int AVG_PUSH_LATENCY_MS_FIELD_NUMBER = 6;
-  private int avgPushLatencyMs_ = 0;
-  /**
-   * <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
-   * @return Whether the avgPushLatencyMs field is set.
-   */
-  @java.lang.Override
-  public boolean hasAvgPushLatencyMs() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
-   * @return The avgPushLatencyMs.
-   */
-  @java.lang.Override
-  public int getAvgPushLatencyMs() {
-    return avgPushLatencyMs_;
+  public int getSitesWithGaps7D() {
+    return sitesWithGaps7D_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -160,20 +185,20 @@ private static final long serialVersionUID = 0L;
     if (siteCount_ != 0) {
       output.writeInt32(1, siteCount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(2, siteDeltaWeek_);
+    }
     if (readyToday_ != 0) {
-      output.writeInt32(2, readyToday_);
+      output.writeInt32(3, readyToday_);
     }
     if (needFillCount_ != 0) {
-      output.writeInt32(3, needFillCount_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeInt32(4, weatherMissingCount_);
-    }
-    if (java.lang.Double.doubleToRawLongBits(pushSuccess24HPct_) != 0) {
-      output.writeDouble(5, pushSuccess24HPct_);
+      output.writeInt32(4, needFillCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeInt32(6, avgPushLatencyMs_);
+      output.writeInt32(5, weatherMissingCount_);
+    }
+    if (sitesWithGaps7D_ != 0) {
+      output.writeInt32(6, sitesWithGaps7D_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -183,25 +208,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, siteCount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, siteDeltaWeek_);
+    }
     if (readyToday_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, readyToday_);
+        .computeInt32Size(3, readyToday_);
     }
     if (needFillCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, needFillCount_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, weatherMissingCount_);
-    }
-    if (java.lang.Double.doubleToRawLongBits(pushSuccess24HPct_) != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(5, pushSuccess24HPct_);
+        .computeInt32Size(4, needFillCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, avgPushLatencyMs_);
+        .computeInt32Size(5, weatherMissingCount_);
+    }
+    if (sitesWithGaps7D_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, sitesWithGaps7D_);
     }
     return size;
   }
@@ -229,6 +254,11 @@ private static final long serialVersionUID = 0L;
 
     if (getSiteCount()
         != other.getSiteCount()) return false;
+    if (hasSiteDeltaWeek() != other.hasSiteDeltaWeek()) return false;
+    if (hasSiteDeltaWeek()) {
+      if (getSiteDeltaWeek()
+          != other.getSiteDeltaWeek()) return false;
+    }
     if (getReadyToday()
         != other.getReadyToday()) return false;
     if (getNeedFillCount()
@@ -238,14 +268,8 @@ private static final long serialVersionUID = 0L;
       if (getWeatherMissingCount()
           != other.getWeatherMissingCount()) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getPushSuccess24HPct())
-        != java.lang.Double.doubleToLongBits(
-            other.getPushSuccess24HPct())) return false;
-    if (hasAvgPushLatencyMs() != other.hasAvgPushLatencyMs()) return false;
-    if (hasAvgPushLatencyMs()) {
-      if (getAvgPushLatencyMs()
-          != other.getAvgPushLatencyMs()) return false;
-    }
+    if (getSitesWithGaps7D()
+        != other.getSitesWithGaps7D()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -259,6 +283,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SITE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getSiteCount();
+    if (hasSiteDeltaWeek()) {
+      hash = (37 * hash) + SITE_DELTA_WEEK_FIELD_NUMBER;
+      hash = (53 * hash) + getSiteDeltaWeek();
+    }
     hash = (37 * hash) + READY_TODAY_FIELD_NUMBER;
     hash = (53 * hash) + getReadyToday();
     hash = (37 * hash) + NEED_FILL_COUNT_FIELD_NUMBER;
@@ -267,13 +295,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WEATHER_MISSING_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getWeatherMissingCount();
     }
-    hash = (37 * hash) + PUSH_SUCCESS_24H_PCT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getPushSuccess24HPct()));
-    if (hasAvgPushLatencyMs()) {
-      hash = (37 * hash) + AVG_PUSH_LATENCY_MS_FIELD_NUMBER;
-      hash = (53 * hash) + getAvgPushLatencyMs();
-    }
+    hash = (37 * hash) + SITES_WITH_GAPS_7D_FIELD_NUMBER;
+    hash = (53 * hash) + getSitesWithGaps7D();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -373,7 +396,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * DataOverview 顶栏 KPI。原始功率固定 5min；天气 KPI 仅 pv 有值。
+   * DataOverview 顶栏 KPI（算法侧：有没有 / 今日是否可训可预测）。
+   * Push 成功率、写入延迟见 GetDataPipelineStats，不进本消息。
    * </pre>
    *
    * Protobuf type {@code fusion.ai.proto.data_readiness.DataOverview}
@@ -410,11 +434,11 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       siteCount_ = 0;
+      siteDeltaWeek_ = 0;
       readyToday_ = 0;
       needFillCount_ = 0;
       weatherMissingCount_ = 0;
-      pushSuccess24HPct_ = 0D;
-      avgPushLatencyMs_ = 0;
+      sitesWithGaps7D_ = 0;
       return this;
     }
 
@@ -451,23 +475,23 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.siteCount_ = siteCount_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.readyToday_ = readyToday_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.needFillCount_ = needFillCount_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.weatherMissingCount_ = weatherMissingCount_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.siteDeltaWeek_ = siteDeltaWeek_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.readyToday_ = readyToday_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.needFillCount_ = needFillCount_;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.pushSuccess24HPct_ = pushSuccess24HPct_;
+        result.weatherMissingCount_ = weatherMissingCount_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.avgPushLatencyMs_ = avgPushLatencyMs_;
-        to_bitField0_ |= 0x00000002;
+        result.sitesWithGaps7D_ = sitesWithGaps7D_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -487,6 +511,9 @@ private static final long serialVersionUID = 0L;
       if (other.getSiteCount() != 0) {
         setSiteCount(other.getSiteCount());
       }
+      if (other.hasSiteDeltaWeek()) {
+        setSiteDeltaWeek(other.getSiteDeltaWeek());
+      }
       if (other.getReadyToday() != 0) {
         setReadyToday(other.getReadyToday());
       }
@@ -496,11 +523,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasWeatherMissingCount()) {
         setWeatherMissingCount(other.getWeatherMissingCount());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getPushSuccess24HPct()) != 0) {
-        setPushSuccess24HPct(other.getPushSuccess24HPct());
-      }
-      if (other.hasAvgPushLatencyMs()) {
-        setAvgPushLatencyMs(other.getAvgPushLatencyMs());
+      if (other.getSitesWithGaps7D() != 0) {
+        setSitesWithGaps7D(other.getSitesWithGaps7D());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -532,27 +556,27 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 8
             case 16: {
-              readyToday_ = input.readInt32();
+              siteDeltaWeek_ = input.readInt32();
               bitField0_ |= 0x00000002;
               break;
             } // case 16
             case 24: {
-              needFillCount_ = input.readInt32();
+              readyToday_ = input.readInt32();
               bitField0_ |= 0x00000004;
               break;
             } // case 24
             case 32: {
-              weatherMissingCount_ = input.readInt32();
+              needFillCount_ = input.readInt32();
               bitField0_ |= 0x00000008;
               break;
             } // case 32
-            case 41: {
-              pushSuccess24HPct_ = input.readDouble();
+            case 40: {
+              weatherMissingCount_ = input.readInt32();
               bitField0_ |= 0x00000010;
               break;
-            } // case 41
+            } // case 40
             case 48: {
-              avgPushLatencyMs_ = input.readInt32();
+              sitesWithGaps7D_ = input.readInt32();
               bitField0_ |= 0x00000020;
               break;
             } // case 48
@@ -575,6 +599,10 @@ private static final long serialVersionUID = 0L;
 
     private int siteCount_ ;
     /**
+     * <pre>
+     * 接入场站数（当前 service_type 有效注册）
+     * </pre>
+     *
      * <code>int32 site_count = 1 [json_name = "site_count"];</code>
      * @return The siteCount.
      */
@@ -583,6 +611,10 @@ private static final long serialVersionUID = 0L;
       return siteCount_;
     }
     /**
+     * <pre>
+     * 接入场站数（当前 service_type 有效注册）
+     * </pre>
+     *
      * <code>int32 site_count = 1 [json_name = "site_count"];</code>
      * @param value The siteCount to set.
      * @return This builder for chaining.
@@ -595,6 +627,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 接入场站数（当前 service_type 有效注册）
+     * </pre>
+     *
      * <code>int32 site_count = 1 [json_name = "site_count"];</code>
      * @return This builder for chaining.
      */
@@ -605,9 +641,69 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int siteDeltaWeek_ ;
+    /**
+     * <pre>
+     * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+     * </pre>
+     *
+     * <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+     * @return Whether the siteDeltaWeek field is set.
+     */
+    @java.lang.Override
+    public boolean hasSiteDeltaWeek() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+     * </pre>
+     *
+     * <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+     * @return The siteDeltaWeek.
+     */
+    @java.lang.Override
+    public int getSiteDeltaWeek() {
+      return siteDeltaWeek_;
+    }
+    /**
+     * <pre>
+     * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+     * </pre>
+     *
+     * <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+     * @param value The siteDeltaWeek to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSiteDeltaWeek(int value) {
+
+      siteDeltaWeek_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+     * </pre>
+     *
+     * <code>optional int32 site_delta_week = 2 [json_name = "site_delta_week"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSiteDeltaWeek() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      siteDeltaWeek_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int readyToday_ ;
     /**
-     * <code>int32 ready_today = 2 [json_name = "ready_today"];</code>
+     * <pre>
+     * 今日就绪站数；就绪占比由前端 site_count 计算
+     * </pre>
+     *
+     * <code>int32 ready_today = 3 [json_name = "ready_today"];</code>
      * @return The readyToday.
      */
     @java.lang.Override
@@ -615,23 +711,31 @@ private static final long serialVersionUID = 0L;
       return readyToday_;
     }
     /**
-     * <code>int32 ready_today = 2 [json_name = "ready_today"];</code>
+     * <pre>
+     * 今日就绪站数；就绪占比由前端 site_count 计算
+     * </pre>
+     *
+     * <code>int32 ready_today = 3 [json_name = "ready_today"];</code>
      * @param value The readyToday to set.
      * @return This builder for chaining.
      */
     public Builder setReadyToday(int value) {
 
       readyToday_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 ready_today = 2 [json_name = "ready_today"];</code>
+     * <pre>
+     * 今日就绪站数；就绪占比由前端 site_count 计算
+     * </pre>
+     *
+     * <code>int32 ready_today = 3 [json_name = "ready_today"];</code>
      * @return This builder for chaining.
      */
     public Builder clearReadyToday() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       readyToday_ = 0;
       onChanged();
       return this;
@@ -639,7 +743,11 @@ private static final long serialVersionUID = 0L;
 
     private int needFillCount_ ;
     /**
-     * <code>int32 need_fill_count = 3 [json_name = "need_fill_count"];</code>
+     * <pre>
+     * 今日待补齐（need_fill + severe 等需处理状态）
+     * </pre>
+     *
+     * <code>int32 need_fill_count = 4 [json_name = "need_fill_count"];</code>
      * @return The needFillCount.
      */
     @java.lang.Override
@@ -647,23 +755,31 @@ private static final long serialVersionUID = 0L;
       return needFillCount_;
     }
     /**
-     * <code>int32 need_fill_count = 3 [json_name = "need_fill_count"];</code>
+     * <pre>
+     * 今日待补齐（need_fill + severe 等需处理状态）
+     * </pre>
+     *
+     * <code>int32 need_fill_count = 4 [json_name = "need_fill_count"];</code>
      * @param value The needFillCount to set.
      * @return This builder for chaining.
      */
     public Builder setNeedFillCount(int value) {
 
       needFillCount_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 need_fill_count = 3 [json_name = "need_fill_count"];</code>
+     * <pre>
+     * 今日待补齐（need_fill + severe 等需处理状态）
+     * </pre>
+     *
+     * <code>int32 need_fill_count = 4 [json_name = "need_fill_count"];</code>
      * @return This builder for chaining.
      */
     public Builder clearNeedFillCount() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       needFillCount_ = 0;
       onChanged();
       return this;
@@ -672,22 +788,22 @@ private static final long serialVersionUID = 0L;
     private int weatherMissingCount_ ;
     /**
      * <pre>
-     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * 天气缺测站数；仅 service_type=pv_prediction 时填写
      * </pre>
      *
-     * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
      * @return Whether the weatherMissingCount field is set.
      */
     @java.lang.Override
     public boolean hasWeatherMissingCount() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
-     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * 天气缺测站数；仅 service_type=pv_prediction 时填写
      * </pre>
      *
-     * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
      * @return The weatherMissingCount.
      */
     @java.lang.Override
@@ -696,103 +812,75 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * 天气缺测站数；仅 service_type=pv_prediction 时填写
      * </pre>
      *
-     * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
      * @param value The weatherMissingCount to set.
      * @return This builder for chaining.
      */
     public Builder setWeatherMissingCount(int value) {
 
       weatherMissingCount_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 仅 service_type=pv_prediction 时填写；其它业务不返回
-     * </pre>
-     *
-     * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearWeatherMissingCount() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      weatherMissingCount_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private double pushSuccess24HPct_ ;
-    /**
-     * <code>double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];</code>
-     * @return The pushSuccess24hPct.
-     */
-    @java.lang.Override
-    public double getPushSuccess24HPct() {
-      return pushSuccess24HPct_;
-    }
-    /**
-     * <code>double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];</code>
-     * @param value The pushSuccess24hPct to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPushSuccess24HPct(double value) {
-
-      pushSuccess24HPct_ = value;
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];</code>
+     * <pre>
+     * 天气缺测站数；仅 service_type=pv_prediction 时填写
+     * </pre>
+     *
+     * <code>optional int32 weather_missing_count = 5 [json_name = "weather_missing_count"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearPushSuccess24HPct() {
+    public Builder clearWeatherMissingCount() {
       bitField0_ = (bitField0_ & ~0x00000010);
-      pushSuccess24HPct_ = 0D;
+      weatherMissingCount_ = 0;
       onChanged();
       return this;
     }
 
-    private int avgPushLatencyMs_ ;
+    private int sitesWithGaps7D_ ;
     /**
-     * <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
-     * @return Whether the avgPushLatencyMs field is set.
+     * <pre>
+     * 近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
+     * </pre>
+     *
+     * <code>int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];</code>
+     * @return The sitesWithGaps7d.
      */
     @java.lang.Override
-    public boolean hasAvgPushLatencyMs() {
-      return ((bitField0_ & 0x00000020) != 0);
+    public int getSitesWithGaps7D() {
+      return sitesWithGaps7D_;
     }
     /**
-     * <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
-     * @return The avgPushLatencyMs.
-     */
-    @java.lang.Override
-    public int getAvgPushLatencyMs() {
-      return avgPushLatencyMs_;
-    }
-    /**
-     * <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
-     * @param value The avgPushLatencyMs to set.
+     * <pre>
+     * 近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
+     * </pre>
+     *
+     * <code>int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];</code>
+     * @param value The sitesWithGaps7d to set.
      * @return This builder for chaining.
      */
-    public Builder setAvgPushLatencyMs(int value) {
+    public Builder setSitesWithGaps7D(int value) {
 
-      avgPushLatencyMs_ = value;
+      sitesWithGaps7D_ = value;
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
+     * <pre>
+     * 近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
+     * </pre>
+     *
+     * <code>int32 sites_with_gaps_7d = 6 [json_name = "sites_with_gaps_7d"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearAvgPushLatencyMs() {
+    public Builder clearSitesWithGaps7D() {
       bitField0_ = (bitField0_ & ~0x00000020);
-      avgPushLatencyMs_ = 0;
+      sitesWithGaps7D_ = 0;
       onChanged();
       return this;
     }

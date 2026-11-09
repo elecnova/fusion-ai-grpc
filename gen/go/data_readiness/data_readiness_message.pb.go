@@ -473,18 +473,24 @@ func (HeatmapLevel) EnumDescriptor() ([]byte, []int) {
 	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{7}
 }
 
-// DataOverview 顶栏 KPI。原始功率固定 5min；天气 KPI 仅 pv 有值。
+// DataOverview 顶栏 KPI（算法侧：有没有 / 今日是否可训可预测）。
+// Push 成功率、写入延迟见 GetDataPipelineStats，不进本消息。
 type DataOverview struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	SiteCount     int32                  `protobuf:"varint,1,opt,name=site_count,proto3" json:"site_count,omitempty"`
-	ReadyToday    int32                  `protobuf:"varint,2,opt,name=ready_today,proto3" json:"ready_today,omitempty"`
-	NeedFillCount int32                  `protobuf:"varint,3,opt,name=need_fill_count,proto3" json:"need_fill_count,omitempty"`
-	// 仅 service_type=pv_prediction 时填写；其它业务不返回
-	WeatherMissingCount *int32  `protobuf:"varint,4,opt,name=weather_missing_count,proto3,oneof" json:"weather_missing_count,omitempty"`
-	PushSuccess_24HPct  float64 `protobuf:"fixed64,5,opt,name=push_success_24h_pct,proto3" json:"push_success_24h_pct,omitempty"`
-	AvgPushLatencyMs    *int32  `protobuf:"varint,6,opt,name=avg_push_latency_ms,proto3,oneof" json:"avg_push_latency_ms,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 接入场站数（当前 service_type 有效注册）
+	SiteCount int32 `protobuf:"varint,1,opt,name=site_count,proto3" json:"site_count,omitempty"`
+	// 相对上周新增（原型「+N 本周」）；无创建时间统计时可省略
+	SiteDeltaWeek *int32 `protobuf:"varint,2,opt,name=site_delta_week,proto3,oneof" json:"site_delta_week,omitempty"`
+	// 今日就绪站数；就绪占比由前端 site_count 计算
+	ReadyToday int32 `protobuf:"varint,3,opt,name=ready_today,proto3" json:"ready_today,omitempty"`
+	// 今日待补齐（need_fill + severe 等需处理状态）
+	NeedFillCount int32 `protobuf:"varint,4,opt,name=need_fill_count,proto3" json:"need_fill_count,omitempty"`
+	// 天气缺测站数；仅 service_type=pv_prediction 时填写
+	WeatherMissingCount *int32 `protobuf:"varint,5,opt,name=weather_missing_count,proto3,oneof" json:"weather_missing_count,omitempty"`
+	// 近 7 日功率有缺口的场站数（覆盖未达标或存在缺口点）
+	SitesWithGaps_7D int32 `protobuf:"varint,6,opt,name=sites_with_gaps_7d,proto3" json:"sites_with_gaps_7d,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *DataOverview) Reset() {
@@ -524,6 +530,13 @@ func (x *DataOverview) GetSiteCount() int32 {
 	return 0
 }
 
+func (x *DataOverview) GetSiteDeltaWeek() int32 {
+	if x != nil && x.SiteDeltaWeek != nil {
+		return *x.SiteDeltaWeek
+	}
+	return 0
+}
+
 func (x *DataOverview) GetReadyToday() int32 {
 	if x != nil {
 		return x.ReadyToday
@@ -545,16 +558,9 @@ func (x *DataOverview) GetWeatherMissingCount() int32 {
 	return 0
 }
 
-func (x *DataOverview) GetPushSuccess_24HPct() float64 {
+func (x *DataOverview) GetSitesWithGaps_7D() int32 {
 	if x != nil {
-		return x.PushSuccess_24HPct
-	}
-	return 0
-}
-
-func (x *DataOverview) GetAvgPushLatencyMs() int32 {
-	if x != nil && x.AvgPushLatencyMs != nil {
-		return *x.AvgPushLatencyMs
+		return x.SitesWithGaps_7D
 	}
 	return 0
 }
@@ -2791,18 +2797,18 @@ var File_data_readiness_data_readiness_message_proto protoreflect.FileDescriptor
 
 const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"\n" +
-	"+data_readiness/data_readiness_message.proto\x12\x1efusion.ai.proto.data_readiness\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd2\x02\n" +
+	"+data_readiness/data_readiness_message.proto\x12\x1efusion.ai.proto.data_readiness\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc2\x02\n" +
 	"\fDataOverview\x12\x1e\n" +
 	"\n" +
 	"site_count\x18\x01 \x01(\x05R\n" +
-	"site_count\x12 \n" +
-	"\vready_today\x18\x02 \x01(\x05R\vready_today\x12(\n" +
-	"\x0fneed_fill_count\x18\x03 \x01(\x05R\x0fneed_fill_count\x129\n" +
-	"\x15weather_missing_count\x18\x04 \x01(\x05H\x00R\x15weather_missing_count\x88\x01\x01\x122\n" +
-	"\x14push_success_24h_pct\x18\x05 \x01(\x01R\x14push_success_24h_pct\x125\n" +
-	"\x13avg_push_latency_ms\x18\x06 \x01(\x05H\x01R\x13avg_push_latency_ms\x88\x01\x01B\x18\n" +
-	"\x16_weather_missing_countB\x16\n" +
-	"\x14_avg_push_latency_ms\"H\n" +
+	"site_count\x12-\n" +
+	"\x0fsite_delta_week\x18\x02 \x01(\x05H\x00R\x0fsite_delta_week\x88\x01\x01\x12 \n" +
+	"\vready_today\x18\x03 \x01(\x05R\vready_today\x12(\n" +
+	"\x0fneed_fill_count\x18\x04 \x01(\x05R\x0fneed_fill_count\x129\n" +
+	"\x15weather_missing_count\x18\x05 \x01(\x05H\x01R\x15weather_missing_count\x88\x01\x01\x12.\n" +
+	"\x12sites_with_gaps_7d\x18\x06 \x01(\x05R\x12sites_with_gaps_7dB\x12\n" +
+	"\x10_site_delta_weekB\x18\n" +
+	"\x16_weather_missing_count\"H\n" +
 	"\x12CoverageTrendPoint\x12\x1c\n" +
 	"\tstat_date\x18\x01 \x01(\tR\tstat_date\x12\x14\n" +
 	"\x05ratio\x18\x02 \x01(\x01R\x05ratio\"\x89\a\n" +

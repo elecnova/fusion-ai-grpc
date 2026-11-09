@@ -218,247 +218,246 @@ public final class DataReadinessMessageProto extends com.google.protobuf.Generat
       "\n+data_readiness/data_readiness_message." +
       "proto\022\036fusion.ai.proto.data_readiness\032\033b" +
       "uf/validate/validate.proto\032\037google/proto" +
-      "buf/timestamp.proto\"\322\002\n\014DataOverview\022\036\n\n" +
-      "site_count\030\001 \001(\005R\nsite_count\022 \n\013ready_to" +
-      "day\030\002 \001(\005R\013ready_today\022(\n\017need_fill_coun" +
-      "t\030\003 \001(\005R\017need_fill_count\0229\n\025weather_miss" +
-      "ing_count\030\004 \001(\005H\000R\025weather_missing_count" +
-      "\210\001\001\0222\n\024push_success_24h_pct\030\005 \001(\001R\024push_" +
-      "success_24h_pct\0225\n\023avg_push_latency_ms\030\006" +
-      " \001(\005H\001R\023avg_push_latency_ms\210\001\001B\030\n\026_weath" +
-      "er_missing_countB\026\n\024_avg_push_latency_ms" +
-      "\"H\n\022CoverageTrendPoint\022\034\n\tstat_date\030\001 \001(" +
-      "\tR\tstat_date\022\024\n\005ratio\030\002 \001(\001R\005ratio\"\211\007\n\013D" +
-      "ataSiteRow\022(\n\017registration_id\030\001 \001(\tR\017reg" +
-      "istration_id\022\030\n\007site_id\030\002 \001(\tR\007site_id\022\034" +
-      "\n\tsite_name\030\003 \001(\tR\tsite_name\022\"\n\014service_" +
-      "type\030\004 \001(\tR\014service_type\022L\n\013data_source\030" +
-      "\005 \001(\0162*.fusion.ai.proto.data_readiness.D" +
-      "ataSourceR\013data_source\0221\n\021coverage_ratio" +
-      "_7d\030\006 \001(\001H\000R\021coverage_ratio_7d\210\001\001\022N\n\010tre" +
-      "nd_7d\030\007 \003(\01322.fusion.ai.proto.data_readi" +
-      "ness.CoverageTrendPointR\010trend_7d\022Z\n\016wea" +
-      "ther_status\030\010 \001(\0162-.fusion.ai.proto.data" +
-      "_readiness.WeatherStatusH\001R\016weather_stat" +
-      "us\210\001\001\022-\n\017weather_display\030\t \001(\tH\002R\017weathe" +
-      "r_display\210\001\001\022C\n\014last_push_at\030\n \001(\0132\032.goo" +
-      "gle.protobuf.TimestampH\003R\014last_push_at\210\001" +
-      "\001\022G\n\016last_ingest_at\030\013 \001(\0132\032.google.proto" +
-      "buf.TimestampH\004R\016last_ingest_at\210\001\001\022$\n\rga" +
-      "p_points_7d\030\014 \001(\005R\rgap_points_7d\022[\n\020read" +
-      "iness_status\030\r \001(\0162/.fusion.ai.proto.dat" +
-      "a_readiness.ReadinessStatusR\020readiness_s" +
-      "tatus\022&\n\016workbench_href\030\016 \001(\tR\016workbench" +
-      "_hrefB\024\n\022_coverage_ratio_7dB\021\n\017_weather_" +
-      "statusB\022\n\020_weather_displayB\017\n\r_last_push" +
-      "_atB\021\n\017_last_ingest_at\"\232\001\n\017DataSiteRowPa" +
-      "ge\022?\n\004rows\030\001 \003(\0132+.fusion.ai.proto.data_" +
-      "readiness.DataSiteRowR\004rows\022\024\n\005total\030\002 \001" +
-      "(\005R\005total\022\022\n\004page\030\003 \001(\005R\004page\022\034\n\tpage_si" +
-      "ze\030\004 \001(\005R\tpage_size\"\204\001\n\nHeatmapDay\022\034\n\tst" +
-      "at_date\030\001 \001(\tR\tstat_date\022B\n\005level\030\002 \001(\0162" +
-      ",.fusion.ai.proto.data_readiness.Heatmap" +
-      "LevelR\005level\022\024\n\005ratio\030\003 \001(\001R\005ratio\"\251\006\n\021D" +
-      "ataSiteReadiness\022(\n\017registration_id\030\001 \001(" +
-      "\tR\017registration_id\022\030\n\007site_id\030\002 \001(\tR\007sit" +
-      "e_id\022\034\n\tsite_name\030\003 \001(\tR\tsite_name\022\"\n\014se" +
-      "rvice_type\030\004 \001(\tR\014service_type\022L\n\013data_s" +
-      "ource\030\005 \001(\0162*.fusion.ai.proto.data_readi" +
-      "ness.DataSourceR\013data_source\022\"\n\014train_wi" +
-      "ndow\030\006 \001(\tR\014train_window\022&\n\016upstream_lab" +
-      "el\030\007 \001(\tR\016upstream_label\0225\n\023weather_prov" +
-      "ider_id\030\010 \001(\tH\000R\023weather_provider_id\210\001\001\022" +
-      "[\n\020readiness_status\030\t \001(\0162/.fusion.ai.pr" +
-      "oto.data_readiness.ReadinessStatusR\020read" +
-      "iness_status\022Z\n\016weather_status\030\n \001(\0162-.f" +
-      "usion.ai.proto.data_readiness.WeatherSta" +
-      "tusH\001R\016weather_status\210\001\001\0221\n\021coverage_rat" +
-      "io_7d\030\013 \001(\001H\002R\021coverage_ratio_7d\210\001\001\022$\n\rg" +
-      "ap_points_7d\030\014 \001(\005R\rgap_points_7d\022\034\n\tgap" +
-      "_focus\030\r \001(\tR\tgap_focus\022L\n\013heatmap_14d\030\016" +
-      " \003(\0132*.fusion.ai.proto.data_readiness.He" +
-      "atmapDayR\013heatmap_14dB\026\n\024_weather_provid" +
-      "er_idB\021\n\017_weather_statusB\024\n\022_coverage_ra" +
-      "tio_7d\"\213\001\n\014PipelineLine\022\024\n\005label\030\001 \001(\tR\005" +
-      "label\022\030\n\007success\030\002 \001(\005R\007success\022\024\n\005total" +
-      "\030\003 \001(\005R\005total\022%\n\013success_pct\030\004 \001(\001H\000R\013su" +
-      "ccess_pct\210\001\001B\016\n\014_success_pct\"\201\003\n\rPipelin" +
-      "eStats\022J\n\tpush_line\030\001 \001(\0132,.fusion.ai.pr" +
-      "oto.data_readiness.PipelineLineR\tpush_li" +
-      "ne\022]\n\020weather_job_line\030\002 \001(\0132,.fusion.ai" +
-      ".proto.data_readiness.PipelineLineH\000R\020we" +
-      "ather_job_line\210\001\001\022L\n\nexcel_line\030\003 \001(\0132,." +
-      "fusion.ai.proto.data_readiness.PipelineL" +
-      "ineR\nexcel_line\022b\n\025validation_queue_line" +
-      "\030\004 \001(\0132,.fusion.ai.proto.data_readiness." +
-      "PipelineLineR\025validation_queue_lineB\023\n\021_" +
-      "weather_job_line\"\343\002\n\017WeatherSiteView\022(\n\017" +
-      "registration_id\030\001 \001(\tR\017registration_id\022 " +
-      "\n\013provider_id\030\002 \001(\tR\013provider_id\022U\n\016weat" +
-      "her_status\030\003 \001(\0162-.fusion.ai.proto.data_" +
-      "readiness.WeatherStatusR\016weather_status\022" +
-      "I\n\017last_success_at\030\004 \001(\0132\032.google.protob" +
-      "uf.TimestampH\000R\017last_success_at\210\001\001\022\036\n\nla" +
-      "st_error\030\005 \001(\tR\nlast_error\022.\n\022last_inges" +
-      "t_source\030\006 \001(\tR\022last_ingest_sourceB\022\n\020_l" +
-      "ast_success_at\"\250\002\n\023WeatherSyncTaskView\022\030" +
-      "\n\007task_id\030\001 \001(\tR\007task_id\022\"\n\014location_key" +
-      "\030\002 \001(\tR\014location_key\022*\n\020registration_ids" +
-      "\030\003 \003(\tR\020registration_ids\022M\n\006status\030\004 \001(\016" +
-      "25.fusion.ai.proto.data_readiness.Weathe" +
-      "rSyncTaskStatusR\006status\022\036\n\nlast_error\030\005 " +
-      "\001(\tR\nlast_error\0228\n\027failed_registration_i" +
-      "ds\030\006 \003(\tR\027failed_registration_ids\"\251\004\n\022We" +
-      "atherSyncRunView\022\026\n\006run_id\030\001 \001(\tR\006run_id" +
-      "\022L\n\007trigger\030\002 \001(\01622.fusion.ai.proto.data" +
-      "_readiness.WeatherSyncTriggerR\007trigger\022C" +
-      "\n\004mode\030\003 \001(\0162/.fusion.ai.proto.data_read" +
-      "iness.WeatherSyncModeR\004mode\022L\n\006status\030\004 " +
-      "\001(\01624.fusion.ai.proto.data_readiness.Wea" +
-      "therSyncRunStatusR\006status\022:\n\nstarted_at\030" +
-      "\005 \001(\0132\032.google.protobuf.TimestampR\nstart" +
-      "ed_at\022A\n\013finished_at\030\006 \001(\0132\032.google.prot" +
-      "obuf.TimestampH\000R\013finished_at\210\001\001\022\036\n\ntask" +
-      "_total\030\007 \001(\005R\ntask_total\022 \n\013task_failed\030" +
-      "\010 \001(\005R\013task_failed\022I\n\005tasks\030\t \003(\01323.fusi" +
-      "on.ai.proto.data_readiness.WeatherSyncTa" +
-      "skViewR\005tasksB\016\n\014_finished_at\"R\n\026GetData" +
-      "OverviewRequest\022\'\n\014service_type\030\001 \001(\tH\000R" +
-      "\014service_type\210\001\001B\017\n\r_service_type\"c\n\027Get" +
-      "DataOverviewResponse\022H\n\010overview\030\001 \001(\0132," +
-      ".fusion.ai.proto.data_readiness.DataOver" +
-      "viewR\010overview\"\266\002\n\027ListDataSiteRowsReque" +
-      "st\022\027\n\004page\030\001 \001(\005H\000R\004page\210\001\001\022!\n\tpage_size" +
-      "\030\002 \001(\005H\001R\tpage_size\210\001\001\022\'\n\014service_type\030\003" +
-      " \001(\tH\002R\014service_type\210\001\001\022`\n\020readiness_sta" +
-      "tus\030\004 \001(\0162/.fusion.ai.proto.data_readine" +
-      "ss.ReadinessStatusH\003R\020readiness_status\210\001" +
-      "\001\022\021\n\001q\030\005 \001(\tH\004R\001q\210\001\001B\007\n\005_pageB\014\n\n_page_s" +
-      "izeB\017\n\r_service_typeB\023\n\021_readiness_statu" +
-      "sB\004\n\002_q\"_\n\030ListDataSiteRowsResponse\022C\n\004p" +
-      "age\030\001 \001(\0132/.fusion.ai.proto.data_readine" +
-      "ss.DataSiteRowPageR\004page\"P\n\033GetDataSiteR" +
-      "eadinessRequest\0221\n\017registration_id\030\001 \001(\t" +
-      "B\007\272H\004r\002\020\001R\017registration_id\"o\n\034GetDataSit" +
-      "eReadinessResponse\022O\n\treadiness\030\001 \001(\01321." +
-      "fusion.ai.proto.data_readiness.DataSiteR" +
-      "eadinessR\treadiness\"W\n\033GetDataPipelineSt" +
-      "atsRequest\022\'\n\014service_type\030\001 \001(\tH\000R\014serv" +
-      "ice_type\210\001\001B\017\n\r_service_type\"c\n\034GetDataP" +
-      "ipelineStatsResponse\022C\n\005stats\030\001 \001(\0132-.fu" +
-      "sion.ai.proto.data_readiness.PipelineSta" +
-      "tsR\005stats\"J\n\025GetWeatherSiteRequest\0221\n\017re" +
-      "gistration_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017registrati" +
-      "on_id\"]\n\026GetWeatherSiteResponse\022C\n\004site\030" +
-      "\001 \001(\0132/.fusion.ai.proto.data_readiness.W" +
-      "eatherSiteViewR\004site\"a\n\030GetWeatherSyncRu" +
-      "nRequest\022\037\n\006run_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006run_i" +
-      "d\022$\n\rinclude_tasks\030\002 \001(\010R\rinclude_tasks\"" +
-      "a\n\031GetWeatherSyncRunResponse\022D\n\003run\030\001 \001(" +
-      "\01322.fusion.ai.proto.data_readiness.Weath" +
-      "erSyncRunViewR\003run\"\305\004\n\027BatchSyncWeatherR" +
-      "equest\022=\n\020registration_ids\030\001 \003(\tB\021\272H\016\222\001\013" +
-      "\020\364\003\"\006r\004\020\001\030@R\020registration_ids\022\'\n\tpast_da" +
-      "ys\030\002 \001(\005B\t\272H\006\032\004\030\016(\000R\tpast_days\022/\n\rforeca" +
-      "st_days\030\003 \001(\005B\t\272H\006\032\004\030\020(\000R\rforecast_days\022" +
-      ".\n\013provider_id\030\004 \001(\tB\007\272H\004r\002\030@H\000R\013provide" +
-      "r_id\210\001\001\022M\n\004mode\030\005 \001(\0162/.fusion.ai.proto." +
-      "data_readiness.WeatherSyncModeB\010\272H\005\202\001\002\020\001" +
-      "R\004mode\022V\n\007trigger\030\006 \001(\01622.fusion.ai.prot" +
-      "o.data_readiness.WeatherSyncTriggerB\010\272H\005" +
-      "\202\001\002\020\001R\007trigger\0228\n\017retry_of_run_id\030\007 \001(\tB" +
-      "\t\272H\006r\004\020\001\030@H\001R\017retry_of_run_id\210\001\001:\\\272HY\032W\n" +
-      "\025weather_sync_mode_set\022.mode must not be" +
-      " WEATHER_SYNC_MODE_UNSPECIFIED\032\016this.mod" +
-      "e != 0B\016\n\014_provider_idB\022\n\020_retry_of_run_" +
-      "id\"\201\001\n\027WeatherSyncPartialError\022(\n\017regist" +
-      "ration_id\030\001 \001(\tR\017registration_id\022\"\n\014loca" +
-      "tion_key\030\002 \001(\tR\014location_key\022\030\n\007message\030" +
-      "\003 \001(\tR\007message\"\243\002\n\030BatchSyncWeatherRespo" +
-      "nse\022\026\n\006run_id\030\001 \001(\tR\006run_id\022L\n\006status\030\002 " +
-      "\001(\01624.fusion.ai.proto.data_readiness.Wea" +
-      "therSyncRunStatusR\006status\022\036\n\ntask_total\030" +
-      "\003 \001(\005R\ntask_total\022 \n\013task_failed\030\004 \001(\005R\013" +
-      "task_failed\022_\n\016partial_errors\030\005 \003(\01327.fu" +
-      "sion.ai.proto.data_readiness.WeatherSync" +
-      "PartialErrorR\016partial_errors\"R\n\035RetryFai" +
-      "ledWeatherSyncRequest\022&\n\006run_id\030\001 \001(\tB\t\272" +
-      "H\006r\004\020\001\030@H\000R\006run_id\210\001\001B\t\n\007_run_id\"\206\001\n\036Ret" +
-      "ryFailedWeatherSyncResponse\022\026\n\006run_id\030\001 " +
+      "buf/timestamp.proto\"\302\002\n\014DataOverview\022\036\n\n" +
+      "site_count\030\001 \001(\005R\nsite_count\022-\n\017site_del" +
+      "ta_week\030\002 \001(\005H\000R\017site_delta_week\210\001\001\022 \n\013r" +
+      "eady_today\030\003 \001(\005R\013ready_today\022(\n\017need_fi" +
+      "ll_count\030\004 \001(\005R\017need_fill_count\0229\n\025weath" +
+      "er_missing_count\030\005 \001(\005H\001R\025weather_missin" +
+      "g_count\210\001\001\022.\n\022sites_with_gaps_7d\030\006 \001(\005R\022" +
+      "sites_with_gaps_7dB\022\n\020_site_delta_weekB\030" +
+      "\n\026_weather_missing_count\"H\n\022CoverageTren" +
+      "dPoint\022\034\n\tstat_date\030\001 \001(\tR\tstat_date\022\024\n\005" +
+      "ratio\030\002 \001(\001R\005ratio\"\211\007\n\013DataSiteRow\022(\n\017re" +
+      "gistration_id\030\001 \001(\tR\017registration_id\022\030\n\007" +
+      "site_id\030\002 \001(\tR\007site_id\022\034\n\tsite_name\030\003 \001(" +
+      "\tR\tsite_name\022\"\n\014service_type\030\004 \001(\tR\014serv" +
+      "ice_type\022L\n\013data_source\030\005 \001(\0162*.fusion.a" +
+      "i.proto.data_readiness.DataSourceR\013data_" +
+      "source\0221\n\021coverage_ratio_7d\030\006 \001(\001H\000R\021cov" +
+      "erage_ratio_7d\210\001\001\022N\n\010trend_7d\030\007 \003(\01322.fu" +
+      "sion.ai.proto.data_readiness.CoverageTre" +
+      "ndPointR\010trend_7d\022Z\n\016weather_status\030\010 \001(" +
+      "\0162-.fusion.ai.proto.data_readiness.Weath" +
+      "erStatusH\001R\016weather_status\210\001\001\022-\n\017weather" +
+      "_display\030\t \001(\tH\002R\017weather_display\210\001\001\022C\n\014" +
+      "last_push_at\030\n \001(\0132\032.google.protobuf.Tim" +
+      "estampH\003R\014last_push_at\210\001\001\022G\n\016last_ingest" +
+      "_at\030\013 \001(\0132\032.google.protobuf.TimestampH\004R" +
+      "\016last_ingest_at\210\001\001\022$\n\rgap_points_7d\030\014 \001(" +
+      "\005R\rgap_points_7d\022[\n\020readiness_status\030\r \001" +
+      "(\0162/.fusion.ai.proto.data_readiness.Read" +
+      "inessStatusR\020readiness_status\022&\n\016workben" +
+      "ch_href\030\016 \001(\tR\016workbench_hrefB\024\n\022_covera" +
+      "ge_ratio_7dB\021\n\017_weather_statusB\022\n\020_weath" +
+      "er_displayB\017\n\r_last_push_atB\021\n\017_last_ing" +
+      "est_at\"\232\001\n\017DataSiteRowPage\022?\n\004rows\030\001 \003(\013" +
+      "2+.fusion.ai.proto.data_readiness.DataSi" +
+      "teRowR\004rows\022\024\n\005total\030\002 \001(\005R\005total\022\022\n\004pag" +
+      "e\030\003 \001(\005R\004page\022\034\n\tpage_size\030\004 \001(\005R\tpage_s" +
+      "ize\"\204\001\n\nHeatmapDay\022\034\n\tstat_date\030\001 \001(\tR\ts" +
+      "tat_date\022B\n\005level\030\002 \001(\0162,.fusion.ai.prot" +
+      "o.data_readiness.HeatmapLevelR\005level\022\024\n\005" +
+      "ratio\030\003 \001(\001R\005ratio\"\251\006\n\021DataSiteReadiness" +
+      "\022(\n\017registration_id\030\001 \001(\tR\017registration_" +
+      "id\022\030\n\007site_id\030\002 \001(\tR\007site_id\022\034\n\tsite_nam" +
+      "e\030\003 \001(\tR\tsite_name\022\"\n\014service_type\030\004 \001(\t" +
+      "R\014service_type\022L\n\013data_source\030\005 \001(\0162*.fu" +
+      "sion.ai.proto.data_readiness.DataSourceR" +
+      "\013data_source\022\"\n\014train_window\030\006 \001(\tR\014trai" +
+      "n_window\022&\n\016upstream_label\030\007 \001(\tR\016upstre" +
+      "am_label\0225\n\023weather_provider_id\030\010 \001(\tH\000R" +
+      "\023weather_provider_id\210\001\001\022[\n\020readiness_sta" +
+      "tus\030\t \001(\0162/.fusion.ai.proto.data_readine" +
+      "ss.ReadinessStatusR\020readiness_status\022Z\n\016" +
+      "weather_status\030\n \001(\0162-.fusion.ai.proto.d" +
+      "ata_readiness.WeatherStatusH\001R\016weather_s" +
+      "tatus\210\001\001\0221\n\021coverage_ratio_7d\030\013 \001(\001H\002R\021c" +
+      "overage_ratio_7d\210\001\001\022$\n\rgap_points_7d\030\014 \001" +
+      "(\005R\rgap_points_7d\022\034\n\tgap_focus\030\r \001(\tR\tga" +
+      "p_focus\022L\n\013heatmap_14d\030\016 \003(\0132*.fusion.ai" +
+      ".proto.data_readiness.HeatmapDayR\013heatma" +
+      "p_14dB\026\n\024_weather_provider_idB\021\n\017_weathe" +
+      "r_statusB\024\n\022_coverage_ratio_7d\"\213\001\n\014Pipel" +
+      "ineLine\022\024\n\005label\030\001 \001(\tR\005label\022\030\n\007success" +
+      "\030\002 \001(\005R\007success\022\024\n\005total\030\003 \001(\005R\005total\022%\n" +
+      "\013success_pct\030\004 \001(\001H\000R\013success_pct\210\001\001B\016\n\014" +
+      "_success_pct\"\201\003\n\rPipelineStats\022J\n\tpush_l" +
+      "ine\030\001 \001(\0132,.fusion.ai.proto.data_readine" +
+      "ss.PipelineLineR\tpush_line\022]\n\020weather_jo" +
+      "b_line\030\002 \001(\0132,.fusion.ai.proto.data_read" +
+      "iness.PipelineLineH\000R\020weather_job_line\210\001" +
+      "\001\022L\n\nexcel_line\030\003 \001(\0132,.fusion.ai.proto." +
+      "data_readiness.PipelineLineR\nexcel_line\022" +
+      "b\n\025validation_queue_line\030\004 \001(\0132,.fusion." +
+      "ai.proto.data_readiness.PipelineLineR\025va" +
+      "lidation_queue_lineB\023\n\021_weather_job_line" +
+      "\"\343\002\n\017WeatherSiteView\022(\n\017registration_id\030" +
+      "\001 \001(\tR\017registration_id\022 \n\013provider_id\030\002 " +
+      "\001(\tR\013provider_id\022U\n\016weather_status\030\003 \001(\016" +
+      "2-.fusion.ai.proto.data_readiness.Weathe" +
+      "rStatusR\016weather_status\022I\n\017last_success_" +
+      "at\030\004 \001(\0132\032.google.protobuf.TimestampH\000R\017" +
+      "last_success_at\210\001\001\022\036\n\nlast_error\030\005 \001(\tR\n" +
+      "last_error\022.\n\022last_ingest_source\030\006 \001(\tR\022" +
+      "last_ingest_sourceB\022\n\020_last_success_at\"\250" +
+      "\002\n\023WeatherSyncTaskView\022\030\n\007task_id\030\001 \001(\tR" +
+      "\007task_id\022\"\n\014location_key\030\002 \001(\tR\014location" +
+      "_key\022*\n\020registration_ids\030\003 \003(\tR\020registra" +
+      "tion_ids\022M\n\006status\030\004 \001(\01625.fusion.ai.pro" +
+      "to.data_readiness.WeatherSyncTaskStatusR" +
+      "\006status\022\036\n\nlast_error\030\005 \001(\tR\nlast_error\022" +
+      "8\n\027failed_registration_ids\030\006 \003(\tR\027failed" +
+      "_registration_ids\"\251\004\n\022WeatherSyncRunView" +
+      "\022\026\n\006run_id\030\001 \001(\tR\006run_id\022L\n\007trigger\030\002 \001(" +
+      "\01622.fusion.ai.proto.data_readiness.Weath" +
+      "erSyncTriggerR\007trigger\022C\n\004mode\030\003 \001(\0162/.f" +
+      "usion.ai.proto.data_readiness.WeatherSyn" +
+      "cModeR\004mode\022L\n\006status\030\004 \001(\01624.fusion.ai." +
+      "proto.data_readiness.WeatherSyncRunStatu" +
+      "sR\006status\022:\n\nstarted_at\030\005 \001(\0132\032.google.p" +
+      "rotobuf.TimestampR\nstarted_at\022A\n\013finishe" +
+      "d_at\030\006 \001(\0132\032.google.protobuf.TimestampH\000" +
+      "R\013finished_at\210\001\001\022\036\n\ntask_total\030\007 \001(\005R\nta" +
+      "sk_total\022 \n\013task_failed\030\010 \001(\005R\013task_fail" +
+      "ed\022I\n\005tasks\030\t \003(\01323.fusion.ai.proto.data" +
+      "_readiness.WeatherSyncTaskViewR\005tasksB\016\n" +
+      "\014_finished_at\"R\n\026GetDataOverviewRequest\022" +
+      "\'\n\014service_type\030\001 \001(\tH\000R\014service_type\210\001\001" +
+      "B\017\n\r_service_type\"c\n\027GetDataOverviewResp" +
+      "onse\022H\n\010overview\030\001 \001(\0132,.fusion.ai.proto" +
+      ".data_readiness.DataOverviewR\010overview\"\266" +
+      "\002\n\027ListDataSiteRowsRequest\022\027\n\004page\030\001 \001(\005" +
+      "H\000R\004page\210\001\001\022!\n\tpage_size\030\002 \001(\005H\001R\tpage_s" +
+      "ize\210\001\001\022\'\n\014service_type\030\003 \001(\tH\002R\014service_" +
+      "type\210\001\001\022`\n\020readiness_status\030\004 \001(\0162/.fusi" +
+      "on.ai.proto.data_readiness.ReadinessStat" +
+      "usH\003R\020readiness_status\210\001\001\022\021\n\001q\030\005 \001(\tH\004R\001" +
+      "q\210\001\001B\007\n\005_pageB\014\n\n_page_sizeB\017\n\r_service_" +
+      "typeB\023\n\021_readiness_statusB\004\n\002_q\"_\n\030ListD" +
+      "ataSiteRowsResponse\022C\n\004page\030\001 \001(\0132/.fusi" +
+      "on.ai.proto.data_readiness.DataSiteRowPa" +
+      "geR\004page\"P\n\033GetDataSiteReadinessRequest\022" +
+      "1\n\017registration_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017regis" +
+      "tration_id\"o\n\034GetDataSiteReadinessRespon" +
+      "se\022O\n\treadiness\030\001 \001(\01321.fusion.ai.proto." +
+      "data_readiness.DataSiteReadinessR\treadin" +
+      "ess\"W\n\033GetDataPipelineStatsRequest\022\'\n\014se" +
+      "rvice_type\030\001 \001(\tH\000R\014service_type\210\001\001B\017\n\r_" +
+      "service_type\"c\n\034GetDataPipelineStatsResp" +
+      "onse\022C\n\005stats\030\001 \001(\0132-.fusion.ai.proto.da" +
+      "ta_readiness.PipelineStatsR\005stats\"J\n\025Get" +
+      "WeatherSiteRequest\0221\n\017registration_id\030\001 " +
+      "\001(\tB\007\272H\004r\002\020\001R\017registration_id\"]\n\026GetWeat" +
+      "herSiteResponse\022C\n\004site\030\001 \001(\0132/.fusion.a" +
+      "i.proto.data_readiness.WeatherSiteViewR\004" +
+      "site\"a\n\030GetWeatherSyncRunRequest\022\037\n\006run_" +
+      "id\030\001 \001(\tB\007\272H\004r\002\020\001R\006run_id\022$\n\rinclude_tas" +
+      "ks\030\002 \001(\010R\rinclude_tasks\"a\n\031GetWeatherSyn" +
+      "cRunResponse\022D\n\003run\030\001 \001(\01322.fusion.ai.pr" +
+      "oto.data_readiness.WeatherSyncRunViewR\003r" +
+      "un\"\305\004\n\027BatchSyncWeatherRequest\022=\n\020regist" +
+      "ration_ids\030\001 \003(\tB\021\272H\016\222\001\013\020\364\003\"\006r\004\020\001\030@R\020reg" +
+      "istration_ids\022\'\n\tpast_days\030\002 \001(\005B\t\272H\006\032\004\030" +
+      "\016(\000R\tpast_days\022/\n\rforecast_days\030\003 \001(\005B\t\272" +
+      "H\006\032\004\030\020(\000R\rforecast_days\022.\n\013provider_id\030\004" +
+      " \001(\tB\007\272H\004r\002\030@H\000R\013provider_id\210\001\001\022M\n\004mode\030" +
+      "\005 \001(\0162/.fusion.ai.proto.data_readiness.W" +
+      "eatherSyncModeB\010\272H\005\202\001\002\020\001R\004mode\022V\n\007trigge" +
+      "r\030\006 \001(\01622.fusion.ai.proto.data_readiness" +
+      ".WeatherSyncTriggerB\010\272H\005\202\001\002\020\001R\007trigger\0228" +
+      "\n\017retry_of_run_id\030\007 \001(\tB\t\272H\006r\004\020\001\030@H\001R\017re" +
+      "try_of_run_id\210\001\001:\\\272HY\032W\n\025weather_sync_mo" +
+      "de_set\022.mode must not be WEATHER_SYNC_MO" +
+      "DE_UNSPECIFIED\032\016this.mode != 0B\016\n\014_provi" +
+      "der_idB\022\n\020_retry_of_run_id\"\201\001\n\027WeatherSy" +
+      "ncPartialError\022(\n\017registration_id\030\001 \001(\tR" +
+      "\017registration_id\022\"\n\014location_key\030\002 \001(\tR\014" +
+      "location_key\022\030\n\007message\030\003 \001(\tR\007message\"\243" +
+      "\002\n\030BatchSyncWeatherResponse\022\026\n\006run_id\030\001 " +
       "\001(\tR\006run_id\022L\n\006status\030\002 \001(\01624.fusion.ai." +
       "proto.data_readiness.WeatherSyncRunStatu" +
-      "sR\006status\"\243\001\n\"CreateWeatherExcelImportJo" +
-      "bRequest\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004" +
-      "\020\001\030@R\017registration_id\022 \n\004file\030\002 \001(\014B\014\272H\t" +
-      "z\007\020\001\030\200\200\200\031R\004file\022&\n\010filename\030\003 \001(\tB\n\272H\007r\005" +
-      "\020\001\030\377\001R\010filename\"\367\001\n#CreateWeatherExcelIm" +
-      "portJobResponse\022\026\n\006job_id\030\001 \001(\tR\006job_id\022" +
-      ")\n\raccepted_rows\030\002 \001(\005H\000R\raccepted_rows\210" +
-      "\001\001\022%\n\013failed_rows\030\003 \001(\005H\001R\013failed_rows\210\001" +
-      "\001\022/\n\020error_report_url\030\004 \001(\tH\002R\020error_rep" +
-      "ort_url\210\001\001B\020\n\016_accepted_rowsB\016\n\014_failed_" +
-      "rowsB\023\n\021_error_report_url\" \n\036GetWeatherE" +
-      "xcelTemplateRequest\"u\n\037GetWeatherExcelTe" +
-      "mplateResponse\022\022\n\004file\030\001 \001(\014R\004file\022\032\n\010fi" +
-      "lename\030\002 \001(\tR\010filename\022\"\n\014content_type\030\003" +
-      " \001(\tR\014content_type\"\322\002\n\034CreateDataBackfil" +
-      "lJobRequest\0223\n\017registration_id\030\001 \001(\tB\t\272H" +
-      "\006r\004\020\001\030@R\017registration_id\022#\n\010start_ms\030\002 \001" +
-      "(\003B\007\272H\004\"\002 \000R\010start_ms\022\037\n\006end_ms\030\003 \001(\003B\007\272" +
-      "H\004\"\002 \000R\006end_ms\022?\n\017wait_timeout_ms\030\004 \001(\003B" +
-      "\020\272H\r\"\013\030\200\210\262\240\002(\200\335\333\001H\000R\017wait_timeout_ms\210\001\001:" +
-      "b\272H_\032]\n\030backfill_end_after_start\022$end_ms" +
-      " must be greater than start_ms\032\033this.end" +
-      "_ms > this.start_msB\022\n\020_wait_timeout_ms\"" +
-      "7\n\035CreateDataBackfillJobResponse\022\026\n\006job_" +
-      "id\030\001 \001(\tR\006job_id\"\210\001\n\031UploadBackfillFileR" +
-      "equest\022!\n\006job_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\006job_i" +
-      "d\022 \n\004file\030\002 \001(\014B\014\272H\tz\007\020\001\030\200\200\200\031R\004file\022&\n\010f" +
-      "ilename\030\003 \001(\tB\n\272H\007r\005\020\001\030\377\001R\010filename\"4\n\032U" +
-      "ploadBackfillFileResponse\022\026\n\006job_id\030\001 \001(" +
-      "\tR\006job_id*\320\001\n\017ReadinessStatus\022 \n\034READINE" +
-      "SS_STATUS_UNSPECIFIED\020\000\022\032\n\026READINESS_STA" +
-      "TUS_READY\020\001\022\036\n\032READINESS_STATUS_NEED_FIL" +
-      "L\020\002\022\033\n\027READINESS_STATUS_SEVERE\020\003\022$\n READ" +
-      "INESS_STATUS_WEATHER_MISSING\020\004\022\034\n\030READIN" +
-      "ESS_STATUS_OFFLINE\020\005*\232\001\n\rWeatherStatus\022\036" +
-      "\n\032WEATHER_STATUS_UNSPECIFIED\020\000\022\032\n\026WEATHE" +
-      "R_STATUS_UNKNOWN\020\001\022\025\n\021WEATHER_STATUS_OK\020" +
-      "\002\022\032\n\026WEATHER_STATUS_DELAYED\020\003\022\032\n\026WEATHER" +
-      "_STATUS_MISSING\020\004*k\n\nDataSource\022\033\n\027DATA_" +
-      "SOURCE_UNSPECIFIED\020\000\022\024\n\020DATA_SOURCE_PULL" +
-      "\020\001\022\024\n\020DATA_SOURCE_PUSH\020\002\022\024\n\020DATA_SOURCE_" +
-      "FILE\020\003*\243\001\n\017WeatherSyncMode\022!\n\035WEATHER_SY" +
-      "NC_MODE_UNSPECIFIED\020\000\022\"\n\036WEATHER_SYNC_MO" +
-      "DE_ALL_ELIGIBLE\020\001\022%\n!WEATHER_SYNC_MODE_B" +
-      "Y_REGISTRATION\020\002\022\"\n\036WEATHER_SYNC_MODE_RE" +
-      "TRY_FAILED\020\003*\232\001\n\022WeatherSyncTrigger\022$\n W" +
-      "EATHER_SYNC_TRIGGER_UNSPECIFIED\020\000\022\035\n\031WEA" +
-      "THER_SYNC_TRIGGER_CRON\020\001\022\037\n\033WEATHER_SYNC" +
-      "_TRIGGER_MANUAL\020\002\022\036\n\032WEATHER_SYNC_TRIGGE" +
-      "R_RETRY\020\003*\342\001\n\024WeatherSyncRunStatus\022\'\n#WE" +
-      "ATHER_SYNC_RUN_STATUS_UNSPECIFIED\020\000\022#\n\037W" +
-      "EATHER_SYNC_RUN_STATUS_RUNNING\020\001\022%\n!WEAT" +
-      "HER_SYNC_RUN_STATUS_COMPLETED\020\002\0221\n-WEATH" +
-      "ER_SYNC_RUN_STATUS_COMPLETED_WITH_ERRORS" +
-      "\020\003\022\"\n\036WEATHER_SYNC_RUN_STATUS_FAILED\020\004*\376" +
-      "\001\n\025WeatherSyncTaskStatus\022(\n$WEATHER_SYNC" +
-      "_TASK_STATUS_UNSPECIFIED\020\000\022$\n WEATHER_SY" +
-      "NC_TASK_STATUS_PENDING\020\001\022$\n WEATHER_SYNC" +
-      "_TASK_STATUS_RUNNING\020\002\022$\n WEATHER_SYNC_T" +
-      "ASK_STATUS_SUCCESS\020\003\022$\n WEATHER_SYNC_TAS" +
-      "K_STATUS_PARTIAL\020\004\022#\n\037WEATHER_SYNC_TASK_" +
-      "STATUS_FAILED\020\005*{\n\014HeatmapLevel\022\035\n\031HEATM" +
-      "AP_LEVEL_UNSPECIFIED\020\000\022\026\n\022HEATMAP_LEVEL_" +
-      "FULL\020\001\022\031\n\025HEATMAP_LEVEL_PARTIAL\020\002\022\031\n\025HEA" +
-      "TMAP_LEVEL_MISSING\020\003B\206\002\n\"com.fusion.ai.p" +
-      "roto.data_readinessB\031DataReadinessMessag" +
-      "eProtoP\001Z-fusion.ai.proto.data_readiness" +
-      ";data_readiness\242\002\004FAPD\252\002\035Fusion.Ai.Proto" +
-      ".DataReadiness\312\002\035Fusion\\Ai\\Proto\\DataRea" +
-      "diness\342\002)Fusion\\Ai\\Proto\\DataReadiness\\G" +
-      "PBMetadata\352\002 Fusion::Ai::Proto::DataRead" +
-      "inessb\006proto3"
+      "sR\006status\022\036\n\ntask_total\030\003 \001(\005R\ntask_tota" +
+      "l\022 \n\013task_failed\030\004 \001(\005R\013task_failed\022_\n\016p" +
+      "artial_errors\030\005 \003(\01327.fusion.ai.proto.da" +
+      "ta_readiness.WeatherSyncPartialErrorR\016pa" +
+      "rtial_errors\"R\n\035RetryFailedWeatherSyncRe" +
+      "quest\022&\n\006run_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@H\000R\006run_" +
+      "id\210\001\001B\t\n\007_run_id\"\206\001\n\036RetryFailedWeatherS" +
+      "yncResponse\022\026\n\006run_id\030\001 \001(\tR\006run_id\022L\n\006s" +
+      "tatus\030\002 \001(\01624.fusion.ai.proto.data_readi" +
+      "ness.WeatherSyncRunStatusR\006status\"\243\001\n\"Cr" +
+      "eateWeatherExcelImportJobRequest\0223\n\017regi" +
+      "stration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registrati" +
+      "on_id\022 \n\004file\030\002 \001(\014B\014\272H\tz\007\020\001\030\200\200\200\031R\004file\022" +
+      "&\n\010filename\030\003 \001(\tB\n\272H\007r\005\020\001\030\377\001R\010filename\"" +
+      "\367\001\n#CreateWeatherExcelImportJobResponse\022" +
+      "\026\n\006job_id\030\001 \001(\tR\006job_id\022)\n\raccepted_rows" +
+      "\030\002 \001(\005H\000R\raccepted_rows\210\001\001\022%\n\013failed_row" +
+      "s\030\003 \001(\005H\001R\013failed_rows\210\001\001\022/\n\020error_repor" +
+      "t_url\030\004 \001(\tH\002R\020error_report_url\210\001\001B\020\n\016_a" +
+      "ccepted_rowsB\016\n\014_failed_rowsB\023\n\021_error_r" +
+      "eport_url\" \n\036GetWeatherExcelTemplateRequ" +
+      "est\"u\n\037GetWeatherExcelTemplateResponse\022\022" +
+      "\n\004file\030\001 \001(\014R\004file\022\032\n\010filename\030\002 \001(\tR\010fi" +
+      "lename\022\"\n\014content_type\030\003 \001(\tR\014content_ty" +
+      "pe\"\322\002\n\034CreateDataBackfillJobRequest\0223\n\017r" +
+      "egistration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registr" +
+      "ation_id\022#\n\010start_ms\030\002 \001(\003B\007\272H\004\"\002 \000R\010sta" +
+      "rt_ms\022\037\n\006end_ms\030\003 \001(\003B\007\272H\004\"\002 \000R\006end_ms\022?" +
+      "\n\017wait_timeout_ms\030\004 \001(\003B\020\272H\r\"\013\030\200\210\262\240\002(\200\335\333" +
+      "\001H\000R\017wait_timeout_ms\210\001\001:b\272H_\032]\n\030backfill" +
+      "_end_after_start\022$end_ms must be greater" +
+      " than start_ms\032\033this.end_ms > this.start" +
+      "_msB\022\n\020_wait_timeout_ms\"7\n\035CreateDataBac" +
+      "kfillJobResponse\022\026\n\006job_id\030\001 \001(\tR\006job_id" +
+      "\"\210\001\n\031UploadBackfillFileRequest\022!\n\006job_id" +
+      "\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\006job_id\022 \n\004file\030\002 \001(\014B" +
+      "\014\272H\tz\007\020\001\030\200\200\200\031R\004file\022&\n\010filename\030\003 \001(\tB\n\272" +
+      "H\007r\005\020\001\030\377\001R\010filename\"4\n\032UploadBackfillFil" +
+      "eResponse\022\026\n\006job_id\030\001 \001(\tR\006job_id*\320\001\n\017Re" +
+      "adinessStatus\022 \n\034READINESS_STATUS_UNSPEC" +
+      "IFIED\020\000\022\032\n\026READINESS_STATUS_READY\020\001\022\036\n\032R" +
+      "EADINESS_STATUS_NEED_FILL\020\002\022\033\n\027READINESS" +
+      "_STATUS_SEVERE\020\003\022$\n READINESS_STATUS_WEA" +
+      "THER_MISSING\020\004\022\034\n\030READINESS_STATUS_OFFLI" +
+      "NE\020\005*\232\001\n\rWeatherStatus\022\036\n\032WEATHER_STATUS" +
+      "_UNSPECIFIED\020\000\022\032\n\026WEATHER_STATUS_UNKNOWN" +
+      "\020\001\022\025\n\021WEATHER_STATUS_OK\020\002\022\032\n\026WEATHER_STA" +
+      "TUS_DELAYED\020\003\022\032\n\026WEATHER_STATUS_MISSING\020" +
+      "\004*k\n\nDataSource\022\033\n\027DATA_SOURCE_UNSPECIFI" +
+      "ED\020\000\022\024\n\020DATA_SOURCE_PULL\020\001\022\024\n\020DATA_SOURC" +
+      "E_PUSH\020\002\022\024\n\020DATA_SOURCE_FILE\020\003*\243\001\n\017Weath" +
+      "erSyncMode\022!\n\035WEATHER_SYNC_MODE_UNSPECIF" +
+      "IED\020\000\022\"\n\036WEATHER_SYNC_MODE_ALL_ELIGIBLE\020" +
+      "\001\022%\n!WEATHER_SYNC_MODE_BY_REGISTRATION\020\002" +
+      "\022\"\n\036WEATHER_SYNC_MODE_RETRY_FAILED\020\003*\232\001\n" +
+      "\022WeatherSyncTrigger\022$\n WEATHER_SYNC_TRIG" +
+      "GER_UNSPECIFIED\020\000\022\035\n\031WEATHER_SYNC_TRIGGE" +
+      "R_CRON\020\001\022\037\n\033WEATHER_SYNC_TRIGGER_MANUAL\020" +
+      "\002\022\036\n\032WEATHER_SYNC_TRIGGER_RETRY\020\003*\342\001\n\024We" +
+      "atherSyncRunStatus\022\'\n#WEATHER_SYNC_RUN_S" +
+      "TATUS_UNSPECIFIED\020\000\022#\n\037WEATHER_SYNC_RUN_" +
+      "STATUS_RUNNING\020\001\022%\n!WEATHER_SYNC_RUN_STA" +
+      "TUS_COMPLETED\020\002\0221\n-WEATHER_SYNC_RUN_STAT" +
+      "US_COMPLETED_WITH_ERRORS\020\003\022\"\n\036WEATHER_SY" +
+      "NC_RUN_STATUS_FAILED\020\004*\376\001\n\025WeatherSyncTa" +
+      "skStatus\022(\n$WEATHER_SYNC_TASK_STATUS_UNS" +
+      "PECIFIED\020\000\022$\n WEATHER_SYNC_TASK_STATUS_P" +
+      "ENDING\020\001\022$\n WEATHER_SYNC_TASK_STATUS_RUN" +
+      "NING\020\002\022$\n WEATHER_SYNC_TASK_STATUS_SUCCE" +
+      "SS\020\003\022$\n WEATHER_SYNC_TASK_STATUS_PARTIAL" +
+      "\020\004\022#\n\037WEATHER_SYNC_TASK_STATUS_FAILED\020\005*" +
+      "{\n\014HeatmapLevel\022\035\n\031HEATMAP_LEVEL_UNSPECI" +
+      "FIED\020\000\022\026\n\022HEATMAP_LEVEL_FULL\020\001\022\031\n\025HEATMA" +
+      "P_LEVEL_PARTIAL\020\002\022\031\n\025HEATMAP_LEVEL_MISSI" +
+      "NG\020\003B\206\002\n\"com.fusion.ai.proto.data_readin" +
+      "essB\031DataReadinessMessageProtoP\001Z-fusion" +
+      ".ai.proto.data_readiness;data_readiness\242" +
+      "\002\004FAPD\252\002\035Fusion.Ai.Proto.DataReadiness\312\002" +
+      "\035Fusion\\Ai\\Proto\\DataReadiness\342\002)Fusion\\" +
+      "Ai\\Proto\\DataReadiness\\GPBMetadata\352\002 Fus" +
+      "ion::Ai::Proto::DataReadinessb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -471,7 +470,7 @@ public final class DataReadinessMessageProto extends com.google.protobuf.Generat
     internal_static_fusion_ai_proto_data_readiness_DataOverview_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_data_readiness_DataOverview_descriptor,
-        new java.lang.String[] { "SiteCount", "ReadyToday", "NeedFillCount", "WeatherMissingCount", "PushSuccess24HPct", "AvgPushLatencyMs", });
+        new java.lang.String[] { "SiteCount", "SiteDeltaWeek", "ReadyToday", "NeedFillCount", "WeatherMissingCount", "SitesWithGaps7D", });
     internal_static_fusion_ai_proto_data_readiness_CoverageTrendPoint_descriptor =
       getDescriptor().getMessageType(1);
     internal_static_fusion_ai_proto_data_readiness_CoverageTrendPoint_fieldAccessorTable = new
