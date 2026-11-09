@@ -51,37 +51,11 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int HEADER_FIELD_NUMBER = 1;
-  private com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header_;
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  @java.lang.Override
-  public boolean hasHeader() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader() {
-    return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-  }
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder() {
-    return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-  }
-
-  public static final int JOB_ID_FIELD_NUMBER = 2;
+  public static final int JOB_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
   /**
-   * <code>string job_id = 2 [json_name = "job_id"];</code>
+   * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The jobId.
    */
   @java.lang.Override
@@ -98,7 +72,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string job_id = 2 [json_name = "job_id"];</code>
+   * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The bytes for jobId.
    */
   @java.lang.Override
@@ -116,18 +90,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ACCEPTED_ROWS_FIELD_NUMBER = 3;
+  public static final int ACCEPTED_ROWS_FIELD_NUMBER = 2;
   private int acceptedRows_ = 0;
   /**
-   * <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+   * <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
    * @return Whether the acceptedRows field is set.
    */
   @java.lang.Override
   public boolean hasAcceptedRows() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+   * <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
    * @return The acceptedRows.
    */
   @java.lang.Override
@@ -135,18 +109,18 @@ private static final long serialVersionUID = 0L;
     return acceptedRows_;
   }
 
-  public static final int FAILED_ROWS_FIELD_NUMBER = 4;
+  public static final int FAILED_ROWS_FIELD_NUMBER = 3;
   private int failedRows_ = 0;
   /**
-   * <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+   * <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
    * @return Whether the failedRows field is set.
    */
   @java.lang.Override
   public boolean hasFailedRows() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+   * <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
    * @return The failedRows.
    */
   @java.lang.Override
@@ -154,19 +128,19 @@ private static final long serialVersionUID = 0L;
     return failedRows_;
   }
 
-  public static final int ERROR_REPORT_URL_FIELD_NUMBER = 5;
+  public static final int ERROR_REPORT_URL_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorReportUrl_ = "";
   /**
-   * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+   * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
    * @return Whether the errorReportUrl field is set.
    */
   @java.lang.Override
   public boolean hasErrorReportUrl() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+   * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
    * @return The errorReportUrl.
    */
   @java.lang.Override
@@ -183,7 +157,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+   * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
    * @return The bytes for errorReportUrl.
    */
   @java.lang.Override
@@ -215,42 +189,35 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getHeader());
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(jobId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, jobId_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, jobId_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(2, acceptedRows_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeInt32(3, acceptedRows_);
+      output.writeInt32(3, failedRows_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeInt32(4, failedRows_);
-    }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, errorReportUrl_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, errorReportUrl_);
     }
     getUnknownFields().writeTo(output);
   }
   private int computeSerializedSize_0() {
     int size = 0;
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(jobId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, jobId_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getHeader());
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(jobId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, jobId_);
+        .computeInt32Size(2, acceptedRows_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, acceptedRows_);
+        .computeInt32Size(3, failedRows_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, failedRows_);
-    }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, errorReportUrl_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, errorReportUrl_);
     }
     return size;
   }
@@ -276,11 +243,6 @@ private static final long serialVersionUID = 0L;
     }
     com.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse other = (com.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse) obj;
 
-    if (hasHeader() != other.hasHeader()) return false;
-    if (hasHeader()) {
-      if (!getHeader()
-          .equals(other.getHeader())) return false;
-    }
     if (!getJobId()
         .equals(other.getJobId())) return false;
     if (hasAcceptedRows() != other.hasAcceptedRows()) return false;
@@ -309,10 +271,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasHeader()) {
-      hash = (37 * hash) + HEADER_FIELD_NUMBER;
-      hash = (53 * hash) + getHeader().hashCode();
-    }
     hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
     hash = (53 * hash) + getJobId().hashCode();
     if (hasAcceptedRows()) {
@@ -446,29 +404,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetHeaderFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      header_ = null;
-      if (headerBuilder_ != null) {
-        headerBuilder_.dispose();
-        headerBuilder_ = null;
-      }
       jobId_ = "";
       acceptedRows_ = 0;
       failedRows_ = 0;
@@ -506,27 +453,21 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.header_ = headerBuilder_ == null
-            ? header_
-            : headerBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.jobId_ = jobId_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.acceptedRows_ = acceptedRows_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.failedRows_ = failedRows_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.failedRows_ = failedRows_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.errorReportUrl_ = errorReportUrl_;
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -543,12 +484,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse other) {
       if (other == com.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.getDefaultInstance()) return this;
-      if (other.hasHeader()) {
-        mergeHeader(other.getHeader());
-      }
       if (!other.getJobId().isEmpty()) {
         jobId_ = other.jobId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAcceptedRows()) {
@@ -559,7 +497,7 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasErrorReportUrl()) {
         errorReportUrl_ = other.errorReportUrl_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -587,32 +525,25 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              input.readMessage(
-                  internalGetHeaderFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              jobId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              jobId_ = input.readStringRequireUtf8();
+            case 16: {
+              acceptedRows_ = input.readInt32();
               bitField0_ |= 0x00000002;
               break;
-            } // case 18
+            } // case 16
             case 24: {
-              acceptedRows_ = input.readInt32();
+              failedRows_ = input.readInt32();
               bitField0_ |= 0x00000004;
               break;
             } // case 24
-            case 32: {
-              failedRows_ = input.readInt32();
+            case 34: {
+              errorReportUrl_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
-            } // case 32
-            case 42: {
-              errorReportUrl_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              break;
-            } // case 42
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -630,128 +561,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder> headerBuilder_;
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return Whether the header field is set.
-     */
-    public boolean hasHeader() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return The header.
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader() {
-      if (headerBuilder_ == null) {
-        return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-      } else {
-        return headerBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder setHeader(com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader value) {
-      if (headerBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        header_ = value;
-      } else {
-        headerBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder setHeader(
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder builderForValue) {
-      if (headerBuilder_ == null) {
-        header_ = builderForValue.build();
-      } else {
-        headerBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder mergeHeader(com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader value) {
-      if (headerBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
-          header_ != null &&
-          header_ != com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance()) {
-          getHeaderBuilder().mergeFrom(value);
-        } else {
-          header_ = value;
-        }
-      } else {
-        headerBuilder_.mergeFrom(value);
-      }
-      if (header_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder clearHeader() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      header_ = null;
-      if (headerBuilder_ != null) {
-        headerBuilder_.dispose();
-        headerBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder getHeaderBuilder() {
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return internalGetHeaderFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder() {
-      if (headerBuilder_ != null) {
-        return headerBuilder_.getMessageOrBuilder();
-      } else {
-        return header_ == null ?
-            com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-      }
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder> 
-        internalGetHeaderFieldBuilder() {
-      if (headerBuilder_ == null) {
-        headerBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder>(
-                getHeader(),
-                getParentForChildren(),
-                isClean());
-        header_ = null;
-      }
-      return headerBuilder_;
-    }
-
     private java.lang.Object jobId_ = "";
     /**
-     * <code>string job_id = 2 [json_name = "job_id"];</code>
+     * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return The jobId.
      */
     public java.lang.String getJobId() {
@@ -767,7 +579,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string job_id = 2 [json_name = "job_id"];</code>
+     * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return The bytes for jobId.
      */
     public com.google.protobuf.ByteString
@@ -784,7 +596,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string job_id = 2 [json_name = "job_id"];</code>
+     * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @param value The jobId to set.
      * @return This builder for chaining.
      */
@@ -792,22 +604,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       jobId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string job_id = 2 [json_name = "job_id"];</code>
+     * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return This builder for chaining.
      */
     public Builder clearJobId() {
       jobId_ = getDefaultInstance().getJobId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string job_id = 2 [json_name = "job_id"];</code>
+     * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @param value The bytes for jobId to set.
      * @return This builder for chaining.
      */
@@ -816,22 +628,22 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       jobId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
     private int acceptedRows_ ;
     /**
-     * <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+     * <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
      * @return Whether the acceptedRows field is set.
      */
     @java.lang.Override
     public boolean hasAcceptedRows() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+     * <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
      * @return The acceptedRows.
      */
     @java.lang.Override
@@ -839,23 +651,23 @@ private static final long serialVersionUID = 0L;
       return acceptedRows_;
     }
     /**
-     * <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+     * <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
      * @param value The acceptedRows to set.
      * @return This builder for chaining.
      */
     public Builder setAcceptedRows(int value) {
 
       acceptedRows_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+     * <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAcceptedRows() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       acceptedRows_ = 0;
       onChanged();
       return this;
@@ -863,15 +675,15 @@ private static final long serialVersionUID = 0L;
 
     private int failedRows_ ;
     /**
-     * <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+     * <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
      * @return Whether the failedRows field is set.
      */
     @java.lang.Override
     public boolean hasFailedRows() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+     * <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
      * @return The failedRows.
      */
     @java.lang.Override
@@ -879,23 +691,23 @@ private static final long serialVersionUID = 0L;
       return failedRows_;
     }
     /**
-     * <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+     * <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
      * @param value The failedRows to set.
      * @return This builder for chaining.
      */
     public Builder setFailedRows(int value) {
 
       failedRows_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+     * <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
      * @return This builder for chaining.
      */
     public Builder clearFailedRows() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       failedRows_ = 0;
       onChanged();
       return this;
@@ -903,14 +715,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object errorReportUrl_ = "";
     /**
-     * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+     * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
      * @return Whether the errorReportUrl field is set.
      */
     public boolean hasErrorReportUrl() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+     * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
      * @return The errorReportUrl.
      */
     public java.lang.String getErrorReportUrl() {
@@ -926,7 +738,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+     * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
      * @return The bytes for errorReportUrl.
      */
     public com.google.protobuf.ByteString
@@ -943,7 +755,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+     * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
      * @param value The errorReportUrl to set.
      * @return This builder for chaining.
      */
@@ -951,22 +763,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       errorReportUrl_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+     * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
      * @return This builder for chaining.
      */
     public Builder clearErrorReportUrl() {
       errorReportUrl_ = getDefaultInstance().getErrorReportUrl();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+     * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
      * @param value The bytes for errorReportUrl to set.
      * @return This builder for chaining.
      */
@@ -975,7 +787,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       errorReportUrl_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

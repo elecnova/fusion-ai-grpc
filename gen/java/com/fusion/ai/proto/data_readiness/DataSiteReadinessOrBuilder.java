@@ -23,88 +23,197 @@ public interface DataSiteReadinessOrBuilder extends
       getRegistrationIdBytes();
 
   /**
-   * <code>string site_name = 2 [json_name = "site_name"];</code>
+   * <code>string site_id = 2 [json_name = "site_id"];</code>
+   * @return The siteId.
+   */
+  java.lang.String getSiteId();
+  /**
+   * <code>string site_id = 2 [json_name = "site_id"];</code>
+   * @return The bytes for siteId.
+   */
+  com.google.protobuf.ByteString
+      getSiteIdBytes();
+
+  /**
+   * <code>string site_name = 3 [json_name = "site_name"];</code>
    * @return The siteName.
    */
   java.lang.String getSiteName();
   /**
-   * <code>string site_name = 2 [json_name = "site_name"];</code>
+   * <code>string site_name = 3 [json_name = "site_name"];</code>
    * @return The bytes for siteName.
    */
   com.google.protobuf.ByteString
       getSiteNameBytes();
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+   * <code>string service_type = 4 [json_name = "service_type"];</code>
+   * @return The serviceType.
+   */
+  java.lang.String getServiceType();
+  /**
+   * <code>string service_type = 4 [json_name = "service_type"];</code>
+   * @return The bytes for serviceType.
+   */
+  com.google.protobuf.ByteString
+      getServiceTypeBytes();
+
+  /**
+   * <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+   * @return The enum numeric value on the wire for dataSource.
+   */
+  int getDataSourceValue();
+  /**
+   * <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+   * @return The dataSource.
+   */
+  com.fusion.ai.proto.data_readiness.DataSource getDataSource();
+
+  /**
+   * <pre>
+   * 展示用：如「近 90 天」
+   * </pre>
+   *
+   * <code>string train_window = 6 [json_name = "train_window"];</code>
+   * @return The trainWindow.
+   */
+  java.lang.String getTrainWindow();
+  /**
+   * <pre>
+   * 展示用：如「近 90 天」
+   * </pre>
+   *
+   * <code>string train_window = 6 [json_name = "train_window"];</code>
+   * @return The bytes for trainWindow.
+   */
+  com.google.protobuf.ByteString
+      getTrainWindowBytes();
+
+  /**
+   * <pre>
+   * 展示用：如「能管 Push」
+   * </pre>
+   *
+   * <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+   * @return The upstreamLabel.
+   */
+  java.lang.String getUpstreamLabel();
+  /**
+   * <pre>
+   * 展示用：如「能管 Push」
+   * </pre>
+   *
+   * <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+   * @return The bytes for upstreamLabel.
+   */
+  com.google.protobuf.ByteString
+      getUpstreamLabelBytes();
+
+  /**
+   * <pre>
+   * 仅光伏；如 UKMO / ECMWF / excel_import
+   * </pre>
+   *
+   * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+   * @return Whether the weatherProviderId field is set.
+   */
+  boolean hasWeatherProviderId();
+  /**
+   * <pre>
+   * 仅光伏；如 UKMO / ECMWF / excel_import
+   * </pre>
+   *
+   * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+   * @return The weatherProviderId.
+   */
+  java.lang.String getWeatherProviderId();
+  /**
+   * <pre>
+   * 仅光伏；如 UKMO / ECMWF / excel_import
+   * </pre>
+   *
+   * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+   * @return The bytes for weatherProviderId.
+   */
+  com.google.protobuf.ByteString
+      getWeatherProviderIdBytes();
+
+  /**
+   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
    * @return The enum numeric value on the wire for readinessStatus.
    */
   int getReadinessStatusValue();
   /**
-   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
    * @return The readinessStatus.
    */
   com.fusion.ai.proto.data_readiness.ReadinessStatus getReadinessStatus();
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
+   * @return Whether the weatherStatus field is set.
+   */
+  boolean hasWeatherStatus();
+  /**
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
    * @return The enum numeric value on the wire for weatherStatus.
    */
   int getWeatherStatusValue();
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
    * @return The weatherStatus.
    */
   com.fusion.ai.proto.data_readiness.WeatherStatus getWeatherStatus();
 
   /**
-   * <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+   * <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
    * @return Whether the coverageRatio7d field is set.
    */
   boolean hasCoverageRatio7D();
   /**
-   * <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+   * <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
    * @return The coverageRatio7d.
    */
   double getCoverageRatio7D();
 
   /**
-   * <code>int32 gap_points_7d = 6 [json_name = "gap_points_7d"];</code>
+   * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
    * @return The gapPoints7d.
    */
   int getGapPoints7D();
 
   /**
-   * <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+   * <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
    * @return The gapFocus.
    */
   java.lang.String getGapFocus();
   /**
-   * <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+   * <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
    * @return The bytes for gapFocus.
    */
   com.google.protobuf.ByteString
       getGapFocusBytes();
 
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   java.util.List<com.fusion.ai.proto.data_readiness.HeatmapDay> 
       getHeatmap14DList();
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   com.fusion.ai.proto.data_readiness.HeatmapDay getHeatmap14D(int index);
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   int getHeatmap14DCount();
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   java.util.List<? extends com.fusion.ai.proto.data_readiness.HeatmapDayOrBuilder> 
       getHeatmap14DOrBuilderList();
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   com.fusion.ai.proto.data_readiness.HeatmapDayOrBuilder getHeatmap14DOrBuilder(
       int index);

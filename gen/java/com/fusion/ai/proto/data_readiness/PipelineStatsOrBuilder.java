@@ -26,17 +26,17 @@ public interface PipelineStatsOrBuilder extends
   com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder getPushLineOrBuilder();
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
    * @return Whether the weatherJobLine field is set.
    */
   boolean hasWeatherJobLine();
   /**
-   * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
    * @return The weatherJobLine.
    */
   com.fusion.ai.proto.data_readiness.PipelineLine getWeatherJobLine();
   /**
-   * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
    */
   com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder getWeatherJobLineOrBuilder();
 
@@ -69,19 +69,4 @@ public interface PipelineStatsOrBuilder extends
    * <code>.fusion.ai.proto.data_readiness.PipelineLine validation_queue_line = 4 [json_name = "validation_queue_line"];</code>
    */
   com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder getValidationQueueLineOrBuilder();
-
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-   * @return Whether the pullLine field is set.
-   */
-  boolean hasPullLine();
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-   * @return The pullLine.
-   */
-  com.fusion.ai.proto.data_readiness.PipelineLine getPullLine();
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-   */
-  com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder getPullLineOrBuilder();
 }

@@ -31,7 +31,6 @@ const (
 	DataReadinessService_ListDataSiteRows_FullMethodName            = "/fusion.ai.proto.data_readiness.DataReadinessService/ListDataSiteRows"
 	DataReadinessService_GetDataSiteReadiness_FullMethodName        = "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataSiteReadiness"
 	DataReadinessService_GetDataPipelineStats_FullMethodName        = "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataPipelineStats"
-	DataReadinessService_ExportDataGaps_FullMethodName              = "/fusion.ai.proto.data_readiness.DataReadinessService/ExportDataGaps"
 	DataReadinessService_GetWeatherExcelTemplate_FullMethodName     = "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherExcelTemplate"
 	DataReadinessService_GetWeatherSite_FullMethodName              = "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSite"
 	DataReadinessService_GetWeatherSyncRun_FullMethodName           = "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSyncRun"
@@ -40,8 +39,6 @@ const (
 	DataReadinessService_CreateWeatherExcelImportJob_FullMethodName = "/fusion.ai.proto.data_readiness.DataReadinessService/CreateWeatherExcelImportJob"
 	DataReadinessService_CreateDataBackfillJob_FullMethodName       = "/fusion.ai.proto.data_readiness.DataReadinessService/CreateDataBackfillJob"
 	DataReadinessService_UploadBackfillFile_FullMethodName          = "/fusion.ai.proto.data_readiness.DataReadinessService/UploadBackfillFile"
-	DataReadinessService_BatchPullPower_FullMethodName              = "/fusion.ai.proto.data_readiness.DataReadinessService/BatchPullPower"
-	DataReadinessService_RetryFailedPullPower_FullMethodName        = "/fusion.ai.proto.data_readiness.DataReadinessService/RetryFailedPullPower"
 )
 
 // DataReadinessServiceClient is the client API for DataReadinessService service.
@@ -49,35 +46,32 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // DataReadinessService 数据就绪 / 数据管理 Tab 后端接口。
+// 失败统一 gRPC status + fusion-code（10 位业务码），HTTP 由网关映射，不再嵌业务 header。
 type DataReadinessServiceClient interface {
-	// 顶栏 KPI
+	// 顶栏 KPI（天气缺测仅 pv）
 	GetDataOverview(ctx context.Context, in *GetDataOverviewRequest, opts ...grpc.CallOption) (*GetDataOverviewResponse, error)
-	// 场站矩阵（含 7 日覆盖、趋势、天气、缺口、状态、工作台链）
+	// 场站矩阵（含 7 日覆盖、趋势、可选天气、缺口、状态、工作台链）+ 分页
 	ListDataSiteRows(ctx context.Context, in *ListDataSiteRowsRequest, opts ...grpc.CallOption) (*ListDataSiteRowsResponse, error)
-	// 右侧详情：14 日热力 + 缺口集中
+	// 右侧详情：业务/接入、训练窗口、上游、天气来源、14 日热力、缺口集中
 	GetDataSiteReadiness(ctx context.Context, in *GetDataSiteReadinessRequest, opts ...grpc.CallOption) (*GetDataSiteReadinessResponse, error)
-	// 接入管道 24h 四行（+ 可选 Pull 行）
+	// 接入管道 24h（天气 Job 行仅光伏）
 	GetDataPipelineStats(ctx context.Context, in *GetDataPipelineStatsRequest, opts ...grpc.CallOption) (*GetDataPipelineStatsResponse, error)
-	// 导出缺口 CSV（gRPC 用 bytes；浏览器下载见设计 §4.3.4 专用 HTTP handler 或 HttpBody）
-	ExportDataGaps(ctx context.Context, in *ExportDataGapsRequest, opts ...grpc.CallOption) (*ExportDataGapsResponse, error)
 	// 天气 Excel 空模板下载
 	GetWeatherExcelTemplate(ctx context.Context, in *GetWeatherExcelTemplateRequest, opts ...grpc.CallOption) (*GetWeatherExcelTemplateResponse, error)
-	// 单场站天气运维状态（可选）
+	// 单场站天气运维状态
 	GetWeatherSite(ctx context.Context, in *GetWeatherSiteRequest, opts ...grpc.CallOption) (*GetWeatherSiteResponse, error)
 	// 天气同步批次明细（失败重试、接入监控）
 	GetWeatherSyncRun(ctx context.Context, in *GetWeatherSyncRunRequest, opts ...grpc.CallOption) (*GetWeatherSyncRunResponse, error)
-	// 批量/定时/手动同步天气（WeatherSyncManager）
+	// 批量/定时/手动同步天气（含单站 BY_REGISTRATION）
 	BatchSyncWeather(ctx context.Context, in *BatchSyncWeatherRequest, opts ...grpc.CallOption) (*BatchSyncWeatherResponse, error)
 	// 重试失败天气区域 task
 	RetryFailedWeatherSync(ctx context.Context, in *RetryFailedWeatherSyncRequest, opts ...grpc.CallOption) (*RetryFailedWeatherSyncResponse, error)
-	// 导入天气 Excel（Job；大文件可走对象存储后传 job_id，一期 body 传 bytes）
+	// 导入天气 Excel（Job）
 	CreateWeatherExcelImportJob(ctx context.Context, in *CreateWeatherExcelImportJobRequest, opts ...grpc.CallOption) (*CreateWeatherExcelImportJobResponse, error)
 	// 创建数据补录 Job（Pull/Push/File 由注册 data_source 决定）
 	CreateDataBackfillJob(ctx context.Context, in *CreateDataBackfillJobRequest, opts ...grpc.CallOption) (*CreateDataBackfillJobResponse, error)
 	// File 补录再次上传
 	UploadBackfillFile(ctx context.Context, in *UploadBackfillFileRequest, opts ...grpc.CallOption) (*UploadBackfillFileResponse, error)
-	BatchPullPower(ctx context.Context, in *BatchPullPowerRequest, opts ...grpc.CallOption) (*BatchPullPowerResponse, error)
-	RetryFailedPullPower(ctx context.Context, in *RetryFailedPullPowerRequest, opts ...grpc.CallOption) (*RetryFailedPullPowerResponse, error)
 }
 
 type dataReadinessServiceClient struct {
@@ -122,16 +116,6 @@ func (c *dataReadinessServiceClient) GetDataPipelineStats(ctx context.Context, i
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetDataPipelineStatsResponse)
 	err := c.cc.Invoke(ctx, DataReadinessService_GetDataPipelineStats_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dataReadinessServiceClient) ExportDataGaps(ctx context.Context, in *ExportDataGapsRequest, opts ...grpc.CallOption) (*ExportDataGapsResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ExportDataGapsResponse)
-	err := c.cc.Invoke(ctx, DataReadinessService_ExportDataGaps_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -218,60 +202,37 @@ func (c *dataReadinessServiceClient) UploadBackfillFile(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *dataReadinessServiceClient) BatchPullPower(ctx context.Context, in *BatchPullPowerRequest, opts ...grpc.CallOption) (*BatchPullPowerResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(BatchPullPowerResponse)
-	err := c.cc.Invoke(ctx, DataReadinessService_BatchPullPower_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dataReadinessServiceClient) RetryFailedPullPower(ctx context.Context, in *RetryFailedPullPowerRequest, opts ...grpc.CallOption) (*RetryFailedPullPowerResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(RetryFailedPullPowerResponse)
-	err := c.cc.Invoke(ctx, DataReadinessService_RetryFailedPullPower_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // DataReadinessServiceServer is the server API for DataReadinessService service.
 // All implementations must embed UnimplementedDataReadinessServiceServer
 // for forward compatibility.
 //
 // DataReadinessService 数据就绪 / 数据管理 Tab 后端接口。
+// 失败统一 gRPC status + fusion-code（10 位业务码），HTTP 由网关映射，不再嵌业务 header。
 type DataReadinessServiceServer interface {
-	// 顶栏 KPI
+	// 顶栏 KPI（天气缺测仅 pv）
 	GetDataOverview(context.Context, *GetDataOverviewRequest) (*GetDataOverviewResponse, error)
-	// 场站矩阵（含 7 日覆盖、趋势、天气、缺口、状态、工作台链）
+	// 场站矩阵（含 7 日覆盖、趋势、可选天气、缺口、状态、工作台链）+ 分页
 	ListDataSiteRows(context.Context, *ListDataSiteRowsRequest) (*ListDataSiteRowsResponse, error)
-	// 右侧详情：14 日热力 + 缺口集中
+	// 右侧详情：业务/接入、训练窗口、上游、天气来源、14 日热力、缺口集中
 	GetDataSiteReadiness(context.Context, *GetDataSiteReadinessRequest) (*GetDataSiteReadinessResponse, error)
-	// 接入管道 24h 四行（+ 可选 Pull 行）
+	// 接入管道 24h（天气 Job 行仅光伏）
 	GetDataPipelineStats(context.Context, *GetDataPipelineStatsRequest) (*GetDataPipelineStatsResponse, error)
-	// 导出缺口 CSV（gRPC 用 bytes；浏览器下载见设计 §4.3.4 专用 HTTP handler 或 HttpBody）
-	ExportDataGaps(context.Context, *ExportDataGapsRequest) (*ExportDataGapsResponse, error)
 	// 天气 Excel 空模板下载
 	GetWeatherExcelTemplate(context.Context, *GetWeatherExcelTemplateRequest) (*GetWeatherExcelTemplateResponse, error)
-	// 单场站天气运维状态（可选）
+	// 单场站天气运维状态
 	GetWeatherSite(context.Context, *GetWeatherSiteRequest) (*GetWeatherSiteResponse, error)
 	// 天气同步批次明细（失败重试、接入监控）
 	GetWeatherSyncRun(context.Context, *GetWeatherSyncRunRequest) (*GetWeatherSyncRunResponse, error)
-	// 批量/定时/手动同步天气（WeatherSyncManager）
+	// 批量/定时/手动同步天气（含单站 BY_REGISTRATION）
 	BatchSyncWeather(context.Context, *BatchSyncWeatherRequest) (*BatchSyncWeatherResponse, error)
 	// 重试失败天气区域 task
 	RetryFailedWeatherSync(context.Context, *RetryFailedWeatherSyncRequest) (*RetryFailedWeatherSyncResponse, error)
-	// 导入天气 Excel（Job；大文件可走对象存储后传 job_id，一期 body 传 bytes）
+	// 导入天气 Excel（Job）
 	CreateWeatherExcelImportJob(context.Context, *CreateWeatherExcelImportJobRequest) (*CreateWeatherExcelImportJobResponse, error)
 	// 创建数据补录 Job（Pull/Push/File 由注册 data_source 决定）
 	CreateDataBackfillJob(context.Context, *CreateDataBackfillJobRequest) (*CreateDataBackfillJobResponse, error)
 	// File 补录再次上传
 	UploadBackfillFile(context.Context, *UploadBackfillFileRequest) (*UploadBackfillFileResponse, error)
-	BatchPullPower(context.Context, *BatchPullPowerRequest) (*BatchPullPowerResponse, error)
-	RetryFailedPullPower(context.Context, *RetryFailedPullPowerRequest) (*RetryFailedPullPowerResponse, error)
 	mustEmbedUnimplementedDataReadinessServiceServer()
 }
 
@@ -293,9 +254,6 @@ func (UnimplementedDataReadinessServiceServer) GetDataSiteReadiness(context.Cont
 }
 func (UnimplementedDataReadinessServiceServer) GetDataPipelineStats(context.Context, *GetDataPipelineStatsRequest) (*GetDataPipelineStatsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetDataPipelineStats not implemented")
-}
-func (UnimplementedDataReadinessServiceServer) ExportDataGaps(context.Context, *ExportDataGapsRequest) (*ExportDataGapsResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method ExportDataGaps not implemented")
 }
 func (UnimplementedDataReadinessServiceServer) GetWeatherExcelTemplate(context.Context, *GetWeatherExcelTemplateRequest) (*GetWeatherExcelTemplateResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetWeatherExcelTemplate not implemented")
@@ -320,12 +278,6 @@ func (UnimplementedDataReadinessServiceServer) CreateDataBackfillJob(context.Con
 }
 func (UnimplementedDataReadinessServiceServer) UploadBackfillFile(context.Context, *UploadBackfillFileRequest) (*UploadBackfillFileResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UploadBackfillFile not implemented")
-}
-func (UnimplementedDataReadinessServiceServer) BatchPullPower(context.Context, *BatchPullPowerRequest) (*BatchPullPowerResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method BatchPullPower not implemented")
-}
-func (UnimplementedDataReadinessServiceServer) RetryFailedPullPower(context.Context, *RetryFailedPullPowerRequest) (*RetryFailedPullPowerResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method RetryFailedPullPower not implemented")
 }
 func (UnimplementedDataReadinessServiceServer) mustEmbedUnimplementedDataReadinessServiceServer() {}
 func (UnimplementedDataReadinessServiceServer) testEmbeddedByValue()                              {}
@@ -416,24 +368,6 @@ func _DataReadinessService_GetDataPipelineStats_Handler(srv interface{}, ctx con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataReadinessServiceServer).GetDataPipelineStats(ctx, req.(*GetDataPipelineStatsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DataReadinessService_ExportDataGaps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExportDataGapsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataReadinessServiceServer).ExportDataGaps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: DataReadinessService_ExportDataGaps_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataReadinessServiceServer).ExportDataGaps(ctx, req.(*ExportDataGapsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -582,42 +516,6 @@ func _DataReadinessService_UploadBackfillFile_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataReadinessService_BatchPullPower_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(BatchPullPowerRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataReadinessServiceServer).BatchPullPower(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: DataReadinessService_BatchPullPower_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataReadinessServiceServer).BatchPullPower(ctx, req.(*BatchPullPowerRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DataReadinessService_RetryFailedPullPower_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RetryFailedPullPowerRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DataReadinessServiceServer).RetryFailedPullPower(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: DataReadinessService_RetryFailedPullPower_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataReadinessServiceServer).RetryFailedPullPower(ctx, req.(*RetryFailedPullPowerRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // DataReadinessService_ServiceDesc is the grpc.ServiceDesc for DataReadinessService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -640,10 +538,6 @@ var DataReadinessService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDataPipelineStats",
 			Handler:    _DataReadinessService_GetDataPipelineStats_Handler,
-		},
-		{
-			MethodName: "ExportDataGaps",
-			Handler:    _DataReadinessService_ExportDataGaps_Handler,
 		},
 		{
 			MethodName: "GetWeatherExcelTemplate",
@@ -676,14 +570,6 @@ var DataReadinessService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UploadBackfillFile",
 			Handler:    _DataReadinessService_UploadBackfillFile_Handler,
-		},
-		{
-			MethodName: "BatchPullPower",
-			Handler:    _DataReadinessService_BatchPullPower_Handler,
-		},
-		{
-			MethodName: "RetryFailedPullPower",
-			Handler:    _DataReadinessService_RetryFailedPullPower_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

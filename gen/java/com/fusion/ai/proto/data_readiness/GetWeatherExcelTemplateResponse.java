@@ -51,37 +51,10 @@ private static final long serialVersionUID = 0L;
             com.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.class, com.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int HEADER_FIELD_NUMBER = 1;
-  private com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header_;
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  @java.lang.Override
-  public boolean hasHeader() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader() {
-    return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-  }
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder() {
-    return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-  }
-
-  public static final int FILE_FIELD_NUMBER = 2;
+  public static final int FILE_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString file_ = com.google.protobuf.ByteString.EMPTY;
   /**
-   * <code>bytes file = 2 [json_name = "file"];</code>
+   * <code>bytes file = 1 [json_name = "file"];</code>
    * @return The file.
    */
   @java.lang.Override
@@ -89,11 +62,11 @@ private static final long serialVersionUID = 0L;
     return file_;
   }
 
-  public static final int FILENAME_FIELD_NUMBER = 3;
+  public static final int FILENAME_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
   private volatile java.lang.Object filename_ = "";
   /**
-   * <code>string filename = 3 [json_name = "filename"];</code>
+   * <code>string filename = 2 [json_name = "filename"];</code>
    * @return The filename.
    */
   @java.lang.Override
@@ -110,7 +83,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string filename = 3 [json_name = "filename"];</code>
+   * <code>string filename = 2 [json_name = "filename"];</code>
    * @return The bytes for filename.
    */
   @java.lang.Override
@@ -128,11 +101,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONTENT_TYPE_FIELD_NUMBER = 4;
+  public static final int CONTENT_TYPE_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentType_ = "";
   /**
-   * <code>string content_type = 4 [json_name = "content_type"];</code>
+   * <code>string content_type = 3 [json_name = "content_type"];</code>
    * @return The contentType.
    */
   @java.lang.Override
@@ -149,7 +122,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string content_type = 4 [json_name = "content_type"];</code>
+   * <code>string content_type = 3 [json_name = "content_type"];</code>
    * @return The bytes for contentType.
    */
   @java.lang.Override
@@ -181,35 +154,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getHeader());
-    }
     if (!file_.isEmpty()) {
-      output.writeBytes(2, file_);
+      output.writeBytes(1, file_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filename_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, filename_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, filename_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentType_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, contentType_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, contentType_);
     }
     getUnknownFields().writeTo(output);
   }
   private int computeSerializedSize_0() {
     int size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getHeader());
-    }
     if (!file_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(2, file_);
+        .computeBytesSize(1, file_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filename_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, filename_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, filename_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentType_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, contentType_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, contentType_);
     }
     return size;
   }
@@ -235,11 +201,6 @@ private static final long serialVersionUID = 0L;
     }
     com.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse other = (com.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse) obj;
 
-    if (hasHeader() != other.hasHeader()) return false;
-    if (hasHeader()) {
-      if (!getHeader()
-          .equals(other.getHeader())) return false;
-    }
     if (!getFile()
         .equals(other.getFile())) return false;
     if (!getFilename()
@@ -257,10 +218,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasHeader()) {
-      hash = (37 * hash) + HEADER_FIELD_NUMBER;
-      hash = (53 * hash) + getHeader().hashCode();
-    }
     hash = (37 * hash) + FILE_FIELD_NUMBER;
     hash = (53 * hash) + getFile().hashCode();
     hash = (37 * hash) + FILENAME_FIELD_NUMBER;
@@ -386,29 +343,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetHeaderFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      header_ = null;
-      if (headerBuilder_ != null) {
-        headerBuilder_.dispose();
-        headerBuilder_ = null;
-      }
       file_ = com.google.protobuf.ByteString.EMPTY;
       filename_ = "";
       contentType_ = "";
@@ -445,23 +391,15 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.header_ = headerBuilder_ == null
-            ? header_
-            : headerBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.file_ = file_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.filename_ = filename_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.contentType_ = contentType_;
       }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -476,20 +414,17 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse other) {
       if (other == com.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.getDefaultInstance()) return this;
-      if (other.hasHeader()) {
-        mergeHeader(other.getHeader());
-      }
       if (!other.getFile().isEmpty()) {
         setFile(other.getFile());
       }
       if (!other.getFilename().isEmpty()) {
         filename_ = other.filename_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getContentType().isEmpty()) {
         contentType_ = other.contentType_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -517,27 +452,20 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              input.readMessage(
-                  internalGetHeaderFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              file_ = input.readBytes();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
-              file_ = input.readBytes();
+              filename_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
-              filename_ = input.readStringRequireUtf8();
+              contentType_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
-            case 34: {
-              contentType_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
-              break;
-            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -555,128 +483,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder> headerBuilder_;
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return Whether the header field is set.
-     */
-    public boolean hasHeader() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return The header.
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader() {
-      if (headerBuilder_ == null) {
-        return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-      } else {
-        return headerBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder setHeader(com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader value) {
-      if (headerBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        header_ = value;
-      } else {
-        headerBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder setHeader(
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder builderForValue) {
-      if (headerBuilder_ == null) {
-        header_ = builderForValue.build();
-      } else {
-        headerBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder mergeHeader(com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader value) {
-      if (headerBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
-          header_ != null &&
-          header_ != com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance()) {
-          getHeaderBuilder().mergeFrom(value);
-        } else {
-          header_ = value;
-        }
-      } else {
-        headerBuilder_.mergeFrom(value);
-      }
-      if (header_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder clearHeader() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      header_ = null;
-      if (headerBuilder_ != null) {
-        headerBuilder_.dispose();
-        headerBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder getHeaderBuilder() {
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return internalGetHeaderFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder() {
-      if (headerBuilder_ != null) {
-        return headerBuilder_.getMessageOrBuilder();
-      } else {
-        return header_ == null ?
-            com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-      }
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder> 
-        internalGetHeaderFieldBuilder() {
-      if (headerBuilder_ == null) {
-        headerBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder>(
-                getHeader(),
-                getParentForChildren(),
-                isClean());
-        header_ = null;
-      }
-      return headerBuilder_;
-    }
-
     private com.google.protobuf.ByteString file_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes file = 2 [json_name = "file"];</code>
+     * <code>bytes file = 1 [json_name = "file"];</code>
      * @return The file.
      */
     @java.lang.Override
@@ -684,23 +493,23 @@ private static final long serialVersionUID = 0L;
       return file_;
     }
     /**
-     * <code>bytes file = 2 [json_name = "file"];</code>
+     * <code>bytes file = 1 [json_name = "file"];</code>
      * @param value The file to set.
      * @return This builder for chaining.
      */
     public Builder setFile(com.google.protobuf.ByteString value) {
       java.util.Objects.requireNonNull(value);
       file_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>bytes file = 2 [json_name = "file"];</code>
+     * <code>bytes file = 1 [json_name = "file"];</code>
      * @return This builder for chaining.
      */
     public Builder clearFile() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       file_ = getDefaultInstance().getFile();
       onChanged();
       return this;
@@ -708,7 +517,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filename_ = "";
     /**
-     * <code>string filename = 3 [json_name = "filename"];</code>
+     * <code>string filename = 2 [json_name = "filename"];</code>
      * @return The filename.
      */
     public java.lang.String getFilename() {
@@ -724,7 +533,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string filename = 3 [json_name = "filename"];</code>
+     * <code>string filename = 2 [json_name = "filename"];</code>
      * @return The bytes for filename.
      */
     public com.google.protobuf.ByteString
@@ -741,7 +550,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string filename = 3 [json_name = "filename"];</code>
+     * <code>string filename = 2 [json_name = "filename"];</code>
      * @param value The filename to set.
      * @return This builder for chaining.
      */
@@ -749,22 +558,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       filename_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string filename = 3 [json_name = "filename"];</code>
+     * <code>string filename = 2 [json_name = "filename"];</code>
      * @return This builder for chaining.
      */
     public Builder clearFilename() {
       filename_ = getDefaultInstance().getFilename();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string filename = 3 [json_name = "filename"];</code>
+     * <code>string filename = 2 [json_name = "filename"];</code>
      * @param value The bytes for filename to set.
      * @return This builder for chaining.
      */
@@ -773,14 +582,14 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       filename_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
     private java.lang.Object contentType_ = "";
     /**
-     * <code>string content_type = 4 [json_name = "content_type"];</code>
+     * <code>string content_type = 3 [json_name = "content_type"];</code>
      * @return The contentType.
      */
     public java.lang.String getContentType() {
@@ -796,7 +605,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string content_type = 4 [json_name = "content_type"];</code>
+     * <code>string content_type = 3 [json_name = "content_type"];</code>
      * @return The bytes for contentType.
      */
     public com.google.protobuf.ByteString
@@ -813,7 +622,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string content_type = 4 [json_name = "content_type"];</code>
+     * <code>string content_type = 3 [json_name = "content_type"];</code>
      * @param value The contentType to set.
      * @return This builder for chaining.
      */
@@ -821,22 +630,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       contentType_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string content_type = 4 [json_name = "content_type"];</code>
+     * <code>string content_type = 3 [json_name = "content_type"];</code>
      * @return This builder for chaining.
      */
     public Builder clearContentType() {
       contentType_ = getDefaultInstance().getContentType();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string content_type = 4 [json_name = "content_type"];</code>
+     * <code>string content_type = 3 [json_name = "content_type"];</code>
      * @param value The bytes for contentType to set.
      * @return This builder for chaining.
      */
@@ -845,7 +654,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       contentType_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

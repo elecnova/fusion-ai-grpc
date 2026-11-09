@@ -11,66 +11,51 @@ public interface CreateWeatherExcelImportJobResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  boolean hasHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder();
-
-  /**
-   * <code>string job_id = 2 [json_name = "job_id"];</code>
+   * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The jobId.
    */
   java.lang.String getJobId();
   /**
-   * <code>string job_id = 2 [json_name = "job_id"];</code>
+   * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The bytes for jobId.
    */
   com.google.protobuf.ByteString
       getJobIdBytes();
 
   /**
-   * <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+   * <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
    * @return Whether the acceptedRows field is set.
    */
   boolean hasAcceptedRows();
   /**
-   * <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+   * <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
    * @return The acceptedRows.
    */
   int getAcceptedRows();
 
   /**
-   * <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+   * <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
    * @return Whether the failedRows field is set.
    */
   boolean hasFailedRows();
   /**
-   * <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+   * <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
    * @return The failedRows.
    */
   int getFailedRows();
 
   /**
-   * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+   * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
    * @return Whether the errorReportUrl field is set.
    */
   boolean hasErrorReportUrl();
   /**
-   * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+   * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
    * @return The errorReportUrl.
    */
   java.lang.String getErrorReportUrl();
   /**
-   * <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+   * <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
    * @return The bytes for errorReportUrl.
    */
   com.google.protobuf.ByteString

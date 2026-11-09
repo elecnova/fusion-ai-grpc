@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * DataOverview 顶栏 KPI。原始功率固定 5min；天气 KPI 仅 pv 有值。
+ *
  * Generated from protobuf message <code>fusion.ai.proto.data_readiness.DataOverview</code>
  */
 class DataOverview extends \Google\Protobuf\Internal\Message
@@ -27,9 +29,11 @@ class DataOverview extends \Google\Protobuf\Internal\Message
      */
     protected $need_fill_count = 0;
     /**
-     * Generated from protobuf field <code>int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     *
+     * Generated from protobuf field <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
      */
-    protected $weather_missing_count = 0;
+    protected $weather_missing_count = null;
     /**
      * Generated from protobuf field <code>double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];</code>
      */
@@ -49,6 +53,7 @@ class DataOverview extends \Google\Protobuf\Internal\Message
      *     @type int $ready_today
      *     @type int $need_fill_count
      *     @type int $weather_missing_count
+     *           仅 service_type=pv_prediction 时填写；其它业务不返回
      *     @type float $push_success_24h_pct
      *     @type int $avg_push_latency_ms
      * }
@@ -126,16 +131,30 @@ class DataOverview extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     *
+     * Generated from protobuf field <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
      * @return int
      */
     public function getWeatherMissingCount()
     {
-        return $this->weather_missing_count;
+        return isset($this->weather_missing_count) ? $this->weather_missing_count : 0;
+    }
+
+    public function hasWeatherMissingCount()
+    {
+        return isset($this->weather_missing_count);
+    }
+
+    public function clearWeatherMissingCount()
+    {
+        unset($this->weather_missing_count);
     }
 
     /**
-     * Generated from protobuf field <code>int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     *
+     * Generated from protobuf field <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
      * @param int $var
      * @return $this
      */

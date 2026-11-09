@@ -15,19 +15,15 @@ use Google\Protobuf\RepeatedField;
 class GetWeatherExcelTemplateResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    protected $header = null;
-    /**
-     * Generated from protobuf field <code>bytes file = 2 [json_name = "file"];</code>
+     * Generated from protobuf field <code>bytes file = 1 [json_name = "file"];</code>
      */
     protected $file = '';
     /**
-     * Generated from protobuf field <code>string filename = 3 [json_name = "filename"];</code>
+     * Generated from protobuf field <code>string filename = 2 [json_name = "filename"];</code>
      */
     protected $filename = '';
     /**
-     * Generated from protobuf field <code>string content_type = 4 [json_name = "content_type"];</code>
+     * Generated from protobuf field <code>string content_type = 3 [json_name = "content_type"];</code>
      */
     protected $content_type = '';
 
@@ -37,7 +33,6 @@ class GetWeatherExcelTemplateResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader $header
      *     @type string $file
      *     @type string $filename
      *     @type string $content_type
@@ -50,38 +45,7 @@ class GetWeatherExcelTemplateResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader|null
-     */
-    public function getHeader()
-    {
-        return $this->header;
-    }
-
-    public function hasHeader()
-    {
-        return isset($this->header);
-    }
-
-    public function clearHeader()
-    {
-        unset($this->header);
-    }
-
-    /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @param \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader $var
-     * @return $this
-     */
-    public function setHeader(\Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader|null $var)
-    {
-        $this->header = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes file = 2 [json_name = "file"];</code>
+     * Generated from protobuf field <code>bytes file = 1 [json_name = "file"];</code>
      * @return string
      */
     public function getFile()
@@ -90,7 +54,7 @@ class GetWeatherExcelTemplateResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes file = 2 [json_name = "file"];</code>
+     * Generated from protobuf field <code>bytes file = 1 [json_name = "file"];</code>
      * @param string $var
      * @return $this
      */
@@ -103,7 +67,7 @@ class GetWeatherExcelTemplateResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string filename = 3 [json_name = "filename"];</code>
+     * Generated from protobuf field <code>string filename = 2 [json_name = "filename"];</code>
      * @return string
      */
     public function getFilename()
@@ -112,7 +76,7 @@ class GetWeatherExcelTemplateResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string filename = 3 [json_name = "filename"];</code>
+     * Generated from protobuf field <code>string filename = 2 [json_name = "filename"];</code>
      * @param string $var
      * @return $this
      */
@@ -125,7 +89,7 @@ class GetWeatherExcelTemplateResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content_type = 4 [json_name = "content_type"];</code>
+     * Generated from protobuf field <code>string content_type = 3 [json_name = "content_type"];</code>
      * @return string
      */
     public function getContentType()
@@ -134,7 +98,7 @@ class GetWeatherExcelTemplateResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content_type = 4 [json_name = "content_type"];</code>
+     * Generated from protobuf field <code>string content_type = 3 [json_name = "content_type"];</code>
      * @param string $var
      * @return $this
      */

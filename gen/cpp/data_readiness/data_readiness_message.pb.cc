@@ -29,8 +29,6 @@ namespace _fl = ::google::protobuf::internal::field_layout;
 namespace {
 PROTOBUF_CONSTINIT ::google::protobuf::internal::ReflectionData
     file_reflection_data[] = {
-        // ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader
-        {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::data_readiness::DataOverview
         {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::data_readiness::CoverageTrendPoint
@@ -69,10 +67,6 @@ PROTOBUF_CONSTINIT ::google::protobuf::internal::ReflectionData
         {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::data_readiness::GetDataPipelineStatsResponse
         {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
-        // ::fusion::ai::proto::data_readiness::ExportDataGapsRequest
-        {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
-        // ::fusion::ai::proto::data_readiness::ExportDataGapsResponse
-        {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::data_readiness::GetWeatherSiteRequest
         {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::data_readiness::GetWeatherSiteResponse
@@ -106,14 +100,6 @@ PROTOBUF_CONSTINIT ::google::protobuf::internal::ReflectionData
         // ::fusion::ai::proto::data_readiness::UploadBackfillFileRequest
         {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::data_readiness::UploadBackfillFileResponse
-        {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
-        // ::fusion::ai::proto::data_readiness::BatchPullPowerRequest
-        {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
-        // ::fusion::ai::proto::data_readiness::BatchPullPowerResponse
-        {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
-        // ::fusion::ai::proto::data_readiness::RetryFailedPullPowerRequest
-        {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
-        // ::fusion::ai::proto::data_readiness::RetryFailedPullPowerResponse
         {&::_pbi::kDescriptorMethods, &::descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto, /* tracker*/ nullptr,},
 };
 }  // namespace
@@ -269,7 +255,7 @@ constexpr auto WeatherSyncTaskView::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[10],
+      &file_reflection_data[9],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -435,7 +421,7 @@ constexpr auto WeatherSyncPartialError::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[27],
+      &file_reflection_data[24],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -580,7 +566,7 @@ constexpr auto UploadBackfillFileResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[38],
+      &file_reflection_data[35],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -745,7 +731,7 @@ constexpr auto UploadBackfillFileRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[37],
+      &file_reflection_data[34],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -792,6 +778,158 @@ const ::_pbi::ClassData* UploadBackfillFileRequest_get_class_data() {
   return UploadBackfillFileRequest_globals_.GetClassData();
 #else
   return UploadBackfillFileRequest_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class RetryFailedWeatherSyncResponse::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<RetryFailedWeatherSyncResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._has_bits_);
+};
+
+constexpr RetryFailedWeatherSyncResponse::ParseTableT_ RetryFailedWeatherSyncResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._has_bits_),
+      0, // no _extensions_
+      2, 8,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967292,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      2,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RetryFailedWeatherSyncResponse, _impl_.status_), 1>(),
+       {16, 1, 0,
+        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_)}},
+      // string run_id = 1 [json_name = "run_id"];
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.run_id_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string run_id = 1 [json_name = "run_id"];
+      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.run_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
+      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+    }},
+    // no aux_entries
+    {{
+      "\75\6\0\0\0\0\0\0"
+      "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse"
+      "run_id"
+    }},
+  };
+}
+
+
+inline constexpr RetryFailedWeatherSyncResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : run_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        status_{static_cast< ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus >(0)} {}
+
+template <typename>
+constexpr RetryFailedWeatherSyncResponse::RetryFailedWeatherSyncResponse(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL RetryFailedWeatherSyncResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) RetryFailedWeatherSyncResponse(arena);
+}
+constexpr auto RetryFailedWeatherSyncResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(RetryFailedWeatherSyncResponse), alignof(RetryFailedWeatherSyncResponse));
+}
+constexpr auto RetryFailedWeatherSyncResponse::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &RetryFailedWeatherSyncResponse::MergeImpl,
+          Super_::GetNewImpl<RetryFailedWeatherSyncResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &RetryFailedWeatherSyncResponse::SharedDtor,
+          Super_::GetClearImpl<RetryFailedWeatherSyncResponse>(), &RetryFailedWeatherSyncResponse::ByteSizeLong,
+              &RetryFailedWeatherSyncResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[27],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct RetryFailedWeatherSyncResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr RetryFailedWeatherSyncResponseGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 RetryFailedWeatherSyncResponse_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(RetryFailedWeatherSyncResponse::InternalGenerateClassData_(
+            _default, &RetryFailedWeatherSyncResponse_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedWeatherSyncResponse>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~RetryFailedWeatherSyncResponseGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) RetryFailedWeatherSyncResponse _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedWeatherSyncResponse>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponseGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST RetryFailedWeatherSyncResponseGlobalsTypeInternal RetryFailedWeatherSyncResponse_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* RetryFailedWeatherSyncResponse_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return RetryFailedWeatherSyncResponse_globals_.GetClassData();
+#else
+  return RetryFailedWeatherSyncResponse_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -890,7 +1028,7 @@ constexpr auto RetryFailedWeatherSyncRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[29],
+      &file_reflection_data[26],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -937,296 +1075,6 @@ const ::_pbi::ClassData* RetryFailedWeatherSyncRequest_get_class_data() {
   return RetryFailedWeatherSyncRequest_globals_.GetClassData();
 #else
   return RetryFailedWeatherSyncRequest_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
-class RetryFailedPullPowerResponse::_Internal {
- public:
-  using HasBits = decltype(::std::declval<RetryFailedPullPowerResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerResponse, _impl_._has_bits_);
-};
-
-constexpr RetryFailedPullPowerResponse::ParseTableT_ RetryFailedPullPowerResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerResponse, _impl_._has_bits_),
-      0, // no _extensions_
-      1, 0,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967294,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      1,  // num_field_entries
-      0,  // num_aux_entries
-      offsetof(ParseTableT_, field_names),  // no aux_entries
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::RetryFailedPullPowerResponse>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      // string run_id = 1 [json_name = "run_id"];
-      {::_pbi::TcParser::FastUS1,
-       {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerResponse, _impl_.run_id_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // string run_id = 1 [json_name = "run_id"];
-      {PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerResponse, _impl_.run_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    }},
-    // no aux_entries
-    {{
-      "\73\6\0\0\0\0\0\0"
-      "fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse"
-      "run_id"
-    }},
-  };
-}
-
-
-inline constexpr RetryFailedPullPowerResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : run_id_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()) {}
-
-template <typename>
-constexpr RetryFailedPullPowerResponse::RetryFailedPullPowerResponse(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL RetryFailedPullPowerResponse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) RetryFailedPullPowerResponse(arena);
-}
-constexpr auto RetryFailedPullPowerResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(RetryFailedPullPowerResponse), alignof(RetryFailedPullPowerResponse));
-}
-constexpr auto RetryFailedPullPowerResponse::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &RetryFailedPullPowerResponse::MergeImpl,
-          Super_::GetNewImpl<RetryFailedPullPowerResponse>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &RetryFailedPullPowerResponse::SharedDtor,
-          Super_::GetClearImpl<RetryFailedPullPowerResponse>(), &RetryFailedPullPowerResponse::ByteSizeLong,
-              &RetryFailedPullPowerResponse::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerResponse, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[42],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct RetryFailedPullPowerResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr RetryFailedPullPowerResponseGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 RetryFailedPullPowerResponse_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(RetryFailedPullPowerResponse::InternalGenerateClassData_(
-            _default, &RetryFailedPullPowerResponse_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedPullPowerResponse>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~RetryFailedPullPowerResponseGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) RetryFailedPullPowerResponse _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedPullPowerResponse>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerResponseGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST RetryFailedPullPowerResponseGlobalsTypeInternal RetryFailedPullPowerResponse_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* RetryFailedPullPowerResponse_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return RetryFailedPullPowerResponse_globals_.GetClassData();
-#else
-  return RetryFailedPullPowerResponse_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
-class RetryFailedPullPowerRequest::_Internal {
- public:
-  using HasBits = decltype(::std::declval<RetryFailedPullPowerRequest>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerRequest, _impl_._has_bits_);
-};
-
-constexpr RetryFailedPullPowerRequest::ParseTableT_ RetryFailedPullPowerRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerRequest, _impl_._has_bits_),
-      0, // no _extensions_
-      1, 0,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967294,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      1,  // num_field_entries
-      0,  // num_aux_entries
-      offsetof(ParseTableT_, field_names),  // no aux_entries
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::RetryFailedPullPowerRequest>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      // optional string run_id = 1 [json_name = "run_id", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastUS1,
-       {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerRequest, _impl_.run_id_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // optional string run_id = 1 [json_name = "run_id", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerRequest, _impl_.run_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    }},
-    // no aux_entries
-    {{
-      "\72\6\0\0\0\0\0\0"
-      "fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest"
-      "run_id"
-    }},
-  };
-}
-
-
-inline constexpr RetryFailedPullPowerRequest::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : run_id_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()) {}
-
-template <typename>
-constexpr RetryFailedPullPowerRequest::RetryFailedPullPowerRequest(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL RetryFailedPullPowerRequest::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) RetryFailedPullPowerRequest(arena);
-}
-constexpr auto RetryFailedPullPowerRequest::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(RetryFailedPullPowerRequest), alignof(RetryFailedPullPowerRequest));
-}
-constexpr auto RetryFailedPullPowerRequest::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &RetryFailedPullPowerRequest::MergeImpl,
-          Super_::GetNewImpl<RetryFailedPullPowerRequest>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &RetryFailedPullPowerRequest::SharedDtor,
-          Super_::GetClearImpl<RetryFailedPullPowerRequest>(), &RetryFailedPullPowerRequest::ByteSizeLong,
-              &RetryFailedPullPowerRequest::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerRequest, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[41],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct RetryFailedPullPowerRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr RetryFailedPullPowerRequestGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 RetryFailedPullPowerRequest_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(RetryFailedPullPowerRequest::InternalGenerateClassData_(
-            _default, &RetryFailedPullPowerRequest_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedPullPowerRequest>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~RetryFailedPullPowerRequestGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) RetryFailedPullPowerRequest _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedPullPowerRequest>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(RetryFailedPullPowerRequestGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST RetryFailedPullPowerRequestGlobalsTypeInternal RetryFailedPullPowerRequest_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* RetryFailedPullPowerRequest_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return RetryFailedPullPowerRequest_globals_.GetClassData();
-#else
-  return RetryFailedPullPowerRequest_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -1346,7 +1194,7 @@ constexpr auto PipelineLine::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[7],
+      &file_reflection_data[6],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -1409,11 +1257,11 @@ constexpr ListDataSiteRowsRequest::ParseTableT_ ListDataSiteRowsRequest::Interna
     {
       PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_._has_bits_),
       0, // no _extensions_
-      7, 56,  // max_field_number, fast_idx_mask
+      5, 56,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967168,  // skipmap
+      4294967264,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      7,  // num_field_entries
+      5,  // num_field_entries
       0,  // num_aux_entries
       offsetof(ParseTableT_, field_names),  // no aux_entries
       class_data,
@@ -1436,22 +1284,16 @@ constexpr ListDataSiteRowsRequest::ParseTableT_ ListDataSiteRowsRequest::Interna
       {::_pbi::TcParser::FastUS1,
        {26, 0, 0,
         PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.service_type_)}},
-      // optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListDataSiteRowsRequest, _impl_.data_source_), 4>(),
+      // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListDataSiteRowsRequest, _impl_.readiness_status_), 4>(),
        {32, 4, 0,
-        PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.data_source_)}},
-      // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListDataSiteRowsRequest, _impl_.readiness_status_), 5>(),
-       {40, 5, 0,
         PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.readiness_status_)}},
-      // optional int32 granularity_min = 6 [json_name = "granularity_min"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ListDataSiteRowsRequest, _impl_.granularity_min_), 6>(),
-       {48, 6, 0,
-        PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.granularity_min_)}},
-      // optional string q = 7 [json_name = "q"];
+      // optional string q = 5 [json_name = "q"];
       {::_pbi::TcParser::FastUS1,
-       {58, 1, 0,
+       {42, 1, 0,
         PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.q_)}},
+      {::_pbi::TcParser::MiniParse, {}},
+      {::_pbi::TcParser::MiniParse, {}},
     }}, {{
       65535, 65535
     }}, {{
@@ -1461,18 +1303,14 @@ constexpr ListDataSiteRowsRequest::ParseTableT_ ListDataSiteRowsRequest::Interna
       {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.page_size_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
       // optional string service_type = 3 [json_name = "service_type"];
       {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.service_type_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];
-      {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.data_source_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];
-      {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.readiness_status_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // optional int32 granularity_min = 6 [json_name = "granularity_min"];
-      {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.granularity_min_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // optional string q = 7 [json_name = "q"];
+      // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];
+      {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.readiness_status_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      // optional string q = 5 [json_name = "q"];
       {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.q_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     }},
     // no aux_entries
     {{
-      "\66\0\0\14\0\0\0\1"
+      "\66\0\0\14\0\1\0\0"
       "fusion.ai.proto.data_readiness.ListDataSiteRowsRequest"
       "service_type"
       "q"
@@ -1492,9 +1330,7 @@ inline constexpr ListDataSiteRowsRequest::Impl_::Impl_(
             ::_pbi::ConstantInitialized()),
         page_{0},
         page_size_{0},
-        data_source_{static_cast< ::fusion::ai::proto::data_readiness::DataSource >(0)},
-        readiness_status_{static_cast< ::fusion::ai::proto::data_readiness::ReadinessStatus >(0)},
-        granularity_min_{0} {}
+        readiness_status_{static_cast< ::fusion::ai::proto::data_readiness::ReadinessStatus >(0)} {}
 
 template <typename>
 constexpr ListDataSiteRowsRequest::ListDataSiteRowsRequest(::_pbi::ConstantInitialized,
@@ -1537,7 +1373,7 @@ constexpr auto ListDataSiteRowsRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[14],
+      &file_reflection_data[13],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -1697,7 +1533,7 @@ constexpr auto HeatmapDay::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[5],
+      &file_reflection_data[4],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -1849,7 +1685,7 @@ constexpr auto GetWeatherSyncRunRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[24],
+      &file_reflection_data[21],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -1994,7 +1830,7 @@ constexpr auto GetWeatherSiteRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[22],
+      &file_reflection_data[19],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -2041,6 +1877,171 @@ const ::_pbi::ClassData* GetWeatherSiteRequest_get_class_data() {
   return GetWeatherSiteRequest_globals_.GetClassData();
 #else
   return GetWeatherSiteRequest_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class GetWeatherExcelTemplateResponse::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<GetWeatherExcelTemplateResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_._has_bits_);
+};
+
+constexpr GetWeatherExcelTemplateResponse::ParseTableT_ GetWeatherExcelTemplateResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_._has_bits_),
+      0, // no _extensions_
+      3, 24,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967288,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      3,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      {::_pbi::TcParser::MiniParse, {}},
+      // bytes file = 1 [json_name = "file"];
+      {::_pbi::TcParser::FastBS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.file_)}},
+      // string filename = 2 [json_name = "filename"];
+      {::_pbi::TcParser::FastUS1,
+       {18, 1, 0,
+        PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.filename_)}},
+      // string content_type = 3 [json_name = "content_type"];
+      {::_pbi::TcParser::FastUS1,
+       {26, 2, 0,
+        PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.content_type_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // bytes file = 1 [json_name = "file"];
+      {PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.file_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+      // string filename = 2 [json_name = "filename"];
+      {PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.filename_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string content_type = 3 [json_name = "content_type"];
+      {PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.content_type_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
+    {{
+      "\76\0\10\14\0\0\0\0"
+      "fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse"
+      "filename"
+      "content_type"
+    }},
+  };
+}
+
+
+inline constexpr GetWeatherExcelTemplateResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : file_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        filename_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        content_type_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
+
+template <typename>
+constexpr GetWeatherExcelTemplateResponse::GetWeatherExcelTemplateResponse(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL GetWeatherExcelTemplateResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) GetWeatherExcelTemplateResponse(arena);
+}
+constexpr auto GetWeatherExcelTemplateResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetWeatherExcelTemplateResponse), alignof(GetWeatherExcelTemplateResponse));
+}
+constexpr auto GetWeatherExcelTemplateResponse::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &GetWeatherExcelTemplateResponse::MergeImpl,
+          Super_::GetNewImpl<GetWeatherExcelTemplateResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &GetWeatherExcelTemplateResponse::SharedDtor,
+          Super_::GetClearImpl<GetWeatherExcelTemplateResponse>(), &GetWeatherExcelTemplateResponse::ByteSizeLong,
+              &GetWeatherExcelTemplateResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[31],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct GetWeatherExcelTemplateResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr GetWeatherExcelTemplateResponseGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 GetWeatherExcelTemplateResponse_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(GetWeatherExcelTemplateResponse::InternalGenerateClassData_(
+            _default, &GetWeatherExcelTemplateResponse_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<GetWeatherExcelTemplateResponse>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~GetWeatherExcelTemplateResponseGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) GetWeatherExcelTemplateResponse _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetWeatherExcelTemplateResponse>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponseGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetWeatherExcelTemplateResponseGlobalsTypeInternal GetWeatherExcelTemplateResponse_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* GetWeatherExcelTemplateResponse_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return GetWeatherExcelTemplateResponse_globals_.GetClassData();
+#else
+  return GetWeatherExcelTemplateResponse_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -2118,7 +2119,7 @@ constexpr auto GetWeatherExcelTemplateRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[33],
+      &file_reflection_data[30],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -2263,7 +2264,7 @@ constexpr auto GetDataSiteReadinessRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[16],
+      &file_reflection_data[15],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -2316,19 +2317,21 @@ const ::_pbi::ClassData* GetDataSiteReadinessRequest_get_class_data() {
 #endif  // PROTOBUF_CUSTOM_VTABLE
 class GetDataPipelineStatsRequest::_Internal {
  public:
+  using HasBits = decltype(::std::declval<GetDataPipelineStatsRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(GetDataPipelineStatsRequest, _impl_._has_bits_);
 };
 
 constexpr GetDataPipelineStatsRequest::ParseTableT_ GetDataPipelineStatsRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
   return ParseTableT_{
     {
-      PROTOBUF_FIELD_OFFSET(GetDataPipelineStatsRequest,
-                            _impl_._cached_size_),  // no hasbits
+      PROTOBUF_FIELD_OFFSET(GetDataPipelineStatsRequest, _impl_._has_bits_),
       0, // no _extensions_
-      0, 0,  // max_field_number, fast_idx_mask
+      1, 0,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967295,  // skipmap
-      offsetof(ParseTableT_, field_names),  // no field_entries
-      0,  // num_field_entries
+      4294967294,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      1,  // num_field_entries
       0,  // num_aux_entries
       offsetof(ParseTableT_, field_names),  // no aux_entries
       class_data,
@@ -2338,14 +2341,32 @@ constexpr GetDataPipelineStatsRequest::ParseTableT_ GetDataPipelineStatsRequest:
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::GetDataPipelineStatsRequest>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      {::_pbi::TcParser::MiniParse, {}},
+      // optional string service_type = 1 [json_name = "service_type"];
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(GetDataPipelineStatsRequest, _impl_.service_type_)}},
     }}, {{
       65535, 65535
-    }}, // no field_entries, or aux_entries
+    }}, {{
+      // optional string service_type = 1 [json_name = "service_type"];
+      {PROTOBUF_FIELD_OFFSET(GetDataPipelineStatsRequest, _impl_.service_type_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
     {{
+      "\72\14\0\0\0\0\0\0"
+      "fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest"
+      "service_type"
     }},
   };
 }
+
+
+inline constexpr GetDataPipelineStatsRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : service_type_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
 
 template <typename>
 constexpr GetDataPipelineStatsRequest::GetDataPipelineStatsRequest(::_pbi::ConstantInitialized,
@@ -2354,7 +2375,8 @@ constexpr GetDataPipelineStatsRequest::GetDataPipelineStatsRequest(::_pbi::Const
 #if defined(PROTOBUF_CUSTOM_VTABLE)
           class_data
 #endif  // PROTOBUF_CUSTOM_VTABLE
-      ) {
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
 }
 inline void* PROTOBUF_NONNULL GetDataPipelineStatsRequest::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
@@ -2362,7 +2384,7 @@ inline void* PROTOBUF_NONNULL GetDataPipelineStatsRequest::PlacementNew_(
   return ::new (mem) GetDataPipelineStatsRequest(arena);
 }
 constexpr auto GetDataPipelineStatsRequest::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(GetDataPipelineStatsRequest), alignof(GetDataPipelineStatsRequest));
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetDataPipelineStatsRequest), alignof(GetDataPipelineStatsRequest));
 }
 constexpr auto GetDataPipelineStatsRequest::InternalGenerateClassData_(
     const MessageLite& prototype,
@@ -2387,7 +2409,7 @@ constexpr auto GetDataPipelineStatsRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[18],
+      &file_reflection_data[17],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -2532,7 +2554,7 @@ constexpr auto GetDataOverviewRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[12],
+      &file_reflection_data[11],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -2583,495 +2605,6 @@ const ::_pbi::ClassData* GetDataOverviewRequest_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
-class ExportDataGapsResponse::_Internal {
- public:
-  using HasBits = decltype(::std::declval<ExportDataGapsResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(ExportDataGapsResponse, _impl_._has_bits_);
-};
-
-constexpr ExportDataGapsResponse::ParseTableT_ ExportDataGapsResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(ExportDataGapsResponse, _impl_._has_bits_),
-      0, // no _extensions_
-      2, 8,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967292,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      2,  // num_field_entries
-      0,  // num_aux_entries
-      offsetof(ParseTableT_, field_names),  // no aux_entries
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::ExportDataGapsResponse>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      // string filename = 2 [json_name = "filename"];
-      {::_pbi::TcParser::FastUS1,
-       {18, 1, 0,
-        PROTOBUF_FIELD_OFFSET(ExportDataGapsResponse, _impl_.filename_)}},
-      // bytes csv = 1 [json_name = "csv"];
-      {::_pbi::TcParser::FastBS1,
-       {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(ExportDataGapsResponse, _impl_.csv_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // bytes csv = 1 [json_name = "csv"];
-      {PROTOBUF_FIELD_OFFSET(ExportDataGapsResponse, _impl_.csv_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
-      // string filename = 2 [json_name = "filename"];
-      {PROTOBUF_FIELD_OFFSET(ExportDataGapsResponse, _impl_.filename_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    }},
-    // no aux_entries
-    {{
-      "\65\0\10\0\0\0\0\0"
-      "fusion.ai.proto.data_readiness.ExportDataGapsResponse"
-      "filename"
-    }},
-  };
-}
-
-
-inline constexpr ExportDataGapsResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : csv_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        filename_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()) {}
-
-template <typename>
-constexpr ExportDataGapsResponse::ExportDataGapsResponse(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL ExportDataGapsResponse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ExportDataGapsResponse(arena);
-}
-constexpr auto ExportDataGapsResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ExportDataGapsResponse), alignof(ExportDataGapsResponse));
-}
-constexpr auto ExportDataGapsResponse::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &ExportDataGapsResponse::MergeImpl,
-          Super_::GetNewImpl<ExportDataGapsResponse>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ExportDataGapsResponse::SharedDtor,
-          Super_::GetClearImpl<ExportDataGapsResponse>(), &ExportDataGapsResponse::ByteSizeLong,
-              &ExportDataGapsResponse::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ExportDataGapsResponse, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[21],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct ExportDataGapsResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr ExportDataGapsResponseGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 ExportDataGapsResponse_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(ExportDataGapsResponse::InternalGenerateClassData_(
-            _default, &ExportDataGapsResponse_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<ExportDataGapsResponse>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~ExportDataGapsResponseGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) ExportDataGapsResponse _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<ExportDataGapsResponse>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(ExportDataGapsResponseGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST ExportDataGapsResponseGlobalsTypeInternal ExportDataGapsResponse_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* ExportDataGapsResponse_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return ExportDataGapsResponse_globals_.GetClassData();
-#else
-  return ExportDataGapsResponse_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
-class ExportDataGapsRequest::_Internal {
- public:
-  using HasBits = decltype(::std::declval<ExportDataGapsRequest>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_._has_bits_);
-};
-
-constexpr ExportDataGapsRequest::ParseTableT_ ExportDataGapsRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_._has_bits_),
-      0, // no _extensions_
-      4, 24,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967280,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      4,  // num_field_entries
-      0,  // num_aux_entries
-      offsetof(ParseTableT_, field_names),  // no aux_entries
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::ExportDataGapsRequest>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      // optional string q = 4 [json_name = "q"];
-      {::_pbi::TcParser::FastUS1,
-       {34, 1, 0,
-        PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.q_)}},
-      // optional string service_type = 1 [json_name = "service_type"];
-      {::_pbi::TcParser::FastUS1,
-       {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.service_type_)}},
-      // optional .fusion.ai.proto.data_readiness.DataSource data_source = 2 [json_name = "data_source"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ExportDataGapsRequest, _impl_.data_source_), 2>(),
-       {16, 2, 0,
-        PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.data_source_)}},
-      // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ExportDataGapsRequest, _impl_.readiness_status_), 3>(),
-       {24, 3, 0,
-        PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.readiness_status_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // optional string service_type = 1 [json_name = "service_type"];
-      {PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.service_type_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // optional .fusion.ai.proto.data_readiness.DataSource data_source = 2 [json_name = "data_source"];
-      {PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.data_source_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-      {PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.readiness_status_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // optional string q = 4 [json_name = "q"];
-      {PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.q_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    }},
-    // no aux_entries
-    {{
-      "\64\14\0\0\1\0\0\0"
-      "fusion.ai.proto.data_readiness.ExportDataGapsRequest"
-      "service_type"
-      "q"
-    }},
-  };
-}
-
-
-inline constexpr ExportDataGapsRequest::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : service_type_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        q_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        data_source_{static_cast< ::fusion::ai::proto::data_readiness::DataSource >(0)},
-        readiness_status_{static_cast< ::fusion::ai::proto::data_readiness::ReadinessStatus >(0)} {}
-
-template <typename>
-constexpr ExportDataGapsRequest::ExportDataGapsRequest(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL ExportDataGapsRequest::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ExportDataGapsRequest(arena);
-}
-constexpr auto ExportDataGapsRequest::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ExportDataGapsRequest), alignof(ExportDataGapsRequest));
-}
-constexpr auto ExportDataGapsRequest::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &ExportDataGapsRequest::MergeImpl,
-          Super_::GetNewImpl<ExportDataGapsRequest>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ExportDataGapsRequest::SharedDtor,
-          Super_::GetClearImpl<ExportDataGapsRequest>(), &ExportDataGapsRequest::ByteSizeLong,
-              &ExportDataGapsRequest::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[20],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct ExportDataGapsRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr ExportDataGapsRequestGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 ExportDataGapsRequest_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(ExportDataGapsRequest::InternalGenerateClassData_(
-            _default, &ExportDataGapsRequest_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<ExportDataGapsRequest>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~ExportDataGapsRequestGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) ExportDataGapsRequest _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<ExportDataGapsRequest>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(ExportDataGapsRequestGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST ExportDataGapsRequestGlobalsTypeInternal ExportDataGapsRequest_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* ExportDataGapsRequest_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return ExportDataGapsRequest_globals_.GetClassData();
-#else
-  return ExportDataGapsRequest_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
-class DataReadinessReplyHeader::_Internal {
- public:
-  using HasBits = decltype(::std::declval<DataReadinessReplyHeader>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeader, _impl_._has_bits_);
-};
-
-constexpr DataReadinessReplyHeader::ParseTableT_ DataReadinessReplyHeader::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeader, _impl_._has_bits_),
-      0, // no _extensions_
-      3, 24,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967288,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      3,  // num_field_entries
-      0,  // num_aux_entries
-      offsetof(ParseTableT_, field_names),  // no aux_entries
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      {::_pbi::TcParser::MiniParse, {}},
-      // string state = 1 [json_name = "state", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastUS1,
-       {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeader, _impl_.state_)}},
-      // string code = 2 [json_name = "code", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastUS1,
-       {18, 1, 0,
-        PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeader, _impl_.code_)}},
-      // string message = 3 [json_name = "message", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastUS1,
-       {26, 2, 0,
-        PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeader, _impl_.message_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // string state = 1 [json_name = "state", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeader, _impl_.state_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string code = 2 [json_name = "code", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeader, _impl_.code_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string message = 3 [json_name = "message", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeader, _impl_.message_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    }},
-    // no aux_entries
-    {{
-      "\67\5\4\7\0\0\0\0"
-      "fusion.ai.proto.data_readiness.DataReadinessReplyHeader"
-      "state"
-      "code"
-      "message"
-    }},
-  };
-}
-
-
-inline constexpr DataReadinessReplyHeader::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : state_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        code_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        message_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()) {}
-
-template <typename>
-constexpr DataReadinessReplyHeader::DataReadinessReplyHeader(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL DataReadinessReplyHeader::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) DataReadinessReplyHeader(arena);
-}
-constexpr auto DataReadinessReplyHeader::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(DataReadinessReplyHeader), alignof(DataReadinessReplyHeader));
-}
-constexpr auto DataReadinessReplyHeader::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &DataReadinessReplyHeader::MergeImpl,
-          Super_::GetNewImpl<DataReadinessReplyHeader>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &DataReadinessReplyHeader::SharedDtor,
-          Super_::GetClearImpl<DataReadinessReplyHeader>(), &DataReadinessReplyHeader::ByteSizeLong,
-              &DataReadinessReplyHeader::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeader, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[0],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct DataReadinessReplyHeaderGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr DataReadinessReplyHeaderGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 DataReadinessReplyHeader_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(DataReadinessReplyHeader::InternalGenerateClassData_(
-            _default, &DataReadinessReplyHeader_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<DataReadinessReplyHeader>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~DataReadinessReplyHeaderGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) DataReadinessReplyHeader _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<DataReadinessReplyHeader>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(DataReadinessReplyHeaderGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST DataReadinessReplyHeaderGlobalsTypeInternal DataReadinessReplyHeader_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* DataReadinessReplyHeader_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return DataReadinessReplyHeader_globals_.GetClassData();
-#else
-  return DataReadinessReplyHeader_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
 class DataOverview::_Internal {
  public:
   using HasBits = decltype(::std::declval<DataOverview>()._impl_._has_bits_);
@@ -3111,7 +2644,7 @@ constexpr DataOverview::ParseTableT_ DataOverview::InternalGenerateParseTable_(c
       {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataOverview, _impl_.need_fill_count_), 2>(),
        {24, 2, 0,
         PROTOBUF_FIELD_OFFSET(DataOverview, _impl_.need_fill_count_)}},
-      // int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+      // optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
       {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataOverview, _impl_.weather_missing_count_), 3>(),
        {32, 3, 0,
         PROTOBUF_FIELD_OFFSET(DataOverview, _impl_.weather_missing_count_)}},
@@ -3133,7 +2666,7 @@ constexpr DataOverview::ParseTableT_ DataOverview::InternalGenerateParseTable_(c
       {PROTOBUF_FIELD_OFFSET(DataOverview, _impl_.ready_today_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
       // int32 need_fill_count = 3 [json_name = "need_fill_count"];
       {PROTOBUF_FIELD_OFFSET(DataOverview, _impl_.need_fill_count_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+      // optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
       {PROTOBUF_FIELD_OFFSET(DataOverview, _impl_.weather_missing_count_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
       // double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];
       {PROTOBUF_FIELD_OFFSET(DataOverview, _impl_.push_success_24h_pct_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
@@ -3198,7 +2731,7 @@ constexpr auto DataOverview::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[1],
+      &file_reflection_data[0],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -3245,6 +2778,175 @@ const ::_pbi::ClassData* DataOverview_get_class_data() {
   return DataOverview_globals_.GetClassData();
 #else
   return DataOverview_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+class CreateWeatherExcelImportJobResponse::_Internal {
+ public:
+  using HasBits = decltype(::std::declval<CreateWeatherExcelImportJobResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_._has_bits_);
+};
+
+constexpr CreateWeatherExcelImportJobResponse::ParseTableT_ CreateWeatherExcelImportJobResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_._has_bits_),
+      0, // no _extensions_
+      4, 24,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967280,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      4,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::MpUnknownFields,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      // optional string error_report_url = 4 [json_name = "error_report_url"];
+      {::_pbi::TcParser::FastUS1,
+       {34, 1, 0,
+        PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.error_report_url_)}},
+      // string job_id = 1 [json_name = "job_id"];
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.job_id_)}},
+      // optional int32 accepted_rows = 2 [json_name = "accepted_rows"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreateWeatherExcelImportJobResponse, _impl_.accepted_rows_), 2>(),
+       {16, 2, 0,
+        PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.accepted_rows_)}},
+      // optional int32 failed_rows = 3 [json_name = "failed_rows"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreateWeatherExcelImportJobResponse, _impl_.failed_rows_), 3>(),
+       {24, 3, 0,
+        PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.failed_rows_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string job_id = 1 [json_name = "job_id"];
+      {PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.job_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // optional int32 accepted_rows = 2 [json_name = "accepted_rows"];
+      {PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.accepted_rows_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // optional int32 failed_rows = 3 [json_name = "failed_rows"];
+      {PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.failed_rows_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // optional string error_report_url = 4 [json_name = "error_report_url"];
+      {PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.error_report_url_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
+    {{
+      "\102\6\0\0\20\0\0\0"
+      "fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse"
+      "job_id"
+      "error_report_url"
+    }},
+  };
+}
+
+
+inline constexpr CreateWeatherExcelImportJobResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    ::_pbi::ConstantInitialized) noexcept
+      : job_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        error_report_url_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        accepted_rows_{0},
+        failed_rows_{0} {}
+
+template <typename>
+constexpr CreateWeatherExcelImportJobResponse::CreateWeatherExcelImportJobResponse(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          ),
+      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
+}
+inline void* PROTOBUF_NONNULL CreateWeatherExcelImportJobResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) CreateWeatherExcelImportJobResponse(arena);
+}
+constexpr auto CreateWeatherExcelImportJobResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(CreateWeatherExcelImportJobResponse), alignof(CreateWeatherExcelImportJobResponse));
+}
+constexpr auto CreateWeatherExcelImportJobResponse::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &CreateWeatherExcelImportJobResponse::MergeImpl,
+          Super_::GetNewImpl<CreateWeatherExcelImportJobResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &CreateWeatherExcelImportJobResponse::SharedDtor,
+          Super_::GetClearImpl<CreateWeatherExcelImportJobResponse>(), &CreateWeatherExcelImportJobResponse::ByteSizeLong,
+              &CreateWeatherExcelImportJobResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[29],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct CreateWeatherExcelImportJobResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr CreateWeatherExcelImportJobResponseGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 CreateWeatherExcelImportJobResponse_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(CreateWeatherExcelImportJobResponse::InternalGenerateClassData_(
+            _default, &CreateWeatherExcelImportJobResponse_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<CreateWeatherExcelImportJobResponse>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~CreateWeatherExcelImportJobResponseGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) CreateWeatherExcelImportJobResponse _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<CreateWeatherExcelImportJobResponse>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponseGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST CreateWeatherExcelImportJobResponseGlobalsTypeInternal CreateWeatherExcelImportJobResponse_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* CreateWeatherExcelImportJobResponse_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return CreateWeatherExcelImportJobResponse_globals_.GetClassData();
+#else
+  return CreateWeatherExcelImportJobResponse_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -3363,7 +3065,7 @@ constexpr auto CreateWeatherExcelImportJobRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[31],
+      &file_reflection_data[28],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -3508,7 +3210,7 @@ constexpr auto CreateDataBackfillJobResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[36],
+      &file_reflection_data[33],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -3674,7 +3376,7 @@ constexpr auto CreateDataBackfillJobRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[35],
+      &file_reflection_data[32],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -3826,7 +3528,7 @@ constexpr auto CoverageTrendPoint::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[2],
+      &file_reflection_data[1],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -4022,7 +3724,7 @@ constexpr auto BatchSyncWeatherRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[26],
+      &file_reflection_data[23],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -4069,298 +3771,6 @@ const ::_pbi::ClassData* BatchSyncWeatherRequest_get_class_data() {
   return BatchSyncWeatherRequest_globals_.GetClassData();
 #else
   return BatchSyncWeatherRequest_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
-class BatchPullPowerResponse::_Internal {
- public:
-  using HasBits = decltype(::std::declval<BatchPullPowerResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(BatchPullPowerResponse, _impl_._has_bits_);
-};
-
-constexpr BatchPullPowerResponse::ParseTableT_ BatchPullPowerResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(BatchPullPowerResponse, _impl_._has_bits_),
-      0, // no _extensions_
-      1, 0,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967294,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      1,  // num_field_entries
-      0,  // num_aux_entries
-      offsetof(ParseTableT_, field_names),  // no aux_entries
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::BatchPullPowerResponse>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      // string run_id = 1 [json_name = "run_id"];
-      {::_pbi::TcParser::FastUS1,
-       {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(BatchPullPowerResponse, _impl_.run_id_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // string run_id = 1 [json_name = "run_id"];
-      {PROTOBUF_FIELD_OFFSET(BatchPullPowerResponse, _impl_.run_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    }},
-    // no aux_entries
-    {{
-      "\65\6\0\0\0\0\0\0"
-      "fusion.ai.proto.data_readiness.BatchPullPowerResponse"
-      "run_id"
-    }},
-  };
-}
-
-
-inline constexpr BatchPullPowerResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : run_id_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()) {}
-
-template <typename>
-constexpr BatchPullPowerResponse::BatchPullPowerResponse(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL BatchPullPowerResponse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) BatchPullPowerResponse(arena);
-}
-constexpr auto BatchPullPowerResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(BatchPullPowerResponse), alignof(BatchPullPowerResponse));
-}
-constexpr auto BatchPullPowerResponse::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &BatchPullPowerResponse::MergeImpl,
-          Super_::GetNewImpl<BatchPullPowerResponse>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &BatchPullPowerResponse::SharedDtor,
-          Super_::GetClearImpl<BatchPullPowerResponse>(), &BatchPullPowerResponse::ByteSizeLong,
-              &BatchPullPowerResponse::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(BatchPullPowerResponse, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[40],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct BatchPullPowerResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr BatchPullPowerResponseGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 BatchPullPowerResponse_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(BatchPullPowerResponse::InternalGenerateClassData_(
-            _default, &BatchPullPowerResponse_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<BatchPullPowerResponse>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~BatchPullPowerResponseGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) BatchPullPowerResponse _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<BatchPullPowerResponse>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(BatchPullPowerResponseGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST BatchPullPowerResponseGlobalsTypeInternal BatchPullPowerResponse_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* BatchPullPowerResponse_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return BatchPullPowerResponse_globals_.GetClassData();
-#else
-  return BatchPullPowerResponse_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
-class BatchPullPowerRequest::_Internal {
- public:
-  using HasBits = decltype(::std::declval<BatchPullPowerRequest>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(BatchPullPowerRequest, _impl_._has_bits_);
-};
-
-constexpr BatchPullPowerRequest::ParseTableT_ BatchPullPowerRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(BatchPullPowerRequest, _impl_._has_bits_),
-      0, // no _extensions_
-      1, 0,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967294,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      1,  // num_field_entries
-      0,  // num_aux_entries
-      offsetof(ParseTableT_, field_names),  // no aux_entries
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::BatchPullPowerRequest>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      // repeated string registration_ids = 1 [json_name = "registration_ids", (.buf.validate.field) = {
-      {::_pbi::TcParser::FastUR1,
-       {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(BatchPullPowerRequest, _impl_.registration_ids_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // repeated string registration_ids = 1 [json_name = "registration_ids", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(BatchPullPowerRequest, _impl_.registration_ids_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
-    }},
-    // no aux_entries
-    {{
-      "\64\20\0\0\0\0\0\0"
-      "fusion.ai.proto.data_readiness.BatchPullPowerRequest"
-      "registration_ids"
-    }},
-  };
-}
-
-
-inline constexpr BatchPullPowerRequest::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : registration_ids_ { visibility, ::_pbi::InternalMetadataOffset::Build<
-            ::fusion::ai::proto::data_readiness::BatchPullPowerRequest,
-            PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchPullPowerRequest, _impl_.registration_ids_)>()
-         }
-     {}
-
-template <typename>
-constexpr BatchPullPowerRequest::BatchPullPowerRequest(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL BatchPullPowerRequest::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) BatchPullPowerRequest(arena);
-}
-constexpr auto BatchPullPowerRequest::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(BatchPullPowerRequest), alignof(BatchPullPowerRequest));
-}
-constexpr auto BatchPullPowerRequest::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &BatchPullPowerRequest::MergeImpl,
-          Super_::GetNewImpl<BatchPullPowerRequest>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &BatchPullPowerRequest::SharedDtor,
-          Super_::GetClearImpl<BatchPullPowerRequest>(), &BatchPullPowerRequest::ByteSizeLong,
-              &BatchPullPowerRequest::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(BatchPullPowerRequest, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[39],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct BatchPullPowerRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr BatchPullPowerRequestGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 BatchPullPowerRequest_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(BatchPullPowerRequest::InternalGenerateClassData_(
-            _default, &BatchPullPowerRequest_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<BatchPullPowerRequest>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~BatchPullPowerRequestGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) BatchPullPowerRequest _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<BatchPullPowerRequest>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(BatchPullPowerRequestGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST BatchPullPowerRequestGlobalsTypeInternal BatchPullPowerRequest_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* BatchPullPowerRequest_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return BatchPullPowerRequest_globals_.GetClassData();
-#else
-  return BatchPullPowerRequest_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -4542,7 +3952,7 @@ constexpr auto WeatherSyncRunView::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[11],
+      &file_reflection_data[10],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -4739,7 +4149,7 @@ constexpr auto WeatherSiteView::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[9],
+      &file_reflection_data[8],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -4790,172 +4200,6 @@ const ::_pbi::ClassData* WeatherSiteView_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
-class RetryFailedWeatherSyncResponse::_Internal {
- public:
-  using HasBits = decltype(::std::declval<RetryFailedWeatherSyncResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._has_bits_);
-};
-
-constexpr RetryFailedWeatherSyncResponse::ParseTableT_ RetryFailedWeatherSyncResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._has_bits_),
-      0, // no _extensions_
-      3, 24,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967288,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      3,  // num_field_entries
-      1,  // num_aux_entries
-      offsetof(ParseTableT_, aux_entries),
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      {::_pbi::TcParser::MiniParse, {}},
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {::_pbi::TcParser::FastMtS1,
-       {10, 1, 0,
-        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.header_)}},
-      // string run_id = 2 [json_name = "run_id"];
-      {::_pbi::TcParser::FastUS1,
-       {18, 0, 0,
-        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.run_id_)}},
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RetryFailedWeatherSyncResponse, _impl_.status_), 2>(),
-       {24, 2, 0,
-        PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.header_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // string run_id = 2 [json_name = "run_id"];
-      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.run_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
-      {PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    }},
-    {{
-        #ifndef PROTOBUF_MESSAGE_GLOBALS
-        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>()},
-        #else
-        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_},
-        #endif
-    }},
-    {{
-      "\75\0\6\0\0\0\0\0"
-      "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse"
-      "run_id"
-    }},
-  };
-}
-
-
-inline constexpr RetryFailedWeatherSyncResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : run_id_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        header_{nullptr},
-        status_{static_cast< ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus >(0)} {}
-
-template <typename>
-constexpr RetryFailedWeatherSyncResponse::RetryFailedWeatherSyncResponse(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL RetryFailedWeatherSyncResponse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) RetryFailedWeatherSyncResponse(arena);
-}
-constexpr auto RetryFailedWeatherSyncResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(RetryFailedWeatherSyncResponse), alignof(RetryFailedWeatherSyncResponse));
-}
-constexpr auto RetryFailedWeatherSyncResponse::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &RetryFailedWeatherSyncResponse::MergeImpl,
-          Super_::GetNewImpl<RetryFailedWeatherSyncResponse>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &RetryFailedWeatherSyncResponse::SharedDtor,
-          Super_::GetClearImpl<RetryFailedWeatherSyncResponse>(), &RetryFailedWeatherSyncResponse::ByteSizeLong,
-              &RetryFailedWeatherSyncResponse::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[30],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct RetryFailedWeatherSyncResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr RetryFailedWeatherSyncResponseGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 RetryFailedWeatherSyncResponse_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(RetryFailedWeatherSyncResponse::InternalGenerateClassData_(
-            _default, &RetryFailedWeatherSyncResponse_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedWeatherSyncResponse>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~RetryFailedWeatherSyncResponseGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) RetryFailedWeatherSyncResponse _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<RetryFailedWeatherSyncResponse>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponseGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST RetryFailedWeatherSyncResponseGlobalsTypeInternal RetryFailedWeatherSyncResponse_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* RetryFailedWeatherSyncResponse_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return RetryFailedWeatherSyncResponse_globals_.GetClassData();
-#else
-  return RetryFailedWeatherSyncResponse_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
 class PipelineStats::_Internal {
  public:
   using HasBits = decltype(::std::declval<PipelineStats>()._impl_._has_bits_);
@@ -4968,12 +4212,12 @@ constexpr PipelineStats::ParseTableT_ PipelineStats::InternalGenerateParseTable_
     {
       PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_._has_bits_),
       0, // no _extensions_
-      5, 56,  // max_field_number, fast_idx_mask
+      4, 24,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967264,  // skipmap
+      4294967280,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      5,  // num_field_entries
-      5,  // num_aux_entries
+      4,  // num_field_entries
+      4,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
       nullptr,  // post_loop_handler
@@ -4982,12 +4226,15 @@ constexpr PipelineStats::ParseTableT_ PipelineStats::InternalGenerateParseTable_
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::PipelineStats>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      {::_pbi::TcParser::MiniParse, {}},
+      // .fusion.ai.proto.data_readiness.PipelineLine validation_queue_line = 4 [json_name = "validation_queue_line"];
+      {::_pbi::TcParser::FastMtS1,
+       {34, 3, 3,
+        PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.validation_queue_line_)}},
       // .fusion.ai.proto.data_readiness.PipelineLine push_line = 1 [json_name = "push_line"];
       {::_pbi::TcParser::FastMtS1,
        {10, 0, 0,
         PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.push_line_)}},
-      // .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
+      // optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
       {::_pbi::TcParser::FastMtS1,
        {18, 1, 1,
         PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.weather_job_line_)}},
@@ -4995,36 +4242,19 @@ constexpr PipelineStats::ParseTableT_ PipelineStats::InternalGenerateParseTable_
       {::_pbi::TcParser::FastMtS1,
        {26, 2, 2,
         PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.excel_line_)}},
-      // .fusion.ai.proto.data_readiness.PipelineLine validation_queue_line = 4 [json_name = "validation_queue_line"];
-      {::_pbi::TcParser::FastMtS1,
-       {34, 3, 3,
-        PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.validation_queue_line_)}},
-      // optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];
-      {::_pbi::TcParser::FastMtS1,
-       {42, 4, 4,
-        PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.pull_line_)}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
     }}, {{
       65535, 65535
     }}, {{
       // .fusion.ai.proto.data_readiness.PipelineLine push_line = 1 [json_name = "push_line"];
       {PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.push_line_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
+      // optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
       {PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.weather_job_line_), _Internal::kHasBitsOffset + 1, 1, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
       // .fusion.ai.proto.data_readiness.PipelineLine excel_line = 3 [json_name = "excel_line"];
       {PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.excel_line_), _Internal::kHasBitsOffset + 2, 2, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
       // .fusion.ai.proto.data_readiness.PipelineLine validation_queue_line = 4 [json_name = "validation_queue_line"];
       {PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.validation_queue_line_), _Internal::kHasBitsOffset + 3, 3, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];
-      {PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.pull_line_), _Internal::kHasBitsOffset + 4, 4, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     }},
     {{
-        #ifndef PROTOBUF_MESSAGE_GLOBALS
-        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::PipelineLine>()},
-        #else
-        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::PipelineLine_globals_},
-        #endif
         #ifndef PROTOBUF_MESSAGE_GLOBALS
         {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::PipelineLine>()},
         #else
@@ -5058,8 +4288,7 @@ inline constexpr PipelineStats::Impl_::Impl_(
       : push_line_{nullptr},
         weather_job_line_{nullptr},
         excel_line_{nullptr},
-        validation_queue_line_{nullptr},
-        pull_line_{nullptr} {}
+        validation_queue_line_{nullptr} {}
 
 template <typename>
 constexpr PipelineStats::PipelineStats(::_pbi::ConstantInitialized,
@@ -5102,7 +4331,7 @@ constexpr auto PipelineStats::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[8],
+      &file_reflection_data[7],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -5153,183 +4382,6 @@ const ::_pbi::ClassData* PipelineStats_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
-class GetWeatherExcelTemplateResponse::_Internal {
- public:
-  using HasBits = decltype(::std::declval<GetWeatherExcelTemplateResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_._has_bits_);
-};
-
-constexpr GetWeatherExcelTemplateResponse::ParseTableT_ GetWeatherExcelTemplateResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_._has_bits_),
-      0, // no _extensions_
-      4, 24,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967280,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      4,  // num_field_entries
-      1,  // num_aux_entries
-      offsetof(ParseTableT_, aux_entries),
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      // string content_type = 4 [json_name = "content_type"];
-      {::_pbi::TcParser::FastUS1,
-       {34, 2, 0,
-        PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.content_type_)}},
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {::_pbi::TcParser::FastMtS1,
-       {10, 3, 0,
-        PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.header_)}},
-      // bytes file = 2 [json_name = "file"];
-      {::_pbi::TcParser::FastBS1,
-       {18, 0, 0,
-        PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.file_)}},
-      // string filename = 3 [json_name = "filename"];
-      {::_pbi::TcParser::FastUS1,
-       {26, 1, 0,
-        PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.filename_)}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.header_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // bytes file = 2 [json_name = "file"];
-      {PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.file_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
-      // string filename = 3 [json_name = "filename"];
-      {PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.filename_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string content_type = 4 [json_name = "content_type"];
-      {PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_.content_type_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    }},
-    {{
-        #ifndef PROTOBUF_MESSAGE_GLOBALS
-        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>()},
-        #else
-        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_},
-        #endif
-    }},
-    {{
-      "\76\0\0\10\14\0\0\0"
-      "fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse"
-      "filename"
-      "content_type"
-    }},
-  };
-}
-
-
-inline constexpr GetWeatherExcelTemplateResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : file_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        filename_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        content_type_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        header_{nullptr} {}
-
-template <typename>
-constexpr GetWeatherExcelTemplateResponse::GetWeatherExcelTemplateResponse(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL GetWeatherExcelTemplateResponse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) GetWeatherExcelTemplateResponse(arena);
-}
-constexpr auto GetWeatherExcelTemplateResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetWeatherExcelTemplateResponse), alignof(GetWeatherExcelTemplateResponse));
-}
-constexpr auto GetWeatherExcelTemplateResponse::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &GetWeatherExcelTemplateResponse::MergeImpl,
-          Super_::GetNewImpl<GetWeatherExcelTemplateResponse>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &GetWeatherExcelTemplateResponse::SharedDtor,
-          Super_::GetClearImpl<GetWeatherExcelTemplateResponse>(), &GetWeatherExcelTemplateResponse::ByteSizeLong,
-              &GetWeatherExcelTemplateResponse::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponse, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[34],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct GetWeatherExcelTemplateResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr GetWeatherExcelTemplateResponseGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 GetWeatherExcelTemplateResponse_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(GetWeatherExcelTemplateResponse::InternalGenerateClassData_(
-            _default, &GetWeatherExcelTemplateResponse_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<GetWeatherExcelTemplateResponse>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~GetWeatherExcelTemplateResponseGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) GetWeatherExcelTemplateResponse _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetWeatherExcelTemplateResponse>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(GetWeatherExcelTemplateResponseGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetWeatherExcelTemplateResponseGlobalsTypeInternal GetWeatherExcelTemplateResponse_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* GetWeatherExcelTemplateResponse_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return GetWeatherExcelTemplateResponse_globals_.GetClassData();
-#else
-  return GetWeatherExcelTemplateResponse_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
 class GetDataOverviewResponse::_Internal {
  public:
   using HasBits = decltype(::std::declval<GetDataOverviewResponse>()._impl_._has_bits_);
@@ -5342,12 +4394,12 @@ constexpr GetDataOverviewResponse::ParseTableT_ GetDataOverviewResponse::Interna
     {
       PROTOBUF_FIELD_OFFSET(GetDataOverviewResponse, _impl_._has_bits_),
       0, // no _extensions_
-      2, 8,  // max_field_number, fast_idx_mask
+      1, 0,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967292,  // skipmap
+      4294967294,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      2,  // num_field_entries
-      2,  // num_aux_entries
+      1,  // num_field_entries
+      1,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
       nullptr,  // post_loop_handler
@@ -5356,28 +4408,17 @@ constexpr GetDataOverviewResponse::ParseTableT_ GetDataOverviewResponse::Interna
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::GetDataOverviewResponse>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      // .fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];
-      {::_pbi::TcParser::FastMtS1,
-       {18, 1, 1,
-        PROTOBUF_FIELD_OFFSET(GetDataOverviewResponse, _impl_.overview_)}},
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+      // .fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];
       {::_pbi::TcParser::FastMtS1,
        {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(GetDataOverviewResponse, _impl_.header_)}},
+        PROTOBUF_FIELD_OFFSET(GetDataOverviewResponse, _impl_.overview_)}},
     }}, {{
       65535, 65535
     }}, {{
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {PROTOBUF_FIELD_OFFSET(GetDataOverviewResponse, _impl_.header_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // .fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];
-      {PROTOBUF_FIELD_OFFSET(GetDataOverviewResponse, _impl_.overview_), _Internal::kHasBitsOffset + 1, 1, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // .fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];
+      {PROTOBUF_FIELD_OFFSET(GetDataOverviewResponse, _impl_.overview_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     }},
     {{
-        #ifndef PROTOBUF_MESSAGE_GLOBALS
-        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>()},
-        #else
-        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_},
-        #endif
         #ifndef PROTOBUF_MESSAGE_GLOBALS
         {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataOverview>()},
         #else
@@ -5393,8 +4434,7 @@ constexpr GetDataOverviewResponse::ParseTableT_ GetDataOverviewResponse::Interna
 inline constexpr GetDataOverviewResponse::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     ::_pbi::ConstantInitialized) noexcept
-      : header_{nullptr},
-        overview_{nullptr} {}
+      : overview_{nullptr} {}
 
 template <typename>
 constexpr GetDataOverviewResponse::GetDataOverviewResponse(::_pbi::ConstantInitialized,
@@ -5437,7 +4477,7 @@ constexpr auto GetDataOverviewResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[13],
+      &file_reflection_data[12],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -5500,11 +4540,11 @@ constexpr DataSiteRow::ParseTableT_ DataSiteRow::InternalGenerateParseTable_(con
     {
       PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_._has_bits_),
       0, // no _extensions_
-      15, 120,  // max_field_number, fast_idx_mask
+      14, 120,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294934528,  // skipmap
+      4294950912,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      15,  // num_field_entries
+      14,  // num_field_entries
       3,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
@@ -5532,49 +4572,46 @@ constexpr DataSiteRow::ParseTableT_ DataSiteRow::InternalGenerateParseTable_(con
        {34, 4, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.service_type_)}},
       // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteRow, _impl_.data_source_), 9>(),
-       {40, 9, 0,
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteRow, _impl_.data_source_), 10>(),
+       {40, 10, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.data_source_)}},
-      // int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteRow, _impl_.primary_granularity_min_), 10>(),
-       {48, 10, 0,
-        PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.primary_granularity_min_)}},
-      // optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];
+      // optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];
       {::_pbi::TcParser::FastF64S1,
-       {57, 11, 0,
+       {49, 9, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.coverage_ratio_7d_)}},
-      // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];
+      // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];
       {::_pbi::TcParser::FastMtR1,
-       {66, 0, 0,
+       {58, 0, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.trend_7d_)}},
-      // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteRow, _impl_.weather_status_), 12>(),
-       {72, 12, 0,
+      // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteRow, _impl_.weather_status_), 11>(),
+       {64, 11, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.weather_status_)}},
-      // string weather_display = 10 [json_name = "weather_display"];
+      // optional string weather_display = 9 [json_name = "weather_display"];
       {::_pbi::TcParser::FastUS1,
-       {82, 5, 0,
+       {74, 5, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.weather_display_)}},
-      // optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];
+      // optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];
       {::_pbi::TcParser::FastMtS1,
-       {90, 7, 1,
+       {82, 7, 1,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.last_push_at_)}},
-      // optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];
+      // optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];
       {::_pbi::TcParser::FastMtS1,
-       {98, 8, 2,
+       {90, 8, 2,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.last_ingest_at_)}},
-      // int32 gap_points_7d = 13 [json_name = "gap_points_7d"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteRow, _impl_.gap_points_7d_), 13>(),
-       {104, 13, 0,
+      // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteRow, _impl_.gap_points_7d_), 12>(),
+       {96, 12, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.gap_points_7d_)}},
-      // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteRow, _impl_.readiness_status_), 14>(),
-       {112, 14, 0,
+      // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteRow, _impl_.readiness_status_), 13>(),
+       {104, 13, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.readiness_status_)}},
-      // string workbench_href = 15 [json_name = "workbench_href"];
+      // string workbench_href = 14 [json_name = "workbench_href"];
       {::_pbi::TcParser::FastUS1,
-       {122, 6, 0,
+       {114, 6, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.workbench_href_)}},
+      {::_pbi::TcParser::MiniParse, {}},
     }}, {{
       65535, 65535
     }}, {{
@@ -5587,26 +4624,24 @@ constexpr DataSiteRow::ParseTableT_ DataSiteRow::InternalGenerateParseTable_(con
       // string service_type = 4 [json_name = "service_type"];
       {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.service_type_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
       // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.data_source_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.primary_granularity_min_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.coverage_ratio_7d_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.data_source_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      // optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.coverage_ratio_7d_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];
       {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.trend_7d_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-      // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.weather_status_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // string weather_display = 10 [json_name = "weather_display"];
+      // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.weather_status_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      // optional string weather_display = 9 [json_name = "weather_display"];
       {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.weather_display_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];
+      // optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];
       {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.last_push_at_), _Internal::kHasBitsOffset + 7, 1, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];
+      // optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];
       {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.last_ingest_at_), _Internal::kHasBitsOffset + 8, 2, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // int32 gap_points_7d = 13 [json_name = "gap_points_7d"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.gap_points_7d_), _Internal::kHasBitsOffset + 13, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.readiness_status_), _Internal::kHasBitsOffset + 14, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // string workbench_href = 15 [json_name = "workbench_href"];
+      // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.gap_points_7d_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.readiness_status_), _Internal::kHasBitsOffset + 13, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      // string workbench_href = 14 [json_name = "workbench_href"];
       {PROTOBUF_FIELD_OFFSET(DataSiteRow, _impl_.workbench_href_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     }},
     {{
@@ -5627,7 +4662,7 @@ constexpr DataSiteRow::ParseTableT_ DataSiteRow::InternalGenerateParseTable_(con
         #endif
     }},
     {{
-      "\52\17\7\11\14\0\0\0\0\0\17\0\0\0\0\16"
+      "\52\17\7\11\14\0\0\0\0\17\0\0\0\0\16\0"
       "fusion.ai.proto.data_readiness.DataSiteRow"
       "registration_id"
       "site_id"
@@ -5668,9 +4703,8 @@ inline constexpr DataSiteRow::Impl_::Impl_(
             ::_pbi::ConstantInitialized()),
         last_push_at_{nullptr},
         last_ingest_at_{nullptr},
-        data_source_{static_cast< ::fusion::ai::proto::data_readiness::DataSource >(0)},
-        primary_granularity_min_{0},
         coverage_ratio_7d_{0},
+        data_source_{static_cast< ::fusion::ai::proto::data_readiness::DataSource >(0)},
         weather_status_{static_cast< ::fusion::ai::proto::data_readiness::WeatherStatus >(0)},
         gap_points_7d_{0},
         readiness_status_{static_cast< ::fusion::ai::proto::data_readiness::ReadinessStatus >(0)} {}
@@ -5716,7 +4750,7 @@ constexpr auto DataSiteRow::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[3],
+      &file_reflection_data[2],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -5779,11 +4813,11 @@ constexpr DataSiteReadiness::ParseTableT_ DataSiteReadiness::InternalGeneratePar
     {
       PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_._has_bits_),
       0, // no _extensions_
-      8, 56,  // max_field_number, fast_idx_mask
+      14, 120,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967040,  // skipmap
+      4294950912,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      8,  // num_field_entries
+      14,  // num_field_entries
       1,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
@@ -5793,56 +4827,94 @@ constexpr DataSiteReadiness::ParseTableT_ DataSiteReadiness::InternalGeneratePar
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataSiteReadiness>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];
-      {::_pbi::TcParser::FastMtR1,
-       {66, 0, 0,
-        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.heatmap_14d_)}},
+      {::_pbi::TcParser::MiniParse, {}},
       // string registration_id = 1 [json_name = "registration_id"];
       {::_pbi::TcParser::FastUS1,
        {10, 1, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.registration_id_)}},
-      // string site_name = 2 [json_name = "site_name"];
+      // string site_id = 2 [json_name = "site_id"];
       {::_pbi::TcParser::FastUS1,
        {18, 2, 0,
-        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.site_name_)}},
-      // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteReadiness, _impl_.readiness_status_), 4>(),
-       {24, 4, 0,
-        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.readiness_status_)}},
-      // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteReadiness, _impl_.weather_status_), 5>(),
-       {32, 5, 0,
-        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.weather_status_)}},
-      // optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];
-      {::_pbi::TcParser::FastF64S1,
-       {41, 6, 0,
-        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.coverage_ratio_7d_)}},
-      // int32 gap_points_7d = 6 [json_name = "gap_points_7d"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteReadiness, _impl_.gap_points_7d_), 7>(),
-       {48, 7, 0,
-        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.gap_points_7d_)}},
-      // string gap_focus = 7 [json_name = "gap_focus"];
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.site_id_)}},
+      // string site_name = 3 [json_name = "site_name"];
       {::_pbi::TcParser::FastUS1,
-       {58, 3, 0,
+       {26, 3, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.site_name_)}},
+      // string service_type = 4 [json_name = "service_type"];
+      {::_pbi::TcParser::FastUS1,
+       {34, 4, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.service_type_)}},
+      // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteReadiness, _impl_.data_source_), 9>(),
+       {40, 9, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.data_source_)}},
+      // string train_window = 6 [json_name = "train_window"];
+      {::_pbi::TcParser::FastUS1,
+       {50, 5, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.train_window_)}},
+      // string upstream_label = 7 [json_name = "upstream_label"];
+      {::_pbi::TcParser::FastUS1,
+       {58, 6, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.upstream_label_)}},
+      // optional string weather_provider_id = 8 [json_name = "weather_provider_id"];
+      {::_pbi::TcParser::FastUS1,
+       {66, 7, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.weather_provider_id_)}},
+      // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteReadiness, _impl_.readiness_status_), 10>(),
+       {72, 10, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.readiness_status_)}},
+      // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteReadiness, _impl_.weather_status_), 12>(),
+       {80, 12, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.weather_status_)}},
+      // optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];
+      {::_pbi::TcParser::FastF64S1,
+       {89, 11, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.coverage_ratio_7d_)}},
+      // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(DataSiteReadiness, _impl_.gap_points_7d_), 13>(),
+       {96, 13, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.gap_points_7d_)}},
+      // string gap_focus = 13 [json_name = "gap_focus"];
+      {::_pbi::TcParser::FastUS1,
+       {106, 8, 0,
         PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.gap_focus_)}},
+      // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];
+      {::_pbi::TcParser::FastMtR1,
+       {114, 0, 0,
+        PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.heatmap_14d_)}},
+      {::_pbi::TcParser::MiniParse, {}},
     }}, {{
       65535, 65535
     }}, {{
       // string registration_id = 1 [json_name = "registration_id"];
       {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.registration_id_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // string site_name = 2 [json_name = "site_name"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.site_name_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.readiness_status_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.weather_status_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.coverage_ratio_7d_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // int32 gap_points_7d = 6 [json_name = "gap_points_7d"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.gap_points_7d_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // string gap_focus = 7 [json_name = "gap_focus"];
-      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.gap_focus_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];
+      // string site_id = 2 [json_name = "site_id"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.site_id_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string site_name = 3 [json_name = "site_name"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.site_name_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string service_type = 4 [json_name = "service_type"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.service_type_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.data_source_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      // string train_window = 6 [json_name = "train_window"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.train_window_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string upstream_label = 7 [json_name = "upstream_label"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.upstream_label_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // optional string weather_provider_id = 8 [json_name = "weather_provider_id"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.weather_provider_id_), _Internal::kHasBitsOffset + 7, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.readiness_status_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.weather_status_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      // optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.coverage_ratio_7d_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
+      // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.gap_points_7d_), _Internal::kHasBitsOffset + 13, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // string gap_focus = 13 [json_name = "gap_focus"];
+      {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.gap_focus_), _Internal::kHasBitsOffset + 8, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];
       {PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.heatmap_14d_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
     }},
     {{
@@ -5853,10 +4925,15 @@ constexpr DataSiteReadiness::ParseTableT_ DataSiteReadiness::InternalGeneratePar
         #endif
     }},
     {{
-      "\60\17\11\0\0\0\0\11\0\0\0\0\0\0\0\0"
+      "\60\17\7\11\14\0\14\16\23\0\0\0\0\11\0\0"
       "fusion.ai.proto.data_readiness.DataSiteReadiness"
       "registration_id"
+      "site_id"
       "site_name"
+      "service_type"
+      "train_window"
+      "upstream_label"
+      "weather_provider_id"
       "gap_focus"
     }},
   };
@@ -5874,15 +4951,31 @@ inline constexpr DataSiteReadiness::Impl_::Impl_(
         registration_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        site_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         site_name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        service_type_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        train_window_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        upstream_label_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        weather_provider_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         gap_focus_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        data_source_{static_cast< ::fusion::ai::proto::data_readiness::DataSource >(0)},
         readiness_status_{static_cast< ::fusion::ai::proto::data_readiness::ReadinessStatus >(0)},
-        weather_status_{static_cast< ::fusion::ai::proto::data_readiness::WeatherStatus >(0)},
         coverage_ratio_7d_{0},
+        weather_status_{static_cast< ::fusion::ai::proto::data_readiness::WeatherStatus >(0)},
         gap_points_7d_{0} {}
 
 template <typename>
@@ -5926,7 +5019,7 @@ constexpr auto DataSiteReadiness::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[6],
+      &file_reflection_data[5],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -5977,191 +5070,6 @@ const ::_pbi::ClassData* DataSiteReadiness_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
-class CreateWeatherExcelImportJobResponse::_Internal {
- public:
-  using HasBits = decltype(::std::declval<CreateWeatherExcelImportJobResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_._has_bits_);
-};
-
-constexpr CreateWeatherExcelImportJobResponse::ParseTableT_ CreateWeatherExcelImportJobResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
-  return ParseTableT_{
-    {
-      PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_._has_bits_),
-      0, // no _extensions_
-      5, 56,  // max_field_number, fast_idx_mask
-      offsetof(ParseTableT_, field_lookup_table),
-      4294967264,  // skipmap
-      offsetof(ParseTableT_, field_entries),
-      5,  // num_field_entries
-      1,  // num_aux_entries
-      offsetof(ParseTableT_, aux_entries),
-      class_data,
-      nullptr,  // post_loop_handler
-      ::_pbi::TcParser::MpUnknownFields,  // fallback
-      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse>(),  // to_prefetch
-      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-    }, {{
-      {::_pbi::TcParser::MiniParse, {}},
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {::_pbi::TcParser::FastMtS1,
-       {10, 2, 0,
-        PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.header_)}},
-      // string job_id = 2 [json_name = "job_id"];
-      {::_pbi::TcParser::FastUS1,
-       {18, 0, 0,
-        PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.job_id_)}},
-      // optional int32 accepted_rows = 3 [json_name = "accepted_rows"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreateWeatherExcelImportJobResponse, _impl_.accepted_rows_), 3>(),
-       {24, 3, 0,
-        PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.accepted_rows_)}},
-      // optional int32 failed_rows = 4 [json_name = "failed_rows"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreateWeatherExcelImportJobResponse, _impl_.failed_rows_), 4>(),
-       {32, 4, 0,
-        PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.failed_rows_)}},
-      // optional string error_report_url = 5 [json_name = "error_report_url"];
-      {::_pbi::TcParser::FastUS1,
-       {42, 1, 0,
-        PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.error_report_url_)}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-    }}, {{
-      65535, 65535
-    }}, {{
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.header_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // string job_id = 2 [json_name = "job_id"];
-      {PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.job_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // optional int32 accepted_rows = 3 [json_name = "accepted_rows"];
-      {PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.accepted_rows_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // optional int32 failed_rows = 4 [json_name = "failed_rows"];
-      {PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.failed_rows_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // optional string error_report_url = 5 [json_name = "error_report_url"];
-      {PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.error_report_url_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    }},
-    {{
-        #ifndef PROTOBUF_MESSAGE_GLOBALS
-        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>()},
-        #else
-        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_},
-        #endif
-    }},
-    {{
-      "\102\0\6\0\0\20\0\0"
-      "fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse"
-      "job_id"
-      "error_report_url"
-    }},
-  };
-}
-
-
-inline constexpr CreateWeatherExcelImportJobResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    ::_pbi::ConstantInitialized) noexcept
-      : job_id_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        error_report_url_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        header_{nullptr},
-        accepted_rows_{0},
-        failed_rows_{0} {}
-
-template <typename>
-constexpr CreateWeatherExcelImportJobResponse::CreateWeatherExcelImportJobResponse(::_pbi::ConstantInitialized,
-                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
-    : Super_(
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          class_data
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          ),
-      _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
-}
-inline void* PROTOBUF_NONNULL CreateWeatherExcelImportJobResponse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) CreateWeatherExcelImportJobResponse(arena);
-}
-constexpr auto CreateWeatherExcelImportJobResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(CreateWeatherExcelImportJobResponse), alignof(CreateWeatherExcelImportJobResponse));
-}
-constexpr auto CreateWeatherExcelImportJobResponse::InternalGenerateClassData_(
-    const MessageLite& prototype,
-    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &prototype,
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-          &_table_.header,
-#else
-          tc_table,
-#endif
-          nullptr,  // IsInitialized
-          &CreateWeatherExcelImportJobResponse::MergeImpl,
-          Super_::GetNewImpl<CreateWeatherExcelImportJobResponse>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &CreateWeatherExcelImportJobResponse::SharedDtor,
-          Super_::GetClearImpl<CreateWeatherExcelImportJobResponse>(), &CreateWeatherExcelImportJobResponse::ByteSizeLong,
-              &CreateWeatherExcelImportJobResponse::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_._cached_size_),
-          false,
-      },
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[32],
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-      &::_pbi::kDescriptorMethods,
-      &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
-      nullptr,  // tracker
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  };
-}
-struct CreateWeatherExcelImportJobResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr CreateWeatherExcelImportJobResponseGlobalsTypeInternal()
-      :
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-        _default(::_pbi::ConstantInitialized{},
-                 CreateWeatherExcelImportJobResponse_class_data_.base())
-#else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(CreateWeatherExcelImportJobResponse::InternalGenerateClassData_(
-            _default, &CreateWeatherExcelImportJobResponse_globals_._table.header)),
-        _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<CreateWeatherExcelImportJobResponse>(
-            GetClassData()))
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-  {
-  }
-  ~CreateWeatherExcelImportJobResponseGlobalsTypeInternal() {}
-  union {
-    alignas(::_pbi::kMaxMessageAlignment) CreateWeatherExcelImportJobResponse _default;
-  };
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<CreateWeatherExcelImportJobResponse>(
-      ::std::declval<const ::_pbi::ClassData*>())) _table;
-#endif
-};
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponseGlobalsTypeInternal, _default) ==
-              ::_pbi::MessageGlobalsBase::OffsetToDefault());
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST CreateWeatherExcelImportJobResponseGlobalsTypeInternal CreateWeatherExcelImportJobResponse_globals_
-        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-namespace {
-const ::_pbi::ClassData* CreateWeatherExcelImportJobResponse_get_class_data() {
-#ifdef PROTOBUF_MESSAGE_GLOBALS
-  return CreateWeatherExcelImportJobResponse_globals_.GetClassData();
-#else
-  return CreateWeatherExcelImportJobResponse_class_data_.base();
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-}
-}  // namespace
-#endif  // PROTOBUF_CUSTOM_VTABLE
 class BatchSyncWeatherResponse::_Internal {
  public:
   using HasBits = decltype(::std::declval<BatchSyncWeatherResponse>()._impl_._has_bits_);
@@ -6174,12 +5082,12 @@ constexpr BatchSyncWeatherResponse::ParseTableT_ BatchSyncWeatherResponse::Inter
     {
       PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_._has_bits_),
       0, // no _extensions_
-      6, 56,  // max_field_number, fast_idx_mask
+      5, 56,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967232,  // skipmap
+      4294967264,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      6,  // num_field_entries
-      2,  // num_aux_entries
+      5,  // num_field_entries
+      1,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
       nullptr,  // post_loop_handler
@@ -6189,53 +5097,43 @@ constexpr BatchSyncWeatherResponse::ParseTableT_ BatchSyncWeatherResponse::Inter
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
       {::_pbi::TcParser::MiniParse, {}},
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {::_pbi::TcParser::FastMtS1,
-       {10, 2, 0,
-        PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.header_)}},
-      // string run_id = 2 [json_name = "run_id"];
+      // string run_id = 1 [json_name = "run_id"];
       {::_pbi::TcParser::FastUS1,
-       {18, 1, 0,
+       {10, 1, 0,
         PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.run_id_)}},
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BatchSyncWeatherResponse, _impl_.status_), 3>(),
-       {24, 3, 0,
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BatchSyncWeatherResponse, _impl_.status_), 2>(),
+       {16, 2, 0,
         PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.status_)}},
-      // int32 task_total = 4 [json_name = "task_total"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BatchSyncWeatherResponse, _impl_.task_total_), 4>(),
-       {32, 4, 0,
+      // int32 task_total = 3 [json_name = "task_total"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BatchSyncWeatherResponse, _impl_.task_total_), 3>(),
+       {24, 3, 0,
         PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.task_total_)}},
-      // int32 task_failed = 5 [json_name = "task_failed"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BatchSyncWeatherResponse, _impl_.task_failed_), 5>(),
-       {40, 5, 0,
+      // int32 task_failed = 4 [json_name = "task_failed"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BatchSyncWeatherResponse, _impl_.task_failed_), 4>(),
+       {32, 4, 0,
         PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.task_failed_)}},
-      // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];
+      // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];
       {::_pbi::TcParser::FastMtR1,
-       {50, 0, 1,
+       {42, 0, 0,
         PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.partial_errors_)}},
+      {::_pbi::TcParser::MiniParse, {}},
       {::_pbi::TcParser::MiniParse, {}},
     }}, {{
       65535, 65535
     }}, {{
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.header_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // string run_id = 2 [json_name = "run_id"];
+      // string run_id = 1 [json_name = "run_id"];
       {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.run_id_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
-      {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.status_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // int32 task_total = 4 [json_name = "task_total"];
-      {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.task_total_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // int32 task_failed = 5 [json_name = "task_failed"];
-      {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.task_failed_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];
-      {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.partial_errors_), _Internal::kHasBitsOffset + 0, 1, (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
+      {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.status_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      // int32 task_total = 3 [json_name = "task_total"];
+      {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.task_total_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // int32 task_failed = 4 [json_name = "task_failed"];
+      {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.task_failed_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];
+      {PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.partial_errors_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
     }},
     {{
-        #ifndef PROTOBUF_MESSAGE_GLOBALS
-        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>()},
-        #else
-        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_},
-        #endif
         #ifndef PROTOBUF_MESSAGE_GLOBALS
         {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::WeatherSyncPartialError>()},
         #else
@@ -6243,7 +5141,7 @@ constexpr BatchSyncWeatherResponse::ParseTableT_ BatchSyncWeatherResponse::Inter
         #endif
     }},
     {{
-      "\67\0\6\0\0\0\0\0"
+      "\67\6\0\0\0\0\0\0"
       "fusion.ai.proto.data_readiness.BatchSyncWeatherResponse"
       "run_id"
     }},
@@ -6262,7 +5160,6 @@ inline constexpr BatchSyncWeatherResponse::Impl_::Impl_(
         run_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        header_{nullptr},
         status_{static_cast< ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus >(0)},
         task_total_{0},
         task_failed_{0} {}
@@ -6308,7 +5205,7 @@ constexpr auto BatchSyncWeatherResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[28],
+      &file_reflection_data[25],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -6371,12 +5268,12 @@ constexpr GetWeatherSyncRunResponse::ParseTableT_ GetWeatherSyncRunResponse::Int
     {
       PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_._has_bits_),
       0, // no _extensions_
-      2, 8,  // max_field_number, fast_idx_mask
+      1, 0,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967292,  // skipmap
+      4294967294,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      2,  // num_field_entries
-      2,  // num_aux_entries
+      1,  // num_field_entries
+      1,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
       nullptr,  // post_loop_handler
@@ -6385,28 +5282,17 @@ constexpr GetWeatherSyncRunResponse::ParseTableT_ GetWeatherSyncRunResponse::Int
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
-      {::_pbi::TcParser::FastMtS1,
-       {18, 1, 1,
-        PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_)}},
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
       {::_pbi::TcParser::FastMtS1,
        {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.header_)}},
+        PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_)}},
     }}, {{
       65535, 65535
     }}, {{
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.header_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
-      {PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_), _Internal::kHasBitsOffset + 1, 1, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
+      {PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     }},
     {{
-        #ifndef PROTOBUF_MESSAGE_GLOBALS
-        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>()},
-        #else
-        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_},
-        #endif
         #ifndef PROTOBUF_MESSAGE_GLOBALS
         {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::WeatherSyncRunView>()},
         #else
@@ -6422,8 +5308,7 @@ constexpr GetWeatherSyncRunResponse::ParseTableT_ GetWeatherSyncRunResponse::Int
 inline constexpr GetWeatherSyncRunResponse::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     ::_pbi::ConstantInitialized) noexcept
-      : header_{nullptr},
-        run_{nullptr} {}
+      : run_{nullptr} {}
 
 template <typename>
 constexpr GetWeatherSyncRunResponse::GetWeatherSyncRunResponse(::_pbi::ConstantInitialized,
@@ -6466,7 +5351,7 @@ constexpr auto GetWeatherSyncRunResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[25],
+      &file_reflection_data[22],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -6612,7 +5497,7 @@ constexpr auto GetWeatherSiteResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[23],
+      &file_reflection_data[20],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -6758,7 +5643,7 @@ constexpr auto GetDataSiteReadinessResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[17],
+      &file_reflection_data[16],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -6904,7 +5789,7 @@ constexpr auto GetDataPipelineStatsResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[19],
+      &file_reflection_data[18],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -7075,7 +5960,7 @@ constexpr auto DataSiteRowPage::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[4],
+      &file_reflection_data[3],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -7138,12 +6023,12 @@ constexpr ListDataSiteRowsResponse::ParseTableT_ ListDataSiteRowsResponse::Inter
     {
       PROTOBUF_FIELD_OFFSET(ListDataSiteRowsResponse, _impl_._has_bits_),
       0, // no _extensions_
-      2, 8,  // max_field_number, fast_idx_mask
+      1, 0,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967292,  // skipmap
+      4294967294,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      2,  // num_field_entries
-      2,  // num_aux_entries
+      1,  // num_field_entries
+      1,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
       nullptr,  // post_loop_handler
@@ -7152,28 +6037,17 @@ constexpr ListDataSiteRowsResponse::ParseTableT_ ListDataSiteRowsResponse::Inter
       ::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::ListDataSiteRowsResponse>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];
-      {::_pbi::TcParser::FastMtS1,
-       {18, 1, 1,
-        PROTOBUF_FIELD_OFFSET(ListDataSiteRowsResponse, _impl_.page_)}},
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+      // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];
       {::_pbi::TcParser::FastMtS1,
        {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(ListDataSiteRowsResponse, _impl_.header_)}},
+        PROTOBUF_FIELD_OFFSET(ListDataSiteRowsResponse, _impl_.page_)}},
     }}, {{
       65535, 65535
     }}, {{
-      // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-      {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsResponse, _impl_.header_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];
-      {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsResponse, _impl_.page_), _Internal::kHasBitsOffset + 1, 1, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];
+      {PROTOBUF_FIELD_OFFSET(ListDataSiteRowsResponse, _impl_.page_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     }},
     {{
-        #ifndef PROTOBUF_MESSAGE_GLOBALS
-        {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>()},
-        #else
-        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_},
-        #endif
         #ifndef PROTOBUF_MESSAGE_GLOBALS
         {::_pbi::TcParser::GetTable<::fusion::ai::proto::data_readiness::DataSiteRowPage>()},
         #else
@@ -7189,8 +6063,7 @@ constexpr ListDataSiteRowsResponse::ParseTableT_ ListDataSiteRowsResponse::Inter
 inline constexpr ListDataSiteRowsResponse::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     ::_pbi::ConstantInitialized) noexcept
-      : header_{nullptr},
-        page_{nullptr} {}
+      : page_{nullptr} {}
 
 template <typename>
 constexpr ListDataSiteRowsResponse::ListDataSiteRowsResponse(::_pbi::ConstantInitialized,
@@ -7233,7 +6106,7 @@ constexpr auto ListDataSiteRowsResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[15],
+      &file_reflection_data[14],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
@@ -7296,15 +6169,6 @@ const ::uint32_t
     TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
         protodesc_cold) = {
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader, _impl_._has_bits_),
-        6, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader, _impl_.state_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader, _impl_.code_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader, _impl_.message_),
-        0,
-        1,
-        2,
-        0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataOverview, _impl_._has_bits_),
         9, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataOverview, _impl_.site_count_),
@@ -7328,13 +6192,12 @@ const ::uint32_t
         1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_._has_bits_),
-        18, // hasbit index offset
+        17, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_.registration_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_.site_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_.site_name_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_.service_type_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_.data_source_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_.primary_granularity_min_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_.coverage_ratio_7d_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_.trend_7d_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRow, _impl_.weather_status_),
@@ -7348,16 +6211,15 @@ const ::uint32_t
         2,
         3,
         4,
-        9,
         10,
-        11,
+        9,
         0,
-        12,
+        11,
         5,
         7,
         8,
+        12,
         13,
-        14,
         6,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteRowPage, _impl_._has_bits_),
@@ -7381,9 +6243,15 @@ const ::uint32_t
         1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_._has_bits_),
-        11, // hasbit index offset
+        17, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.registration_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.site_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.site_name_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.service_type_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.data_source_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.train_window_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.upstream_label_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.weather_provider_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.readiness_status_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.weather_status_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.coverage_ratio_7d_),
@@ -7392,11 +6260,17 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::DataSiteReadiness, _impl_.heatmap_14d_),
         1,
         2,
+        3,
         4,
+        9,
         5,
         6,
         7,
-        3,
+        10,
+        12,
+        11,
+        13,
+        8,
         0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::PipelineLine, _impl_._has_bits_),
@@ -7411,17 +6285,15 @@ const ::uint32_t
         3,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::PipelineStats, _impl_._has_bits_),
-        8, // hasbit index offset
+        7, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::PipelineStats, _impl_.push_line_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::PipelineStats, _impl_.weather_job_line_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::PipelineStats, _impl_.excel_line_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::PipelineStats, _impl_.validation_queue_line_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::PipelineStats, _impl_.pull_line_),
         0,
         1,
         2,
         3,
-        4,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::WeatherSiteView, _impl_._has_bits_),
         9, // hasbit index offset
@@ -7480,35 +6352,27 @@ const ::uint32_t
         0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetDataOverviewResponse, _impl_._has_bits_),
-        5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetDataOverviewResponse, _impl_.header_),
+        4, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetDataOverviewResponse, _impl_.overview_),
         0,
-        1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest, _impl_._has_bits_),
-        10, // hasbit index offset
+        8, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest, _impl_.page_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest, _impl_.page_size_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest, _impl_.service_type_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest, _impl_.data_source_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest, _impl_.readiness_status_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest, _impl_.granularity_min_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest, _impl_.q_),
         2,
         3,
         0,
         4,
-        5,
-        6,
         1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsResponse, _impl_._has_bits_),
-        5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsResponse, _impl_.header_),
+        4, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ListDataSiteRowsResponse, _impl_.page_),
         0,
-        1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetDataSiteReadinessRequest, _impl_._has_bits_),
         4, // hasbit index offset
@@ -7519,30 +6383,16 @@ const ::uint32_t
         4, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetDataSiteReadinessResponse, _impl_.readiness_),
         0,
-        0x000, // bitmap
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetDataPipelineStatsRequest, _impl_._has_bits_),
+        4, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetDataPipelineStatsRequest, _impl_.service_type_),
+        0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetDataPipelineStatsResponse, _impl_._has_bits_),
         4, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetDataPipelineStatsResponse, _impl_.stats_),
         0,
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ExportDataGapsRequest, _impl_._has_bits_),
-        7, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ExportDataGapsRequest, _impl_.service_type_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ExportDataGapsRequest, _impl_.data_source_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ExportDataGapsRequest, _impl_.readiness_status_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ExportDataGapsRequest, _impl_.q_),
-        0,
-        2,
-        3,
-        1,
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ExportDataGapsResponse, _impl_._has_bits_),
-        5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ExportDataGapsResponse, _impl_.csv_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::ExportDataGapsResponse, _impl_.filename_),
-        0,
-        1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherSiteRequest, _impl_._has_bits_),
         4, // hasbit index offset
@@ -7562,11 +6412,9 @@ const ::uint32_t
         1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse, _impl_._has_bits_),
-        5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse, _impl_.header_),
+        4, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse, _impl_.run_),
         0,
-        1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchSyncWeatherRequest, _impl_._has_bits_),
         10, // hasbit index offset
@@ -7595,18 +6443,16 @@ const ::uint32_t
         2,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse, _impl_._has_bits_),
-        9, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse, _impl_.header_),
+        8, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse, _impl_.run_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse, _impl_.status_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse, _impl_.task_total_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse, _impl_.task_failed_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse, _impl_.partial_errors_),
-        2,
         1,
+        2,
         3,
         4,
-        5,
         0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncRequest, _impl_._has_bits_),
@@ -7615,13 +6461,11 @@ const ::uint32_t
         0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse, _impl_._has_bits_),
-        6, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse, _impl_.header_),
+        5, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse, _impl_.run_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse, _impl_.status_),
-        1,
         0,
-        2,
+        1,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobRequest, _impl_._has_bits_),
         6, // hasbit index offset
@@ -7633,26 +6477,22 @@ const ::uint32_t
         2,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse, _impl_._has_bits_),
-        8, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse, _impl_.header_),
+        7, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse, _impl_.job_id_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse, _impl_.accepted_rows_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse, _impl_.failed_rows_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse, _impl_.error_report_url_),
-        2,
         0,
+        2,
         3,
-        4,
         1,
         0x000, // bitmap
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse, _impl_._has_bits_),
-        7, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse, _impl_.header_),
+        6, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse, _impl_.file_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse, _impl_.filename_),
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse, _impl_.content_type_),
-        3,
         0,
         1,
         2,
@@ -7686,77 +6526,49 @@ const ::uint32_t
         4, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::UploadBackfillFileResponse, _impl_.job_id_),
         0,
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchPullPowerRequest, _impl_._has_bits_),
-        4, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchPullPowerRequest, _impl_.registration_ids_),
-        0,
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchPullPowerResponse, _impl_._has_bits_),
-        4, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchPullPowerResponse, _impl_.run_id_),
-        0,
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedPullPowerRequest, _impl_._has_bits_),
-        4, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedPullPowerRequest, _impl_.run_id_),
-        0,
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedPullPowerResponse, _impl_._has_bits_),
-        4, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::RetryFailedPullPowerResponse, _impl_.run_id_),
-        0,
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-        {0, sizeof(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader)},
-        {9, sizeof(::fusion::ai::proto::data_readiness::DataOverview)},
-        {24, sizeof(::fusion::ai::proto::data_readiness::CoverageTrendPoint)},
-        {31, sizeof(::fusion::ai::proto::data_readiness::DataSiteRow)},
-        {64, sizeof(::fusion::ai::proto::data_readiness::DataSiteRowPage)},
-        {75, sizeof(::fusion::ai::proto::data_readiness::HeatmapDay)},
-        {84, sizeof(::fusion::ai::proto::data_readiness::DataSiteReadiness)},
-        {103, sizeof(::fusion::ai::proto::data_readiness::PipelineLine)},
-        {114, sizeof(::fusion::ai::proto::data_readiness::PipelineStats)},
-        {127, sizeof(::fusion::ai::proto::data_readiness::WeatherSiteView)},
-        {142, sizeof(::fusion::ai::proto::data_readiness::WeatherSyncTaskView)},
-        {157, sizeof(::fusion::ai::proto::data_readiness::WeatherSyncRunView)},
-        {178, sizeof(::fusion::ai::proto::data_readiness::GetDataOverviewRequest)},
-        {183, sizeof(::fusion::ai::proto::data_readiness::GetDataOverviewResponse)},
-        {190, sizeof(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest)},
-        {207, sizeof(::fusion::ai::proto::data_readiness::ListDataSiteRowsResponse)},
-        {214, sizeof(::fusion::ai::proto::data_readiness::GetDataSiteReadinessRequest)},
-        {219, sizeof(::fusion::ai::proto::data_readiness::GetDataSiteReadinessResponse)},
-        {224, sizeof(::fusion::ai::proto::data_readiness::GetDataPipelineStatsRequest)},
-        {225, sizeof(::fusion::ai::proto::data_readiness::GetDataPipelineStatsResponse)},
-        {230, sizeof(::fusion::ai::proto::data_readiness::ExportDataGapsRequest)},
-        {241, sizeof(::fusion::ai::proto::data_readiness::ExportDataGapsResponse)},
-        {248, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSiteRequest)},
-        {253, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSiteResponse)},
-        {258, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSyncRunRequest)},
-        {265, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse)},
-        {272, sizeof(::fusion::ai::proto::data_readiness::BatchSyncWeatherRequest)},
-        {289, sizeof(::fusion::ai::proto::data_readiness::WeatherSyncPartialError)},
-        {298, sizeof(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse)},
-        {313, sizeof(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncRequest)},
-        {318, sizeof(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse)},
-        {327, sizeof(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobRequest)},
-        {336, sizeof(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse)},
-        {349, sizeof(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateRequest)},
-        {350, sizeof(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse)},
-        {361, sizeof(::fusion::ai::proto::data_readiness::CreateDataBackfillJobRequest)},
-        {372, sizeof(::fusion::ai::proto::data_readiness::CreateDataBackfillJobResponse)},
-        {377, sizeof(::fusion::ai::proto::data_readiness::UploadBackfillFileRequest)},
-        {386, sizeof(::fusion::ai::proto::data_readiness::UploadBackfillFileResponse)},
-        {391, sizeof(::fusion::ai::proto::data_readiness::BatchPullPowerRequest)},
-        {396, sizeof(::fusion::ai::proto::data_readiness::BatchPullPowerResponse)},
-        {401, sizeof(::fusion::ai::proto::data_readiness::RetryFailedPullPowerRequest)},
-        {406, sizeof(::fusion::ai::proto::data_readiness::RetryFailedPullPowerResponse)},
+        {0, sizeof(::fusion::ai::proto::data_readiness::DataOverview)},
+        {15, sizeof(::fusion::ai::proto::data_readiness::CoverageTrendPoint)},
+        {22, sizeof(::fusion::ai::proto::data_readiness::DataSiteRow)},
+        {53, sizeof(::fusion::ai::proto::data_readiness::DataSiteRowPage)},
+        {64, sizeof(::fusion::ai::proto::data_readiness::HeatmapDay)},
+        {73, sizeof(::fusion::ai::proto::data_readiness::DataSiteReadiness)},
+        {104, sizeof(::fusion::ai::proto::data_readiness::PipelineLine)},
+        {115, sizeof(::fusion::ai::proto::data_readiness::PipelineStats)},
+        {126, sizeof(::fusion::ai::proto::data_readiness::WeatherSiteView)},
+        {141, sizeof(::fusion::ai::proto::data_readiness::WeatherSyncTaskView)},
+        {156, sizeof(::fusion::ai::proto::data_readiness::WeatherSyncRunView)},
+        {177, sizeof(::fusion::ai::proto::data_readiness::GetDataOverviewRequest)},
+        {182, sizeof(::fusion::ai::proto::data_readiness::GetDataOverviewResponse)},
+        {187, sizeof(::fusion::ai::proto::data_readiness::ListDataSiteRowsRequest)},
+        {200, sizeof(::fusion::ai::proto::data_readiness::ListDataSiteRowsResponse)},
+        {205, sizeof(::fusion::ai::proto::data_readiness::GetDataSiteReadinessRequest)},
+        {210, sizeof(::fusion::ai::proto::data_readiness::GetDataSiteReadinessResponse)},
+        {215, sizeof(::fusion::ai::proto::data_readiness::GetDataPipelineStatsRequest)},
+        {220, sizeof(::fusion::ai::proto::data_readiness::GetDataPipelineStatsResponse)},
+        {225, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSiteRequest)},
+        {230, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSiteResponse)},
+        {235, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSyncRunRequest)},
+        {242, sizeof(::fusion::ai::proto::data_readiness::GetWeatherSyncRunResponse)},
+        {247, sizeof(::fusion::ai::proto::data_readiness::BatchSyncWeatherRequest)},
+        {264, sizeof(::fusion::ai::proto::data_readiness::WeatherSyncPartialError)},
+        {273, sizeof(::fusion::ai::proto::data_readiness::BatchSyncWeatherResponse)},
+        {286, sizeof(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncRequest)},
+        {291, sizeof(::fusion::ai::proto::data_readiness::RetryFailedWeatherSyncResponse)},
+        {298, sizeof(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobRequest)},
+        {307, sizeof(::fusion::ai::proto::data_readiness::CreateWeatherExcelImportJobResponse)},
+        {318, sizeof(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateRequest)},
+        {319, sizeof(::fusion::ai::proto::data_readiness::GetWeatherExcelTemplateResponse)},
+        {328, sizeof(::fusion::ai::proto::data_readiness::CreateDataBackfillJobRequest)},
+        {339, sizeof(::fusion::ai::proto::data_readiness::CreateDataBackfillJobResponse)},
+        {344, sizeof(::fusion::ai::proto::data_readiness::UploadBackfillFileRequest)},
+        {353, sizeof(::fusion::ai::proto::data_readiness::UploadBackfillFileResponse)},
 };
 static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
     file_message_globals[] = {
-        &::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_,
         &::fusion::ai::proto::data_readiness::DataOverview_globals_,
         &::fusion::ai::proto::data_readiness::CoverageTrendPoint_globals_,
         &::fusion::ai::proto::data_readiness::DataSiteRow_globals_,
@@ -7776,8 +6588,6 @@ static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
         &::fusion::ai::proto::data_readiness::GetDataSiteReadinessResponse_globals_,
         &::fusion::ai::proto::data_readiness::GetDataPipelineStatsRequest_globals_,
         &::fusion::ai::proto::data_readiness::GetDataPipelineStatsResponse_globals_,
-        &::fusion::ai::proto::data_readiness::ExportDataGapsRequest_globals_,
-        &::fusion::ai::proto::data_readiness::ExportDataGapsResponse_globals_,
         &::fusion::ai::proto::data_readiness::GetWeatherSiteRequest_globals_,
         &::fusion::ai::proto::data_readiness::GetWeatherSiteResponse_globals_,
         &::fusion::ai::proto::data_readiness::GetWeatherSyncRunRequest_globals_,
@@ -7795,289 +6605,253 @@ static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
         &::fusion::ai::proto::data_readiness::CreateDataBackfillJobResponse_globals_,
         &::fusion::ai::proto::data_readiness::UploadBackfillFileRequest_globals_,
         &::fusion::ai::proto::data_readiness::UploadBackfillFileResponse_globals_,
-        &::fusion::ai::proto::data_readiness::BatchPullPowerRequest_globals_,
-        &::fusion::ai::proto::data_readiness::BatchPullPowerResponse_globals_,
-        &::fusion::ai::proto::data_readiness::RetryFailedPullPowerRequest_globals_,
-        &::fusion::ai::proto::data_readiness::RetryFailedPullPowerResponse_globals_,
 };
 const char descriptor_table_protodef_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n+data_readiness/data_readiness_message."
     "proto\022\036fusion.ai.proto.data_readiness\032\033b"
     "uf/validate/validate.proto\032\037google/proto"
-    "buf/timestamp.proto\"\221\001\n\030DataReadinessRep"
-    "lyHeader\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007successR"
-    "\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-"
-    "9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007"
-    "message\"\263\002\n\014DataOverview\022\036\n\nsite_count\030\001"
-    " \001(\005R\nsite_count\022 \n\013ready_today\030\002 \001(\005R\013r"
-    "eady_today\022(\n\017need_fill_count\030\003 \001(\005R\017nee"
-    "d_fill_count\0224\n\025weather_missing_count\030\004 "
-    "\001(\005R\025weather_missing_count\0222\n\024push_succe"
-    "ss_24h_pct\030\005 \001(\001R\024push_success_24h_pct\0225"
-    "\n\023avg_push_latency_ms\030\006 \001(\005H\000R\023avg_push_"
-    "latency_ms\210\001\001B\026\n\024_avg_push_latency_ms\"H\n"
-    "\022CoverageTrendPoint\022\034\n\tstat_date\030\001 \001(\tR\t"
-    "stat_date\022\024\n\005ratio\030\002 \001(\001R\005ratio\"\222\007\n\013Data"
-    "SiteRow\022(\n\017registration_id\030\001 \001(\tR\017regist"
-    "ration_id\022\030\n\007site_id\030\002 \001(\tR\007site_id\022\034\n\ts"
-    "ite_name\030\003 \001(\tR\tsite_name\022\"\n\014service_typ"
-    "e\030\004 \001(\tR\014service_type\022L\n\013data_source\030\005 \001"
-    "(\0162*.fusion.ai.proto.data_readiness.Data"
-    "SourceR\013data_source\0228\n\027primary_granulari"
-    "ty_min\030\006 \001(\005R\027primary_granularity_min\0221\n"
-    "\021coverage_ratio_7d\030\007 \001(\001H\000R\021coverage_rat"
-    "io_7d\210\001\001\022N\n\010trend_7d\030\010 \003(\01322.fusion.ai.p"
-    "roto.data_readiness.CoverageTrendPointR\010"
-    "trend_7d\022U\n\016weather_status\030\t \001(\0162-.fusio"
-    "n.ai.proto.data_readiness.WeatherStatusR"
-    "\016weather_status\022(\n\017weather_display\030\n \001(\t"
-    "R\017weather_display\022C\n\014last_push_at\030\013 \001(\0132"
-    "\032.google.protobuf.TimestampH\001R\014last_push"
-    "_at\210\001\001\022G\n\016last_ingest_at\030\014 \001(\0132\032.google."
-    "protobuf.TimestampH\002R\016last_ingest_at\210\001\001\022"
-    "$\n\rgap_points_7d\030\r \001(\005R\rgap_points_7d\022[\n"
-    "\020readiness_status\030\016 \001(\0162/.fusion.ai.prot"
-    "o.data_readiness.ReadinessStatusR\020readin"
-    "ess_status\022&\n\016workbench_href\030\017 \001(\tR\016work"
-    "bench_hrefB\024\n\022_coverage_ratio_7dB\017\n\r_las"
-    "t_push_atB\021\n\017_last_ingest_at\"\232\001\n\017DataSit"
-    "eRowPage\022\?\n\004rows\030\001 \003(\0132+.fusion.ai.proto"
-    ".data_readiness.DataSiteRowR\004rows\022\024\n\005tot"
-    "al\030\002 \001(\005R\005total\022\022\n\004page\030\003 \001(\005R\004page\022\034\n\tp"
-    "age_size\030\004 \001(\005R\tpage_size\"\204\001\n\nHeatmapDay"
-    "\022\034\n\tstat_date\030\001 \001(\tR\tstat_date\022B\n\005level\030"
-    "\002 \001(\0162,.fusion.ai.proto.data_readiness.H"
-    "eatmapLevelR\005level\022\024\n\005ratio\030\003 \001(\001R\005ratio"
-    "\"\352\003\n\021DataSiteReadiness\022(\n\017registration_i"
-    "d\030\001 \001(\tR\017registration_id\022\034\n\tsite_name\030\002 "
-    "\001(\tR\tsite_name\022[\n\020readiness_status\030\003 \001(\016"
-    "2/.fusion.ai.proto.data_readiness.Readin"
-    "essStatusR\020readiness_status\022U\n\016weather_s"
-    "tatus\030\004 \001(\0162-.fusion.ai.proto.data_readi"
-    "ness.WeatherStatusR\016weather_status\0221\n\021co"
-    "verage_ratio_7d\030\005 \001(\001H\000R\021coverage_ratio_"
-    "7d\210\001\001\022$\n\rgap_points_7d\030\006 \001(\005R\rgap_points"
-    "_7d\022\034\n\tgap_focus\030\007 \001(\tR\tgap_focus\022L\n\013hea"
-    "tmap_14d\030\010 \003(\0132*.fusion.ai.proto.data_re"
-    "adiness.HeatmapDayR\013heatmap_14dB\024\n\022_cove"
-    "rage_ratio_7d\"\213\001\n\014PipelineLine\022\024\n\005label\030"
-    "\001 \001(\tR\005label\022\030\n\007success\030\002 \001(\005R\007success\022\024"
-    "\n\005total\030\003 \001(\005R\005total\022%\n\013success_pct\030\004 \001("
-    "\001H\000R\013success_pct\210\001\001B\016\n\014_success_pct\"\306\003\n\r"
-    "PipelineStats\022J\n\tpush_line\030\001 \001(\0132,.fusio"
-    "n.ai.proto.data_readiness.PipelineLineR\t"
-    "push_line\022X\n\020weather_job_line\030\002 \001(\0132,.fu"
-    "sion.ai.proto.data_readiness.PipelineLin"
-    "eR\020weather_job_line\022L\n\nexcel_line\030\003 \001(\0132"
-    ",.fusion.ai.proto.data_readiness.Pipelin"
-    "eLineR\nexcel_line\022b\n\025validation_queue_li"
-    "ne\030\004 \001(\0132,.fusion.ai.proto.data_readines"
-    "s.PipelineLineR\025validation_queue_line\022O\n"
-    "\tpull_line\030\005 \001(\0132,.fusion.ai.proto.data_"
-    "readiness.PipelineLineH\000R\tpull_line\210\001\001B\014"
-    "\n\n_pull_line\"\343\002\n\017WeatherSiteView\022(\n\017regi"
-    "stration_id\030\001 \001(\tR\017registration_id\022 \n\013pr"
-    "ovider_id\030\002 \001(\tR\013provider_id\022U\n\016weather_"
-    "status\030\003 \001(\0162-.fusion.ai.proto.data_read"
-    "iness.WeatherStatusR\016weather_status\022I\n\017l"
-    "ast_success_at\030\004 \001(\0132\032.google.protobuf.T"
-    "imestampH\000R\017last_success_at\210\001\001\022\036\n\nlast_e"
-    "rror\030\005 \001(\tR\nlast_error\022.\n\022last_ingest_so"
-    "urce\030\006 \001(\tR\022last_ingest_sourceB\022\n\020_last_"
-    "success_at\"\250\002\n\023WeatherSyncTaskView\022\030\n\007ta"
-    "sk_id\030\001 \001(\tR\007task_id\022\"\n\014location_key\030\002 \001"
-    "(\tR\014location_key\022*\n\020registration_ids\030\003 \003"
-    "(\tR\020registration_ids\022M\n\006status\030\004 \001(\01625.f"
-    "usion.ai.proto.data_readiness.WeatherSyn"
-    "cTaskStatusR\006status\022\036\n\nlast_error\030\005 \001(\tR"
-    "\nlast_error\0228\n\027failed_registration_ids\030\006"
-    " \003(\tR\027failed_registration_ids\"\251\004\n\022Weathe"
-    "rSyncRunView\022\026\n\006run_id\030\001 \001(\tR\006run_id\022L\n\007"
-    "trigger\030\002 \001(\01622.fusion.ai.proto.data_rea"
-    "diness.WeatherSyncTriggerR\007trigger\022C\n\004mo"
-    "de\030\003 \001(\0162/.fusion.ai.proto.data_readines"
-    "s.WeatherSyncModeR\004mode\022L\n\006status\030\004 \001(\0162"
-    "4.fusion.ai.proto.data_readiness.Weather"
-    "SyncRunStatusR\006status\022:\n\nstarted_at\030\005 \001("
-    "\0132\032.google.protobuf.TimestampR\nstarted_a"
-    "t\022A\n\013finished_at\030\006 \001(\0132\032.google.protobuf"
-    ".TimestampH\000R\013finished_at\210\001\001\022\036\n\ntask_tot"
-    "al\030\007 \001(\005R\ntask_total\022 \n\013task_failed\030\010 \001("
-    "\005R\013task_failed\022I\n\005tasks\030\t \003(\01323.fusion.a"
-    "i.proto.data_readiness.WeatherSyncTaskVi"
-    "ewR\005tasksB\016\n\014_finished_at\"R\n\026GetDataOver"
-    "viewRequest\022\'\n\014service_type\030\001 \001(\tH\000R\014ser"
-    "vice_type\210\001\001B\017\n\r_service_type\"\265\001\n\027GetDat"
-    "aOverviewResponse\022P\n\006header\030\001 \001(\01328.fusi"
-    "on.ai.proto.data_readiness.DataReadiness"
-    "ReplyHeaderR\006header\022H\n\010overview\030\002 \001(\0132,."
-    "fusion.ai.proto.data_readiness.DataOverv"
-    "iewR\010overview\"\334\003\n\027ListDataSiteRowsReques"
-    "t\022\027\n\004page\030\001 \001(\005H\000R\004page\210\001\001\022!\n\tpage_size\030"
-    "\002 \001(\005H\001R\tpage_size\210\001\001\022\'\n\014service_type\030\003 "
-    "\001(\tH\002R\014service_type\210\001\001\022Q\n\013data_source\030\004 "
-    "\001(\0162*.fusion.ai.proto.data_readiness.Dat"
-    "aSourceH\003R\013data_source\210\001\001\022`\n\020readiness_s"
-    "tatus\030\005 \001(\0162/.fusion.ai.proto.data_readi"
-    "ness.ReadinessStatusH\004R\020readiness_status"
-    "\210\001\001\022-\n\017granularity_min\030\006 \001(\005H\005R\017granular"
-    "ity_min\210\001\001\022\021\n\001q\030\007 \001(\tH\006R\001q\210\001\001B\007\n\005_pageB\014"
-    "\n\n_page_sizeB\017\n\r_service_typeB\016\n\014_data_s"
-    "ourceB\023\n\021_readiness_statusB\022\n\020_granulari"
-    "ty_minB\004\n\002_q\"\261\001\n\030ListDataSiteRowsRespons"
-    "e\022P\n\006header\030\001 \001(\01328.fusion.ai.proto.data"
-    "_readiness.DataReadinessReplyHeaderR\006hea"
-    "der\022C\n\004page\030\002 \001(\0132/.fusion.ai.proto.data"
-    "_readiness.DataSiteRowPageR\004page\"P\n\033GetD"
-    "ataSiteReadinessRequest\0221\n\017registration_"
-    "id\030\001 \001(\tB\007\272H\004r\002\020\001R\017registration_id\"o\n\034Ge"
-    "tDataSiteReadinessResponse\022O\n\treadiness\030"
-    "\001 \001(\01321.fusion.ai.proto.data_readiness.D"
-    "ataSiteReadinessR\treadiness\"\035\n\033GetDataPi"
-    "pelineStatsRequest\"c\n\034GetDataPipelineSta"
-    "tsResponse\022C\n\005stats\030\001 \001(\0132-.fusion.ai.pr"
-    "oto.data_readiness.PipelineStatsR\005stats\""
-    "\304\002\n\025ExportDataGapsRequest\022\'\n\014service_typ"
-    "e\030\001 \001(\tH\000R\014service_type\210\001\001\022Q\n\013data_sourc"
-    "e\030\002 \001(\0162*.fusion.ai.proto.data_readiness"
-    ".DataSourceH\001R\013data_source\210\001\001\022`\n\020readine"
-    "ss_status\030\003 \001(\0162/.fusion.ai.proto.data_r"
-    "eadiness.ReadinessStatusH\002R\020readiness_st"
-    "atus\210\001\001\022\021\n\001q\030\004 \001(\tH\003R\001q\210\001\001B\017\n\r_service_t"
-    "ypeB\016\n\014_data_sourceB\023\n\021_readiness_status"
-    "B\004\n\002_q\"F\n\026ExportDataGapsResponse\022\020\n\003csv\030"
-    "\001 \001(\014R\003csv\022\032\n\010filename\030\002 \001(\tR\010filename\"J"
-    "\n\025GetWeatherSiteRequest\0221\n\017registration_"
-    "id\030\001 \001(\tB\007\272H\004r\002\020\001R\017registration_id\"]\n\026Ge"
-    "tWeatherSiteResponse\022C\n\004site\030\001 \001(\0132/.fus"
-    "ion.ai.proto.data_readiness.WeatherSiteV"
-    "iewR\004site\"a\n\030GetWeatherSyncRunRequest\022\037\n"
-    "\006run_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006run_id\022$\n\rinclud"
-    "e_tasks\030\002 \001(\010R\rinclude_tasks\"\263\001\n\031GetWeat"
-    "herSyncRunResponse\022P\n\006header\030\001 \001(\01328.fus"
-    "ion.ai.proto.data_readiness.DataReadines"
-    "sReplyHeaderR\006header\022D\n\003run\030\002 \001(\01322.fusi"
-    "on.ai.proto.data_readiness.WeatherSyncRu"
-    "nViewR\003run\"\305\004\n\027BatchSyncWeatherRequest\022="
-    "\n\020registration_ids\030\001 \003(\tB\021\272H\016\222\001\013\020\364\003\"\006r\004\020"
-    "\001\030@R\020registration_ids\022\'\n\tpast_days\030\002 \001(\005"
-    "B\t\272H\006\032\004\030\016(\000R\tpast_days\022/\n\rforecast_days\030"
-    "\003 \001(\005B\t\272H\006\032\004\030\020(\000R\rforecast_days\022.\n\013provi"
-    "der_id\030\004 \001(\tB\007\272H\004r\002\030@H\000R\013provider_id\210\001\001\022"
-    "M\n\004mode\030\005 \001(\0162/.fusion.ai.proto.data_rea"
-    "diness.WeatherSyncModeB\010\272H\005\202\001\002\020\001R\004mode\022V"
-    "\n\007trigger\030\006 \001(\01622.fusion.ai.proto.data_r"
-    "eadiness.WeatherSyncTriggerB\010\272H\005\202\001\002\020\001R\007t"
-    "rigger\0228\n\017retry_of_run_id\030\007 \001(\tB\t\272H\006r\004\020\001"
-    "\030@H\001R\017retry_of_run_id\210\001\001:\\\272HY\032W\n\025weather"
-    "_sync_mode_set\022.mode must not be WEATHER"
-    "_SYNC_MODE_UNSPECIFIED\032\016this.mode != 0B\016"
-    "\n\014_provider_idB\022\n\020_retry_of_run_id\"\201\001\n\027W"
-    "eatherSyncPartialError\022(\n\017registration_i"
-    "d\030\001 \001(\tR\017registration_id\022\"\n\014location_key"
-    "\030\002 \001(\tR\014location_key\022\030\n\007message\030\003 \001(\tR\007m"
-    "essage\"\365\002\n\030BatchSyncWeatherResponse\022P\n\006h"
-    "eader\030\001 \001(\01328.fusion.ai.proto.data_readi"
-    "ness.DataReadinessReplyHeaderR\006header\022\026\n"
-    "\006run_id\030\002 \001(\tR\006run_id\022L\n\006status\030\003 \001(\01624."
-    "fusion.ai.proto.data_readiness.WeatherSy"
-    "ncRunStatusR\006status\022\036\n\ntask_total\030\004 \001(\005R"
-    "\ntask_total\022 \n\013task_failed\030\005 \001(\005R\013task_f"
-    "ailed\022_\n\016partial_errors\030\006 \003(\01327.fusion.a"
-    "i.proto.data_readiness.WeatherSyncPartia"
-    "lErrorR\016partial_errors\"R\n\035RetryFailedWea"
-    "therSyncRequest\022&\n\006run_id\030\001 \001(\tB\t\272H\006r\004\020\001"
-    "\030@H\000R\006run_id\210\001\001B\t\n\007_run_id\"\330\001\n\036RetryFail"
-    "edWeatherSyncResponse\022P\n\006header\030\001 \001(\01328."
-    "fusion.ai.proto.data_readiness.DataReadi"
-    "nessReplyHeaderR\006header\022\026\n\006run_id\030\002 \001(\tR"
-    "\006run_id\022L\n\006status\030\003 \001(\01624.fusion.ai.prot"
-    "o.data_readiness.WeatherSyncRunStatusR\006s"
-    "tatus\"\243\001\n\"CreateWeatherExcelImportJobReq"
-    "uest\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@"
-    "R\017registration_id\022 \n\004file\030\002 \001(\014B\014\272H\tz\007\020\001"
-    "\030\200\200\200\031R\004file\022&\n\010filename\030\003 \001(\tB\n\272H\007r\005\020\001\030\377"
-    "\001R\010filename\"\311\002\n#CreateWeatherExcelImport"
-    "JobResponse\022P\n\006header\030\001 \001(\01328.fusion.ai."
-    "proto.data_readiness.DataReadinessReplyH"
-    "eaderR\006header\022\026\n\006job_id\030\002 \001(\tR\006job_id\022)\n"
-    "\raccepted_rows\030\003 \001(\005H\000R\raccepted_rows\210\001\001"
-    "\022%\n\013failed_rows\030\004 \001(\005H\001R\013failed_rows\210\001\001\022"
-    "/\n\020error_report_url\030\005 \001(\tH\002R\020error_repor"
-    "t_url\210\001\001B\020\n\016_accepted_rowsB\016\n\014_failed_ro"
-    "wsB\023\n\021_error_report_url\" \n\036GetWeatherExc"
-    "elTemplateRequest\"\307\001\n\037GetWeatherExcelTem"
-    "plateResponse\022P\n\006header\030\001 \001(\01328.fusion.a"
-    "i.proto.data_readiness.DataReadinessRepl"
-    "yHeaderR\006header\022\022\n\004file\030\002 \001(\014R\004file\022\032\n\010f"
-    "ilename\030\003 \001(\tR\010filename\022\"\n\014content_type\030"
-    "\004 \001(\tR\014content_type\"\322\002\n\034CreateDataBackfi"
-    "llJobRequest\0223\n\017registration_id\030\001 \001(\tB\t\272"
-    "H\006r\004\020\001\030@R\017registration_id\022#\n\010start_ms\030\002 "
-    "\001(\003B\007\272H\004\"\002 \000R\010start_ms\022\037\n\006end_ms\030\003 \001(\003B\007"
-    "\272H\004\"\002 \000R\006end_ms\022\?\n\017wait_timeout_ms\030\004 \001(\003"
-    "B\020\272H\r\"\013\030\200\210\262\240\002(\200\335\333\001H\000R\017wait_timeout_ms\210\001\001"
-    ":b\272H_\032]\n\030backfill_end_after_start\022$end_m"
-    "s must be greater than start_ms\032\033this.en"
-    "d_ms > this.start_msB\022\n\020_wait_timeout_ms"
-    "\"7\n\035CreateDataBackfillJobResponse\022\026\n\006job"
-    "_id\030\001 \001(\tR\006job_id\"\210\001\n\031UploadBackfillFile"
-    "Request\022!\n\006job_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\006job_"
-    "id\022 \n\004file\030\002 \001(\014B\014\272H\tz\007\020\001\030\200\200\200\031R\004file\022&\n\010"
-    "filename\030\003 \001(\tB\n\272H\007r\005\020\001\030\377\001R\010filename\"4\n\032"
-    "UploadBackfillFileResponse\022\026\n\006job_id\030\001 \001"
-    "(\tR\006job_id\"V\n\025BatchPullPowerRequest\022=\n\020r"
-    "egistration_ids\030\001 \003(\tB\021\272H\016\222\001\013\020\364\003\"\006r\004\020\001\030@"
-    "R\020registration_ids\"0\n\026BatchPullPowerResp"
-    "onse\022\026\n\006run_id\030\001 \001(\tR\006run_id\"P\n\033RetryFai"
-    "ledPullPowerRequest\022&\n\006run_id\030\001 \001(\tB\t\272H\006"
-    "r\004\020\001\030@H\000R\006run_id\210\001\001B\t\n\007_run_id\"6\n\034RetryF"
-    "ailedPullPowerResponse\022\026\n\006run_id\030\001 \001(\tR\006"
-    "run_id*\363\001\n\017ReadinessStatus\022 \n\034READINESS_"
-    "STATUS_UNSPECIFIED\020\000\022\032\n\026READINESS_STATUS"
-    "_READY\020\001\022\036\n\032READINESS_STATUS_NEED_FILL\020\002"
-    "\022\033\n\027READINESS_STATUS_SEVERE\020\003\022$\n READINE"
-    "SS_STATUS_WEATHER_MISSING\020\004\022\034\n\030READINESS"
-    "_STATUS_OFFLINE\020\005\022!\n\035READINESS_STATUS_PU"
-    "LL_UNKNOWN\020\006*\232\001\n\rWeatherStatus\022\036\n\032WEATHE"
-    "R_STATUS_UNSPECIFIED\020\000\022\032\n\026WEATHER_STATUS"
-    "_UNKNOWN\020\001\022\025\n\021WEATHER_STATUS_OK\020\002\022\032\n\026WEA"
-    "THER_STATUS_DELAYED\020\003\022\032\n\026WEATHER_STATUS_"
-    "MISSING\020\004*k\n\nDataSource\022\033\n\027DATA_SOURCE_U"
-    "NSPECIFIED\020\000\022\024\n\020DATA_SOURCE_PULL\020\001\022\024\n\020DA"
-    "TA_SOURCE_PUSH\020\002\022\024\n\020DATA_SOURCE_FILE\020\003*\243"
-    "\001\n\017WeatherSyncMode\022!\n\035WEATHER_SYNC_MODE_"
-    "UNSPECIFIED\020\000\022\"\n\036WEATHER_SYNC_MODE_ALL_E"
-    "LIGIBLE\020\001\022%\n!WEATHER_SYNC_MODE_BY_REGIST"
-    "RATION\020\002\022\"\n\036WEATHER_SYNC_MODE_RETRY_FAIL"
-    "ED\020\003*\232\001\n\022WeatherSyncTrigger\022$\n WEATHER_S"
-    "YNC_TRIGGER_UNSPECIFIED\020\000\022\035\n\031WEATHER_SYN"
-    "C_TRIGGER_CRON\020\001\022\037\n\033WEATHER_SYNC_TRIGGER"
-    "_MANUAL\020\002\022\036\n\032WEATHER_SYNC_TRIGGER_RETRY\020"
-    "\003*\342\001\n\024WeatherSyncRunStatus\022\'\n#WEATHER_SY"
-    "NC_RUN_STATUS_UNSPECIFIED\020\000\022#\n\037WEATHER_S"
-    "YNC_RUN_STATUS_RUNNING\020\001\022%\n!WEATHER_SYNC"
-    "_RUN_STATUS_COMPLETED\020\002\0221\n-WEATHER_SYNC_"
-    "RUN_STATUS_COMPLETED_WITH_ERRORS\020\003\022\"\n\036WE"
-    "ATHER_SYNC_RUN_STATUS_FAILED\020\004*\376\001\n\025Weath"
-    "erSyncTaskStatus\022(\n$WEATHER_SYNC_TASK_ST"
-    "ATUS_UNSPECIFIED\020\000\022$\n WEATHER_SYNC_TASK_"
-    "STATUS_PENDING\020\001\022$\n WEATHER_SYNC_TASK_ST"
-    "ATUS_RUNNING\020\002\022$\n WEATHER_SYNC_TASK_STAT"
-    "US_SUCCESS\020\003\022$\n WEATHER_SYNC_TASK_STATUS"
-    "_PARTIAL\020\004\022#\n\037WEATHER_SYNC_TASK_STATUS_F"
-    "AILED\020\005*{\n\014HeatmapLevel\022\035\n\031HEATMAP_LEVEL"
-    "_UNSPECIFIED\020\000\022\026\n\022HEATMAP_LEVEL_FULL\020\001\022\031"
-    "\n\025HEATMAP_LEVEL_PARTIAL\020\002\022\031\n\025HEATMAP_LEV"
-    "EL_MISSING\020\003B\206\002\n\"com.fusion.ai.proto.dat"
-    "a_readinessB\031DataReadinessMessageProtoP\001"
-    "Z-fusion.ai.proto.data_readiness;data_re"
-    "adiness\242\002\004FAPD\252\002\035Fusion.Ai.Proto.DataRea"
-    "diness\312\002\035Fusion\\Ai\\Proto\\DataReadiness\342\002"
-    ")Fusion\\Ai\\Proto\\DataReadiness\\GPBMetada"
-    "ta\352\002 Fusion::Ai::Proto::DataReadinessb\006p"
-    "roto3"
+    "buf/timestamp.proto\"\322\002\n\014DataOverview\022\036\n\n"
+    "site_count\030\001 \001(\005R\nsite_count\022 \n\013ready_to"
+    "day\030\002 \001(\005R\013ready_today\022(\n\017need_fill_coun"
+    "t\030\003 \001(\005R\017need_fill_count\0229\n\025weather_miss"
+    "ing_count\030\004 \001(\005H\000R\025weather_missing_count"
+    "\210\001\001\0222\n\024push_success_24h_pct\030\005 \001(\001R\024push_"
+    "success_24h_pct\0225\n\023avg_push_latency_ms\030\006"
+    " \001(\005H\001R\023avg_push_latency_ms\210\001\001B\030\n\026_weath"
+    "er_missing_countB\026\n\024_avg_push_latency_ms"
+    "\"H\n\022CoverageTrendPoint\022\034\n\tstat_date\030\001 \001("
+    "\tR\tstat_date\022\024\n\005ratio\030\002 \001(\001R\005ratio\"\211\007\n\013D"
+    "ataSiteRow\022(\n\017registration_id\030\001 \001(\tR\017reg"
+    "istration_id\022\030\n\007site_id\030\002 \001(\tR\007site_id\022\034"
+    "\n\tsite_name\030\003 \001(\tR\tsite_name\022\"\n\014service_"
+    "type\030\004 \001(\tR\014service_type\022L\n\013data_source\030"
+    "\005 \001(\0162*.fusion.ai.proto.data_readiness.D"
+    "ataSourceR\013data_source\0221\n\021coverage_ratio"
+    "_7d\030\006 \001(\001H\000R\021coverage_ratio_7d\210\001\001\022N\n\010tre"
+    "nd_7d\030\007 \003(\01322.fusion.ai.proto.data_readi"
+    "ness.CoverageTrendPointR\010trend_7d\022Z\n\016wea"
+    "ther_status\030\010 \001(\0162-.fusion.ai.proto.data"
+    "_readiness.WeatherStatusH\001R\016weather_stat"
+    "us\210\001\001\022-\n\017weather_display\030\t \001(\tH\002R\017weathe"
+    "r_display\210\001\001\022C\n\014last_push_at\030\n \001(\0132\032.goo"
+    "gle.protobuf.TimestampH\003R\014last_push_at\210\001"
+    "\001\022G\n\016last_ingest_at\030\013 \001(\0132\032.google.proto"
+    "buf.TimestampH\004R\016last_ingest_at\210\001\001\022$\n\rga"
+    "p_points_7d\030\014 \001(\005R\rgap_points_7d\022[\n\020read"
+    "iness_status\030\r \001(\0162/.fusion.ai.proto.dat"
+    "a_readiness.ReadinessStatusR\020readiness_s"
+    "tatus\022&\n\016workbench_href\030\016 \001(\tR\016workbench"
+    "_hrefB\024\n\022_coverage_ratio_7dB\021\n\017_weather_"
+    "statusB\022\n\020_weather_displayB\017\n\r_last_push"
+    "_atB\021\n\017_last_ingest_at\"\232\001\n\017DataSiteRowPa"
+    "ge\022\?\n\004rows\030\001 \003(\0132+.fusion.ai.proto.data_"
+    "readiness.DataSiteRowR\004rows\022\024\n\005total\030\002 \001"
+    "(\005R\005total\022\022\n\004page\030\003 \001(\005R\004page\022\034\n\tpage_si"
+    "ze\030\004 \001(\005R\tpage_size\"\204\001\n\nHeatmapDay\022\034\n\tst"
+    "at_date\030\001 \001(\tR\tstat_date\022B\n\005level\030\002 \001(\0162"
+    ",.fusion.ai.proto.data_readiness.Heatmap"
+    "LevelR\005level\022\024\n\005ratio\030\003 \001(\001R\005ratio\"\251\006\n\021D"
+    "ataSiteReadiness\022(\n\017registration_id\030\001 \001("
+    "\tR\017registration_id\022\030\n\007site_id\030\002 \001(\tR\007sit"
+    "e_id\022\034\n\tsite_name\030\003 \001(\tR\tsite_name\022\"\n\014se"
+    "rvice_type\030\004 \001(\tR\014service_type\022L\n\013data_s"
+    "ource\030\005 \001(\0162*.fusion.ai.proto.data_readi"
+    "ness.DataSourceR\013data_source\022\"\n\014train_wi"
+    "ndow\030\006 \001(\tR\014train_window\022&\n\016upstream_lab"
+    "el\030\007 \001(\tR\016upstream_label\0225\n\023weather_prov"
+    "ider_id\030\010 \001(\tH\000R\023weather_provider_id\210\001\001\022"
+    "[\n\020readiness_status\030\t \001(\0162/.fusion.ai.pr"
+    "oto.data_readiness.ReadinessStatusR\020read"
+    "iness_status\022Z\n\016weather_status\030\n \001(\0162-.f"
+    "usion.ai.proto.data_readiness.WeatherSta"
+    "tusH\001R\016weather_status\210\001\001\0221\n\021coverage_rat"
+    "io_7d\030\013 \001(\001H\002R\021coverage_ratio_7d\210\001\001\022$\n\rg"
+    "ap_points_7d\030\014 \001(\005R\rgap_points_7d\022\034\n\tgap"
+    "_focus\030\r \001(\tR\tgap_focus\022L\n\013heatmap_14d\030\016"
+    " \003(\0132*.fusion.ai.proto.data_readiness.He"
+    "atmapDayR\013heatmap_14dB\026\n\024_weather_provid"
+    "er_idB\021\n\017_weather_statusB\024\n\022_coverage_ra"
+    "tio_7d\"\213\001\n\014PipelineLine\022\024\n\005label\030\001 \001(\tR\005"
+    "label\022\030\n\007success\030\002 \001(\005R\007success\022\024\n\005total"
+    "\030\003 \001(\005R\005total\022%\n\013success_pct\030\004 \001(\001H\000R\013su"
+    "ccess_pct\210\001\001B\016\n\014_success_pct\"\201\003\n\rPipelin"
+    "eStats\022J\n\tpush_line\030\001 \001(\0132,.fusion.ai.pr"
+    "oto.data_readiness.PipelineLineR\tpush_li"
+    "ne\022]\n\020weather_job_line\030\002 \001(\0132,.fusion.ai"
+    ".proto.data_readiness.PipelineLineH\000R\020we"
+    "ather_job_line\210\001\001\022L\n\nexcel_line\030\003 \001(\0132,."
+    "fusion.ai.proto.data_readiness.PipelineL"
+    "ineR\nexcel_line\022b\n\025validation_queue_line"
+    "\030\004 \001(\0132,.fusion.ai.proto.data_readiness."
+    "PipelineLineR\025validation_queue_lineB\023\n\021_"
+    "weather_job_line\"\343\002\n\017WeatherSiteView\022(\n\017"
+    "registration_id\030\001 \001(\tR\017registration_id\022 "
+    "\n\013provider_id\030\002 \001(\tR\013provider_id\022U\n\016weat"
+    "her_status\030\003 \001(\0162-.fusion.ai.proto.data_"
+    "readiness.WeatherStatusR\016weather_status\022"
+    "I\n\017last_success_at\030\004 \001(\0132\032.google.protob"
+    "uf.TimestampH\000R\017last_success_at\210\001\001\022\036\n\nla"
+    "st_error\030\005 \001(\tR\nlast_error\022.\n\022last_inges"
+    "t_source\030\006 \001(\tR\022last_ingest_sourceB\022\n\020_l"
+    "ast_success_at\"\250\002\n\023WeatherSyncTaskView\022\030"
+    "\n\007task_id\030\001 \001(\tR\007task_id\022\"\n\014location_key"
+    "\030\002 \001(\tR\014location_key\022*\n\020registration_ids"
+    "\030\003 \003(\tR\020registration_ids\022M\n\006status\030\004 \001(\016"
+    "25.fusion.ai.proto.data_readiness.Weathe"
+    "rSyncTaskStatusR\006status\022\036\n\nlast_error\030\005 "
+    "\001(\tR\nlast_error\0228\n\027failed_registration_i"
+    "ds\030\006 \003(\tR\027failed_registration_ids\"\251\004\n\022We"
+    "atherSyncRunView\022\026\n\006run_id\030\001 \001(\tR\006run_id"
+    "\022L\n\007trigger\030\002 \001(\01622.fusion.ai.proto.data"
+    "_readiness.WeatherSyncTriggerR\007trigger\022C"
+    "\n\004mode\030\003 \001(\0162/.fusion.ai.proto.data_read"
+    "iness.WeatherSyncModeR\004mode\022L\n\006status\030\004 "
+    "\001(\01624.fusion.ai.proto.data_readiness.Wea"
+    "therSyncRunStatusR\006status\022:\n\nstarted_at\030"
+    "\005 \001(\0132\032.google.protobuf.TimestampR\nstart"
+    "ed_at\022A\n\013finished_at\030\006 \001(\0132\032.google.prot"
+    "obuf.TimestampH\000R\013finished_at\210\001\001\022\036\n\ntask"
+    "_total\030\007 \001(\005R\ntask_total\022 \n\013task_failed\030"
+    "\010 \001(\005R\013task_failed\022I\n\005tasks\030\t \003(\01323.fusi"
+    "on.ai.proto.data_readiness.WeatherSyncTa"
+    "skViewR\005tasksB\016\n\014_finished_at\"R\n\026GetData"
+    "OverviewRequest\022\'\n\014service_type\030\001 \001(\tH\000R"
+    "\014service_type\210\001\001B\017\n\r_service_type\"c\n\027Get"
+    "DataOverviewResponse\022H\n\010overview\030\001 \001(\0132,"
+    ".fusion.ai.proto.data_readiness.DataOver"
+    "viewR\010overview\"\266\002\n\027ListDataSiteRowsReque"
+    "st\022\027\n\004page\030\001 \001(\005H\000R\004page\210\001\001\022!\n\tpage_size"
+    "\030\002 \001(\005H\001R\tpage_size\210\001\001\022\'\n\014service_type\030\003"
+    " \001(\tH\002R\014service_type\210\001\001\022`\n\020readiness_sta"
+    "tus\030\004 \001(\0162/.fusion.ai.proto.data_readine"
+    "ss.ReadinessStatusH\003R\020readiness_status\210\001"
+    "\001\022\021\n\001q\030\005 \001(\tH\004R\001q\210\001\001B\007\n\005_pageB\014\n\n_page_s"
+    "izeB\017\n\r_service_typeB\023\n\021_readiness_statu"
+    "sB\004\n\002_q\"_\n\030ListDataSiteRowsResponse\022C\n\004p"
+    "age\030\001 \001(\0132/.fusion.ai.proto.data_readine"
+    "ss.DataSiteRowPageR\004page\"P\n\033GetDataSiteR"
+    "eadinessRequest\0221\n\017registration_id\030\001 \001(\t"
+    "B\007\272H\004r\002\020\001R\017registration_id\"o\n\034GetDataSit"
+    "eReadinessResponse\022O\n\treadiness\030\001 \001(\01321."
+    "fusion.ai.proto.data_readiness.DataSiteR"
+    "eadinessR\treadiness\"W\n\033GetDataPipelineSt"
+    "atsRequest\022\'\n\014service_type\030\001 \001(\tH\000R\014serv"
+    "ice_type\210\001\001B\017\n\r_service_type\"c\n\034GetDataP"
+    "ipelineStatsResponse\022C\n\005stats\030\001 \001(\0132-.fu"
+    "sion.ai.proto.data_readiness.PipelineSta"
+    "tsR\005stats\"J\n\025GetWeatherSiteRequest\0221\n\017re"
+    "gistration_id\030\001 \001(\tB\007\272H\004r\002\020\001R\017registrati"
+    "on_id\"]\n\026GetWeatherSiteResponse\022C\n\004site\030"
+    "\001 \001(\0132/.fusion.ai.proto.data_readiness.W"
+    "eatherSiteViewR\004site\"a\n\030GetWeatherSyncRu"
+    "nRequest\022\037\n\006run_id\030\001 \001(\tB\007\272H\004r\002\020\001R\006run_i"
+    "d\022$\n\rinclude_tasks\030\002 \001(\010R\rinclude_tasks\""
+    "a\n\031GetWeatherSyncRunResponse\022D\n\003run\030\001 \001("
+    "\01322.fusion.ai.proto.data_readiness.Weath"
+    "erSyncRunViewR\003run\"\305\004\n\027BatchSyncWeatherR"
+    "equest\022=\n\020registration_ids\030\001 \003(\tB\021\272H\016\222\001\013"
+    "\020\364\003\"\006r\004\020\001\030@R\020registration_ids\022\'\n\tpast_da"
+    "ys\030\002 \001(\005B\t\272H\006\032\004\030\016(\000R\tpast_days\022/\n\rforeca"
+    "st_days\030\003 \001(\005B\t\272H\006\032\004\030\020(\000R\rforecast_days\022"
+    ".\n\013provider_id\030\004 \001(\tB\007\272H\004r\002\030@H\000R\013provide"
+    "r_id\210\001\001\022M\n\004mode\030\005 \001(\0162/.fusion.ai.proto."
+    "data_readiness.WeatherSyncModeB\010\272H\005\202\001\002\020\001"
+    "R\004mode\022V\n\007trigger\030\006 \001(\01622.fusion.ai.prot"
+    "o.data_readiness.WeatherSyncTriggerB\010\272H\005"
+    "\202\001\002\020\001R\007trigger\0228\n\017retry_of_run_id\030\007 \001(\tB"
+    "\t\272H\006r\004\020\001\030@H\001R\017retry_of_run_id\210\001\001:\\\272HY\032W\n"
+    "\025weather_sync_mode_set\022.mode must not be"
+    " WEATHER_SYNC_MODE_UNSPECIFIED\032\016this.mod"
+    "e != 0B\016\n\014_provider_idB\022\n\020_retry_of_run_"
+    "id\"\201\001\n\027WeatherSyncPartialError\022(\n\017regist"
+    "ration_id\030\001 \001(\tR\017registration_id\022\"\n\014loca"
+    "tion_key\030\002 \001(\tR\014location_key\022\030\n\007message\030"
+    "\003 \001(\tR\007message\"\243\002\n\030BatchSyncWeatherRespo"
+    "nse\022\026\n\006run_id\030\001 \001(\tR\006run_id\022L\n\006status\030\002 "
+    "\001(\01624.fusion.ai.proto.data_readiness.Wea"
+    "therSyncRunStatusR\006status\022\036\n\ntask_total\030"
+    "\003 \001(\005R\ntask_total\022 \n\013task_failed\030\004 \001(\005R\013"
+    "task_failed\022_\n\016partial_errors\030\005 \003(\01327.fu"
+    "sion.ai.proto.data_readiness.WeatherSync"
+    "PartialErrorR\016partial_errors\"R\n\035RetryFai"
+    "ledWeatherSyncRequest\022&\n\006run_id\030\001 \001(\tB\t\272"
+    "H\006r\004\020\001\030@H\000R\006run_id\210\001\001B\t\n\007_run_id\"\206\001\n\036Ret"
+    "ryFailedWeatherSyncResponse\022\026\n\006run_id\030\001 "
+    "\001(\tR\006run_id\022L\n\006status\030\002 \001(\01624.fusion.ai."
+    "proto.data_readiness.WeatherSyncRunStatu"
+    "sR\006status\"\243\001\n\"CreateWeatherExcelImportJo"
+    "bRequest\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004"
+    "\020\001\030@R\017registration_id\022 \n\004file\030\002 \001(\014B\014\272H\t"
+    "z\007\020\001\030\200\200\200\031R\004file\022&\n\010filename\030\003 \001(\tB\n\272H\007r\005"
+    "\020\001\030\377\001R\010filename\"\367\001\n#CreateWeatherExcelIm"
+    "portJobResponse\022\026\n\006job_id\030\001 \001(\tR\006job_id\022"
+    ")\n\raccepted_rows\030\002 \001(\005H\000R\raccepted_rows\210"
+    "\001\001\022%\n\013failed_rows\030\003 \001(\005H\001R\013failed_rows\210\001"
+    "\001\022/\n\020error_report_url\030\004 \001(\tH\002R\020error_rep"
+    "ort_url\210\001\001B\020\n\016_accepted_rowsB\016\n\014_failed_"
+    "rowsB\023\n\021_error_report_url\" \n\036GetWeatherE"
+    "xcelTemplateRequest\"u\n\037GetWeatherExcelTe"
+    "mplateResponse\022\022\n\004file\030\001 \001(\014R\004file\022\032\n\010fi"
+    "lename\030\002 \001(\tR\010filename\022\"\n\014content_type\030\003"
+    " \001(\tR\014content_type\"\322\002\n\034CreateDataBackfil"
+    "lJobRequest\0223\n\017registration_id\030\001 \001(\tB\t\272H"
+    "\006r\004\020\001\030@R\017registration_id\022#\n\010start_ms\030\002 \001"
+    "(\003B\007\272H\004\"\002 \000R\010start_ms\022\037\n\006end_ms\030\003 \001(\003B\007\272"
+    "H\004\"\002 \000R\006end_ms\022\?\n\017wait_timeout_ms\030\004 \001(\003B"
+    "\020\272H\r\"\013\030\200\210\262\240\002(\200\335\333\001H\000R\017wait_timeout_ms\210\001\001:"
+    "b\272H_\032]\n\030backfill_end_after_start\022$end_ms"
+    " must be greater than start_ms\032\033this.end"
+    "_ms > this.start_msB\022\n\020_wait_timeout_ms\""
+    "7\n\035CreateDataBackfillJobResponse\022\026\n\006job_"
+    "id\030\001 \001(\tR\006job_id\"\210\001\n\031UploadBackfillFileR"
+    "equest\022!\n\006job_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\006job_i"
+    "d\022 \n\004file\030\002 \001(\014B\014\272H\tz\007\020\001\030\200\200\200\031R\004file\022&\n\010f"
+    "ilename\030\003 \001(\tB\n\272H\007r\005\020\001\030\377\001R\010filename\"4\n\032U"
+    "ploadBackfillFileResponse\022\026\n\006job_id\030\001 \001("
+    "\tR\006job_id*\320\001\n\017ReadinessStatus\022 \n\034READINE"
+    "SS_STATUS_UNSPECIFIED\020\000\022\032\n\026READINESS_STA"
+    "TUS_READY\020\001\022\036\n\032READINESS_STATUS_NEED_FIL"
+    "L\020\002\022\033\n\027READINESS_STATUS_SEVERE\020\003\022$\n READ"
+    "INESS_STATUS_WEATHER_MISSING\020\004\022\034\n\030READIN"
+    "ESS_STATUS_OFFLINE\020\005*\232\001\n\rWeatherStatus\022\036"
+    "\n\032WEATHER_STATUS_UNSPECIFIED\020\000\022\032\n\026WEATHE"
+    "R_STATUS_UNKNOWN\020\001\022\025\n\021WEATHER_STATUS_OK\020"
+    "\002\022\032\n\026WEATHER_STATUS_DELAYED\020\003\022\032\n\026WEATHER"
+    "_STATUS_MISSING\020\004*k\n\nDataSource\022\033\n\027DATA_"
+    "SOURCE_UNSPECIFIED\020\000\022\024\n\020DATA_SOURCE_PULL"
+    "\020\001\022\024\n\020DATA_SOURCE_PUSH\020\002\022\024\n\020DATA_SOURCE_"
+    "FILE\020\003*\243\001\n\017WeatherSyncMode\022!\n\035WEATHER_SY"
+    "NC_MODE_UNSPECIFIED\020\000\022\"\n\036WEATHER_SYNC_MO"
+    "DE_ALL_ELIGIBLE\020\001\022%\n!WEATHER_SYNC_MODE_B"
+    "Y_REGISTRATION\020\002\022\"\n\036WEATHER_SYNC_MODE_RE"
+    "TRY_FAILED\020\003*\232\001\n\022WeatherSyncTrigger\022$\n W"
+    "EATHER_SYNC_TRIGGER_UNSPECIFIED\020\000\022\035\n\031WEA"
+    "THER_SYNC_TRIGGER_CRON\020\001\022\037\n\033WEATHER_SYNC"
+    "_TRIGGER_MANUAL\020\002\022\036\n\032WEATHER_SYNC_TRIGGE"
+    "R_RETRY\020\003*\342\001\n\024WeatherSyncRunStatus\022\'\n#WE"
+    "ATHER_SYNC_RUN_STATUS_UNSPECIFIED\020\000\022#\n\037W"
+    "EATHER_SYNC_RUN_STATUS_RUNNING\020\001\022%\n!WEAT"
+    "HER_SYNC_RUN_STATUS_COMPLETED\020\002\0221\n-WEATH"
+    "ER_SYNC_RUN_STATUS_COMPLETED_WITH_ERRORS"
+    "\020\003\022\"\n\036WEATHER_SYNC_RUN_STATUS_FAILED\020\004*\376"
+    "\001\n\025WeatherSyncTaskStatus\022(\n$WEATHER_SYNC"
+    "_TASK_STATUS_UNSPECIFIED\020\000\022$\n WEATHER_SY"
+    "NC_TASK_STATUS_PENDING\020\001\022$\n WEATHER_SYNC"
+    "_TASK_STATUS_RUNNING\020\002\022$\n WEATHER_SYNC_T"
+    "ASK_STATUS_SUCCESS\020\003\022$\n WEATHER_SYNC_TAS"
+    "K_STATUS_PARTIAL\020\004\022#\n\037WEATHER_SYNC_TASK_"
+    "STATUS_FAILED\020\005*{\n\014HeatmapLevel\022\035\n\031HEATM"
+    "AP_LEVEL_UNSPECIFIED\020\000\022\026\n\022HEATMAP_LEVEL_"
+    "FULL\020\001\022\031\n\025HEATMAP_LEVEL_PARTIAL\020\002\022\031\n\025HEA"
+    "TMAP_LEVEL_MISSING\020\003B\206\002\n\"com.fusion.ai.p"
+    "roto.data_readinessB\031DataReadinessMessag"
+    "eProtoP\001Z-fusion.ai.proto.data_readiness"
+    ";data_readiness\242\002\004FAPD\252\002\035Fusion.Ai.Proto"
+    ".DataReadiness\312\002\035Fusion\\Ai\\Proto\\DataRea"
+    "diness\342\002)Fusion\\Ai\\Proto\\DataReadiness\\G"
+    "PBMetadata\352\002 Fusion::Ai::Proto::DataRead"
+    "inessb\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto_deps[2] = {
@@ -8088,13 +6862,13 @@ static ::absl::once_flag descriptor_table_data_5freadiness_2fdata_5freadiness_5f
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto = {
     false,
     false,
-    11005,
+    9733,
     descriptor_table_protodef_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto,
     "data_readiness/data_readiness_message.proto",
     &descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto_once,
     descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto_deps,
     2,
-    43,
+    36,
     schemas,
     file_message_globals,
     TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto::offsets,
@@ -8111,7 +6885,7 @@ ReadinessStatus_descriptor() {
   return file_level_enum_descriptors_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t ReadinessStatus_internal_data_[] = {
-    458752u, 0u, };
+    393216u, 0u, };
 [[nodiscard]] const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL
 WeatherStatus_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&descriptor_table_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto);
@@ -8161,286 +6935,6 @@ HeatmapLevel_descriptor() {
 }
 PROTOBUF_CONSTINIT const uint32_t HeatmapLevel_internal_data_[] = {
     262144u, 0u, };
-// ===================================================================
-
-DataReadinessReplyHeader::DataReadinessReplyHeader(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, DataReadinessReplyHeader_get_class_data()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
-}
-PROTOBUF_NDEBUG_INLINE DataReadinessReplyHeader::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& from_msg)
-      : _has_bits_{from._has_bits_},
-        state_(arena, from.state_),
-        code_(arena, from.code_),
-        message_(arena, from.message_) {}
-
-DataReadinessReplyHeader::DataReadinessReplyHeader(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const DataReadinessReplyHeader& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, DataReadinessReplyHeader_get_class_data()) {
-
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  DataReadinessReplyHeader* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
-}
-PROTOBUF_NDEBUG_INLINE DataReadinessReplyHeader::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : state_(arena),
-        code_(arena),
-        message_(arena) {}
-
-inline void DataReadinessReplyHeader::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-DataReadinessReplyHeader::~DataReadinessReplyHeader() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
-  SharedDtor(*this);
-}
-inline void DataReadinessReplyHeader::SharedDtor(MessageLite& self) {
-  DataReadinessReplyHeader& this_ = static_cast<DataReadinessReplyHeader&>(self);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.state_.Destroy();
-  this_._impl_.code_.Destroy();
-  this_._impl_.message_.Destroy();
-  this_._impl_.~Impl_();
-}
-
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull DataReadinessReplyHeader_class_data_ =
-        DataReadinessReplyHeader::InternalGenerateClassData_(DataReadinessReplyHeader_globals_._default);
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-DataReadinessReplyHeader::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&DataReadinessReplyHeader_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(DataReadinessReplyHeader_class_data_.tc_table);
-  return DataReadinessReplyHeader_class_data_.base();
-}
-#else
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-DataReadinessReplyHeader::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&DataReadinessReplyHeader_globals_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&DataReadinessReplyHeader_globals_));
-  return DataReadinessReplyHeader_globals_.GetClassData();
-}
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const DataReadinessReplyHeader::ParseTableT_
-    DataReadinessReplyHeader::_table_ =
-        DataReadinessReplyHeader::InternalGenerateParseTable_(DataReadinessReplyHeader_class_data_.base());
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void DataReadinessReplyHeader::Clear() {
-  auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      this_._impl_.state_.ClearNonDefaultToEmpty();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      this_._impl_.code_.ClearNonDefaultToEmpty();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      this_._impl_.message_.ClearNonDefaultToEmpty();
-    }
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL DataReadinessReplyHeader::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const DataReadinessReplyHeader& this_ = static_cast<const DataReadinessReplyHeader&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL DataReadinessReplyHeader::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const DataReadinessReplyHeader& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  // string state = 1 [json_name = "state", (.buf.validate.field) = {
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    if (!this_._internal_state().empty()) {
-      const ::std::string& _s = this_._internal_state();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataReadinessReplyHeader.state");
-      target = stream->WriteStringMaybeAliased(1, _s, target);
-    }
-  }
-
-  // string code = 2 [json_name = "code", (.buf.validate.field) = {
-  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    if (!this_._internal_code().empty()) {
-      const ::std::string& _s = this_._internal_code();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataReadinessReplyHeader.code");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
-    }
-  }
-
-  // string message = 3 [json_name = "message", (.buf.validate.field) = {
-  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-    if (!this_._internal_message().empty()) {
-      const ::std::string& _s = this_._internal_message();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataReadinessReplyHeader.message");
-      target = stream->WriteStringMaybeAliased(3, _s, target);
-    }
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t DataReadinessReplyHeader::ByteSizeLong(const MessageLite& base) {
-  const DataReadinessReplyHeader& this_ = static_cast<const DataReadinessReplyHeader&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t DataReadinessReplyHeader::ByteSizeLong() const {
-  const DataReadinessReplyHeader& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
-    // string state = 1 [json_name = "state", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      if (!this_._internal_state().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_state());
-      }
-    }
-    // string code = 2 [json_name = "code", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      if (!this_._internal_code().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_code());
-      }
-    }
-    // string message = 3 [json_name = "message", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      if (!this_._internal_message().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_message());
-      }
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void DataReadinessReplyHeader::MergeImpl(::google::protobuf::MessageLite& to_msg,
-                      const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<DataReadinessReplyHeader*>(&to_msg);
-  auto& from = static_cast<const DataReadinessReplyHeader&>(from_msg);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    from.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      if (!from._internal_state().empty()) {
-        _this->_internal_set_state(from._internal_state());
-      } else {
-        if (_this->_impl_.state_.IsDefault()) {
-          _this->_internal_set_state("");
-        }
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      if (!from._internal_code().empty()) {
-        _this->_internal_set_code(from._internal_code());
-      } else {
-        if (_this->_impl_.code_.IsDefault()) {
-          _this->_internal_set_code("");
-        }
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      if (!from._internal_message().empty()) {
-        _this->_internal_set_message(from._internal_message());
-      } else {
-        if (_this->_impl_.message_.IsDefault()) {
-          _this->_internal_set_message("");
-        }
-      }
-    }
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-}
-
-void DataReadinessReplyHeader::CopyFrom(const DataReadinessReplyHeader& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void DataReadinessReplyHeader::InternalSwap(DataReadinessReplyHeader* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  auto* arena = GetArena();
-  ABSL_DCHECK_EQ(arena, other->GetArena());
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.state_, &other->_impl_.state_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.code_, &other->_impl_.code_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
-}
-
-::google::protobuf::Metadata DataReadinessReplyHeader::GetMetadata() const {
-  return Super_::GetMetadataImpl(GetClassData()->full());
-}
 // ===================================================================
 
 DataOverview::DataOverview(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
@@ -8581,13 +7075,11 @@ PROTOBUF_NOINLINE void DataOverview::Clear() {
     }
   }
 
-  // int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+  // optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
   if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-    if (this_._internal_weather_missing_count() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<4>(
-              stream, this_._internal_weather_missing_count(), target);
-    }
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<4>(
+            stream, this_._internal_weather_missing_count(), target);
   }
 
   // double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];
@@ -8651,12 +7143,10 @@ PROTOBUF_NOINLINE void DataOverview::Clear() {
             this_._internal_need_fill_count());
       }
     }
-    // int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+    // optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
     if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      if (this_._internal_weather_missing_count() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-            this_._internal_weather_missing_count());
-      }
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this_._internal_weather_missing_count());
     }
     // double push_success_24h_pct = 5 [json_name = "push_success_24h_pct"];
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
@@ -8704,9 +7194,7 @@ void DataOverview::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      if (from._internal_weather_missing_count() != 0) {
-        _this->_impl_.weather_missing_count_ = from._impl_.weather_missing_count_;
-      }
+      _this->_impl_.weather_missing_count_ = from._impl_.weather_missing_count_;
     }
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
       if (::absl::bit_cast<::uint64_t>(from._internal_push_success_24h_pct()) != 0) {
@@ -9043,11 +7531,11 @@ DataSiteRow::DataSiteRow(
                  ? Super_::CopyConstruct(arena, *from._impl_.last_ingest_at_)
                  : nullptr;
   ::memcpy(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, data_source_),
+               offsetof(Impl_, coverage_ratio_7d_),
            reinterpret_cast<const char*>(&from._impl_) +
-               offsetof(Impl_, data_source_),
+               offsetof(Impl_, coverage_ratio_7d_),
            offsetof(Impl_, readiness_status_) -
-               offsetof(Impl_, data_source_) +
+               offsetof(Impl_, coverage_ratio_7d_) +
                sizeof(Impl_::readiness_status_));
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.DataSiteRow)
@@ -9162,11 +7650,11 @@ PROTOBUF_NOINLINE void DataSiteRow::Clear() {
     ABSL_DCHECK(this_._impl_.last_ingest_at_ != nullptr);
     this_._impl_.last_ingest_at_->Clear();
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x00007e00U)) {
-    ::memset(&this_._impl_.data_source_, 0,
+  if (BatchCheckHasBit(cached_has_bits, 0x00003e00U)) {
+    ::memset(&this_._impl_.coverage_ratio_7d_, 0,
              static_cast<::size_t>(
                  reinterpret_cast<char*>(&this_._impl_.readiness_status_) -
-                 reinterpret_cast<char*>(&this_._impl_.data_source_)) +
+                 reinterpret_cast<char*>(&this_._impl_.coverage_ratio_7d_)) +
                  sizeof(_impl_.readiness_status_));
   }
   _impl_._has_bits_.Clear();
@@ -9233,7 +7721,7 @@ PROTOBUF_NOINLINE void DataSiteRow::Clear() {
   }
 
   // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
-  if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+  if (CheckHasBit(cached_has_bits, 0x00000400U)) {
     if (this_._internal_data_source() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteEnumToArray(
@@ -9241,92 +7729,79 @@ PROTOBUF_NOINLINE void DataSiteRow::Clear() {
     }
   }
 
-  // int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];
-  if (CheckHasBit(cached_has_bits, 0x00000400U)) {
-    if (this_._internal_primary_granularity_min() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<6>(
-              stream, this_._internal_primary_granularity_min(), target);
-    }
-  }
-
-  // optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];
-  if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+  // optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];
+  if (CheckHasBit(cached_has_bits, 0x00000200U)) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        7, this_._internal_coverage_ratio_7d(), target);
+        6, this_._internal_coverage_ratio_7d(), target);
   }
 
-  // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];
+  // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     for (unsigned i = 0, n = static_cast<unsigned>(
                              this_._internal_trend_7d_size());
          i < n; i++) {
       const auto& repfield = this_._internal_trend_7d().Get(i);
       target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          8, repfield, repfield.GetCachedSize(), target,
+          7, repfield, repfield.GetCachedSize(), target,
           stream);
     }
   }
 
-  // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];
-  if (CheckHasBit(cached_has_bits, 0x00001000U)) {
-    if (this_._internal_weather_status() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          9, this_._internal_weather_status(), target);
-    }
+  // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];
+  if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        8, this_._internal_weather_status(), target);
   }
 
-  // string weather_display = 10 [json_name = "weather_display"];
+  // optional string weather_display = 9 [json_name = "weather_display"];
   if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-    if (!this_._internal_weather_display().empty()) {
-      const ::std::string& _s = this_._internal_weather_display();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteRow.weather_display");
-      target = stream->WriteStringMaybeAliased(10, _s, target);
-    }
+    const ::std::string& _s = this_._internal_weather_display();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteRow.weather_display");
+    target = stream->WriteStringMaybeAliased(9, _s, target);
   }
 
-  // optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];
+  // optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];
   if (CheckHasBit(cached_has_bits, 0x00000080U)) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        11, *this_._impl_.last_push_at_, this_._impl_.last_push_at_->GetCachedSize(), target,
+        10, *this_._impl_.last_push_at_, this_._impl_.last_push_at_->GetCachedSize(), target,
         stream);
   }
 
-  // optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];
+  // optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];
   if (CheckHasBit(cached_has_bits, 0x00000100U)) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        12, *this_._impl_.last_ingest_at_, this_._impl_.last_ingest_at_->GetCachedSize(), target,
+        11, *this_._impl_.last_ingest_at_, this_._impl_.last_ingest_at_->GetCachedSize(), target,
         stream);
   }
 
-  // int32 gap_points_7d = 13 [json_name = "gap_points_7d"];
-  if (CheckHasBit(cached_has_bits, 0x00002000U)) {
+  // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
+  if (CheckHasBit(cached_has_bits, 0x00001000U)) {
     if (this_._internal_gap_points_7d() != 0) {
       target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<13>(
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<12>(
               stream, this_._internal_gap_points_7d(), target);
     }
   }
 
-  // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];
-  if (CheckHasBit(cached_has_bits, 0x00004000U)) {
+  // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];
+  if (CheckHasBit(cached_has_bits, 0x00002000U)) {
     if (this_._internal_readiness_status() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          14, this_._internal_readiness_status(), target);
+          13, this_._internal_readiness_status(), target);
     }
   }
 
-  // string workbench_href = 15 [json_name = "workbench_href"];
+  // string workbench_href = 14 [json_name = "workbench_href"];
   if (CheckHasBit(cached_has_bits, 0x00000040U)) {
     if (!this_._internal_workbench_href().empty()) {
       const ::std::string& _s = this_._internal_workbench_href();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteRow.workbench_href");
-      target = stream->WriteStringMaybeAliased(15, _s, target);
+      target = stream->WriteStringMaybeAliased(14, _s, target);
     }
   }
 
@@ -9353,9 +7828,9 @@ PROTOBUF_NOINLINE void DataSiteRow::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += static_cast<bool>(0x00000800U & cached_has_bits) * 9;
+  total_size += static_cast<bool>(0x00000200U & cached_has_bits) * 9;
   if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
-    // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];
+    // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       total_size += 1UL * this_._internal_trend_7d_size();
       for (const auto& msg : this_._internal_trend_7d()) {
@@ -9390,62 +7865,51 @@ PROTOBUF_NOINLINE void DataSiteRow::Clear() {
                                         this_._internal_service_type());
       }
     }
-    // string weather_display = 10 [json_name = "weather_display"];
+    // optional string weather_display = 9 [json_name = "weather_display"];
     if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (!this_._internal_weather_display().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_weather_display());
-      }
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_weather_display());
     }
-    // string workbench_href = 15 [json_name = "workbench_href"];
+    // string workbench_href = 14 [json_name = "workbench_href"];
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
       if (!this_._internal_workbench_href().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_workbench_href());
       }
     }
-    // optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];
+    // optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];
     if (CheckHasBit(cached_has_bits, 0x00000080U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.last_push_at_);
     }
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x00007700U)) {
-    // optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];
+  if (BatchCheckHasBit(cached_has_bits, 0x00003d00U)) {
+    // optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];
     if (CheckHasBit(cached_has_bits, 0x00000100U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.last_ingest_at_);
     }
     // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
-    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
       if (this_._internal_data_source() != 0) {
         total_size += 1 +
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_data_source());
       }
     }
-    // int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];
-    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
-      if (this_._internal_primary_granularity_min() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-            this_._internal_primary_granularity_min());
-      }
+    // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];
+    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+      total_size += 1 +
+                    ::_pbi::WireFormatLite::EnumSize(this_._internal_weather_status());
     }
-    // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];
+    // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
     if (CheckHasBit(cached_has_bits, 0x00001000U)) {
-      if (this_._internal_weather_status() != 0) {
-        total_size += 1 +
-                      ::_pbi::WireFormatLite::EnumSize(this_._internal_weather_status());
-      }
-    }
-    // int32 gap_points_7d = 13 [json_name = "gap_points_7d"];
-    if (CheckHasBit(cached_has_bits, 0x00002000U)) {
       if (this_._internal_gap_points_7d() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
             this_._internal_gap_points_7d());
       }
     }
-    // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];
-    if (CheckHasBit(cached_has_bits, 0x00004000U)) {
+    // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];
+    if (CheckHasBit(cached_has_bits, 0x00002000U)) {
       if (this_._internal_readiness_status() != 0) {
         total_size += 1 +
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_readiness_status());
@@ -9513,13 +7977,7 @@ void DataSiteRow::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (!from._internal_weather_display().empty()) {
-        _this->_internal_set_weather_display(from._internal_weather_display());
-      } else {
-        if (_this->_impl_.weather_display_.IsDefault()) {
-          _this->_internal_set_weather_display("");
-        }
-      }
+      _this->_internal_set_weather_display(from._internal_weather_display());
     }
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
       if (!from._internal_workbench_href().empty()) {
@@ -9539,7 +7997,7 @@ void DataSiteRow::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x00007f00U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x00003f00U)) {
     if (CheckHasBit(cached_has_bits, 0x00000100U)) {
       ABSL_DCHECK(from._impl_.last_ingest_at_ != nullptr);
       if (_this->_impl_.last_ingest_at_ == nullptr) {
@@ -9549,29 +8007,22 @@ void DataSiteRow::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      _this->_impl_.coverage_ratio_7d_ = from._impl_.coverage_ratio_7d_;
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
       if (from._internal_data_source() != 0) {
         _this->_impl_.data_source_ = from._impl_.data_source_;
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
-      if (from._internal_primary_granularity_min() != 0) {
-        _this->_impl_.primary_granularity_min_ = from._impl_.primary_granularity_min_;
-      }
-    }
     if (CheckHasBit(cached_has_bits, 0x00000800U)) {
-      _this->_impl_.coverage_ratio_7d_ = from._impl_.coverage_ratio_7d_;
+      _this->_impl_.weather_status_ = from._impl_.weather_status_;
     }
     if (CheckHasBit(cached_has_bits, 0x00001000U)) {
-      if (from._internal_weather_status() != 0) {
-        _this->_impl_.weather_status_ = from._impl_.weather_status_;
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00002000U)) {
       if (from._internal_gap_points_7d() != 0) {
         _this->_impl_.gap_points_7d_ = from._impl_.gap_points_7d_;
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00004000U)) {
+    if (CheckHasBit(cached_has_bits, 0x00002000U)) {
       if (from._internal_readiness_status() != 0) {
         _this->_impl_.readiness_status_ = from._impl_.readiness_status_;
       }
@@ -10224,7 +8675,12 @@ PROTOBUF_NDEBUG_INLINE DataSiteReadiness::Impl_::Impl_(
         }
         ,
         registration_id_(arena, from.registration_id_),
+        site_id_(arena, from.site_id_),
         site_name_(arena, from.site_name_),
+        service_type_(arena, from.service_type_),
+        train_window_(arena, from.train_window_),
+        upstream_label_(arena, from.upstream_label_),
+        weather_provider_id_(arena, from.weather_provider_id_),
         gap_focus_(arena, from.gap_focus_) {}
 
 DataSiteReadiness::DataSiteReadiness(
@@ -10242,11 +8698,11 @@ DataSiteReadiness::DataSiteReadiness(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::memcpy(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, readiness_status_),
+               offsetof(Impl_, data_source_),
            reinterpret_cast<const char*>(&from._impl_) +
-               offsetof(Impl_, readiness_status_),
+               offsetof(Impl_, data_source_),
            offsetof(Impl_, gap_points_7d_) -
-               offsetof(Impl_, readiness_status_) +
+               offsetof(Impl_, data_source_) +
                sizeof(Impl_::gap_points_7d_));
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.DataSiteReadiness)
@@ -10260,16 +8716,21 @@ PROTOBUF_NDEBUG_INLINE DataSiteReadiness::Impl_::Impl_(
          }
         ,
         registration_id_(arena),
+        site_id_(arena),
         site_name_(arena),
+        service_type_(arena),
+        train_window_(arena),
+        upstream_label_(arena),
+        weather_provider_id_(arena),
         gap_focus_(arena) {}
 
 inline void DataSiteReadiness::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, readiness_status_),
+               offsetof(Impl_, data_source_),
            0,
            offsetof(Impl_, gap_points_7d_) -
-               offsetof(Impl_, readiness_status_) +
+               offsetof(Impl_, data_source_) +
                sizeof(Impl_::gap_points_7d_));
 }
 DataSiteReadiness::~DataSiteReadiness() {
@@ -10284,7 +8745,12 @@ inline void DataSiteReadiness::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.registration_id_.Destroy();
+  this_._impl_.site_id_.Destroy();
   this_._impl_.site_name_.Destroy();
+  this_._impl_.service_type_.Destroy();
+  this_._impl_.train_window_.Destroy();
+  this_._impl_.upstream_label_.Destroy();
+  this_._impl_.weather_provider_id_.Destroy();
   this_._impl_.gap_focus_.Destroy();
   this_._impl_.~Impl_();
 }
@@ -10322,7 +8788,7 @@ PROTOBUF_NOINLINE void DataSiteReadiness::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       _impl_.heatmap_14d_.Clear();
     }
@@ -10330,17 +8796,32 @@ PROTOBUF_NOINLINE void DataSiteReadiness::Clear() {
       this_._impl_.registration_id_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      this_._impl_.site_name_.ClearNonDefaultToEmpty();
+      this_._impl_.site_id_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      this_._impl_.gap_focus_.ClearNonDefaultToEmpty();
+      this_._impl_.site_name_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      this_._impl_.service_type_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      this_._impl_.train_window_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      this_._impl_.upstream_label_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      this_._impl_.weather_provider_id_.ClearNonDefaultToEmpty();
     }
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x000000f0U)) {
-    ::memset(&this_._impl_.readiness_status_, 0,
+  if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+    this_._impl_.gap_focus_.ClearNonDefaultToEmpty();
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00003e00U)) {
+    ::memset(&this_._impl_.data_source_, 0,
              static_cast<::size_t>(
                  reinterpret_cast<char*>(&this_._impl_.gap_points_7d_) -
-                 reinterpret_cast<char*>(&this_._impl_.readiness_status_)) +
+                 reinterpret_cast<char*>(&this_._impl_.data_source_)) +
                  sizeof(_impl_.gap_points_7d_));
   }
   _impl_._has_bits_.Clear();
@@ -10376,68 +8857,123 @@ PROTOBUF_NOINLINE void DataSiteReadiness::Clear() {
     }
   }
 
-  // string site_name = 2 [json_name = "site_name"];
+  // string site_id = 2 [json_name = "site_id"];
   if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-    if (!this_._internal_site_name().empty()) {
-      const ::std::string& _s = this_._internal_site_name();
+    if (!this_._internal_site_id().empty()) {
+      const ::std::string& _s = this_._internal_site_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteReadiness.site_name");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteReadiness.site_id");
       target = stream->WriteStringMaybeAliased(2, _s, target);
     }
   }
 
-  // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-    if (this_._internal_readiness_status() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          3, this_._internal_readiness_status(), target);
-    }
-  }
-
-  // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];
-  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-    if (this_._internal_weather_status() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          4, this_._internal_weather_status(), target);
-    }
-  }
-
-  // optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];
-  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        5, this_._internal_coverage_ratio_7d(), target);
-  }
-
-  // int32 gap_points_7d = 6 [json_name = "gap_points_7d"];
-  if (CheckHasBit(cached_has_bits, 0x00000080U)) {
-    if (this_._internal_gap_points_7d() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<6>(
-              stream, this_._internal_gap_points_7d(), target);
-    }
-  }
-
-  // string gap_focus = 7 [json_name = "gap_focus"];
+  // string site_name = 3 [json_name = "site_name"];
   if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-    if (!this_._internal_gap_focus().empty()) {
-      const ::std::string& _s = this_._internal_gap_focus();
+    if (!this_._internal_site_name().empty()) {
+      const ::std::string& _s = this_._internal_site_name();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteReadiness.gap_focus");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteReadiness.site_name");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // string service_type = 4 [json_name = "service_type"];
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (!this_._internal_service_type().empty()) {
+      const ::std::string& _s = this_._internal_service_type();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteReadiness.service_type");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
+  // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
+  if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+    if (this_._internal_data_source() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteEnumToArray(
+          5, this_._internal_data_source(), target);
+    }
+  }
+
+  // string train_window = 6 [json_name = "train_window"];
+  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+    if (!this_._internal_train_window().empty()) {
+      const ::std::string& _s = this_._internal_train_window();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteReadiness.train_window");
+      target = stream->WriteStringMaybeAliased(6, _s, target);
+    }
+  }
+
+  // string upstream_label = 7 [json_name = "upstream_label"];
+  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+    if (!this_._internal_upstream_label().empty()) {
+      const ::std::string& _s = this_._internal_upstream_label();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteReadiness.upstream_label");
       target = stream->WriteStringMaybeAliased(7, _s, target);
     }
   }
 
-  // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];
+  // optional string weather_provider_id = 8 [json_name = "weather_provider_id"];
+  if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+    const ::std::string& _s = this_._internal_weather_provider_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteReadiness.weather_provider_id");
+    target = stream->WriteStringMaybeAliased(8, _s, target);
+  }
+
+  // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];
+  if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+    if (this_._internal_readiness_status() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteEnumToArray(
+          9, this_._internal_readiness_status(), target);
+    }
+  }
+
+  // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];
+  if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        10, this_._internal_weather_status(), target);
+  }
+
+  // optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];
+  if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        11, this_._internal_coverage_ratio_7d(), target);
+  }
+
+  // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
+  if (CheckHasBit(cached_has_bits, 0x00002000U)) {
+    if (this_._internal_gap_points_7d() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<12>(
+              stream, this_._internal_gap_points_7d(), target);
+    }
+  }
+
+  // string gap_focus = 13 [json_name = "gap_focus"];
+  if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+    if (!this_._internal_gap_focus().empty()) {
+      const ::std::string& _s = this_._internal_gap_focus();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.DataSiteReadiness.gap_focus");
+      target = stream->WriteStringMaybeAliased(13, _s, target);
+    }
+  }
+
+  // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     for (unsigned i = 0, n = static_cast<unsigned>(
                              this_._internal_heatmap_14d_size());
          i < n; i++) {
       const auto& repfield = this_._internal_heatmap_14d().Get(i);
       target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          8, repfield, repfield.GetCachedSize(), target,
+          14, repfield, repfield.GetCachedSize(), target,
           stream);
     }
   }
@@ -10465,9 +9001,9 @@ PROTOBUF_NOINLINE void DataSiteReadiness::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += static_cast<bool>(0x00000040U & cached_has_bits) * 9;
-  if (BatchCheckHasBit(cached_has_bits, 0x000000bfU)) {
-    // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];
+  total_size += static_cast<bool>(0x00000800U & cached_has_bits) * 9;
+  if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
+    // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       total_size += 1UL * this_._internal_heatmap_14d_size();
       for (const auto& msg : this_._internal_heatmap_14d()) {
@@ -10481,36 +9017,76 @@ PROTOBUF_NOINLINE void DataSiteReadiness::Clear() {
                                         this_._internal_registration_id());
       }
     }
-    // string site_name = 2 [json_name = "site_name"];
+    // string site_id = 2 [json_name = "site_id"];
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!this_._internal_site_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_site_id());
+      }
+    }
+    // string site_name = 3 [json_name = "site_name"];
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       if (!this_._internal_site_name().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_site_name());
       }
     }
-    // string gap_focus = 7 [json_name = "gap_focus"];
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+    // string service_type = 4 [json_name = "service_type"];
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!this_._internal_service_type().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_service_type());
+      }
+    }
+    // string train_window = 6 [json_name = "train_window"];
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      if (!this_._internal_train_window().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_train_window());
+      }
+    }
+    // string upstream_label = 7 [json_name = "upstream_label"];
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      if (!this_._internal_upstream_label().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_upstream_label());
+      }
+    }
+    // optional string weather_provider_id = 8 [json_name = "weather_provider_id"];
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_weather_provider_id());
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00003700U)) {
+    // string gap_focus = 13 [json_name = "gap_focus"];
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
       if (!this_._internal_gap_focus().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_gap_focus());
       }
     }
-    // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      if (this_._internal_data_source() != 0) {
+        total_size += 1 +
+                      ::_pbi::WireFormatLite::EnumSize(this_._internal_data_source());
+      }
+    }
+    // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
       if (this_._internal_readiness_status() != 0) {
         total_size += 1 +
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_readiness_status());
       }
     }
-    // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];
-    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (this_._internal_weather_status() != 0) {
-        total_size += 1 +
-                      ::_pbi::WireFormatLite::EnumSize(this_._internal_weather_status());
-      }
+    // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];
+    if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+      total_size += 1 +
+                    ::_pbi::WireFormatLite::EnumSize(this_._internal_weather_status());
     }
-    // int32 gap_points_7d = 6 [json_name = "gap_points_7d"];
-    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+    // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
+    if (CheckHasBit(cached_has_bits, 0x00002000U)) {
       if (this_._internal_gap_points_7d() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
             this_._internal_gap_points_7d());
@@ -10551,6 +9127,15 @@ void DataSiteReadiness::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!from._internal_site_id().empty()) {
+        _this->_internal_set_site_id(from._internal_site_id());
+      } else {
+        if (_this->_impl_.site_id_.IsDefault()) {
+          _this->_internal_set_site_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       if (!from._internal_site_name().empty()) {
         _this->_internal_set_site_name(from._internal_site_name());
       } else {
@@ -10559,7 +9144,39 @@ void DataSiteReadiness::MergeImpl(::google::protobuf::MessageLite& to_msg,
         }
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!from._internal_service_type().empty()) {
+        _this->_internal_set_service_type(from._internal_service_type());
+      } else {
+        if (_this->_impl_.service_type_.IsDefault()) {
+          _this->_internal_set_service_type("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+      if (!from._internal_train_window().empty()) {
+        _this->_internal_set_train_window(from._internal_train_window());
+      } else {
+        if (_this->_impl_.train_window_.IsDefault()) {
+          _this->_internal_set_train_window("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+      if (!from._internal_upstream_label().empty()) {
+        _this->_internal_set_upstream_label(from._internal_upstream_label());
+      } else {
+        if (_this->_impl_.upstream_label_.IsDefault()) {
+          _this->_internal_set_upstream_label("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      _this->_internal_set_weather_provider_id(from._internal_weather_provider_id());
+    }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00003f00U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
       if (!from._internal_gap_focus().empty()) {
         _this->_internal_set_gap_focus(from._internal_gap_focus());
       } else {
@@ -10568,20 +9185,23 @@ void DataSiteReadiness::MergeImpl(::google::protobuf::MessageLite& to_msg,
         }
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
+      if (from._internal_data_source() != 0) {
+        _this->_impl_.data_source_ = from._impl_.data_source_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
       if (from._internal_readiness_status() != 0) {
         _this->_impl_.readiness_status_ = from._impl_.readiness_status_;
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (from._internal_weather_status() != 0) {
-        _this->_impl_.weather_status_ = from._impl_.weather_status_;
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
       _this->_impl_.coverage_ratio_7d_ = from._impl_.coverage_ratio_7d_;
     }
-    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+    if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+      _this->_impl_.weather_status_ = from._impl_.weather_status_;
+    }
+    if (CheckHasBit(cached_has_bits, 0x00002000U)) {
       if (from._internal_gap_points_7d() != 0) {
         _this->_impl_.gap_points_7d_ = from._impl_.gap_points_7d_;
       }
@@ -10608,14 +9228,19 @@ void DataSiteReadiness::InternalSwap(DataSiteReadiness* PROTOBUF_RESTRICT PROTOB
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.heatmap_14d_.InternalSwap(&other->_impl_.heatmap_14d_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.site_id_, &other->_impl_.site_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.site_name_, &other->_impl_.site_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.service_type_, &other->_impl_.service_type_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.train_window_, &other->_impl_.train_window_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.upstream_label_, &other->_impl_.upstream_label_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.weather_provider_id_, &other->_impl_.weather_provider_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.gap_focus_, &other->_impl_.gap_focus_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.gap_points_7d_)
       + sizeof(DataSiteReadiness::_impl_.gap_points_7d_)
-      - PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.readiness_status_)>(
-          reinterpret_cast<char*>(&_impl_.readiness_status_),
-          reinterpret_cast<char*>(&other->_impl_.readiness_status_));
+      - PROTOBUF_FIELD_OFFSET(DataSiteReadiness, _impl_.data_source_)>(
+          reinterpret_cast<char*>(&_impl_.data_source_),
+          reinterpret_cast<char*>(&other->_impl_.data_source_));
 }
 
 ::google::protobuf::Metadata DataSiteReadiness::GetMetadata() const {
@@ -10956,9 +9581,6 @@ PipelineStats::PipelineStats(
   _impl_.validation_queue_line_ = (CheckHasBit(cached_has_bits, 0x00000008U))
                  ? Super_::CopyConstruct(arena, *from._impl_.validation_queue_line_)
                  : nullptr;
-  _impl_.pull_line_ = (CheckHasBit(cached_has_bits, 0x00000010U))
-                 ? Super_::CopyConstruct(arena, *from._impl_.pull_line_)
-                 : nullptr;
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.PipelineStats)
 }
@@ -10972,9 +9594,9 @@ inline void PipelineStats::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   ::memset(reinterpret_cast<char*>(&_impl_) +
                offsetof(Impl_, push_line_),
            0,
-           offsetof(Impl_, pull_line_) -
+           offsetof(Impl_, validation_queue_line_) -
                offsetof(Impl_, push_line_) +
-               sizeof(Impl_::pull_line_));
+               sizeof(Impl_::validation_queue_line_));
 }
 PipelineStats::~PipelineStats() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.PipelineStats)
@@ -10991,7 +9613,6 @@ inline void PipelineStats::SharedDtor(MessageLite& self) {
   delete this_._impl_.weather_job_line_;
   delete this_._impl_.excel_line_;
   delete this_._impl_.validation_queue_line_;
-  delete this_._impl_.pull_line_;
   this_._impl_.~Impl_();
 }
 
@@ -11028,7 +9649,7 @@ PROTOBUF_NOINLINE void PipelineStats::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       ABSL_DCHECK(this_._impl_.push_line_ != nullptr);
       this_._impl_.push_line_->Clear();
@@ -11044,10 +9665,6 @@ PROTOBUF_NOINLINE void PipelineStats::Clear() {
     if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       ABSL_DCHECK(this_._impl_.validation_queue_line_ != nullptr);
       this_._impl_.validation_queue_line_->Clear();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      ABSL_DCHECK(this_._impl_.pull_line_ != nullptr);
-      this_._impl_.pull_line_->Clear();
     }
   }
   _impl_._has_bits_.Clear();
@@ -11080,7 +9697,7 @@ PROTOBUF_NOINLINE void PipelineStats::Clear() {
         stream);
   }
 
-  // .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
+  // optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
   if (CheckHasBit(cached_has_bits, 0x00000002U)) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         2, *this_._impl_.weather_job_line_, this_._impl_.weather_job_line_->GetCachedSize(), target,
@@ -11098,13 +9715,6 @@ PROTOBUF_NOINLINE void PipelineStats::Clear() {
   if (CheckHasBit(cached_has_bits, 0x00000008U)) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         4, *this_._impl_.validation_queue_line_, this_._impl_.validation_queue_line_->GetCachedSize(), target,
-        stream);
-  }
-
-  // optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];
-  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        5, *this_._impl_.pull_line_, this_._impl_.pull_line_->GetCachedSize(), target,
         stream);
   }
 
@@ -11131,13 +9741,13 @@ PROTOBUF_NOINLINE void PipelineStats::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
     // .fusion.ai.proto.data_readiness.PipelineLine push_line = 1 [json_name = "push_line"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.push_line_);
     }
-    // .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
+    // optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.weather_job_line_);
@@ -11151,11 +9761,6 @@ PROTOBUF_NOINLINE void PipelineStats::Clear() {
     if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.validation_queue_line_);
-    }
-    // optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.pull_line_);
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -11176,7 +9781,7 @@ void PipelineStats::MergeImpl(::google::protobuf::MessageLite& to_msg,
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       ABSL_DCHECK(from._impl_.push_line_ != nullptr);
       if (_this->_impl_.push_line_ == nullptr) {
@@ -11209,14 +9814,6 @@ void PipelineStats::MergeImpl(::google::protobuf::MessageLite& to_msg,
         _this->_impl_.validation_queue_line_->MergeFrom(*from._impl_.validation_queue_line_);
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      ABSL_DCHECK(from._impl_.pull_line_ != nullptr);
-      if (_this->_impl_.pull_line_ == nullptr) {
-        _this->_impl_.pull_line_ = Super_::CopyConstruct(arena, *from._impl_.pull_line_);
-      } else {
-        _this->_impl_.pull_line_->MergeFrom(*from._impl_.pull_line_);
-      }
-    }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
@@ -11236,8 +9833,8 @@ void PipelineStats::InternalSwap(PipelineStats* PROTOBUF_RESTRICT PROTOBUF_NONNU
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.pull_line_)
-      + sizeof(PipelineStats::_impl_.pull_line_)
+      PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.validation_queue_line_)
+      + sizeof(PipelineStats::_impl_.validation_queue_line_)
       - PROTOBUF_FIELD_OFFSET(PipelineStats, _impl_.push_line_)>(
           reinterpret_cast<char*>(&_impl_.push_line_),
           reinterpret_cast<char*>(&other->_impl_.push_line_));
@@ -12702,10 +11299,7 @@ GetDataOverviewResponse::GetDataOverviewResponse(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.header_ = (CheckHasBit(cached_has_bits, 0x00000001U))
-                 ? Super_::CopyConstruct(arena, *from._impl_.header_)
-                 : nullptr;
-  _impl_.overview_ = (CheckHasBit(cached_has_bits, 0x00000002U))
+  _impl_.overview_ = (CheckHasBit(cached_has_bits, 0x00000001U))
                  ? Super_::CopyConstruct(arena, *from._impl_.overview_)
                  : nullptr;
 
@@ -12718,12 +11312,7 @@ PROTOBUF_NDEBUG_INLINE GetDataOverviewResponse::Impl_::Impl_(
 
 inline void GetDataOverviewResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, header_),
-           0,
-           offsetof(Impl_, overview_) -
-               offsetof(Impl_, header_) +
-               sizeof(Impl_::overview_));
+  _impl_.overview_ = {};
 }
 GetDataOverviewResponse::~GetDataOverviewResponse() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.GetDataOverviewResponse)
@@ -12736,7 +11325,6 @@ inline void GetDataOverviewResponse::SharedDtor(MessageLite& self) {
   }
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
-  delete this_._impl_.header_;
   delete this_._impl_.overview_;
   this_._impl_.~Impl_();
 }
@@ -12774,15 +11362,9 @@ PROTOBUF_NOINLINE void GetDataOverviewResponse::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      ABSL_DCHECK(this_._impl_.header_ != nullptr);
-      this_._impl_.header_->Clear();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      ABSL_DCHECK(this_._impl_.overview_ != nullptr);
-      this_._impl_.overview_->Clear();
-    }
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    ABSL_DCHECK(this_._impl_.overview_ != nullptr);
+    this_._impl_.overview_->Clear();
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -12807,17 +11389,10 @@ PROTOBUF_NOINLINE void GetDataOverviewResponse::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+  // .fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        1, *this_._impl_.header_, this_._impl_.header_->GetCachedSize(), target,
-        stream);
-  }
-
-  // .fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];
-  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        2, *this_._impl_.overview_, this_._impl_.overview_->GetCachedSize(), target,
+        1, *this_._impl_.overview_, this_._impl_.overview_->GetCachedSize(), target,
         stream);
   }
 
@@ -12842,16 +11417,10 @@ PROTOBUF_NOINLINE void GetDataOverviewResponse::Clear() {
 
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+   {
+    // .fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];
+    cached_has_bits = this_._impl_._has_bits_[0];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.header_);
-    }
-    // .fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.overview_);
     }
@@ -12874,22 +11443,12 @@ void GetDataOverviewResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      ABSL_DCHECK(from._impl_.header_ != nullptr);
-      if (_this->_impl_.header_ == nullptr) {
-        _this->_impl_.header_ = Super_::CopyConstruct(arena, *from._impl_.header_);
-      } else {
-        _this->_impl_.header_->MergeFrom(*from._impl_.header_);
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      ABSL_DCHECK(from._impl_.overview_ != nullptr);
-      if (_this->_impl_.overview_ == nullptr) {
-        _this->_impl_.overview_ = Super_::CopyConstruct(arena, *from._impl_.overview_);
-      } else {
-        _this->_impl_.overview_->MergeFrom(*from._impl_.overview_);
-      }
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    ABSL_DCHECK(from._impl_.overview_ != nullptr);
+    if (_this->_impl_.overview_ == nullptr) {
+      _this->_impl_.overview_ = Super_::CopyConstruct(arena, *from._impl_.overview_);
+    } else {
+      _this->_impl_.overview_->MergeFrom(*from._impl_.overview_);
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -12909,12 +11468,7 @@ void GetDataOverviewResponse::InternalSwap(GetDataOverviewResponse* PROTOBUF_RES
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetDataOverviewResponse, _impl_.overview_)
-      + sizeof(GetDataOverviewResponse::_impl_.overview_)
-      - PROTOBUF_FIELD_OFFSET(GetDataOverviewResponse, _impl_.header_)>(
-          reinterpret_cast<char*>(&_impl_.header_),
-          reinterpret_cast<char*>(&other->_impl_.header_));
+  swap(_impl_.overview_, other->_impl_.overview_);
 }
 
 ::google::protobuf::Metadata GetDataOverviewResponse::GetMetadata() const {
@@ -12957,9 +11511,9 @@ ListDataSiteRowsRequest::ListDataSiteRowsRequest(
                offsetof(Impl_, page_),
            reinterpret_cast<const char*>(&from._impl_) +
                offsetof(Impl_, page_),
-           offsetof(Impl_, granularity_min_) -
+           offsetof(Impl_, readiness_status_) -
                offsetof(Impl_, page_) +
-               sizeof(Impl_::granularity_min_));
+               sizeof(Impl_::readiness_status_));
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest)
 }
@@ -12974,9 +11528,9 @@ inline void ListDataSiteRowsRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE 
   ::memset(reinterpret_cast<char*>(&_impl_) +
                offsetof(Impl_, page_),
            0,
-           offsetof(Impl_, granularity_min_) -
+           offsetof(Impl_, readiness_status_) -
                offsetof(Impl_, page_) +
-               sizeof(Impl_::granularity_min_));
+               sizeof(Impl_::readiness_status_));
 }
 ListDataSiteRowsRequest::~ListDataSiteRowsRequest() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest)
@@ -13035,12 +11589,12 @@ PROTOBUF_NOINLINE void ListDataSiteRowsRequest::Clear() {
       this_._impl_.q_.ClearNonDefaultToEmpty();
     }
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x0000007cU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001cU)) {
     ::memset(&this_._impl_.page_, 0,
              static_cast<::size_t>(
-                 reinterpret_cast<char*>(&this_._impl_.granularity_min_) -
+                 reinterpret_cast<char*>(&this_._impl_.readiness_status_) -
                  reinterpret_cast<char*>(&this_._impl_.page_)) +
-                 sizeof(_impl_.granularity_min_));
+                 sizeof(_impl_.readiness_status_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -13087,33 +11641,19 @@ PROTOBUF_NOINLINE void ListDataSiteRowsRequest::Clear() {
     target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
-  // optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];
+  // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];
   if (CheckHasBit(cached_has_bits, 0x00000010U)) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        4, this_._internal_data_source(), target);
+        4, this_._internal_readiness_status(), target);
   }
 
-  // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];
-  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        5, this_._internal_readiness_status(), target);
-  }
-
-  // optional int32 granularity_min = 6 [json_name = "granularity_min"];
-  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-    target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<6>(
-            stream, this_._internal_granularity_min(), target);
-  }
-
-  // optional string q = 7 [json_name = "q"];
+  // optional string q = 5 [json_name = "q"];
   if (CheckHasBit(cached_has_bits, 0x00000002U)) {
     const ::std::string& _s = this_._internal_q();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.q");
-    target = stream->WriteStringMaybeAliased(7, _s, target);
+    target = stream->WriteStringMaybeAliased(5, _s, target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -13139,13 +11679,13 @@ PROTOBUF_NOINLINE void ListDataSiteRowsRequest::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000007fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
     // optional string service_type = 3 [json_name = "service_type"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_service_type());
     }
-    // optional string q = 7 [json_name = "q"];
+    // optional string q = 5 [json_name = "q"];
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_q());
@@ -13160,20 +11700,10 @@ PROTOBUF_NOINLINE void ListDataSiteRowsRequest::Clear() {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this_._internal_page_size());
     }
-    // optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];
+    // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
       total_size += 1 +
-                    ::_pbi::WireFormatLite::EnumSize(this_._internal_data_source());
-    }
-    // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];
-    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      total_size += 1 +
                     ::_pbi::WireFormatLite::EnumSize(this_._internal_readiness_status());
-    }
-    // optional int32 granularity_min = 6 [json_name = "granularity_min"];
-    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-          this_._internal_granularity_min());
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -13193,7 +11723,7 @@ void ListDataSiteRowsRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000007fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       _this->_internal_set_service_type(from._internal_service_type());
     }
@@ -13207,13 +11737,7 @@ void ListDataSiteRowsRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
       _this->_impl_.page_size_ = from._impl_.page_size_;
     }
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      _this->_impl_.data_source_ = from._impl_.data_source_;
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
       _this->_impl_.readiness_status_ = from._impl_.readiness_status_;
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      _this->_impl_.granularity_min_ = from._impl_.granularity_min_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -13238,8 +11762,8 @@ void ListDataSiteRowsRequest::InternalSwap(ListDataSiteRowsRequest* PROTOBUF_RES
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.service_type_, &other->_impl_.service_type_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.q_, &other->_impl_.q_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.granularity_min_)
-      + sizeof(ListDataSiteRowsRequest::_impl_.granularity_min_)
+      PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.readiness_status_)
+      + sizeof(ListDataSiteRowsRequest::_impl_.readiness_status_)
       - PROTOBUF_FIELD_OFFSET(ListDataSiteRowsRequest, _impl_.page_)>(
           reinterpret_cast<char*>(&_impl_.page_),
           reinterpret_cast<char*>(&other->_impl_.page_));
@@ -13280,10 +11804,7 @@ ListDataSiteRowsResponse::ListDataSiteRowsResponse(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.header_ = (CheckHasBit(cached_has_bits, 0x00000001U))
-                 ? Super_::CopyConstruct(arena, *from._impl_.header_)
-                 : nullptr;
-  _impl_.page_ = (CheckHasBit(cached_has_bits, 0x00000002U))
+  _impl_.page_ = (CheckHasBit(cached_has_bits, 0x00000001U))
                  ? Super_::CopyConstruct(arena, *from._impl_.page_)
                  : nullptr;
 
@@ -13296,12 +11817,7 @@ PROTOBUF_NDEBUG_INLINE ListDataSiteRowsResponse::Impl_::Impl_(
 
 inline void ListDataSiteRowsResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, header_),
-           0,
-           offsetof(Impl_, page_) -
-               offsetof(Impl_, header_) +
-               sizeof(Impl_::page_));
+  _impl_.page_ = {};
 }
 ListDataSiteRowsResponse::~ListDataSiteRowsResponse() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.ListDataSiteRowsResponse)
@@ -13314,7 +11830,6 @@ inline void ListDataSiteRowsResponse::SharedDtor(MessageLite& self) {
   }
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
-  delete this_._impl_.header_;
   delete this_._impl_.page_;
   this_._impl_.~Impl_();
 }
@@ -13352,15 +11867,9 @@ PROTOBUF_NOINLINE void ListDataSiteRowsResponse::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      ABSL_DCHECK(this_._impl_.header_ != nullptr);
-      this_._impl_.header_->Clear();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      ABSL_DCHECK(this_._impl_.page_ != nullptr);
-      this_._impl_.page_->Clear();
-    }
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    ABSL_DCHECK(this_._impl_.page_ != nullptr);
+    this_._impl_.page_->Clear();
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -13385,17 +11894,10 @@ PROTOBUF_NOINLINE void ListDataSiteRowsResponse::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+  // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        1, *this_._impl_.header_, this_._impl_.header_->GetCachedSize(), target,
-        stream);
-  }
-
-  // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];
-  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        2, *this_._impl_.page_, this_._impl_.page_->GetCachedSize(), target,
+        1, *this_._impl_.page_, this_._impl_.page_->GetCachedSize(), target,
         stream);
   }
 
@@ -13420,16 +11922,10 @@ PROTOBUF_NOINLINE void ListDataSiteRowsResponse::Clear() {
 
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+   {
+    // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];
+    cached_has_bits = this_._impl_._has_bits_[0];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.header_);
-    }
-    // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.page_);
     }
@@ -13452,22 +11948,12 @@ void ListDataSiteRowsResponse::MergeImpl(::google::protobuf::MessageLite& to_msg
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      ABSL_DCHECK(from._impl_.header_ != nullptr);
-      if (_this->_impl_.header_ == nullptr) {
-        _this->_impl_.header_ = Super_::CopyConstruct(arena, *from._impl_.header_);
-      } else {
-        _this->_impl_.header_->MergeFrom(*from._impl_.header_);
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      ABSL_DCHECK(from._impl_.page_ != nullptr);
-      if (_this->_impl_.page_ == nullptr) {
-        _this->_impl_.page_ = Super_::CopyConstruct(arena, *from._impl_.page_);
-      } else {
-        _this->_impl_.page_->MergeFrom(*from._impl_.page_);
-      }
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    ABSL_DCHECK(from._impl_.page_ != nullptr);
+    if (_this->_impl_.page_ == nullptr) {
+      _this->_impl_.page_ = Super_::CopyConstruct(arena, *from._impl_.page_);
+    } else {
+      _this->_impl_.page_->MergeFrom(*from._impl_.page_);
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -13487,12 +11973,7 @@ void ListDataSiteRowsResponse::InternalSwap(ListDataSiteRowsResponse* PROTOBUF_R
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ListDataSiteRowsResponse, _impl_.page_)
-      + sizeof(ListDataSiteRowsResponse::_impl_.page_)
-      - PROTOBUF_FIELD_OFFSET(ListDataSiteRowsResponse, _impl_.header_)>(
-          reinterpret_cast<char*>(&_impl_.header_),
-          reinterpret_cast<char*>(&other->_impl_.header_));
+  swap(_impl_.page_, other->_impl_.page_);
 }
 
 ::google::protobuf::Metadata ListDataSiteRowsResponse::GetMetadata() const {
@@ -13922,8 +12403,16 @@ GetDataPipelineStatsRequest::GetDataPipelineStatsRequest(::google::protobuf::Are
 #else   // PROTOBUF_CUSTOM_VTABLE
     : Super_(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
 }
+PROTOBUF_NDEBUG_INLINE GetDataPipelineStatsRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::fusion::ai::proto::data_readiness::GetDataPipelineStatsRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        service_type_(arena, from.service_type_) {}
+
 GetDataPipelineStatsRequest::GetDataPipelineStatsRequest(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
     const GetDataPipelineStatsRequest& from)
@@ -13937,8 +12426,31 @@ GetDataPipelineStatsRequest::GetDataPipelineStatsRequest(
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
+}
+PROTOBUF_NDEBUG_INLINE GetDataPipelineStatsRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : service_type_(arena) {}
+
+inline void GetDataPipelineStatsRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+GetDataPipelineStatsRequest::~GetDataPipelineStatsRequest() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
+  SharedDtor(*this);
+}
+inline void GetDataPipelineStatsRequest::SharedDtor(MessageLite& self) {
+  GetDataPipelineStatsRequest& this_ = static_cast<GetDataPipelineStatsRequest&>(self);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.service_type_.Destroy();
+  this_._impl_.~Impl_();
 }
 
 #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -13967,12 +12479,117 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetDataPipelineStatsRequest::ParseTableT
     GetDataPipelineStatsRequest::_table_ =
         GetDataPipelineStatsRequest::InternalGenerateParseTable_(GetDataPipelineStatsRequest_class_data_.base());
 #endif  // !PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_NOINLINE void GetDataPipelineStatsRequest::Clear() {
+  auto& this_ [[maybe_unused]] = *this;
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    this_._impl_.service_type_.ClearNonDefaultToEmpty();
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL GetDataPipelineStatsRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const GetDataPipelineStatsRequest& this_ = static_cast<const GetDataPipelineStatsRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL GetDataPipelineStatsRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const GetDataPipelineStatsRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    this_.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // optional string service_type = 1 [json_name = "service_type"];
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    const ::std::string& _s = this_._internal_service_type();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest.service_type");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t GetDataPipelineStatsRequest::ByteSizeLong(const MessageLite& base) {
+  const GetDataPipelineStatsRequest& this_ = static_cast<const GetDataPipelineStatsRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t GetDataPipelineStatsRequest::ByteSizeLong() const {
+  const GetDataPipelineStatsRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
+
+   {
+    // optional string service_type = 1 [json_name = "service_type"];
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_service_type());
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void GetDataPipelineStatsRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                      const ::google::protobuf::MessageLite& from_msg) {
+   auto* const _this = static_cast<GetDataPipelineStatsRequest*>(&to_msg);
+  auto& from = static_cast<const GetDataPipelineStatsRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
+    from.CheckHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    _this->_internal_set_service_type(from._internal_service_type());
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+
+void GetDataPipelineStatsRequest::CopyFrom(const GetDataPipelineStatsRequest& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
 
-
-
-
-
+void GetDataPipelineStatsRequest::InternalSwap(GetDataPipelineStatsRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.service_type_, &other->_impl_.service_type_, arena);
+}
 
 ::google::protobuf::Metadata GetDataPipelineStatsRequest::GetMetadata() const {
   return Super_::GetMetadataImpl(GetClassData()->full());
@@ -14182,534 +12799,6 @@ void GetDataPipelineStatsResponse::InternalSwap(GetDataPipelineStatsResponse* PR
 }
 
 ::google::protobuf::Metadata GetDataPipelineStatsResponse::GetMetadata() const {
-  return Super_::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-ExportDataGapsRequest::ExportDataGapsRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, ExportDataGapsRequest_get_class_data()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
-}
-PROTOBUF_NDEBUG_INLINE ExportDataGapsRequest::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::data_readiness::ExportDataGapsRequest& from_msg)
-      : _has_bits_{from._has_bits_},
-        service_type_(arena, from.service_type_),
-        q_(arena, from.q_) {}
-
-ExportDataGapsRequest::ExportDataGapsRequest(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const ExportDataGapsRequest& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, ExportDataGapsRequest_get_class_data()) {
-
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  ExportDataGapsRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  ::memcpy(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, data_source_),
-           reinterpret_cast<const char*>(&from._impl_) +
-               offsetof(Impl_, data_source_),
-           offsetof(Impl_, readiness_status_) -
-               offsetof(Impl_, data_source_) +
-               sizeof(Impl_::readiness_status_));
-
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
-}
-PROTOBUF_NDEBUG_INLINE ExportDataGapsRequest::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : service_type_(arena),
-        q_(arena) {}
-
-inline void ExportDataGapsRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, data_source_),
-           0,
-           offsetof(Impl_, readiness_status_) -
-               offsetof(Impl_, data_source_) +
-               sizeof(Impl_::readiness_status_));
-}
-ExportDataGapsRequest::~ExportDataGapsRequest() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
-  SharedDtor(*this);
-}
-inline void ExportDataGapsRequest::SharedDtor(MessageLite& self) {
-  ExportDataGapsRequest& this_ = static_cast<ExportDataGapsRequest&>(self);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.service_type_.Destroy();
-  this_._impl_.q_.Destroy();
-  this_._impl_.~Impl_();
-}
-
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ExportDataGapsRequest_class_data_ =
-        ExportDataGapsRequest::InternalGenerateClassData_(ExportDataGapsRequest_globals_._default);
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ExportDataGapsRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ExportDataGapsRequest_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ExportDataGapsRequest_class_data_.tc_table);
-  return ExportDataGapsRequest_class_data_.base();
-}
-#else
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ExportDataGapsRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ExportDataGapsRequest_globals_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&ExportDataGapsRequest_globals_));
-  return ExportDataGapsRequest_globals_.GetClassData();
-}
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ExportDataGapsRequest::ParseTableT_
-    ExportDataGapsRequest::_table_ =
-        ExportDataGapsRequest::InternalGenerateParseTable_(ExportDataGapsRequest_class_data_.base());
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void ExportDataGapsRequest::Clear() {
-  auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      this_._impl_.service_type_.ClearNonDefaultToEmpty();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      this_._impl_.q_.ClearNonDefaultToEmpty();
-    }
-  }
-  if (BatchCheckHasBit(cached_has_bits, 0x0000000cU)) {
-    ::memset(&this_._impl_.data_source_, 0,
-             static_cast<::size_t>(
-                 reinterpret_cast<char*>(&this_._impl_.readiness_status_) -
-                 reinterpret_cast<char*>(&this_._impl_.data_source_)) +
-                 sizeof(_impl_.readiness_status_));
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL ExportDataGapsRequest::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const ExportDataGapsRequest& this_ = static_cast<const ExportDataGapsRequest&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL ExportDataGapsRequest::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const ExportDataGapsRequest& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  // optional string service_type = 1 [json_name = "service_type"];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    const ::std::string& _s = this_._internal_service_type();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.ExportDataGapsRequest.service_type");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
-  }
-
-  // optional .fusion.ai.proto.data_readiness.DataSource data_source = 2 [json_name = "data_source"];
-  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this_._internal_data_source(), target);
-  }
-
-  // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        3, this_._internal_readiness_status(), target);
-  }
-
-  // optional string q = 4 [json_name = "q"];
-  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    const ::std::string& _s = this_._internal_q();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.ExportDataGapsRequest.q");
-    target = stream->WriteStringMaybeAliased(4, _s, target);
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t ExportDataGapsRequest::ByteSizeLong(const MessageLite& base) {
-  const ExportDataGapsRequest& this_ = static_cast<const ExportDataGapsRequest&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t ExportDataGapsRequest::ByteSizeLong() const {
-  const ExportDataGapsRequest& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
-    // optional string service_type = 1 [json_name = "service_type"];
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_service_type());
-    }
-    // optional string q = 4 [json_name = "q"];
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_q());
-    }
-    // optional .fusion.ai.proto.data_readiness.DataSource data_source = 2 [json_name = "data_source"];
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      total_size += 1 +
-                    ::_pbi::WireFormatLite::EnumSize(this_._internal_data_source());
-    }
-    // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      total_size += 1 +
-                    ::_pbi::WireFormatLite::EnumSize(this_._internal_readiness_status());
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void ExportDataGapsRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
-                      const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<ExportDataGapsRequest*>(&to_msg);
-  auto& from = static_cast<const ExportDataGapsRequest&>(from_msg);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    from.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      _this->_internal_set_service_type(from._internal_service_type());
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      _this->_internal_set_q(from._internal_q());
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      _this->_impl_.data_source_ = from._impl_.data_source_;
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      _this->_impl_.readiness_status_ = from._impl_.readiness_status_;
-    }
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-}
-
-void ExportDataGapsRequest::CopyFrom(const ExportDataGapsRequest& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void ExportDataGapsRequest::InternalSwap(ExportDataGapsRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  auto* arena = GetArena();
-  ABSL_DCHECK_EQ(arena, other->GetArena());
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.service_type_, &other->_impl_.service_type_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.q_, &other->_impl_.q_, arena);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.readiness_status_)
-      + sizeof(ExportDataGapsRequest::_impl_.readiness_status_)
-      - PROTOBUF_FIELD_OFFSET(ExportDataGapsRequest, _impl_.data_source_)>(
-          reinterpret_cast<char*>(&_impl_.data_source_),
-          reinterpret_cast<char*>(&other->_impl_.data_source_));
-}
-
-::google::protobuf::Metadata ExportDataGapsRequest::GetMetadata() const {
-  return Super_::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-ExportDataGapsResponse::ExportDataGapsResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, ExportDataGapsResponse_get_class_data()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
-}
-PROTOBUF_NDEBUG_INLINE ExportDataGapsResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::data_readiness::ExportDataGapsResponse& from_msg)
-      : _has_bits_{from._has_bits_},
-        csv_(arena, from.csv_),
-        filename_(arena, from.filename_) {}
-
-ExportDataGapsResponse::ExportDataGapsResponse(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const ExportDataGapsResponse& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, ExportDataGapsResponse_get_class_data()) {
-
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  ExportDataGapsResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
-}
-PROTOBUF_NDEBUG_INLINE ExportDataGapsResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : csv_(arena),
-        filename_(arena) {}
-
-inline void ExportDataGapsResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-ExportDataGapsResponse::~ExportDataGapsResponse() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
-  SharedDtor(*this);
-}
-inline void ExportDataGapsResponse::SharedDtor(MessageLite& self) {
-  ExportDataGapsResponse& this_ = static_cast<ExportDataGapsResponse&>(self);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.csv_.Destroy();
-  this_._impl_.filename_.Destroy();
-  this_._impl_.~Impl_();
-}
-
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ExportDataGapsResponse_class_data_ =
-        ExportDataGapsResponse::InternalGenerateClassData_(ExportDataGapsResponse_globals_._default);
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ExportDataGapsResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ExportDataGapsResponse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ExportDataGapsResponse_class_data_.tc_table);
-  return ExportDataGapsResponse_class_data_.base();
-}
-#else
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ExportDataGapsResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ExportDataGapsResponse_globals_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&ExportDataGapsResponse_globals_));
-  return ExportDataGapsResponse_globals_.GetClassData();
-}
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ExportDataGapsResponse::ParseTableT_
-    ExportDataGapsResponse::_table_ =
-        ExportDataGapsResponse::InternalGenerateParseTable_(ExportDataGapsResponse_class_data_.base());
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void ExportDataGapsResponse::Clear() {
-  auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      this_._impl_.csv_.ClearNonDefaultToEmpty();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      this_._impl_.filename_.ClearNonDefaultToEmpty();
-    }
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL ExportDataGapsResponse::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const ExportDataGapsResponse& this_ = static_cast<const ExportDataGapsResponse&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL ExportDataGapsResponse::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const ExportDataGapsResponse& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  // bytes csv = 1 [json_name = "csv"];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    if (!this_._internal_csv().empty()) {
-      const ::std::string& _s = this_._internal_csv();
-      target = stream->WriteBytesMaybeAliased(1, _s, target);
-    }
-  }
-
-  // string filename = 2 [json_name = "filename"];
-  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    if (!this_._internal_filename().empty()) {
-      const ::std::string& _s = this_._internal_filename();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.ExportDataGapsResponse.filename");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
-    }
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t ExportDataGapsResponse::ByteSizeLong(const MessageLite& base) {
-  const ExportDataGapsResponse& this_ = static_cast<const ExportDataGapsResponse&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t ExportDataGapsResponse::ByteSizeLong() const {
-  const ExportDataGapsResponse& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    // bytes csv = 1 [json_name = "csv"];
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      if (!this_._internal_csv().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                        this_._internal_csv());
-      }
-    }
-    // string filename = 2 [json_name = "filename"];
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      if (!this_._internal_filename().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_filename());
-      }
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void ExportDataGapsResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
-                      const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<ExportDataGapsResponse*>(&to_msg);
-  auto& from = static_cast<const ExportDataGapsResponse&>(from_msg);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    from.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      if (!from._internal_csv().empty()) {
-        _this->_internal_set_csv(from._internal_csv());
-      } else {
-        if (_this->_impl_.csv_.IsDefault()) {
-          _this->_internal_set_csv("");
-        }
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      if (!from._internal_filename().empty()) {
-        _this->_internal_set_filename(from._internal_filename());
-      } else {
-        if (_this->_impl_.filename_.IsDefault()) {
-          _this->_internal_set_filename("");
-        }
-      }
-    }
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-}
-
-void ExportDataGapsResponse::CopyFrom(const ExportDataGapsResponse& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void ExportDataGapsResponse::InternalSwap(ExportDataGapsResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  auto* arena = GetArena();
-  ABSL_DCHECK_EQ(arena, other->GetArena());
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.csv_, &other->_impl_.csv_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.filename_, &other->_impl_.filename_, arena);
-}
-
-::google::protobuf::Metadata ExportDataGapsResponse::GetMetadata() const {
   return Super_::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================
@@ -15396,10 +13485,7 @@ GetWeatherSyncRunResponse::GetWeatherSyncRunResponse(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.header_ = (CheckHasBit(cached_has_bits, 0x00000001U))
-                 ? Super_::CopyConstruct(arena, *from._impl_.header_)
-                 : nullptr;
-  _impl_.run_ = (CheckHasBit(cached_has_bits, 0x00000002U))
+  _impl_.run_ = (CheckHasBit(cached_has_bits, 0x00000001U))
                  ? Super_::CopyConstruct(arena, *from._impl_.run_)
                  : nullptr;
 
@@ -15412,12 +13498,7 @@ PROTOBUF_NDEBUG_INLINE GetWeatherSyncRunResponse::Impl_::Impl_(
 
 inline void GetWeatherSyncRunResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, header_),
-           0,
-           offsetof(Impl_, run_) -
-               offsetof(Impl_, header_) +
-               sizeof(Impl_::run_));
+  _impl_.run_ = {};
 }
 GetWeatherSyncRunResponse::~GetWeatherSyncRunResponse() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse)
@@ -15430,7 +13511,6 @@ inline void GetWeatherSyncRunResponse::SharedDtor(MessageLite& self) {
   }
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
-  delete this_._impl_.header_;
   delete this_._impl_.run_;
   this_._impl_.~Impl_();
 }
@@ -15468,15 +13548,9 @@ PROTOBUF_NOINLINE void GetWeatherSyncRunResponse::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      ABSL_DCHECK(this_._impl_.header_ != nullptr);
-      this_._impl_.header_->Clear();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      ABSL_DCHECK(this_._impl_.run_ != nullptr);
-      this_._impl_.run_->Clear();
-    }
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    ABSL_DCHECK(this_._impl_.run_ != nullptr);
+    this_._impl_.run_->Clear();
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -15501,17 +13575,10 @@ PROTOBUF_NOINLINE void GetWeatherSyncRunResponse::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        1, *this_._impl_.header_, this_._impl_.header_->GetCachedSize(), target,
-        stream);
-  }
-
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
-  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        2, *this_._impl_.run_, this_._impl_.run_->GetCachedSize(), target,
+        1, *this_._impl_.run_, this_._impl_.run_->GetCachedSize(), target,
         stream);
   }
 
@@ -15536,16 +13603,10 @@ PROTOBUF_NOINLINE void GetWeatherSyncRunResponse::Clear() {
 
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+   {
+    // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
+    cached_has_bits = this_._impl_._has_bits_[0];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.header_);
-    }
-    // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.run_);
     }
@@ -15568,22 +13629,12 @@ void GetWeatherSyncRunResponse::MergeImpl(::google::protobuf::MessageLite& to_ms
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      ABSL_DCHECK(from._impl_.header_ != nullptr);
-      if (_this->_impl_.header_ == nullptr) {
-        _this->_impl_.header_ = Super_::CopyConstruct(arena, *from._impl_.header_);
-      } else {
-        _this->_impl_.header_->MergeFrom(*from._impl_.header_);
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      ABSL_DCHECK(from._impl_.run_ != nullptr);
-      if (_this->_impl_.run_ == nullptr) {
-        _this->_impl_.run_ = Super_::CopyConstruct(arena, *from._impl_.run_);
-      } else {
-        _this->_impl_.run_->MergeFrom(*from._impl_.run_);
-      }
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    ABSL_DCHECK(from._impl_.run_ != nullptr);
+    if (_this->_impl_.run_ == nullptr) {
+      _this->_impl_.run_ = Super_::CopyConstruct(arena, *from._impl_.run_);
+    } else {
+      _this->_impl_.run_->MergeFrom(*from._impl_.run_);
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -15603,12 +13654,7 @@ void GetWeatherSyncRunResponse::InternalSwap(GetWeatherSyncRunResponse* PROTOBUF
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.run_)
-      + sizeof(GetWeatherSyncRunResponse::_impl_.run_)
-      - PROTOBUF_FIELD_OFFSET(GetWeatherSyncRunResponse, _impl_.header_)>(
-          reinterpret_cast<char*>(&_impl_.header_),
-          reinterpret_cast<char*>(&other->_impl_.header_));
+  swap(_impl_.run_, other->_impl_.run_);
 }
 
 ::google::protobuf::Metadata GetWeatherSyncRunResponse::GetMetadata() const {
@@ -16311,10 +14357,6 @@ BatchSyncWeatherResponse::BatchSyncWeatherResponse(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.header_ = (CheckHasBit(cached_has_bits, 0x00000004U))
-                 ? Super_::CopyConstruct(arena, *from._impl_.header_)
-                 : nullptr;
   ::memcpy(reinterpret_cast<char*>(&_impl_) +
                offsetof(Impl_, status_),
            reinterpret_cast<const char*>(&from._impl_) +
@@ -16338,10 +14380,10 @@ PROTOBUF_NDEBUG_INLINE BatchSyncWeatherResponse::Impl_::Impl_(
 inline void BatchSyncWeatherResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, header_),
+               offsetof(Impl_, status_),
            0,
            offsetof(Impl_, task_failed_) -
-               offsetof(Impl_, header_) +
+               offsetof(Impl_, status_) +
                sizeof(Impl_::task_failed_));
 }
 BatchSyncWeatherResponse::~BatchSyncWeatherResponse() {
@@ -16356,7 +14398,6 @@ inline void BatchSyncWeatherResponse::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.run_id_.Destroy();
-  delete this_._impl_.header_;
   this_._impl_.~Impl_();
 }
 
@@ -16393,19 +14434,15 @@ PROTOBUF_NOINLINE void BatchSyncWeatherResponse::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       _impl_.partial_errors_.Clear();
     }
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       this_._impl_.run_id_.ClearNonDefaultToEmpty();
     }
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      ABSL_DCHECK(this_._impl_.header_ != nullptr);
-      this_._impl_.header_->Clear();
-    }
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x00000038U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001cU)) {
     ::memset(&this_._impl_.status_, 0,
              static_cast<::size_t>(
                  reinterpret_cast<char*>(&this_._impl_.task_failed_) -
@@ -16435,58 +14472,51 @@ PROTOBUF_NOINLINE void BatchSyncWeatherResponse::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        1, *this_._impl_.header_, this_._impl_.header_->GetCachedSize(), target,
-        stream);
-  }
-
-  // string run_id = 2 [json_name = "run_id"];
+  // string run_id = 1 [json_name = "run_id"];
   if (CheckHasBit(cached_has_bits, 0x00000002U)) {
     if (!this_._internal_run_id().empty()) {
       const ::std::string& _s = this_._internal_run_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.run_id");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
+      target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
 
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
-  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
     if (this_._internal_status() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          3, this_._internal_status(), target);
+          2, this_._internal_status(), target);
     }
   }
 
-  // int32 task_total = 4 [json_name = "task_total"];
-  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+  // int32 task_total = 3 [json_name = "task_total"];
+  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
     if (this_._internal_task_total() != 0) {
       target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<4>(
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<3>(
               stream, this_._internal_task_total(), target);
     }
   }
 
-  // int32 task_failed = 5 [json_name = "task_failed"];
-  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+  // int32 task_failed = 4 [json_name = "task_failed"];
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
     if (this_._internal_task_failed() != 0) {
       target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<5>(
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<4>(
               stream, this_._internal_task_failed(), target);
     }
   }
 
-  // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];
+  // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     for (unsigned i = 0, n = static_cast<unsigned>(
                              this_._internal_partial_errors_size());
          i < n; i++) {
       const auto& repfield = this_._internal_partial_errors().Get(i);
       target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          6, repfield, repfield.GetCachedSize(), target,
+          5, repfield, repfield.GetCachedSize(), target,
           stream);
     }
   }
@@ -16514,42 +14544,37 @@ PROTOBUF_NOINLINE void BatchSyncWeatherResponse::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000003fU)) {
-    // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
+    // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       total_size += 1UL * this_._internal_partial_errors_size();
       for (const auto& msg : this_._internal_partial_errors()) {
         total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
       }
     }
-    // string run_id = 2 [json_name = "run_id"];
+    // string run_id = 1 [json_name = "run_id"];
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       if (!this_._internal_run_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_run_id());
       }
     }
-    // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+    // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.header_);
-    }
-    // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       if (this_._internal_status() != 0) {
         total_size += 1 +
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_status());
       }
     }
-    // int32 task_total = 4 [json_name = "task_total"];
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    // int32 task_total = 3 [json_name = "task_total"];
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       if (this_._internal_task_total() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
             this_._internal_task_total());
       }
     }
-    // int32 task_failed = 5 [json_name = "task_failed"];
-    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+    // int32 task_failed = 4 [json_name = "task_failed"];
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
       if (this_._internal_task_failed() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
             this_._internal_task_failed());
@@ -16574,7 +14599,7 @@ void BatchSyncWeatherResponse::MergeImpl(::google::protobuf::MessageLite& to_msg
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000003fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       _this->_internal_mutable_partial_errors()->InternalMergeFromWithArena(
           ::google::protobuf::MessageLite::internal_visibility(), arena,
@@ -16590,24 +14615,16 @@ void BatchSyncWeatherResponse::MergeImpl(::google::protobuf::MessageLite& to_msg
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      ABSL_DCHECK(from._impl_.header_ != nullptr);
-      if (_this->_impl_.header_ == nullptr) {
-        _this->_impl_.header_ = Super_::CopyConstruct(arena, *from._impl_.header_);
-      } else {
-        _this->_impl_.header_->MergeFrom(*from._impl_.header_);
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       if (from._internal_status() != 0) {
         _this->_impl_.status_ = from._impl_.status_;
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       if (from._internal_task_total() != 0) {
         _this->_impl_.task_total_ = from._impl_.task_total_;
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
       if (from._internal_task_failed() != 0) {
         _this->_impl_.task_failed_ = from._impl_.task_failed_;
       }
@@ -16637,9 +14654,9 @@ void BatchSyncWeatherResponse::InternalSwap(BatchSyncWeatherResponse* PROTOBUF_R
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.task_failed_)
       + sizeof(BatchSyncWeatherResponse::_impl_.task_failed_)
-      - PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.header_)>(
-          reinterpret_cast<char*>(&_impl_.header_),
-          reinterpret_cast<char*>(&other->_impl_.header_));
+      - PROTOBUF_FIELD_OFFSET(BatchSyncWeatherResponse, _impl_.status_)>(
+          reinterpret_cast<char*>(&_impl_.status_),
+          reinterpret_cast<char*>(&other->_impl_.status_));
 }
 
 ::google::protobuf::Metadata BatchSyncWeatherResponse::GetMetadata() const {
@@ -16876,10 +14893,6 @@ RetryFailedWeatherSyncResponse::RetryFailedWeatherSyncResponse(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.header_ = (CheckHasBit(cached_has_bits, 0x00000002U))
-                 ? Super_::CopyConstruct(arena, *from._impl_.header_)
-                 : nullptr;
   _impl_.status_ = from._impl_.status_;
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
@@ -16891,12 +14904,7 @@ PROTOBUF_NDEBUG_INLINE RetryFailedWeatherSyncResponse::Impl_::Impl_(
 
 inline void RetryFailedWeatherSyncResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, header_),
-           0,
-           offsetof(Impl_, status_) -
-               offsetof(Impl_, header_) +
-               sizeof(Impl_::status_));
+  _impl_.status_ = {};
 }
 RetryFailedWeatherSyncResponse::~RetryFailedWeatherSyncResponse() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
@@ -16910,7 +14918,6 @@ inline void RetryFailedWeatherSyncResponse::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.run_id_.Destroy();
-  delete this_._impl_.header_;
   this_._impl_.~Impl_();
 }
 
@@ -16947,14 +14954,8 @@ PROTOBUF_NOINLINE void RetryFailedWeatherSyncResponse::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      this_._impl_.run_id_.ClearNonDefaultToEmpty();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      ABSL_DCHECK(this_._impl_.header_ != nullptr);
-      this_._impl_.header_->Clear();
-    }
+  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    this_._impl_.run_id_.ClearNonDefaultToEmpty();
   }
   this_._impl_.status_ = 0;
   _impl_._has_bits_.Clear();
@@ -16980,29 +14981,22 @@ PROTOBUF_NOINLINE void RetryFailedWeatherSyncResponse::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        1, *this_._impl_.header_, this_._impl_.header_->GetCachedSize(), target,
-        stream);
-  }
-
-  // string run_id = 2 [json_name = "run_id"];
+  // string run_id = 1 [json_name = "run_id"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     if (!this_._internal_run_id().empty()) {
       const ::std::string& _s = this_._internal_run_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.run_id");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
+      target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
 
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
-  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
     if (this_._internal_status() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          3, this_._internal_status(), target);
+          2, this_._internal_status(), target);
     }
   }
 
@@ -17029,21 +15023,16 @@ PROTOBUF_NOINLINE void RetryFailedWeatherSyncResponse::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
-    // string run_id = 2 [json_name = "run_id"];
+  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
+    // string run_id = 1 [json_name = "run_id"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!this_._internal_run_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_run_id());
       }
     }
-    // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+    // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.header_);
-    }
-    // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
       if (this_._internal_status() != 0) {
         total_size += 1 +
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_status());
@@ -17061,14 +15050,13 @@ void RetryFailedWeatherSyncResponse::MergeImpl(::google::protobuf::MessageLite& 
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     from.CheckHasBitConsistency();
   }
-  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!from._internal_run_id().empty()) {
         _this->_internal_set_run_id(from._internal_run_id());
@@ -17079,14 +15067,6 @@ void RetryFailedWeatherSyncResponse::MergeImpl(::google::protobuf::MessageLite& 
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-      ABSL_DCHECK(from._impl_.header_ != nullptr);
-      if (_this->_impl_.header_ == nullptr) {
-        _this->_impl_.header_ = Super_::CopyConstruct(arena, *from._impl_.header_);
-      } else {
-        _this->_impl_.header_->MergeFrom(*from._impl_.header_);
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
       if (from._internal_status() != 0) {
         _this->_impl_.status_ = from._impl_.status_;
       }
@@ -17112,12 +15092,7 @@ void RetryFailedWeatherSyncResponse::InternalSwap(RetryFailedWeatherSyncResponse
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.run_id_, &other->_impl_.run_id_, arena);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.status_)
-      + sizeof(RetryFailedWeatherSyncResponse::_impl_.status_)
-      - PROTOBUF_FIELD_OFFSET(RetryFailedWeatherSyncResponse, _impl_.header_)>(
-          reinterpret_cast<char*>(&_impl_.header_),
-          reinterpret_cast<char*>(&other->_impl_.header_));
+  swap(_impl_.status_, other->_impl_.status_);
 }
 
 ::google::protobuf::Metadata RetryFailedWeatherSyncResponse::GetMetadata() const {
@@ -17434,10 +15409,6 @@ CreateWeatherExcelImportJobResponse::CreateWeatherExcelImportJobResponse(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.header_ = (CheckHasBit(cached_has_bits, 0x00000004U))
-                 ? Super_::CopyConstruct(arena, *from._impl_.header_)
-                 : nullptr;
   ::memcpy(reinterpret_cast<char*>(&_impl_) +
                offsetof(Impl_, accepted_rows_),
            reinterpret_cast<const char*>(&from._impl_) +
@@ -17457,10 +15428,10 @@ PROTOBUF_NDEBUG_INLINE CreateWeatherExcelImportJobResponse::Impl_::Impl_(
 inline void CreateWeatherExcelImportJobResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, header_),
+               offsetof(Impl_, accepted_rows_),
            0,
            offsetof(Impl_, failed_rows_) -
-               offsetof(Impl_, header_) +
+               offsetof(Impl_, accepted_rows_) +
                sizeof(Impl_::failed_rows_));
 }
 CreateWeatherExcelImportJobResponse::~CreateWeatherExcelImportJobResponse() {
@@ -17476,7 +15447,6 @@ inline void CreateWeatherExcelImportJobResponse::SharedDtor(MessageLite& self) {
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.job_id_.Destroy();
   this_._impl_.error_report_url_.Destroy();
-  delete this_._impl_.header_;
   this_._impl_.~Impl_();
 }
 
@@ -17513,19 +15483,15 @@ PROTOBUF_NOINLINE void CreateWeatherExcelImportJobResponse::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x00000003U)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       this_._impl_.job_id_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       this_._impl_.error_report_url_.ClearNonDefaultToEmpty();
     }
-    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      ABSL_DCHECK(this_._impl_.header_ != nullptr);
-      this_._impl_.header_->Clear();
-    }
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x00000018U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000000cU)) {
     ::memset(&this_._impl_.accepted_rows_, 0,
              static_cast<::size_t>(
                  reinterpret_cast<char*>(&this_._impl_.failed_rows_) -
@@ -17555,43 +15521,36 @@ PROTOBUF_NOINLINE void CreateWeatherExcelImportJobResponse::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        1, *this_._impl_.header_, this_._impl_.header_->GetCachedSize(), target,
-        stream);
-  }
-
-  // string job_id = 2 [json_name = "job_id"];
+  // string job_id = 1 [json_name = "job_id"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     if (!this_._internal_job_id().empty()) {
       const ::std::string& _s = this_._internal_job_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.job_id");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
+      target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
 
-  // optional int32 accepted_rows = 3 [json_name = "accepted_rows"];
-  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+  // optional int32 accepted_rows = 2 [json_name = "accepted_rows"];
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
     target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<3>(
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<2>(
             stream, this_._internal_accepted_rows(), target);
   }
 
-  // optional int32 failed_rows = 4 [json_name = "failed_rows"];
-  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+  // optional int32 failed_rows = 3 [json_name = "failed_rows"];
+  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
     target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<4>(
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<3>(
             stream, this_._internal_failed_rows(), target);
   }
 
-  // optional string error_report_url = 5 [json_name = "error_report_url"];
+  // optional string error_report_url = 4 [json_name = "error_report_url"];
   if (CheckHasBit(cached_has_bits, 0x00000002U)) {
     const ::std::string& _s = this_._internal_error_report_url();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.error_report_url");
-    target = stream->WriteStringMaybeAliased(5, _s, target);
+    target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -17617,31 +15576,26 @@ PROTOBUF_NOINLINE void CreateWeatherExcelImportJobResponse::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
-    // string job_id = 2 [json_name = "job_id"];
+  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
+    // string job_id = 1 [json_name = "job_id"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!this_._internal_job_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_job_id());
       }
     }
-    // optional string error_report_url = 5 [json_name = "error_report_url"];
+    // optional string error_report_url = 4 [json_name = "error_report_url"];
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_error_report_url());
     }
-    // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
+    // optional int32 accepted_rows = 2 [json_name = "accepted_rows"];
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.header_);
-    }
-    // optional int32 accepted_rows = 3 [json_name = "accepted_rows"];
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this_._internal_accepted_rows());
     }
-    // optional int32 failed_rows = 4 [json_name = "failed_rows"];
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    // optional int32 failed_rows = 3 [json_name = "failed_rows"];
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this_._internal_failed_rows());
     }
@@ -17657,14 +15611,13 @@ void CreateWeatherExcelImportJobResponse::MergeImpl(::google::protobuf::MessageL
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     from.CheckHasBitConsistency();
   }
-  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000001fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!from._internal_job_id().empty()) {
         _this->_internal_set_job_id(from._internal_job_id());
@@ -17678,17 +15631,9 @@ void CreateWeatherExcelImportJobResponse::MergeImpl(::google::protobuf::MessageL
       _this->_internal_set_error_report_url(from._internal_error_report_url());
     }
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      ABSL_DCHECK(from._impl_.header_ != nullptr);
-      if (_this->_impl_.header_ == nullptr) {
-        _this->_impl_.header_ = Super_::CopyConstruct(arena, *from._impl_.header_);
-      } else {
-        _this->_impl_.header_->MergeFrom(*from._impl_.header_);
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       _this->_impl_.accepted_rows_ = from._impl_.accepted_rows_;
     }
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       _this->_impl_.failed_rows_ = from._impl_.failed_rows_;
     }
   }
@@ -17716,9 +15661,9 @@ void CreateWeatherExcelImportJobResponse::InternalSwap(CreateWeatherExcelImportJ
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.failed_rows_)
       + sizeof(CreateWeatherExcelImportJobResponse::_impl_.failed_rows_)
-      - PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.header_)>(
-          reinterpret_cast<char*>(&_impl_.header_),
-          reinterpret_cast<char*>(&other->_impl_.header_));
+      - PROTOBUF_FIELD_OFFSET(CreateWeatherExcelImportJobResponse, _impl_.accepted_rows_)>(
+          reinterpret_cast<char*>(&_impl_.accepted_rows_),
+          reinterpret_cast<char*>(&other->_impl_.accepted_rows_));
 }
 
 ::google::protobuf::Metadata CreateWeatherExcelImportJobResponse::GetMetadata() const {
@@ -17821,10 +15766,6 @@ GetWeatherExcelTemplateResponse::GetWeatherExcelTemplateResponse(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.header_ = (CheckHasBit(cached_has_bits, 0x00000008U))
-                 ? Super_::CopyConstruct(arena, *from._impl_.header_)
-                 : nullptr;
 
   // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse)
 }
@@ -17837,7 +15778,6 @@ PROTOBUF_NDEBUG_INLINE GetWeatherExcelTemplateResponse::Impl_::Impl_(
 
 inline void GetWeatherExcelTemplateResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.header_ = {};
 }
 GetWeatherExcelTemplateResponse::~GetWeatherExcelTemplateResponse() {
   // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse)
@@ -17853,7 +15793,6 @@ inline void GetWeatherExcelTemplateResponse::SharedDtor(MessageLite& self) {
   this_._impl_.file_.Destroy();
   this_._impl_.filename_.Destroy();
   this_._impl_.content_type_.Destroy();
-  delete this_._impl_.header_;
   this_._impl_.~Impl_();
 }
 
@@ -17890,7 +15829,7 @@ PROTOBUF_NOINLINE void GetWeatherExcelTemplateResponse::Clear() {
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       this_._impl_.file_.ClearNonDefaultToEmpty();
     }
@@ -17899,10 +15838,6 @@ PROTOBUF_NOINLINE void GetWeatherExcelTemplateResponse::Clear() {
     }
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
       this_._impl_.content_type_.ClearNonDefaultToEmpty();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      ABSL_DCHECK(this_._impl_.header_ != nullptr);
-      this_._impl_.header_->Clear();
     }
   }
   _impl_._has_bits_.Clear();
@@ -17928,38 +15863,31 @@ PROTOBUF_NOINLINE void GetWeatherExcelTemplateResponse::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        1, *this_._impl_.header_, this_._impl_.header_->GetCachedSize(), target,
-        stream);
-  }
-
-  // bytes file = 2 [json_name = "file"];
+  // bytes file = 1 [json_name = "file"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
     if (!this_._internal_file().empty()) {
       const ::std::string& _s = this_._internal_file();
-      target = stream->WriteBytesMaybeAliased(2, _s, target);
+      target = stream->WriteBytesMaybeAliased(1, _s, target);
     }
   }
 
-  // string filename = 3 [json_name = "filename"];
+  // string filename = 2 [json_name = "filename"];
   if (CheckHasBit(cached_has_bits, 0x00000002U)) {
     if (!this_._internal_filename().empty()) {
       const ::std::string& _s = this_._internal_filename();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.filename");
-      target = stream->WriteStringMaybeAliased(3, _s, target);
+      target = stream->WriteStringMaybeAliased(2, _s, target);
     }
   }
 
-  // string content_type = 4 [json_name = "content_type"];
+  // string content_type = 3 [json_name = "content_type"];
   if (CheckHasBit(cached_has_bits, 0x00000004U)) {
     if (!this_._internal_content_type().empty()) {
       const ::std::string& _s = this_._internal_content_type();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.content_type");
-      target = stream->WriteStringMaybeAliased(4, _s, target);
+      target = stream->WriteStringMaybeAliased(3, _s, target);
     }
   }
 
@@ -17986,32 +15914,27 @@ PROTOBUF_NOINLINE void GetWeatherExcelTemplateResponse::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
-    // bytes file = 2 [json_name = "file"];
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+    // bytes file = 1 [json_name = "file"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!this_._internal_file().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
                                         this_._internal_file());
       }
     }
-    // string filename = 3 [json_name = "filename"];
+    // string filename = 2 [json_name = "filename"];
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       if (!this_._internal_filename().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_filename());
       }
     }
-    // string content_type = 4 [json_name = "content_type"];
+    // string content_type = 3 [json_name = "content_type"];
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
       if (!this_._internal_content_type().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_content_type());
       }
-    }
-    // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.header_);
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -18025,14 +15948,13 @@ void GetWeatherExcelTemplateResponse::MergeImpl(::google::protobuf::MessageLite&
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     from.CheckHasBitConsistency();
   }
-  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (BatchCheckHasBit(cached_has_bits, 0x0000000fU)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
       if (!from._internal_file().empty()) {
         _this->_internal_set_file(from._internal_file());
@@ -18060,14 +15982,6 @@ void GetWeatherExcelTemplateResponse::MergeImpl(::google::protobuf::MessageLite&
         }
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      ABSL_DCHECK(from._impl_.header_ != nullptr);
-      if (_this->_impl_.header_ == nullptr) {
-        _this->_impl_.header_ = Super_::CopyConstruct(arena, *from._impl_.header_);
-      } else {
-        _this->_impl_.header_->MergeFrom(*from._impl_.header_);
-      }
-    }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
@@ -18091,7 +16005,6 @@ void GetWeatherExcelTemplateResponse::InternalSwap(GetWeatherExcelTemplateRespon
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.file_, &other->_impl_.file_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.filename_, &other->_impl_.filename_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.content_type_, &other->_impl_.content_type_, arena);
-  swap(_impl_.header_, other->_impl_.header_);
 }
 
 ::google::protobuf::Metadata GetWeatherExcelTemplateResponse::GetMetadata() const {
@@ -19086,839 +16999,6 @@ void UploadBackfillFileResponse::InternalSwap(UploadBackfillFileResponse* PROTOB
 }
 
 ::google::protobuf::Metadata UploadBackfillFileResponse::GetMetadata() const {
-  return Super_::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-BatchPullPowerRequest::BatchPullPowerRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, BatchPullPowerRequest_get_class_data()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
-}
-PROTOBUF_NDEBUG_INLINE BatchPullPowerRequest::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::data_readiness::BatchPullPowerRequest& from_msg)
-      : _has_bits_{from._has_bits_},
-        registration_ids_ {
-          visibility, ::_pbi::InternalMetadataOffset::Build<
-              ::fusion::ai::proto::data_readiness::BatchPullPowerRequest,
-              PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchPullPowerRequest, _impl_.registration_ids_)>()
-          , arena, from.registration_ids_
-        }
-     {}
-
-BatchPullPowerRequest::BatchPullPowerRequest(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const BatchPullPowerRequest& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, BatchPullPowerRequest_get_class_data()) {
-
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  BatchPullPowerRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
-}
-PROTOBUF_NDEBUG_INLINE BatchPullPowerRequest::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : registration_ids_ { visibility, ::_pbi::InternalMetadataOffset::Build<
-            ::fusion::ai::proto::data_readiness::BatchPullPowerRequest,
-            PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::data_readiness::BatchPullPowerRequest, _impl_.registration_ids_)>()
-         }
-     {}
-
-inline void BatchPullPowerRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-BatchPullPowerRequest::~BatchPullPowerRequest() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
-  SharedDtor(*this);
-}
-inline void BatchPullPowerRequest::SharedDtor(MessageLite& self) {
-  BatchPullPowerRequest& this_ = static_cast<BatchPullPowerRequest&>(self);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.~Impl_();
-}
-
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull BatchPullPowerRequest_class_data_ =
-        BatchPullPowerRequest::InternalGenerateClassData_(BatchPullPowerRequest_globals_._default);
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-BatchPullPowerRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&BatchPullPowerRequest_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(BatchPullPowerRequest_class_data_.tc_table);
-  return BatchPullPowerRequest_class_data_.base();
-}
-#else
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-BatchPullPowerRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&BatchPullPowerRequest_globals_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&BatchPullPowerRequest_globals_));
-  return BatchPullPowerRequest_globals_.GetClassData();
-}
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const BatchPullPowerRequest::ParseTableT_
-    BatchPullPowerRequest::_table_ =
-        BatchPullPowerRequest::InternalGenerateParseTable_(BatchPullPowerRequest_class_data_.base());
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void BatchPullPowerRequest::Clear() {
-  auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    _impl_.registration_ids_.Clear();
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL BatchPullPowerRequest::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const BatchPullPowerRequest& this_ = static_cast<const BatchPullPowerRequest&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL BatchPullPowerRequest::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const BatchPullPowerRequest& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  // repeated string registration_ids = 1 [json_name = "registration_ids", (.buf.validate.field) = {
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    for (int i = 0, n = this_._internal_registration_ids_size(); i < n; ++i) {
-      const auto& s = this_._internal_registration_ids().Get(i);
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.BatchPullPowerRequest.registration_ids");
-      target = stream->WriteString(1, s, target);
-    }
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t BatchPullPowerRequest::ByteSizeLong(const MessageLite& base) {
-  const BatchPullPowerRequest& this_ = static_cast<const BatchPullPowerRequest&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t BatchPullPowerRequest::ByteSizeLong() const {
-  const BatchPullPowerRequest& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-   {
-    // repeated string registration_ids = 1 [json_name = "registration_ids", (.buf.validate.field) = {
-    cached_has_bits = this_._impl_._has_bits_[0];
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      total_size +=
-          1 * ::google::protobuf::internal::FromIntSize(this_._internal_registration_ids().size());
-      for (int i = 0, n = this_._internal_registration_ids().size(); i < n; ++i) {
-        total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-            this_._internal_registration_ids().Get(i));
-      }
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void BatchPullPowerRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
-                      const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<BatchPullPowerRequest*>(&to_msg);
-  auto& from = static_cast<const BatchPullPowerRequest&>(from_msg);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    from.CheckHasBitConsistency();
-  }
-  ::google::protobuf::Arena* arena = _this->GetArena();
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    _this->_internal_mutable_registration_ids()->InternalMergeFromWithArena(
-        ::google::protobuf::MessageLite::internal_visibility(), arena,
-        from._internal_registration_ids());
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-}
-
-void BatchPullPowerRequest::CopyFrom(const BatchPullPowerRequest& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void BatchPullPowerRequest::InternalSwap(BatchPullPowerRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  _impl_.registration_ids_.InternalSwap(&other->_impl_.registration_ids_);
-}
-
-::google::protobuf::Metadata BatchPullPowerRequest::GetMetadata() const {
-  return Super_::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-BatchPullPowerResponse::BatchPullPowerResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, BatchPullPowerResponse_get_class_data()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
-}
-PROTOBUF_NDEBUG_INLINE BatchPullPowerResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::data_readiness::BatchPullPowerResponse& from_msg)
-      : _has_bits_{from._has_bits_},
-        run_id_(arena, from.run_id_) {}
-
-BatchPullPowerResponse::BatchPullPowerResponse(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const BatchPullPowerResponse& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, BatchPullPowerResponse_get_class_data()) {
-
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  BatchPullPowerResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
-}
-PROTOBUF_NDEBUG_INLINE BatchPullPowerResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : run_id_(arena) {}
-
-inline void BatchPullPowerResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-BatchPullPowerResponse::~BatchPullPowerResponse() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
-  SharedDtor(*this);
-}
-inline void BatchPullPowerResponse::SharedDtor(MessageLite& self) {
-  BatchPullPowerResponse& this_ = static_cast<BatchPullPowerResponse&>(self);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.run_id_.Destroy();
-  this_._impl_.~Impl_();
-}
-
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull BatchPullPowerResponse_class_data_ =
-        BatchPullPowerResponse::InternalGenerateClassData_(BatchPullPowerResponse_globals_._default);
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-BatchPullPowerResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&BatchPullPowerResponse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(BatchPullPowerResponse_class_data_.tc_table);
-  return BatchPullPowerResponse_class_data_.base();
-}
-#else
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-BatchPullPowerResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&BatchPullPowerResponse_globals_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&BatchPullPowerResponse_globals_));
-  return BatchPullPowerResponse_globals_.GetClassData();
-}
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const BatchPullPowerResponse::ParseTableT_
-    BatchPullPowerResponse::_table_ =
-        BatchPullPowerResponse::InternalGenerateParseTable_(BatchPullPowerResponse_class_data_.base());
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void BatchPullPowerResponse::Clear() {
-  auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    this_._impl_.run_id_.ClearNonDefaultToEmpty();
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL BatchPullPowerResponse::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const BatchPullPowerResponse& this_ = static_cast<const BatchPullPowerResponse&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL BatchPullPowerResponse::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const BatchPullPowerResponse& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  // string run_id = 1 [json_name = "run_id"];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    if (!this_._internal_run_id().empty()) {
-      const ::std::string& _s = this_._internal_run_id();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.BatchPullPowerResponse.run_id");
-      target = stream->WriteStringMaybeAliased(1, _s, target);
-    }
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t BatchPullPowerResponse::ByteSizeLong(const MessageLite& base) {
-  const BatchPullPowerResponse& this_ = static_cast<const BatchPullPowerResponse&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t BatchPullPowerResponse::ByteSizeLong() const {
-  const BatchPullPowerResponse& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-   {
-    // string run_id = 1 [json_name = "run_id"];
-    cached_has_bits = this_._impl_._has_bits_[0];
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      if (!this_._internal_run_id().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_run_id());
-      }
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void BatchPullPowerResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
-                      const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<BatchPullPowerResponse*>(&to_msg);
-  auto& from = static_cast<const BatchPullPowerResponse&>(from_msg);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    from.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    if (!from._internal_run_id().empty()) {
-      _this->_internal_set_run_id(from._internal_run_id());
-    } else {
-      if (_this->_impl_.run_id_.IsDefault()) {
-        _this->_internal_set_run_id("");
-      }
-    }
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-}
-
-void BatchPullPowerResponse::CopyFrom(const BatchPullPowerResponse& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void BatchPullPowerResponse::InternalSwap(BatchPullPowerResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  auto* arena = GetArena();
-  ABSL_DCHECK_EQ(arena, other->GetArena());
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.run_id_, &other->_impl_.run_id_, arena);
-}
-
-::google::protobuf::Metadata BatchPullPowerResponse::GetMetadata() const {
-  return Super_::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-RetryFailedPullPowerRequest::RetryFailedPullPowerRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, RetryFailedPullPowerRequest_get_class_data()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
-}
-PROTOBUF_NDEBUG_INLINE RetryFailedPullPowerRequest::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::data_readiness::RetryFailedPullPowerRequest& from_msg)
-      : _has_bits_{from._has_bits_},
-        run_id_(arena, from.run_id_) {}
-
-RetryFailedPullPowerRequest::RetryFailedPullPowerRequest(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const RetryFailedPullPowerRequest& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, RetryFailedPullPowerRequest_get_class_data()) {
-
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  RetryFailedPullPowerRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
-}
-PROTOBUF_NDEBUG_INLINE RetryFailedPullPowerRequest::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : run_id_(arena) {}
-
-inline void RetryFailedPullPowerRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-RetryFailedPullPowerRequest::~RetryFailedPullPowerRequest() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
-  SharedDtor(*this);
-}
-inline void RetryFailedPullPowerRequest::SharedDtor(MessageLite& self) {
-  RetryFailedPullPowerRequest& this_ = static_cast<RetryFailedPullPowerRequest&>(self);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.run_id_.Destroy();
-  this_._impl_.~Impl_();
-}
-
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull RetryFailedPullPowerRequest_class_data_ =
-        RetryFailedPullPowerRequest::InternalGenerateClassData_(RetryFailedPullPowerRequest_globals_._default);
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-RetryFailedPullPowerRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&RetryFailedPullPowerRequest_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(RetryFailedPullPowerRequest_class_data_.tc_table);
-  return RetryFailedPullPowerRequest_class_data_.base();
-}
-#else
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-RetryFailedPullPowerRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&RetryFailedPullPowerRequest_globals_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&RetryFailedPullPowerRequest_globals_));
-  return RetryFailedPullPowerRequest_globals_.GetClassData();
-}
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const RetryFailedPullPowerRequest::ParseTableT_
-    RetryFailedPullPowerRequest::_table_ =
-        RetryFailedPullPowerRequest::InternalGenerateParseTable_(RetryFailedPullPowerRequest_class_data_.base());
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void RetryFailedPullPowerRequest::Clear() {
-  auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    this_._impl_.run_id_.ClearNonDefaultToEmpty();
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL RetryFailedPullPowerRequest::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const RetryFailedPullPowerRequest& this_ = static_cast<const RetryFailedPullPowerRequest&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL RetryFailedPullPowerRequest::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const RetryFailedPullPowerRequest& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  // optional string run_id = 1 [json_name = "run_id", (.buf.validate.field) = {
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    const ::std::string& _s = this_._internal_run_id();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest.run_id");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t RetryFailedPullPowerRequest::ByteSizeLong(const MessageLite& base) {
-  const RetryFailedPullPowerRequest& this_ = static_cast<const RetryFailedPullPowerRequest&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t RetryFailedPullPowerRequest::ByteSizeLong() const {
-  const RetryFailedPullPowerRequest& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-   {
-    // optional string run_id = 1 [json_name = "run_id", (.buf.validate.field) = {
-    cached_has_bits = this_._impl_._has_bits_[0];
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_run_id());
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void RetryFailedPullPowerRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
-                      const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<RetryFailedPullPowerRequest*>(&to_msg);
-  auto& from = static_cast<const RetryFailedPullPowerRequest&>(from_msg);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    from.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    _this->_internal_set_run_id(from._internal_run_id());
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-}
-
-void RetryFailedPullPowerRequest::CopyFrom(const RetryFailedPullPowerRequest& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void RetryFailedPullPowerRequest::InternalSwap(RetryFailedPullPowerRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  auto* arena = GetArena();
-  ABSL_DCHECK_EQ(arena, other->GetArena());
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.run_id_, &other->_impl_.run_id_, arena);
-}
-
-::google::protobuf::Metadata RetryFailedPullPowerRequest::GetMetadata() const {
-  return Super_::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-RetryFailedPullPowerResponse::RetryFailedPullPowerResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, RetryFailedPullPowerResponse_get_class_data()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
-}
-PROTOBUF_NDEBUG_INLINE RetryFailedPullPowerResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::data_readiness::RetryFailedPullPowerResponse& from_msg)
-      : _has_bits_{from._has_bits_},
-        run_id_(arena, from.run_id_) {}
-
-RetryFailedPullPowerResponse::RetryFailedPullPowerResponse(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const RetryFailedPullPowerResponse& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, RetryFailedPullPowerResponse_get_class_data()) {
-
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : Super_(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  RetryFailedPullPowerResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
-}
-PROTOBUF_NDEBUG_INLINE RetryFailedPullPowerResponse::Impl_::Impl_(
-    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
-    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : run_id_(arena) {}
-
-inline void RetryFailedPullPowerResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-RetryFailedPullPowerResponse::~RetryFailedPullPowerResponse() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
-  SharedDtor(*this);
-}
-inline void RetryFailedPullPowerResponse::SharedDtor(MessageLite& self) {
-  RetryFailedPullPowerResponse& this_ = static_cast<RetryFailedPullPowerResponse&>(self);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.run_id_.Destroy();
-  this_._impl_.~Impl_();
-}
-
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull RetryFailedPullPowerResponse_class_data_ =
-        RetryFailedPullPowerResponse::InternalGenerateClassData_(RetryFailedPullPowerResponse_globals_._default);
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-RetryFailedPullPowerResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&RetryFailedPullPowerResponse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(RetryFailedPullPowerResponse_class_data_.tc_table);
-  return RetryFailedPullPowerResponse_class_data_.base();
-}
-#else
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-RetryFailedPullPowerResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&RetryFailedPullPowerResponse_globals_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&RetryFailedPullPowerResponse_globals_));
-  return RetryFailedPullPowerResponse_globals_.GetClassData();
-}
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const RetryFailedPullPowerResponse::ParseTableT_
-    RetryFailedPullPowerResponse::_table_ =
-        RetryFailedPullPowerResponse::InternalGenerateParseTable_(RetryFailedPullPowerResponse_class_data_.base());
-#endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void RetryFailedPullPowerResponse::Clear() {
-  auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    this_._impl_.run_id_.ClearNonDefaultToEmpty();
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL RetryFailedPullPowerResponse::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const RetryFailedPullPowerResponse& this_ = static_cast<const RetryFailedPullPowerResponse&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL RetryFailedPullPowerResponse::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const RetryFailedPullPowerResponse& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    this_.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = this_._impl_._has_bits_[0];
-  // string run_id = 1 [json_name = "run_id"];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    if (!this_._internal_run_id().empty()) {
-      const ::std::string& _s = this_._internal_run_id();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse.run_id");
-      target = stream->WriteStringMaybeAliased(1, _s, target);
-    }
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t RetryFailedPullPowerResponse::ByteSizeLong(const MessageLite& base) {
-  const RetryFailedPullPowerResponse& this_ = static_cast<const RetryFailedPullPowerResponse&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t RetryFailedPullPowerResponse::ByteSizeLong() const {
-  const RetryFailedPullPowerResponse& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits [[maybe_unused]] = 0;
-
-   {
-    // string run_id = 1 [json_name = "run_id"];
-    cached_has_bits = this_._impl_._has_bits_[0];
-    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      if (!this_._internal_run_id().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_run_id());
-      }
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void RetryFailedPullPowerResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
-                      const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<RetryFailedPullPowerResponse*>(&to_msg);
-  auto& from = static_cast<const RetryFailedPullPowerResponse&>(from_msg);
-  if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
-    from.CheckHasBitConsistency();
-  }
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    if (!from._internal_run_id().empty()) {
-      _this->_internal_set_run_id(from._internal_run_id());
-    } else {
-      if (_this->_impl_.run_id_.IsDefault()) {
-        _this->_internal_set_run_id("");
-      }
-    }
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-}
-
-void RetryFailedPullPowerResponse::CopyFrom(const RetryFailedPullPowerResponse& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void RetryFailedPullPowerResponse::InternalSwap(RetryFailedPullPowerResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  auto* arena = GetArena();
-  ABSL_DCHECK_EQ(arena, other->GetArena());
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.run_id_, &other->_impl_.run_id_, arena);
-}
-
-::google::protobuf::Metadata RetryFailedPullPowerResponse::GetMetadata() const {
   return Super_::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)

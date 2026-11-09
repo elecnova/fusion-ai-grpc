@@ -11,32 +11,17 @@ public interface ListDataSiteRowsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  boolean hasHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder();
-
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];</code>
+   * <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];</code>
    * @return Whether the page field is set.
    */
   boolean hasPage();
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];</code>
+   * <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];</code>
    * @return The page.
    */
   com.fusion.ai.proto.data_readiness.DataSiteRowPage getPage();
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];</code>
+   * <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];</code>
    */
   com.fusion.ai.proto.data_readiness.DataSiteRowPageOrBuilder getPageOrBuilder();
 }

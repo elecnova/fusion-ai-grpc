@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * DataSiteRow 矩阵行。天气列仅光伏有值；原始数据粒度固定 5min，不再下发。
+ *
  * Generated from protobuf message <code>fusion.ai.proto.data_readiness.DataSiteRow</code>
  */
 class DataSiteRow extends \Google\Protobuf\Internal\Message
@@ -35,43 +37,39 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
      */
     protected $data_source = 0;
     /**
-     * Generated from protobuf field <code>int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];</code>
-     */
-    protected $primary_granularity_min = 0;
-    /**
-     * Generated from protobuf field <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+     * Generated from protobuf field <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
      */
     protected $coverage_ratio_7d = null;
     /**
-     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     private $trend_7d;
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
      */
-    protected $weather_status = 0;
+    protected $weather_status = null;
     /**
-     * Generated from protobuf field <code>string weather_display = 10 [json_name = "weather_display"];</code>
+     * Generated from protobuf field <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
      */
-    protected $weather_display = '';
+    protected $weather_display = null;
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      */
     protected $last_push_at = null;
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      */
     protected $last_ingest_at = null;
     /**
-     * Generated from protobuf field <code>int32 gap_points_7d = 13 [json_name = "gap_points_7d"];</code>
+     * Generated from protobuf field <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      */
     protected $gap_points_7d = 0;
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
      */
     protected $readiness_status = 0;
     /**
-     * Generated from protobuf field <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+     * Generated from protobuf field <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
      */
     protected $workbench_href = '';
 
@@ -86,7 +84,6 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
      *     @type string $site_name
      *     @type string $service_type
      *     @type int $data_source
-     *     @type int $primary_granularity_min
      *     @type float $coverage_ratio_7d
      *     @type \Fusion\Ai\Proto\DataReadiness\CoverageTrendPoint[] $trend_7d
      *     @type int $weather_status
@@ -215,29 +212,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];</code>
-     * @return int
-     */
-    public function getPrimaryGranularityMin()
-    {
-        return $this->primary_granularity_min;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setPrimaryGranularityMin(int $var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->primary_granularity_min = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+     * Generated from protobuf field <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
      * @return float
      */
     public function getCoverageRatio7D()
@@ -256,7 +231,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+     * Generated from protobuf field <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
      * @param float $var
      * @return $this
      */
@@ -268,7 +243,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      * @return RepeatedField<\Fusion\Ai\Proto\DataReadiness\CoverageTrendPoint>
      */
     public function getTrend7D()
@@ -277,7 +252,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      * @param \Fusion\Ai\Proto\DataReadiness\CoverageTrendPoint[] $var
      * @return $this
      */
@@ -290,16 +265,26 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\DataReadiness\WeatherStatus}
      */
     public function getWeatherStatus()
     {
-        return $this->weather_status;
+        return isset($this->weather_status) ? $this->weather_status : 0;
+    }
+
+    public function hasWeatherStatus()
+    {
+        return isset($this->weather_status);
+    }
+
+    public function clearWeatherStatus()
+    {
+        unset($this->weather_status);
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\DataReadiness\WeatherStatus}
      * @return $this
      */
@@ -312,16 +297,26 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string weather_display = 10 [json_name = "weather_display"];</code>
+     * Generated from protobuf field <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
      * @return string
      */
     public function getWeatherDisplay()
     {
-        return $this->weather_display;
+        return isset($this->weather_display) ? $this->weather_display : '';
+    }
+
+    public function hasWeatherDisplay()
+    {
+        return isset($this->weather_display);
+    }
+
+    public function clearWeatherDisplay()
+    {
+        unset($this->weather_display);
     }
 
     /**
-     * Generated from protobuf field <code>string weather_display = 10 [json_name = "weather_display"];</code>
+     * Generated from protobuf field <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
      * @param string $var
      * @return $this
      */
@@ -334,7 +329,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastPushAt()
@@ -353,7 +348,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -365,7 +360,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastIngestAt()
@@ -384,7 +379,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -396,7 +391,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 gap_points_7d = 13 [json_name = "gap_points_7d"];</code>
+     * Generated from protobuf field <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @return int
      */
     public function getGapPoints7D()
@@ -405,7 +400,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 gap_points_7d = 13 [json_name = "gap_points_7d"];</code>
+     * Generated from protobuf field <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @param int $var
      * @return $this
      */
@@ -418,7 +413,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\DataReadiness\ReadinessStatus}
      */
     public function getReadinessStatus()
@@ -427,7 +422,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\DataReadiness\ReadinessStatus}
      * @return $this
      */
@@ -440,7 +435,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+     * Generated from protobuf field <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
      * @return string
      */
     public function getWorkbenchHref()
@@ -449,7 +444,7 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+     * Generated from protobuf field <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
      * @param string $var
      * @return $this
      */

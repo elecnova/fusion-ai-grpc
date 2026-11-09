@@ -33,13 +33,12 @@ var File_data_readiness_data_readiness_service_proto protoreflect.FileDescriptor
 
 const file_data_readiness_data_readiness_service_proto_rawDesc = "" +
 	"\n" +
-	"+data_readiness/data_readiness_service.proto\x12\x1efusion.ai.proto.data_readiness\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a+data_readiness/data_readiness_message.proto2\xe4\x16\n" +
+	"+data_readiness/data_readiness_service.proto\x12\x1efusion.ai.proto.data_readiness\x1a+data_readiness/data_readiness_message.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto2\xdc\x12\n" +
 	"\x14DataReadinessService\x12\xaf\x01\n" +
 	"\x0fGetDataOverview\x126.fusion.ai.proto.data_readiness.GetDataOverviewRequest\x1a7.fusion.ai.proto.data_readiness.GetDataOverviewResponse\"+\xdaA\fservice_type\x82\xd3\xe4\x93\x02\x16\x12\x14/ai/v2/data/overview\x12\xb1\x01\n" +
 	"\x10ListDataSiteRows\x127.fusion.ai.proto.data_readiness.ListDataSiteRowsRequest\x1a8.fusion.ai.proto.data_readiness.ListDataSiteRowsResponse\"*\xdaA\x0epage,page_size\x82\xd3\xe4\x93\x02\x13\x12\x11/ai/v2/data/sites\x12\xda\x01\n" +
-	"\x14GetDataSiteReadiness\x12;.fusion.ai.proto.data_readiness.GetDataSiteReadinessRequest\x1a<.fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse\"G\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02/\x12-/ai/v2/data/sites/{registration_id}/readiness\x12\xb5\x01\n" +
-	"\x14GetDataPipelineStats\x12;.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest\x1a<.fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/ai/v2/data/pipeline/stats\x12\xa0\x01\n" +
-	"\x0eExportDataGaps\x125.fusion.ai.proto.data_readiness.ExportDataGapsRequest\x1a6.fusion.ai.proto.data_readiness.ExportDataGapsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/ai/v2/data/gaps/export\x12\xc7\x01\n" +
+	"\x14GetDataSiteReadiness\x12;.fusion.ai.proto.data_readiness.GetDataSiteReadinessRequest\x1a<.fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse\"G\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02/\x12-/ai/v2/data/sites/{registration_id}/readiness\x12\xc4\x01\n" +
+	"\x14GetDataPipelineStats\x12;.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest\x1a<.fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse\"1\xdaA\fservice_type\x82\xd3\xe4\x93\x02\x1c\x12\x1a/ai/v2/data/pipeline/stats\x12\xc7\x01\n" +
 	"\x17GetWeatherExcelTemplate\x12>.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest\x1a?.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse\"+\x82\xd3\xe4\x93\x02%\x12#/ai/v2/data/weather/import/template\x12\xc6\x01\n" +
 	"\x0eGetWeatherSite\x125.fusion.ai.proto.data_readiness.GetWeatherSiteRequest\x1a6.fusion.ai.proto.data_readiness.GetWeatherSiteResponse\"E\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02-\x12+/ai/v2/data/sites/{registration_id}/weather\x12\xc1\x01\n" +
 	"\x11GetWeatherSyncRun\x128.fusion.ai.proto.data_readiness.GetWeatherSyncRunRequest\x1a9.fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse\"7\xdaA\x06run_id\x82\xd3\xe4\x93\x02(\x12&/ai/v2/data/weather/sync/runs/{run_id}\x12\xae\x01\n" +
@@ -47,9 +46,7 @@ const file_data_readiness_data_readiness_service_proto_rawDesc = "" +
 	"\x16RetryFailedWeatherSync\x12=.fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest\x1a>.fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse\"-\xdaA\x01*\x82\xd3\xe4\x93\x02#:\x01*\"\x1e/ai/v2/data/weather/sync/retry\x12\xd6\x01\n" +
 	"\x1bCreateWeatherExcelImportJob\x12B.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest\x1aC.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse\".\xdaA\x01*\x82\xd3\xe4\x93\x02$:\x01*\"\x1f/ai/v2/data/weather/import/jobs\x12\xbe\x01\n" +
 	"\x15CreateDataBackfillJob\x12<.fusion.ai.proto.data_readiness.CreateDataBackfillJobRequest\x1a=.fusion.ai.proto.data_readiness.CreateDataBackfillJobResponse\"(\xdaA\x01*\x82\xd3\xe4\x93\x02\x1e:\x01*\"\x19/ai/v2/data/backfill/jobs\x12\xc9\x01\n" +
-	"\x12UploadBackfillFile\x129.fusion.ai.proto.data_readiness.UploadBackfillFileRequest\x1a:.fusion.ai.proto.data_readiness.UploadBackfillFileResponse\"<\xdaA\x06job_id\x82\xd3\xe4\x93\x02-:\x01*\"(/ai/v2/data/backfill/jobs/{job_id}/files\x12\xab\x01\n" +
-	"\x0eBatchPullPower\x125.fusion.ai.proto.data_readiness.BatchPullPowerRequest\x1a6.fusion.ai.proto.data_readiness.BatchPullPowerResponse\"*\xdaA\x01*\x82\xd3\xe4\x93\x02 :\x01*\"\x1b/ai/v2/data/power/pull/sync\x12\xc3\x01\n" +
-	"\x14RetryFailedPullPower\x12;.fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest\x1a<.fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse\"0\xdaA\x01*\x82\xd3\xe4\x93\x02&:\x01*\"!/ai/v2/data/power/pull/sync/retry\x1a\x03\xcaA\x00B\x86\x02\n" +
+	"\x12UploadBackfillFile\x129.fusion.ai.proto.data_readiness.UploadBackfillFileRequest\x1a:.fusion.ai.proto.data_readiness.UploadBackfillFileResponse\"<\xdaA\x06job_id\x82\xd3\xe4\x93\x02-:\x01*\"(/ai/v2/data/backfill/jobs/{job_id}/files\x1a\x03\xcaA\x00B\x86\x02\n" +
 	"\"com.fusion.ai.proto.data_readinessB\x19DataReadinessServiceProtoP\x01Z-fusion.ai.proto.data_readiness;data_readiness\xa2\x02\x04FAPD\xaa\x02\x1dFusion.Ai.Proto.DataReadiness\xca\x02\x1dFusion\\Ai\\Proto\\DataReadiness\xe2\x02)Fusion\\Ai\\Proto\\DataReadiness\\GPBMetadata\xea\x02 Fusion::Ai::Proto::DataReadinessb\x06proto3"
 
 var file_data_readiness_data_readiness_service_proto_goTypes = []any{
@@ -57,66 +54,54 @@ var file_data_readiness_data_readiness_service_proto_goTypes = []any{
 	(*ListDataSiteRowsRequest)(nil),             // 1: fusion.ai.proto.data_readiness.ListDataSiteRowsRequest
 	(*GetDataSiteReadinessRequest)(nil),         // 2: fusion.ai.proto.data_readiness.GetDataSiteReadinessRequest
 	(*GetDataPipelineStatsRequest)(nil),         // 3: fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest
-	(*ExportDataGapsRequest)(nil),               // 4: fusion.ai.proto.data_readiness.ExportDataGapsRequest
-	(*GetWeatherExcelTemplateRequest)(nil),      // 5: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest
-	(*GetWeatherSiteRequest)(nil),               // 6: fusion.ai.proto.data_readiness.GetWeatherSiteRequest
-	(*GetWeatherSyncRunRequest)(nil),            // 7: fusion.ai.proto.data_readiness.GetWeatherSyncRunRequest
-	(*BatchSyncWeatherRequest)(nil),             // 8: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest
-	(*RetryFailedWeatherSyncRequest)(nil),       // 9: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest
-	(*CreateWeatherExcelImportJobRequest)(nil),  // 10: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest
-	(*CreateDataBackfillJobRequest)(nil),        // 11: fusion.ai.proto.data_readiness.CreateDataBackfillJobRequest
-	(*UploadBackfillFileRequest)(nil),           // 12: fusion.ai.proto.data_readiness.UploadBackfillFileRequest
-	(*BatchPullPowerRequest)(nil),               // 13: fusion.ai.proto.data_readiness.BatchPullPowerRequest
-	(*RetryFailedPullPowerRequest)(nil),         // 14: fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest
-	(*GetDataOverviewResponse)(nil),             // 15: fusion.ai.proto.data_readiness.GetDataOverviewResponse
-	(*ListDataSiteRowsResponse)(nil),            // 16: fusion.ai.proto.data_readiness.ListDataSiteRowsResponse
-	(*GetDataSiteReadinessResponse)(nil),        // 17: fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse
-	(*GetDataPipelineStatsResponse)(nil),        // 18: fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse
-	(*ExportDataGapsResponse)(nil),              // 19: fusion.ai.proto.data_readiness.ExportDataGapsResponse
-	(*GetWeatherExcelTemplateResponse)(nil),     // 20: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse
-	(*GetWeatherSiteResponse)(nil),              // 21: fusion.ai.proto.data_readiness.GetWeatherSiteResponse
-	(*GetWeatherSyncRunResponse)(nil),           // 22: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse
-	(*BatchSyncWeatherResponse)(nil),            // 23: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse
-	(*RetryFailedWeatherSyncResponse)(nil),      // 24: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse
-	(*CreateWeatherExcelImportJobResponse)(nil), // 25: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse
-	(*CreateDataBackfillJobResponse)(nil),       // 26: fusion.ai.proto.data_readiness.CreateDataBackfillJobResponse
-	(*UploadBackfillFileResponse)(nil),          // 27: fusion.ai.proto.data_readiness.UploadBackfillFileResponse
-	(*BatchPullPowerResponse)(nil),              // 28: fusion.ai.proto.data_readiness.BatchPullPowerResponse
-	(*RetryFailedPullPowerResponse)(nil),        // 29: fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse
+	(*GetWeatherExcelTemplateRequest)(nil),      // 4: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest
+	(*GetWeatherSiteRequest)(nil),               // 5: fusion.ai.proto.data_readiness.GetWeatherSiteRequest
+	(*GetWeatherSyncRunRequest)(nil),            // 6: fusion.ai.proto.data_readiness.GetWeatherSyncRunRequest
+	(*BatchSyncWeatherRequest)(nil),             // 7: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest
+	(*RetryFailedWeatherSyncRequest)(nil),       // 8: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest
+	(*CreateWeatherExcelImportJobRequest)(nil),  // 9: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest
+	(*CreateDataBackfillJobRequest)(nil),        // 10: fusion.ai.proto.data_readiness.CreateDataBackfillJobRequest
+	(*UploadBackfillFileRequest)(nil),           // 11: fusion.ai.proto.data_readiness.UploadBackfillFileRequest
+	(*GetDataOverviewResponse)(nil),             // 12: fusion.ai.proto.data_readiness.GetDataOverviewResponse
+	(*ListDataSiteRowsResponse)(nil),            // 13: fusion.ai.proto.data_readiness.ListDataSiteRowsResponse
+	(*GetDataSiteReadinessResponse)(nil),        // 14: fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse
+	(*GetDataPipelineStatsResponse)(nil),        // 15: fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse
+	(*GetWeatherExcelTemplateResponse)(nil),     // 16: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse
+	(*GetWeatherSiteResponse)(nil),              // 17: fusion.ai.proto.data_readiness.GetWeatherSiteResponse
+	(*GetWeatherSyncRunResponse)(nil),           // 18: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse
+	(*BatchSyncWeatherResponse)(nil),            // 19: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse
+	(*RetryFailedWeatherSyncResponse)(nil),      // 20: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse
+	(*CreateWeatherExcelImportJobResponse)(nil), // 21: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse
+	(*CreateDataBackfillJobResponse)(nil),       // 22: fusion.ai.proto.data_readiness.CreateDataBackfillJobResponse
+	(*UploadBackfillFileResponse)(nil),          // 23: fusion.ai.proto.data_readiness.UploadBackfillFileResponse
 }
 var file_data_readiness_data_readiness_service_proto_depIdxs = []int32{
 	0,  // 0: fusion.ai.proto.data_readiness.DataReadinessService.GetDataOverview:input_type -> fusion.ai.proto.data_readiness.GetDataOverviewRequest
 	1,  // 1: fusion.ai.proto.data_readiness.DataReadinessService.ListDataSiteRows:input_type -> fusion.ai.proto.data_readiness.ListDataSiteRowsRequest
 	2,  // 2: fusion.ai.proto.data_readiness.DataReadinessService.GetDataSiteReadiness:input_type -> fusion.ai.proto.data_readiness.GetDataSiteReadinessRequest
 	3,  // 3: fusion.ai.proto.data_readiness.DataReadinessService.GetDataPipelineStats:input_type -> fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest
-	4,  // 4: fusion.ai.proto.data_readiness.DataReadinessService.ExportDataGaps:input_type -> fusion.ai.proto.data_readiness.ExportDataGapsRequest
-	5,  // 5: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherExcelTemplate:input_type -> fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest
-	6,  // 6: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherSite:input_type -> fusion.ai.proto.data_readiness.GetWeatherSiteRequest
-	7,  // 7: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherSyncRun:input_type -> fusion.ai.proto.data_readiness.GetWeatherSyncRunRequest
-	8,  // 8: fusion.ai.proto.data_readiness.DataReadinessService.BatchSyncWeather:input_type -> fusion.ai.proto.data_readiness.BatchSyncWeatherRequest
-	9,  // 9: fusion.ai.proto.data_readiness.DataReadinessService.RetryFailedWeatherSync:input_type -> fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest
-	10, // 10: fusion.ai.proto.data_readiness.DataReadinessService.CreateWeatherExcelImportJob:input_type -> fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest
-	11, // 11: fusion.ai.proto.data_readiness.DataReadinessService.CreateDataBackfillJob:input_type -> fusion.ai.proto.data_readiness.CreateDataBackfillJobRequest
-	12, // 12: fusion.ai.proto.data_readiness.DataReadinessService.UploadBackfillFile:input_type -> fusion.ai.proto.data_readiness.UploadBackfillFileRequest
-	13, // 13: fusion.ai.proto.data_readiness.DataReadinessService.BatchPullPower:input_type -> fusion.ai.proto.data_readiness.BatchPullPowerRequest
-	14, // 14: fusion.ai.proto.data_readiness.DataReadinessService.RetryFailedPullPower:input_type -> fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest
-	15, // 15: fusion.ai.proto.data_readiness.DataReadinessService.GetDataOverview:output_type -> fusion.ai.proto.data_readiness.GetDataOverviewResponse
-	16, // 16: fusion.ai.proto.data_readiness.DataReadinessService.ListDataSiteRows:output_type -> fusion.ai.proto.data_readiness.ListDataSiteRowsResponse
-	17, // 17: fusion.ai.proto.data_readiness.DataReadinessService.GetDataSiteReadiness:output_type -> fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse
-	18, // 18: fusion.ai.proto.data_readiness.DataReadinessService.GetDataPipelineStats:output_type -> fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse
-	19, // 19: fusion.ai.proto.data_readiness.DataReadinessService.ExportDataGaps:output_type -> fusion.ai.proto.data_readiness.ExportDataGapsResponse
-	20, // 20: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherExcelTemplate:output_type -> fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse
-	21, // 21: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherSite:output_type -> fusion.ai.proto.data_readiness.GetWeatherSiteResponse
-	22, // 22: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherSyncRun:output_type -> fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse
-	23, // 23: fusion.ai.proto.data_readiness.DataReadinessService.BatchSyncWeather:output_type -> fusion.ai.proto.data_readiness.BatchSyncWeatherResponse
-	24, // 24: fusion.ai.proto.data_readiness.DataReadinessService.RetryFailedWeatherSync:output_type -> fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse
-	25, // 25: fusion.ai.proto.data_readiness.DataReadinessService.CreateWeatherExcelImportJob:output_type -> fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse
-	26, // 26: fusion.ai.proto.data_readiness.DataReadinessService.CreateDataBackfillJob:output_type -> fusion.ai.proto.data_readiness.CreateDataBackfillJobResponse
-	27, // 27: fusion.ai.proto.data_readiness.DataReadinessService.UploadBackfillFile:output_type -> fusion.ai.proto.data_readiness.UploadBackfillFileResponse
-	28, // 28: fusion.ai.proto.data_readiness.DataReadinessService.BatchPullPower:output_type -> fusion.ai.proto.data_readiness.BatchPullPowerResponse
-	29, // 29: fusion.ai.proto.data_readiness.DataReadinessService.RetryFailedPullPower:output_type -> fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse
-	15, // [15:30] is the sub-list for method output_type
-	0,  // [0:15] is the sub-list for method input_type
+	4,  // 4: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherExcelTemplate:input_type -> fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest
+	5,  // 5: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherSite:input_type -> fusion.ai.proto.data_readiness.GetWeatherSiteRequest
+	6,  // 6: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherSyncRun:input_type -> fusion.ai.proto.data_readiness.GetWeatherSyncRunRequest
+	7,  // 7: fusion.ai.proto.data_readiness.DataReadinessService.BatchSyncWeather:input_type -> fusion.ai.proto.data_readiness.BatchSyncWeatherRequest
+	8,  // 8: fusion.ai.proto.data_readiness.DataReadinessService.RetryFailedWeatherSync:input_type -> fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest
+	9,  // 9: fusion.ai.proto.data_readiness.DataReadinessService.CreateWeatherExcelImportJob:input_type -> fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest
+	10, // 10: fusion.ai.proto.data_readiness.DataReadinessService.CreateDataBackfillJob:input_type -> fusion.ai.proto.data_readiness.CreateDataBackfillJobRequest
+	11, // 11: fusion.ai.proto.data_readiness.DataReadinessService.UploadBackfillFile:input_type -> fusion.ai.proto.data_readiness.UploadBackfillFileRequest
+	12, // 12: fusion.ai.proto.data_readiness.DataReadinessService.GetDataOverview:output_type -> fusion.ai.proto.data_readiness.GetDataOverviewResponse
+	13, // 13: fusion.ai.proto.data_readiness.DataReadinessService.ListDataSiteRows:output_type -> fusion.ai.proto.data_readiness.ListDataSiteRowsResponse
+	14, // 14: fusion.ai.proto.data_readiness.DataReadinessService.GetDataSiteReadiness:output_type -> fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse
+	15, // 15: fusion.ai.proto.data_readiness.DataReadinessService.GetDataPipelineStats:output_type -> fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse
+	16, // 16: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherExcelTemplate:output_type -> fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse
+	17, // 17: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherSite:output_type -> fusion.ai.proto.data_readiness.GetWeatherSiteResponse
+	18, // 18: fusion.ai.proto.data_readiness.DataReadinessService.GetWeatherSyncRun:output_type -> fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse
+	19, // 19: fusion.ai.proto.data_readiness.DataReadinessService.BatchSyncWeather:output_type -> fusion.ai.proto.data_readiness.BatchSyncWeatherResponse
+	20, // 20: fusion.ai.proto.data_readiness.DataReadinessService.RetryFailedWeatherSync:output_type -> fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse
+	21, // 21: fusion.ai.proto.data_readiness.DataReadinessService.CreateWeatherExcelImportJob:output_type -> fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse
+	22, // 22: fusion.ai.proto.data_readiness.DataReadinessService.CreateDataBackfillJob:output_type -> fusion.ai.proto.data_readiness.CreateDataBackfillJobResponse
+	23, // 23: fusion.ai.proto.data_readiness.DataReadinessService.UploadBackfillFile:output_type -> fusion.ai.proto.data_readiness.UploadBackfillFileResponse
+	12, // [12:24] is the sub-list for method output_type
+	0,  // [0:12] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

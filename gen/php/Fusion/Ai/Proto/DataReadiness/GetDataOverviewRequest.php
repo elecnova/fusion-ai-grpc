@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class GetDataOverviewRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+     *
      * Generated from protobuf field <code>optional string service_type = 1 [json_name = "service_type"];</code>
      */
     protected $service_type = null;
@@ -26,6 +28,7 @@ class GetDataOverviewRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $service_type
+     *           pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
      * }
      */
     public function __construct($data = null)
@@ -35,6 +38,8 @@ class GetDataOverviewRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+     *
      * Generated from protobuf field <code>optional string service_type = 1 [json_name = "service_type"];</code>
      * @return string
      */
@@ -54,6 +59,8 @@ class GetDataOverviewRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+     *
      * Generated from protobuf field <code>optional string service_type = 1 [json_name = "service_type"];</code>
      * @param string $var
      * @return $this

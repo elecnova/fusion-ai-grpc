@@ -15,23 +15,19 @@ use Google\Protobuf\RepeatedField;
 class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    protected $header = null;
-    /**
-     * Generated from protobuf field <code>string job_id = 2 [json_name = "job_id"];</code>
+     * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id"];</code>
      */
     protected $job_id = '';
     /**
-     * Generated from protobuf field <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+     * Generated from protobuf field <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
      */
     protected $accepted_rows = null;
     /**
-     * Generated from protobuf field <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+     * Generated from protobuf field <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
      */
     protected $failed_rows = null;
     /**
-     * Generated from protobuf field <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+     * Generated from protobuf field <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
      */
     protected $error_report_url = null;
 
@@ -41,7 +37,6 @@ class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Mess
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader $header
      *     @type string $job_id
      *     @type int $accepted_rows
      *     @type int $failed_rows
@@ -55,38 +50,7 @@ class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader|null
-     */
-    public function getHeader()
-    {
-        return $this->header;
-    }
-
-    public function hasHeader()
-    {
-        return isset($this->header);
-    }
-
-    public function clearHeader()
-    {
-        unset($this->header);
-    }
-
-    /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @param \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader $var
-     * @return $this
-     */
-    public function setHeader(\Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader|null $var)
-    {
-        $this->header = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string job_id = 2 [json_name = "job_id"];</code>
+     * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return string
      */
     public function getJobId()
@@ -95,7 +59,7 @@ class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>string job_id = 2 [json_name = "job_id"];</code>
+     * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id"];</code>
      * @param string $var
      * @return $this
      */
@@ -108,7 +72,7 @@ class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+     * Generated from protobuf field <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
      * @return int
      */
     public function getAcceptedRows()
@@ -127,7 +91,7 @@ class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>optional int32 accepted_rows = 3 [json_name = "accepted_rows"];</code>
+     * Generated from protobuf field <code>optional int32 accepted_rows = 2 [json_name = "accepted_rows"];</code>
      * @param int $var
      * @return $this
      */
@@ -140,7 +104,7 @@ class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+     * Generated from protobuf field <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
      * @return int
      */
     public function getFailedRows()
@@ -159,7 +123,7 @@ class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>optional int32 failed_rows = 4 [json_name = "failed_rows"];</code>
+     * Generated from protobuf field <code>optional int32 failed_rows = 3 [json_name = "failed_rows"];</code>
      * @param int $var
      * @return $this
      */
@@ -172,7 +136,7 @@ class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+     * Generated from protobuf field <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
      * @return string
      */
     public function getErrorReportUrl()
@@ -191,7 +155,7 @@ class CreateWeatherExcelImportJobResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>optional string error_report_url = 5 [json_name = "error_report_url"];</code>
+     * Generated from protobuf field <code>optional string error_report_url = 4 [json_name = "error_report_url"];</code>
      * @param string $var
      * @return $this
      */

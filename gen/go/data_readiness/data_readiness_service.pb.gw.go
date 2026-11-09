@@ -144,11 +144,19 @@ func local_request_DataReadinessService_GetDataSiteReadiness_0(ctx context.Conte
 	return msg, metadata, err
 }
 
+var filter_DataReadinessService_GetDataPipelineStats_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+
 func request_DataReadinessService_GetDataPipelineStats_0(ctx context.Context, marshaler runtime.Marshaler, client DataReadinessServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetDataPipelineStatsRequest
 		metadata runtime.ServerMetadata
 	)
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DataReadinessService_GetDataPipelineStats_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 	if req.Body != nil {
 		_, _ = io.Copy(io.Discard, req.Body)
 	}
@@ -161,42 +169,13 @@ func local_request_DataReadinessService_GetDataPipelineStats_0(ctx context.Conte
 		protoReq GetDataPipelineStatsRequest
 		metadata runtime.ServerMetadata
 	)
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DataReadinessService_GetDataPipelineStats_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 	msg, err := server.GetDataPipelineStats(ctx, &protoReq)
-	return msg, metadata, err
-}
-
-var filter_DataReadinessService_ExportDataGaps_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-
-func request_DataReadinessService_ExportDataGaps_0(ctx context.Context, marshaler runtime.Marshaler, client DataReadinessServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var (
-		protoReq ExportDataGapsRequest
-		metadata runtime.ServerMetadata
-	)
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DataReadinessService_ExportDataGaps_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if req.Body != nil {
-		_, _ = io.Copy(io.Discard, req.Body)
-	}
-	msg, err := client.ExportDataGaps(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
-	return msg, metadata, err
-}
-
-func local_request_DataReadinessService_ExportDataGaps_0(ctx context.Context, marshaler runtime.Marshaler, server DataReadinessServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var (
-		protoReq ExportDataGapsRequest
-		metadata runtime.ServerMetadata
-	)
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DataReadinessService_ExportDataGaps_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	msg, err := server.ExportDataGaps(ctx, &protoReq)
 	return msg, metadata, err
 }
 
@@ -466,60 +445,6 @@ func local_request_DataReadinessService_UploadBackfillFile_0(ctx context.Context
 	return msg, metadata, err
 }
 
-func request_DataReadinessService_BatchPullPower_0(ctx context.Context, marshaler runtime.Marshaler, client DataReadinessServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var (
-		protoReq BatchPullPowerRequest
-		metadata runtime.ServerMetadata
-	)
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if req.Body != nil {
-		_, _ = io.Copy(io.Discard, req.Body)
-	}
-	msg, err := client.BatchPullPower(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
-	return msg, metadata, err
-}
-
-func local_request_DataReadinessService_BatchPullPower_0(ctx context.Context, marshaler runtime.Marshaler, server DataReadinessServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var (
-		protoReq BatchPullPowerRequest
-		metadata runtime.ServerMetadata
-	)
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	msg, err := server.BatchPullPower(ctx, &protoReq)
-	return msg, metadata, err
-}
-
-func request_DataReadinessService_RetryFailedPullPower_0(ctx context.Context, marshaler runtime.Marshaler, client DataReadinessServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var (
-		protoReq RetryFailedPullPowerRequest
-		metadata runtime.ServerMetadata
-	)
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	if req.Body != nil {
-		_, _ = io.Copy(io.Discard, req.Body)
-	}
-	msg, err := client.RetryFailedPullPower(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
-	return msg, metadata, err
-}
-
-func local_request_DataReadinessService_RetryFailedPullPower_0(ctx context.Context, marshaler runtime.Marshaler, server DataReadinessServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var (
-		protoReq RetryFailedPullPowerRequest
-		metadata runtime.ServerMetadata
-	)
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-	msg, err := server.RetryFailedPullPower(ctx, &protoReq)
-	return msg, metadata, err
-}
-
 // RegisterDataReadinessServiceHandlerServer registers the http handlers for service DataReadinessService to "mux".
 // UnaryRPC     :call DataReadinessServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -605,26 +530,6 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 			return
 		}
 		forward_DataReadinessService_GetDataPipelineStats_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-	})
-	mux.Handle(http.MethodGet, pattern_DataReadinessService_ExportDataGaps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(req.Context())
-		defer cancel()
-		var stream runtime.ServerTransportStream
-		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
-		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/ExportDataGaps", runtime.WithHTTPPathPattern("/ai/v2/data/gaps/export"))
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		resp, md, err := local_request_DataReadinessService_ExportDataGaps_0(annotatedContext, inboundMarshaler, server, req, pathParams)
-		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
-		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		forward_DataReadinessService_ExportDataGaps_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	mux.Handle(http.MethodGet, pattern_DataReadinessService_GetWeatherExcelTemplate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -786,46 +691,6 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		}
 		forward_DataReadinessService_UploadBackfillFile_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_DataReadinessService_BatchPullPower_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(req.Context())
-		defer cancel()
-		var stream runtime.ServerTransportStream
-		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
-		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/BatchPullPower", runtime.WithHTTPPathPattern("/ai/v2/data/power/pull/sync"))
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		resp, md, err := local_request_DataReadinessService_BatchPullPower_0(annotatedContext, inboundMarshaler, server, req, pathParams)
-		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
-		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		forward_DataReadinessService_BatchPullPower_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-	})
-	mux.Handle(http.MethodPost, pattern_DataReadinessService_RetryFailedPullPower_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(req.Context())
-		defer cancel()
-		var stream runtime.ServerTransportStream
-		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
-		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/RetryFailedPullPower", runtime.WithHTTPPathPattern("/ai/v2/data/power/pull/sync/retry"))
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		resp, md, err := local_request_DataReadinessService_RetryFailedPullPower_0(annotatedContext, inboundMarshaler, server, req, pathParams)
-		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
-		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		forward_DataReadinessService_RetryFailedPullPower_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-	})
 
 	return nil
 }
@@ -933,23 +798,6 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 			return
 		}
 		forward_DataReadinessService_GetDataPipelineStats_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-	})
-	mux.Handle(http.MethodGet, pattern_DataReadinessService_ExportDataGaps_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(req.Context())
-		defer cancel()
-		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/ExportDataGaps", runtime.WithHTTPPathPattern("/ai/v2/data/gaps/export"))
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		resp, md, err := request_DataReadinessService_ExportDataGaps_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
-		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		forward_DataReadinessService_ExportDataGaps_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	mux.Handle(http.MethodGet, pattern_DataReadinessService_GetWeatherExcelTemplate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -1087,40 +935,6 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		}
 		forward_DataReadinessService_UploadBackfillFile_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_DataReadinessService_BatchPullPower_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(req.Context())
-		defer cancel()
-		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/BatchPullPower", runtime.WithHTTPPathPattern("/ai/v2/data/power/pull/sync"))
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		resp, md, err := request_DataReadinessService_BatchPullPower_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
-		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		forward_DataReadinessService_BatchPullPower_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-	})
-	mux.Handle(http.MethodPost, pattern_DataReadinessService_RetryFailedPullPower_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(req.Context())
-		defer cancel()
-		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/RetryFailedPullPower", runtime.WithHTTPPathPattern("/ai/v2/data/power/pull/sync/retry"))
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		resp, md, err := request_DataReadinessService_RetryFailedPullPower_0(annotatedContext, inboundMarshaler, client, req, pathParams)
-		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
-		if err != nil {
-			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		forward_DataReadinessService_RetryFailedPullPower_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-	})
 	return nil
 }
 
@@ -1129,7 +943,6 @@ var (
 	pattern_DataReadinessService_ListDataSiteRows_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"ai", "v2", "data", "sites"}, ""))
 	pattern_DataReadinessService_GetDataSiteReadiness_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"ai", "v2", "data", "sites", "registration_id", "readiness"}, ""))
 	pattern_DataReadinessService_GetDataPipelineStats_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"ai", "v2", "data", "pipeline", "stats"}, ""))
-	pattern_DataReadinessService_ExportDataGaps_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"ai", "v2", "data", "gaps", "export"}, ""))
 	pattern_DataReadinessService_GetWeatherExcelTemplate_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"ai", "v2", "data", "weather", "import", "template"}, ""))
 	pattern_DataReadinessService_GetWeatherSite_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"ai", "v2", "data", "sites", "registration_id", "weather"}, ""))
 	pattern_DataReadinessService_GetWeatherSyncRun_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"ai", "v2", "data", "weather", "sync", "runs", "run_id"}, ""))
@@ -1138,8 +951,6 @@ var (
 	pattern_DataReadinessService_CreateWeatherExcelImportJob_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"ai", "v2", "data", "weather", "import", "jobs"}, ""))
 	pattern_DataReadinessService_CreateDataBackfillJob_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"ai", "v2", "data", "backfill", "jobs"}, ""))
 	pattern_DataReadinessService_UploadBackfillFile_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5, 2, 6}, []string{"ai", "v2", "data", "backfill", "jobs", "job_id", "files"}, ""))
-	pattern_DataReadinessService_BatchPullPower_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"ai", "v2", "data", "power", "pull", "sync"}, ""))
-	pattern_DataReadinessService_RetryFailedPullPower_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6}, []string{"ai", "v2", "data", "power", "pull", "sync", "retry"}, ""))
 )
 
 var (
@@ -1147,7 +958,6 @@ var (
 	forward_DataReadinessService_ListDataSiteRows_0            = runtime.ForwardResponseMessage
 	forward_DataReadinessService_GetDataSiteReadiness_0        = runtime.ForwardResponseMessage
 	forward_DataReadinessService_GetDataPipelineStats_0        = runtime.ForwardResponseMessage
-	forward_DataReadinessService_ExportDataGaps_0              = runtime.ForwardResponseMessage
 	forward_DataReadinessService_GetWeatherExcelTemplate_0     = runtime.ForwardResponseMessage
 	forward_DataReadinessService_GetWeatherSite_0              = runtime.ForwardResponseMessage
 	forward_DataReadinessService_GetWeatherSyncRun_0           = runtime.ForwardResponseMessage
@@ -1156,6 +966,4 @@ var (
 	forward_DataReadinessService_CreateWeatherExcelImportJob_0 = runtime.ForwardResponseMessage
 	forward_DataReadinessService_CreateDataBackfillJob_0       = runtime.ForwardResponseMessage
 	forward_DataReadinessService_UploadBackfillFile_0          = runtime.ForwardResponseMessage
-	forward_DataReadinessService_BatchPullPower_0              = runtime.ForwardResponseMessage
-	forward_DataReadinessService_RetryFailedPullPower_0        = runtime.ForwardResponseMessage
 )

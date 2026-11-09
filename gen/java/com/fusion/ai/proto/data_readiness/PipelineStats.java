@@ -6,6 +6,10 @@
 package com.fusion.ai.proto.data_readiness;
 
 /**
+ * <pre>
+ * PipelineStats 接入监控。weather_job_line 仅光伏有值。
+ * </pre>
+ *
  * Protobuf type {@code fusion.ai.proto.data_readiness.PipelineStats}
  */
 @com.google.protobuf.Generated
@@ -78,7 +82,7 @@ private static final long serialVersionUID = 0L;
   public static final int WEATHER_JOB_LINE_FIELD_NUMBER = 2;
   private com.fusion.ai.proto.data_readiness.PipelineLine weatherJobLine_;
   /**
-   * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
    * @return Whether the weatherJobLine field is set.
    */
   @java.lang.Override
@@ -86,7 +90,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
    * @return The weatherJobLine.
    */
   @java.lang.Override
@@ -94,7 +98,7 @@ private static final long serialVersionUID = 0L;
     return weatherJobLine_ == null ? com.fusion.ai.proto.data_readiness.PipelineLine.getDefaultInstance() : weatherJobLine_;
   }
   /**
-   * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
    */
   @java.lang.Override
   public com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder getWeatherJobLineOrBuilder() {
@@ -153,32 +157,6 @@ private static final long serialVersionUID = 0L;
     return validationQueueLine_ == null ? com.fusion.ai.proto.data_readiness.PipelineLine.getDefaultInstance() : validationQueueLine_;
   }
 
-  public static final int PULL_LINE_FIELD_NUMBER = 5;
-  private com.fusion.ai.proto.data_readiness.PipelineLine pullLine_;
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-   * @return Whether the pullLine field is set.
-   */
-  @java.lang.Override
-  public boolean hasPullLine() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-   * @return The pullLine.
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.PipelineLine getPullLine() {
-    return pullLine_ == null ? com.fusion.ai.proto.data_readiness.PipelineLine.getDefaultInstance() : pullLine_;
-  }
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder getPullLineOrBuilder() {
-    return pullLine_ == null ? com.fusion.ai.proto.data_readiness.PipelineLine.getDefaultInstance() : pullLine_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -205,9 +183,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(4, getValidationQueueLine());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(5, getPullLine());
-    }
     getUnknownFields().writeTo(output);
   }
   private int computeSerializedSize_0() {
@@ -227,10 +202,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getValidationQueueLine());
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getPullLine());
     }
     return size;
   }
@@ -276,11 +247,6 @@ private static final long serialVersionUID = 0L;
       if (!getValidationQueueLine()
           .equals(other.getValidationQueueLine())) return false;
     }
-    if (hasPullLine() != other.hasPullLine()) return false;
-    if (hasPullLine()) {
-      if (!getPullLine()
-          .equals(other.getPullLine())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -307,10 +273,6 @@ private static final long serialVersionUID = 0L;
     if (hasValidationQueueLine()) {
       hash = (37 * hash) + VALIDATION_QUEUE_LINE_FIELD_NUMBER;
       hash = (53 * hash) + getValidationQueueLine().hashCode();
-    }
-    if (hasPullLine()) {
-      hash = (37 * hash) + PULL_LINE_FIELD_NUMBER;
-      hash = (53 * hash) + getPullLine().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -410,6 +372,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * PipelineStats 接入监控。weather_job_line 仅光伏有值。
+   * </pre>
+   *
    * Protobuf type {@code fusion.ai.proto.data_readiness.PipelineStats}
    */
   public static final class Builder extends
@@ -446,7 +412,6 @@ private static final long serialVersionUID = 0L;
         internalGetWeatherJobLineFieldBuilder();
         internalGetExcelLineFieldBuilder();
         internalGetValidationQueueLineFieldBuilder();
-        internalGetPullLineFieldBuilder();
       }
     }
     @java.lang.Override
@@ -472,11 +437,6 @@ private static final long serialVersionUID = 0L;
       if (validationQueueLineBuilder_ != null) {
         validationQueueLineBuilder_.dispose();
         validationQueueLineBuilder_ = null;
-      }
-      pullLine_ = null;
-      if (pullLineBuilder_ != null) {
-        pullLineBuilder_.dispose();
-        pullLineBuilder_ = null;
       }
       return this;
     }
@@ -536,12 +496,6 @@ private static final long serialVersionUID = 0L;
             : validationQueueLineBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.pullLine_ = pullLineBuilder_ == null
-            ? pullLine_
-            : pullLineBuilder_.build();
-        to_bitField0_ |= 0x00000010;
-      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -568,9 +522,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasValidationQueueLine()) {
         mergeValidationQueueLine(other.getValidationQueueLine());
-      }
-      if (other.hasPullLine()) {
-        mergePullLine(other.getPullLine());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -624,13 +575,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
-            case 42: {
-              input.readMessage(
-                  internalGetPullLineFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000010;
-              break;
-            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -771,14 +715,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.data_readiness.PipelineLine, com.fusion.ai.proto.data_readiness.PipelineLine.Builder, com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder> weatherJobLineBuilder_;
     /**
-     * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      * @return Whether the weatherJobLine field is set.
      */
     public boolean hasWeatherJobLine() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      * @return The weatherJobLine.
      */
     public com.fusion.ai.proto.data_readiness.PipelineLine getWeatherJobLine() {
@@ -789,7 +733,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      */
     public Builder setWeatherJobLine(com.fusion.ai.proto.data_readiness.PipelineLine value) {
       if (weatherJobLineBuilder_ == null) {
@@ -803,7 +747,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      */
     public Builder setWeatherJobLine(
         com.fusion.ai.proto.data_readiness.PipelineLine.Builder builderForValue) {
@@ -817,7 +761,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      */
     public Builder mergeWeatherJobLine(com.fusion.ai.proto.data_readiness.PipelineLine value) {
       if (weatherJobLineBuilder_ == null) {
@@ -838,7 +782,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      */
     public Builder clearWeatherJobLine() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -851,7 +795,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      */
     public com.fusion.ai.proto.data_readiness.PipelineLine.Builder getWeatherJobLineBuilder() {
       bitField0_ |= 0x00000002;
@@ -859,7 +803,7 @@ private static final long serialVersionUID = 0L;
       return internalGetWeatherJobLineFieldBuilder().getBuilder();
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      */
     public com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder getWeatherJobLineOrBuilder() {
       if (weatherJobLineBuilder_ != null) {
@@ -870,7 +814,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.data_readiness.PipelineLine, com.fusion.ai.proto.data_readiness.PipelineLine.Builder, com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder> 
@@ -1122,125 +1066,6 @@ private static final long serialVersionUID = 0L;
         validationQueueLine_ = null;
       }
       return validationQueueLineBuilder_;
-    }
-
-    private com.fusion.ai.proto.data_readiness.PipelineLine pullLine_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.PipelineLine, com.fusion.ai.proto.data_readiness.PipelineLine.Builder, com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder> pullLineBuilder_;
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     * @return Whether the pullLine field is set.
-     */
-    public boolean hasPullLine() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     * @return The pullLine.
-     */
-    public com.fusion.ai.proto.data_readiness.PipelineLine getPullLine() {
-      if (pullLineBuilder_ == null) {
-        return pullLine_ == null ? com.fusion.ai.proto.data_readiness.PipelineLine.getDefaultInstance() : pullLine_;
-      } else {
-        return pullLineBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     */
-    public Builder setPullLine(com.fusion.ai.proto.data_readiness.PipelineLine value) {
-      if (pullLineBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        pullLine_ = value;
-      } else {
-        pullLineBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     */
-    public Builder setPullLine(
-        com.fusion.ai.proto.data_readiness.PipelineLine.Builder builderForValue) {
-      if (pullLineBuilder_ == null) {
-        pullLine_ = builderForValue.build();
-      } else {
-        pullLineBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     */
-    public Builder mergePullLine(com.fusion.ai.proto.data_readiness.PipelineLine value) {
-      if (pullLineBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0) &&
-          pullLine_ != null &&
-          pullLine_ != com.fusion.ai.proto.data_readiness.PipelineLine.getDefaultInstance()) {
-          getPullLineBuilder().mergeFrom(value);
-        } else {
-          pullLine_ = value;
-        }
-      } else {
-        pullLineBuilder_.mergeFrom(value);
-      }
-      if (pullLine_ != null) {
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     */
-    public Builder clearPullLine() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      pullLine_ = null;
-      if (pullLineBuilder_ != null) {
-        pullLineBuilder_.dispose();
-        pullLineBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.PipelineLine.Builder getPullLineBuilder() {
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return internalGetPullLineFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder getPullLineOrBuilder() {
-      if (pullLineBuilder_ != null) {
-        return pullLineBuilder_.getMessageOrBuilder();
-      } else {
-        return pullLine_ == null ?
-            com.fusion.ai.proto.data_readiness.PipelineLine.getDefaultInstance() : pullLine_;
-      }
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.PipelineLine, com.fusion.ai.proto.data_readiness.PipelineLine.Builder, com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder> 
-        internalGetPullLineFieldBuilder() {
-      if (pullLineBuilder_ == null) {
-        pullLineBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.fusion.ai.proto.data_readiness.PipelineLine, com.fusion.ai.proto.data_readiness.PipelineLine.Builder, com.fusion.ai.proto.data_readiness.PipelineLineOrBuilder>(
-                getPullLine(),
-                getParentForChildren(),
-                isClean());
-        pullLine_ = null;
-      }
-      return pullLineBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:fusion.ai.proto.data_readiness.PipelineStats)

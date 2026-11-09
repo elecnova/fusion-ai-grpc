@@ -50,60 +50,45 @@ public interface ListDataSiteRowsRequestOrBuilder extends
       getServiceTypeBytes();
 
   /**
-   * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-   * @return Whether the dataSource field is set.
-   */
-  boolean hasDataSource();
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-   * @return The enum numeric value on the wire for dataSource.
-   */
-  int getDataSourceValue();
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-   * @return The dataSource.
-   */
-  com.fusion.ai.proto.data_readiness.DataSource getDataSource();
-
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
    * @return Whether the readinessStatus field is set.
    */
   boolean hasReadinessStatus();
   /**
-   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
    * @return The enum numeric value on the wire for readinessStatus.
    */
   int getReadinessStatusValue();
   /**
-   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
    * @return The readinessStatus.
    */
   com.fusion.ai.proto.data_readiness.ReadinessStatus getReadinessStatus();
 
   /**
-   * <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-   * @return Whether the granularityMin field is set.
-   */
-  boolean hasGranularityMin();
-  /**
-   * <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-   * @return The granularityMin.
-   */
-  int getGranularityMin();
-
-  /**
-   * <code>optional string q = 7 [json_name = "q"];</code>
+   * <pre>
+   * 场站名 / registration_id 模糊搜
+   * </pre>
+   *
+   * <code>optional string q = 5 [json_name = "q"];</code>
    * @return Whether the q field is set.
    */
   boolean hasQ();
   /**
-   * <code>optional string q = 7 [json_name = "q"];</code>
+   * <pre>
+   * 场站名 / registration_id 模糊搜
+   * </pre>
+   *
+   * <code>optional string q = 5 [json_name = "q"];</code>
    * @return The q.
    */
   java.lang.String getQ();
   /**
-   * <code>optional string q = 7 [json_name = "q"];</code>
+   * <pre>
+   * 场站名 / registration_id 模糊搜
+   * </pre>
+   *
+   * <code>optional string q = 5 [json_name = "q"];</code>
    * @return The bytes for q.
    */
   com.google.protobuf.ByteString

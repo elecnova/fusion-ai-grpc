@@ -8,7 +8,7 @@ namespace Fusion\Ai\Proto\DataReadiness;
 use UnexpectedValueException;
 
 /**
- * WeatherStatus 矩阵「天气」列投影
+ * WeatherStatus 矩阵「天气」列投影（仅 pv_prediction；非光伏勿填或 UNSPECIFIED）
  *
  * Protobuf type <code>fusion.ai.proto.data_readiness.WeatherStatus</code>
  */

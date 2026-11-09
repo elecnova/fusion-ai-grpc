@@ -11,75 +11,60 @@ public interface BatchSyncWeatherResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  boolean hasHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder();
-
-  /**
-   * <code>string run_id = 2 [json_name = "run_id"];</code>
+   * <code>string run_id = 1 [json_name = "run_id"];</code>
    * @return The runId.
    */
   java.lang.String getRunId();
   /**
-   * <code>string run_id = 2 [json_name = "run_id"];</code>
+   * <code>string run_id = 1 [json_name = "run_id"];</code>
    * @return The bytes for runId.
    */
   com.google.protobuf.ByteString
       getRunIdBytes();
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
    * @return The status.
    */
   com.fusion.ai.proto.data_readiness.WeatherSyncRunStatus getStatus();
 
   /**
-   * <code>int32 task_total = 4 [json_name = "task_total"];</code>
+   * <code>int32 task_total = 3 [json_name = "task_total"];</code>
    * @return The taskTotal.
    */
   int getTaskTotal();
 
   /**
-   * <code>int32 task_failed = 5 [json_name = "task_failed"];</code>
+   * <code>int32 task_failed = 4 [json_name = "task_failed"];</code>
    * @return The taskFailed.
    */
   int getTaskFailed();
 
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   java.util.List<com.fusion.ai.proto.data_readiness.WeatherSyncPartialError> 
       getPartialErrorsList();
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   com.fusion.ai.proto.data_readiness.WeatherSyncPartialError getPartialErrors(int index);
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   int getPartialErrorsCount();
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   java.util.List<? extends com.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorOrBuilder> 
       getPartialErrorsOrBuilderList();
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   com.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorOrBuilder getPartialErrorsOrBuilder(
       int index);

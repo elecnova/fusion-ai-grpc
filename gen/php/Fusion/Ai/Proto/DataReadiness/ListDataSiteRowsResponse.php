@@ -15,11 +15,7 @@ use Google\Protobuf\RepeatedField;
 class ListDataSiteRowsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    protected $header = null;
-    /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];</code>
      */
     protected $page = null;
 
@@ -29,7 +25,6 @@ class ListDataSiteRowsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader $header
      *     @type \Fusion\Ai\Proto\DataReadiness\DataSiteRowPage $page
      * }
      */
@@ -40,38 +35,7 @@ class ListDataSiteRowsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader|null
-     */
-    public function getHeader()
-    {
-        return $this->header;
-    }
-
-    public function hasHeader()
-    {
-        return isset($this->header);
-    }
-
-    public function clearHeader()
-    {
-        unset($this->header);
-    }
-
-    /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @param \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader $var
-     * @return $this
-     */
-    public function setHeader(\Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader|null $var)
-    {
-        $this->header = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];</code>
      * @return \Fusion\Ai\Proto\DataReadiness\DataSiteRowPage|null
      */
     public function getPage()
@@ -90,7 +54,7 @@ class ListDataSiteRowsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];</code>
      * @param \Fusion\Ai\Proto\DataReadiness\DataSiteRowPage $var
      * @return $this
      */

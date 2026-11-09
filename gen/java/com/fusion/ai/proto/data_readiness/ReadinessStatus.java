@@ -32,6 +32,10 @@ public enum ReadinessStatus
    */
   READINESS_STATUS_SEVERE(3),
   /**
+   * <pre>
+   * 仅 pv_prediction 有意义
+   * </pre>
+   *
    * <code>READINESS_STATUS_WEATHER_MISSING = 4;</code>
    */
   READINESS_STATUS_WEATHER_MISSING(4),
@@ -39,10 +43,6 @@ public enum ReadinessStatus
    * <code>READINESS_STATUS_OFFLINE = 5;</code>
    */
   READINESS_STATUS_OFFLINE(5),
-  /**
-   * <code>READINESS_STATUS_PULL_UNKNOWN = 6;</code>
-   */
-  READINESS_STATUS_PULL_UNKNOWN(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -72,6 +72,10 @@ public enum ReadinessStatus
    */
   public static final int READINESS_STATUS_SEVERE_VALUE = 3;
   /**
+   * <pre>
+   * 仅 pv_prediction 有意义
+   * </pre>
+   *
    * <code>READINESS_STATUS_WEATHER_MISSING = 4;</code>
    */
   public static final int READINESS_STATUS_WEATHER_MISSING_VALUE = 4;
@@ -79,10 +83,6 @@ public enum ReadinessStatus
    * <code>READINESS_STATUS_OFFLINE = 5;</code>
    */
   public static final int READINESS_STATUS_OFFLINE_VALUE = 5;
-  /**
-   * <code>READINESS_STATUS_PULL_UNKNOWN = 6;</code>
-   */
-  public static final int READINESS_STATUS_PULL_UNKNOWN_VALUE = 6;
 
 
   public final int getNumber() {
@@ -115,7 +115,6 @@ public enum ReadinessStatus
       case 3: return READINESS_STATUS_SEVERE;
       case 4: return READINESS_STATUS_WEATHER_MISSING;
       case 5: return READINESS_STATUS_OFFLINE;
-      case 6: return READINESS_STATUS_PULL_UNKNOWN;
       default: return null;
     }
   }

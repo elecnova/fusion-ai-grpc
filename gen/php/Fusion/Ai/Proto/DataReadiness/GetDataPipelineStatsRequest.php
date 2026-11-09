@@ -14,6 +14,10 @@ use Google\Protobuf\RepeatedField;
  */
 class GetDataPipelineStatsRequest extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string service_type = 1 [json_name = "service_type"];</code>
+     */
+    protected $service_type = null;
 
     /**
      * Constructor.
@@ -21,12 +25,45 @@ class GetDataPipelineStatsRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $service_type
      * }
      */
     public function __construct($data = null)
     {
         \Fusion\Ai\Proto\DataReadiness\GPBMetadata\DataReadinessMessage::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string service_type = 1 [json_name = "service_type"];</code>
+     * @return string
+     */
+    public function getServiceType()
+    {
+        return isset($this->service_type) ? $this->service_type : '';
+    }
+
+    public function hasServiceType()
+    {
+        return isset($this->service_type);
+    }
+
+    public function clearServiceType()
+    {
+        unset($this->service_type);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string service_type = 1 [json_name = "service_type"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setServiceType(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->service_type = $var;
+
+        return $this;
     }
 
 }

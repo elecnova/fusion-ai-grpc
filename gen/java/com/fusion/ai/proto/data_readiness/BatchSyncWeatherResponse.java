@@ -51,38 +51,11 @@ private static final long serialVersionUID = 0L;
             com.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.class, com.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int HEADER_FIELD_NUMBER = 1;
-  private com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header_;
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  @java.lang.Override
-  public boolean hasHeader() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader() {
-    return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-  }
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder() {
-    return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-  }
-
-  public static final int RUN_ID_FIELD_NUMBER = 2;
+  public static final int RUN_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object runId_ = "";
   /**
-   * <code>string run_id = 2 [json_name = "run_id"];</code>
+   * <code>string run_id = 1 [json_name = "run_id"];</code>
    * @return The runId.
    */
   @java.lang.Override
@@ -99,7 +72,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string run_id = 2 [json_name = "run_id"];</code>
+   * <code>string run_id = 1 [json_name = "run_id"];</code>
    * @return The bytes for runId.
    */
   @java.lang.Override
@@ -117,17 +90,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STATUS_FIELD_NUMBER = 3;
+  public static final int STATUS_FIELD_NUMBER = 2;
   private int status_ = 0;
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
   @java.lang.Override public int getStatusValue() {
     return status_;
   }
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
    * @return The status.
    */
   @java.lang.Override public com.fusion.ai.proto.data_readiness.WeatherSyncRunStatus getStatus() {
@@ -135,10 +108,10 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.fusion.ai.proto.data_readiness.WeatherSyncRunStatus.UNRECOGNIZED : result;
   }
 
-  public static final int TASK_TOTAL_FIELD_NUMBER = 4;
+  public static final int TASK_TOTAL_FIELD_NUMBER = 3;
   private int taskTotal_ = 0;
   /**
-   * <code>int32 task_total = 4 [json_name = "task_total"];</code>
+   * <code>int32 task_total = 3 [json_name = "task_total"];</code>
    * @return The taskTotal.
    */
   @java.lang.Override
@@ -146,10 +119,10 @@ private static final long serialVersionUID = 0L;
     return taskTotal_;
   }
 
-  public static final int TASK_FAILED_FIELD_NUMBER = 5;
+  public static final int TASK_FAILED_FIELD_NUMBER = 4;
   private int taskFailed_ = 0;
   /**
-   * <code>int32 task_failed = 5 [json_name = "task_failed"];</code>
+   * <code>int32 task_failed = 4 [json_name = "task_failed"];</code>
    * @return The taskFailed.
    */
   @java.lang.Override
@@ -157,18 +130,18 @@ private static final long serialVersionUID = 0L;
     return taskFailed_;
   }
 
-  public static final int PARTIAL_ERRORS_FIELD_NUMBER = 6;
+  public static final int PARTIAL_ERRORS_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private java.util.List<com.fusion.ai.proto.data_readiness.WeatherSyncPartialError> partialErrors_;
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   @java.lang.Override
   public java.util.List<com.fusion.ai.proto.data_readiness.WeatherSyncPartialError> getPartialErrorsList() {
     return partialErrors_;
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorOrBuilder> 
@@ -176,21 +149,21 @@ private static final long serialVersionUID = 0L;
     return partialErrors_;
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   @java.lang.Override
   public int getPartialErrorsCount() {
     return partialErrors_.size();
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   @java.lang.Override
   public com.fusion.ai.proto.data_readiness.WeatherSyncPartialError getPartialErrors(int index) {
     return partialErrors_.get(index);
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
    */
   @java.lang.Override
   public com.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorOrBuilder getPartialErrorsOrBuilder(
@@ -212,46 +185,39 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getHeader());
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(runId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, runId_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, runId_);
     }
     if (status_ != com.fusion.ai.proto.data_readiness.WeatherSyncRunStatus.WEATHER_SYNC_RUN_STATUS_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, status_);
+      output.writeEnum(2, status_);
     }
     if (taskTotal_ != 0) {
-      output.writeInt32(4, taskTotal_);
+      output.writeInt32(3, taskTotal_);
     }
     if (taskFailed_ != 0) {
-      output.writeInt32(5, taskFailed_);
+      output.writeInt32(4, taskFailed_);
     }
     for (int i = 0; i < partialErrors_.size(); i++) {
-      output.writeMessage(6, partialErrors_.get(i));
+      output.writeMessage(5, partialErrors_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
   private int computeSerializedSize_0() {
     int size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getHeader());
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(runId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, runId_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, runId_);
     }
     if (status_ != com.fusion.ai.proto.data_readiness.WeatherSyncRunStatus.WEATHER_SYNC_RUN_STATUS_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, status_);
+        .computeEnumSize(2, status_);
     }
     if (taskTotal_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, taskTotal_);
+        .computeInt32Size(3, taskTotal_);
     }
     if (taskFailed_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, taskFailed_);
+        .computeInt32Size(4, taskFailed_);
     }
 
         {
@@ -286,11 +252,6 @@ private static final long serialVersionUID = 0L;
     }
     com.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse other = (com.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse) obj;
 
-    if (hasHeader() != other.hasHeader()) return false;
-    if (hasHeader()) {
-      if (!getHeader()
-          .equals(other.getHeader())) return false;
-    }
     if (!getRunId()
         .equals(other.getRunId())) return false;
     if (status_ != other.status_) return false;
@@ -311,10 +272,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasHeader()) {
-      hash = (37 * hash) + HEADER_FIELD_NUMBER;
-      hash = (53 * hash) + getHeader().hashCode();
-    }
     hash = (37 * hash) + RUN_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRunId().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -446,30 +403,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetHeaderFieldBuilder();
-        internalGetPartialErrorsFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      header_ = null;
-      if (headerBuilder_ != null) {
-        headerBuilder_.dispose();
-        headerBuilder_ = null;
-      }
       runId_ = "";
       status_ = 0;
       taskTotal_ = 0;
@@ -480,7 +425,7 @@ private static final long serialVersionUID = 0L;
         partialErrors_ = null;
         partialErrorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -515,9 +460,9 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(com.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse result) {
       if (partialErrorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           partialErrors_ = java.util.Collections.unmodifiableList(partialErrors_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.partialErrors_ = partialErrors_;
       } else {
@@ -527,26 +472,18 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.header_ = headerBuilder_ == null
-            ? header_
-            : headerBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.runId_ = runId_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.status_ = status_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.taskTotal_ = taskTotal_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.taskFailed_ = taskFailed_;
       }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -561,12 +498,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse other) {
       if (other == com.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.getDefaultInstance()) return this;
-      if (other.hasHeader()) {
-        mergeHeader(other.getHeader());
-      }
       if (!other.getRunId().isEmpty()) {
         runId_ = other.runId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.status_ != 0) {
@@ -582,7 +516,7 @@ private static final long serialVersionUID = 0L;
         if (!other.partialErrors_.isEmpty()) {
           if (partialErrors_.isEmpty()) {
             partialErrors_ = other.partialErrors_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensurePartialErrorsIsMutable();
             partialErrors_.addAll(other.partialErrors_);
@@ -595,7 +529,7 @@ private static final long serialVersionUID = 0L;
             partialErrorsBuilder_.dispose();
             partialErrorsBuilder_ = null;
             partialErrors_ = other.partialErrors_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
             partialErrorsBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetPartialErrorsFieldBuilder() : null;
@@ -629,33 +563,26 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              input.readMessage(
-                  internalGetHeaderFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              runId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              runId_ = input.readStringRequireUtf8();
+            case 16: {
+              status_ = input.readEnum();
               bitField0_ |= 0x00000002;
               break;
-            } // case 18
+            } // case 16
             case 24: {
-              status_ = input.readEnum();
+              taskTotal_ = input.readInt32();
               bitField0_ |= 0x00000004;
               break;
             } // case 24
             case 32: {
-              taskTotal_ = input.readInt32();
+              taskFailed_ = input.readInt32();
               bitField0_ |= 0x00000008;
               break;
             } // case 32
-            case 40: {
-              taskFailed_ = input.readInt32();
-              bitField0_ |= 0x00000010;
-              break;
-            } // case 40
-            case 50: {
+            case 42: {
               com.fusion.ai.proto.data_readiness.WeatherSyncPartialError m =
                   input.readMessage(
                       com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.parser(),
@@ -667,7 +594,7 @@ private static final long serialVersionUID = 0L;
                 partialErrorsBuilder_.addMessage(m);
               }
               break;
-            } // case 50
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -685,128 +612,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder> headerBuilder_;
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return Whether the header field is set.
-     */
-    public boolean hasHeader() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return The header.
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader() {
-      if (headerBuilder_ == null) {
-        return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-      } else {
-        return headerBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder setHeader(com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader value) {
-      if (headerBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        header_ = value;
-      } else {
-        headerBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder setHeader(
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder builderForValue) {
-      if (headerBuilder_ == null) {
-        header_ = builderForValue.build();
-      } else {
-        headerBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder mergeHeader(com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader value) {
-      if (headerBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
-          header_ != null &&
-          header_ != com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance()) {
-          getHeaderBuilder().mergeFrom(value);
-        } else {
-          header_ = value;
-        }
-      } else {
-        headerBuilder_.mergeFrom(value);
-      }
-      if (header_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder clearHeader() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      header_ = null;
-      if (headerBuilder_ != null) {
-        headerBuilder_.dispose();
-        headerBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder getHeaderBuilder() {
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return internalGetHeaderFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder() {
-      if (headerBuilder_ != null) {
-        return headerBuilder_.getMessageOrBuilder();
-      } else {
-        return header_ == null ?
-            com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-      }
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder> 
-        internalGetHeaderFieldBuilder() {
-      if (headerBuilder_ == null) {
-        headerBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder>(
-                getHeader(),
-                getParentForChildren(),
-                isClean());
-        header_ = null;
-      }
-      return headerBuilder_;
-    }
-
     private java.lang.Object runId_ = "";
     /**
-     * <code>string run_id = 2 [json_name = "run_id"];</code>
+     * <code>string run_id = 1 [json_name = "run_id"];</code>
      * @return The runId.
      */
     public java.lang.String getRunId() {
@@ -822,7 +630,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string run_id = 2 [json_name = "run_id"];</code>
+     * <code>string run_id = 1 [json_name = "run_id"];</code>
      * @return The bytes for runId.
      */
     public com.google.protobuf.ByteString
@@ -839,7 +647,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string run_id = 2 [json_name = "run_id"];</code>
+     * <code>string run_id = 1 [json_name = "run_id"];</code>
      * @param value The runId to set.
      * @return This builder for chaining.
      */
@@ -847,22 +655,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       runId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string run_id = 2 [json_name = "run_id"];</code>
+     * <code>string run_id = 1 [json_name = "run_id"];</code>
      * @return This builder for chaining.
      */
     public Builder clearRunId() {
       runId_ = getDefaultInstance().getRunId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string run_id = 2 [json_name = "run_id"];</code>
+     * <code>string run_id = 1 [json_name = "run_id"];</code>
      * @param value The bytes for runId to set.
      * @return This builder for chaining.
      */
@@ -871,32 +679,32 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       runId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
     private int status_ = 0;
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
      * @return The enum numeric value on the wire for status.
      */
     @java.lang.Override public int getStatusValue() {
       return status_;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
       status_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
      * @return The status.
      */
     @java.lang.Override
@@ -905,24 +713,24 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.data_readiness.WeatherSyncRunStatus.UNRECOGNIZED : result;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
      * @param value The status to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
      */
     public Builder setStatus(com.fusion.ai.proto.data_readiness.WeatherSyncRunStatus value) {
       java.util.Objects.requireNonNull(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       status_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       status_ = 0;
       onChanged();
       return this;
@@ -930,7 +738,7 @@ private static final long serialVersionUID = 0L;
 
     private int taskTotal_ ;
     /**
-     * <code>int32 task_total = 4 [json_name = "task_total"];</code>
+     * <code>int32 task_total = 3 [json_name = "task_total"];</code>
      * @return The taskTotal.
      */
     @java.lang.Override
@@ -938,23 +746,23 @@ private static final long serialVersionUID = 0L;
       return taskTotal_;
     }
     /**
-     * <code>int32 task_total = 4 [json_name = "task_total"];</code>
+     * <code>int32 task_total = 3 [json_name = "task_total"];</code>
      * @param value The taskTotal to set.
      * @return This builder for chaining.
      */
     public Builder setTaskTotal(int value) {
 
       taskTotal_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 task_total = 4 [json_name = "task_total"];</code>
+     * <code>int32 task_total = 3 [json_name = "task_total"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskTotal() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       taskTotal_ = 0;
       onChanged();
       return this;
@@ -962,7 +770,7 @@ private static final long serialVersionUID = 0L;
 
     private int taskFailed_ ;
     /**
-     * <code>int32 task_failed = 5 [json_name = "task_failed"];</code>
+     * <code>int32 task_failed = 4 [json_name = "task_failed"];</code>
      * @return The taskFailed.
      */
     @java.lang.Override
@@ -970,23 +778,23 @@ private static final long serialVersionUID = 0L;
       return taskFailed_;
     }
     /**
-     * <code>int32 task_failed = 5 [json_name = "task_failed"];</code>
+     * <code>int32 task_failed = 4 [json_name = "task_failed"];</code>
      * @param value The taskFailed to set.
      * @return This builder for chaining.
      */
     public Builder setTaskFailed(int value) {
 
       taskFailed_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 task_failed = 5 [json_name = "task_failed"];</code>
+     * <code>int32 task_failed = 4 [json_name = "task_failed"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskFailed() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       taskFailed_ = 0;
       onChanged();
       return this;
@@ -995,9 +803,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.fusion.ai.proto.data_readiness.WeatherSyncPartialError> partialErrors_ =
       java.util.Collections.emptyList();
     private void ensurePartialErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         partialErrors_ = new java.util.ArrayList<com.fusion.ai.proto.data_readiness.WeatherSyncPartialError>(partialErrors_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
        }
     }
 
@@ -1005,7 +813,7 @@ private static final long serialVersionUID = 0L;
         com.fusion.ai.proto.data_readiness.WeatherSyncPartialError, com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.Builder, com.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorOrBuilder> partialErrorsBuilder_;
 
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public java.util.List<com.fusion.ai.proto.data_readiness.WeatherSyncPartialError> getPartialErrorsList() {
       if (partialErrorsBuilder_ == null) {
@@ -1015,7 +823,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public int getPartialErrorsCount() {
       if (partialErrorsBuilder_ == null) {
@@ -1025,7 +833,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public com.fusion.ai.proto.data_readiness.WeatherSyncPartialError getPartialErrors(int index) {
       if (partialErrorsBuilder_ == null) {
@@ -1035,7 +843,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public Builder setPartialErrors(
         int index, com.fusion.ai.proto.data_readiness.WeatherSyncPartialError value) {
@@ -1050,7 +858,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public Builder setPartialErrors(
         int index, com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.Builder builderForValue) {
@@ -1064,7 +872,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public Builder addPartialErrors(com.fusion.ai.proto.data_readiness.WeatherSyncPartialError value) {
       if (partialErrorsBuilder_ == null) {
@@ -1078,7 +886,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public Builder addPartialErrors(
         int index, com.fusion.ai.proto.data_readiness.WeatherSyncPartialError value) {
@@ -1093,7 +901,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public Builder addPartialErrors(
         com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.Builder builderForValue) {
@@ -1107,7 +915,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public Builder addPartialErrors(
         int index, com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.Builder builderForValue) {
@@ -1121,7 +929,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public Builder addAllPartialErrors(
         java.lang.Iterable<? extends com.fusion.ai.proto.data_readiness.WeatherSyncPartialError> values) {
@@ -1136,12 +944,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public Builder clearPartialErrors() {
       if (partialErrorsBuilder_ == null) {
         partialErrors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         partialErrorsBuilder_.clear();
@@ -1149,7 +957,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public Builder removePartialErrors(int index) {
       if (partialErrorsBuilder_ == null) {
@@ -1162,14 +970,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.Builder getPartialErrorsBuilder(
         int index) {
       return internalGetPartialErrorsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public com.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorOrBuilder getPartialErrorsOrBuilder(
         int index) {
@@ -1179,7 +987,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public java.util.List<? extends com.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorOrBuilder> 
          getPartialErrorsOrBuilderList() {
@@ -1190,14 +998,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.Builder addPartialErrorsBuilder() {
       return internalGetPartialErrorsFieldBuilder().addBuilder(
           com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.getDefaultInstance());
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.Builder addPartialErrorsBuilder(
         int index) {
@@ -1205,7 +1013,7 @@ private static final long serialVersionUID = 0L;
           index, com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.getDefaultInstance());
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     public java.util.List<com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.Builder> 
          getPartialErrorsBuilderList() {
@@ -1218,7 +1026,7 @@ private static final long serialVersionUID = 0L;
         partialErrorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             com.fusion.ai.proto.data_readiness.WeatherSyncPartialError, com.fusion.ai.proto.data_readiness.WeatherSyncPartialError.Builder, com.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorOrBuilder>(
                 partialErrors_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         partialErrors_ = null;

@@ -11,45 +11,30 @@ public interface GetWeatherExcelTemplateResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  boolean hasHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder();
-
-  /**
-   * <code>bytes file = 2 [json_name = "file"];</code>
+   * <code>bytes file = 1 [json_name = "file"];</code>
    * @return The file.
    */
   com.google.protobuf.ByteString getFile();
 
   /**
-   * <code>string filename = 3 [json_name = "filename"];</code>
+   * <code>string filename = 2 [json_name = "filename"];</code>
    * @return The filename.
    */
   java.lang.String getFilename();
   /**
-   * <code>string filename = 3 [json_name = "filename"];</code>
+   * <code>string filename = 2 [json_name = "filename"];</code>
    * @return The bytes for filename.
    */
   com.google.protobuf.ByteString
       getFilenameBytes();
 
   /**
-   * <code>string content_type = 4 [json_name = "content_type"];</code>
+   * <code>string content_type = 3 [json_name = "content_type"];</code>
    * @return The contentType.
    */
   java.lang.String getContentType();
   /**
-   * <code>string content_type = 4 [json_name = "content_type"];</code>
+   * <code>string content_type = 3 [json_name = "content_type"];</code>
    * @return The bytes for contentType.
    */
   com.google.protobuf.ByteString

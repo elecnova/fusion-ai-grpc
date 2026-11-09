@@ -11,32 +11,17 @@ public interface GetWeatherSyncRunResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  boolean hasHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder();
-
-  /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];</code>
+   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];</code>
    * @return Whether the run field is set.
    */
   boolean hasRun();
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];</code>
+   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];</code>
    * @return The run.
    */
   com.fusion.ai.proto.data_readiness.WeatherSyncRunView getRun();
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];</code>
+   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];</code>
    */
   com.fusion.ai.proto.data_readiness.WeatherSyncRunViewOrBuilder getRunOrBuilder();
 }

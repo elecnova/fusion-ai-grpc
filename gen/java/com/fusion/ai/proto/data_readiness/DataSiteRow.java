@@ -6,6 +6,10 @@
 package com.fusion.ai.proto.data_readiness;
 
 /**
+ * <pre>
+ * DataSiteRow 矩阵行。天气列仅光伏有值；原始数据粒度固定 5min，不再下发。
+ * </pre>
+ *
  * Protobuf type {@code fusion.ai.proto.data_readiness.DataSiteRow}
  */
 @com.google.protobuf.Generated
@@ -233,21 +237,10 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.fusion.ai.proto.data_readiness.DataSource.UNRECOGNIZED : result;
   }
 
-  public static final int PRIMARY_GRANULARITY_MIN_FIELD_NUMBER = 6;
-  private int primaryGranularityMin_ = 0;
-  /**
-   * <code>int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];</code>
-   * @return The primaryGranularityMin.
-   */
-  @java.lang.Override
-  public int getPrimaryGranularityMin() {
-    return primaryGranularityMin_;
-  }
-
-  public static final int COVERAGE_RATIO_7D_FIELD_NUMBER = 7;
+  public static final int COVERAGE_RATIO_7D_FIELD_NUMBER = 6;
   private double coverageRatio7D_ = 0D;
   /**
-   * <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+   * <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
    * @return Whether the coverageRatio7d field is set.
    */
   @java.lang.Override
@@ -255,7 +248,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+   * <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
    * @return The coverageRatio7d.
    */
   @java.lang.Override
@@ -263,18 +256,18 @@ private static final long serialVersionUID = 0L;
     return coverageRatio7D_;
   }
 
-  public static final int TREND_7D_FIELD_NUMBER = 8;
+  public static final int TREND_7D_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
   private java.util.List<com.fusion.ai.proto.data_readiness.CoverageTrendPoint> trend7D_;
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   @java.lang.Override
   public java.util.List<com.fusion.ai.proto.data_readiness.CoverageTrendPoint> getTrend7DList() {
     return trend7D_;
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.fusion.ai.proto.data_readiness.CoverageTrendPointOrBuilder> 
@@ -282,21 +275,21 @@ private static final long serialVersionUID = 0L;
     return trend7D_;
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   @java.lang.Override
   public int getTrend7DCount() {
     return trend7D_.size();
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   @java.lang.Override
   public com.fusion.ai.proto.data_readiness.CoverageTrendPoint getTrend7D(int index) {
     return trend7D_.get(index);
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   @java.lang.Override
   public com.fusion.ai.proto.data_readiness.CoverageTrendPointOrBuilder getTrend7DOrBuilder(
@@ -304,17 +297,24 @@ private static final long serialVersionUID = 0L;
     return trend7D_.get(index);
   }
 
-  public static final int WEATHER_STATUS_FIELD_NUMBER = 9;
+  public static final int WEATHER_STATUS_FIELD_NUMBER = 8;
   private int weatherStatus_ = 0;
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
+   * @return Whether the weatherStatus field is set.
+   */
+  @java.lang.Override public boolean hasWeatherStatus() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
    * @return The enum numeric value on the wire for weatherStatus.
    */
   @java.lang.Override public int getWeatherStatusValue() {
     return weatherStatus_;
   }
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
    * @return The weatherStatus.
    */
   @java.lang.Override public com.fusion.ai.proto.data_readiness.WeatherStatus getWeatherStatus() {
@@ -322,11 +322,19 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.fusion.ai.proto.data_readiness.WeatherStatus.UNRECOGNIZED : result;
   }
 
-  public static final int WEATHER_DISPLAY_FIELD_NUMBER = 10;
+  public static final int WEATHER_DISPLAY_FIELD_NUMBER = 9;
   @SuppressWarnings("serial")
   private volatile java.lang.Object weatherDisplay_ = "";
   /**
-   * <code>string weather_display = 10 [json_name = "weather_display"];</code>
+   * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
+   * @return Whether the weatherDisplay field is set.
+   */
+  @java.lang.Override
+  public boolean hasWeatherDisplay() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
    * @return The weatherDisplay.
    */
   @java.lang.Override
@@ -343,7 +351,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string weather_display = 10 [json_name = "weather_display"];</code>
+   * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
    * @return The bytes for weatherDisplay.
    */
   @java.lang.Override
@@ -361,18 +369,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int LAST_PUSH_AT_FIELD_NUMBER = 11;
+  public static final int LAST_PUSH_AT_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp lastPushAt_;
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
    * @return Whether the lastPushAt field is set.
    */
   @java.lang.Override
   public boolean hasLastPushAt() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
    * @return The lastPushAt.
    */
   @java.lang.Override
@@ -380,25 +388,25 @@ private static final long serialVersionUID = 0L;
     return lastPushAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastPushAt_;
   }
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastPushAtOrBuilder() {
     return lastPushAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastPushAt_;
   }
 
-  public static final int LAST_INGEST_AT_FIELD_NUMBER = 12;
+  public static final int LAST_INGEST_AT_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp lastIngestAt_;
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    * @return Whether the lastIngestAt field is set.
    */
   @java.lang.Override
   public boolean hasLastIngestAt() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    * @return The lastIngestAt.
    */
   @java.lang.Override
@@ -406,17 +414,17 @@ private static final long serialVersionUID = 0L;
     return lastIngestAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastIngestAt_;
   }
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastIngestAtOrBuilder() {
     return lastIngestAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastIngestAt_;
   }
 
-  public static final int GAP_POINTS_7D_FIELD_NUMBER = 13;
+  public static final int GAP_POINTS_7D_FIELD_NUMBER = 12;
   private int gapPoints7D_ = 0;
   /**
-   * <code>int32 gap_points_7d = 13 [json_name = "gap_points_7d"];</code>
+   * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
    * @return The gapPoints7d.
    */
   @java.lang.Override
@@ -424,17 +432,17 @@ private static final long serialVersionUID = 0L;
     return gapPoints7D_;
   }
 
-  public static final int READINESS_STATUS_FIELD_NUMBER = 14;
+  public static final int READINESS_STATUS_FIELD_NUMBER = 13;
   private int readinessStatus_ = 0;
   /**
-   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
    * @return The enum numeric value on the wire for readinessStatus.
    */
   @java.lang.Override public int getReadinessStatusValue() {
     return readinessStatus_;
   }
   /**
-   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
    * @return The readinessStatus.
    */
   @java.lang.Override public com.fusion.ai.proto.data_readiness.ReadinessStatus getReadinessStatus() {
@@ -442,11 +450,11 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.fusion.ai.proto.data_readiness.ReadinessStatus.UNRECOGNIZED : result;
   }
 
-  public static final int WORKBENCH_HREF_FIELD_NUMBER = 15;
+  public static final int WORKBENCH_HREF_FIELD_NUMBER = 14;
   @SuppressWarnings("serial")
   private volatile java.lang.Object workbenchHref_ = "";
   /**
-   * <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+   * <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
    * @return The workbenchHref.
    */
   @java.lang.Override
@@ -463,7 +471,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+   * <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
    * @return The bytes for workbenchHref.
    */
   @java.lang.Override
@@ -510,35 +518,32 @@ private static final long serialVersionUID = 0L;
     if (dataSource_ != com.fusion.ai.proto.data_readiness.DataSource.DATA_SOURCE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, dataSource_);
     }
-    if (primaryGranularityMin_ != 0) {
-      output.writeInt32(6, primaryGranularityMin_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeDouble(7, coverageRatio7D_);
+      output.writeDouble(6, coverageRatio7D_);
     }
     for (int i = 0; i < trend7D_.size(); i++) {
-      output.writeMessage(8, trend7D_.get(i));
-    }
-    if (weatherStatus_ != com.fusion.ai.proto.data_readiness.WeatherStatus.WEATHER_STATUS_UNSPECIFIED.getNumber()) {
-      output.writeEnum(9, weatherStatus_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(weatherDisplay_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 10, weatherDisplay_);
+      output.writeMessage(7, trend7D_.get(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(11, getLastPushAt());
+      output.writeEnum(8, weatherStatus_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(12, getLastIngestAt());
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, weatherDisplay_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(10, getLastPushAt());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(11, getLastIngestAt());
     }
     if (gapPoints7D_ != 0) {
-      output.writeInt32(13, gapPoints7D_);
+      output.writeInt32(12, gapPoints7D_);
     }
     if (readinessStatus_ != com.fusion.ai.proto.data_readiness.ReadinessStatus.READINESS_STATUS_UNSPECIFIED.getNumber()) {
-      output.writeEnum(14, readinessStatus_);
+      output.writeEnum(13, readinessStatus_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workbenchHref_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 15, workbenchHref_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, workbenchHref_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -560,13 +565,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, dataSource_);
     }
-    if (primaryGranularityMin_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, primaryGranularityMin_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(7, coverageRatio7D_);
+        .computeDoubleSize(6, coverageRatio7D_);
     }
 
         {
@@ -577,31 +578,31 @@ private static final long serialVersionUID = 0L;
           }
           size += 1 * count;
         }
-    if (weatherStatus_ != com.fusion.ai.proto.data_readiness.WeatherStatus.WEATHER_STATUS_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(9, weatherStatus_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(weatherDisplay_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, weatherDisplay_);
-    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getLastPushAt());
+        .computeEnumSize(8, weatherStatus_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, weatherDisplay_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getLastIngestAt());
+        .computeMessageSize(10, getLastPushAt());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getLastIngestAt());
     }
     if (gapPoints7D_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(13, gapPoints7D_);
+        .computeInt32Size(12, gapPoints7D_);
     }
     if (readinessStatus_ != com.fusion.ai.proto.data_readiness.ReadinessStatus.READINESS_STATUS_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(14, readinessStatus_);
+        .computeEnumSize(13, readinessStatus_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workbenchHref_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, workbenchHref_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(14, workbenchHref_);
     }
     return size;
   }
@@ -636,8 +637,6 @@ private static final long serialVersionUID = 0L;
     if (!getServiceType()
         .equals(other.getServiceType())) return false;
     if (dataSource_ != other.dataSource_) return false;
-    if (getPrimaryGranularityMin()
-        != other.getPrimaryGranularityMin()) return false;
     if (hasCoverageRatio7D() != other.hasCoverageRatio7D()) return false;
     if (hasCoverageRatio7D()) {
       if (java.lang.Double.doubleToLongBits(getCoverageRatio7D())
@@ -646,9 +645,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTrend7DList()
         .equals(other.getTrend7DList())) return false;
-    if (weatherStatus_ != other.weatherStatus_) return false;
-    if (!getWeatherDisplay()
-        .equals(other.getWeatherDisplay())) return false;
+    if (hasWeatherStatus() != other.hasWeatherStatus()) return false;
+    if (hasWeatherStatus()) {
+      if (weatherStatus_ != other.weatherStatus_) return false;
+    }
+    if (hasWeatherDisplay() != other.hasWeatherDisplay()) return false;
+    if (hasWeatherDisplay()) {
+      if (!getWeatherDisplay()
+          .equals(other.getWeatherDisplay())) return false;
+    }
     if (hasLastPushAt() != other.hasLastPushAt()) return false;
     if (hasLastPushAt()) {
       if (!getLastPushAt()
@@ -685,8 +690,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getServiceType().hashCode();
     hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + dataSource_;
-    hash = (37 * hash) + PRIMARY_GRANULARITY_MIN_FIELD_NUMBER;
-    hash = (53 * hash) + getPrimaryGranularityMin();
     if (hasCoverageRatio7D()) {
       hash = (37 * hash) + COVERAGE_RATIO_7D_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -696,10 +699,14 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TREND_7D_FIELD_NUMBER;
       hash = (53 * hash) + getTrend7DList().hashCode();
     }
-    hash = (37 * hash) + WEATHER_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + weatherStatus_;
-    hash = (37 * hash) + WEATHER_DISPLAY_FIELD_NUMBER;
-    hash = (53 * hash) + getWeatherDisplay().hashCode();
+    if (hasWeatherStatus()) {
+      hash = (37 * hash) + WEATHER_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + weatherStatus_;
+    }
+    if (hasWeatherDisplay()) {
+      hash = (37 * hash) + WEATHER_DISPLAY_FIELD_NUMBER;
+      hash = (53 * hash) + getWeatherDisplay().hashCode();
+    }
     if (hasLastPushAt()) {
       hash = (37 * hash) + LAST_PUSH_AT_FIELD_NUMBER;
       hash = (53 * hash) + getLastPushAt().hashCode();
@@ -812,6 +819,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DataSiteRow 矩阵行。天气列仅光伏有值；原始数据粒度固定 5min，不再下发。
+   * </pre>
+   *
    * Protobuf type {@code fusion.ai.proto.data_readiness.DataSiteRow}
    */
   public static final class Builder extends
@@ -858,7 +869,6 @@ private static final long serialVersionUID = 0L;
       siteName_ = "";
       serviceType_ = "";
       dataSource_ = 0;
-      primaryGranularityMin_ = 0;
       coverageRatio7D_ = 0D;
       if (trend7DBuilder_ == null) {
         trend7D_ = java.util.Collections.emptyList();
@@ -866,7 +876,7 @@ private static final long serialVersionUID = 0L;
         trend7D_ = null;
         trend7DBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       weatherStatus_ = 0;
       weatherDisplay_ = "";
       lastPushAt_ = null;
@@ -916,9 +926,9 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(com.fusion.ai.proto.data_readiness.DataSiteRow result) {
       if (trend7DBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           trend7D_ = java.util.Collections.unmodifiableList(trend7D_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.trend7D_ = trend7D_;
       } else {
@@ -943,39 +953,38 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.dataSource_ = dataSource_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.primaryGranularityMin_ = primaryGranularityMin_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.coverageRatio7D_ = coverageRatio7D_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.weatherStatus_ = weatherStatus_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.weatherDisplay_ = weatherDisplay_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.weatherDisplay_ = weatherDisplay_;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.lastPushAt_ = lastPushAtBuilder_ == null
             ? lastPushAt_
             : lastPushAtBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.lastIngestAt_ = lastIngestAtBuilder_ == null
             ? lastIngestAt_
             : lastIngestAtBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.gapPoints7D_ = gapPoints7D_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.readinessStatus_ = readinessStatus_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.workbenchHref_ = workbenchHref_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1016,9 +1025,6 @@ private static final long serialVersionUID = 0L;
       if (other.dataSource_ != 0) {
         setDataSourceValue(other.getDataSourceValue());
       }
-      if (other.getPrimaryGranularityMin() != 0) {
-        setPrimaryGranularityMin(other.getPrimaryGranularityMin());
-      }
       if (other.hasCoverageRatio7D()) {
         setCoverageRatio7D(other.getCoverageRatio7D());
       }
@@ -1026,7 +1032,7 @@ private static final long serialVersionUID = 0L;
         if (!other.trend7D_.isEmpty()) {
           if (trend7D_.isEmpty()) {
             trend7D_ = other.trend7D_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureTrend7DIsMutable();
             trend7D_.addAll(other.trend7D_);
@@ -1039,7 +1045,7 @@ private static final long serialVersionUID = 0L;
             trend7DBuilder_.dispose();
             trend7DBuilder_ = null;
             trend7D_ = other.trend7D_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000040);
             trend7DBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetTrend7DFieldBuilder() : null;
@@ -1048,12 +1054,12 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.weatherStatus_ != 0) {
+      if (other.hasWeatherStatus()) {
         setWeatherStatusValue(other.getWeatherStatusValue());
       }
-      if (!other.getWeatherDisplay().isEmpty()) {
+      if (other.hasWeatherDisplay()) {
         weatherDisplay_ = other.weatherDisplay_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasLastPushAt()) {
@@ -1070,7 +1076,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getWorkbenchHref().isEmpty()) {
         workbenchHref_ = other.workbenchHref_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1122,17 +1128,12 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
-            case 48: {
-              primaryGranularityMin_ = input.readInt32();
+            case 49: {
+              coverageRatio7D_ = input.readDouble();
               bitField0_ |= 0x00000020;
               break;
-            } // case 48
-            case 57: {
-              coverageRatio7D_ = input.readDouble();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 57
-            case 66: {
+            } // case 49
+            case 58: {
               com.fusion.ai.proto.data_readiness.CoverageTrendPoint m =
                   input.readMessage(
                       com.fusion.ai.proto.data_readiness.CoverageTrendPoint.parser(),
@@ -1144,46 +1145,46 @@ private static final long serialVersionUID = 0L;
                 trend7DBuilder_.addMessage(m);
               }
               break;
-            } // case 66
-            case 72: {
+            } // case 58
+            case 64: {
               weatherStatus_ = input.readEnum();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 64
+            case 74: {
+              weatherDisplay_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000100;
               break;
-            } // case 72
+            } // case 74
             case 82: {
-              weatherDisplay_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  internalGetLastPushAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000200;
               break;
             } // case 82
             case 90: {
               input.readMessage(
-                  internalGetLastPushAtFieldBuilder().getBuilder(),
+                  internalGetLastIngestAtFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000400;
               break;
             } // case 90
-            case 98: {
-              input.readMessage(
-                  internalGetLastIngestAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            case 96: {
+              gapPoints7D_ = input.readInt32();
               bitField0_ |= 0x00000800;
               break;
-            } // case 98
+            } // case 96
             case 104: {
-              gapPoints7D_ = input.readInt32();
+              readinessStatus_ = input.readEnum();
               bitField0_ |= 0x00001000;
               break;
             } // case 104
-            case 112: {
-              readinessStatus_ = input.readEnum();
+            case 114: {
+              workbenchHref_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00002000;
               break;
-            } // case 112
-            case 122: {
-              workbenchHref_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
-              break;
-            } // case 122
+            } // case 114
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1541,49 +1542,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int primaryGranularityMin_ ;
-    /**
-     * <code>int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];</code>
-     * @return The primaryGranularityMin.
-     */
-    @java.lang.Override
-    public int getPrimaryGranularityMin() {
-      return primaryGranularityMin_;
-    }
-    /**
-     * <code>int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];</code>
-     * @param value The primaryGranularityMin to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrimaryGranularityMin(int value) {
-
-      primaryGranularityMin_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPrimaryGranularityMin() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      primaryGranularityMin_ = 0;
-      onChanged();
-      return this;
-    }
-
     private double coverageRatio7D_ ;
     /**
-     * <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+     * <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
      * @return Whether the coverageRatio7d field is set.
      */
     @java.lang.Override
     public boolean hasCoverageRatio7D() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+     * <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
      * @return The coverageRatio7d.
      */
     @java.lang.Override
@@ -1591,23 +1560,23 @@ private static final long serialVersionUID = 0L;
       return coverageRatio7D_;
     }
     /**
-     * <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+     * <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
      * @param value The coverageRatio7d to set.
      * @return This builder for chaining.
      */
     public Builder setCoverageRatio7D(double value) {
 
       coverageRatio7D_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+     * <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCoverageRatio7D() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       coverageRatio7D_ = 0D;
       onChanged();
       return this;
@@ -1616,9 +1585,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.fusion.ai.proto.data_readiness.CoverageTrendPoint> trend7D_ =
       java.util.Collections.emptyList();
     private void ensureTrend7DIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         trend7D_ = new java.util.ArrayList<com.fusion.ai.proto.data_readiness.CoverageTrendPoint>(trend7D_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
        }
     }
 
@@ -1626,7 +1595,7 @@ private static final long serialVersionUID = 0L;
         com.fusion.ai.proto.data_readiness.CoverageTrendPoint, com.fusion.ai.proto.data_readiness.CoverageTrendPoint.Builder, com.fusion.ai.proto.data_readiness.CoverageTrendPointOrBuilder> trend7DBuilder_;
 
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public java.util.List<com.fusion.ai.proto.data_readiness.CoverageTrendPoint> getTrend7DList() {
       if (trend7DBuilder_ == null) {
@@ -1636,7 +1605,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public int getTrend7DCount() {
       if (trend7DBuilder_ == null) {
@@ -1646,7 +1615,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.CoverageTrendPoint getTrend7D(int index) {
       if (trend7DBuilder_ == null) {
@@ -1656,7 +1625,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public Builder setTrend7D(
         int index, com.fusion.ai.proto.data_readiness.CoverageTrendPoint value) {
@@ -1671,7 +1640,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public Builder setTrend7D(
         int index, com.fusion.ai.proto.data_readiness.CoverageTrendPoint.Builder builderForValue) {
@@ -1685,7 +1654,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public Builder addTrend7D(com.fusion.ai.proto.data_readiness.CoverageTrendPoint value) {
       if (trend7DBuilder_ == null) {
@@ -1699,7 +1668,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public Builder addTrend7D(
         int index, com.fusion.ai.proto.data_readiness.CoverageTrendPoint value) {
@@ -1714,7 +1683,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public Builder addTrend7D(
         com.fusion.ai.proto.data_readiness.CoverageTrendPoint.Builder builderForValue) {
@@ -1728,7 +1697,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public Builder addTrend7D(
         int index, com.fusion.ai.proto.data_readiness.CoverageTrendPoint.Builder builderForValue) {
@@ -1742,7 +1711,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public Builder addAllTrend7D(
         java.lang.Iterable<? extends com.fusion.ai.proto.data_readiness.CoverageTrendPoint> values) {
@@ -1757,12 +1726,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public Builder clearTrend7D() {
       if (trend7DBuilder_ == null) {
         trend7D_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         trend7DBuilder_.clear();
@@ -1770,7 +1739,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public Builder removeTrend7D(int index) {
       if (trend7DBuilder_ == null) {
@@ -1783,14 +1752,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.CoverageTrendPoint.Builder getTrend7DBuilder(
         int index) {
       return internalGetTrend7DFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.CoverageTrendPointOrBuilder getTrend7DOrBuilder(
         int index) {
@@ -1800,7 +1769,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public java.util.List<? extends com.fusion.ai.proto.data_readiness.CoverageTrendPointOrBuilder> 
          getTrend7DOrBuilderList() {
@@ -1811,14 +1780,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.CoverageTrendPoint.Builder addTrend7DBuilder() {
       return internalGetTrend7DFieldBuilder().addBuilder(
           com.fusion.ai.proto.data_readiness.CoverageTrendPoint.getDefaultInstance());
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.CoverageTrendPoint.Builder addTrend7DBuilder(
         int index) {
@@ -1826,7 +1795,7 @@ private static final long serialVersionUID = 0L;
           index, com.fusion.ai.proto.data_readiness.CoverageTrendPoint.getDefaultInstance());
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
      */
     public java.util.List<com.fusion.ai.proto.data_readiness.CoverageTrendPoint.Builder> 
          getTrend7DBuilderList() {
@@ -1839,7 +1808,7 @@ private static final long serialVersionUID = 0L;
         trend7DBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             com.fusion.ai.proto.data_readiness.CoverageTrendPoint, com.fusion.ai.proto.data_readiness.CoverageTrendPoint.Builder, com.fusion.ai.proto.data_readiness.CoverageTrendPointOrBuilder>(
                 trend7D_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         trend7D_ = null;
@@ -1849,25 +1818,32 @@ private static final long serialVersionUID = 0L;
 
     private int weatherStatus_ = 0;
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
+     * @return Whether the weatherStatus field is set.
+     */
+    @java.lang.Override public boolean hasWeatherStatus() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
      * @return The enum numeric value on the wire for weatherStatus.
      */
     @java.lang.Override public int getWeatherStatusValue() {
       return weatherStatus_;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
      * @param value The enum numeric value on the wire for weatherStatus to set.
      * @return This builder for chaining.
      */
     public Builder setWeatherStatusValue(int value) {
       weatherStatus_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
      * @return The weatherStatus.
      */
     @java.lang.Override
@@ -1876,24 +1852,24 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.data_readiness.WeatherStatus.UNRECOGNIZED : result;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
      * @param value The weatherStatus to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
      */
     public Builder setWeatherStatus(com.fusion.ai.proto.data_readiness.WeatherStatus value) {
       java.util.Objects.requireNonNull(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       weatherStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
      * @return This builder for chaining.
      */
     public Builder clearWeatherStatus() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       weatherStatus_ = 0;
       onChanged();
       return this;
@@ -1901,7 +1877,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object weatherDisplay_ = "";
     /**
-     * <code>string weather_display = 10 [json_name = "weather_display"];</code>
+     * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
+     * @return Whether the weatherDisplay field is set.
+     */
+    public boolean hasWeatherDisplay() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
      * @return The weatherDisplay.
      */
     public java.lang.String getWeatherDisplay() {
@@ -1917,7 +1900,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string weather_display = 10 [json_name = "weather_display"];</code>
+     * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
      * @return The bytes for weatherDisplay.
      */
     public com.google.protobuf.ByteString
@@ -1934,7 +1917,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string weather_display = 10 [json_name = "weather_display"];</code>
+     * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
      * @param value The weatherDisplay to set.
      * @return This builder for chaining.
      */
@@ -1942,22 +1925,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       weatherDisplay_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>string weather_display = 10 [json_name = "weather_display"];</code>
+     * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
      * @return This builder for chaining.
      */
     public Builder clearWeatherDisplay() {
       weatherDisplay_ = getDefaultInstance().getWeatherDisplay();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
     /**
-     * <code>string weather_display = 10 [json_name = "weather_display"];</code>
+     * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
      * @param value The bytes for weatherDisplay to set.
      * @return This builder for chaining.
      */
@@ -1966,7 +1949,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       weatherDisplay_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1975,14 +1958,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastPushAtBuilder_;
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      * @return Whether the lastPushAt field is set.
      */
     public boolean hasLastPushAt() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      * @return The lastPushAt.
      */
     public com.google.protobuf.Timestamp getLastPushAt() {
@@ -1993,7 +1976,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      */
     public Builder setLastPushAt(com.google.protobuf.Timestamp value) {
       if (lastPushAtBuilder_ == null) {
@@ -2002,12 +1985,12 @@ private static final long serialVersionUID = 0L;
       } else {
         lastPushAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      */
     public Builder setLastPushAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2016,16 +1999,16 @@ private static final long serialVersionUID = 0L;
       } else {
         lastPushAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      */
     public Builder mergeLastPushAt(com.google.protobuf.Timestamp value) {
       if (lastPushAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0) &&
+        if (((bitField0_ & 0x00000200) != 0) &&
           lastPushAt_ != null &&
           lastPushAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastPushAtBuilder().mergeFrom(value);
@@ -2036,16 +2019,16 @@ private static final long serialVersionUID = 0L;
         lastPushAtBuilder_.mergeFrom(value);
       }
       if (lastPushAt_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      */
     public Builder clearLastPushAt() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000200);
       lastPushAt_ = null;
       if (lastPushAtBuilder_ != null) {
         lastPushAtBuilder_.dispose();
@@ -2055,15 +2038,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastPushAtBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetLastPushAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getLastPushAtOrBuilder() {
       if (lastPushAtBuilder_ != null) {
@@ -2074,7 +2057,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2094,14 +2077,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastIngestAtBuilder_;
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      * @return Whether the lastIngestAt field is set.
      */
     public boolean hasLastIngestAt() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      * @return The lastIngestAt.
      */
     public com.google.protobuf.Timestamp getLastIngestAt() {
@@ -2112,7 +2095,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      */
     public Builder setLastIngestAt(com.google.protobuf.Timestamp value) {
       if (lastIngestAtBuilder_ == null) {
@@ -2121,12 +2104,12 @@ private static final long serialVersionUID = 0L;
       } else {
         lastIngestAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      */
     public Builder setLastIngestAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2135,16 +2118,16 @@ private static final long serialVersionUID = 0L;
       } else {
         lastIngestAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      */
     public Builder mergeLastIngestAt(com.google.protobuf.Timestamp value) {
       if (lastIngestAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0) &&
+        if (((bitField0_ & 0x00000400) != 0) &&
           lastIngestAt_ != null &&
           lastIngestAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastIngestAtBuilder().mergeFrom(value);
@@ -2155,16 +2138,16 @@ private static final long serialVersionUID = 0L;
         lastIngestAtBuilder_.mergeFrom(value);
       }
       if (lastIngestAt_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      */
     public Builder clearLastIngestAt() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       lastIngestAt_ = null;
       if (lastIngestAtBuilder_ != null) {
         lastIngestAtBuilder_.dispose();
@@ -2174,15 +2157,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastIngestAtBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetLastIngestAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getLastIngestAtOrBuilder() {
       if (lastIngestAtBuilder_ != null) {
@@ -2193,7 +2176,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2211,7 +2194,7 @@ private static final long serialVersionUID = 0L;
 
     private int gapPoints7D_ ;
     /**
-     * <code>int32 gap_points_7d = 13 [json_name = "gap_points_7d"];</code>
+     * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @return The gapPoints7d.
      */
     @java.lang.Override
@@ -2219,23 +2202,23 @@ private static final long serialVersionUID = 0L;
       return gapPoints7D_;
     }
     /**
-     * <code>int32 gap_points_7d = 13 [json_name = "gap_points_7d"];</code>
+     * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @param value The gapPoints7d to set.
      * @return This builder for chaining.
      */
     public Builder setGapPoints7D(int value) {
 
       gapPoints7D_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 gap_points_7d = 13 [json_name = "gap_points_7d"];</code>
+     * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @return This builder for chaining.
      */
     public Builder clearGapPoints7D() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       gapPoints7D_ = 0;
       onChanged();
       return this;
@@ -2243,25 +2226,25 @@ private static final long serialVersionUID = 0L;
 
     private int readinessStatus_ = 0;
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
      * @return The enum numeric value on the wire for readinessStatus.
      */
     @java.lang.Override public int getReadinessStatusValue() {
       return readinessStatus_;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
      * @param value The enum numeric value on the wire for readinessStatus to set.
      * @return This builder for chaining.
      */
     public Builder setReadinessStatusValue(int value) {
       readinessStatus_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
      * @return The readinessStatus.
      */
     @java.lang.Override
@@ -2270,24 +2253,24 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.data_readiness.ReadinessStatus.UNRECOGNIZED : result;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
      * @param value The readinessStatus to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
      */
     public Builder setReadinessStatus(com.fusion.ai.proto.data_readiness.ReadinessStatus value) {
       java.util.Objects.requireNonNull(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       readinessStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
      * @return This builder for chaining.
      */
     public Builder clearReadinessStatus() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00001000);
       readinessStatus_ = 0;
       onChanged();
       return this;
@@ -2295,7 +2278,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object workbenchHref_ = "";
     /**
-     * <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+     * <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
      * @return The workbenchHref.
      */
     public java.lang.String getWorkbenchHref() {
@@ -2311,7 +2294,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+     * <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
      * @return The bytes for workbenchHref.
      */
     public com.google.protobuf.ByteString
@@ -2328,7 +2311,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+     * <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
      * @param value The workbenchHref to set.
      * @return This builder for chaining.
      */
@@ -2336,22 +2319,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       workbenchHref_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
     /**
-     * <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+     * <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
      * @return This builder for chaining.
      */
     public Builder clearWorkbenchHref() {
       workbenchHref_ = getDefaultInstance().getWorkbenchHref();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
     /**
-     * <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+     * <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
      * @param value The bytes for workbenchHref to set.
      * @return This builder for chaining.
      */
@@ -2360,7 +2343,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       workbenchHref_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

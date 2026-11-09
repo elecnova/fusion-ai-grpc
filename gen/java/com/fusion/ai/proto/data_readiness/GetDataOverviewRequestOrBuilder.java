@@ -11,16 +11,28 @@ public interface GetDataOverviewRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+   * </pre>
+   *
    * <code>optional string service_type = 1 [json_name = "service_type"];</code>
    * @return Whether the serviceType field is set.
    */
   boolean hasServiceType();
   /**
+   * <pre>
+   * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+   * </pre>
+   *
    * <code>optional string service_type = 1 [json_name = "service_type"];</code>
    * @return The serviceType.
    */
   java.lang.String getServiceType();
   /**
+   * <pre>
+   * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+   * </pre>
+   *
    * <code>optional string service_type = 1 [json_name = "service_type"];</code>
    * @return The bytes for serviceType.
    */

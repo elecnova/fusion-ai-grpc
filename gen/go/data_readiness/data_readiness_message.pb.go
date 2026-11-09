@@ -39,9 +39,8 @@ const (
 	ReadinessStatus_READINESS_STATUS_READY           ReadinessStatus = 1
 	ReadinessStatus_READINESS_STATUS_NEED_FILL       ReadinessStatus = 2
 	ReadinessStatus_READINESS_STATUS_SEVERE          ReadinessStatus = 3
-	ReadinessStatus_READINESS_STATUS_WEATHER_MISSING ReadinessStatus = 4
+	ReadinessStatus_READINESS_STATUS_WEATHER_MISSING ReadinessStatus = 4 // 仅 pv_prediction 有意义
 	ReadinessStatus_READINESS_STATUS_OFFLINE         ReadinessStatus = 5
-	ReadinessStatus_READINESS_STATUS_PULL_UNKNOWN    ReadinessStatus = 6
 )
 
 // Enum value maps for ReadinessStatus.
@@ -53,7 +52,6 @@ var (
 		3: "READINESS_STATUS_SEVERE",
 		4: "READINESS_STATUS_WEATHER_MISSING",
 		5: "READINESS_STATUS_OFFLINE",
-		6: "READINESS_STATUS_PULL_UNKNOWN",
 	}
 	ReadinessStatus_value = map[string]int32{
 		"READINESS_STATUS_UNSPECIFIED":     0,
@@ -62,7 +60,6 @@ var (
 		"READINESS_STATUS_SEVERE":          3,
 		"READINESS_STATUS_WEATHER_MISSING": 4,
 		"READINESS_STATUS_OFFLINE":         5,
-		"READINESS_STATUS_PULL_UNKNOWN":    6,
 	}
 )
 
@@ -93,7 +90,7 @@ func (ReadinessStatus) EnumDescriptor() ([]byte, []int) {
 	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{0}
 }
 
-// WeatherStatus 矩阵「天气」列投影
+// WeatherStatus 矩阵「天气」列投影（仅 pv_prediction；非光伏勿填或 UNSPECIFIED）
 type WeatherStatus int32
 
 const (
@@ -476,82 +473,23 @@ func (HeatmapLevel) EnumDescriptor() ([]byte, []int) {
 	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{7}
 }
 
-// DataReadinessReplyHeader 与 site/pv 一致的业务信封（HTTP 200 + state 判断；实现期嵌入各 Response）。
-type DataReadinessReplyHeader struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	State         string                 `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
-	Code          string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
-	Message       string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *DataReadinessReplyHeader) Reset() {
-	*x = DataReadinessReplyHeader{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DataReadinessReplyHeader) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DataReadinessReplyHeader) ProtoMessage() {}
-
-func (x *DataReadinessReplyHeader) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DataReadinessReplyHeader.ProtoReflect.Descriptor instead.
-func (*DataReadinessReplyHeader) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *DataReadinessReplyHeader) GetState() string {
-	if x != nil {
-		return x.State
-	}
-	return ""
-}
-
-func (x *DataReadinessReplyHeader) GetCode() string {
-	if x != nil {
-		return x.Code
-	}
-	return ""
-}
-
-func (x *DataReadinessReplyHeader) GetMessage() string {
-	if x != nil {
-		return x.Message
-	}
-	return ""
-}
-
+// DataOverview 顶栏 KPI。原始功率固定 5min；天气 KPI 仅 pv 有值。
 type DataOverview struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	SiteCount           int32                  `protobuf:"varint,1,opt,name=site_count,proto3" json:"site_count,omitempty"`
-	ReadyToday          int32                  `protobuf:"varint,2,opt,name=ready_today,proto3" json:"ready_today,omitempty"`
-	NeedFillCount       int32                  `protobuf:"varint,3,opt,name=need_fill_count,proto3" json:"need_fill_count,omitempty"`
-	WeatherMissingCount int32                  `protobuf:"varint,4,opt,name=weather_missing_count,proto3" json:"weather_missing_count,omitempty"`
-	PushSuccess_24HPct  float64                `protobuf:"fixed64,5,opt,name=push_success_24h_pct,proto3" json:"push_success_24h_pct,omitempty"`
-	AvgPushLatencyMs    *int32                 `protobuf:"varint,6,opt,name=avg_push_latency_ms,proto3,oneof" json:"avg_push_latency_ms,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SiteCount     int32                  `protobuf:"varint,1,opt,name=site_count,proto3" json:"site_count,omitempty"`
+	ReadyToday    int32                  `protobuf:"varint,2,opt,name=ready_today,proto3" json:"ready_today,omitempty"`
+	NeedFillCount int32                  `protobuf:"varint,3,opt,name=need_fill_count,proto3" json:"need_fill_count,omitempty"`
+	// 仅 service_type=pv_prediction 时填写；其它业务不返回
+	WeatherMissingCount *int32  `protobuf:"varint,4,opt,name=weather_missing_count,proto3,oneof" json:"weather_missing_count,omitempty"`
+	PushSuccess_24HPct  float64 `protobuf:"fixed64,5,opt,name=push_success_24h_pct,proto3" json:"push_success_24h_pct,omitempty"`
+	AvgPushLatencyMs    *int32  `protobuf:"varint,6,opt,name=avg_push_latency_ms,proto3,oneof" json:"avg_push_latency_ms,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
 
 func (x *DataOverview) Reset() {
 	*x = DataOverview{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[1]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -563,7 +501,7 @@ func (x *DataOverview) String() string {
 func (*DataOverview) ProtoMessage() {}
 
 func (x *DataOverview) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[1]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -576,7 +514,7 @@ func (x *DataOverview) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataOverview.ProtoReflect.Descriptor instead.
 func (*DataOverview) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{1}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *DataOverview) GetSiteCount() int32 {
@@ -601,8 +539,8 @@ func (x *DataOverview) GetNeedFillCount() int32 {
 }
 
 func (x *DataOverview) GetWeatherMissingCount() int32 {
-	if x != nil {
-		return x.WeatherMissingCount
+	if x != nil && x.WeatherMissingCount != nil {
+		return *x.WeatherMissingCount
 	}
 	return 0
 }
@@ -631,7 +569,7 @@ type CoverageTrendPoint struct {
 
 func (x *CoverageTrendPoint) Reset() {
 	*x = CoverageTrendPoint{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[2]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -643,7 +581,7 @@ func (x *CoverageTrendPoint) String() string {
 func (*CoverageTrendPoint) ProtoMessage() {}
 
 func (x *CoverageTrendPoint) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[2]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -656,7 +594,7 @@ func (x *CoverageTrendPoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CoverageTrendPoint.ProtoReflect.Descriptor instead.
 func (*CoverageTrendPoint) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{2}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CoverageTrendPoint) GetStatDate() string {
@@ -673,30 +611,30 @@ func (x *CoverageTrendPoint) GetRatio() float64 {
 	return 0
 }
 
+// DataSiteRow 矩阵行。天气列仅光伏有值；原始数据粒度固定 5min，不再下发。
 type DataSiteRow struct {
-	state                 protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId        string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	SiteId                string                 `protobuf:"bytes,2,opt,name=site_id,proto3" json:"site_id,omitempty"`
-	SiteName              string                 `protobuf:"bytes,3,opt,name=site_name,proto3" json:"site_name,omitempty"`
-	ServiceType           string                 `protobuf:"bytes,4,opt,name=service_type,proto3" json:"service_type,omitempty"`
-	DataSource            DataSource             `protobuf:"varint,5,opt,name=data_source,proto3,enum=fusion.ai.proto.data_readiness.DataSource" json:"data_source,omitempty"`
-	PrimaryGranularityMin int32                  `protobuf:"varint,6,opt,name=primary_granularity_min,proto3" json:"primary_granularity_min,omitempty"`
-	CoverageRatio_7D      *float64               `protobuf:"fixed64,7,opt,name=coverage_ratio_7d,proto3,oneof" json:"coverage_ratio_7d,omitempty"`
-	Trend_7D              []*CoverageTrendPoint  `protobuf:"bytes,8,rep,name=trend_7d,proto3" json:"trend_7d,omitempty"`
-	WeatherStatus         WeatherStatus          `protobuf:"varint,9,opt,name=weather_status,proto3,enum=fusion.ai.proto.data_readiness.WeatherStatus" json:"weather_status,omitempty"`
-	WeatherDisplay        string                 `protobuf:"bytes,10,opt,name=weather_display,proto3" json:"weather_display,omitempty"`
-	LastPushAt            *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=last_push_at,proto3,oneof" json:"last_push_at,omitempty"`
-	LastIngestAt          *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=last_ingest_at,proto3,oneof" json:"last_ingest_at,omitempty"`
-	GapPoints_7D          int32                  `protobuf:"varint,13,opt,name=gap_points_7d,proto3" json:"gap_points_7d,omitempty"`
-	ReadinessStatus       ReadinessStatus        `protobuf:"varint,14,opt,name=readiness_status,proto3,enum=fusion.ai.proto.data_readiness.ReadinessStatus" json:"readiness_status,omitempty"`
-	WorkbenchHref         string                 `protobuf:"bytes,15,opt,name=workbench_href,proto3" json:"workbench_href,omitempty"`
-	unknownFields         protoimpl.UnknownFields
-	sizeCache             protoimpl.SizeCache
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RegistrationId   string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	SiteId           string                 `protobuf:"bytes,2,opt,name=site_id,proto3" json:"site_id,omitempty"`
+	SiteName         string                 `protobuf:"bytes,3,opt,name=site_name,proto3" json:"site_name,omitempty"`
+	ServiceType      string                 `protobuf:"bytes,4,opt,name=service_type,proto3" json:"service_type,omitempty"`
+	DataSource       DataSource             `protobuf:"varint,5,opt,name=data_source,proto3,enum=fusion.ai.proto.data_readiness.DataSource" json:"data_source,omitempty"`
+	CoverageRatio_7D *float64               `protobuf:"fixed64,6,opt,name=coverage_ratio_7d,proto3,oneof" json:"coverage_ratio_7d,omitempty"`
+	Trend_7D         []*CoverageTrendPoint  `protobuf:"bytes,7,rep,name=trend_7d,proto3" json:"trend_7d,omitempty"`
+	WeatherStatus    *WeatherStatus         `protobuf:"varint,8,opt,name=weather_status,proto3,enum=fusion.ai.proto.data_readiness.WeatherStatus,oneof" json:"weather_status,omitempty"`
+	WeatherDisplay   *string                `protobuf:"bytes,9,opt,name=weather_display,proto3,oneof" json:"weather_display,omitempty"`
+	LastPushAt       *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=last_push_at,proto3,oneof" json:"last_push_at,omitempty"`
+	LastIngestAt     *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=last_ingest_at,proto3,oneof" json:"last_ingest_at,omitempty"`
+	GapPoints_7D     int32                  `protobuf:"varint,12,opt,name=gap_points_7d,proto3" json:"gap_points_7d,omitempty"`
+	ReadinessStatus  ReadinessStatus        `protobuf:"varint,13,opt,name=readiness_status,proto3,enum=fusion.ai.proto.data_readiness.ReadinessStatus" json:"readiness_status,omitempty"`
+	WorkbenchHref    string                 `protobuf:"bytes,14,opt,name=workbench_href,proto3" json:"workbench_href,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *DataSiteRow) Reset() {
 	*x = DataSiteRow{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[3]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -708,7 +646,7 @@ func (x *DataSiteRow) String() string {
 func (*DataSiteRow) ProtoMessage() {}
 
 func (x *DataSiteRow) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[3]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -721,7 +659,7 @@ func (x *DataSiteRow) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataSiteRow.ProtoReflect.Descriptor instead.
 func (*DataSiteRow) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{3}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DataSiteRow) GetRegistrationId() string {
@@ -759,13 +697,6 @@ func (x *DataSiteRow) GetDataSource() DataSource {
 	return DataSource_DATA_SOURCE_UNSPECIFIED
 }
 
-func (x *DataSiteRow) GetPrimaryGranularityMin() int32 {
-	if x != nil {
-		return x.PrimaryGranularityMin
-	}
-	return 0
-}
-
 func (x *DataSiteRow) GetCoverageRatio_7D() float64 {
 	if x != nil && x.CoverageRatio_7D != nil {
 		return *x.CoverageRatio_7D
@@ -781,15 +712,15 @@ func (x *DataSiteRow) GetTrend_7D() []*CoverageTrendPoint {
 }
 
 func (x *DataSiteRow) GetWeatherStatus() WeatherStatus {
-	if x != nil {
-		return x.WeatherStatus
+	if x != nil && x.WeatherStatus != nil {
+		return *x.WeatherStatus
 	}
 	return WeatherStatus_WEATHER_STATUS_UNSPECIFIED
 }
 
 func (x *DataSiteRow) GetWeatherDisplay() string {
-	if x != nil {
-		return x.WeatherDisplay
+	if x != nil && x.WeatherDisplay != nil {
+		return *x.WeatherDisplay
 	}
 	return ""
 }
@@ -841,7 +772,7 @@ type DataSiteRowPage struct {
 
 func (x *DataSiteRowPage) Reset() {
 	*x = DataSiteRowPage{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[4]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -853,7 +784,7 @@ func (x *DataSiteRowPage) String() string {
 func (*DataSiteRowPage) ProtoMessage() {}
 
 func (x *DataSiteRowPage) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[4]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -866,7 +797,7 @@ func (x *DataSiteRowPage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataSiteRowPage.ProtoReflect.Descriptor instead.
 func (*DataSiteRowPage) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{4}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DataSiteRowPage) GetRows() []*DataSiteRow {
@@ -908,7 +839,7 @@ type HeatmapDay struct {
 
 func (x *HeatmapDay) Reset() {
 	*x = HeatmapDay{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[5]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -920,7 +851,7 @@ func (x *HeatmapDay) String() string {
 func (*HeatmapDay) ProtoMessage() {}
 
 func (x *HeatmapDay) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[5]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -933,7 +864,7 @@ func (x *HeatmapDay) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeatmapDay.ProtoReflect.Descriptor instead.
 func (*HeatmapDay) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{5}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *HeatmapDay) GetStatDate() string {
@@ -957,23 +888,33 @@ func (x *HeatmapDay) GetRatio() float64 {
 	return 0
 }
 
+// DataSiteReadiness 右侧详情（对齐原型侧栏）
 type DataSiteReadiness struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId   string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	SiteName         string                 `protobuf:"bytes,2,opt,name=site_name,proto3" json:"site_name,omitempty"`
-	ReadinessStatus  ReadinessStatus        `protobuf:"varint,3,opt,name=readiness_status,proto3,enum=fusion.ai.proto.data_readiness.ReadinessStatus" json:"readiness_status,omitempty"`
-	WeatherStatus    WeatherStatus          `protobuf:"varint,4,opt,name=weather_status,proto3,enum=fusion.ai.proto.data_readiness.WeatherStatus" json:"weather_status,omitempty"`
-	CoverageRatio_7D *float64               `protobuf:"fixed64,5,opt,name=coverage_ratio_7d,proto3,oneof" json:"coverage_ratio_7d,omitempty"`
-	GapPoints_7D     int32                  `protobuf:"varint,6,opt,name=gap_points_7d,proto3" json:"gap_points_7d,omitempty"`
-	GapFocus         string                 `protobuf:"bytes,7,opt,name=gap_focus,proto3" json:"gap_focus,omitempty"`
-	Heatmap_14D      []*HeatmapDay          `protobuf:"bytes,8,rep,name=heatmap_14d,proto3" json:"heatmap_14d,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	SiteId         string                 `protobuf:"bytes,2,opt,name=site_id,proto3" json:"site_id,omitempty"`
+	SiteName       string                 `protobuf:"bytes,3,opt,name=site_name,proto3" json:"site_name,omitempty"`
+	ServiceType    string                 `protobuf:"bytes,4,opt,name=service_type,proto3" json:"service_type,omitempty"`
+	DataSource     DataSource             `protobuf:"varint,5,opt,name=data_source,proto3,enum=fusion.ai.proto.data_readiness.DataSource" json:"data_source,omitempty"`
+	// 展示用：如「近 90 天」
+	TrainWindow string `protobuf:"bytes,6,opt,name=train_window,proto3" json:"train_window,omitempty"`
+	// 展示用：如「能管 Push」
+	UpstreamLabel string `protobuf:"bytes,7,opt,name=upstream_label,proto3" json:"upstream_label,omitempty"`
+	// 仅光伏；如 UKMO / ECMWF / excel_import
+	WeatherProviderId *string         `protobuf:"bytes,8,opt,name=weather_provider_id,proto3,oneof" json:"weather_provider_id,omitempty"`
+	ReadinessStatus   ReadinessStatus `protobuf:"varint,9,opt,name=readiness_status,proto3,enum=fusion.ai.proto.data_readiness.ReadinessStatus" json:"readiness_status,omitempty"`
+	WeatherStatus     *WeatherStatus  `protobuf:"varint,10,opt,name=weather_status,proto3,enum=fusion.ai.proto.data_readiness.WeatherStatus,oneof" json:"weather_status,omitempty"`
+	CoverageRatio_7D  *float64        `protobuf:"fixed64,11,opt,name=coverage_ratio_7d,proto3,oneof" json:"coverage_ratio_7d,omitempty"`
+	GapPoints_7D      int32           `protobuf:"varint,12,opt,name=gap_points_7d,proto3" json:"gap_points_7d,omitempty"`
+	GapFocus          string          `protobuf:"bytes,13,opt,name=gap_focus,proto3" json:"gap_focus,omitempty"`
+	Heatmap_14D       []*HeatmapDay   `protobuf:"bytes,14,rep,name=heatmap_14d,proto3" json:"heatmap_14d,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *DataSiteReadiness) Reset() {
 	*x = DataSiteReadiness{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[6]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -985,7 +926,7 @@ func (x *DataSiteReadiness) String() string {
 func (*DataSiteReadiness) ProtoMessage() {}
 
 func (x *DataSiteReadiness) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[6]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -998,7 +939,7 @@ func (x *DataSiteReadiness) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataSiteReadiness.ProtoReflect.Descriptor instead.
 func (*DataSiteReadiness) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{6}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DataSiteReadiness) GetRegistrationId() string {
@@ -1008,9 +949,51 @@ func (x *DataSiteReadiness) GetRegistrationId() string {
 	return ""
 }
 
+func (x *DataSiteReadiness) GetSiteId() string {
+	if x != nil {
+		return x.SiteId
+	}
+	return ""
+}
+
 func (x *DataSiteReadiness) GetSiteName() string {
 	if x != nil {
 		return x.SiteName
+	}
+	return ""
+}
+
+func (x *DataSiteReadiness) GetServiceType() string {
+	if x != nil {
+		return x.ServiceType
+	}
+	return ""
+}
+
+func (x *DataSiteReadiness) GetDataSource() DataSource {
+	if x != nil {
+		return x.DataSource
+	}
+	return DataSource_DATA_SOURCE_UNSPECIFIED
+}
+
+func (x *DataSiteReadiness) GetTrainWindow() string {
+	if x != nil {
+		return x.TrainWindow
+	}
+	return ""
+}
+
+func (x *DataSiteReadiness) GetUpstreamLabel() string {
+	if x != nil {
+		return x.UpstreamLabel
+	}
+	return ""
+}
+
+func (x *DataSiteReadiness) GetWeatherProviderId() string {
+	if x != nil && x.WeatherProviderId != nil {
+		return *x.WeatherProviderId
 	}
 	return ""
 }
@@ -1023,8 +1006,8 @@ func (x *DataSiteReadiness) GetReadinessStatus() ReadinessStatus {
 }
 
 func (x *DataSiteReadiness) GetWeatherStatus() WeatherStatus {
-	if x != nil {
-		return x.WeatherStatus
+	if x != nil && x.WeatherStatus != nil {
+		return *x.WeatherStatus
 	}
 	return WeatherStatus_WEATHER_STATUS_UNSPECIFIED
 }
@@ -1069,7 +1052,7 @@ type PipelineLine struct {
 
 func (x *PipelineLine) Reset() {
 	*x = PipelineLine{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[7]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1081,7 +1064,7 @@ func (x *PipelineLine) String() string {
 func (*PipelineLine) ProtoMessage() {}
 
 func (x *PipelineLine) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[7]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1094,7 +1077,7 @@ func (x *PipelineLine) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PipelineLine.ProtoReflect.Descriptor instead.
 func (*PipelineLine) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{7}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PipelineLine) GetLabel() string {
@@ -1125,20 +1108,20 @@ func (x *PipelineLine) GetSuccessPct() float64 {
 	return 0
 }
 
+// PipelineStats 接入监控。weather_job_line 仅光伏有值。
 type PipelineStats struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	PushLine            *PipelineLine          `protobuf:"bytes,1,opt,name=push_line,proto3" json:"push_line,omitempty"`
-	WeatherJobLine      *PipelineLine          `protobuf:"bytes,2,opt,name=weather_job_line,proto3" json:"weather_job_line,omitempty"`
+	WeatherJobLine      *PipelineLine          `protobuf:"bytes,2,opt,name=weather_job_line,proto3,oneof" json:"weather_job_line,omitempty"`
 	ExcelLine           *PipelineLine          `protobuf:"bytes,3,opt,name=excel_line,proto3" json:"excel_line,omitempty"`
 	ValidationQueueLine *PipelineLine          `protobuf:"bytes,4,opt,name=validation_queue_line,proto3" json:"validation_queue_line,omitempty"`
-	PullLine            *PipelineLine          `protobuf:"bytes,5,opt,name=pull_line,proto3,oneof" json:"pull_line,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
 
 func (x *PipelineStats) Reset() {
 	*x = PipelineStats{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[8]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1150,7 +1133,7 @@ func (x *PipelineStats) String() string {
 func (*PipelineStats) ProtoMessage() {}
 
 func (x *PipelineStats) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[8]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1163,7 +1146,7 @@ func (x *PipelineStats) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PipelineStats.ProtoReflect.Descriptor instead.
 func (*PipelineStats) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{8}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *PipelineStats) GetPushLine() *PipelineLine {
@@ -1194,13 +1177,6 @@ func (x *PipelineStats) GetValidationQueueLine() *PipelineLine {
 	return nil
 }
 
-func (x *PipelineStats) GetPullLine() *PipelineLine {
-	if x != nil {
-		return x.PullLine
-	}
-	return nil
-}
-
 type WeatherSiteView struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	RegistrationId   string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
@@ -1215,7 +1191,7 @@ type WeatherSiteView struct {
 
 func (x *WeatherSiteView) Reset() {
 	*x = WeatherSiteView{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[9]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1227,7 +1203,7 @@ func (x *WeatherSiteView) String() string {
 func (*WeatherSiteView) ProtoMessage() {}
 
 func (x *WeatherSiteView) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[9]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1240,7 +1216,7 @@ func (x *WeatherSiteView) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WeatherSiteView.ProtoReflect.Descriptor instead.
 func (*WeatherSiteView) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{9}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *WeatherSiteView) GetRegistrationId() string {
@@ -1299,7 +1275,7 @@ type WeatherSyncTaskView struct {
 
 func (x *WeatherSyncTaskView) Reset() {
 	*x = WeatherSyncTaskView{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[10]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1311,7 +1287,7 @@ func (x *WeatherSyncTaskView) String() string {
 func (*WeatherSyncTaskView) ProtoMessage() {}
 
 func (x *WeatherSyncTaskView) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[10]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1324,7 +1300,7 @@ func (x *WeatherSyncTaskView) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WeatherSyncTaskView.ProtoReflect.Descriptor instead.
 func (*WeatherSyncTaskView) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{10}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *WeatherSyncTaskView) GetTaskId() string {
@@ -1386,7 +1362,7 @@ type WeatherSyncRunView struct {
 
 func (x *WeatherSyncRunView) Reset() {
 	*x = WeatherSyncRunView{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[11]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1398,7 +1374,7 @@ func (x *WeatherSyncRunView) String() string {
 func (*WeatherSyncRunView) ProtoMessage() {}
 
 func (x *WeatherSyncRunView) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[11]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1411,7 +1387,7 @@ func (x *WeatherSyncRunView) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WeatherSyncRunView.ProtoReflect.Descriptor instead.
 func (*WeatherSyncRunView) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{11}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *WeatherSyncRunView) GetRunId() string {
@@ -1478,15 +1454,16 @@ func (x *WeatherSyncRunView) GetTasks() []*WeatherSyncTaskView {
 }
 
 type GetDataOverviewRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ServiceType   *string                `protobuf:"bytes,1,opt,name=service_type,proto3,oneof" json:"service_type,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+	ServiceType   *string `protobuf:"bytes,1,opt,name=service_type,proto3,oneof" json:"service_type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetDataOverviewRequest) Reset() {
 	*x = GetDataOverviewRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[12]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1498,7 +1475,7 @@ func (x *GetDataOverviewRequest) String() string {
 func (*GetDataOverviewRequest) ProtoMessage() {}
 
 func (x *GetDataOverviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[12]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1511,7 +1488,7 @@ func (x *GetDataOverviewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataOverviewRequest.ProtoReflect.Descriptor instead.
 func (*GetDataOverviewRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{12}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetDataOverviewRequest) GetServiceType() string {
@@ -1522,16 +1499,15 @@ func (x *GetDataOverviewRequest) GetServiceType() string {
 }
 
 type GetDataOverviewResponse struct {
-	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Header        *DataReadinessReplyHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
-	Overview      *DataOverview             `protobuf:"bytes,2,opt,name=overview,proto3" json:"overview,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Overview      *DataOverview          `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetDataOverviewResponse) Reset() {
 	*x = GetDataOverviewResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[13]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1543,7 +1519,7 @@ func (x *GetDataOverviewResponse) String() string {
 func (*GetDataOverviewResponse) ProtoMessage() {}
 
 func (x *GetDataOverviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[13]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1556,14 +1532,7 @@ func (x *GetDataOverviewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataOverviewResponse.ProtoReflect.Descriptor instead.
 func (*GetDataOverviewResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *GetDataOverviewResponse) GetHeader() *DataReadinessReplyHeader {
-	if x != nil {
-		return x.Header
-	}
-	return nil
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetDataOverviewResponse) GetOverview() *DataOverview {
@@ -1578,17 +1547,16 @@ type ListDataSiteRowsRequest struct {
 	Page            *int32                 `protobuf:"varint,1,opt,name=page,proto3,oneof" json:"page,omitempty"`
 	PageSize        *int32                 `protobuf:"varint,2,opt,name=page_size,proto3,oneof" json:"page_size,omitempty"`
 	ServiceType     *string                `protobuf:"bytes,3,opt,name=service_type,proto3,oneof" json:"service_type,omitempty"`
-	DataSource      *DataSource            `protobuf:"varint,4,opt,name=data_source,proto3,enum=fusion.ai.proto.data_readiness.DataSource,oneof" json:"data_source,omitempty"`
-	ReadinessStatus *ReadinessStatus       `protobuf:"varint,5,opt,name=readiness_status,proto3,enum=fusion.ai.proto.data_readiness.ReadinessStatus,oneof" json:"readiness_status,omitempty"`
-	GranularityMin  *int32                 `protobuf:"varint,6,opt,name=granularity_min,proto3,oneof" json:"granularity_min,omitempty"`
-	Q               *string                `protobuf:"bytes,7,opt,name=q,proto3,oneof" json:"q,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	ReadinessStatus *ReadinessStatus       `protobuf:"varint,4,opt,name=readiness_status,proto3,enum=fusion.ai.proto.data_readiness.ReadinessStatus,oneof" json:"readiness_status,omitempty"`
+	// 场站名 / registration_id 模糊搜
+	Q             *string `protobuf:"bytes,5,opt,name=q,proto3,oneof" json:"q,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ListDataSiteRowsRequest) Reset() {
 	*x = ListDataSiteRowsRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[14]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1600,7 +1568,7 @@ func (x *ListDataSiteRowsRequest) String() string {
 func (*ListDataSiteRowsRequest) ProtoMessage() {}
 
 func (x *ListDataSiteRowsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[14]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1613,7 +1581,7 @@ func (x *ListDataSiteRowsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDataSiteRowsRequest.ProtoReflect.Descriptor instead.
 func (*ListDataSiteRowsRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{14}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ListDataSiteRowsRequest) GetPage() int32 {
@@ -1637,25 +1605,11 @@ func (x *ListDataSiteRowsRequest) GetServiceType() string {
 	return ""
 }
 
-func (x *ListDataSiteRowsRequest) GetDataSource() DataSource {
-	if x != nil && x.DataSource != nil {
-		return *x.DataSource
-	}
-	return DataSource_DATA_SOURCE_UNSPECIFIED
-}
-
 func (x *ListDataSiteRowsRequest) GetReadinessStatus() ReadinessStatus {
 	if x != nil && x.ReadinessStatus != nil {
 		return *x.ReadinessStatus
 	}
 	return ReadinessStatus_READINESS_STATUS_UNSPECIFIED
-}
-
-func (x *ListDataSiteRowsRequest) GetGranularityMin() int32 {
-	if x != nil && x.GranularityMin != nil {
-		return *x.GranularityMin
-	}
-	return 0
 }
 
 func (x *ListDataSiteRowsRequest) GetQ() string {
@@ -1666,16 +1620,15 @@ func (x *ListDataSiteRowsRequest) GetQ() string {
 }
 
 type ListDataSiteRowsResponse struct {
-	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Header        *DataReadinessReplyHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
-	Page          *DataSiteRowPage          `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          *DataSiteRowPage       `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ListDataSiteRowsResponse) Reset() {
 	*x = ListDataSiteRowsResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[15]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1687,7 +1640,7 @@ func (x *ListDataSiteRowsResponse) String() string {
 func (*ListDataSiteRowsResponse) ProtoMessage() {}
 
 func (x *ListDataSiteRowsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[15]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1700,14 +1653,7 @@ func (x *ListDataSiteRowsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDataSiteRowsResponse.ProtoReflect.Descriptor instead.
 func (*ListDataSiteRowsResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{15}
-}
-
-func (x *ListDataSiteRowsResponse) GetHeader() *DataReadinessReplyHeader {
-	if x != nil {
-		return x.Header
-	}
-	return nil
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ListDataSiteRowsResponse) GetPage() *DataSiteRowPage {
@@ -1726,7 +1672,7 @@ type GetDataSiteReadinessRequest struct {
 
 func (x *GetDataSiteReadinessRequest) Reset() {
 	*x = GetDataSiteReadinessRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[16]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1738,7 +1684,7 @@ func (x *GetDataSiteReadinessRequest) String() string {
 func (*GetDataSiteReadinessRequest) ProtoMessage() {}
 
 func (x *GetDataSiteReadinessRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[16]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1751,7 +1697,7 @@ func (x *GetDataSiteReadinessRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataSiteReadinessRequest.ProtoReflect.Descriptor instead.
 func (*GetDataSiteReadinessRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{16}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *GetDataSiteReadinessRequest) GetRegistrationId() string {
@@ -1770,7 +1716,7 @@ type GetDataSiteReadinessResponse struct {
 
 func (x *GetDataSiteReadinessResponse) Reset() {
 	*x = GetDataSiteReadinessResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[17]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1782,7 +1728,7 @@ func (x *GetDataSiteReadinessResponse) String() string {
 func (*GetDataSiteReadinessResponse) ProtoMessage() {}
 
 func (x *GetDataSiteReadinessResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[17]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1795,7 +1741,7 @@ func (x *GetDataSiteReadinessResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataSiteReadinessResponse.ProtoReflect.Descriptor instead.
 func (*GetDataSiteReadinessResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{17}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *GetDataSiteReadinessResponse) GetReadiness() *DataSiteReadiness {
@@ -1807,13 +1753,14 @@ func (x *GetDataSiteReadinessResponse) GetReadiness() *DataSiteReadiness {
 
 type GetDataPipelineStatsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	ServiceType   *string                `protobuf:"bytes,1,opt,name=service_type,proto3,oneof" json:"service_type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetDataPipelineStatsRequest) Reset() {
 	*x = GetDataPipelineStatsRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[18]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1825,7 +1772,7 @@ func (x *GetDataPipelineStatsRequest) String() string {
 func (*GetDataPipelineStatsRequest) ProtoMessage() {}
 
 func (x *GetDataPipelineStatsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[18]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1838,7 +1785,14 @@ func (x *GetDataPipelineStatsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataPipelineStatsRequest.ProtoReflect.Descriptor instead.
 func (*GetDataPipelineStatsRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{18}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *GetDataPipelineStatsRequest) GetServiceType() string {
+	if x != nil && x.ServiceType != nil {
+		return *x.ServiceType
+	}
+	return ""
 }
 
 type GetDataPipelineStatsResponse struct {
@@ -1850,7 +1804,7 @@ type GetDataPipelineStatsResponse struct {
 
 func (x *GetDataPipelineStatsResponse) Reset() {
 	*x = GetDataPipelineStatsResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[19]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1862,7 +1816,7 @@ func (x *GetDataPipelineStatsResponse) String() string {
 func (*GetDataPipelineStatsResponse) ProtoMessage() {}
 
 func (x *GetDataPipelineStatsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[19]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1875,7 +1829,7 @@ func (x *GetDataPipelineStatsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataPipelineStatsResponse.ProtoReflect.Descriptor instead.
 func (*GetDataPipelineStatsResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{19}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetDataPipelineStatsResponse) GetStats() *PipelineStats {
@@ -1883,126 +1837,6 @@ func (x *GetDataPipelineStatsResponse) GetStats() *PipelineStats {
 		return x.Stats
 	}
 	return nil
-}
-
-type ExportDataGapsRequest struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	ServiceType     *string                `protobuf:"bytes,1,opt,name=service_type,proto3,oneof" json:"service_type,omitempty"`
-	DataSource      *DataSource            `protobuf:"varint,2,opt,name=data_source,proto3,enum=fusion.ai.proto.data_readiness.DataSource,oneof" json:"data_source,omitempty"`
-	ReadinessStatus *ReadinessStatus       `protobuf:"varint,3,opt,name=readiness_status,proto3,enum=fusion.ai.proto.data_readiness.ReadinessStatus,oneof" json:"readiness_status,omitempty"`
-	Q               *string                `protobuf:"bytes,4,opt,name=q,proto3,oneof" json:"q,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
-}
-
-func (x *ExportDataGapsRequest) Reset() {
-	*x = ExportDataGapsRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[20]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ExportDataGapsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExportDataGapsRequest) ProtoMessage() {}
-
-func (x *ExportDataGapsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[20]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExportDataGapsRequest.ProtoReflect.Descriptor instead.
-func (*ExportDataGapsRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{20}
-}
-
-func (x *ExportDataGapsRequest) GetServiceType() string {
-	if x != nil && x.ServiceType != nil {
-		return *x.ServiceType
-	}
-	return ""
-}
-
-func (x *ExportDataGapsRequest) GetDataSource() DataSource {
-	if x != nil && x.DataSource != nil {
-		return *x.DataSource
-	}
-	return DataSource_DATA_SOURCE_UNSPECIFIED
-}
-
-func (x *ExportDataGapsRequest) GetReadinessStatus() ReadinessStatus {
-	if x != nil && x.ReadinessStatus != nil {
-		return *x.ReadinessStatus
-	}
-	return ReadinessStatus_READINESS_STATUS_UNSPECIFIED
-}
-
-func (x *ExportDataGapsRequest) GetQ() string {
-	if x != nil && x.Q != nil {
-		return *x.Q
-	}
-	return ""
-}
-
-type ExportDataGapsResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Csv           []byte                 `protobuf:"bytes,1,opt,name=csv,proto3" json:"csv,omitempty"`
-	Filename      string                 `protobuf:"bytes,2,opt,name=filename,proto3" json:"filename,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ExportDataGapsResponse) Reset() {
-	*x = ExportDataGapsResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[21]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ExportDataGapsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ExportDataGapsResponse) ProtoMessage() {}
-
-func (x *ExportDataGapsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[21]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ExportDataGapsResponse.ProtoReflect.Descriptor instead.
-func (*ExportDataGapsResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{21}
-}
-
-func (x *ExportDataGapsResponse) GetCsv() []byte {
-	if x != nil {
-		return x.Csv
-	}
-	return nil
-}
-
-func (x *ExportDataGapsResponse) GetFilename() string {
-	if x != nil {
-		return x.Filename
-	}
-	return ""
 }
 
 type GetWeatherSiteRequest struct {
@@ -2014,7 +1848,7 @@ type GetWeatherSiteRequest struct {
 
 func (x *GetWeatherSiteRequest) Reset() {
 	*x = GetWeatherSiteRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[22]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2026,7 +1860,7 @@ func (x *GetWeatherSiteRequest) String() string {
 func (*GetWeatherSiteRequest) ProtoMessage() {}
 
 func (x *GetWeatherSiteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[22]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2039,7 +1873,7 @@ func (x *GetWeatherSiteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWeatherSiteRequest.ProtoReflect.Descriptor instead.
 func (*GetWeatherSiteRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{22}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *GetWeatherSiteRequest) GetRegistrationId() string {
@@ -2058,7 +1892,7 @@ type GetWeatherSiteResponse struct {
 
 func (x *GetWeatherSiteResponse) Reset() {
 	*x = GetWeatherSiteResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[23]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2070,7 +1904,7 @@ func (x *GetWeatherSiteResponse) String() string {
 func (*GetWeatherSiteResponse) ProtoMessage() {}
 
 func (x *GetWeatherSiteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[23]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2083,7 +1917,7 @@ func (x *GetWeatherSiteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWeatherSiteResponse.ProtoReflect.Descriptor instead.
 func (*GetWeatherSiteResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{23}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *GetWeatherSiteResponse) GetSite() *WeatherSiteView {
@@ -2103,7 +1937,7 @@ type GetWeatherSyncRunRequest struct {
 
 func (x *GetWeatherSyncRunRequest) Reset() {
 	*x = GetWeatherSyncRunRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[24]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2115,7 +1949,7 @@ func (x *GetWeatherSyncRunRequest) String() string {
 func (*GetWeatherSyncRunRequest) ProtoMessage() {}
 
 func (x *GetWeatherSyncRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[24]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2128,7 +1962,7 @@ func (x *GetWeatherSyncRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWeatherSyncRunRequest.ProtoReflect.Descriptor instead.
 func (*GetWeatherSyncRunRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{24}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GetWeatherSyncRunRequest) GetRunId() string {
@@ -2146,16 +1980,15 @@ func (x *GetWeatherSyncRunRequest) GetIncludeTasks() bool {
 }
 
 type GetWeatherSyncRunResponse struct {
-	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Header        *DataReadinessReplyHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
-	Run           *WeatherSyncRunView       `protobuf:"bytes,2,opt,name=run,proto3" json:"run,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Run           *WeatherSyncRunView    `protobuf:"bytes,1,opt,name=run,proto3" json:"run,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetWeatherSyncRunResponse) Reset() {
 	*x = GetWeatherSyncRunResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[25]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2167,7 +2000,7 @@ func (x *GetWeatherSyncRunResponse) String() string {
 func (*GetWeatherSyncRunResponse) ProtoMessage() {}
 
 func (x *GetWeatherSyncRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[25]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2180,14 +2013,7 @@ func (x *GetWeatherSyncRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWeatherSyncRunResponse.ProtoReflect.Descriptor instead.
 func (*GetWeatherSyncRunResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{25}
-}
-
-func (x *GetWeatherSyncRunResponse) GetHeader() *DataReadinessReplyHeader {
-	if x != nil {
-		return x.Header
-	}
-	return nil
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *GetWeatherSyncRunResponse) GetRun() *WeatherSyncRunView {
@@ -2212,7 +2038,7 @@ type BatchSyncWeatherRequest struct {
 
 func (x *BatchSyncWeatherRequest) Reset() {
 	*x = BatchSyncWeatherRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[26]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2224,7 +2050,7 @@ func (x *BatchSyncWeatherRequest) String() string {
 func (*BatchSyncWeatherRequest) ProtoMessage() {}
 
 func (x *BatchSyncWeatherRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[26]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2237,7 +2063,7 @@ func (x *BatchSyncWeatherRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BatchSyncWeatherRequest.ProtoReflect.Descriptor instead.
 func (*BatchSyncWeatherRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{26}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *BatchSyncWeatherRequest) GetRegistrationIds() []string {
@@ -2300,7 +2126,7 @@ type WeatherSyncPartialError struct {
 
 func (x *WeatherSyncPartialError) Reset() {
 	*x = WeatherSyncPartialError{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[27]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2312,7 +2138,7 @@ func (x *WeatherSyncPartialError) String() string {
 func (*WeatherSyncPartialError) ProtoMessage() {}
 
 func (x *WeatherSyncPartialError) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[27]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2325,7 +2151,7 @@ func (x *WeatherSyncPartialError) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WeatherSyncPartialError.ProtoReflect.Descriptor instead.
 func (*WeatherSyncPartialError) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{27}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *WeatherSyncPartialError) GetRegistrationId() string {
@@ -2351,19 +2177,18 @@ func (x *WeatherSyncPartialError) GetMessage() string {
 
 type BatchSyncWeatherResponse struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Header        *DataReadinessReplyHeader  `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
-	RunId         string                     `protobuf:"bytes,2,opt,name=run_id,proto3" json:"run_id,omitempty"`
-	Status        WeatherSyncRunStatus       `protobuf:"varint,3,opt,name=status,proto3,enum=fusion.ai.proto.data_readiness.WeatherSyncRunStatus" json:"status,omitempty"`
-	TaskTotal     int32                      `protobuf:"varint,4,opt,name=task_total,proto3" json:"task_total,omitempty"`
-	TaskFailed    int32                      `protobuf:"varint,5,opt,name=task_failed,proto3" json:"task_failed,omitempty"`
-	PartialErrors []*WeatherSyncPartialError `protobuf:"bytes,6,rep,name=partial_errors,proto3" json:"partial_errors,omitempty"`
+	RunId         string                     `protobuf:"bytes,1,opt,name=run_id,proto3" json:"run_id,omitempty"`
+	Status        WeatherSyncRunStatus       `protobuf:"varint,2,opt,name=status,proto3,enum=fusion.ai.proto.data_readiness.WeatherSyncRunStatus" json:"status,omitempty"`
+	TaskTotal     int32                      `protobuf:"varint,3,opt,name=task_total,proto3" json:"task_total,omitempty"`
+	TaskFailed    int32                      `protobuf:"varint,4,opt,name=task_failed,proto3" json:"task_failed,omitempty"`
+	PartialErrors []*WeatherSyncPartialError `protobuf:"bytes,5,rep,name=partial_errors,proto3" json:"partial_errors,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *BatchSyncWeatherResponse) Reset() {
 	*x = BatchSyncWeatherResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[28]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2375,7 +2200,7 @@ func (x *BatchSyncWeatherResponse) String() string {
 func (*BatchSyncWeatherResponse) ProtoMessage() {}
 
 func (x *BatchSyncWeatherResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[28]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2388,14 +2213,7 @@ func (x *BatchSyncWeatherResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BatchSyncWeatherResponse.ProtoReflect.Descriptor instead.
 func (*BatchSyncWeatherResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{28}
-}
-
-func (x *BatchSyncWeatherResponse) GetHeader() *DataReadinessReplyHeader {
-	if x != nil {
-		return x.Header
-	}
-	return nil
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *BatchSyncWeatherResponse) GetRunId() string {
@@ -2442,7 +2260,7 @@ type RetryFailedWeatherSyncRequest struct {
 
 func (x *RetryFailedWeatherSyncRequest) Reset() {
 	*x = RetryFailedWeatherSyncRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[29]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2454,7 +2272,7 @@ func (x *RetryFailedWeatherSyncRequest) String() string {
 func (*RetryFailedWeatherSyncRequest) ProtoMessage() {}
 
 func (x *RetryFailedWeatherSyncRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[29]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2467,7 +2285,7 @@ func (x *RetryFailedWeatherSyncRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RetryFailedWeatherSyncRequest.ProtoReflect.Descriptor instead.
 func (*RetryFailedWeatherSyncRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{29}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *RetryFailedWeatherSyncRequest) GetRunId() string {
@@ -2478,17 +2296,16 @@ func (x *RetryFailedWeatherSyncRequest) GetRunId() string {
 }
 
 type RetryFailedWeatherSyncResponse struct {
-	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Header        *DataReadinessReplyHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
-	RunId         string                    `protobuf:"bytes,2,opt,name=run_id,proto3" json:"run_id,omitempty"`
-	Status        WeatherSyncRunStatus      `protobuf:"varint,3,opt,name=status,proto3,enum=fusion.ai.proto.data_readiness.WeatherSyncRunStatus" json:"status,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RunId         string                 `protobuf:"bytes,1,opt,name=run_id,proto3" json:"run_id,omitempty"`
+	Status        WeatherSyncRunStatus   `protobuf:"varint,2,opt,name=status,proto3,enum=fusion.ai.proto.data_readiness.WeatherSyncRunStatus" json:"status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *RetryFailedWeatherSyncResponse) Reset() {
 	*x = RetryFailedWeatherSyncResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[30]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2500,7 +2317,7 @@ func (x *RetryFailedWeatherSyncResponse) String() string {
 func (*RetryFailedWeatherSyncResponse) ProtoMessage() {}
 
 func (x *RetryFailedWeatherSyncResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[30]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2513,14 +2330,7 @@ func (x *RetryFailedWeatherSyncResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RetryFailedWeatherSyncResponse.ProtoReflect.Descriptor instead.
 func (*RetryFailedWeatherSyncResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{30}
-}
-
-func (x *RetryFailedWeatherSyncResponse) GetHeader() *DataReadinessReplyHeader {
-	if x != nil {
-		return x.Header
-	}
-	return nil
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *RetryFailedWeatherSyncResponse) GetRunId() string {
@@ -2548,7 +2358,7 @@ type CreateWeatherExcelImportJobRequest struct {
 
 func (x *CreateWeatherExcelImportJobRequest) Reset() {
 	*x = CreateWeatherExcelImportJobRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[31]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2560,7 +2370,7 @@ func (x *CreateWeatherExcelImportJobRequest) String() string {
 func (*CreateWeatherExcelImportJobRequest) ProtoMessage() {}
 
 func (x *CreateWeatherExcelImportJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[31]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2573,7 +2383,7 @@ func (x *CreateWeatherExcelImportJobRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CreateWeatherExcelImportJobRequest.ProtoReflect.Descriptor instead.
 func (*CreateWeatherExcelImportJobRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{31}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *CreateWeatherExcelImportJobRequest) GetRegistrationId() string {
@@ -2598,19 +2408,18 @@ func (x *CreateWeatherExcelImportJobRequest) GetFilename() string {
 }
 
 type CreateWeatherExcelImportJobResponse struct {
-	state          protoimpl.MessageState    `protogen:"open.v1"`
-	Header         *DataReadinessReplyHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
-	JobId          string                    `protobuf:"bytes,2,opt,name=job_id,proto3" json:"job_id,omitempty"`
-	AcceptedRows   *int32                    `protobuf:"varint,3,opt,name=accepted_rows,proto3,oneof" json:"accepted_rows,omitempty"`
-	FailedRows     *int32                    `protobuf:"varint,4,opt,name=failed_rows,proto3,oneof" json:"failed_rows,omitempty"`
-	ErrorReportUrl *string                   `protobuf:"bytes,5,opt,name=error_report_url,proto3,oneof" json:"error_report_url,omitempty"`
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	JobId          string                 `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
+	AcceptedRows   *int32                 `protobuf:"varint,2,opt,name=accepted_rows,proto3,oneof" json:"accepted_rows,omitempty"`
+	FailedRows     *int32                 `protobuf:"varint,3,opt,name=failed_rows,proto3,oneof" json:"failed_rows,omitempty"`
+	ErrorReportUrl *string                `protobuf:"bytes,4,opt,name=error_report_url,proto3,oneof" json:"error_report_url,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
 func (x *CreateWeatherExcelImportJobResponse) Reset() {
 	*x = CreateWeatherExcelImportJobResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[32]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2622,7 +2431,7 @@ func (x *CreateWeatherExcelImportJobResponse) String() string {
 func (*CreateWeatherExcelImportJobResponse) ProtoMessage() {}
 
 func (x *CreateWeatherExcelImportJobResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[32]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2635,14 +2444,7 @@ func (x *CreateWeatherExcelImportJobResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CreateWeatherExcelImportJobResponse.ProtoReflect.Descriptor instead.
 func (*CreateWeatherExcelImportJobResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{32}
-}
-
-func (x *CreateWeatherExcelImportJobResponse) GetHeader() *DataReadinessReplyHeader {
-	if x != nil {
-		return x.Header
-	}
-	return nil
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *CreateWeatherExcelImportJobResponse) GetJobId() string {
@@ -2681,7 +2483,7 @@ type GetWeatherExcelTemplateRequest struct {
 
 func (x *GetWeatherExcelTemplateRequest) Reset() {
 	*x = GetWeatherExcelTemplateRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[33]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2693,7 +2495,7 @@ func (x *GetWeatherExcelTemplateRequest) String() string {
 func (*GetWeatherExcelTemplateRequest) ProtoMessage() {}
 
 func (x *GetWeatherExcelTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[33]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2706,22 +2508,21 @@ func (x *GetWeatherExcelTemplateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWeatherExcelTemplateRequest.ProtoReflect.Descriptor instead.
 func (*GetWeatherExcelTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{33}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{30}
 }
 
 type GetWeatherExcelTemplateResponse struct {
-	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Header        *DataReadinessReplyHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
-	File          []byte                    `protobuf:"bytes,2,opt,name=file,proto3" json:"file,omitempty"`
-	Filename      string                    `protobuf:"bytes,3,opt,name=filename,proto3" json:"filename,omitempty"`
-	ContentType   string                    `protobuf:"bytes,4,opt,name=content_type,proto3" json:"content_type,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	File          []byte                 `protobuf:"bytes,1,opt,name=file,proto3" json:"file,omitempty"`
+	Filename      string                 `protobuf:"bytes,2,opt,name=filename,proto3" json:"filename,omitempty"`
+	ContentType   string                 `protobuf:"bytes,3,opt,name=content_type,proto3" json:"content_type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetWeatherExcelTemplateResponse) Reset() {
 	*x = GetWeatherExcelTemplateResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[34]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2733,7 +2534,7 @@ func (x *GetWeatherExcelTemplateResponse) String() string {
 func (*GetWeatherExcelTemplateResponse) ProtoMessage() {}
 
 func (x *GetWeatherExcelTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[34]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2746,14 +2547,7 @@ func (x *GetWeatherExcelTemplateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWeatherExcelTemplateResponse.ProtoReflect.Descriptor instead.
 func (*GetWeatherExcelTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{34}
-}
-
-func (x *GetWeatherExcelTemplateResponse) GetHeader() *DataReadinessReplyHeader {
-	if x != nil {
-		return x.Header
-	}
-	return nil
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *GetWeatherExcelTemplateResponse) GetFile() []byte {
@@ -2789,7 +2583,7 @@ type CreateDataBackfillJobRequest struct {
 
 func (x *CreateDataBackfillJobRequest) Reset() {
 	*x = CreateDataBackfillJobRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[35]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2801,7 +2595,7 @@ func (x *CreateDataBackfillJobRequest) String() string {
 func (*CreateDataBackfillJobRequest) ProtoMessage() {}
 
 func (x *CreateDataBackfillJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[35]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2814,7 +2608,7 @@ func (x *CreateDataBackfillJobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDataBackfillJobRequest.ProtoReflect.Descriptor instead.
 func (*CreateDataBackfillJobRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{35}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *CreateDataBackfillJobRequest) GetRegistrationId() string {
@@ -2854,7 +2648,7 @@ type CreateDataBackfillJobResponse struct {
 
 func (x *CreateDataBackfillJobResponse) Reset() {
 	*x = CreateDataBackfillJobResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[36]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2866,7 +2660,7 @@ func (x *CreateDataBackfillJobResponse) String() string {
 func (*CreateDataBackfillJobResponse) ProtoMessage() {}
 
 func (x *CreateDataBackfillJobResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[36]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2879,7 +2673,7 @@ func (x *CreateDataBackfillJobResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDataBackfillJobResponse.ProtoReflect.Descriptor instead.
 func (*CreateDataBackfillJobResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{36}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *CreateDataBackfillJobResponse) GetJobId() string {
@@ -2900,7 +2694,7 @@ type UploadBackfillFileRequest struct {
 
 func (x *UploadBackfillFileRequest) Reset() {
 	*x = UploadBackfillFileRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[37]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2912,7 +2706,7 @@ func (x *UploadBackfillFileRequest) String() string {
 func (*UploadBackfillFileRequest) ProtoMessage() {}
 
 func (x *UploadBackfillFileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[37]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2925,7 +2719,7 @@ func (x *UploadBackfillFileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadBackfillFileRequest.ProtoReflect.Descriptor instead.
 func (*UploadBackfillFileRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{37}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *UploadBackfillFileRequest) GetJobId() string {
@@ -2958,7 +2752,7 @@ type UploadBackfillFileResponse struct {
 
 func (x *UploadBackfillFileResponse) Reset() {
 	*x = UploadBackfillFileResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[38]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2970,7 +2764,7 @@ func (x *UploadBackfillFileResponse) String() string {
 func (*UploadBackfillFileResponse) ProtoMessage() {}
 
 func (x *UploadBackfillFileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[38]
+	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2983,7 +2777,7 @@ func (x *UploadBackfillFileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadBackfillFileResponse.ProtoReflect.Descriptor instead.
 func (*UploadBackfillFileResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{38}
+	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *UploadBackfillFileResponse) GetJobId() string {
@@ -2993,224 +2787,44 @@ func (x *UploadBackfillFileResponse) GetJobId() string {
 	return ""
 }
 
-// Pull 功率同步（二期，与 §3.11 对齐）
-type BatchPullPowerRequest struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationIds []string               `protobuf:"bytes,1,rep,name=registration_ids,proto3" json:"registration_ids,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
-}
-
-func (x *BatchPullPowerRequest) Reset() {
-	*x = BatchPullPowerRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[39]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *BatchPullPowerRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BatchPullPowerRequest) ProtoMessage() {}
-
-func (x *BatchPullPowerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[39]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BatchPullPowerRequest.ProtoReflect.Descriptor instead.
-func (*BatchPullPowerRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{39}
-}
-
-func (x *BatchPullPowerRequest) GetRegistrationIds() []string {
-	if x != nil {
-		return x.RegistrationIds
-	}
-	return nil
-}
-
-type BatchPullPowerResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	RunId         string                 `protobuf:"bytes,1,opt,name=run_id,proto3" json:"run_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *BatchPullPowerResponse) Reset() {
-	*x = BatchPullPowerResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[40]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *BatchPullPowerResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BatchPullPowerResponse) ProtoMessage() {}
-
-func (x *BatchPullPowerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[40]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BatchPullPowerResponse.ProtoReflect.Descriptor instead.
-func (*BatchPullPowerResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{40}
-}
-
-func (x *BatchPullPowerResponse) GetRunId() string {
-	if x != nil {
-		return x.RunId
-	}
-	return ""
-}
-
-type RetryFailedPullPowerRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	RunId         *string                `protobuf:"bytes,1,opt,name=run_id,proto3,oneof" json:"run_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *RetryFailedPullPowerRequest) Reset() {
-	*x = RetryFailedPullPowerRequest{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[41]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *RetryFailedPullPowerRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RetryFailedPullPowerRequest) ProtoMessage() {}
-
-func (x *RetryFailedPullPowerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[41]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RetryFailedPullPowerRequest.ProtoReflect.Descriptor instead.
-func (*RetryFailedPullPowerRequest) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{41}
-}
-
-func (x *RetryFailedPullPowerRequest) GetRunId() string {
-	if x != nil && x.RunId != nil {
-		return *x.RunId
-	}
-	return ""
-}
-
-type RetryFailedPullPowerResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	RunId         string                 `protobuf:"bytes,1,opt,name=run_id,proto3" json:"run_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *RetryFailedPullPowerResponse) Reset() {
-	*x = RetryFailedPullPowerResponse{}
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[42]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *RetryFailedPullPowerResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RetryFailedPullPowerResponse) ProtoMessage() {}
-
-func (x *RetryFailedPullPowerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_data_readiness_data_readiness_message_proto_msgTypes[42]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RetryFailedPullPowerResponse.ProtoReflect.Descriptor instead.
-func (*RetryFailedPullPowerResponse) Descriptor() ([]byte, []int) {
-	return file_data_readiness_data_readiness_message_proto_rawDescGZIP(), []int{42}
-}
-
-func (x *RetryFailedPullPowerResponse) GetRunId() string {
-	if x != nil {
-		return x.RunId
-	}
-	return ""
-}
-
 var File_data_readiness_data_readiness_message_proto protoreflect.FileDescriptor
 
 const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"\n" +
-	"+data_readiness/data_readiness_message.proto\x12\x1efusion.ai.proto.data_readiness\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x01\n" +
-	"\x18DataReadinessReplyHeader\x12+\n" +
-	"\x05state\x18\x01 \x01(\tB\x15\xbaH\x12r\x10R\asuccessR\x05errorR\x05state\x12%\n" +
-	"\x04code\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
-	"^[0-9]{5}$R\x04code\x12!\n" +
-	"\amessage\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\amessage\"\xb3\x02\n" +
+	"+data_readiness/data_readiness_message.proto\x12\x1efusion.ai.proto.data_readiness\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd2\x02\n" +
 	"\fDataOverview\x12\x1e\n" +
 	"\n" +
 	"site_count\x18\x01 \x01(\x05R\n" +
 	"site_count\x12 \n" +
 	"\vready_today\x18\x02 \x01(\x05R\vready_today\x12(\n" +
-	"\x0fneed_fill_count\x18\x03 \x01(\x05R\x0fneed_fill_count\x124\n" +
-	"\x15weather_missing_count\x18\x04 \x01(\x05R\x15weather_missing_count\x122\n" +
+	"\x0fneed_fill_count\x18\x03 \x01(\x05R\x0fneed_fill_count\x129\n" +
+	"\x15weather_missing_count\x18\x04 \x01(\x05H\x00R\x15weather_missing_count\x88\x01\x01\x122\n" +
 	"\x14push_success_24h_pct\x18\x05 \x01(\x01R\x14push_success_24h_pct\x125\n" +
-	"\x13avg_push_latency_ms\x18\x06 \x01(\x05H\x00R\x13avg_push_latency_ms\x88\x01\x01B\x16\n" +
+	"\x13avg_push_latency_ms\x18\x06 \x01(\x05H\x01R\x13avg_push_latency_ms\x88\x01\x01B\x18\n" +
+	"\x16_weather_missing_countB\x16\n" +
 	"\x14_avg_push_latency_ms\"H\n" +
 	"\x12CoverageTrendPoint\x12\x1c\n" +
 	"\tstat_date\x18\x01 \x01(\tR\tstat_date\x12\x14\n" +
-	"\x05ratio\x18\x02 \x01(\x01R\x05ratio\"\x92\a\n" +
+	"\x05ratio\x18\x02 \x01(\x01R\x05ratio\"\x89\a\n" +
 	"\vDataSiteRow\x12(\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x12\x18\n" +
 	"\asite_id\x18\x02 \x01(\tR\asite_id\x12\x1c\n" +
 	"\tsite_name\x18\x03 \x01(\tR\tsite_name\x12\"\n" +
 	"\fservice_type\x18\x04 \x01(\tR\fservice_type\x12L\n" +
-	"\vdata_source\x18\x05 \x01(\x0e2*.fusion.ai.proto.data_readiness.DataSourceR\vdata_source\x128\n" +
-	"\x17primary_granularity_min\x18\x06 \x01(\x05R\x17primary_granularity_min\x121\n" +
-	"\x11coverage_ratio_7d\x18\a \x01(\x01H\x00R\x11coverage_ratio_7d\x88\x01\x01\x12N\n" +
-	"\btrend_7d\x18\b \x03(\v22.fusion.ai.proto.data_readiness.CoverageTrendPointR\btrend_7d\x12U\n" +
-	"\x0eweather_status\x18\t \x01(\x0e2-.fusion.ai.proto.data_readiness.WeatherStatusR\x0eweather_status\x12(\n" +
-	"\x0fweather_display\x18\n" +
-	" \x01(\tR\x0fweather_display\x12C\n" +
-	"\flast_push_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampH\x01R\flast_push_at\x88\x01\x01\x12G\n" +
-	"\x0elast_ingest_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampH\x02R\x0elast_ingest_at\x88\x01\x01\x12$\n" +
-	"\rgap_points_7d\x18\r \x01(\x05R\rgap_points_7d\x12[\n" +
-	"\x10readiness_status\x18\x0e \x01(\x0e2/.fusion.ai.proto.data_readiness.ReadinessStatusR\x10readiness_status\x12&\n" +
-	"\x0eworkbench_href\x18\x0f \x01(\tR\x0eworkbench_hrefB\x14\n" +
-	"\x12_coverage_ratio_7dB\x0f\n" +
+	"\vdata_source\x18\x05 \x01(\x0e2*.fusion.ai.proto.data_readiness.DataSourceR\vdata_source\x121\n" +
+	"\x11coverage_ratio_7d\x18\x06 \x01(\x01H\x00R\x11coverage_ratio_7d\x88\x01\x01\x12N\n" +
+	"\btrend_7d\x18\a \x03(\v22.fusion.ai.proto.data_readiness.CoverageTrendPointR\btrend_7d\x12Z\n" +
+	"\x0eweather_status\x18\b \x01(\x0e2-.fusion.ai.proto.data_readiness.WeatherStatusH\x01R\x0eweather_status\x88\x01\x01\x12-\n" +
+	"\x0fweather_display\x18\t \x01(\tH\x02R\x0fweather_display\x88\x01\x01\x12C\n" +
+	"\flast_push_at\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampH\x03R\flast_push_at\x88\x01\x01\x12G\n" +
+	"\x0elast_ingest_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampH\x04R\x0elast_ingest_at\x88\x01\x01\x12$\n" +
+	"\rgap_points_7d\x18\f \x01(\x05R\rgap_points_7d\x12[\n" +
+	"\x10readiness_status\x18\r \x01(\x0e2/.fusion.ai.proto.data_readiness.ReadinessStatusR\x10readiness_status\x12&\n" +
+	"\x0eworkbench_href\x18\x0e \x01(\tR\x0eworkbench_hrefB\x14\n" +
+	"\x12_coverage_ratio_7dB\x11\n" +
+	"\x0f_weather_statusB\x12\n" +
+	"\x10_weather_displayB\x0f\n" +
 	"\r_last_push_atB\x11\n" +
 	"\x0f_last_ingest_at\"\x9a\x01\n" +
 	"\x0fDataSiteRowPage\x12?\n" +
@@ -3222,33 +2836,40 @@ const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"HeatmapDay\x12\x1c\n" +
 	"\tstat_date\x18\x01 \x01(\tR\tstat_date\x12B\n" +
 	"\x05level\x18\x02 \x01(\x0e2,.fusion.ai.proto.data_readiness.HeatmapLevelR\x05level\x12\x14\n" +
-	"\x05ratio\x18\x03 \x01(\x01R\x05ratio\"\xea\x03\n" +
+	"\x05ratio\x18\x03 \x01(\x01R\x05ratio\"\xa9\x06\n" +
 	"\x11DataSiteReadiness\x12(\n" +
-	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x12\x1c\n" +
-	"\tsite_name\x18\x02 \x01(\tR\tsite_name\x12[\n" +
-	"\x10readiness_status\x18\x03 \x01(\x0e2/.fusion.ai.proto.data_readiness.ReadinessStatusR\x10readiness_status\x12U\n" +
-	"\x0eweather_status\x18\x04 \x01(\x0e2-.fusion.ai.proto.data_readiness.WeatherStatusR\x0eweather_status\x121\n" +
-	"\x11coverage_ratio_7d\x18\x05 \x01(\x01H\x00R\x11coverage_ratio_7d\x88\x01\x01\x12$\n" +
-	"\rgap_points_7d\x18\x06 \x01(\x05R\rgap_points_7d\x12\x1c\n" +
-	"\tgap_focus\x18\a \x01(\tR\tgap_focus\x12L\n" +
-	"\vheatmap_14d\x18\b \x03(\v2*.fusion.ai.proto.data_readiness.HeatmapDayR\vheatmap_14dB\x14\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x12\x18\n" +
+	"\asite_id\x18\x02 \x01(\tR\asite_id\x12\x1c\n" +
+	"\tsite_name\x18\x03 \x01(\tR\tsite_name\x12\"\n" +
+	"\fservice_type\x18\x04 \x01(\tR\fservice_type\x12L\n" +
+	"\vdata_source\x18\x05 \x01(\x0e2*.fusion.ai.proto.data_readiness.DataSourceR\vdata_source\x12\"\n" +
+	"\ftrain_window\x18\x06 \x01(\tR\ftrain_window\x12&\n" +
+	"\x0eupstream_label\x18\a \x01(\tR\x0eupstream_label\x125\n" +
+	"\x13weather_provider_id\x18\b \x01(\tH\x00R\x13weather_provider_id\x88\x01\x01\x12[\n" +
+	"\x10readiness_status\x18\t \x01(\x0e2/.fusion.ai.proto.data_readiness.ReadinessStatusR\x10readiness_status\x12Z\n" +
+	"\x0eweather_status\x18\n" +
+	" \x01(\x0e2-.fusion.ai.proto.data_readiness.WeatherStatusH\x01R\x0eweather_status\x88\x01\x01\x121\n" +
+	"\x11coverage_ratio_7d\x18\v \x01(\x01H\x02R\x11coverage_ratio_7d\x88\x01\x01\x12$\n" +
+	"\rgap_points_7d\x18\f \x01(\x05R\rgap_points_7d\x12\x1c\n" +
+	"\tgap_focus\x18\r \x01(\tR\tgap_focus\x12L\n" +
+	"\vheatmap_14d\x18\x0e \x03(\v2*.fusion.ai.proto.data_readiness.HeatmapDayR\vheatmap_14dB\x16\n" +
+	"\x14_weather_provider_idB\x11\n" +
+	"\x0f_weather_statusB\x14\n" +
 	"\x12_coverage_ratio_7d\"\x8b\x01\n" +
 	"\fPipelineLine\x12\x14\n" +
 	"\x05label\x18\x01 \x01(\tR\x05label\x12\x18\n" +
 	"\asuccess\x18\x02 \x01(\x05R\asuccess\x12\x14\n" +
 	"\x05total\x18\x03 \x01(\x05R\x05total\x12%\n" +
 	"\vsuccess_pct\x18\x04 \x01(\x01H\x00R\vsuccess_pct\x88\x01\x01B\x0e\n" +
-	"\f_success_pct\"\xc6\x03\n" +
+	"\f_success_pct\"\x81\x03\n" +
 	"\rPipelineStats\x12J\n" +
-	"\tpush_line\x18\x01 \x01(\v2,.fusion.ai.proto.data_readiness.PipelineLineR\tpush_line\x12X\n" +
-	"\x10weather_job_line\x18\x02 \x01(\v2,.fusion.ai.proto.data_readiness.PipelineLineR\x10weather_job_line\x12L\n" +
+	"\tpush_line\x18\x01 \x01(\v2,.fusion.ai.proto.data_readiness.PipelineLineR\tpush_line\x12]\n" +
+	"\x10weather_job_line\x18\x02 \x01(\v2,.fusion.ai.proto.data_readiness.PipelineLineH\x00R\x10weather_job_line\x88\x01\x01\x12L\n" +
 	"\n" +
 	"excel_line\x18\x03 \x01(\v2,.fusion.ai.proto.data_readiness.PipelineLineR\n" +
 	"excel_line\x12b\n" +
-	"\x15validation_queue_line\x18\x04 \x01(\v2,.fusion.ai.proto.data_readiness.PipelineLineR\x15validation_queue_line\x12O\n" +
-	"\tpull_line\x18\x05 \x01(\v2,.fusion.ai.proto.data_readiness.PipelineLineH\x00R\tpull_line\x88\x01\x01B\f\n" +
-	"\n" +
-	"_pull_line\"\xe3\x02\n" +
+	"\x15validation_queue_line\x18\x04 \x01(\v2,.fusion.ai.proto.data_readiness.PipelineLineR\x15validation_queue_lineB\x13\n" +
+	"\x11_weather_job_line\"\xe3\x02\n" +
 	"\x0fWeatherSiteView\x12(\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x12 \n" +
 	"\vprovider_id\x18\x02 \x01(\tR\vprovider_id\x12U\n" +
@@ -3285,58 +2906,41 @@ const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"\f_finished_at\"R\n" +
 	"\x16GetDataOverviewRequest\x12'\n" +
 	"\fservice_type\x18\x01 \x01(\tH\x00R\fservice_type\x88\x01\x01B\x0f\n" +
-	"\r_service_type\"\xb5\x01\n" +
-	"\x17GetDataOverviewResponse\x12P\n" +
-	"\x06header\x18\x01 \x01(\v28.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderR\x06header\x12H\n" +
-	"\boverview\x18\x02 \x01(\v2,.fusion.ai.proto.data_readiness.DataOverviewR\boverview\"\xdc\x03\n" +
+	"\r_service_type\"c\n" +
+	"\x17GetDataOverviewResponse\x12H\n" +
+	"\boverview\x18\x01 \x01(\v2,.fusion.ai.proto.data_readiness.DataOverviewR\boverview\"\xb6\x02\n" +
 	"\x17ListDataSiteRowsRequest\x12\x17\n" +
 	"\x04page\x18\x01 \x01(\x05H\x00R\x04page\x88\x01\x01\x12!\n" +
 	"\tpage_size\x18\x02 \x01(\x05H\x01R\tpage_size\x88\x01\x01\x12'\n" +
-	"\fservice_type\x18\x03 \x01(\tH\x02R\fservice_type\x88\x01\x01\x12Q\n" +
-	"\vdata_source\x18\x04 \x01(\x0e2*.fusion.ai.proto.data_readiness.DataSourceH\x03R\vdata_source\x88\x01\x01\x12`\n" +
-	"\x10readiness_status\x18\x05 \x01(\x0e2/.fusion.ai.proto.data_readiness.ReadinessStatusH\x04R\x10readiness_status\x88\x01\x01\x12-\n" +
-	"\x0fgranularity_min\x18\x06 \x01(\x05H\x05R\x0fgranularity_min\x88\x01\x01\x12\x11\n" +
-	"\x01q\x18\a \x01(\tH\x06R\x01q\x88\x01\x01B\a\n" +
+	"\fservice_type\x18\x03 \x01(\tH\x02R\fservice_type\x88\x01\x01\x12`\n" +
+	"\x10readiness_status\x18\x04 \x01(\x0e2/.fusion.ai.proto.data_readiness.ReadinessStatusH\x03R\x10readiness_status\x88\x01\x01\x12\x11\n" +
+	"\x01q\x18\x05 \x01(\tH\x04R\x01q\x88\x01\x01B\a\n" +
 	"\x05_pageB\f\n" +
 	"\n" +
 	"_page_sizeB\x0f\n" +
-	"\r_service_typeB\x0e\n" +
-	"\f_data_sourceB\x13\n" +
-	"\x11_readiness_statusB\x12\n" +
-	"\x10_granularity_minB\x04\n" +
-	"\x02_q\"\xb1\x01\n" +
-	"\x18ListDataSiteRowsResponse\x12P\n" +
-	"\x06header\x18\x01 \x01(\v28.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderR\x06header\x12C\n" +
-	"\x04page\x18\x02 \x01(\v2/.fusion.ai.proto.data_readiness.DataSiteRowPageR\x04page\"P\n" +
+	"\r_service_typeB\x13\n" +
+	"\x11_readiness_statusB\x04\n" +
+	"\x02_q\"_\n" +
+	"\x18ListDataSiteRowsResponse\x12C\n" +
+	"\x04page\x18\x01 \x01(\v2/.fusion.ai.proto.data_readiness.DataSiteRowPageR\x04page\"P\n" +
 	"\x1bGetDataSiteReadinessRequest\x121\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\"o\n" +
 	"\x1cGetDataSiteReadinessResponse\x12O\n" +
-	"\treadiness\x18\x01 \x01(\v21.fusion.ai.proto.data_readiness.DataSiteReadinessR\treadiness\"\x1d\n" +
-	"\x1bGetDataPipelineStatsRequest\"c\n" +
+	"\treadiness\x18\x01 \x01(\v21.fusion.ai.proto.data_readiness.DataSiteReadinessR\treadiness\"W\n" +
+	"\x1bGetDataPipelineStatsRequest\x12'\n" +
+	"\fservice_type\x18\x01 \x01(\tH\x00R\fservice_type\x88\x01\x01B\x0f\n" +
+	"\r_service_type\"c\n" +
 	"\x1cGetDataPipelineStatsResponse\x12C\n" +
-	"\x05stats\x18\x01 \x01(\v2-.fusion.ai.proto.data_readiness.PipelineStatsR\x05stats\"\xc4\x02\n" +
-	"\x15ExportDataGapsRequest\x12'\n" +
-	"\fservice_type\x18\x01 \x01(\tH\x00R\fservice_type\x88\x01\x01\x12Q\n" +
-	"\vdata_source\x18\x02 \x01(\x0e2*.fusion.ai.proto.data_readiness.DataSourceH\x01R\vdata_source\x88\x01\x01\x12`\n" +
-	"\x10readiness_status\x18\x03 \x01(\x0e2/.fusion.ai.proto.data_readiness.ReadinessStatusH\x02R\x10readiness_status\x88\x01\x01\x12\x11\n" +
-	"\x01q\x18\x04 \x01(\tH\x03R\x01q\x88\x01\x01B\x0f\n" +
-	"\r_service_typeB\x0e\n" +
-	"\f_data_sourceB\x13\n" +
-	"\x11_readiness_statusB\x04\n" +
-	"\x02_q\"F\n" +
-	"\x16ExportDataGapsResponse\x12\x10\n" +
-	"\x03csv\x18\x01 \x01(\fR\x03csv\x12\x1a\n" +
-	"\bfilename\x18\x02 \x01(\tR\bfilename\"J\n" +
+	"\x05stats\x18\x01 \x01(\v2-.fusion.ai.proto.data_readiness.PipelineStatsR\x05stats\"J\n" +
 	"\x15GetWeatherSiteRequest\x121\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x0fregistration_id\"]\n" +
 	"\x16GetWeatherSiteResponse\x12C\n" +
 	"\x04site\x18\x01 \x01(\v2/.fusion.ai.proto.data_readiness.WeatherSiteViewR\x04site\"a\n" +
 	"\x18GetWeatherSyncRunRequest\x12\x1f\n" +
 	"\x06run_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x06run_id\x12$\n" +
-	"\rinclude_tasks\x18\x02 \x01(\bR\rinclude_tasks\"\xb3\x01\n" +
-	"\x19GetWeatherSyncRunResponse\x12P\n" +
-	"\x06header\x18\x01 \x01(\v28.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderR\x06header\x12D\n" +
-	"\x03run\x18\x02 \x01(\v22.fusion.ai.proto.data_readiness.WeatherSyncRunViewR\x03run\"\xc5\x04\n" +
+	"\rinclude_tasks\x18\x02 \x01(\bR\rinclude_tasks\"a\n" +
+	"\x19GetWeatherSyncRunResponse\x12D\n" +
+	"\x03run\x18\x01 \x01(\v22.fusion.ai.proto.data_readiness.WeatherSyncRunViewR\x03run\"\xc5\x04\n" +
 	"\x17BatchSyncWeatherRequest\x12=\n" +
 	"\x10registration_ids\x18\x01 \x03(\tB\x11\xbaH\x0e\x92\x01\v\x10\xf4\x03\"\x06r\x04\x10\x01\x18@R\x10registration_ids\x12'\n" +
 	"\tpast_days\x18\x02 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\x0e(\x00R\tpast_days\x12/\n" +
@@ -3351,43 +2955,39 @@ const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"\x17WeatherSyncPartialError\x12(\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x12\"\n" +
 	"\flocation_key\x18\x02 \x01(\tR\flocation_key\x12\x18\n" +
-	"\amessage\x18\x03 \x01(\tR\amessage\"\xf5\x02\n" +
-	"\x18BatchSyncWeatherResponse\x12P\n" +
-	"\x06header\x18\x01 \x01(\v28.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderR\x06header\x12\x16\n" +
-	"\x06run_id\x18\x02 \x01(\tR\x06run_id\x12L\n" +
-	"\x06status\x18\x03 \x01(\x0e24.fusion.ai.proto.data_readiness.WeatherSyncRunStatusR\x06status\x12\x1e\n" +
+	"\amessage\x18\x03 \x01(\tR\amessage\"\xa3\x02\n" +
+	"\x18BatchSyncWeatherResponse\x12\x16\n" +
+	"\x06run_id\x18\x01 \x01(\tR\x06run_id\x12L\n" +
+	"\x06status\x18\x02 \x01(\x0e24.fusion.ai.proto.data_readiness.WeatherSyncRunStatusR\x06status\x12\x1e\n" +
 	"\n" +
-	"task_total\x18\x04 \x01(\x05R\n" +
+	"task_total\x18\x03 \x01(\x05R\n" +
 	"task_total\x12 \n" +
-	"\vtask_failed\x18\x05 \x01(\x05R\vtask_failed\x12_\n" +
-	"\x0epartial_errors\x18\x06 \x03(\v27.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorR\x0epartial_errors\"R\n" +
+	"\vtask_failed\x18\x04 \x01(\x05R\vtask_failed\x12_\n" +
+	"\x0epartial_errors\x18\x05 \x03(\v27.fusion.ai.proto.data_readiness.WeatherSyncPartialErrorR\x0epartial_errors\"R\n" +
 	"\x1dRetryFailedWeatherSyncRequest\x12&\n" +
 	"\x06run_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@H\x00R\x06run_id\x88\x01\x01B\t\n" +
-	"\a_run_id\"\xd8\x01\n" +
-	"\x1eRetryFailedWeatherSyncResponse\x12P\n" +
-	"\x06header\x18\x01 \x01(\v28.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderR\x06header\x12\x16\n" +
-	"\x06run_id\x18\x02 \x01(\tR\x06run_id\x12L\n" +
-	"\x06status\x18\x03 \x01(\x0e24.fusion.ai.proto.data_readiness.WeatherSyncRunStatusR\x06status\"\xa3\x01\n" +
+	"\a_run_id\"\x86\x01\n" +
+	"\x1eRetryFailedWeatherSyncResponse\x12\x16\n" +
+	"\x06run_id\x18\x01 \x01(\tR\x06run_id\x12L\n" +
+	"\x06status\x18\x02 \x01(\x0e24.fusion.ai.proto.data_readiness.WeatherSyncRunStatusR\x06status\"\xa3\x01\n" +
 	"\"CreateWeatherExcelImportJobRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12 \n" +
 	"\x04file\x18\x02 \x01(\fB\f\xbaH\tz\a\x10\x01\x18\x80\x80\x80\x19R\x04file\x12&\n" +
 	"\bfilename\x18\x03 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xff\x01R\bfilename\"\xc9\x02\n" +
-	"#CreateWeatherExcelImportJobResponse\x12P\n" +
-	"\x06header\x18\x01 \x01(\v28.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderR\x06header\x12\x16\n" +
-	"\x06job_id\x18\x02 \x01(\tR\x06job_id\x12)\n" +
-	"\raccepted_rows\x18\x03 \x01(\x05H\x00R\raccepted_rows\x88\x01\x01\x12%\n" +
-	"\vfailed_rows\x18\x04 \x01(\x05H\x01R\vfailed_rows\x88\x01\x01\x12/\n" +
-	"\x10error_report_url\x18\x05 \x01(\tH\x02R\x10error_report_url\x88\x01\x01B\x10\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xff\x01R\bfilename\"\xf7\x01\n" +
+	"#CreateWeatherExcelImportJobResponse\x12\x16\n" +
+	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x12)\n" +
+	"\raccepted_rows\x18\x02 \x01(\x05H\x00R\raccepted_rows\x88\x01\x01\x12%\n" +
+	"\vfailed_rows\x18\x03 \x01(\x05H\x01R\vfailed_rows\x88\x01\x01\x12/\n" +
+	"\x10error_report_url\x18\x04 \x01(\tH\x02R\x10error_report_url\x88\x01\x01B\x10\n" +
 	"\x0e_accepted_rowsB\x0e\n" +
 	"\f_failed_rowsB\x13\n" +
 	"\x11_error_report_url\" \n" +
-	"\x1eGetWeatherExcelTemplateRequest\"\xc7\x01\n" +
-	"\x1fGetWeatherExcelTemplateResponse\x12P\n" +
-	"\x06header\x18\x01 \x01(\v28.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderR\x06header\x12\x12\n" +
-	"\x04file\x18\x02 \x01(\fR\x04file\x12\x1a\n" +
-	"\bfilename\x18\x03 \x01(\tR\bfilename\x12\"\n" +
-	"\fcontent_type\x18\x04 \x01(\tR\fcontent_type\"\xd2\x02\n" +
+	"\x1eGetWeatherExcelTemplateRequest\"u\n" +
+	"\x1fGetWeatherExcelTemplateResponse\x12\x12\n" +
+	"\x04file\x18\x01 \x01(\fR\x04file\x12\x1a\n" +
+	"\bfilename\x18\x02 \x01(\tR\bfilename\x12\"\n" +
+	"\fcontent_type\x18\x03 \x01(\tR\fcontent_type\"\xd2\x02\n" +
 	"\x1cCreateDataBackfillJobRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12#\n" +
 	"\bstart_ms\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\bstart_ms\x12\x1f\n" +
@@ -3403,24 +3003,14 @@ const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"\bfilename\x18\x03 \x01(\tB\n" +
 	"\xbaH\ar\x05\x10\x01\x18\xff\x01R\bfilename\"4\n" +
 	"\x1aUploadBackfillFileResponse\x12\x16\n" +
-	"\x06job_id\x18\x01 \x01(\tR\x06job_id\"V\n" +
-	"\x15BatchPullPowerRequest\x12=\n" +
-	"\x10registration_ids\x18\x01 \x03(\tB\x11\xbaH\x0e\x92\x01\v\x10\xf4\x03\"\x06r\x04\x10\x01\x18@R\x10registration_ids\"0\n" +
-	"\x16BatchPullPowerResponse\x12\x16\n" +
-	"\x06run_id\x18\x01 \x01(\tR\x06run_id\"P\n" +
-	"\x1bRetryFailedPullPowerRequest\x12&\n" +
-	"\x06run_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@H\x00R\x06run_id\x88\x01\x01B\t\n" +
-	"\a_run_id\"6\n" +
-	"\x1cRetryFailedPullPowerResponse\x12\x16\n" +
-	"\x06run_id\x18\x01 \x01(\tR\x06run_id*\xf3\x01\n" +
+	"\x06job_id\x18\x01 \x01(\tR\x06job_id*\xd0\x01\n" +
 	"\x0fReadinessStatus\x12 \n" +
 	"\x1cREADINESS_STATUS_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16READINESS_STATUS_READY\x10\x01\x12\x1e\n" +
 	"\x1aREADINESS_STATUS_NEED_FILL\x10\x02\x12\x1b\n" +
 	"\x17READINESS_STATUS_SEVERE\x10\x03\x12$\n" +
 	" READINESS_STATUS_WEATHER_MISSING\x10\x04\x12\x1c\n" +
-	"\x18READINESS_STATUS_OFFLINE\x10\x05\x12!\n" +
-	"\x1dREADINESS_STATUS_PULL_UNKNOWN\x10\x06*\x9a\x01\n" +
+	"\x18READINESS_STATUS_OFFLINE\x10\x05*\x9a\x01\n" +
 	"\rWeatherStatus\x12\x1e\n" +
 	"\x1aWEATHER_STATUS_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16WEATHER_STATUS_UNKNOWN\x10\x01\x12\x15\n" +
@@ -3476,7 +3066,7 @@ func file_data_readiness_data_readiness_message_proto_rawDescGZIP() []byte {
 }
 
 var file_data_readiness_data_readiness_message_proto_enumTypes = make([]protoimpl.EnumInfo, 8)
-var file_data_readiness_data_readiness_message_proto_msgTypes = make([]protoimpl.MessageInfo, 43)
+var file_data_readiness_data_readiness_message_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
 var file_data_readiness_data_readiness_message_proto_goTypes = []any{
 	(ReadinessStatus)(0),                        // 0: fusion.ai.proto.data_readiness.ReadinessStatus
 	(WeatherStatus)(0),                          // 1: fusion.ai.proto.data_readiness.WeatherStatus
@@ -3486,104 +3076,87 @@ var file_data_readiness_data_readiness_message_proto_goTypes = []any{
 	(WeatherSyncRunStatus)(0),                   // 5: fusion.ai.proto.data_readiness.WeatherSyncRunStatus
 	(WeatherSyncTaskStatus)(0),                  // 6: fusion.ai.proto.data_readiness.WeatherSyncTaskStatus
 	(HeatmapLevel)(0),                           // 7: fusion.ai.proto.data_readiness.HeatmapLevel
-	(*DataReadinessReplyHeader)(nil),            // 8: fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	(*DataOverview)(nil),                        // 9: fusion.ai.proto.data_readiness.DataOverview
-	(*CoverageTrendPoint)(nil),                  // 10: fusion.ai.proto.data_readiness.CoverageTrendPoint
-	(*DataSiteRow)(nil),                         // 11: fusion.ai.proto.data_readiness.DataSiteRow
-	(*DataSiteRowPage)(nil),                     // 12: fusion.ai.proto.data_readiness.DataSiteRowPage
-	(*HeatmapDay)(nil),                          // 13: fusion.ai.proto.data_readiness.HeatmapDay
-	(*DataSiteReadiness)(nil),                   // 14: fusion.ai.proto.data_readiness.DataSiteReadiness
-	(*PipelineLine)(nil),                        // 15: fusion.ai.proto.data_readiness.PipelineLine
-	(*PipelineStats)(nil),                       // 16: fusion.ai.proto.data_readiness.PipelineStats
-	(*WeatherSiteView)(nil),                     // 17: fusion.ai.proto.data_readiness.WeatherSiteView
-	(*WeatherSyncTaskView)(nil),                 // 18: fusion.ai.proto.data_readiness.WeatherSyncTaskView
-	(*WeatherSyncRunView)(nil),                  // 19: fusion.ai.proto.data_readiness.WeatherSyncRunView
-	(*GetDataOverviewRequest)(nil),              // 20: fusion.ai.proto.data_readiness.GetDataOverviewRequest
-	(*GetDataOverviewResponse)(nil),             // 21: fusion.ai.proto.data_readiness.GetDataOverviewResponse
-	(*ListDataSiteRowsRequest)(nil),             // 22: fusion.ai.proto.data_readiness.ListDataSiteRowsRequest
-	(*ListDataSiteRowsResponse)(nil),            // 23: fusion.ai.proto.data_readiness.ListDataSiteRowsResponse
-	(*GetDataSiteReadinessRequest)(nil),         // 24: fusion.ai.proto.data_readiness.GetDataSiteReadinessRequest
-	(*GetDataSiteReadinessResponse)(nil),        // 25: fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse
-	(*GetDataPipelineStatsRequest)(nil),         // 26: fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest
-	(*GetDataPipelineStatsResponse)(nil),        // 27: fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse
-	(*ExportDataGapsRequest)(nil),               // 28: fusion.ai.proto.data_readiness.ExportDataGapsRequest
-	(*ExportDataGapsResponse)(nil),              // 29: fusion.ai.proto.data_readiness.ExportDataGapsResponse
-	(*GetWeatherSiteRequest)(nil),               // 30: fusion.ai.proto.data_readiness.GetWeatherSiteRequest
-	(*GetWeatherSiteResponse)(nil),              // 31: fusion.ai.proto.data_readiness.GetWeatherSiteResponse
-	(*GetWeatherSyncRunRequest)(nil),            // 32: fusion.ai.proto.data_readiness.GetWeatherSyncRunRequest
-	(*GetWeatherSyncRunResponse)(nil),           // 33: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse
-	(*BatchSyncWeatherRequest)(nil),             // 34: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest
-	(*WeatherSyncPartialError)(nil),             // 35: fusion.ai.proto.data_readiness.WeatherSyncPartialError
-	(*BatchSyncWeatherResponse)(nil),            // 36: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse
-	(*RetryFailedWeatherSyncRequest)(nil),       // 37: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest
-	(*RetryFailedWeatherSyncResponse)(nil),      // 38: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse
-	(*CreateWeatherExcelImportJobRequest)(nil),  // 39: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest
-	(*CreateWeatherExcelImportJobResponse)(nil), // 40: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse
-	(*GetWeatherExcelTemplateRequest)(nil),      // 41: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest
-	(*GetWeatherExcelTemplateResponse)(nil),     // 42: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse
-	(*CreateDataBackfillJobRequest)(nil),        // 43: fusion.ai.proto.data_readiness.CreateDataBackfillJobRequest
-	(*CreateDataBackfillJobResponse)(nil),       // 44: fusion.ai.proto.data_readiness.CreateDataBackfillJobResponse
-	(*UploadBackfillFileRequest)(nil),           // 45: fusion.ai.proto.data_readiness.UploadBackfillFileRequest
-	(*UploadBackfillFileResponse)(nil),          // 46: fusion.ai.proto.data_readiness.UploadBackfillFileResponse
-	(*BatchPullPowerRequest)(nil),               // 47: fusion.ai.proto.data_readiness.BatchPullPowerRequest
-	(*BatchPullPowerResponse)(nil),              // 48: fusion.ai.proto.data_readiness.BatchPullPowerResponse
-	(*RetryFailedPullPowerRequest)(nil),         // 49: fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest
-	(*RetryFailedPullPowerResponse)(nil),        // 50: fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse
-	(*timestamppb.Timestamp)(nil),               // 51: google.protobuf.Timestamp
+	(*DataOverview)(nil),                        // 8: fusion.ai.proto.data_readiness.DataOverview
+	(*CoverageTrendPoint)(nil),                  // 9: fusion.ai.proto.data_readiness.CoverageTrendPoint
+	(*DataSiteRow)(nil),                         // 10: fusion.ai.proto.data_readiness.DataSiteRow
+	(*DataSiteRowPage)(nil),                     // 11: fusion.ai.proto.data_readiness.DataSiteRowPage
+	(*HeatmapDay)(nil),                          // 12: fusion.ai.proto.data_readiness.HeatmapDay
+	(*DataSiteReadiness)(nil),                   // 13: fusion.ai.proto.data_readiness.DataSiteReadiness
+	(*PipelineLine)(nil),                        // 14: fusion.ai.proto.data_readiness.PipelineLine
+	(*PipelineStats)(nil),                       // 15: fusion.ai.proto.data_readiness.PipelineStats
+	(*WeatherSiteView)(nil),                     // 16: fusion.ai.proto.data_readiness.WeatherSiteView
+	(*WeatherSyncTaskView)(nil),                 // 17: fusion.ai.proto.data_readiness.WeatherSyncTaskView
+	(*WeatherSyncRunView)(nil),                  // 18: fusion.ai.proto.data_readiness.WeatherSyncRunView
+	(*GetDataOverviewRequest)(nil),              // 19: fusion.ai.proto.data_readiness.GetDataOverviewRequest
+	(*GetDataOverviewResponse)(nil),             // 20: fusion.ai.proto.data_readiness.GetDataOverviewResponse
+	(*ListDataSiteRowsRequest)(nil),             // 21: fusion.ai.proto.data_readiness.ListDataSiteRowsRequest
+	(*ListDataSiteRowsResponse)(nil),            // 22: fusion.ai.proto.data_readiness.ListDataSiteRowsResponse
+	(*GetDataSiteReadinessRequest)(nil),         // 23: fusion.ai.proto.data_readiness.GetDataSiteReadinessRequest
+	(*GetDataSiteReadinessResponse)(nil),        // 24: fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse
+	(*GetDataPipelineStatsRequest)(nil),         // 25: fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest
+	(*GetDataPipelineStatsResponse)(nil),        // 26: fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse
+	(*GetWeatherSiteRequest)(nil),               // 27: fusion.ai.proto.data_readiness.GetWeatherSiteRequest
+	(*GetWeatherSiteResponse)(nil),              // 28: fusion.ai.proto.data_readiness.GetWeatherSiteResponse
+	(*GetWeatherSyncRunRequest)(nil),            // 29: fusion.ai.proto.data_readiness.GetWeatherSyncRunRequest
+	(*GetWeatherSyncRunResponse)(nil),           // 30: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse
+	(*BatchSyncWeatherRequest)(nil),             // 31: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest
+	(*WeatherSyncPartialError)(nil),             // 32: fusion.ai.proto.data_readiness.WeatherSyncPartialError
+	(*BatchSyncWeatherResponse)(nil),            // 33: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse
+	(*RetryFailedWeatherSyncRequest)(nil),       // 34: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest
+	(*RetryFailedWeatherSyncResponse)(nil),      // 35: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse
+	(*CreateWeatherExcelImportJobRequest)(nil),  // 36: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest
+	(*CreateWeatherExcelImportJobResponse)(nil), // 37: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse
+	(*GetWeatherExcelTemplateRequest)(nil),      // 38: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest
+	(*GetWeatherExcelTemplateResponse)(nil),     // 39: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse
+	(*CreateDataBackfillJobRequest)(nil),        // 40: fusion.ai.proto.data_readiness.CreateDataBackfillJobRequest
+	(*CreateDataBackfillJobResponse)(nil),       // 41: fusion.ai.proto.data_readiness.CreateDataBackfillJobResponse
+	(*UploadBackfillFileRequest)(nil),           // 42: fusion.ai.proto.data_readiness.UploadBackfillFileRequest
+	(*UploadBackfillFileResponse)(nil),          // 43: fusion.ai.proto.data_readiness.UploadBackfillFileResponse
+	(*timestamppb.Timestamp)(nil),               // 44: google.protobuf.Timestamp
 }
 var file_data_readiness_data_readiness_message_proto_depIdxs = []int32{
 	2,  // 0: fusion.ai.proto.data_readiness.DataSiteRow.data_source:type_name -> fusion.ai.proto.data_readiness.DataSource
-	10, // 1: fusion.ai.proto.data_readiness.DataSiteRow.trend_7d:type_name -> fusion.ai.proto.data_readiness.CoverageTrendPoint
+	9,  // 1: fusion.ai.proto.data_readiness.DataSiteRow.trend_7d:type_name -> fusion.ai.proto.data_readiness.CoverageTrendPoint
 	1,  // 2: fusion.ai.proto.data_readiness.DataSiteRow.weather_status:type_name -> fusion.ai.proto.data_readiness.WeatherStatus
-	51, // 3: fusion.ai.proto.data_readiness.DataSiteRow.last_push_at:type_name -> google.protobuf.Timestamp
-	51, // 4: fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at:type_name -> google.protobuf.Timestamp
+	44, // 3: fusion.ai.proto.data_readiness.DataSiteRow.last_push_at:type_name -> google.protobuf.Timestamp
+	44, // 4: fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at:type_name -> google.protobuf.Timestamp
 	0,  // 5: fusion.ai.proto.data_readiness.DataSiteRow.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
-	11, // 6: fusion.ai.proto.data_readiness.DataSiteRowPage.rows:type_name -> fusion.ai.proto.data_readiness.DataSiteRow
+	10, // 6: fusion.ai.proto.data_readiness.DataSiteRowPage.rows:type_name -> fusion.ai.proto.data_readiness.DataSiteRow
 	7,  // 7: fusion.ai.proto.data_readiness.HeatmapDay.level:type_name -> fusion.ai.proto.data_readiness.HeatmapLevel
-	0,  // 8: fusion.ai.proto.data_readiness.DataSiteReadiness.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
-	1,  // 9: fusion.ai.proto.data_readiness.DataSiteReadiness.weather_status:type_name -> fusion.ai.proto.data_readiness.WeatherStatus
-	13, // 10: fusion.ai.proto.data_readiness.DataSiteReadiness.heatmap_14d:type_name -> fusion.ai.proto.data_readiness.HeatmapDay
-	15, // 11: fusion.ai.proto.data_readiness.PipelineStats.push_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
-	15, // 12: fusion.ai.proto.data_readiness.PipelineStats.weather_job_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
-	15, // 13: fusion.ai.proto.data_readiness.PipelineStats.excel_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
-	15, // 14: fusion.ai.proto.data_readiness.PipelineStats.validation_queue_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
-	15, // 15: fusion.ai.proto.data_readiness.PipelineStats.pull_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
+	2,  // 8: fusion.ai.proto.data_readiness.DataSiteReadiness.data_source:type_name -> fusion.ai.proto.data_readiness.DataSource
+	0,  // 9: fusion.ai.proto.data_readiness.DataSiteReadiness.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
+	1,  // 10: fusion.ai.proto.data_readiness.DataSiteReadiness.weather_status:type_name -> fusion.ai.proto.data_readiness.WeatherStatus
+	12, // 11: fusion.ai.proto.data_readiness.DataSiteReadiness.heatmap_14d:type_name -> fusion.ai.proto.data_readiness.HeatmapDay
+	14, // 12: fusion.ai.proto.data_readiness.PipelineStats.push_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
+	14, // 13: fusion.ai.proto.data_readiness.PipelineStats.weather_job_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
+	14, // 14: fusion.ai.proto.data_readiness.PipelineStats.excel_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
+	14, // 15: fusion.ai.proto.data_readiness.PipelineStats.validation_queue_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
 	1,  // 16: fusion.ai.proto.data_readiness.WeatherSiteView.weather_status:type_name -> fusion.ai.proto.data_readiness.WeatherStatus
-	51, // 17: fusion.ai.proto.data_readiness.WeatherSiteView.last_success_at:type_name -> google.protobuf.Timestamp
+	44, // 17: fusion.ai.proto.data_readiness.WeatherSiteView.last_success_at:type_name -> google.protobuf.Timestamp
 	6,  // 18: fusion.ai.proto.data_readiness.WeatherSyncTaskView.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTaskStatus
 	4,  // 19: fusion.ai.proto.data_readiness.WeatherSyncRunView.trigger:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTrigger
 	3,  // 20: fusion.ai.proto.data_readiness.WeatherSyncRunView.mode:type_name -> fusion.ai.proto.data_readiness.WeatherSyncMode
 	5,  // 21: fusion.ai.proto.data_readiness.WeatherSyncRunView.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
-	51, // 22: fusion.ai.proto.data_readiness.WeatherSyncRunView.started_at:type_name -> google.protobuf.Timestamp
-	51, // 23: fusion.ai.proto.data_readiness.WeatherSyncRunView.finished_at:type_name -> google.protobuf.Timestamp
-	18, // 24: fusion.ai.proto.data_readiness.WeatherSyncRunView.tasks:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTaskView
-	8,  // 25: fusion.ai.proto.data_readiness.GetDataOverviewResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	9,  // 26: fusion.ai.proto.data_readiness.GetDataOverviewResponse.overview:type_name -> fusion.ai.proto.data_readiness.DataOverview
-	2,  // 27: fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.data_source:type_name -> fusion.ai.proto.data_readiness.DataSource
-	0,  // 28: fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
-	8,  // 29: fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	12, // 30: fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.page:type_name -> fusion.ai.proto.data_readiness.DataSiteRowPage
-	14, // 31: fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse.readiness:type_name -> fusion.ai.proto.data_readiness.DataSiteReadiness
-	16, // 32: fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse.stats:type_name -> fusion.ai.proto.data_readiness.PipelineStats
-	2,  // 33: fusion.ai.proto.data_readiness.ExportDataGapsRequest.data_source:type_name -> fusion.ai.proto.data_readiness.DataSource
-	0,  // 34: fusion.ai.proto.data_readiness.ExportDataGapsRequest.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
-	17, // 35: fusion.ai.proto.data_readiness.GetWeatherSiteResponse.site:type_name -> fusion.ai.proto.data_readiness.WeatherSiteView
-	8,  // 36: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	19, // 37: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunView
-	3,  // 38: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.mode:type_name -> fusion.ai.proto.data_readiness.WeatherSyncMode
-	4,  // 39: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.trigger:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTrigger
-	8,  // 40: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	5,  // 41: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
-	35, // 42: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.partial_errors:type_name -> fusion.ai.proto.data_readiness.WeatherSyncPartialError
-	8,  // 43: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	5,  // 44: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
-	8,  // 45: fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	8,  // 46: fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.header:type_name -> fusion.ai.proto.data_readiness.DataReadinessReplyHeader
-	47, // [47:47] is the sub-list for method output_type
-	47, // [47:47] is the sub-list for method input_type
-	47, // [47:47] is the sub-list for extension type_name
-	47, // [47:47] is the sub-list for extension extendee
-	0,  // [0:47] is the sub-list for field type_name
+	44, // 22: fusion.ai.proto.data_readiness.WeatherSyncRunView.started_at:type_name -> google.protobuf.Timestamp
+	44, // 23: fusion.ai.proto.data_readiness.WeatherSyncRunView.finished_at:type_name -> google.protobuf.Timestamp
+	17, // 24: fusion.ai.proto.data_readiness.WeatherSyncRunView.tasks:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTaskView
+	8,  // 25: fusion.ai.proto.data_readiness.GetDataOverviewResponse.overview:type_name -> fusion.ai.proto.data_readiness.DataOverview
+	0,  // 26: fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
+	11, // 27: fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.page:type_name -> fusion.ai.proto.data_readiness.DataSiteRowPage
+	13, // 28: fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse.readiness:type_name -> fusion.ai.proto.data_readiness.DataSiteReadiness
+	15, // 29: fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse.stats:type_name -> fusion.ai.proto.data_readiness.PipelineStats
+	16, // 30: fusion.ai.proto.data_readiness.GetWeatherSiteResponse.site:type_name -> fusion.ai.proto.data_readiness.WeatherSiteView
+	18, // 31: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunView
+	3,  // 32: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.mode:type_name -> fusion.ai.proto.data_readiness.WeatherSyncMode
+	4,  // 33: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.trigger:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTrigger
+	5,  // 34: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
+	32, // 35: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.partial_errors:type_name -> fusion.ai.proto.data_readiness.WeatherSyncPartialError
+	5,  // 36: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
+	37, // [37:37] is the sub-list for method output_type
+	37, // [37:37] is the sub-list for method input_type
+	37, // [37:37] is the sub-list for extension type_name
+	37, // [37:37] is the sub-list for extension extendee
+	0,  // [0:37] is the sub-list for field type_name
 }
 
 func init() { file_data_readiness_data_readiness_message_proto_init() }
@@ -3591,28 +3164,27 @@ func file_data_readiness_data_readiness_message_proto_init() {
 	if File_data_readiness_data_readiness_message_proto != nil {
 		return
 	}
-	file_data_readiness_data_readiness_message_proto_msgTypes[1].OneofWrappers = []any{}
-	file_data_readiness_data_readiness_message_proto_msgTypes[3].OneofWrappers = []any{}
+	file_data_readiness_data_readiness_message_proto_msgTypes[0].OneofWrappers = []any{}
+	file_data_readiness_data_readiness_message_proto_msgTypes[2].OneofWrappers = []any{}
+	file_data_readiness_data_readiness_message_proto_msgTypes[5].OneofWrappers = []any{}
 	file_data_readiness_data_readiness_message_proto_msgTypes[6].OneofWrappers = []any{}
 	file_data_readiness_data_readiness_message_proto_msgTypes[7].OneofWrappers = []any{}
 	file_data_readiness_data_readiness_message_proto_msgTypes[8].OneofWrappers = []any{}
-	file_data_readiness_data_readiness_message_proto_msgTypes[9].OneofWrappers = []any{}
+	file_data_readiness_data_readiness_message_proto_msgTypes[10].OneofWrappers = []any{}
 	file_data_readiness_data_readiness_message_proto_msgTypes[11].OneofWrappers = []any{}
-	file_data_readiness_data_readiness_message_proto_msgTypes[12].OneofWrappers = []any{}
-	file_data_readiness_data_readiness_message_proto_msgTypes[14].OneofWrappers = []any{}
-	file_data_readiness_data_readiness_message_proto_msgTypes[20].OneofWrappers = []any{}
+	file_data_readiness_data_readiness_message_proto_msgTypes[13].OneofWrappers = []any{}
+	file_data_readiness_data_readiness_message_proto_msgTypes[17].OneofWrappers = []any{}
+	file_data_readiness_data_readiness_message_proto_msgTypes[23].OneofWrappers = []any{}
 	file_data_readiness_data_readiness_message_proto_msgTypes[26].OneofWrappers = []any{}
 	file_data_readiness_data_readiness_message_proto_msgTypes[29].OneofWrappers = []any{}
 	file_data_readiness_data_readiness_message_proto_msgTypes[32].OneofWrappers = []any{}
-	file_data_readiness_data_readiness_message_proto_msgTypes[35].OneofWrappers = []any{}
-	file_data_readiness_data_readiness_message_proto_msgTypes[41].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_data_readiness_data_readiness_message_proto_rawDesc), len(file_data_readiness_data_readiness_message_proto_rawDesc)),
 			NumEnums:      8,
-			NumMessages:   43,
+			NumMessages:   36,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

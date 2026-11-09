@@ -27,19 +27,13 @@ class ListDataSiteRowsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $service_type = null;
     /**
-     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-     */
-    protected $data_source = null;
-    /**
-     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
      */
     protected $readiness_status = null;
     /**
-     * Generated from protobuf field <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-     */
-    protected $granularity_min = null;
-    /**
-     * Generated from protobuf field <code>optional string q = 7 [json_name = "q"];</code>
+     * 场站名 / registration_id 模糊搜
+     *
+     * Generated from protobuf field <code>optional string q = 5 [json_name = "q"];</code>
      */
     protected $q = null;
 
@@ -52,10 +46,9 @@ class ListDataSiteRowsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $page
      *     @type int $page_size
      *     @type string $service_type
-     *     @type int $data_source
      *     @type int $readiness_status
-     *     @type int $granularity_min
      *     @type string $q
+     *           场站名 / registration_id 模糊搜
      * }
      */
     public function __construct($data = null)
@@ -161,39 +154,7 @@ class ListDataSiteRowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-     * @return int one of the values in {@see \Fusion\Ai\Proto\DataReadiness\DataSource}
-     */
-    public function getDataSource()
-    {
-        return isset($this->data_source) ? $this->data_source : 0;
-    }
-
-    public function hasDataSource()
-    {
-        return isset($this->data_source);
-    }
-
-    public function clearDataSource()
-    {
-        unset($this->data_source);
-    }
-
-    /**
-     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-     * @param int $var one of the values in {@see \Fusion\Ai\Proto\DataReadiness\DataSource}
-     * @return $this
-     */
-    public function setDataSource(int $var)
-    {
-        GPBUtil::checkEnum($var, \Fusion\Ai\Proto\DataReadiness\DataSource::class);
-        $this->data_source = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\DataReadiness\ReadinessStatus}
      */
     public function getReadinessStatus()
@@ -212,7 +173,7 @@ class ListDataSiteRowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\DataReadiness\ReadinessStatus}
      * @return $this
      */
@@ -225,39 +186,9 @@ class ListDataSiteRowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-     * @return int
-     */
-    public function getGranularityMin()
-    {
-        return isset($this->granularity_min) ? $this->granularity_min : 0;
-    }
-
-    public function hasGranularityMin()
-    {
-        return isset($this->granularity_min);
-    }
-
-    public function clearGranularityMin()
-    {
-        unset($this->granularity_min);
-    }
-
-    /**
-     * Generated from protobuf field <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setGranularityMin(int $var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->granularity_min = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>optional string q = 7 [json_name = "q"];</code>
+     * 场站名 / registration_id 模糊搜
+     *
+     * Generated from protobuf field <code>optional string q = 5 [json_name = "q"];</code>
      * @return string
      */
     public function getQ()
@@ -276,7 +207,9 @@ class ListDataSiteRowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string q = 7 [json_name = "q"];</code>
+     * 场站名 / registration_id 模糊搜
+     *
+     * Generated from protobuf field <code>optional string q = 5 [json_name = "q"];</code>
      * @param string $var
      * @return $this
      */

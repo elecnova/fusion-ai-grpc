@@ -11,39 +11,24 @@ public interface RetryFailedWeatherSyncResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  boolean hasHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder();
-
-  /**
-   * <code>string run_id = 2 [json_name = "run_id"];</code>
+   * <code>string run_id = 1 [json_name = "run_id"];</code>
    * @return The runId.
    */
   java.lang.String getRunId();
   /**
-   * <code>string run_id = 2 [json_name = "run_id"];</code>
+   * <code>string run_id = 1 [json_name = "run_id"];</code>
    * @return The bytes for runId.
    */
   com.google.protobuf.ByteString
       getRunIdBytes();
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
    * @return The status.
    */
   com.fusion.ai.proto.data_readiness.WeatherSyncRunStatus getStatus();

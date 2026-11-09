@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * DataSiteReadiness 右侧详情（对齐原型侧栏）
+ *
  * Generated from protobuf message <code>fusion.ai.proto.data_readiness.DataSiteReadiness</code>
  */
 class DataSiteReadiness extends \Google\Protobuf\Internal\Message
@@ -19,31 +21,61 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
      */
     protected $registration_id = '';
     /**
-     * Generated from protobuf field <code>string site_name = 2 [json_name = "site_name"];</code>
+     * Generated from protobuf field <code>string site_id = 2 [json_name = "site_id"];</code>
+     */
+    protected $site_id = '';
+    /**
+     * Generated from protobuf field <code>string site_name = 3 [json_name = "site_name"];</code>
      */
     protected $site_name = '';
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+     * Generated from protobuf field <code>string service_type = 4 [json_name = "service_type"];</code>
+     */
+    protected $service_type = '';
+    /**
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+     */
+    protected $data_source = 0;
+    /**
+     * 展示用：如「近 90 天」
+     *
+     * Generated from protobuf field <code>string train_window = 6 [json_name = "train_window"];</code>
+     */
+    protected $train_window = '';
+    /**
+     * 展示用：如「能管 Push」
+     *
+     * Generated from protobuf field <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+     */
+    protected $upstream_label = '';
+    /**
+     * 仅光伏；如 UKMO / ECMWF / excel_import
+     *
+     * Generated from protobuf field <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+     */
+    protected $weather_provider_id = null;
+    /**
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
      */
     protected $readiness_status = 0;
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
      */
-    protected $weather_status = 0;
+    protected $weather_status = null;
     /**
-     * Generated from protobuf field <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+     * Generated from protobuf field <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
      */
     protected $coverage_ratio_7d = null;
     /**
-     * Generated from protobuf field <code>int32 gap_points_7d = 6 [json_name = "gap_points_7d"];</code>
+     * Generated from protobuf field <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      */
     protected $gap_points_7d = 0;
     /**
-     * Generated from protobuf field <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+     * Generated from protobuf field <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
      */
     protected $gap_focus = '';
     /**
-     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     private $heatmap_14d;
 
@@ -54,7 +86,16 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *     @type string $site_id
      *     @type string $site_name
+     *     @type string $service_type
+     *     @type int $data_source
+     *     @type string $train_window
+     *           展示用：如「近 90 天」
+     *     @type string $upstream_label
+     *           展示用：如「能管 Push」
+     *     @type string $weather_provider_id
+     *           仅光伏；如 UKMO / ECMWF / excel_import
      *     @type int $readiness_status
      *     @type int $weather_status
      *     @type float $coverage_ratio_7d
@@ -92,7 +133,29 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string site_name = 2 [json_name = "site_name"];</code>
+     * Generated from protobuf field <code>string site_id = 2 [json_name = "site_id"];</code>
+     * @return string
+     */
+    public function getSiteId()
+    {
+        return $this->site_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string site_id = 2 [json_name = "site_id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSiteId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->site_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string site_name = 3 [json_name = "site_name"];</code>
      * @return string
      */
     public function getSiteName()
@@ -101,7 +164,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string site_name = 2 [json_name = "site_name"];</code>
+     * Generated from protobuf field <code>string site_name = 3 [json_name = "site_name"];</code>
      * @param string $var
      * @return $this
      */
@@ -114,7 +177,139 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+     * Generated from protobuf field <code>string service_type = 4 [json_name = "service_type"];</code>
+     * @return string
+     */
+    public function getServiceType()
+    {
+        return $this->service_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string service_type = 4 [json_name = "service_type"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setServiceType(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->service_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+     * @return int one of the values in {@see \Fusion\Ai\Proto\DataReadiness\DataSource}
+     */
+    public function getDataSource()
+    {
+        return $this->data_source;
+    }
+
+    /**
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+     * @param int $var one of the values in {@see \Fusion\Ai\Proto\DataReadiness\DataSource}
+     * @return $this
+     */
+    public function setDataSource(int $var)
+    {
+        GPBUtil::checkEnum($var, \Fusion\Ai\Proto\DataReadiness\DataSource::class);
+        $this->data_source = $var;
+
+        return $this;
+    }
+
+    /**
+     * 展示用：如「近 90 天」
+     *
+     * Generated from protobuf field <code>string train_window = 6 [json_name = "train_window"];</code>
+     * @return string
+     */
+    public function getTrainWindow()
+    {
+        return $this->train_window;
+    }
+
+    /**
+     * 展示用：如「近 90 天」
+     *
+     * Generated from protobuf field <code>string train_window = 6 [json_name = "train_window"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTrainWindow(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->train_window = $var;
+
+        return $this;
+    }
+
+    /**
+     * 展示用：如「能管 Push」
+     *
+     * Generated from protobuf field <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+     * @return string
+     */
+    public function getUpstreamLabel()
+    {
+        return $this->upstream_label;
+    }
+
+    /**
+     * 展示用：如「能管 Push」
+     *
+     * Generated from protobuf field <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUpstreamLabel(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->upstream_label = $var;
+
+        return $this;
+    }
+
+    /**
+     * 仅光伏；如 UKMO / ECMWF / excel_import
+     *
+     * Generated from protobuf field <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+     * @return string
+     */
+    public function getWeatherProviderId()
+    {
+        return isset($this->weather_provider_id) ? $this->weather_provider_id : '';
+    }
+
+    public function hasWeatherProviderId()
+    {
+        return isset($this->weather_provider_id);
+    }
+
+    public function clearWeatherProviderId()
+    {
+        unset($this->weather_provider_id);
+    }
+
+    /**
+     * 仅光伏；如 UKMO / ECMWF / excel_import
+     *
+     * Generated from protobuf field <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWeatherProviderId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->weather_provider_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\DataReadiness\ReadinessStatus}
      */
     public function getReadinessStatus()
@@ -123,7 +318,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\DataReadiness\ReadinessStatus}
      * @return $this
      */
@@ -136,16 +331,26 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\DataReadiness\WeatherStatus}
      */
     public function getWeatherStatus()
     {
-        return $this->weather_status;
+        return isset($this->weather_status) ? $this->weather_status : 0;
+    }
+
+    public function hasWeatherStatus()
+    {
+        return isset($this->weather_status);
+    }
+
+    public function clearWeatherStatus()
+    {
+        unset($this->weather_status);
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\DataReadiness\WeatherStatus}
      * @return $this
      */
@@ -158,7 +363,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+     * Generated from protobuf field <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
      * @return float
      */
     public function getCoverageRatio7D()
@@ -177,7 +382,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+     * Generated from protobuf field <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
      * @param float $var
      * @return $this
      */
@@ -189,7 +394,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 gap_points_7d = 6 [json_name = "gap_points_7d"];</code>
+     * Generated from protobuf field <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @return int
      */
     public function getGapPoints7D()
@@ -198,7 +403,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 gap_points_7d = 6 [json_name = "gap_points_7d"];</code>
+     * Generated from protobuf field <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @param int $var
      * @return $this
      */
@@ -211,7 +416,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+     * Generated from protobuf field <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
      * @return string
      */
     public function getGapFocus()
@@ -220,7 +425,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+     * Generated from protobuf field <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
      * @param string $var
      * @return $this
      */
@@ -233,7 +438,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      * @return RepeatedField<\Fusion\Ai\Proto\DataReadiness\HeatmapDay>
      */
     public function getHeatmap14D()
@@ -242,7 +447,7 @@ class DataSiteReadiness extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      * @param \Fusion\Ai\Proto\DataReadiness\HeatmapDay[] $var
      * @return $this
      */

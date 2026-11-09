@@ -6,6 +6,10 @@
 package com.fusion.ai.proto.data_readiness;
 
 /**
+ * <pre>
+ * DataOverview 顶栏 KPI。原始功率固定 5min；天气 KPI 仅 pv 有值。
+ * </pre>
+ *
  * Protobuf type {@code fusion.ai.proto.data_readiness.DataOverview}
  */
 @com.google.protobuf.Generated
@@ -85,7 +89,23 @@ private static final long serialVersionUID = 0L;
   public static final int WEATHER_MISSING_COUNT_FIELD_NUMBER = 4;
   private int weatherMissingCount_ = 0;
   /**
-   * <code>int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+   * <pre>
+   * 仅 service_type=pv_prediction 时填写；其它业务不返回
+   * </pre>
+   *
+   * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+   * @return Whether the weatherMissingCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasWeatherMissingCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * 仅 service_type=pv_prediction 时填写；其它业务不返回
+   * </pre>
+   *
+   * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
    * @return The weatherMissingCount.
    */
   @java.lang.Override
@@ -112,7 +132,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAvgPushLatencyMs() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <code>optional int32 avg_push_latency_ms = 6 [json_name = "avg_push_latency_ms"];</code>
@@ -146,13 +166,13 @@ private static final long serialVersionUID = 0L;
     if (needFillCount_ != 0) {
       output.writeInt32(3, needFillCount_);
     }
-    if (weatherMissingCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(4, weatherMissingCount_);
     }
     if (java.lang.Double.doubleToRawLongBits(pushSuccess24HPct_) != 0) {
       output.writeDouble(5, pushSuccess24HPct_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(6, avgPushLatencyMs_);
     }
     getUnknownFields().writeTo(output);
@@ -171,7 +191,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, needFillCount_);
     }
-    if (weatherMissingCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, weatherMissingCount_);
     }
@@ -179,7 +199,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(5, pushSuccess24HPct_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, avgPushLatencyMs_);
     }
@@ -213,8 +233,11 @@ private static final long serialVersionUID = 0L;
         != other.getReadyToday()) return false;
     if (getNeedFillCount()
         != other.getNeedFillCount()) return false;
-    if (getWeatherMissingCount()
-        != other.getWeatherMissingCount()) return false;
+    if (hasWeatherMissingCount() != other.hasWeatherMissingCount()) return false;
+    if (hasWeatherMissingCount()) {
+      if (getWeatherMissingCount()
+          != other.getWeatherMissingCount()) return false;
+    }
     if (java.lang.Double.doubleToLongBits(getPushSuccess24HPct())
         != java.lang.Double.doubleToLongBits(
             other.getPushSuccess24HPct())) return false;
@@ -240,8 +263,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getReadyToday();
     hash = (37 * hash) + NEED_FILL_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getNeedFillCount();
-    hash = (37 * hash) + WEATHER_MISSING_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getWeatherMissingCount();
+    if (hasWeatherMissingCount()) {
+      hash = (37 * hash) + WEATHER_MISSING_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getWeatherMissingCount();
+    }
     hash = (37 * hash) + PUSH_SUCCESS_24H_PCT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getPushSuccess24HPct()));
@@ -347,6 +372,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DataOverview 顶栏 KPI。原始功率固定 5min；天气 KPI 仅 pv 有值。
+   * </pre>
+   *
    * Protobuf type {@code fusion.ai.proto.data_readiness.DataOverview}
    */
   public static final class Builder extends
@@ -428,16 +457,17 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.needFillCount_ = needFillCount_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.weatherMissingCount_ = weatherMissingCount_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.pushSuccess24HPct_ = pushSuccess24HPct_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.avgPushLatencyMs_ = avgPushLatencyMs_;
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -463,7 +493,7 @@ private static final long serialVersionUID = 0L;
       if (other.getNeedFillCount() != 0) {
         setNeedFillCount(other.getNeedFillCount());
       }
-      if (other.getWeatherMissingCount() != 0) {
+      if (other.hasWeatherMissingCount()) {
         setWeatherMissingCount(other.getWeatherMissingCount());
       }
       if (java.lang.Double.doubleToRawLongBits(other.getPushSuccess24HPct()) != 0) {
@@ -641,7 +671,23 @@ private static final long serialVersionUID = 0L;
 
     private int weatherMissingCount_ ;
     /**
-     * <code>int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * <pre>
+     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * </pre>
+     *
+     * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * @return Whether the weatherMissingCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasWeatherMissingCount() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * </pre>
+     *
+     * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
      * @return The weatherMissingCount.
      */
     @java.lang.Override
@@ -649,7 +695,11 @@ private static final long serialVersionUID = 0L;
       return weatherMissingCount_;
     }
     /**
-     * <code>int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * <pre>
+     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * </pre>
+     *
+     * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
      * @param value The weatherMissingCount to set.
      * @return This builder for chaining.
      */
@@ -661,7 +711,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+     * <pre>
+     * 仅 service_type=pv_prediction 时填写；其它业务不返回
+     * </pre>
+     *
+     * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
      * @return This builder for chaining.
      */
     public Builder clearWeatherMissingCount() {

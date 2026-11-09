@@ -6,6 +6,10 @@
 package com.fusion.ai.proto.data_readiness;
 
 /**
+ * <pre>
+ * DataSiteReadiness 右侧详情（对齐原型侧栏）
+ * </pre>
+ *
  * Protobuf type {@code fusion.ai.proto.data_readiness.DataSiteReadiness}
  */
 @com.google.protobuf.Generated
@@ -29,7 +33,13 @@ private static final long serialVersionUID = 0L;
   }
   private DataSiteReadiness() {
     registrationId_ = "";
+    siteId_ = "";
     siteName_ = "";
+    serviceType_ = "";
+    dataSource_ = 0;
+    trainWindow_ = "";
+    upstreamLabel_ = "";
+    weatherProviderId_ = "";
     readinessStatus_ = 0;
     weatherStatus_ = 0;
     gapFocus_ = "";
@@ -94,11 +104,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SITE_NAME_FIELD_NUMBER = 2;
+  public static final int SITE_ID_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object siteId_ = "";
+  /**
+   * <code>string site_id = 2 [json_name = "site_id"];</code>
+   * @return The siteId.
+   */
+  @java.lang.Override
+  public java.lang.String getSiteId() {
+    java.lang.Object ref = siteId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      siteId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string site_id = 2 [json_name = "site_id"];</code>
+   * @return The bytes for siteId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSiteIdBytes() {
+    java.lang.Object ref = siteId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      siteId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SITE_NAME_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object siteName_ = "";
   /**
-   * <code>string site_name = 2 [json_name = "site_name"];</code>
+   * <code>string site_name = 3 [json_name = "site_name"];</code>
    * @return The siteName.
    */
   @java.lang.Override
@@ -115,7 +164,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string site_name = 2 [json_name = "site_name"];</code>
+   * <code>string site_name = 3 [json_name = "site_name"];</code>
    * @return The bytes for siteName.
    */
   @java.lang.Override
@@ -133,17 +182,227 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int READINESS_STATUS_FIELD_NUMBER = 3;
+  public static final int SERVICE_TYPE_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceType_ = "";
+  /**
+   * <code>string service_type = 4 [json_name = "service_type"];</code>
+   * @return The serviceType.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceType() {
+    java.lang.Object ref = serviceType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string service_type = 4 [json_name = "service_type"];</code>
+   * @return The bytes for serviceType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getServiceTypeBytes() {
+    java.lang.Object ref = serviceType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      serviceType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DATA_SOURCE_FIELD_NUMBER = 5;
+  private int dataSource_ = 0;
+  /**
+   * <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+   * @return The enum numeric value on the wire for dataSource.
+   */
+  @java.lang.Override public int getDataSourceValue() {
+    return dataSource_;
+  }
+  /**
+   * <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+   * @return The dataSource.
+   */
+  @java.lang.Override public com.fusion.ai.proto.data_readiness.DataSource getDataSource() {
+    com.fusion.ai.proto.data_readiness.DataSource result = com.fusion.ai.proto.data_readiness.DataSource.forNumber(dataSource_);
+    return result == null ? com.fusion.ai.proto.data_readiness.DataSource.UNRECOGNIZED : result;
+  }
+
+  public static final int TRAIN_WINDOW_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trainWindow_ = "";
+  /**
+   * <pre>
+   * 展示用：如「近 90 天」
+   * </pre>
+   *
+   * <code>string train_window = 6 [json_name = "train_window"];</code>
+   * @return The trainWindow.
+   */
+  @java.lang.Override
+  public java.lang.String getTrainWindow() {
+    java.lang.Object ref = trainWindow_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      trainWindow_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 展示用：如「近 90 天」
+   * </pre>
+   *
+   * <code>string train_window = 6 [json_name = "train_window"];</code>
+   * @return The bytes for trainWindow.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTrainWindowBytes() {
+    java.lang.Object ref = trainWindow_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      trainWindow_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int UPSTREAM_LABEL_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object upstreamLabel_ = "";
+  /**
+   * <pre>
+   * 展示用：如「能管 Push」
+   * </pre>
+   *
+   * <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+   * @return The upstreamLabel.
+   */
+  @java.lang.Override
+  public java.lang.String getUpstreamLabel() {
+    java.lang.Object ref = upstreamLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      upstreamLabel_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 展示用：如「能管 Push」
+   * </pre>
+   *
+   * <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+   * @return The bytes for upstreamLabel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUpstreamLabelBytes() {
+    java.lang.Object ref = upstreamLabel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      upstreamLabel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int WEATHER_PROVIDER_ID_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object weatherProviderId_ = "";
+  /**
+   * <pre>
+   * 仅光伏；如 UKMO / ECMWF / excel_import
+   * </pre>
+   *
+   * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+   * @return Whether the weatherProviderId field is set.
+   */
+  @java.lang.Override
+  public boolean hasWeatherProviderId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * 仅光伏；如 UKMO / ECMWF / excel_import
+   * </pre>
+   *
+   * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+   * @return The weatherProviderId.
+   */
+  @java.lang.Override
+  public java.lang.String getWeatherProviderId() {
+    java.lang.Object ref = weatherProviderId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      weatherProviderId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 仅光伏；如 UKMO / ECMWF / excel_import
+   * </pre>
+   *
+   * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+   * @return The bytes for weatherProviderId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getWeatherProviderIdBytes() {
+    java.lang.Object ref = weatherProviderId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      weatherProviderId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int READINESS_STATUS_FIELD_NUMBER = 9;
   private int readinessStatus_ = 0;
   /**
-   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
    * @return The enum numeric value on the wire for readinessStatus.
    */
   @java.lang.Override public int getReadinessStatusValue() {
     return readinessStatus_;
   }
   /**
-   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
    * @return The readinessStatus.
    */
   @java.lang.Override public com.fusion.ai.proto.data_readiness.ReadinessStatus getReadinessStatus() {
@@ -151,17 +410,24 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.fusion.ai.proto.data_readiness.ReadinessStatus.UNRECOGNIZED : result;
   }
 
-  public static final int WEATHER_STATUS_FIELD_NUMBER = 4;
+  public static final int WEATHER_STATUS_FIELD_NUMBER = 10;
   private int weatherStatus_ = 0;
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
+   * @return Whether the weatherStatus field is set.
+   */
+  @java.lang.Override public boolean hasWeatherStatus() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
    * @return The enum numeric value on the wire for weatherStatus.
    */
   @java.lang.Override public int getWeatherStatusValue() {
     return weatherStatus_;
   }
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
    * @return The weatherStatus.
    */
   @java.lang.Override public com.fusion.ai.proto.data_readiness.WeatherStatus getWeatherStatus() {
@@ -169,18 +435,18 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.fusion.ai.proto.data_readiness.WeatherStatus.UNRECOGNIZED : result;
   }
 
-  public static final int COVERAGE_RATIO_7D_FIELD_NUMBER = 5;
+  public static final int COVERAGE_RATIO_7D_FIELD_NUMBER = 11;
   private double coverageRatio7D_ = 0D;
   /**
-   * <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+   * <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
    * @return Whether the coverageRatio7d field is set.
    */
   @java.lang.Override
   public boolean hasCoverageRatio7D() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+   * <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
    * @return The coverageRatio7d.
    */
   @java.lang.Override
@@ -188,10 +454,10 @@ private static final long serialVersionUID = 0L;
     return coverageRatio7D_;
   }
 
-  public static final int GAP_POINTS_7D_FIELD_NUMBER = 6;
+  public static final int GAP_POINTS_7D_FIELD_NUMBER = 12;
   private int gapPoints7D_ = 0;
   /**
-   * <code>int32 gap_points_7d = 6 [json_name = "gap_points_7d"];</code>
+   * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
    * @return The gapPoints7d.
    */
   @java.lang.Override
@@ -199,11 +465,11 @@ private static final long serialVersionUID = 0L;
     return gapPoints7D_;
   }
 
-  public static final int GAP_FOCUS_FIELD_NUMBER = 7;
+  public static final int GAP_FOCUS_FIELD_NUMBER = 13;
   @SuppressWarnings("serial")
   private volatile java.lang.Object gapFocus_ = "";
   /**
-   * <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+   * <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
    * @return The gapFocus.
    */
   @java.lang.Override
@@ -220,7 +486,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+   * <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
    * @return The bytes for gapFocus.
    */
   @java.lang.Override
@@ -238,18 +504,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int HEATMAP_14D_FIELD_NUMBER = 8;
+  public static final int HEATMAP_14D_FIELD_NUMBER = 14;
   @SuppressWarnings("serial")
   private java.util.List<com.fusion.ai.proto.data_readiness.HeatmapDay> heatmap14D_;
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   @java.lang.Override
   public java.util.List<com.fusion.ai.proto.data_readiness.HeatmapDay> getHeatmap14DList() {
     return heatmap14D_;
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.fusion.ai.proto.data_readiness.HeatmapDayOrBuilder> 
@@ -257,21 +523,21 @@ private static final long serialVersionUID = 0L;
     return heatmap14D_;
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   @java.lang.Override
   public int getHeatmap14DCount() {
     return heatmap14D_.size();
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   @java.lang.Override
   public com.fusion.ai.proto.data_readiness.HeatmapDay getHeatmap14D(int index) {
     return heatmap14D_.get(index);
   }
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
    */
   @java.lang.Override
   public com.fusion.ai.proto.data_readiness.HeatmapDayOrBuilder getHeatmap14DOrBuilder(
@@ -296,26 +562,44 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, registrationId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, siteId_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, siteName_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, siteName_);
     }
-    if (readinessStatus_ != com.fusion.ai.proto.data_readiness.ReadinessStatus.READINESS_STATUS_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, readinessStatus_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceType_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, serviceType_);
     }
-    if (weatherStatus_ != com.fusion.ai.proto.data_readiness.WeatherStatus.WEATHER_STATUS_UNSPECIFIED.getNumber()) {
-      output.writeEnum(4, weatherStatus_);
+    if (dataSource_ != com.fusion.ai.proto.data_readiness.DataSource.DATA_SOURCE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, dataSource_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(trainWindow_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, trainWindow_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(upstreamLabel_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, upstreamLabel_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeDouble(5, coverageRatio7D_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, weatherProviderId_);
+    }
+    if (readinessStatus_ != com.fusion.ai.proto.data_readiness.ReadinessStatus.READINESS_STATUS_UNSPECIFIED.getNumber()) {
+      output.writeEnum(9, readinessStatus_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(10, weatherStatus_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeDouble(11, coverageRatio7D_);
     }
     if (gapPoints7D_ != 0) {
-      output.writeInt32(6, gapPoints7D_);
+      output.writeInt32(12, gapPoints7D_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gapFocus_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, gapFocus_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, gapFocus_);
     }
     for (int i = 0; i < heatmap14D_.size(); i++) {
-      output.writeMessage(8, heatmap14D_.get(i));
+      output.writeMessage(14, heatmap14D_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -324,27 +608,46 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, registrationId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, siteId_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteName_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, siteName_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, siteName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceType_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, serviceType_);
+    }
+    if (dataSource_ != com.fusion.ai.proto.data_readiness.DataSource.DATA_SOURCE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, dataSource_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(trainWindow_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, trainWindow_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(upstreamLabel_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, upstreamLabel_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, weatherProviderId_);
     }
     if (readinessStatus_ != com.fusion.ai.proto.data_readiness.ReadinessStatus.READINESS_STATUS_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, readinessStatus_);
+        .computeEnumSize(9, readinessStatus_);
     }
-    if (weatherStatus_ != com.fusion.ai.proto.data_readiness.WeatherStatus.WEATHER_STATUS_UNSPECIFIED.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, weatherStatus_);
+        .computeEnumSize(10, weatherStatus_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(5, coverageRatio7D_);
+        .computeDoubleSize(11, coverageRatio7D_);
     }
     if (gapPoints7D_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, gapPoints7D_);
+        .computeInt32Size(12, gapPoints7D_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gapFocus_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, gapFocus_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(13, gapFocus_);
     }
 
         {
@@ -381,10 +684,27 @@ private static final long serialVersionUID = 0L;
 
     if (!getRegistrationId()
         .equals(other.getRegistrationId())) return false;
+    if (!getSiteId()
+        .equals(other.getSiteId())) return false;
     if (!getSiteName()
         .equals(other.getSiteName())) return false;
+    if (!getServiceType()
+        .equals(other.getServiceType())) return false;
+    if (dataSource_ != other.dataSource_) return false;
+    if (!getTrainWindow()
+        .equals(other.getTrainWindow())) return false;
+    if (!getUpstreamLabel()
+        .equals(other.getUpstreamLabel())) return false;
+    if (hasWeatherProviderId() != other.hasWeatherProviderId()) return false;
+    if (hasWeatherProviderId()) {
+      if (!getWeatherProviderId()
+          .equals(other.getWeatherProviderId())) return false;
+    }
     if (readinessStatus_ != other.readinessStatus_) return false;
-    if (weatherStatus_ != other.weatherStatus_) return false;
+    if (hasWeatherStatus() != other.hasWeatherStatus()) return false;
+    if (hasWeatherStatus()) {
+      if (weatherStatus_ != other.weatherStatus_) return false;
+    }
     if (hasCoverageRatio7D() != other.hasCoverageRatio7D()) return false;
     if (hasCoverageRatio7D()) {
       if (java.lang.Double.doubleToLongBits(getCoverageRatio7D())
@@ -410,12 +730,28 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + REGISTRATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRegistrationId().hashCode();
+    hash = (37 * hash) + SITE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSiteId().hashCode();
     hash = (37 * hash) + SITE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getSiteName().hashCode();
+    hash = (37 * hash) + SERVICE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceType().hashCode();
+    hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + dataSource_;
+    hash = (37 * hash) + TRAIN_WINDOW_FIELD_NUMBER;
+    hash = (53 * hash) + getTrainWindow().hashCode();
+    hash = (37 * hash) + UPSTREAM_LABEL_FIELD_NUMBER;
+    hash = (53 * hash) + getUpstreamLabel().hashCode();
+    if (hasWeatherProviderId()) {
+      hash = (37 * hash) + WEATHER_PROVIDER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWeatherProviderId().hashCode();
+    }
     hash = (37 * hash) + READINESS_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + readinessStatus_;
-    hash = (37 * hash) + WEATHER_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + weatherStatus_;
+    if (hasWeatherStatus()) {
+      hash = (37 * hash) + WEATHER_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + weatherStatus_;
+    }
     if (hasCoverageRatio7D()) {
       hash = (37 * hash) + COVERAGE_RATIO_7D_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -527,6 +863,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DataSiteReadiness 右侧详情（对齐原型侧栏）
+   * </pre>
+   *
    * Protobuf type {@code fusion.ai.proto.data_readiness.DataSiteReadiness}
    */
   public static final class Builder extends
@@ -561,7 +901,13 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       registrationId_ = "";
+      siteId_ = "";
       siteName_ = "";
+      serviceType_ = "";
+      dataSource_ = 0;
+      trainWindow_ = "";
+      upstreamLabel_ = "";
+      weatherProviderId_ = "";
       readinessStatus_ = 0;
       weatherStatus_ = 0;
       coverageRatio7D_ = 0D;
@@ -573,7 +919,7 @@ private static final long serialVersionUID = 0L;
         heatmap14D_ = null;
         heatmap14DBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -608,9 +954,9 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(com.fusion.ai.proto.data_readiness.DataSiteReadiness result) {
       if (heatmap14DBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           heatmap14D_ = java.util.Collections.unmodifiableList(heatmap14D_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.heatmap14D_ = heatmap14D_;
       } else {
@@ -624,23 +970,43 @@ private static final long serialVersionUID = 0L;
         result.registrationId_ = registrationId_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.siteName_ = siteName_;
+        result.siteId_ = siteId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.readinessStatus_ = readinessStatus_;
+        result.siteName_ = siteName_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.weatherStatus_ = weatherStatus_;
+        result.serviceType_ = serviceType_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.coverageRatio7D_ = coverageRatio7D_;
-        to_bitField0_ |= 0x00000001;
+        result.dataSource_ = dataSource_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.gapPoints7D_ = gapPoints7D_;
+        result.trainWindow_ = trainWindow_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.upstreamLabel_ = upstreamLabel_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.weatherProviderId_ = weatherProviderId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.readinessStatus_ = readinessStatus_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.weatherStatus_ = weatherStatus_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.coverageRatio7D_ = coverageRatio7D_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.gapPoints7D_ = gapPoints7D_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.gapFocus_ = gapFocus_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -663,15 +1029,43 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getSiteId().isEmpty()) {
+        siteId_ = other.siteId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getSiteName().isEmpty()) {
         siteName_ = other.siteName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getServiceType().isEmpty()) {
+        serviceType_ = other.serviceType_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.dataSource_ != 0) {
+        setDataSourceValue(other.getDataSourceValue());
+      }
+      if (!other.getTrainWindow().isEmpty()) {
+        trainWindow_ = other.trainWindow_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getUpstreamLabel().isEmpty()) {
+        upstreamLabel_ = other.upstreamLabel_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.hasWeatherProviderId()) {
+        weatherProviderId_ = other.weatherProviderId_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.readinessStatus_ != 0) {
         setReadinessStatusValue(other.getReadinessStatusValue());
       }
-      if (other.weatherStatus_ != 0) {
+      if (other.hasWeatherStatus()) {
         setWeatherStatusValue(other.getWeatherStatusValue());
       }
       if (other.hasCoverageRatio7D()) {
@@ -682,14 +1076,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getGapFocus().isEmpty()) {
         gapFocus_ = other.gapFocus_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (heatmap14DBuilder_ == null) {
         if (!other.heatmap14D_.isEmpty()) {
           if (heatmap14D_.isEmpty()) {
             heatmap14D_ = other.heatmap14D_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureHeatmap14DIsMutable();
             heatmap14D_.addAll(other.heatmap14D_);
@@ -702,7 +1096,7 @@ private static final long serialVersionUID = 0L;
             heatmap14DBuilder_.dispose();
             heatmap14DBuilder_ = null;
             heatmap14D_ = other.heatmap14D_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00002000);
             heatmap14DBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetHeatmap14DFieldBuilder() : null;
@@ -741,36 +1135,66 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 10
             case 18: {
-              siteName_ = input.readStringRequireUtf8();
+              siteId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
-            case 24: {
-              readinessStatus_ = input.readEnum();
+            case 26: {
+              siteName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
-            } // case 24
-            case 32: {
-              weatherStatus_ = input.readEnum();
+            } // case 26
+            case 34: {
+              serviceType_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
-            } // case 32
-            case 41: {
-              coverageRatio7D_ = input.readDouble();
+            } // case 34
+            case 40: {
+              dataSource_ = input.readEnum();
               bitField0_ |= 0x00000010;
               break;
-            } // case 41
-            case 48: {
-              gapPoints7D_ = input.readInt32();
+            } // case 40
+            case 50: {
+              trainWindow_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
               break;
-            } // case 48
+            } // case 50
             case 58: {
-              gapFocus_ = input.readStringRequireUtf8();
+              upstreamLabel_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
               break;
             } // case 58
             case 66: {
+              weatherProviderId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
+            case 72: {
+              readinessStatus_ = input.readEnum();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 72
+            case 80: {
+              weatherStatus_ = input.readEnum();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 80
+            case 89: {
+              coverageRatio7D_ = input.readDouble();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 89
+            case 96: {
+              gapPoints7D_ = input.readInt32();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 96
+            case 106: {
+              gapFocus_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 106
+            case 114: {
               com.fusion.ai.proto.data_readiness.HeatmapDay m =
                   input.readMessage(
                       com.fusion.ai.proto.data_readiness.HeatmapDay.parser(),
@@ -782,7 +1206,7 @@ private static final long serialVersionUID = 0L;
                 heatmap14DBuilder_.addMessage(m);
               }
               break;
-            } // case 66
+            } // case 114
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -872,9 +1296,81 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object siteId_ = "";
+    /**
+     * <code>string site_id = 2 [json_name = "site_id"];</code>
+     * @return The siteId.
+     */
+    public java.lang.String getSiteId() {
+      java.lang.Object ref = siteId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        siteId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string site_id = 2 [json_name = "site_id"];</code>
+     * @return The bytes for siteId.
+     */
+    public com.google.protobuf.ByteString
+        getSiteIdBytes() {
+      java.lang.Object ref = siteId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        siteId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string site_id = 2 [json_name = "site_id"];</code>
+     * @param value The siteId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSiteId(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      siteId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string site_id = 2 [json_name = "site_id"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSiteId() {
+      siteId_ = getDefaultInstance().getSiteId();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string site_id = 2 [json_name = "site_id"];</code>
+     * @param value The bytes for siteId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSiteIdBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      siteId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object siteName_ = "";
     /**
-     * <code>string site_name = 2 [json_name = "site_name"];</code>
+     * <code>string site_name = 3 [json_name = "site_name"];</code>
      * @return The siteName.
      */
     public java.lang.String getSiteName() {
@@ -890,7 +1386,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string site_name = 2 [json_name = "site_name"];</code>
+     * <code>string site_name = 3 [json_name = "site_name"];</code>
      * @return The bytes for siteName.
      */
     public com.google.protobuf.ByteString
@@ -907,7 +1403,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string site_name = 2 [json_name = "site_name"];</code>
+     * <code>string site_name = 3 [json_name = "site_name"];</code>
      * @param value The siteName to set.
      * @return This builder for chaining.
      */
@@ -915,22 +1411,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       siteName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string site_name = 2 [json_name = "site_name"];</code>
+     * <code>string site_name = 3 [json_name = "site_name"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSiteName() {
       siteName_ = getDefaultInstance().getSiteName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string site_name = 2 [json_name = "site_name"];</code>
+     * <code>string site_name = 3 [json_name = "site_name"];</code>
      * @param value The bytes for siteName to set.
      * @return This builder for chaining.
      */
@@ -939,32 +1435,443 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       siteName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceType_ = "";
+    /**
+     * <code>string service_type = 4 [json_name = "service_type"];</code>
+     * @return The serviceType.
+     */
+    public java.lang.String getServiceType() {
+      java.lang.Object ref = serviceType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string service_type = 4 [json_name = "service_type"];</code>
+     * @return The bytes for serviceType.
+     */
+    public com.google.protobuf.ByteString
+        getServiceTypeBytes() {
+      java.lang.Object ref = serviceType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        serviceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string service_type = 4 [json_name = "service_type"];</code>
+     * @param value The serviceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceType(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      serviceType_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string service_type = 4 [json_name = "service_type"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceType() {
+      serviceType_ = getDefaultInstance().getServiceType();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string service_type = 4 [json_name = "service_type"];</code>
+     * @param value The bytes for serviceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceTypeBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      serviceType_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int dataSource_ = 0;
+    /**
+     * <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+     * @return The enum numeric value on the wire for dataSource.
+     */
+    @java.lang.Override public int getDataSourceValue() {
+      return dataSource_;
+    }
+    /**
+     * <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+     * @param value The enum numeric value on the wire for dataSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataSourceValue(int value) {
+      dataSource_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+     * @return The dataSource.
+     */
+    @java.lang.Override
+    public com.fusion.ai.proto.data_readiness.DataSource getDataSource() {
+      com.fusion.ai.proto.data_readiness.DataSource result = com.fusion.ai.proto.data_readiness.DataSource.forNumber(dataSource_);
+      return result == null ? com.fusion.ai.proto.data_readiness.DataSource.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+     * @param value The dataSource to set.
+     * @throws IllegalArgumentException if UNRECOGNIZED is provided.
+     * @return This builder for chaining.
+     */
+    public Builder setDataSource(com.fusion.ai.proto.data_readiness.DataSource value) {
+      java.util.Objects.requireNonNull(value);
+      bitField0_ |= 0x00000010;
+      dataSource_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDataSource() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      dataSource_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object trainWindow_ = "";
+    /**
+     * <pre>
+     * 展示用：如「近 90 天」
+     * </pre>
+     *
+     * <code>string train_window = 6 [json_name = "train_window"];</code>
+     * @return The trainWindow.
+     */
+    public java.lang.String getTrainWindow() {
+      java.lang.Object ref = trainWindow_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trainWindow_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 展示用：如「近 90 天」
+     * </pre>
+     *
+     * <code>string train_window = 6 [json_name = "train_window"];</code>
+     * @return The bytes for trainWindow.
+     */
+    public com.google.protobuf.ByteString
+        getTrainWindowBytes() {
+      java.lang.Object ref = trainWindow_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        trainWindow_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 展示用：如「近 90 天」
+     * </pre>
+     *
+     * <code>string train_window = 6 [json_name = "train_window"];</code>
+     * @param value The trainWindow to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrainWindow(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      trainWindow_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 展示用：如「近 90 天」
+     * </pre>
+     *
+     * <code>string train_window = 6 [json_name = "train_window"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTrainWindow() {
+      trainWindow_ = getDefaultInstance().getTrainWindow();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 展示用：如「近 90 天」
+     * </pre>
+     *
+     * <code>string train_window = 6 [json_name = "train_window"];</code>
+     * @param value The bytes for trainWindow to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrainWindowBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      trainWindow_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object upstreamLabel_ = "";
+    /**
+     * <pre>
+     * 展示用：如「能管 Push」
+     * </pre>
+     *
+     * <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+     * @return The upstreamLabel.
+     */
+    public java.lang.String getUpstreamLabel() {
+      java.lang.Object ref = upstreamLabel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        upstreamLabel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 展示用：如「能管 Push」
+     * </pre>
+     *
+     * <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+     * @return The bytes for upstreamLabel.
+     */
+    public com.google.protobuf.ByteString
+        getUpstreamLabelBytes() {
+      java.lang.Object ref = upstreamLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        upstreamLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 展示用：如「能管 Push」
+     * </pre>
+     *
+     * <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+     * @param value The upstreamLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpstreamLabel(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      upstreamLabel_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 展示用：如「能管 Push」
+     * </pre>
+     *
+     * <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUpstreamLabel() {
+      upstreamLabel_ = getDefaultInstance().getUpstreamLabel();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 展示用：如「能管 Push」
+     * </pre>
+     *
+     * <code>string upstream_label = 7 [json_name = "upstream_label"];</code>
+     * @param value The bytes for upstreamLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpstreamLabelBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      upstreamLabel_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object weatherProviderId_ = "";
+    /**
+     * <pre>
+     * 仅光伏；如 UKMO / ECMWF / excel_import
+     * </pre>
+     *
+     * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+     * @return Whether the weatherProviderId field is set.
+     */
+    public boolean hasWeatherProviderId() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <pre>
+     * 仅光伏；如 UKMO / ECMWF / excel_import
+     * </pre>
+     *
+     * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+     * @return The weatherProviderId.
+     */
+    public java.lang.String getWeatherProviderId() {
+      java.lang.Object ref = weatherProviderId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        weatherProviderId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 仅光伏；如 UKMO / ECMWF / excel_import
+     * </pre>
+     *
+     * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+     * @return The bytes for weatherProviderId.
+     */
+    public com.google.protobuf.ByteString
+        getWeatherProviderIdBytes() {
+      java.lang.Object ref = weatherProviderId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        weatherProviderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 仅光伏；如 UKMO / ECMWF / excel_import
+     * </pre>
+     *
+     * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+     * @param value The weatherProviderId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWeatherProviderId(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      weatherProviderId_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 仅光伏；如 UKMO / ECMWF / excel_import
+     * </pre>
+     *
+     * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWeatherProviderId() {
+      weatherProviderId_ = getDefaultInstance().getWeatherProviderId();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 仅光伏；如 UKMO / ECMWF / excel_import
+     * </pre>
+     *
+     * <code>optional string weather_provider_id = 8 [json_name = "weather_provider_id"];</code>
+     * @param value The bytes for weatherProviderId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWeatherProviderIdBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      weatherProviderId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
     private int readinessStatus_ = 0;
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
      * @return The enum numeric value on the wire for readinessStatus.
      */
     @java.lang.Override public int getReadinessStatusValue() {
       return readinessStatus_;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
      * @param value The enum numeric value on the wire for readinessStatus to set.
      * @return This builder for chaining.
      */
     public Builder setReadinessStatusValue(int value) {
       readinessStatus_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
      * @return The readinessStatus.
      */
     @java.lang.Override
@@ -973,24 +1880,24 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.data_readiness.ReadinessStatus.UNRECOGNIZED : result;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
      * @param value The readinessStatus to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
      */
     public Builder setReadinessStatus(com.fusion.ai.proto.data_readiness.ReadinessStatus value) {
       java.util.Objects.requireNonNull(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000100;
       readinessStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];</code>
+     * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];</code>
      * @return This builder for chaining.
      */
     public Builder clearReadinessStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       readinessStatus_ = 0;
       onChanged();
       return this;
@@ -998,25 +1905,32 @@ private static final long serialVersionUID = 0L;
 
     private int weatherStatus_ = 0;
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
+     * @return Whether the weatherStatus field is set.
+     */
+    @java.lang.Override public boolean hasWeatherStatus() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
      * @return The enum numeric value on the wire for weatherStatus.
      */
     @java.lang.Override public int getWeatherStatusValue() {
       return weatherStatus_;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
      * @param value The enum numeric value on the wire for weatherStatus to set.
      * @return This builder for chaining.
      */
     public Builder setWeatherStatusValue(int value) {
       weatherStatus_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
      * @return The weatherStatus.
      */
     @java.lang.Override
@@ -1025,24 +1939,24 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.data_readiness.WeatherStatus.UNRECOGNIZED : result;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
      * @param value The weatherStatus to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
      */
     public Builder setWeatherStatus(com.fusion.ai.proto.data_readiness.WeatherStatus value) {
       java.util.Objects.requireNonNull(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000200;
       weatherStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];</code>
      * @return This builder for chaining.
      */
     public Builder clearWeatherStatus() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000200);
       weatherStatus_ = 0;
       onChanged();
       return this;
@@ -1050,15 +1964,15 @@ private static final long serialVersionUID = 0L;
 
     private double coverageRatio7D_ ;
     /**
-     * <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+     * <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
      * @return Whether the coverageRatio7d field is set.
      */
     @java.lang.Override
     public boolean hasCoverageRatio7D() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+     * <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
      * @return The coverageRatio7d.
      */
     @java.lang.Override
@@ -1066,23 +1980,23 @@ private static final long serialVersionUID = 0L;
       return coverageRatio7D_;
     }
     /**
-     * <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+     * <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
      * @param value The coverageRatio7d to set.
      * @return This builder for chaining.
      */
     public Builder setCoverageRatio7D(double value) {
 
       coverageRatio7D_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
     /**
-     * <code>optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];</code>
+     * <code>optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCoverageRatio7D() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000400);
       coverageRatio7D_ = 0D;
       onChanged();
       return this;
@@ -1090,7 +2004,7 @@ private static final long serialVersionUID = 0L;
 
     private int gapPoints7D_ ;
     /**
-     * <code>int32 gap_points_7d = 6 [json_name = "gap_points_7d"];</code>
+     * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @return The gapPoints7d.
      */
     @java.lang.Override
@@ -1098,23 +2012,23 @@ private static final long serialVersionUID = 0L;
       return gapPoints7D_;
     }
     /**
-     * <code>int32 gap_points_7d = 6 [json_name = "gap_points_7d"];</code>
+     * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @param value The gapPoints7d to set.
      * @return This builder for chaining.
      */
     public Builder setGapPoints7D(int value) {
 
       gapPoints7D_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 gap_points_7d = 6 [json_name = "gap_points_7d"];</code>
+     * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
      * @return This builder for chaining.
      */
     public Builder clearGapPoints7D() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000800);
       gapPoints7D_ = 0;
       onChanged();
       return this;
@@ -1122,7 +2036,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object gapFocus_ = "";
     /**
-     * <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+     * <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
      * @return The gapFocus.
      */
     public java.lang.String getGapFocus() {
@@ -1138,7 +2052,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+     * <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
      * @return The bytes for gapFocus.
      */
     public com.google.protobuf.ByteString
@@ -1155,7 +2069,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+     * <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
      * @param value The gapFocus to set.
      * @return This builder for chaining.
      */
@@ -1163,22 +2077,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       gapFocus_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
     /**
-     * <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+     * <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
      * @return This builder for chaining.
      */
     public Builder clearGapFocus() {
       gapFocus_ = getDefaultInstance().getGapFocus();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
     /**
-     * <code>string gap_focus = 7 [json_name = "gap_focus"];</code>
+     * <code>string gap_focus = 13 [json_name = "gap_focus"];</code>
      * @param value The bytes for gapFocus to set.
      * @return This builder for chaining.
      */
@@ -1187,7 +2101,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       gapFocus_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -1195,9 +2109,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.fusion.ai.proto.data_readiness.HeatmapDay> heatmap14D_ =
       java.util.Collections.emptyList();
     private void ensureHeatmap14DIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         heatmap14D_ = new java.util.ArrayList<com.fusion.ai.proto.data_readiness.HeatmapDay>(heatmap14D_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00002000;
        }
     }
 
@@ -1205,7 +2119,7 @@ private static final long serialVersionUID = 0L;
         com.fusion.ai.proto.data_readiness.HeatmapDay, com.fusion.ai.proto.data_readiness.HeatmapDay.Builder, com.fusion.ai.proto.data_readiness.HeatmapDayOrBuilder> heatmap14DBuilder_;
 
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public java.util.List<com.fusion.ai.proto.data_readiness.HeatmapDay> getHeatmap14DList() {
       if (heatmap14DBuilder_ == null) {
@@ -1215,7 +2129,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public int getHeatmap14DCount() {
       if (heatmap14DBuilder_ == null) {
@@ -1225,7 +2139,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.HeatmapDay getHeatmap14D(int index) {
       if (heatmap14DBuilder_ == null) {
@@ -1235,7 +2149,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public Builder setHeatmap14D(
         int index, com.fusion.ai.proto.data_readiness.HeatmapDay value) {
@@ -1250,7 +2164,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public Builder setHeatmap14D(
         int index, com.fusion.ai.proto.data_readiness.HeatmapDay.Builder builderForValue) {
@@ -1264,7 +2178,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public Builder addHeatmap14D(com.fusion.ai.proto.data_readiness.HeatmapDay value) {
       if (heatmap14DBuilder_ == null) {
@@ -1278,7 +2192,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public Builder addHeatmap14D(
         int index, com.fusion.ai.proto.data_readiness.HeatmapDay value) {
@@ -1293,7 +2207,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public Builder addHeatmap14D(
         com.fusion.ai.proto.data_readiness.HeatmapDay.Builder builderForValue) {
@@ -1307,7 +2221,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public Builder addHeatmap14D(
         int index, com.fusion.ai.proto.data_readiness.HeatmapDay.Builder builderForValue) {
@@ -1321,7 +2235,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public Builder addAllHeatmap14D(
         java.lang.Iterable<? extends com.fusion.ai.proto.data_readiness.HeatmapDay> values) {
@@ -1336,12 +2250,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public Builder clearHeatmap14D() {
       if (heatmap14DBuilder_ == null) {
         heatmap14D_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         heatmap14DBuilder_.clear();
@@ -1349,7 +2263,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public Builder removeHeatmap14D(int index) {
       if (heatmap14DBuilder_ == null) {
@@ -1362,14 +2276,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.HeatmapDay.Builder getHeatmap14DBuilder(
         int index) {
       return internalGetHeatmap14DFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.HeatmapDayOrBuilder getHeatmap14DOrBuilder(
         int index) {
@@ -1379,7 +2293,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public java.util.List<? extends com.fusion.ai.proto.data_readiness.HeatmapDayOrBuilder> 
          getHeatmap14DOrBuilderList() {
@@ -1390,14 +2304,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.HeatmapDay.Builder addHeatmap14DBuilder() {
       return internalGetHeatmap14DFieldBuilder().addBuilder(
           com.fusion.ai.proto.data_readiness.HeatmapDay.getDefaultInstance());
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public com.fusion.ai.proto.data_readiness.HeatmapDay.Builder addHeatmap14DBuilder(
         int index) {
@@ -1405,7 +2319,7 @@ private static final long serialVersionUID = 0L;
           index, com.fusion.ai.proto.data_readiness.HeatmapDay.getDefaultInstance());
     }
     /**
-     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];</code>
+     * <code>repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];</code>
      */
     public java.util.List<com.fusion.ai.proto.data_readiness.HeatmapDay.Builder> 
          getHeatmap14DBuilderList() {
@@ -1418,7 +2332,7 @@ private static final long serialVersionUID = 0L;
         heatmap14DBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             com.fusion.ai.proto.data_readiness.HeatmapDay, com.fusion.ai.proto.data_readiness.HeatmapDay.Builder, com.fusion.ai.proto.data_readiness.HeatmapDayOrBuilder>(
                 heatmap14D_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         heatmap14D_ = null;

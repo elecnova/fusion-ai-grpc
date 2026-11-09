@@ -70,123 +70,127 @@ public interface DataSiteRowOrBuilder extends
   com.fusion.ai.proto.data_readiness.DataSource getDataSource();
 
   /**
-   * <code>int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];</code>
-   * @return The primaryGranularityMin.
-   */
-  int getPrimaryGranularityMin();
-
-  /**
-   * <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+   * <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
    * @return Whether the coverageRatio7d field is set.
    */
   boolean hasCoverageRatio7D();
   /**
-   * <code>optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];</code>
+   * <code>optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];</code>
    * @return The coverageRatio7d.
    */
   double getCoverageRatio7D();
 
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   java.util.List<com.fusion.ai.proto.data_readiness.CoverageTrendPoint> 
       getTrend7DList();
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   com.fusion.ai.proto.data_readiness.CoverageTrendPoint getTrend7D(int index);
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   int getTrend7DCount();
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   java.util.List<? extends com.fusion.ai.proto.data_readiness.CoverageTrendPointOrBuilder> 
       getTrend7DOrBuilderList();
   /**
-   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];</code>
+   * <code>repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];</code>
    */
   com.fusion.ai.proto.data_readiness.CoverageTrendPointOrBuilder getTrend7DOrBuilder(
       int index);
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
+   * @return Whether the weatherStatus field is set.
+   */
+  boolean hasWeatherStatus();
+  /**
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
    * @return The enum numeric value on the wire for weatherStatus.
    */
   int getWeatherStatusValue();
   /**
-   * <code>.fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];</code>
    * @return The weatherStatus.
    */
   com.fusion.ai.proto.data_readiness.WeatherStatus getWeatherStatus();
 
   /**
-   * <code>string weather_display = 10 [json_name = "weather_display"];</code>
+   * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
+   * @return Whether the weatherDisplay field is set.
+   */
+  boolean hasWeatherDisplay();
+  /**
+   * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
    * @return The weatherDisplay.
    */
   java.lang.String getWeatherDisplay();
   /**
-   * <code>string weather_display = 10 [json_name = "weather_display"];</code>
+   * <code>optional string weather_display = 9 [json_name = "weather_display"];</code>
    * @return The bytes for weatherDisplay.
    */
   com.google.protobuf.ByteString
       getWeatherDisplayBytes();
 
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
    * @return Whether the lastPushAt field is set.
    */
   boolean hasLastPushAt();
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
    * @return The lastPushAt.
    */
   com.google.protobuf.Timestamp getLastPushAt();
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastPushAtOrBuilder();
 
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    * @return Whether the lastIngestAt field is set.
    */
   boolean hasLastIngestAt();
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    * @return The lastIngestAt.
    */
   com.google.protobuf.Timestamp getLastIngestAt();
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];</code>
+   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastIngestAtOrBuilder();
 
   /**
-   * <code>int32 gap_points_7d = 13 [json_name = "gap_points_7d"];</code>
+   * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>
    * @return The gapPoints7d.
    */
   int getGapPoints7D();
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
    * @return The enum numeric value on the wire for readinessStatus.
    */
   int getReadinessStatusValue();
   /**
-   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];</code>
+   * <code>.fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];</code>
    * @return The readinessStatus.
    */
   com.fusion.ai.proto.data_readiness.ReadinessStatus getReadinessStatus();
 
   /**
-   * <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+   * <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
    * @return The workbenchHref.
    */
   java.lang.String getWorkbenchHref();
   /**
-   * <code>string workbench_href = 15 [json_name = "workbench_href"];</code>
+   * <code>string workbench_href = 14 [json_name = "workbench_href"];</code>
    * @return The bytes for workbenchHref.
    */
   com.google.protobuf.ByteString

@@ -68,22 +68,6 @@ enum WeatherSyncTaskStatus : int;
 extern const uint32_t WeatherSyncTaskStatus_internal_data_[];
 enum WeatherSyncTrigger : int;
 extern const uint32_t WeatherSyncTrigger_internal_data_[];
-class BatchPullPowerRequest;
-struct BatchPullPowerRequestGlobalsTypeInternal;
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-extern BatchPullPowerRequestGlobalsTypeInternal BatchPullPowerRequest_globals_;
-extern const ::google::protobuf::internal::ClassDataFull BatchPullPowerRequest_class_data_;
-#else
-extern const BatchPullPowerRequestGlobalsTypeInternal BatchPullPowerRequest_globals_;
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-class BatchPullPowerResponse;
-struct BatchPullPowerResponseGlobalsTypeInternal;
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-extern BatchPullPowerResponseGlobalsTypeInternal BatchPullPowerResponse_globals_;
-extern const ::google::protobuf::internal::ClassDataFull BatchPullPowerResponse_class_data_;
-#else
-extern const BatchPullPowerResponseGlobalsTypeInternal BatchPullPowerResponse_globals_;
-#endif  // PROTOBUF_MESSAGE_GLOBALS
 class BatchSyncWeatherRequest;
 struct BatchSyncWeatherRequestGlobalsTypeInternal;
 #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -148,14 +132,6 @@ extern const ::google::protobuf::internal::ClassDataFull DataOverview_class_data
 #else
 extern const DataOverviewGlobalsTypeInternal DataOverview_globals_;
 #endif  // PROTOBUF_MESSAGE_GLOBALS
-class DataReadinessReplyHeader;
-struct DataReadinessReplyHeaderGlobalsTypeInternal;
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-extern DataReadinessReplyHeaderGlobalsTypeInternal DataReadinessReplyHeader_globals_;
-extern const ::google::protobuf::internal::ClassDataFull DataReadinessReplyHeader_class_data_;
-#else
-extern const DataReadinessReplyHeaderGlobalsTypeInternal DataReadinessReplyHeader_globals_;
-#endif  // PROTOBUF_MESSAGE_GLOBALS
 class DataSiteReadiness;
 struct DataSiteReadinessGlobalsTypeInternal;
 #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -179,22 +155,6 @@ extern DataSiteRowPageGlobalsTypeInternal DataSiteRowPage_globals_;
 extern const ::google::protobuf::internal::ClassDataFull DataSiteRowPage_class_data_;
 #else
 extern const DataSiteRowPageGlobalsTypeInternal DataSiteRowPage_globals_;
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-class ExportDataGapsRequest;
-struct ExportDataGapsRequestGlobalsTypeInternal;
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-extern ExportDataGapsRequestGlobalsTypeInternal ExportDataGapsRequest_globals_;
-extern const ::google::protobuf::internal::ClassDataFull ExportDataGapsRequest_class_data_;
-#else
-extern const ExportDataGapsRequestGlobalsTypeInternal ExportDataGapsRequest_globals_;
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-class ExportDataGapsResponse;
-struct ExportDataGapsResponseGlobalsTypeInternal;
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-extern ExportDataGapsResponseGlobalsTypeInternal ExportDataGapsResponse_globals_;
-extern const ::google::protobuf::internal::ClassDataFull ExportDataGapsResponse_class_data_;
-#else
-extern const ExportDataGapsResponseGlobalsTypeInternal ExportDataGapsResponse_globals_;
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 class GetDataOverviewRequest;
 struct GetDataOverviewRequestGlobalsTypeInternal;
@@ -332,22 +292,6 @@ extern const ::google::protobuf::internal::ClassDataFull PipelineStats_class_dat
 #else
 extern const PipelineStatsGlobalsTypeInternal PipelineStats_globals_;
 #endif  // PROTOBUF_MESSAGE_GLOBALS
-class RetryFailedPullPowerRequest;
-struct RetryFailedPullPowerRequestGlobalsTypeInternal;
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-extern RetryFailedPullPowerRequestGlobalsTypeInternal RetryFailedPullPowerRequest_globals_;
-extern const ::google::protobuf::internal::ClassDataFull RetryFailedPullPowerRequest_class_data_;
-#else
-extern const RetryFailedPullPowerRequestGlobalsTypeInternal RetryFailedPullPowerRequest_globals_;
-#endif  // PROTOBUF_MESSAGE_GLOBALS
-class RetryFailedPullPowerResponse;
-struct RetryFailedPullPowerResponseGlobalsTypeInternal;
-#ifndef PROTOBUF_MESSAGE_GLOBALS
-extern RetryFailedPullPowerResponseGlobalsTypeInternal RetryFailedPullPowerResponse_globals_;
-extern const ::google::protobuf::internal::ClassDataFull RetryFailedPullPowerResponse_class_data_;
-#else
-extern const RetryFailedPullPowerResponseGlobalsTypeInternal RetryFailedPullPowerResponse_globals_;
-#endif  // PROTOBUF_MESSAGE_GLOBALS
 class RetryFailedWeatherSyncRequest;
 struct RetryFailedWeatherSyncRequestGlobalsTypeInternal;
 #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -456,7 +400,6 @@ enum ReadinessStatus : int {
   READINESS_STATUS_SEVERE = 3,
   READINESS_STATUS_WEATHER_MISSING = 4,
   READINESS_STATUS_OFFLINE = 5,
-  READINESS_STATUS_PULL_UNKNOWN = 6,
   ReadinessStatus_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
   ReadinessStatus_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -467,11 +410,11 @@ extern const uint32_t ReadinessStatus_internal_data_[];
 inline constexpr ReadinessStatus ReadinessStatus_MIN =
     static_cast<ReadinessStatus>(0);
 inline constexpr ReadinessStatus ReadinessStatus_MAX =
-    static_cast<ReadinessStatus>(6);
+    static_cast<ReadinessStatus>(5);
 [[nodiscard]] inline bool ReadinessStatus_IsValid(int value) {
-  return 0 <= value && value <= 6;
+  return 0 <= value && value <= 5;
 }
-inline constexpr int ReadinessStatus_ARRAYSIZE = 6 + 1;
+inline constexpr int ReadinessStatus_ARRAYSIZE = 5 + 1;
 [[nodiscard]] const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL
 ReadinessStatus_descriptor();
 [[nodiscard]] inline auto ProtobufInternalGetEnumDescriptor(ReadinessStatus) {
@@ -486,7 +429,7 @@ template <typename T>
 }
 template <>
 [[nodiscard]] inline const ::std::string& ReadinessStatus_Name(ReadinessStatus value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<ReadinessStatus_descriptor, 0, 6>(
+  return ::google::protobuf::internal::NameOfDenseEnum<ReadinessStatus_descriptor, 0, 5>(
       static_cast<int>(value));
 }
 [[nodiscard]] inline bool ReadinessStatus_Parse(
@@ -858,7 +801,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED WeatherSyncTaskView final : public 
   [[nodiscard]] static const WeatherSyncTaskView& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<WeatherSyncTaskView>(&WeatherSyncTaskView_globals_);
   }
-  static constexpr int kIndexInFileMessages = 10;
+  static constexpr int kIndexInFileMessages = 9;
   friend void swap(WeatherSyncTaskView& a, WeatherSyncTaskView& b) { a.Swap(&b); }
   inline void Swap(WeatherSyncTaskView* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1166,7 +1109,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED WeatherSyncPartialError final : pub
   [[nodiscard]] static const WeatherSyncPartialError& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<WeatherSyncPartialError>(&WeatherSyncPartialError_globals_);
   }
-  static constexpr int kIndexInFileMessages = 27;
+  static constexpr int kIndexInFileMessages = 24;
   friend void swap(WeatherSyncPartialError& a, WeatherSyncPartialError& b) { a.Swap(&b); }
   inline void Swap(WeatherSyncPartialError* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1406,7 +1349,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UploadBackfillFileResponse final : 
   [[nodiscard]] static const UploadBackfillFileResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<UploadBackfillFileResponse>(&UploadBackfillFileResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 38;
+  static constexpr int kIndexInFileMessages = 35;
   friend void swap(UploadBackfillFileResponse& a, UploadBackfillFileResponse& b) { a.Swap(&b); }
   inline void Swap(UploadBackfillFileResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1612,7 +1555,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UploadBackfillFileRequest final : p
   [[nodiscard]] static const UploadBackfillFileRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<UploadBackfillFileRequest>(&UploadBackfillFileRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 37;
+  static constexpr int kIndexInFileMessages = 34;
   friend void swap(UploadBackfillFileRequest& a, UploadBackfillFileRequest& b) { a.Swap(&b); }
   inline void Swap(UploadBackfillFileRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1794,6 +1737,224 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED UploadBackfillFileRequest final : p
 };
 // -------------------------------------------------------------------
 
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedWeatherSyncResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline RetryFailedWeatherSyncResponse() : RetryFailedWeatherSyncResponse(nullptr) {}
+  ~RetryFailedWeatherSyncResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(RetryFailedWeatherSyncResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr RetryFailedWeatherSyncResponse(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline RetryFailedWeatherSyncResponse(const RetryFailedWeatherSyncResponse& from) : RetryFailedWeatherSyncResponse(nullptr, from) {}
+  inline RetryFailedWeatherSyncResponse(RetryFailedWeatherSyncResponse&& from) noexcept : RetryFailedWeatherSyncResponse(nullptr, ::std::move(from)) {}
+  inline RetryFailedWeatherSyncResponse& operator=(const RetryFailedWeatherSyncResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RetryFailedWeatherSyncResponse& operator=(RetryFailedWeatherSyncResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const RetryFailedWeatherSyncResponse& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<RetryFailedWeatherSyncResponse>(&RetryFailedWeatherSyncResponse_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 27;
+  friend void swap(RetryFailedWeatherSyncResponse& a, RetryFailedWeatherSyncResponse& b) { a.Swap(&b); }
+  inline void Swap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<RetryFailedWeatherSyncResponse>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const RetryFailedWeatherSyncResponse& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const RetryFailedWeatherSyncResponse& from) { RetryFailedWeatherSyncResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse"; }
+
+  explicit RetryFailedWeatherSyncResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  RetryFailedWeatherSyncResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const RetryFailedWeatherSyncResponse& from);
+  RetryFailedWeatherSyncResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, RetryFailedWeatherSyncResponse&& from) noexcept
+      : RetryFailedWeatherSyncResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRunIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // string run_id = 1 [json_name = "run_id"];
+  void clear_run_id() ;
+  [[nodiscard]] const ::std::string& run_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_run_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_run_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_run_id();
+  void set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_run_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_run_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_run_id();
+
+  public:
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
+  void clear_status() ;
+  [[nodiscard]] ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus status() const;
+  void set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
+
+  private:
+  ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus _internal_status() const;
+  void _internal_set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<1, 2,
+                          0, 76,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const RetryFailedWeatherSyncResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr run_id_;
+    int status_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedWeatherSyncRequest final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest) */ {
   using Super_ = ::google::protobuf::Message;
@@ -1852,7 +2013,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedWeatherSyncRequest final
   [[nodiscard]] static const RetryFailedWeatherSyncRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<RetryFailedWeatherSyncRequest>(&RetryFailedWeatherSyncRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 29;
+  static constexpr int kIndexInFileMessages = 26;
   friend void swap(RetryFailedWeatherSyncRequest& a, RetryFailedWeatherSyncRequest& b) { a.Swap(&b); }
   inline void Swap(RetryFailedWeatherSyncRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2001,419 +2162,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedWeatherSyncRequest final
 };
 // -------------------------------------------------------------------
 
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedPullPowerResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline RetryFailedPullPowerResponse() : RetryFailedPullPowerResponse(nullptr) {}
-  ~RetryFailedPullPowerResponse() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(RetryFailedPullPowerResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(RetryFailedPullPowerResponse));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr RetryFailedPullPowerResponse(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline RetryFailedPullPowerResponse(const RetryFailedPullPowerResponse& from) : RetryFailedPullPowerResponse(nullptr, from) {}
-  inline RetryFailedPullPowerResponse(RetryFailedPullPowerResponse&& from) noexcept : RetryFailedPullPowerResponse(nullptr, ::std::move(from)) {}
-  inline RetryFailedPullPowerResponse& operator=(const RetryFailedPullPowerResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline RetryFailedPullPowerResponse& operator=(RetryFailedPullPowerResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const RetryFailedPullPowerResponse& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<RetryFailedPullPowerResponse>(&RetryFailedPullPowerResponse_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 42;
-  friend void swap(RetryFailedPullPowerResponse& a, RetryFailedPullPowerResponse& b) { a.Swap(&b); }
-  inline void Swap(RetryFailedPullPowerResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(RetryFailedPullPowerResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] RetryFailedPullPowerResponse* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<RetryFailedPullPowerResponse>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const RetryFailedPullPowerResponse& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const RetryFailedPullPowerResponse& from) { RetryFailedPullPowerResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(RetryFailedPullPowerResponse* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse"; }
-
-  explicit RetryFailedPullPowerResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  RetryFailedPullPowerResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const RetryFailedPullPowerResponse& from);
-  RetryFailedPullPowerResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, RetryFailedPullPowerResponse&& from) noexcept
-      : RetryFailedPullPowerResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kRunIdFieldNumber = 1,
-  };
-  // string run_id = 1 [json_name = "run_id"];
-  void clear_run_id() ;
-  [[nodiscard]] const ::std::string& run_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_run_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_run_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_run_id();
-  void set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_run_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_run_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_run_id();
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<0, 1,
-                          0, 74,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const RetryFailedPullPowerResponse& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr run_id_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedPullPowerRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline RetryFailedPullPowerRequest() : RetryFailedPullPowerRequest(nullptr) {}
-  ~RetryFailedPullPowerRequest() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(RetryFailedPullPowerRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(RetryFailedPullPowerRequest));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr RetryFailedPullPowerRequest(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline RetryFailedPullPowerRequest(const RetryFailedPullPowerRequest& from) : RetryFailedPullPowerRequest(nullptr, from) {}
-  inline RetryFailedPullPowerRequest(RetryFailedPullPowerRequest&& from) noexcept : RetryFailedPullPowerRequest(nullptr, ::std::move(from)) {}
-  inline RetryFailedPullPowerRequest& operator=(const RetryFailedPullPowerRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline RetryFailedPullPowerRequest& operator=(RetryFailedPullPowerRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const RetryFailedPullPowerRequest& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<RetryFailedPullPowerRequest>(&RetryFailedPullPowerRequest_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 41;
-  friend void swap(RetryFailedPullPowerRequest& a, RetryFailedPullPowerRequest& b) { a.Swap(&b); }
-  inline void Swap(RetryFailedPullPowerRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(RetryFailedPullPowerRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] RetryFailedPullPowerRequest* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<RetryFailedPullPowerRequest>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const RetryFailedPullPowerRequest& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const RetryFailedPullPowerRequest& from) { RetryFailedPullPowerRequest::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(RetryFailedPullPowerRequest* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest"; }
-
-  explicit RetryFailedPullPowerRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  RetryFailedPullPowerRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const RetryFailedPullPowerRequest& from);
-  RetryFailedPullPowerRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, RetryFailedPullPowerRequest&& from) noexcept
-      : RetryFailedPullPowerRequest(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kRunIdFieldNumber = 1,
-  };
-  // optional string run_id = 1 [json_name = "run_id", (.buf.validate.field) = {
-  [[nodiscard]] bool has_run_id() const;
-  void clear_run_id() ;
-  [[nodiscard]] const ::std::string& run_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_run_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_run_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_run_id();
-  void set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_run_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_run_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_run_id();
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<0, 1,
-                          0, 73,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const RetryFailedPullPowerRequest& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr run_id_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PipelineLine final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.PipelineLine) */ {
   using Super_ = ::google::protobuf::Message;
@@ -2472,7 +2220,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PipelineLine final : public ::googl
   [[nodiscard]] static const PipelineLine& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<PipelineLine>(&PipelineLine_globals_);
   }
-  static constexpr int kIndexInFileMessages = 7;
+  static constexpr int kIndexInFileMessages = 6;
   friend void swap(PipelineLine& a, PipelineLine& b) { a.Swap(&b); }
   inline void Swap(PipelineLine* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2715,7 +2463,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsRequest final : pub
   [[nodiscard]] static const ListDataSiteRowsRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<ListDataSiteRowsRequest>(&ListDataSiteRowsRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 14;
+  static constexpr int kIndexInFileMessages = 13;
   friend void swap(ListDataSiteRowsRequest& a, ListDataSiteRowsRequest& b) { a.Swap(&b); }
   inline void Swap(ListDataSiteRowsRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2806,12 +2554,10 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsRequest final : pub
   // accessors -------------------------------------------------------
   enum : int {
     kServiceTypeFieldNumber = 3,
-    kQFieldNumber = 7,
+    kQFieldNumber = 5,
     kPageFieldNumber = 1,
     kPageSizeFieldNumber = 2,
-    kDataSourceFieldNumber = 4,
-    kReadinessStatusFieldNumber = 5,
-    kGranularityMinFieldNumber = 6,
+    kReadinessStatusFieldNumber = 4,
   };
   // optional string service_type = 3 [json_name = "service_type"];
   [[nodiscard]] bool has_service_type() const;
@@ -2829,7 +2575,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsRequest final : pub
   ::std::string* PROTOBUF_NONNULL _internal_mutable_service_type();
 
   public:
-  // optional string q = 7 [json_name = "q"];
+  // optional string q = 5 [json_name = "q"];
   [[nodiscard]] bool has_q() const;
   void clear_q() ;
   [[nodiscard]] const ::std::string& q() const;
@@ -2867,18 +2613,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsRequest final : pub
   void _internal_set_page_size(::int32_t value);
 
   public:
-  // optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];
-  [[nodiscard]] bool has_data_source() const;
-  void clear_data_source() ;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataSource data_source() const;
-  void set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
-
-  private:
-  ::fusion::ai::proto::data_readiness::DataSource _internal_data_source() const;
-  void _internal_set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
-
-  public:
-  // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];
+  // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];
   [[nodiscard]] bool has_readiness_status() const;
   void clear_readiness_status() ;
   [[nodiscard]] ::fusion::ai::proto::data_readiness::ReadinessStatus readiness_status() const;
@@ -2889,22 +2624,11 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsRequest final : pub
   void _internal_set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value);
 
   public:
-  // optional int32 granularity_min = 6 [json_name = "granularity_min"];
-  [[nodiscard]] bool has_granularity_min() const;
-  void clear_granularity_min() ;
-  [[nodiscard]] ::int32_t granularity_min() const;
-  void set_granularity_min(::int32_t value);
-
-  private:
-  ::int32_t _internal_granularity_min() const;
-  void _internal_set_granularity_min(::int32_t value);
-
-  public:
   // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest)
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<3, 7,
+      ::google::protobuf::internal::TcParseTable<3, 5,
                           0, 76,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
@@ -2937,9 +2661,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsRequest final : pub
     ::google::protobuf::internal::ArenaStringPtr q_;
     ::int32_t page_;
     ::int32_t page_size_;
-    int data_source_;
     int readiness_status_;
-    ::int32_t granularity_min_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -3005,7 +2727,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED HeatmapDay final : public ::google:
   [[nodiscard]] static const HeatmapDay& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<HeatmapDay>(&HeatmapDay_globals_);
   }
-  static constexpr int kIndexInFileMessages = 5;
+  static constexpr int kIndexInFileMessages = 4;
   friend void swap(HeatmapDay& a, HeatmapDay& b) { a.Swap(&b); }
   inline void Swap(HeatmapDay* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3235,7 +2957,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSyncRunRequest final : pu
   [[nodiscard]] static const GetWeatherSyncRunRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetWeatherSyncRunRequest>(&GetWeatherSyncRunRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 24;
+  static constexpr int kIndexInFileMessages = 21;
   friend void swap(GetWeatherSyncRunRequest& a, GetWeatherSyncRunRequest& b) { a.Swap(&b); }
   inline void Swap(GetWeatherSyncRunRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3453,7 +3175,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSiteRequest final : publi
   [[nodiscard]] static const GetWeatherSiteRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetWeatherSiteRequest>(&GetWeatherSiteRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 22;
+  static constexpr int kIndexInFileMessages = 19;
   friend void swap(GetWeatherSiteRequest& a, GetWeatherSiteRequest& b) { a.Swap(&b); }
   inline void Swap(GetWeatherSiteRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3601,6 +3323,246 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSiteRequest final : publi
 };
 // -------------------------------------------------------------------
 
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherExcelTemplateResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline GetWeatherExcelTemplateResponse() : GetWeatherExcelTemplateResponse(nullptr) {}
+  ~GetWeatherExcelTemplateResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetWeatherExcelTemplateResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr GetWeatherExcelTemplateResponse(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline GetWeatherExcelTemplateResponse(const GetWeatherExcelTemplateResponse& from) : GetWeatherExcelTemplateResponse(nullptr, from) {}
+  inline GetWeatherExcelTemplateResponse(GetWeatherExcelTemplateResponse&& from) noexcept : GetWeatherExcelTemplateResponse(nullptr, ::std::move(from)) {}
+  inline GetWeatherExcelTemplateResponse& operator=(const GetWeatherExcelTemplateResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetWeatherExcelTemplateResponse& operator=(GetWeatherExcelTemplateResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const GetWeatherExcelTemplateResponse& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetWeatherExcelTemplateResponse>(&GetWeatherExcelTemplateResponse_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 31;
+  friend void swap(GetWeatherExcelTemplateResponse& a, GetWeatherExcelTemplateResponse& b) { a.Swap(&b); }
+  inline void Swap(GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<GetWeatherExcelTemplateResponse>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const GetWeatherExcelTemplateResponse& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const GetWeatherExcelTemplateResponse& from) { GetWeatherExcelTemplateResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse"; }
+
+  explicit GetWeatherExcelTemplateResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  GetWeatherExcelTemplateResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetWeatherExcelTemplateResponse& from);
+  GetWeatherExcelTemplateResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetWeatherExcelTemplateResponse&& from) noexcept
+      : GetWeatherExcelTemplateResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kFileFieldNumber = 1,
+    kFilenameFieldNumber = 2,
+    kContentTypeFieldNumber = 3,
+  };
+  // bytes file = 1 [json_name = "file"];
+  void clear_file() ;
+  [[nodiscard]] const ::std::string& file() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_file(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_file();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_file();
+  void set_allocated_file(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_file() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_file(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_file();
+
+  public:
+  // string filename = 2 [json_name = "filename"];
+  void clear_filename() ;
+  [[nodiscard]] const ::std::string& filename() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_filename(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_filename();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_filename();
+  void set_allocated_filename(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_filename() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_filename(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_filename();
+
+  public:
+  // string content_type = 3 [json_name = "content_type"];
+  void clear_content_type() ;
+  [[nodiscard]] const ::std::string& content_type() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_content_type(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_content_type();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_content_type();
+  void set_allocated_content_type(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_content_type() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_content_type(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_content_type();
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<2, 3,
+                          0, 91,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const GetWeatherExcelTemplateResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr file_;
+    ::google::protobuf::internal::ArenaStringPtr filename_;
+    ::google::protobuf::internal::ArenaStringPtr content_type_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherExcelTemplateRequest final : public ::google::protobuf::internal::ZeroFieldsBase
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest) */ {
   using Super_ = ::google::protobuf::internal::ZeroFieldsBase;
@@ -3658,7 +3620,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherExcelTemplateRequest fina
   [[nodiscard]] static const GetWeatherExcelTemplateRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetWeatherExcelTemplateRequest>(&GetWeatherExcelTemplateRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 33;
+  static constexpr int kIndexInFileMessages = 30;
   friend void swap(GetWeatherExcelTemplateRequest& a, GetWeatherExcelTemplateRequest& b) { a.Swap(&b); }
   inline void Swap(GetWeatherExcelTemplateRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3797,7 +3759,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataSiteReadinessRequest final :
   [[nodiscard]] static const GetDataSiteReadinessRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetDataSiteReadinessRequest>(&GetDataSiteReadinessRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 16;
+  static constexpr int kIndexInFileMessages = 15;
   friend void swap(GetDataSiteReadinessRequest& a, GetDataSiteReadinessRequest& b) { a.Swap(&b); }
   inline void Swap(GetDataSiteReadinessRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3945,12 +3907,13 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataSiteReadinessRequest final :
 };
 // -------------------------------------------------------------------
 
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataPipelineStatsRequest final : public ::google::protobuf::internal::ZeroFieldsBase
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataPipelineStatsRequest final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest) */ {
-  using Super_ = ::google::protobuf::internal::ZeroFieldsBase;
+  using Super_ = ::google::protobuf::Message;
 
  public:
   inline GetDataPipelineStatsRequest() : GetDataPipelineStatsRequest(nullptr) {}
+  ~GetDataPipelineStatsRequest() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
   void operator delete(GetDataPipelineStatsRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
@@ -4002,7 +3965,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataPipelineStatsRequest final :
   [[nodiscard]] static const GetDataPipelineStatsRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetDataPipelineStatsRequest>(&GetDataPipelineStatsRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 18;
+  static constexpr int kIndexInFileMessages = 17;
   friend void swap(GetDataPipelineStatsRequest& a, GetDataPipelineStatsRequest& b) { a.Swap(&b); }
   inline void Swap(GetDataPipelineStatsRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4025,14 +3988,47 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataPipelineStatsRequest final :
     return Super_::DefaultConstruct<GetDataPipelineStatsRequest>(arena);
   }
   using Super_::CopyFrom;
-  inline void CopyFrom(const GetDataPipelineStatsRequest& from) { Super_::CopyImpl(*this, from); }
+  void CopyFrom(const GetDataPipelineStatsRequest& from);
   using Super_::MergeFrom;
-  void MergeFrom(const GetDataPipelineStatsRequest& from) { Super_::MergeImpl(*this, from); }
+  void MergeFrom(const GetDataPipelineStatsRequest& from) { GetDataPipelineStatsRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
 
   public:
   [[nodiscard]] bool IsInitialized() const {
     return true;
   }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetDataPipelineStatsRequest* PROTOBUF_NONNULL other);
  private:
   static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest"; }
 
@@ -4058,12 +4054,31 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataPipelineStatsRequest final :
   // nested types ----------------------------------------------------
 
   // accessors -------------------------------------------------------
+  enum : int {
+    kServiceTypeFieldNumber = 1,
+  };
+  // optional string service_type = 1 [json_name = "service_type"];
+  [[nodiscard]] bool has_service_type() const;
+  void clear_service_type() ;
+  [[nodiscard]] const ::std::string& service_type() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_service_type(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_service_type();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_service_type();
+  void set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_service_type() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_service_type(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_service_type();
+
+  public:
   // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<0, 0,
-                          0, 0,
+      ::google::protobuf::internal::TcParseTable<0, 1,
+                          0, 79,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -4079,6 +4094,22 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataPipelineStatsRequest final :
   friend class ::google::protobuf::Arena::InternalHelper;
   using InternalArenaConstructable_ = void;
   using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const GetDataPipelineStatsRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr service_type_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
   friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
 };
 // -------------------------------------------------------------------
@@ -4141,7 +4172,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataOverviewRequest final : publ
   [[nodiscard]] static const GetDataOverviewRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetDataOverviewRequest>(&GetDataOverviewRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 12;
+  static constexpr int kIndexInFileMessages = 11;
   friend void swap(GetDataOverviewRequest& a, GetDataOverviewRequest& b) { a.Swap(&b); }
   inline void Swap(GetDataOverviewRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4290,720 +4321,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataOverviewRequest final : publ
 };
 // -------------------------------------------------------------------
 
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ExportDataGapsResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.ExportDataGapsResponse) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline ExportDataGapsResponse() : ExportDataGapsResponse(nullptr) {}
-  ~ExportDataGapsResponse() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ExportDataGapsResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ExportDataGapsResponse));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr ExportDataGapsResponse(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline ExportDataGapsResponse(const ExportDataGapsResponse& from) : ExportDataGapsResponse(nullptr, from) {}
-  inline ExportDataGapsResponse(ExportDataGapsResponse&& from) noexcept : ExportDataGapsResponse(nullptr, ::std::move(from)) {}
-  inline ExportDataGapsResponse& operator=(const ExportDataGapsResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ExportDataGapsResponse& operator=(ExportDataGapsResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const ExportDataGapsResponse& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<ExportDataGapsResponse>(&ExportDataGapsResponse_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 21;
-  friend void swap(ExportDataGapsResponse& a, ExportDataGapsResponse& b) { a.Swap(&b); }
-  inline void Swap(ExportDataGapsResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ExportDataGapsResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] ExportDataGapsResponse* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<ExportDataGapsResponse>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const ExportDataGapsResponse& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const ExportDataGapsResponse& from) { ExportDataGapsResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(ExportDataGapsResponse* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.ExportDataGapsResponse"; }
-
-  explicit ExportDataGapsResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ExportDataGapsResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ExportDataGapsResponse& from);
-  ExportDataGapsResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ExportDataGapsResponse&& from) noexcept
-      : ExportDataGapsResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kCsvFieldNumber = 1,
-    kFilenameFieldNumber = 2,
-  };
-  // bytes csv = 1 [json_name = "csv"];
-  void clear_csv() ;
-  [[nodiscard]] const ::std::string& csv() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_csv(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_csv();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_csv();
-  void set_allocated_csv(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_csv() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_csv(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_csv();
-
-  public:
-  // string filename = 2 [json_name = "filename"];
-  void clear_filename() ;
-  [[nodiscard]] const ::std::string& filename() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_filename(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_filename();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_filename();
-  void set_allocated_filename(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_filename() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_filename(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_filename();
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.ExportDataGapsResponse)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<1, 2,
-                          0, 70,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ExportDataGapsResponse& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr csv_;
-    ::google::protobuf::internal::ArenaStringPtr filename_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ExportDataGapsRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.ExportDataGapsRequest) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline ExportDataGapsRequest() : ExportDataGapsRequest(nullptr) {}
-  ~ExportDataGapsRequest() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ExportDataGapsRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ExportDataGapsRequest));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr ExportDataGapsRequest(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline ExportDataGapsRequest(const ExportDataGapsRequest& from) : ExportDataGapsRequest(nullptr, from) {}
-  inline ExportDataGapsRequest(ExportDataGapsRequest&& from) noexcept : ExportDataGapsRequest(nullptr, ::std::move(from)) {}
-  inline ExportDataGapsRequest& operator=(const ExportDataGapsRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ExportDataGapsRequest& operator=(ExportDataGapsRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const ExportDataGapsRequest& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<ExportDataGapsRequest>(&ExportDataGapsRequest_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 20;
-  friend void swap(ExportDataGapsRequest& a, ExportDataGapsRequest& b) { a.Swap(&b); }
-  inline void Swap(ExportDataGapsRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ExportDataGapsRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] ExportDataGapsRequest* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<ExportDataGapsRequest>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const ExportDataGapsRequest& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const ExportDataGapsRequest& from) { ExportDataGapsRequest::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(ExportDataGapsRequest* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.ExportDataGapsRequest"; }
-
-  explicit ExportDataGapsRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ExportDataGapsRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ExportDataGapsRequest& from);
-  ExportDataGapsRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ExportDataGapsRequest&& from) noexcept
-      : ExportDataGapsRequest(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kServiceTypeFieldNumber = 1,
-    kQFieldNumber = 4,
-    kDataSourceFieldNumber = 2,
-    kReadinessStatusFieldNumber = 3,
-  };
-  // optional string service_type = 1 [json_name = "service_type"];
-  [[nodiscard]] bool has_service_type() const;
-  void clear_service_type() ;
-  [[nodiscard]] const ::std::string& service_type() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_service_type(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_service_type();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_service_type();
-  void set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_service_type() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_service_type(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_service_type();
-
-  public:
-  // optional string q = 4 [json_name = "q"];
-  [[nodiscard]] bool has_q() const;
-  void clear_q() ;
-  [[nodiscard]] const ::std::string& q() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_q(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_q();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_q();
-  void set_allocated_q(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_q() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_q(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_q();
-
-  public:
-  // optional .fusion.ai.proto.data_readiness.DataSource data_source = 2 [json_name = "data_source"];
-  [[nodiscard]] bool has_data_source() const;
-  void clear_data_source() ;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataSource data_source() const;
-  void set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
-
-  private:
-  ::fusion::ai::proto::data_readiness::DataSource _internal_data_source() const;
-  void _internal_set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
-
-  public:
-  // optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-  [[nodiscard]] bool has_readiness_status() const;
-  void clear_readiness_status() ;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::ReadinessStatus readiness_status() const;
-  void set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value);
-
-  private:
-  ::fusion::ai::proto::data_readiness::ReadinessStatus _internal_readiness_status() const;
-  void _internal_set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.ExportDataGapsRequest)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<2, 4,
-                          0, 74,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ExportDataGapsRequest& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr service_type_;
-    ::google::protobuf::internal::ArenaStringPtr q_;
-    int data_source_;
-    int readiness_status_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataReadinessReplyHeader final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.DataReadinessReplyHeader) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline DataReadinessReplyHeader() : DataReadinessReplyHeader(nullptr) {}
-  ~DataReadinessReplyHeader() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(DataReadinessReplyHeader* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(DataReadinessReplyHeader));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr DataReadinessReplyHeader(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline DataReadinessReplyHeader(const DataReadinessReplyHeader& from) : DataReadinessReplyHeader(nullptr, from) {}
-  inline DataReadinessReplyHeader(DataReadinessReplyHeader&& from) noexcept : DataReadinessReplyHeader(nullptr, ::std::move(from)) {}
-  inline DataReadinessReplyHeader& operator=(const DataReadinessReplyHeader& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline DataReadinessReplyHeader& operator=(DataReadinessReplyHeader&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const DataReadinessReplyHeader& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<DataReadinessReplyHeader>(&DataReadinessReplyHeader_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 0;
-  friend void swap(DataReadinessReplyHeader& a, DataReadinessReplyHeader& b) { a.Swap(&b); }
-  inline void Swap(DataReadinessReplyHeader* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(DataReadinessReplyHeader* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] DataReadinessReplyHeader* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<DataReadinessReplyHeader>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const DataReadinessReplyHeader& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const DataReadinessReplyHeader& from) { DataReadinessReplyHeader::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(DataReadinessReplyHeader* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.DataReadinessReplyHeader"; }
-
-  explicit DataReadinessReplyHeader(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  DataReadinessReplyHeader(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const DataReadinessReplyHeader& from);
-  DataReadinessReplyHeader(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, DataReadinessReplyHeader&& from) noexcept
-      : DataReadinessReplyHeader(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kStateFieldNumber = 1,
-    kCodeFieldNumber = 2,
-    kMessageFieldNumber = 3,
-  };
-  // string state = 1 [json_name = "state", (.buf.validate.field) = {
-  void clear_state() ;
-  [[nodiscard]] const ::std::string& state() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_state(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_state();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_state();
-  void set_allocated_state(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_state() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_state(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_state();
-
-  public:
-  // string code = 2 [json_name = "code", (.buf.validate.field) = {
-  void clear_code() ;
-  [[nodiscard]] const ::std::string& code() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_code(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_code();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_code();
-  void set_allocated_code(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_code() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_code(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_code();
-
-  public:
-  // string message = 3 [json_name = "message", (.buf.validate.field) = {
-  void clear_message() ;
-  [[nodiscard]] const ::std::string& message() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_message(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_message();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_message();
-  void set_allocated_message(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_message() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_message(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_message();
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.DataReadinessReplyHeader)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<2, 3,
-                          0, 80,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const DataReadinessReplyHeader& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr state_;
-    ::google::protobuf::internal::ArenaStringPtr code_;
-    ::google::protobuf::internal::ArenaStringPtr message_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.DataOverview) */ {
   using Super_ = ::google::protobuf::Message;
@@ -5062,7 +4379,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::googl
   [[nodiscard]] static const DataOverview& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<DataOverview>(&DataOverview_globals_);
   }
-  static constexpr int kIndexInFileMessages = 1;
+  static constexpr int kIndexInFileMessages = 0;
   friend void swap(DataOverview& a, DataOverview& b) { a.Swap(&b); }
   inline void Swap(DataOverview* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5189,7 +4506,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::googl
   void _internal_set_need_fill_count(::int32_t value);
 
   public:
-  // int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+  // optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+  [[nodiscard]] bool has_weather_missing_count() const;
   void clear_weather_missing_count() ;
   [[nodiscard]] ::int32_t weather_missing_count() const;
   void set_weather_missing_count(::int32_t value);
@@ -5266,6 +4584,256 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataOverview final : public ::googl
 };
 // -------------------------------------------------------------------
 
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateWeatherExcelImportJobResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline CreateWeatherExcelImportJobResponse() : CreateWeatherExcelImportJobResponse(nullptr) {}
+  ~CreateWeatherExcelImportJobResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(CreateWeatherExcelImportJobResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr CreateWeatherExcelImportJobResponse(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline CreateWeatherExcelImportJobResponse(const CreateWeatherExcelImportJobResponse& from) : CreateWeatherExcelImportJobResponse(nullptr, from) {}
+  inline CreateWeatherExcelImportJobResponse(CreateWeatherExcelImportJobResponse&& from) noexcept : CreateWeatherExcelImportJobResponse(nullptr, ::std::move(from)) {}
+  inline CreateWeatherExcelImportJobResponse& operator=(const CreateWeatherExcelImportJobResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateWeatherExcelImportJobResponse& operator=(CreateWeatherExcelImportJobResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const CreateWeatherExcelImportJobResponse& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CreateWeatherExcelImportJobResponse>(&CreateWeatherExcelImportJobResponse_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 29;
+  friend void swap(CreateWeatherExcelImportJobResponse& a, CreateWeatherExcelImportJobResponse& b) { a.Swap(&b); }
+  inline void Swap(CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<CreateWeatherExcelImportJobResponse>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const CreateWeatherExcelImportJobResponse& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const CreateWeatherExcelImportJobResponse& from) { CreateWeatherExcelImportJobResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse"; }
+
+  explicit CreateWeatherExcelImportJobResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  CreateWeatherExcelImportJobResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const CreateWeatherExcelImportJobResponse& from);
+  CreateWeatherExcelImportJobResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, CreateWeatherExcelImportJobResponse&& from) noexcept
+      : CreateWeatherExcelImportJobResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kJobIdFieldNumber = 1,
+    kErrorReportUrlFieldNumber = 4,
+    kAcceptedRowsFieldNumber = 2,
+    kFailedRowsFieldNumber = 3,
+  };
+  // string job_id = 1 [json_name = "job_id"];
+  void clear_job_id() ;
+  [[nodiscard]] const ::std::string& job_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_job_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_job_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_job_id();
+  void set_allocated_job_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_job_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_job_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_job_id();
+
+  public:
+  // optional string error_report_url = 4 [json_name = "error_report_url"];
+  [[nodiscard]] bool has_error_report_url() const;
+  void clear_error_report_url() ;
+  [[nodiscard]] const ::std::string& error_report_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_error_report_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_error_report_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_error_report_url();
+  void set_allocated_error_report_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_error_report_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_error_report_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_error_report_url();
+
+  public:
+  // optional int32 accepted_rows = 2 [json_name = "accepted_rows"];
+  [[nodiscard]] bool has_accepted_rows() const;
+  void clear_accepted_rows() ;
+  [[nodiscard]] ::int32_t accepted_rows() const;
+  void set_accepted_rows(::int32_t value);
+
+  private:
+  ::int32_t _internal_accepted_rows() const;
+  void _internal_set_accepted_rows(::int32_t value);
+
+  public:
+  // optional int32 failed_rows = 3 [json_name = "failed_rows"];
+  [[nodiscard]] bool has_failed_rows() const;
+  void clear_failed_rows() ;
+  [[nodiscard]] ::int32_t failed_rows() const;
+  void set_failed_rows(::int32_t value);
+
+  private:
+  ::int32_t _internal_failed_rows() const;
+  void _internal_set_failed_rows(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<2, 4,
+                          0, 97,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const CreateWeatherExcelImportJobResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr job_id_;
+    ::google::protobuf::internal::ArenaStringPtr error_report_url_;
+    ::int32_t accepted_rows_;
+    ::int32_t failed_rows_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateWeatherExcelImportJobRequest final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest) */ {
   using Super_ = ::google::protobuf::Message;
@@ -5324,7 +4892,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateWeatherExcelImportJobRequest 
   [[nodiscard]] static const CreateWeatherExcelImportJobRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CreateWeatherExcelImportJobRequest>(&CreateWeatherExcelImportJobRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 31;
+  static constexpr int kIndexInFileMessages = 28;
   friend void swap(CreateWeatherExcelImportJobRequest& a, CreateWeatherExcelImportJobRequest& b) { a.Swap(&b); }
   inline void Swap(CreateWeatherExcelImportJobRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5564,7 +5132,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateDataBackfillJobResponse final
   [[nodiscard]] static const CreateDataBackfillJobResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CreateDataBackfillJobResponse>(&CreateDataBackfillJobResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 36;
+  static constexpr int kIndexInFileMessages = 33;
   friend void swap(CreateDataBackfillJobResponse& a, CreateDataBackfillJobResponse& b) { a.Swap(&b); }
   inline void Swap(CreateDataBackfillJobResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5770,7 +5338,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateDataBackfillJobRequest final 
   [[nodiscard]] static const CreateDataBackfillJobRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CreateDataBackfillJobRequest>(&CreateDataBackfillJobRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 35;
+  static constexpr int kIndexInFileMessages = 32;
   friend void swap(CreateDataBackfillJobRequest& a, CreateDataBackfillJobRequest& b) { a.Swap(&b); }
   inline void Swap(CreateDataBackfillJobRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6013,7 +5581,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CoverageTrendPoint final : public :
   [[nodiscard]] static const CoverageTrendPoint& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CoverageTrendPoint>(&CoverageTrendPoint_globals_);
   }
-  static constexpr int kIndexInFileMessages = 2;
+  static constexpr int kIndexInFileMessages = 1;
   friend void swap(CoverageTrendPoint& a, CoverageTrendPoint& b) { a.Swap(&b); }
   inline void Swap(CoverageTrendPoint* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6231,7 +5799,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherRequest final : pub
   [[nodiscard]] static const BatchSyncWeatherRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<BatchSyncWeatherRequest>(&BatchSyncWeatherRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 26;
+  static constexpr int kIndexInFileMessages = 23;
   friend void swap(BatchSyncWeatherRequest& a, BatchSyncWeatherRequest& b) { a.Swap(&b); }
   inline void Swap(BatchSyncWeatherRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6474,429 +6042,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherRequest final : pub
 };
 // -------------------------------------------------------------------
 
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchPullPowerResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.BatchPullPowerResponse) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline BatchPullPowerResponse() : BatchPullPowerResponse(nullptr) {}
-  ~BatchPullPowerResponse() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(BatchPullPowerResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(BatchPullPowerResponse));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr BatchPullPowerResponse(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline BatchPullPowerResponse(const BatchPullPowerResponse& from) : BatchPullPowerResponse(nullptr, from) {}
-  inline BatchPullPowerResponse(BatchPullPowerResponse&& from) noexcept : BatchPullPowerResponse(nullptr, ::std::move(from)) {}
-  inline BatchPullPowerResponse& operator=(const BatchPullPowerResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline BatchPullPowerResponse& operator=(BatchPullPowerResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const BatchPullPowerResponse& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<BatchPullPowerResponse>(&BatchPullPowerResponse_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 40;
-  friend void swap(BatchPullPowerResponse& a, BatchPullPowerResponse& b) { a.Swap(&b); }
-  inline void Swap(BatchPullPowerResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(BatchPullPowerResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] BatchPullPowerResponse* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<BatchPullPowerResponse>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const BatchPullPowerResponse& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const BatchPullPowerResponse& from) { BatchPullPowerResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(BatchPullPowerResponse* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.BatchPullPowerResponse"; }
-
-  explicit BatchPullPowerResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  BatchPullPowerResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const BatchPullPowerResponse& from);
-  BatchPullPowerResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, BatchPullPowerResponse&& from) noexcept
-      : BatchPullPowerResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kRunIdFieldNumber = 1,
-  };
-  // string run_id = 1 [json_name = "run_id"];
-  void clear_run_id() ;
-  [[nodiscard]] const ::std::string& run_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_run_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_run_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_run_id();
-  void set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_run_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_run_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_run_id();
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.BatchPullPowerResponse)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<0, 1,
-                          0, 68,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const BatchPullPowerResponse& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr run_id_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchPullPowerRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.BatchPullPowerRequest) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline BatchPullPowerRequest() : BatchPullPowerRequest(nullptr) {}
-  ~BatchPullPowerRequest() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(BatchPullPowerRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(BatchPullPowerRequest));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr BatchPullPowerRequest(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline BatchPullPowerRequest(const BatchPullPowerRequest& from) : BatchPullPowerRequest(nullptr, from) {}
-  inline BatchPullPowerRequest(BatchPullPowerRequest&& from) noexcept : BatchPullPowerRequest(nullptr, ::std::move(from)) {}
-  inline BatchPullPowerRequest& operator=(const BatchPullPowerRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline BatchPullPowerRequest& operator=(BatchPullPowerRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const BatchPullPowerRequest& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<BatchPullPowerRequest>(&BatchPullPowerRequest_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 39;
-  friend void swap(BatchPullPowerRequest& a, BatchPullPowerRequest& b) { a.Swap(&b); }
-  inline void Swap(BatchPullPowerRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(BatchPullPowerRequest* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] BatchPullPowerRequest* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<BatchPullPowerRequest>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const BatchPullPowerRequest& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const BatchPullPowerRequest& from) { BatchPullPowerRequest::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(BatchPullPowerRequest* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.BatchPullPowerRequest"; }
-
-  explicit BatchPullPowerRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  BatchPullPowerRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const BatchPullPowerRequest& from);
-  BatchPullPowerRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, BatchPullPowerRequest&& from) noexcept
-      : BatchPullPowerRequest(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kRegistrationIdsFieldNumber = 1,
-  };
-  // repeated string registration_ids = 1 [json_name = "registration_ids", (.buf.validate.field) = {
-  [[nodiscard]] int registration_ids_size() const;
-  private:
-  int _internal_registration_ids_size() const;
-
-  public:
-  void clear_registration_ids() ;
-  [[nodiscard]] const ::std::string& registration_ids(int index) const;
-  ::std::string* PROTOBUF_NONNULL mutable_registration_ids(int index);
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_registration_ids(int index, Arg_&& value, Args_... args);
-  ::std::string* PROTOBUF_NONNULL add_registration_ids();
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void add_registration_ids(Arg_&& value, Args_... args);
-  [[nodiscard]] const
-      ::google::protobuf::RepeatedPtrField<::std::string>&
-      registration_ids() const;
-  [[nodiscard]] ::google::protobuf::RepeatedPtrField<::std::string>*
-      PROTOBUF_NONNULL
-      mutable_registration_ids();
-
-  private:
-  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_registration_ids() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_registration_ids();
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.BatchPullPowerRequest)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<0, 1,
-                          0, 77,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const BatchPullPowerRequest& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::RepeatedPtrField<::std::string> registration_ids_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED WeatherSyncRunView final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.WeatherSyncRunView) */ {
   using Super_ = ::google::protobuf::Message;
@@ -6955,7 +6100,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED WeatherSyncRunView final : public :
   [[nodiscard]] static const WeatherSyncRunView& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<WeatherSyncRunView>(&WeatherSyncRunView_globals_);
   }
-  static constexpr int kIndexInFileMessages = 11;
+  static constexpr int kIndexInFileMessages = 10;
   friend void swap(WeatherSyncRunView& a, WeatherSyncRunView& b) { a.Swap(&b); }
   inline void Swap(WeatherSyncRunView* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7277,7 +6422,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED WeatherSiteView final : public ::go
   [[nodiscard]] static const WeatherSiteView& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<WeatherSiteView>(&WeatherSiteView_globals_);
   }
-  static constexpr int kIndexInFileMessages = 9;
+  static constexpr int kIndexInFileMessages = 8;
   friend void swap(WeatherSiteView& a, WeatherSiteView& b) { a.Swap(&b); }
   inline void Swap(WeatherSiteView* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7505,241 +6650,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED WeatherSiteView final : public ::go
 };
 // -------------------------------------------------------------------
 
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED RetryFailedWeatherSyncResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline RetryFailedWeatherSyncResponse() : RetryFailedWeatherSyncResponse(nullptr) {}
-  ~RetryFailedWeatherSyncResponse() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(RetryFailedWeatherSyncResponse));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr RetryFailedWeatherSyncResponse(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline RetryFailedWeatherSyncResponse(const RetryFailedWeatherSyncResponse& from) : RetryFailedWeatherSyncResponse(nullptr, from) {}
-  inline RetryFailedWeatherSyncResponse(RetryFailedWeatherSyncResponse&& from) noexcept : RetryFailedWeatherSyncResponse(nullptr, ::std::move(from)) {}
-  inline RetryFailedWeatherSyncResponse& operator=(const RetryFailedWeatherSyncResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline RetryFailedWeatherSyncResponse& operator=(RetryFailedWeatherSyncResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const RetryFailedWeatherSyncResponse& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<RetryFailedWeatherSyncResponse>(&RetryFailedWeatherSyncResponse_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 30;
-  friend void swap(RetryFailedWeatherSyncResponse& a, RetryFailedWeatherSyncResponse& b) { a.Swap(&b); }
-  inline void Swap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<RetryFailedWeatherSyncResponse>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const RetryFailedWeatherSyncResponse& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const RetryFailedWeatherSyncResponse& from) { RetryFailedWeatherSyncResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(RetryFailedWeatherSyncResponse* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse"; }
-
-  explicit RetryFailedWeatherSyncResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  RetryFailedWeatherSyncResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const RetryFailedWeatherSyncResponse& from);
-  RetryFailedWeatherSyncResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, RetryFailedWeatherSyncResponse&& from) noexcept
-      : RetryFailedWeatherSyncResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kRunIdFieldNumber = 2,
-    kHeaderFieldNumber = 1,
-    kStatusFieldNumber = 3,
-  };
-  // string run_id = 2 [json_name = "run_id"];
-  void clear_run_id() ;
-  [[nodiscard]] const ::std::string& run_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_run_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_run_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_run_id();
-  void set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_run_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_run_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_run_id();
-
-  public:
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  [[nodiscard]] bool has_header() const;
-  void clear_header() ;
-  [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& header() const;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE release_header();
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL mutable_header();
-  void set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE unsafe_arena_release_header();
-
-  private:
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& _internal_header() const;
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL _internal_mutable_header();
-
-  public:
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
-  void clear_status() ;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus status() const;
-  void set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
-
-  private:
-  ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus _internal_status() const;
-  void _internal_set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<2, 3,
-                          1, 76,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const RetryFailedWeatherSyncResponse& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr run_id_;
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE header_;
-    int status_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PipelineStats final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.PipelineStats) */ {
   using Super_ = ::google::protobuf::Message;
@@ -7798,7 +6708,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PipelineStats final : public ::goog
   [[nodiscard]] static const PipelineStats& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<PipelineStats>(&PipelineStats_globals_);
   }
-  static constexpr int kIndexInFileMessages = 8;
+  static constexpr int kIndexInFileMessages = 7;
   friend void swap(PipelineStats& a, PipelineStats& b) { a.Swap(&b); }
   inline void Swap(PipelineStats* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7892,7 +6802,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PipelineStats final : public ::goog
     kWeatherJobLineFieldNumber = 2,
     kExcelLineFieldNumber = 3,
     kValidationQueueLineFieldNumber = 4,
-    kPullLineFieldNumber = 5,
   };
   // .fusion.ai.proto.data_readiness.PipelineLine push_line = 1 [json_name = "push_line"];
   [[nodiscard]] bool has_push_line() const;
@@ -7909,7 +6818,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PipelineStats final : public ::goog
   ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NONNULL _internal_mutable_push_line();
 
   public:
-  // .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
+  // optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
   [[nodiscard]] bool has_weather_job_line() const;
   void clear_weather_job_line() ;
   [[nodiscard]] const ::fusion::ai::proto::data_readiness::PipelineLine& weather_job_line() const;
@@ -7954,27 +6863,12 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PipelineStats final : public ::goog
   ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NONNULL _internal_mutable_validation_queue_line();
 
   public:
-  // optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];
-  [[nodiscard]] bool has_pull_line() const;
-  void clear_pull_line() ;
-  [[nodiscard]] const ::fusion::ai::proto::data_readiness::PipelineLine& pull_line() const;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE release_pull_line();
-  ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NONNULL mutable_pull_line();
-  void set_allocated_pull_line(::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_pull_line(::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE value);
-  ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE unsafe_arena_release_pull_line();
-
-  private:
-  const ::fusion::ai::proto::data_readiness::PipelineLine& _internal_pull_line() const;
-  ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NONNULL _internal_mutable_pull_line();
-
-  public:
   // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.PipelineStats)
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<3, 5,
-                          5, 0,
+      ::google::protobuf::internal::TcParseTable<2, 4,
+                          4, 0,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -8006,264 +6900,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PipelineStats final : public ::goog
     ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE weather_job_line_;
     ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE excel_line_;
     ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE validation_queue_line_;
-    ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE pull_line_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherExcelTemplateResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline GetWeatherExcelTemplateResponse() : GetWeatherExcelTemplateResponse(nullptr) {}
-  ~GetWeatherExcelTemplateResponse() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetWeatherExcelTemplateResponse));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr GetWeatherExcelTemplateResponse(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline GetWeatherExcelTemplateResponse(const GetWeatherExcelTemplateResponse& from) : GetWeatherExcelTemplateResponse(nullptr, from) {}
-  inline GetWeatherExcelTemplateResponse(GetWeatherExcelTemplateResponse&& from) noexcept : GetWeatherExcelTemplateResponse(nullptr, ::std::move(from)) {}
-  inline GetWeatherExcelTemplateResponse& operator=(const GetWeatherExcelTemplateResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline GetWeatherExcelTemplateResponse& operator=(GetWeatherExcelTemplateResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const GetWeatherExcelTemplateResponse& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetWeatherExcelTemplateResponse>(&GetWeatherExcelTemplateResponse_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 34;
-  friend void swap(GetWeatherExcelTemplateResponse& a, GetWeatherExcelTemplateResponse& b) { a.Swap(&b); }
-  inline void Swap(GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<GetWeatherExcelTemplateResponse>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const GetWeatherExcelTemplateResponse& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const GetWeatherExcelTemplateResponse& from) { GetWeatherExcelTemplateResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(GetWeatherExcelTemplateResponse* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse"; }
-
-  explicit GetWeatherExcelTemplateResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  GetWeatherExcelTemplateResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetWeatherExcelTemplateResponse& from);
-  GetWeatherExcelTemplateResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetWeatherExcelTemplateResponse&& from) noexcept
-      : GetWeatherExcelTemplateResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kFileFieldNumber = 2,
-    kFilenameFieldNumber = 3,
-    kContentTypeFieldNumber = 4,
-    kHeaderFieldNumber = 1,
-  };
-  // bytes file = 2 [json_name = "file"];
-  void clear_file() ;
-  [[nodiscard]] const ::std::string& file() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_file(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_file();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_file();
-  void set_allocated_file(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_file() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_file(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_file();
-
-  public:
-  // string filename = 3 [json_name = "filename"];
-  void clear_filename() ;
-  [[nodiscard]] const ::std::string& filename() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_filename(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_filename();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_filename();
-  void set_allocated_filename(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_filename() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_filename(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_filename();
-
-  public:
-  // string content_type = 4 [json_name = "content_type"];
-  void clear_content_type() ;
-  [[nodiscard]] const ::std::string& content_type() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_content_type(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_content_type();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_content_type();
-  void set_allocated_content_type(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_content_type() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_content_type(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_content_type();
-
-  public:
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  [[nodiscard]] bool has_header() const;
-  void clear_header() ;
-  [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& header() const;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE release_header();
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL mutable_header();
-  void set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE unsafe_arena_release_header();
-
-  private:
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& _internal_header() const;
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL _internal_mutable_header();
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<2, 4,
-                          1, 91,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const GetWeatherExcelTemplateResponse& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr file_;
-    ::google::protobuf::internal::ArenaStringPtr filename_;
-    ::google::protobuf::internal::ArenaStringPtr content_type_;
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE header_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -8329,7 +6965,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataOverviewResponse final : pub
   [[nodiscard]] static const GetDataOverviewResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetDataOverviewResponse>(&GetDataOverviewResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 13;
+  static constexpr int kIndexInFileMessages = 12;
   friend void swap(GetDataOverviewResponse& a, GetDataOverviewResponse& b) { a.Swap(&b); }
   inline void Swap(GetDataOverviewResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8419,25 +7055,9 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataOverviewResponse final : pub
 
   // accessors -------------------------------------------------------
   enum : int {
-    kHeaderFieldNumber = 1,
-    kOverviewFieldNumber = 2,
+    kOverviewFieldNumber = 1,
   };
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  [[nodiscard]] bool has_header() const;
-  void clear_header() ;
-  [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& header() const;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE release_header();
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL mutable_header();
-  void set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE unsafe_arena_release_header();
-
-  private:
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& _internal_header() const;
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL _internal_mutable_header();
-
-  public:
-  // .fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];
+  // .fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];
   [[nodiscard]] bool has_overview() const;
   void clear_overview() ;
   [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataOverview& overview() const;
@@ -8456,8 +7076,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataOverviewResponse final : pub
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<1, 2,
-                          2, 0,
+      ::google::protobuf::internal::TcParseTable<0, 1,
+                          1, 0,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -8485,7 +7105,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataOverviewResponse final : pub
         const GetDataOverviewResponse& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE header_;
     ::fusion::ai::proto::data_readiness::DataOverview* PROTOBUF_NULLABLE overview_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -8552,7 +7171,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   [[nodiscard]] static const DataSiteRow& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<DataSiteRow>(&DataSiteRow_globals_);
   }
-  static constexpr int kIndexInFileMessages = 3;
+  static constexpr int kIndexInFileMessages = 2;
   friend void swap(DataSiteRow& a, DataSiteRow& b) { a.Swap(&b); }
   inline void Swap(DataSiteRow* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8642,23 +7261,22 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
 
   // accessors -------------------------------------------------------
   enum : int {
-    kTrend7DFieldNumber = 8,
+    kTrend7DFieldNumber = 7,
     kRegistrationIdFieldNumber = 1,
     kSiteIdFieldNumber = 2,
     kSiteNameFieldNumber = 3,
     kServiceTypeFieldNumber = 4,
-    kWeatherDisplayFieldNumber = 10,
-    kWorkbenchHrefFieldNumber = 15,
-    kLastPushAtFieldNumber = 11,
-    kLastIngestAtFieldNumber = 12,
+    kWeatherDisplayFieldNumber = 9,
+    kWorkbenchHrefFieldNumber = 14,
+    kLastPushAtFieldNumber = 10,
+    kLastIngestAtFieldNumber = 11,
+    kCoverageRatio7DFieldNumber = 6,
     kDataSourceFieldNumber = 5,
-    kPrimaryGranularityMinFieldNumber = 6,
-    kCoverageRatio7DFieldNumber = 7,
-    kWeatherStatusFieldNumber = 9,
-    kGapPoints7DFieldNumber = 13,
-    kReadinessStatusFieldNumber = 14,
+    kWeatherStatusFieldNumber = 8,
+    kGapPoints7DFieldNumber = 12,
+    kReadinessStatusFieldNumber = 13,
   };
-  // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];
+  // repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];
   [[nodiscard]] int trend_7d_size() const;
   private:
   int _internal_trend_7d_size() const;
@@ -8738,7 +7356,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   ::std::string* PROTOBUF_NONNULL _internal_mutable_service_type();
 
   public:
-  // string weather_display = 10 [json_name = "weather_display"];
+  // optional string weather_display = 9 [json_name = "weather_display"];
+  [[nodiscard]] bool has_weather_display() const;
   void clear_weather_display() ;
   [[nodiscard]] const ::std::string& weather_display() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -8753,7 +7372,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   ::std::string* PROTOBUF_NONNULL _internal_mutable_weather_display();
 
   public:
-  // string workbench_href = 15 [json_name = "workbench_href"];
+  // string workbench_href = 14 [json_name = "workbench_href"];
   void clear_workbench_href() ;
   [[nodiscard]] const ::std::string& workbench_href() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -8768,7 +7387,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   ::std::string* PROTOBUF_NONNULL _internal_mutable_workbench_href();
 
   public:
-  // optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];
+  // optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];
   [[nodiscard]] bool has_last_push_at() const;
   void clear_last_push_at() ;
   [[nodiscard]] const ::google::protobuf::Timestamp& last_push_at() const;
@@ -8783,7 +7402,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_last_push_at();
 
   public:
-  // optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];
+  // optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];
   [[nodiscard]] bool has_last_ingest_at() const;
   void clear_last_ingest_at() ;
   [[nodiscard]] const ::google::protobuf::Timestamp& last_ingest_at() const;
@@ -8798,27 +7417,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_last_ingest_at();
 
   public:
-  // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
-  void clear_data_source() ;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataSource data_source() const;
-  void set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
-
-  private:
-  ::fusion::ai::proto::data_readiness::DataSource _internal_data_source() const;
-  void _internal_set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
-
-  public:
-  // int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];
-  void clear_primary_granularity_min() ;
-  [[nodiscard]] ::int32_t primary_granularity_min() const;
-  void set_primary_granularity_min(::int32_t value);
-
-  private:
-  ::int32_t _internal_primary_granularity_min() const;
-  void _internal_set_primary_granularity_min(::int32_t value);
-
-  public:
-  // optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];
+  // optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];
   [[nodiscard]] bool has_coverage_ratio_7d() const;
   void clear_coverage_ratio_7d() ;
   [[nodiscard]] double coverage_ratio_7d() const;
@@ -8829,7 +7428,18 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   void _internal_set_coverage_ratio_7d(double value);
 
   public:
-  // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];
+  // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
+  void clear_data_source() ;
+  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataSource data_source() const;
+  void set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
+
+  private:
+  ::fusion::ai::proto::data_readiness::DataSource _internal_data_source() const;
+  void _internal_set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
+
+  public:
+  // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];
+  [[nodiscard]] bool has_weather_status() const;
   void clear_weather_status() ;
   [[nodiscard]] ::fusion::ai::proto::data_readiness::WeatherStatus weather_status() const;
   void set_weather_status(::fusion::ai::proto::data_readiness::WeatherStatus value);
@@ -8839,7 +7449,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   void _internal_set_weather_status(::fusion::ai::proto::data_readiness::WeatherStatus value);
 
   public:
-  // int32 gap_points_7d = 13 [json_name = "gap_points_7d"];
+  // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
   void clear_gap_points_7d() ;
   [[nodiscard]] ::int32_t gap_points_7d() const;
   void set_gap_points_7d(::int32_t value);
@@ -8849,7 +7459,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   void _internal_set_gap_points_7d(::int32_t value);
 
   public:
-  // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];
+  // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];
   void clear_readiness_status() ;
   [[nodiscard]] ::fusion::ai::proto::data_readiness::ReadinessStatus readiness_status() const;
   void set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value);
@@ -8863,7 +7473,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<4, 15,
+      ::google::protobuf::internal::TcParseTable<4, 14,
                           3, 131,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
@@ -8901,9 +7511,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
     ::google::protobuf::internal::ArenaStringPtr workbench_href_;
     ::google::protobuf::Timestamp* PROTOBUF_NULLABLE last_push_at_;
     ::google::protobuf::Timestamp* PROTOBUF_NULLABLE last_ingest_at_;
-    int data_source_;
-    ::int32_t primary_granularity_min_;
     double coverage_ratio_7d_;
+    int data_source_;
     int weather_status_;
     ::int32_t gap_points_7d_;
     int readiness_status_;
@@ -8972,7 +7581,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteReadiness final : public ::
   [[nodiscard]] static const DataSiteReadiness& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<DataSiteReadiness>(&DataSiteReadiness_globals_);
   }
-  static constexpr int kIndexInFileMessages = 6;
+  static constexpr int kIndexInFileMessages = 5;
   friend void swap(DataSiteReadiness& a, DataSiteReadiness& b) { a.Swap(&b); }
   inline void Swap(DataSiteReadiness* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9062,16 +7671,22 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteReadiness final : public ::
 
   // accessors -------------------------------------------------------
   enum : int {
-    kHeatmap14DFieldNumber = 8,
+    kHeatmap14DFieldNumber = 14,
     kRegistrationIdFieldNumber = 1,
-    kSiteNameFieldNumber = 2,
-    kGapFocusFieldNumber = 7,
-    kReadinessStatusFieldNumber = 3,
-    kWeatherStatusFieldNumber = 4,
-    kCoverageRatio7DFieldNumber = 5,
-    kGapPoints7DFieldNumber = 6,
+    kSiteIdFieldNumber = 2,
+    kSiteNameFieldNumber = 3,
+    kServiceTypeFieldNumber = 4,
+    kTrainWindowFieldNumber = 6,
+    kUpstreamLabelFieldNumber = 7,
+    kWeatherProviderIdFieldNumber = 8,
+    kGapFocusFieldNumber = 13,
+    kDataSourceFieldNumber = 5,
+    kReadinessStatusFieldNumber = 9,
+    kCoverageRatio7DFieldNumber = 11,
+    kWeatherStatusFieldNumber = 10,
+    kGapPoints7DFieldNumber = 12,
   };
-  // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];
+  // repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];
   [[nodiscard]] int heatmap_14d_size() const;
   private:
   int _internal_heatmap_14d_size() const;
@@ -9106,7 +7721,22 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteReadiness final : public ::
   ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
 
   public:
-  // string site_name = 2 [json_name = "site_name"];
+  // string site_id = 2 [json_name = "site_id"];
+  void clear_site_id() ;
+  [[nodiscard]] const ::std::string& site_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_site_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_site_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_site_id();
+  void set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_site_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_site_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_site_id();
+
+  public:
+  // string site_name = 3 [json_name = "site_name"];
   void clear_site_name() ;
   [[nodiscard]] const ::std::string& site_name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -9121,7 +7751,68 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteReadiness final : public ::
   ::std::string* PROTOBUF_NONNULL _internal_mutable_site_name();
 
   public:
-  // string gap_focus = 7 [json_name = "gap_focus"];
+  // string service_type = 4 [json_name = "service_type"];
+  void clear_service_type() ;
+  [[nodiscard]] const ::std::string& service_type() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_service_type(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_service_type();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_service_type();
+  void set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_service_type() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_service_type(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_service_type();
+
+  public:
+  // string train_window = 6 [json_name = "train_window"];
+  void clear_train_window() ;
+  [[nodiscard]] const ::std::string& train_window() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_train_window(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_train_window();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_train_window();
+  void set_allocated_train_window(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_train_window() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_train_window(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_train_window();
+
+  public:
+  // string upstream_label = 7 [json_name = "upstream_label"];
+  void clear_upstream_label() ;
+  [[nodiscard]] const ::std::string& upstream_label() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_upstream_label(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_upstream_label();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_upstream_label();
+  void set_allocated_upstream_label(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_upstream_label() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_upstream_label(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_upstream_label();
+
+  public:
+  // optional string weather_provider_id = 8 [json_name = "weather_provider_id"];
+  [[nodiscard]] bool has_weather_provider_id() const;
+  void clear_weather_provider_id() ;
+  [[nodiscard]] const ::std::string& weather_provider_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_weather_provider_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_weather_provider_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_weather_provider_id();
+  void set_allocated_weather_provider_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_weather_provider_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_weather_provider_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_weather_provider_id();
+
+  public:
+  // string gap_focus = 13 [json_name = "gap_focus"];
   void clear_gap_focus() ;
   [[nodiscard]] const ::std::string& gap_focus() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -9136,7 +7827,17 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteReadiness final : public ::
   ::std::string* PROTOBUF_NONNULL _internal_mutable_gap_focus();
 
   public:
-  // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
+  // .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
+  void clear_data_source() ;
+  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataSource data_source() const;
+  void set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
+
+  private:
+  ::fusion::ai::proto::data_readiness::DataSource _internal_data_source() const;
+  void _internal_set_data_source(::fusion::ai::proto::data_readiness::DataSource value);
+
+  public:
+  // .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];
   void clear_readiness_status() ;
   [[nodiscard]] ::fusion::ai::proto::data_readiness::ReadinessStatus readiness_status() const;
   void set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value);
@@ -9146,17 +7847,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteReadiness final : public ::
   void _internal_set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value);
 
   public:
-  // .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];
-  void clear_weather_status() ;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::WeatherStatus weather_status() const;
-  void set_weather_status(::fusion::ai::proto::data_readiness::WeatherStatus value);
-
-  private:
-  ::fusion::ai::proto::data_readiness::WeatherStatus _internal_weather_status() const;
-  void _internal_set_weather_status(::fusion::ai::proto::data_readiness::WeatherStatus value);
-
-  public:
-  // optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];
+  // optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];
   [[nodiscard]] bool has_coverage_ratio_7d() const;
   void clear_coverage_ratio_7d() ;
   [[nodiscard]] double coverage_ratio_7d() const;
@@ -9167,7 +7858,18 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteReadiness final : public ::
   void _internal_set_coverage_ratio_7d(double value);
 
   public:
-  // int32 gap_points_7d = 6 [json_name = "gap_points_7d"];
+  // optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];
+  [[nodiscard]] bool has_weather_status() const;
+  void clear_weather_status() ;
+  [[nodiscard]] ::fusion::ai::proto::data_readiness::WeatherStatus weather_status() const;
+  void set_weather_status(::fusion::ai::proto::data_readiness::WeatherStatus value);
+
+  private:
+  ::fusion::ai::proto::data_readiness::WeatherStatus _internal_weather_status() const;
+  void _internal_set_weather_status(::fusion::ai::proto::data_readiness::WeatherStatus value);
+
+  public:
+  // int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
   void clear_gap_points_7d() ;
   [[nodiscard]] ::int32_t gap_points_7d() const;
   void set_gap_points_7d(::int32_t value);
@@ -9181,8 +7883,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteReadiness final : public ::
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<3, 8,
-                          1, 98,
+      ::google::protobuf::internal::TcParseTable<4, 14,
+                          1, 162,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -9212,279 +7914,18 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteReadiness final : public ::
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::RepeatedPtrField< ::fusion::ai::proto::data_readiness::HeatmapDay > heatmap_14d_;
     ::google::protobuf::internal::ArenaStringPtr registration_id_;
+    ::google::protobuf::internal::ArenaStringPtr site_id_;
     ::google::protobuf::internal::ArenaStringPtr site_name_;
+    ::google::protobuf::internal::ArenaStringPtr service_type_;
+    ::google::protobuf::internal::ArenaStringPtr train_window_;
+    ::google::protobuf::internal::ArenaStringPtr upstream_label_;
+    ::google::protobuf::internal::ArenaStringPtr weather_provider_id_;
     ::google::protobuf::internal::ArenaStringPtr gap_focus_;
+    int data_source_;
     int readiness_status_;
-    int weather_status_;
     double coverage_ratio_7d_;
+    int weather_status_;
     ::int32_t gap_points_7d_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_data_5freadiness_2fdata_5freadiness_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateWeatherExcelImportJobResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline CreateWeatherExcelImportJobResponse() : CreateWeatherExcelImportJobResponse(nullptr) {}
-  ~CreateWeatherExcelImportJobResponse() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(CreateWeatherExcelImportJobResponse));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr CreateWeatherExcelImportJobResponse(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline CreateWeatherExcelImportJobResponse(const CreateWeatherExcelImportJobResponse& from) : CreateWeatherExcelImportJobResponse(nullptr, from) {}
-  inline CreateWeatherExcelImportJobResponse(CreateWeatherExcelImportJobResponse&& from) noexcept : CreateWeatherExcelImportJobResponse(nullptr, ::std::move(from)) {}
-  inline CreateWeatherExcelImportJobResponse& operator=(const CreateWeatherExcelImportJobResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CreateWeatherExcelImportJobResponse& operator=(CreateWeatherExcelImportJobResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const CreateWeatherExcelImportJobResponse& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CreateWeatherExcelImportJobResponse>(&CreateWeatherExcelImportJobResponse_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 32;
-  friend void swap(CreateWeatherExcelImportJobResponse& a, CreateWeatherExcelImportJobResponse& b) { a.Swap(&b); }
-  inline void Swap(CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<CreateWeatherExcelImportJobResponse>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const CreateWeatherExcelImportJobResponse& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const CreateWeatherExcelImportJobResponse& from) { CreateWeatherExcelImportJobResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(CreateWeatherExcelImportJobResponse* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse"; }
-
-  explicit CreateWeatherExcelImportJobResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  CreateWeatherExcelImportJobResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const CreateWeatherExcelImportJobResponse& from);
-  CreateWeatherExcelImportJobResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, CreateWeatherExcelImportJobResponse&& from) noexcept
-      : CreateWeatherExcelImportJobResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kJobIdFieldNumber = 2,
-    kErrorReportUrlFieldNumber = 5,
-    kHeaderFieldNumber = 1,
-    kAcceptedRowsFieldNumber = 3,
-    kFailedRowsFieldNumber = 4,
-  };
-  // string job_id = 2 [json_name = "job_id"];
-  void clear_job_id() ;
-  [[nodiscard]] const ::std::string& job_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_job_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_job_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_job_id();
-  void set_allocated_job_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_job_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_job_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_job_id();
-
-  public:
-  // optional string error_report_url = 5 [json_name = "error_report_url"];
-  [[nodiscard]] bool has_error_report_url() const;
-  void clear_error_report_url() ;
-  [[nodiscard]] const ::std::string& error_report_url() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_error_report_url(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_error_report_url();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_error_report_url();
-  void set_allocated_error_report_url(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_error_report_url() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_error_report_url(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_error_report_url();
-
-  public:
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  [[nodiscard]] bool has_header() const;
-  void clear_header() ;
-  [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& header() const;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE release_header();
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL mutable_header();
-  void set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE unsafe_arena_release_header();
-
-  private:
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& _internal_header() const;
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL _internal_mutable_header();
-
-  public:
-  // optional int32 accepted_rows = 3 [json_name = "accepted_rows"];
-  [[nodiscard]] bool has_accepted_rows() const;
-  void clear_accepted_rows() ;
-  [[nodiscard]] ::int32_t accepted_rows() const;
-  void set_accepted_rows(::int32_t value);
-
-  private:
-  ::int32_t _internal_accepted_rows() const;
-  void _internal_set_accepted_rows(::int32_t value);
-
-  public:
-  // optional int32 failed_rows = 4 [json_name = "failed_rows"];
-  [[nodiscard]] bool has_failed_rows() const;
-  void clear_failed_rows() ;
-  [[nodiscard]] ::int32_t failed_rows() const;
-  void set_failed_rows(::int32_t value);
-
-  private:
-  ::int32_t _internal_failed_rows() const;
-  void _internal_set_failed_rows(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<3, 5,
-                          1, 97,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const CreateWeatherExcelImportJobResponse& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr job_id_;
-    ::google::protobuf::internal::ArenaStringPtr error_report_url_;
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE header_;
-    ::int32_t accepted_rows_;
-    ::int32_t failed_rows_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -9550,7 +7991,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherResponse final : pu
   [[nodiscard]] static const BatchSyncWeatherResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<BatchSyncWeatherResponse>(&BatchSyncWeatherResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 28;
+  static constexpr int kIndexInFileMessages = 25;
   friend void swap(BatchSyncWeatherResponse& a, BatchSyncWeatherResponse& b) { a.Swap(&b); }
   inline void Swap(BatchSyncWeatherResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9640,14 +8081,13 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherResponse final : pu
 
   // accessors -------------------------------------------------------
   enum : int {
-    kPartialErrorsFieldNumber = 6,
-    kRunIdFieldNumber = 2,
-    kHeaderFieldNumber = 1,
-    kStatusFieldNumber = 3,
-    kTaskTotalFieldNumber = 4,
-    kTaskFailedFieldNumber = 5,
+    kPartialErrorsFieldNumber = 5,
+    kRunIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+    kTaskTotalFieldNumber = 3,
+    kTaskFailedFieldNumber = 4,
   };
-  // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];
+  // repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];
   [[nodiscard]] int partial_errors_size() const;
   private:
   int _internal_partial_errors_size() const;
@@ -9667,7 +8107,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherResponse final : pu
   ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::data_readiness::WeatherSyncPartialError>* PROTOBUF_NONNULL _internal_mutable_partial_errors();
 
   public:
-  // string run_id = 2 [json_name = "run_id"];
+  // string run_id = 1 [json_name = "run_id"];
   void clear_run_id() ;
   [[nodiscard]] const ::std::string& run_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -9682,22 +8122,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherResponse final : pu
   ::std::string* PROTOBUF_NONNULL _internal_mutable_run_id();
 
   public:
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  [[nodiscard]] bool has_header() const;
-  void clear_header() ;
-  [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& header() const;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE release_header();
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL mutable_header();
-  void set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE unsafe_arena_release_header();
-
-  private:
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& _internal_header() const;
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL _internal_mutable_header();
-
-  public:
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
   void clear_status() ;
   [[nodiscard]] ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus status() const;
   void set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
@@ -9707,7 +8132,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherResponse final : pu
   void _internal_set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value);
 
   public:
-  // int32 task_total = 4 [json_name = "task_total"];
+  // int32 task_total = 3 [json_name = "task_total"];
   void clear_task_total() ;
   [[nodiscard]] ::int32_t task_total() const;
   void set_task_total(::int32_t value);
@@ -9717,7 +8142,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherResponse final : pu
   void _internal_set_task_total(::int32_t value);
 
   public:
-  // int32 task_failed = 5 [json_name = "task_failed"];
+  // int32 task_failed = 4 [json_name = "task_failed"];
   void clear_task_failed() ;
   [[nodiscard]] ::int32_t task_failed() const;
   void set_task_failed(::int32_t value);
@@ -9731,8 +8156,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherResponse final : pu
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<3, 6,
-                          2, 70,
+      ::google::protobuf::internal::TcParseTable<3, 5,
+                          1, 70,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -9762,7 +8187,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED BatchSyncWeatherResponse final : pu
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::RepeatedPtrField< ::fusion::ai::proto::data_readiness::WeatherSyncPartialError > partial_errors_;
     ::google::protobuf::internal::ArenaStringPtr run_id_;
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE header_;
     int status_;
     ::int32_t task_total_;
     ::int32_t task_failed_;
@@ -9831,7 +8255,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSyncRunResponse final : p
   [[nodiscard]] static const GetWeatherSyncRunResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetWeatherSyncRunResponse>(&GetWeatherSyncRunResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 25;
+  static constexpr int kIndexInFileMessages = 22;
   friend void swap(GetWeatherSyncRunResponse& a, GetWeatherSyncRunResponse& b) { a.Swap(&b); }
   inline void Swap(GetWeatherSyncRunResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9921,25 +8345,9 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSyncRunResponse final : p
 
   // accessors -------------------------------------------------------
   enum : int {
-    kHeaderFieldNumber = 1,
-    kRunFieldNumber = 2,
+    kRunFieldNumber = 1,
   };
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  [[nodiscard]] bool has_header() const;
-  void clear_header() ;
-  [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& header() const;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE release_header();
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL mutable_header();
-  void set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE unsafe_arena_release_header();
-
-  private:
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& _internal_header() const;
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL _internal_mutable_header();
-
-  public:
-  // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
+  // .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
   [[nodiscard]] bool has_run() const;
   void clear_run() ;
   [[nodiscard]] const ::fusion::ai::proto::data_readiness::WeatherSyncRunView& run() const;
@@ -9958,8 +8366,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSyncRunResponse final : p
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<1, 2,
-                          2, 0,
+      ::google::protobuf::internal::TcParseTable<0, 1,
+                          1, 0,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -9987,7 +8395,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSyncRunResponse final : p
         const GetWeatherSyncRunResponse& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE header_;
     ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NULLABLE run_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -10054,7 +8461,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetWeatherSiteResponse final : publ
   [[nodiscard]] static const GetWeatherSiteResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetWeatherSiteResponse>(&GetWeatherSiteResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 23;
+  static constexpr int kIndexInFileMessages = 20;
   friend void swap(GetWeatherSiteResponse& a, GetWeatherSiteResponse& b) { a.Swap(&b); }
   inline void Swap(GetWeatherSiteResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -10260,7 +8667,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataSiteReadinessResponse final 
   [[nodiscard]] static const GetDataSiteReadinessResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetDataSiteReadinessResponse>(&GetDataSiteReadinessResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 17;
+  static constexpr int kIndexInFileMessages = 16;
   friend void swap(GetDataSiteReadinessResponse& a, GetDataSiteReadinessResponse& b) { a.Swap(&b); }
   inline void Swap(GetDataSiteReadinessResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -10466,7 +8873,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataPipelineStatsResponse final 
   [[nodiscard]] static const GetDataPipelineStatsResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetDataPipelineStatsResponse>(&GetDataPipelineStatsResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 19;
+  static constexpr int kIndexInFileMessages = 18;
   friend void swap(GetDataPipelineStatsResponse& a, GetDataPipelineStatsResponse& b) { a.Swap(&b); }
   inline void Swap(GetDataPipelineStatsResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -10672,7 +9079,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRowPage final : public ::go
   [[nodiscard]] static const DataSiteRowPage& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<DataSiteRowPage>(&DataSiteRowPage_globals_);
   }
-  static constexpr int kIndexInFileMessages = 4;
+  static constexpr int kIndexInFileMessages = 3;
   friend void swap(DataSiteRowPage& a, DataSiteRowPage& b) { a.Swap(&b); }
   inline void Swap(DataSiteRowPage* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -10919,7 +9326,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsResponse final : pu
   [[nodiscard]] static const ListDataSiteRowsResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<ListDataSiteRowsResponse>(&ListDataSiteRowsResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 15;
+  static constexpr int kIndexInFileMessages = 14;
   friend void swap(ListDataSiteRowsResponse& a, ListDataSiteRowsResponse& b) { a.Swap(&b); }
   inline void Swap(ListDataSiteRowsResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -11009,25 +9416,9 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsResponse final : pu
 
   // accessors -------------------------------------------------------
   enum : int {
-    kHeaderFieldNumber = 1,
-    kPageFieldNumber = 2,
+    kPageFieldNumber = 1,
   };
-  // .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-  [[nodiscard]] bool has_header() const;
-  void clear_header() ;
-  [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& header() const;
-  [[nodiscard]] ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE release_header();
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL mutable_header();
-  void set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE unsafe_arena_release_header();
-
-  private:
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& _internal_header() const;
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL _internal_mutable_header();
-
-  public:
-  // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];
+  // .fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];
   [[nodiscard]] bool has_page() const;
   void clear_page() ;
   [[nodiscard]] const ::fusion::ai::proto::data_readiness::DataSiteRowPage& page() const;
@@ -11046,8 +9437,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsResponse final : pu
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<1, 2,
-                          2, 0,
+      ::google::protobuf::internal::TcParseTable<0, 1,
+                          1, 0,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -11075,7 +9466,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsResponse final : pu
         const ListDataSiteRowsResponse& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE header_;
     ::fusion::ai::proto::data_readiness::DataSiteRowPage* PROTOBUF_NULLABLE page_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -11095,202 +9485,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListDataSiteRowsResponse final : pu
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// DataReadinessReplyHeader
-
-// string state = 1 [json_name = "state", (.buf.validate.field) = {
-inline void DataReadinessReplyHeader::clear_state() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.state_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline const ::std::string& DataReadinessReplyHeader::state() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.state)
-  return _internal_state();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void DataReadinessReplyHeader::set_state(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  _impl_.state_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.state)
-}
-inline ::std::string* PROTOBUF_NONNULL DataReadinessReplyHeader::mutable_state()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::std::string* _s = _internal_mutable_state();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.state)
-  return _s;
-}
-inline const ::std::string& DataReadinessReplyHeader::_internal_state() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.state_.Get();
-}
-inline void DataReadinessReplyHeader::_internal_set_state(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.state_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL DataReadinessReplyHeader::_internal_mutable_state() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.state_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE DataReadinessReplyHeader::release_state() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.state)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  auto* released = _impl_.state_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.state_.Set("", GetArena());
-  }
-  return released;
-}
-inline void DataReadinessReplyHeader::set_allocated_state(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-  _impl_.state_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.state_.IsDefault()) {
-    _impl_.state_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.state)
-}
-
-// string code = 2 [json_name = "code", (.buf.validate.field) = {
-inline void DataReadinessReplyHeader::clear_code() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.code_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-}
-inline const ::std::string& DataReadinessReplyHeader::code() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.code)
-  return _internal_code();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void DataReadinessReplyHeader::set_code(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  _impl_.code_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.code)
-}
-inline ::std::string* PROTOBUF_NONNULL DataReadinessReplyHeader::mutable_code()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  ::std::string* _s = _internal_mutable_code();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.code)
-  return _s;
-}
-inline const ::std::string& DataReadinessReplyHeader::_internal_code() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.code_.Get();
-}
-inline void DataReadinessReplyHeader::_internal_set_code(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.code_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL DataReadinessReplyHeader::_internal_mutable_code() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.code_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE DataReadinessReplyHeader::release_code() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.code)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  auto* released = _impl_.code_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.code_.Set("", GetArena());
-  }
-  return released;
-}
-inline void DataReadinessReplyHeader::set_allocated_code(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  }
-  _impl_.code_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.code_.IsDefault()) {
-    _impl_.code_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.code)
-}
-
-// string message = 3 [json_name = "message", (.buf.validate.field) = {
-inline void DataReadinessReplyHeader::clear_message() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.message_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-}
-inline const ::std::string& DataReadinessReplyHeader::message() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.message)
-  return _internal_message();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void DataReadinessReplyHeader::set_message(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  _impl_.message_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.message)
-}
-inline ::std::string* PROTOBUF_NONNULL DataReadinessReplyHeader::mutable_message()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  ::std::string* _s = _internal_mutable_message();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.message)
-  return _s;
-}
-inline const ::std::string& DataReadinessReplyHeader::_internal_message() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.message_.Get();
-}
-inline void DataReadinessReplyHeader::_internal_set_message(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.message_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL DataReadinessReplyHeader::_internal_mutable_message() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.message_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE DataReadinessReplyHeader::release_message() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.message)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000004U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  auto* released = _impl_.message_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.message_.Set("", GetArena());
-  }
-  return released;
-}
-inline void DataReadinessReplyHeader::set_allocated_message(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  }
-  _impl_.message_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.message_.IsDefault()) {
-    _impl_.message_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataReadinessReplyHeader.message)
-}
-
 // -------------------------------------------------------------------
 
 // DataOverview
@@ -11367,7 +9561,11 @@ inline void DataOverview::_internal_set_need_fill_count(::int32_t value) {
   _impl_.need_fill_count_ = value;
 }
 
-// int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+// optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];
+inline bool DataOverview::has_weather_missing_count() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
+  return value;
+}
 inline void DataOverview::clear_weather_missing_count() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.weather_missing_count_ = 0;
@@ -11799,7 +9997,7 @@ inline void DataSiteRow::set_allocated_service_type(::std::string* PROTOBUF_NULL
 inline void DataSiteRow::clear_data_source() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.data_source_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000400U);
 }
 inline ::fusion::ai::proto::data_readiness::DataSource DataSiteRow::data_source() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteRow.data_source)
@@ -11807,7 +10005,7 @@ inline ::fusion::ai::proto::data_readiness::DataSource DataSiteRow::data_source(
 }
 inline void DataSiteRow::set_data_source(::fusion::ai::proto::data_readiness::DataSource value) {
   _internal_set_data_source(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000200U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000400U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteRow.data_source)
 }
 inline ::fusion::ai::proto::data_readiness::DataSource DataSiteRow::_internal_data_source() const {
@@ -11819,39 +10017,15 @@ inline void DataSiteRow::_internal_set_data_source(::fusion::ai::proto::data_rea
   _impl_.data_source_ = value;
 }
 
-// int32 primary_granularity_min = 6 [json_name = "primary_granularity_min"];
-inline void DataSiteRow::clear_primary_granularity_min() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.primary_granularity_min_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000400U);
-}
-inline ::int32_t DataSiteRow::primary_granularity_min() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteRow.primary_granularity_min)
-  return _internal_primary_granularity_min();
-}
-inline void DataSiteRow::set_primary_granularity_min(::int32_t value) {
-  _internal_set_primary_granularity_min(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000400U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteRow.primary_granularity_min)
-}
-inline ::int32_t DataSiteRow::_internal_primary_granularity_min() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.primary_granularity_min_;
-}
-inline void DataSiteRow::_internal_set_primary_granularity_min(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.primary_granularity_min_ = value;
-}
-
-// optional double coverage_ratio_7d = 7 [json_name = "coverage_ratio_7d"];
+// optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];
 inline bool DataSiteRow::has_coverage_ratio_7d() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000800U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000200U);
   return value;
 }
 inline void DataSiteRow::clear_coverage_ratio_7d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.coverage_ratio_7d_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000800U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
 }
 inline double DataSiteRow::coverage_ratio_7d() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteRow.coverage_ratio_7d)
@@ -11859,7 +10033,7 @@ inline double DataSiteRow::coverage_ratio_7d() const {
 }
 inline void DataSiteRow::set_coverage_ratio_7d(double value) {
   _internal_set_coverage_ratio_7d(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000800U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000200U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteRow.coverage_ratio_7d)
 }
 inline double DataSiteRow::_internal_coverage_ratio_7d() const {
@@ -11871,7 +10045,7 @@ inline void DataSiteRow::_internal_set_coverage_ratio_7d(double value) {
   _impl_.coverage_ratio_7d_ = value;
 }
 
-// repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 8 [json_name = "trend_7d"];
+// repeated .fusion.ai.proto.data_readiness.CoverageTrendPoint trend_7d = 7 [json_name = "trend_7d"];
 inline int DataSiteRow::_internal_trend_7d_size() const {
   return _internal_trend_7d().size();
 }
@@ -11926,11 +10100,15 @@ DataSiteRow::_internal_mutable_trend_7d() {
   return &_impl_.trend_7d_;
 }
 
-// .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 9 [json_name = "weather_status"];
+// optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 8 [json_name = "weather_status"];
+inline bool DataSiteRow::has_weather_status() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000800U);
+  return value;
+}
 inline void DataSiteRow::clear_weather_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.weather_status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000800U);
 }
 inline ::fusion::ai::proto::data_readiness::WeatherStatus DataSiteRow::weather_status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteRow.weather_status)
@@ -11938,7 +10116,7 @@ inline ::fusion::ai::proto::data_readiness::WeatherStatus DataSiteRow::weather_s
 }
 inline void DataSiteRow::set_weather_status(::fusion::ai::proto::data_readiness::WeatherStatus value) {
   _internal_set_weather_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00001000U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000800U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteRow.weather_status)
 }
 inline ::fusion::ai::proto::data_readiness::WeatherStatus DataSiteRow::_internal_weather_status() const {
@@ -11950,7 +10128,11 @@ inline void DataSiteRow::_internal_set_weather_status(::fusion::ai::proto::data_
   _impl_.weather_status_ = value;
 }
 
-// string weather_display = 10 [json_name = "weather_display"];
+// optional string weather_display = 9 [json_name = "weather_display"];
+inline bool DataSiteRow::has_weather_display() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000020U);
+  return value;
+}
 inline void DataSiteRow::clear_weather_display() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.weather_display_.ClearToEmpty();
@@ -12014,7 +10196,7 @@ inline void DataSiteRow::set_allocated_weather_display(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteRow.weather_display)
 }
 
-// optional .google.protobuf.Timestamp last_push_at = 11 [json_name = "last_push_at"];
+// optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];
 inline bool DataSiteRow::has_last_push_at() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000080U);
   PROTOBUF_ASSUME(!value || _impl_.last_push_at_ != nullptr);
@@ -12107,7 +10289,7 @@ inline void DataSiteRow::set_allocated_last_push_at(::google::protobuf::Timestam
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteRow.last_push_at)
 }
 
-// optional .google.protobuf.Timestamp last_ingest_at = 12 [json_name = "last_ingest_at"];
+// optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];
 inline bool DataSiteRow::has_last_ingest_at() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000100U);
   PROTOBUF_ASSUME(!value || _impl_.last_ingest_at_ != nullptr);
@@ -12200,11 +10382,11 @@ inline void DataSiteRow::set_allocated_last_ingest_at(::google::protobuf::Timest
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at)
 }
 
-// int32 gap_points_7d = 13 [json_name = "gap_points_7d"];
+// int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
 inline void DataSiteRow::clear_gap_points_7d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.gap_points_7d_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00002000U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
 }
 inline ::int32_t DataSiteRow::gap_points_7d() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteRow.gap_points_7d)
@@ -12212,7 +10394,7 @@ inline ::int32_t DataSiteRow::gap_points_7d() const {
 }
 inline void DataSiteRow::set_gap_points_7d(::int32_t value) {
   _internal_set_gap_points_7d(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00002000U);
+  SetHasBit(_impl_._has_bits_[0], 0x00001000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteRow.gap_points_7d)
 }
 inline ::int32_t DataSiteRow::_internal_gap_points_7d() const {
@@ -12224,11 +10406,11 @@ inline void DataSiteRow::_internal_set_gap_points_7d(::int32_t value) {
   _impl_.gap_points_7d_ = value;
 }
 
-// .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 14 [json_name = "readiness_status"];
+// .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 13 [json_name = "readiness_status"];
 inline void DataSiteRow::clear_readiness_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.readiness_status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00004000U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00002000U);
 }
 inline ::fusion::ai::proto::data_readiness::ReadinessStatus DataSiteRow::readiness_status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteRow.readiness_status)
@@ -12236,7 +10418,7 @@ inline ::fusion::ai::proto::data_readiness::ReadinessStatus DataSiteRow::readine
 }
 inline void DataSiteRow::set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value) {
   _internal_set_readiness_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00004000U);
+  SetHasBit(_impl_._has_bits_[0], 0x00002000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteRow.readiness_status)
 }
 inline ::fusion::ai::proto::data_readiness::ReadinessStatus DataSiteRow::_internal_readiness_status() const {
@@ -12248,7 +10430,7 @@ inline void DataSiteRow::_internal_set_readiness_status(::fusion::ai::proto::dat
   _impl_.readiness_status_ = value;
 }
 
-// string workbench_href = 15 [json_name = "workbench_href"];
+// string workbench_href = 14 [json_name = "workbench_href"];
 inline void DataSiteRow::clear_workbench_href() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.workbench_href_.ClearToEmpty();
@@ -12627,11 +10809,75 @@ inline void DataSiteReadiness::set_allocated_registration_id(::std::string* PROT
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteReadiness.registration_id)
 }
 
-// string site_name = 2 [json_name = "site_name"];
+// string site_id = 2 [json_name = "site_id"];
+inline void DataSiteReadiness::clear_site_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+}
+inline const ::std::string& DataSiteReadiness::site_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.site_id)
+  return _internal_site_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void DataSiteReadiness::set_site_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  _impl_.site_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.site_id)
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::mutable_site_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ::std::string* _s = _internal_mutable_site_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteReadiness.site_id)
+  return _s;
+}
+inline const ::std::string& DataSiteReadiness::_internal_site_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.site_id_.Get();
+}
+inline void DataSiteReadiness::_internal_set_site_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.site_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::_internal_mutable_site_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.site_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE DataSiteReadiness::release_site_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteReadiness.site_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000004U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  auto* released = _impl_.site_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.site_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void DataSiteReadiness::set_allocated_site_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  }
+  _impl_.site_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.site_id_.IsDefault()) {
+    _impl_.site_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteReadiness.site_id)
+}
+
+// string site_name = 3 [json_name = "site_name"];
 inline void DataSiteReadiness::clear_site_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.site_name_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
 }
 inline const ::std::string& DataSiteReadiness::site_name() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -12641,13 +10887,13 @@ inline const ::std::string& DataSiteReadiness::site_name() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void DataSiteReadiness::set_site_name(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
   _impl_.site_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.site_name)
 }
 inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::mutable_site_name()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
   ::std::string* _s = _internal_mutable_site_name();
   // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteReadiness.site_name)
   return _s;
@@ -12667,10 +10913,10 @@ inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::_internal_mutable_site
 inline ::std::string* PROTOBUF_NULLABLE DataSiteReadiness::release_site_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteReadiness.site_name)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000004U)) {
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000008U)) {
     return nullptr;
   }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
   auto* released = _impl_.site_name_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.site_name_.Set("", GetArena());
@@ -12680,9 +10926,9 @@ inline ::std::string* PROTOBUF_NULLABLE DataSiteReadiness::release_site_name() {
 inline void DataSiteReadiness::set_allocated_site_name(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
   }
   _impl_.site_name_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.site_name_.IsDefault()) {
@@ -12691,11 +10937,295 @@ inline void DataSiteReadiness::set_allocated_site_name(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteReadiness.site_name)
 }
 
-// .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
+// string service_type = 4 [json_name = "service_type"];
+inline void DataSiteReadiness::clear_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.service_type_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+}
+inline const ::std::string& DataSiteReadiness::service_type() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.service_type)
+  return _internal_service_type();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void DataSiteReadiness::set_service_type(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  _impl_.service_type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.service_type)
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::mutable_service_type()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  ::std::string* _s = _internal_mutable_service_type();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteReadiness.service_type)
+  return _s;
+}
+inline const ::std::string& DataSiteReadiness::_internal_service_type() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.service_type_.Get();
+}
+inline void DataSiteReadiness::_internal_set_service_type(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.service_type_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::_internal_mutable_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.service_type_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE DataSiteReadiness::release_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteReadiness.service_type)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000010U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  auto* released = _impl_.service_type_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.service_type_.Set("", GetArena());
+  }
+  return released;
+}
+inline void DataSiteReadiness::set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  }
+  _impl_.service_type_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.service_type_.IsDefault()) {
+    _impl_.service_type_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteReadiness.service_type)
+}
+
+// .fusion.ai.proto.data_readiness.DataSource data_source = 5 [json_name = "data_source"];
+inline void DataSiteReadiness::clear_data_source() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.data_source_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
+}
+inline ::fusion::ai::proto::data_readiness::DataSource DataSiteReadiness::data_source() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.data_source)
+  return _internal_data_source();
+}
+inline void DataSiteReadiness::set_data_source(::fusion::ai::proto::data_readiness::DataSource value) {
+  _internal_set_data_source(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000200U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.data_source)
+}
+inline ::fusion::ai::proto::data_readiness::DataSource DataSiteReadiness::_internal_data_source() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return static_cast<::fusion::ai::proto::data_readiness::DataSource>(_impl_.data_source_);
+}
+inline void DataSiteReadiness::_internal_set_data_source(::fusion::ai::proto::data_readiness::DataSource value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.data_source_ = value;
+}
+
+// string train_window = 6 [json_name = "train_window"];
+inline void DataSiteReadiness::clear_train_window() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.train_window_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+}
+inline const ::std::string& DataSiteReadiness::train_window() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.train_window)
+  return _internal_train_window();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void DataSiteReadiness::set_train_window(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  _impl_.train_window_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.train_window)
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::mutable_train_window()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ::std::string* _s = _internal_mutable_train_window();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteReadiness.train_window)
+  return _s;
+}
+inline const ::std::string& DataSiteReadiness::_internal_train_window() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.train_window_.Get();
+}
+inline void DataSiteReadiness::_internal_set_train_window(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.train_window_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::_internal_mutable_train_window() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.train_window_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE DataSiteReadiness::release_train_window() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteReadiness.train_window)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000020U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  auto* released = _impl_.train_window_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.train_window_.Set("", GetArena());
+  }
+  return released;
+}
+inline void DataSiteReadiness::set_allocated_train_window(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  }
+  _impl_.train_window_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.train_window_.IsDefault()) {
+    _impl_.train_window_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteReadiness.train_window)
+}
+
+// string upstream_label = 7 [json_name = "upstream_label"];
+inline void DataSiteReadiness::clear_upstream_label() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.upstream_label_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+}
+inline const ::std::string& DataSiteReadiness::upstream_label() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.upstream_label)
+  return _internal_upstream_label();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void DataSiteReadiness::set_upstream_label(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  _impl_.upstream_label_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.upstream_label)
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::mutable_upstream_label()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ::std::string* _s = _internal_mutable_upstream_label();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteReadiness.upstream_label)
+  return _s;
+}
+inline const ::std::string& DataSiteReadiness::_internal_upstream_label() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.upstream_label_.Get();
+}
+inline void DataSiteReadiness::_internal_set_upstream_label(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.upstream_label_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::_internal_mutable_upstream_label() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.upstream_label_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE DataSiteReadiness::release_upstream_label() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteReadiness.upstream_label)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000040U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  auto* released = _impl_.upstream_label_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.upstream_label_.Set("", GetArena());
+  }
+  return released;
+}
+inline void DataSiteReadiness::set_allocated_upstream_label(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  }
+  _impl_.upstream_label_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.upstream_label_.IsDefault()) {
+    _impl_.upstream_label_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteReadiness.upstream_label)
+}
+
+// optional string weather_provider_id = 8 [json_name = "weather_provider_id"];
+inline bool DataSiteReadiness::has_weather_provider_id() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000080U);
+  return value;
+}
+inline void DataSiteReadiness::clear_weather_provider_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.weather_provider_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+}
+inline const ::std::string& DataSiteReadiness::weather_provider_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.weather_provider_id)
+  return _internal_weather_provider_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void DataSiteReadiness::set_weather_provider_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  _impl_.weather_provider_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.weather_provider_id)
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::mutable_weather_provider_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  ::std::string* _s = _internal_mutable_weather_provider_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteReadiness.weather_provider_id)
+  return _s;
+}
+inline const ::std::string& DataSiteReadiness::_internal_weather_provider_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.weather_provider_id_.Get();
+}
+inline void DataSiteReadiness::_internal_set_weather_provider_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.weather_provider_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::_internal_mutable_weather_provider_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.weather_provider_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE DataSiteReadiness::release_weather_provider_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteReadiness.weather_provider_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000080U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  auto* released = _impl_.weather_provider_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.weather_provider_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void DataSiteReadiness::set_allocated_weather_provider_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  }
+  _impl_.weather_provider_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.weather_provider_id_.IsDefault()) {
+    _impl_.weather_provider_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteReadiness.weather_provider_id)
+}
+
+// .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 9 [json_name = "readiness_status"];
 inline void DataSiteReadiness::clear_readiness_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.readiness_status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000400U);
 }
 inline ::fusion::ai::proto::data_readiness::ReadinessStatus DataSiteReadiness::readiness_status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.readiness_status)
@@ -12703,7 +11233,7 @@ inline ::fusion::ai::proto::data_readiness::ReadinessStatus DataSiteReadiness::r
 }
 inline void DataSiteReadiness::set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value) {
   _internal_set_readiness_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000400U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.readiness_status)
 }
 inline ::fusion::ai::proto::data_readiness::ReadinessStatus DataSiteReadiness::_internal_readiness_status() const {
@@ -12715,11 +11245,15 @@ inline void DataSiteReadiness::_internal_set_readiness_status(::fusion::ai::prot
   _impl_.readiness_status_ = value;
 }
 
-// .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 4 [json_name = "weather_status"];
+// optional .fusion.ai.proto.data_readiness.WeatherStatus weather_status = 10 [json_name = "weather_status"];
+inline bool DataSiteReadiness::has_weather_status() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00001000U);
+  return value;
+}
 inline void DataSiteReadiness::clear_weather_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.weather_status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
 }
 inline ::fusion::ai::proto::data_readiness::WeatherStatus DataSiteReadiness::weather_status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.weather_status)
@@ -12727,7 +11261,7 @@ inline ::fusion::ai::proto::data_readiness::WeatherStatus DataSiteReadiness::wea
 }
 inline void DataSiteReadiness::set_weather_status(::fusion::ai::proto::data_readiness::WeatherStatus value) {
   _internal_set_weather_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  SetHasBit(_impl_._has_bits_[0], 0x00001000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.weather_status)
 }
 inline ::fusion::ai::proto::data_readiness::WeatherStatus DataSiteReadiness::_internal_weather_status() const {
@@ -12739,15 +11273,15 @@ inline void DataSiteReadiness::_internal_set_weather_status(::fusion::ai::proto:
   _impl_.weather_status_ = value;
 }
 
-// optional double coverage_ratio_7d = 5 [json_name = "coverage_ratio_7d"];
+// optional double coverage_ratio_7d = 11 [json_name = "coverage_ratio_7d"];
 inline bool DataSiteReadiness::has_coverage_ratio_7d() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000040U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000800U);
   return value;
 }
 inline void DataSiteReadiness::clear_coverage_ratio_7d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.coverage_ratio_7d_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000800U);
 }
 inline double DataSiteReadiness::coverage_ratio_7d() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.coverage_ratio_7d)
@@ -12755,7 +11289,7 @@ inline double DataSiteReadiness::coverage_ratio_7d() const {
 }
 inline void DataSiteReadiness::set_coverage_ratio_7d(double value) {
   _internal_set_coverage_ratio_7d(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000800U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.coverage_ratio_7d)
 }
 inline double DataSiteReadiness::_internal_coverage_ratio_7d() const {
@@ -12767,11 +11301,11 @@ inline void DataSiteReadiness::_internal_set_coverage_ratio_7d(double value) {
   _impl_.coverage_ratio_7d_ = value;
 }
 
-// int32 gap_points_7d = 6 [json_name = "gap_points_7d"];
+// int32 gap_points_7d = 12 [json_name = "gap_points_7d"];
 inline void DataSiteReadiness::clear_gap_points_7d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.gap_points_7d_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00002000U);
 }
 inline ::int32_t DataSiteReadiness::gap_points_7d() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteReadiness.gap_points_7d)
@@ -12779,7 +11313,7 @@ inline ::int32_t DataSiteReadiness::gap_points_7d() const {
 }
 inline void DataSiteReadiness::set_gap_points_7d(::int32_t value) {
   _internal_set_gap_points_7d(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  SetHasBit(_impl_._has_bits_[0], 0x00002000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.gap_points_7d)
 }
 inline ::int32_t DataSiteReadiness::_internal_gap_points_7d() const {
@@ -12791,11 +11325,11 @@ inline void DataSiteReadiness::_internal_set_gap_points_7d(::int32_t value) {
   _impl_.gap_points_7d_ = value;
 }
 
-// string gap_focus = 7 [json_name = "gap_focus"];
+// string gap_focus = 13 [json_name = "gap_focus"];
 inline void DataSiteReadiness::clear_gap_focus() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.gap_focus_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
 }
 inline const ::std::string& DataSiteReadiness::gap_focus() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -12805,13 +11339,13 @@ inline const ::std::string& DataSiteReadiness::gap_focus() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void DataSiteReadiness::set_gap_focus(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   _impl_.gap_focus_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteReadiness.gap_focus)
 }
 inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::mutable_gap_focus()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   ::std::string* _s = _internal_mutable_gap_focus();
   // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteReadiness.gap_focus)
   return _s;
@@ -12831,10 +11365,10 @@ inline ::std::string* PROTOBUF_NONNULL DataSiteReadiness::_internal_mutable_gap_
 inline ::std::string* PROTOBUF_NULLABLE DataSiteReadiness::release_gap_focus() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteReadiness.gap_focus)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000008U)) {
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000100U)) {
     return nullptr;
   }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
   auto* released = _impl_.gap_focus_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.gap_focus_.Set("", GetArena());
@@ -12844,9 +11378,9 @@ inline ::std::string* PROTOBUF_NULLABLE DataSiteReadiness::release_gap_focus() {
 inline void DataSiteReadiness::set_allocated_gap_focus(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
   }
   _impl_.gap_focus_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.gap_focus_.IsDefault()) {
@@ -12855,7 +11389,7 @@ inline void DataSiteReadiness::set_allocated_gap_focus(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteReadiness.gap_focus)
 }
 
-// repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 8 [json_name = "heatmap_14d"];
+// repeated .fusion.ai.proto.data_readiness.HeatmapDay heatmap_14d = 14 [json_name = "heatmap_14d"];
 inline int DataSiteReadiness::_internal_heatmap_14d_size() const {
   return _internal_heatmap_14d().size();
 }
@@ -13156,7 +11690,7 @@ inline void PipelineStats::set_allocated_push_line(::fusion::ai::proto::data_rea
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.PipelineStats.push_line)
 }
 
-// .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
+// optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];
 inline bool PipelineStats::has_weather_job_line() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
   PROTOBUF_ASSUME(!value || _impl_.weather_job_line_ != nullptr);
@@ -13448,104 +11982,6 @@ inline void PipelineStats::set_allocated_validation_queue_line(::fusion::ai::pro
 
   _impl_.validation_queue_line_ = reinterpret_cast<::fusion::ai::proto::data_readiness::PipelineLine*>(value);
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.PipelineStats.validation_queue_line)
-}
-
-// optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];
-inline bool PipelineStats::has_pull_line() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
-  PROTOBUF_ASSUME(!value || _impl_.pull_line_ != nullptr);
-  return value;
-}
-inline void PipelineStats::clear_pull_line() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.pull_line_ != nullptr) _impl_.pull_line_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-}
-inline const ::fusion::ai::proto::data_readiness::PipelineLine& PipelineStats::_internal_pull_line() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::fusion::ai::proto::data_readiness::PipelineLine* p = _impl_.pull_line_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::PipelineLine>(&::fusion::ai::proto::data_readiness::PipelineLine_globals_);
-}
-inline const ::fusion::ai::proto::data_readiness::PipelineLine& PipelineStats::pull_line() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.PipelineStats.pull_line)
-  return _internal_pull_line();
-}
-inline void PipelineStats::unsafe_arena_set_allocated_pull_line(
-    ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.pull_line_);
-  }
-  _impl_.pull_line_ = reinterpret_cast<::fusion::ai::proto::data_readiness::PipelineLine*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.PipelineStats.pull_line)
-}
-inline ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE PipelineStats::release_pull_line() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  ::fusion::ai::proto::data_readiness::PipelineLine* released = _impl_.pull_line_;
-  _impl_.pull_line_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE PipelineStats::unsafe_arena_release_pull_line() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.PipelineStats.pull_line)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  ::fusion::ai::proto::data_readiness::PipelineLine* temp = _impl_.pull_line_;
-  _impl_.pull_line_ = nullptr;
-  return temp;
-}
-inline ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NONNULL PipelineStats::_internal_mutable_pull_line() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.pull_line_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::PipelineLine>(GetArena());
-    _impl_.pull_line_ = reinterpret_cast<::fusion::ai::proto::data_readiness::PipelineLine*>(p);
-  }
-  return _impl_.pull_line_;
-}
-inline ::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NONNULL PipelineStats::mutable_pull_line()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  ::fusion::ai::proto::data_readiness::PipelineLine* _msg = _internal_mutable_pull_line();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.PipelineStats.pull_line)
-  return _msg;
-}
-inline void PipelineStats::set_allocated_pull_line(::fusion::ai::proto::data_readiness::PipelineLine* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.pull_line_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  }
-
-  _impl_.pull_line_ = reinterpret_cast<::fusion::ai::proto::data_readiness::PipelineLine*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.PipelineStats.pull_line)
 }
 
 // -------------------------------------------------------------------
@@ -14794,114 +13230,16 @@ inline void GetDataOverviewRequest::set_allocated_service_type(::std::string* PR
 
 // GetDataOverviewResponse
 
-// .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-inline bool GetDataOverviewResponse::has_header() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
-  PROTOBUF_ASSUME(!value || _impl_.header_ != nullptr);
-  return value;
-}
-inline void GetDataOverviewResponse::clear_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ != nullptr) _impl_.header_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& GetDataOverviewResponse::_internal_header() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* p = _impl_.header_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(&::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& GetDataOverviewResponse::header() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.GetDataOverviewResponse.header)
-  return _internal_header();
-}
-inline void GetDataOverviewResponse::unsafe_arena_set_allocated_header(
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.GetDataOverviewResponse.header)
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE GetDataOverviewResponse::release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* released = _impl_.header_;
-  _impl_.header_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE GetDataOverviewResponse::unsafe_arena_release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.GetDataOverviewResponse.header)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* temp = _impl_.header_;
-  _impl_.header_ = nullptr;
-  return temp;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL GetDataOverviewResponse::_internal_mutable_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(GetArena());
-    _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(p);
-  }
-  return _impl_.header_;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL GetDataOverviewResponse::mutable_header()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* _msg = _internal_mutable_header();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.GetDataOverviewResponse.header)
-  return _msg;
-}
-inline void GetDataOverviewResponse::set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.GetDataOverviewResponse.header)
-}
-
-// .fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];
+// .fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];
 inline bool GetDataOverviewResponse::has_overview() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
   PROTOBUF_ASSUME(!value || _impl_.overview_ != nullptr);
   return value;
 }
 inline void GetDataOverviewResponse::clear_overview() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.overview_ != nullptr) _impl_.overview_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
 }
 inline const ::fusion::ai::proto::data_readiness::DataOverview& GetDataOverviewResponse::_internal_overview() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
@@ -14920,16 +13258,16 @@ inline void GetDataOverviewResponse::unsafe_arena_set_allocated_overview(
   }
   _impl_.overview_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataOverview*>(value);
   if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.GetDataOverviewResponse.overview)
 }
 inline ::fusion::ai::proto::data_readiness::DataOverview* PROTOBUF_NULLABLE GetDataOverviewResponse::release_overview() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   ::fusion::ai::proto::data_readiness::DataOverview* released = _impl_.overview_;
   _impl_.overview_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -14949,7 +13287,7 @@ inline ::fusion::ai::proto::data_readiness::DataOverview* PROTOBUF_NULLABLE GetD
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.GetDataOverviewResponse.overview)
 
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   ::fusion::ai::proto::data_readiness::DataOverview* temp = _impl_.overview_;
   _impl_.overview_ = nullptr;
   return temp;
@@ -14964,7 +13302,7 @@ inline ::fusion::ai::proto::data_readiness::DataOverview* PROTOBUF_NONNULL GetDa
 }
 inline ::fusion::ai::proto::data_readiness::DataOverview* PROTOBUF_NONNULL GetDataOverviewResponse::mutable_overview()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
   ::fusion::ai::proto::data_readiness::DataOverview* _msg = _internal_mutable_overview();
   // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.GetDataOverviewResponse.overview)
   return _msg;
@@ -14981,9 +13319,9 @@ inline void GetDataOverviewResponse::set_allocated_overview(::fusion::ai::proto:
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   }
 
   _impl_.overview_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataOverview*>(value);
@@ -15118,43 +13456,15 @@ inline void ListDataSiteRowsRequest::set_allocated_service_type(::std::string* P
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.service_type)
 }
 
-// optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];
-inline bool ListDataSiteRowsRequest::has_data_source() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
-  return value;
-}
-inline void ListDataSiteRowsRequest::clear_data_source() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.data_source_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-}
-inline ::fusion::ai::proto::data_readiness::DataSource ListDataSiteRowsRequest::data_source() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.data_source)
-  return _internal_data_source();
-}
-inline void ListDataSiteRowsRequest::set_data_source(::fusion::ai::proto::data_readiness::DataSource value) {
-  _internal_set_data_source(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.data_source)
-}
-inline ::fusion::ai::proto::data_readiness::DataSource ListDataSiteRowsRequest::_internal_data_source() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return static_cast<::fusion::ai::proto::data_readiness::DataSource>(_impl_.data_source_);
-}
-inline void ListDataSiteRowsRequest::_internal_set_data_source(::fusion::ai::proto::data_readiness::DataSource value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.data_source_ = value;
-}
-
-// optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];
+// optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];
 inline bool ListDataSiteRowsRequest::has_readiness_status() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000020U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
   return value;
 }
 inline void ListDataSiteRowsRequest::clear_readiness_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.readiness_status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
 }
 inline ::fusion::ai::proto::data_readiness::ReadinessStatus ListDataSiteRowsRequest::readiness_status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.readiness_status)
@@ -15162,7 +13472,7 @@ inline ::fusion::ai::proto::data_readiness::ReadinessStatus ListDataSiteRowsRequ
 }
 inline void ListDataSiteRowsRequest::set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value) {
   _internal_set_readiness_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.readiness_status)
 }
 inline ::fusion::ai::proto::data_readiness::ReadinessStatus ListDataSiteRowsRequest::_internal_readiness_status() const {
@@ -15174,35 +13484,7 @@ inline void ListDataSiteRowsRequest::_internal_set_readiness_status(::fusion::ai
   _impl_.readiness_status_ = value;
 }
 
-// optional int32 granularity_min = 6 [json_name = "granularity_min"];
-inline bool ListDataSiteRowsRequest::has_granularity_min() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000040U);
-  return value;
-}
-inline void ListDataSiteRowsRequest::clear_granularity_min() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.granularity_min_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
-}
-inline ::int32_t ListDataSiteRowsRequest::granularity_min() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.granularity_min)
-  return _internal_granularity_min();
-}
-inline void ListDataSiteRowsRequest::set_granularity_min(::int32_t value) {
-  _internal_set_granularity_min(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.granularity_min)
-}
-inline ::int32_t ListDataSiteRowsRequest::_internal_granularity_min() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.granularity_min_;
-}
-inline void ListDataSiteRowsRequest::_internal_set_granularity_min(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.granularity_min_ = value;
-}
-
-// optional string q = 7 [json_name = "q"];
+// optional string q = 5 [json_name = "q"];
 inline bool ListDataSiteRowsRequest::has_q() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
   return value;
@@ -15274,114 +13556,16 @@ inline void ListDataSiteRowsRequest::set_allocated_q(::std::string* PROTOBUF_NUL
 
 // ListDataSiteRowsResponse
 
-// .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-inline bool ListDataSiteRowsResponse::has_header() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
-  PROTOBUF_ASSUME(!value || _impl_.header_ != nullptr);
-  return value;
-}
-inline void ListDataSiteRowsResponse::clear_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ != nullptr) _impl_.header_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& ListDataSiteRowsResponse::_internal_header() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* p = _impl_.header_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(&::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& ListDataSiteRowsResponse::header() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.header)
-  return _internal_header();
-}
-inline void ListDataSiteRowsResponse::unsafe_arena_set_allocated_header(
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.header)
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE ListDataSiteRowsResponse::release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* released = _impl_.header_;
-  _impl_.header_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE ListDataSiteRowsResponse::unsafe_arena_release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.header)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* temp = _impl_.header_;
-  _impl_.header_ = nullptr;
-  return temp;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL ListDataSiteRowsResponse::_internal_mutable_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(GetArena());
-    _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(p);
-  }
-  return _impl_.header_;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL ListDataSiteRowsResponse::mutable_header()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* _msg = _internal_mutable_header();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.header)
-  return _msg;
-}
-inline void ListDataSiteRowsResponse::set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.header)
-}
-
-// .fusion.ai.proto.data_readiness.DataSiteRowPage page = 2 [json_name = "page"];
+// .fusion.ai.proto.data_readiness.DataSiteRowPage page = 1 [json_name = "page"];
 inline bool ListDataSiteRowsResponse::has_page() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
   PROTOBUF_ASSUME(!value || _impl_.page_ != nullptr);
   return value;
 }
 inline void ListDataSiteRowsResponse::clear_page() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.page_ != nullptr) _impl_.page_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
 }
 inline const ::fusion::ai::proto::data_readiness::DataSiteRowPage& ListDataSiteRowsResponse::_internal_page() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
@@ -15400,16 +13584,16 @@ inline void ListDataSiteRowsResponse::unsafe_arena_set_allocated_page(
   }
   _impl_.page_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataSiteRowPage*>(value);
   if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.page)
 }
 inline ::fusion::ai::proto::data_readiness::DataSiteRowPage* PROTOBUF_NULLABLE ListDataSiteRowsResponse::release_page() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   ::fusion::ai::proto::data_readiness::DataSiteRowPage* released = _impl_.page_;
   _impl_.page_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -15429,7 +13613,7 @@ inline ::fusion::ai::proto::data_readiness::DataSiteRowPage* PROTOBUF_NULLABLE L
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.page)
 
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   ::fusion::ai::proto::data_readiness::DataSiteRowPage* temp = _impl_.page_;
   _impl_.page_ = nullptr;
   return temp;
@@ -15444,7 +13628,7 @@ inline ::fusion::ai::proto::data_readiness::DataSiteRowPage* PROTOBUF_NONNULL Li
 }
 inline ::fusion::ai::proto::data_readiness::DataSiteRowPage* PROTOBUF_NONNULL ListDataSiteRowsResponse::mutable_page()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
   ::fusion::ai::proto::data_readiness::DataSiteRowPage* _msg = _internal_mutable_page();
   // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.page)
   return _msg;
@@ -15461,9 +13645,9 @@ inline void ListDataSiteRowsResponse::set_allocated_page(::fusion::ai::proto::da
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   }
 
   _impl_.page_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataSiteRowPage*>(value);
@@ -15644,6 +13828,74 @@ inline void GetDataSiteReadinessResponse::set_allocated_readiness(::fusion::ai::
 
 // GetDataPipelineStatsRequest
 
+// optional string service_type = 1 [json_name = "service_type"];
+inline bool GetDataPipelineStatsRequest::has_service_type() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
+  return value;
+}
+inline void GetDataPipelineStatsRequest::clear_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.service_type_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::std::string& GetDataPipelineStatsRequest::service_type() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest.service_type)
+  return _internal_service_type();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetDataPipelineStatsRequest::set_service_type(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  _impl_.service_type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest.service_type)
+}
+inline ::std::string* PROTOBUF_NONNULL GetDataPipelineStatsRequest::mutable_service_type()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::std::string* _s = _internal_mutable_service_type();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest.service_type)
+  return _s;
+}
+inline const ::std::string& GetDataPipelineStatsRequest::_internal_service_type() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.service_type_.Get();
+}
+inline void GetDataPipelineStatsRequest::_internal_set_service_type(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.service_type_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetDataPipelineStatsRequest::_internal_mutable_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.service_type_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetDataPipelineStatsRequest::release_service_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest.service_type)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  auto* released = _impl_.service_type_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.service_type_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetDataPipelineStatsRequest::set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  }
+  _impl_.service_type_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.service_type_.IsDefault()) {
+    _impl_.service_type_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest.service_type)
+}
+
 // -------------------------------------------------------------------
 
 // GetDataPipelineStatsResponse
@@ -15744,334 +13996,6 @@ inline void GetDataPipelineStatsResponse::set_allocated_stats(::fusion::ai::prot
 
   _impl_.stats_ = reinterpret_cast<::fusion::ai::proto::data_readiness::PipelineStats*>(value);
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse.stats)
-}
-
-// -------------------------------------------------------------------
-
-// ExportDataGapsRequest
-
-// optional string service_type = 1 [json_name = "service_type"];
-inline bool ExportDataGapsRequest::has_service_type() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
-  return value;
-}
-inline void ExportDataGapsRequest::clear_service_type() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.service_type_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline const ::std::string& ExportDataGapsRequest::service_type() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ExportDataGapsRequest.service_type)
-  return _internal_service_type();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ExportDataGapsRequest::set_service_type(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  _impl_.service_type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.ExportDataGapsRequest.service_type)
-}
-inline ::std::string* PROTOBUF_NONNULL ExportDataGapsRequest::mutable_service_type()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::std::string* _s = _internal_mutable_service_type();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.ExportDataGapsRequest.service_type)
-  return _s;
-}
-inline const ::std::string& ExportDataGapsRequest::_internal_service_type() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.service_type_.Get();
-}
-inline void ExportDataGapsRequest::_internal_set_service_type(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.service_type_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ExportDataGapsRequest::_internal_mutable_service_type() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.service_type_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ExportDataGapsRequest::release_service_type() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.ExportDataGapsRequest.service_type)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  auto* released = _impl_.service_type_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.service_type_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ExportDataGapsRequest::set_allocated_service_type(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-  _impl_.service_type_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.service_type_.IsDefault()) {
-    _impl_.service_type_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.ExportDataGapsRequest.service_type)
-}
-
-// optional .fusion.ai.proto.data_readiness.DataSource data_source = 2 [json_name = "data_source"];
-inline bool ExportDataGapsRequest::has_data_source() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000004U);
-  return value;
-}
-inline void ExportDataGapsRequest::clear_data_source() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.data_source_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-}
-inline ::fusion::ai::proto::data_readiness::DataSource ExportDataGapsRequest::data_source() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ExportDataGapsRequest.data_source)
-  return _internal_data_source();
-}
-inline void ExportDataGapsRequest::set_data_source(::fusion::ai::proto::data_readiness::DataSource value) {
-  _internal_set_data_source(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.ExportDataGapsRequest.data_source)
-}
-inline ::fusion::ai::proto::data_readiness::DataSource ExportDataGapsRequest::_internal_data_source() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return static_cast<::fusion::ai::proto::data_readiness::DataSource>(_impl_.data_source_);
-}
-inline void ExportDataGapsRequest::_internal_set_data_source(::fusion::ai::proto::data_readiness::DataSource value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.data_source_ = value;
-}
-
-// optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 3 [json_name = "readiness_status"];
-inline bool ExportDataGapsRequest::has_readiness_status() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
-  return value;
-}
-inline void ExportDataGapsRequest::clear_readiness_status() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.readiness_status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
-}
-inline ::fusion::ai::proto::data_readiness::ReadinessStatus ExportDataGapsRequest::readiness_status() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ExportDataGapsRequest.readiness_status)
-  return _internal_readiness_status();
-}
-inline void ExportDataGapsRequest::set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value) {
-  _internal_set_readiness_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.ExportDataGapsRequest.readiness_status)
-}
-inline ::fusion::ai::proto::data_readiness::ReadinessStatus ExportDataGapsRequest::_internal_readiness_status() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return static_cast<::fusion::ai::proto::data_readiness::ReadinessStatus>(_impl_.readiness_status_);
-}
-inline void ExportDataGapsRequest::_internal_set_readiness_status(::fusion::ai::proto::data_readiness::ReadinessStatus value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.readiness_status_ = value;
-}
-
-// optional string q = 4 [json_name = "q"];
-inline bool ExportDataGapsRequest::has_q() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
-  return value;
-}
-inline void ExportDataGapsRequest::clear_q() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.q_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-}
-inline const ::std::string& ExportDataGapsRequest::q() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ExportDataGapsRequest.q)
-  return _internal_q();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ExportDataGapsRequest::set_q(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  _impl_.q_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.ExportDataGapsRequest.q)
-}
-inline ::std::string* PROTOBUF_NONNULL ExportDataGapsRequest::mutable_q()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  ::std::string* _s = _internal_mutable_q();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.ExportDataGapsRequest.q)
-  return _s;
-}
-inline const ::std::string& ExportDataGapsRequest::_internal_q() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.q_.Get();
-}
-inline void ExportDataGapsRequest::_internal_set_q(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.q_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ExportDataGapsRequest::_internal_mutable_q() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.q_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ExportDataGapsRequest::release_q() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.ExportDataGapsRequest.q)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  auto* released = _impl_.q_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.q_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ExportDataGapsRequest::set_allocated_q(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  }
-  _impl_.q_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.q_.IsDefault()) {
-    _impl_.q_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.ExportDataGapsRequest.q)
-}
-
-// -------------------------------------------------------------------
-
-// ExportDataGapsResponse
-
-// bytes csv = 1 [json_name = "csv"];
-inline void ExportDataGapsResponse::clear_csv() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.csv_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline const ::std::string& ExportDataGapsResponse::csv() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ExportDataGapsResponse.csv)
-  return _internal_csv();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ExportDataGapsResponse::set_csv(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  _impl_.csv_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.ExportDataGapsResponse.csv)
-}
-inline ::std::string* PROTOBUF_NONNULL ExportDataGapsResponse::mutable_csv()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::std::string* _s = _internal_mutable_csv();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.ExportDataGapsResponse.csv)
-  return _s;
-}
-inline const ::std::string& ExportDataGapsResponse::_internal_csv() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.csv_.Get();
-}
-inline void ExportDataGapsResponse::_internal_set_csv(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.csv_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ExportDataGapsResponse::_internal_mutable_csv() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.csv_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ExportDataGapsResponse::release_csv() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.ExportDataGapsResponse.csv)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  auto* released = _impl_.csv_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.csv_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ExportDataGapsResponse::set_allocated_csv(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-  _impl_.csv_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.csv_.IsDefault()) {
-    _impl_.csv_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.ExportDataGapsResponse.csv)
-}
-
-// string filename = 2 [json_name = "filename"];
-inline void ExportDataGapsResponse::clear_filename() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.filename_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-}
-inline const ::std::string& ExportDataGapsResponse::filename() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.ExportDataGapsResponse.filename)
-  return _internal_filename();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ExportDataGapsResponse::set_filename(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  _impl_.filename_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.ExportDataGapsResponse.filename)
-}
-inline ::std::string* PROTOBUF_NONNULL ExportDataGapsResponse::mutable_filename()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  ::std::string* _s = _internal_mutable_filename();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.ExportDataGapsResponse.filename)
-  return _s;
-}
-inline const ::std::string& ExportDataGapsResponse::_internal_filename() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.filename_.Get();
-}
-inline void ExportDataGapsResponse::_internal_set_filename(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.filename_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ExportDataGapsResponse::_internal_mutable_filename() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.filename_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ExportDataGapsResponse::release_filename() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.ExportDataGapsResponse.filename)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  auto* released = _impl_.filename_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.filename_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ExportDataGapsResponse::set_allocated_filename(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  }
-  _impl_.filename_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.filename_.IsDefault()) {
-    _impl_.filename_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.ExportDataGapsResponse.filename)
 }
 
 // -------------------------------------------------------------------
@@ -16340,114 +14264,16 @@ inline void GetWeatherSyncRunRequest::_internal_set_include_tasks(bool value) {
 
 // GetWeatherSyncRunResponse
 
-// .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-inline bool GetWeatherSyncRunResponse::has_header() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
-  PROTOBUF_ASSUME(!value || _impl_.header_ != nullptr);
-  return value;
-}
-inline void GetWeatherSyncRunResponse::clear_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ != nullptr) _impl_.header_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& GetWeatherSyncRunResponse::_internal_header() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* p = _impl_.header_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(&::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& GetWeatherSyncRunResponse::header() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
-  return _internal_header();
-}
-inline void GetWeatherSyncRunResponse::unsafe_arena_set_allocated_header(
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE GetWeatherSyncRunResponse::release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* released = _impl_.header_;
-  _impl_.header_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE GetWeatherSyncRunResponse::unsafe_arena_release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* temp = _impl_.header_;
-  _impl_.header_ = nullptr;
-  return temp;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL GetWeatherSyncRunResponse::_internal_mutable_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(GetArena());
-    _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(p);
-  }
-  return _impl_.header_;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL GetWeatherSyncRunResponse::mutable_header()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* _msg = _internal_mutable_header();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
-  return _msg;
-}
-inline void GetWeatherSyncRunResponse::set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.header)
-}
-
-// .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 2 [json_name = "run"];
+// .fusion.ai.proto.data_readiness.WeatherSyncRunView run = 1 [json_name = "run"];
 inline bool GetWeatherSyncRunResponse::has_run() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
   PROTOBUF_ASSUME(!value || _impl_.run_ != nullptr);
   return value;
 }
 inline void GetWeatherSyncRunResponse::clear_run() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.run_ != nullptr) _impl_.run_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
 }
 inline const ::fusion::ai::proto::data_readiness::WeatherSyncRunView& GetWeatherSyncRunResponse::_internal_run() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
@@ -16466,16 +14292,16 @@ inline void GetWeatherSyncRunResponse::unsafe_arena_set_allocated_run(
   }
   _impl_.run_ = reinterpret_cast<::fusion::ai::proto::data_readiness::WeatherSyncRunView*>(value);
   if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run)
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NULLABLE GetWeatherSyncRunResponse::release_run() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   ::fusion::ai::proto::data_readiness::WeatherSyncRunView* released = _impl_.run_;
   _impl_.run_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
@@ -16495,7 +14321,7 @@ inline ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NULLABL
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run)
 
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   ::fusion::ai::proto::data_readiness::WeatherSyncRunView* temp = _impl_.run_;
   _impl_.run_ = nullptr;
   return temp;
@@ -16510,7 +14336,7 @@ inline ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NONNULL
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunView* PROTOBUF_NONNULL GetWeatherSyncRunResponse::mutable_run()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
   ::fusion::ai::proto::data_readiness::WeatherSyncRunView* _msg = _internal_mutable_run();
   // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run)
   return _msg;
@@ -16527,9 +14353,9 @@ inline void GetWeatherSyncRunResponse::set_allocated_run(::fusion::ai::proto::da
     if (message_arena != submessage_arena) {
       value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
   }
 
   _impl_.run_ = reinterpret_cast<::fusion::ai::proto::data_readiness::WeatherSyncRunView*>(value);
@@ -17044,105 +14870,7 @@ inline void WeatherSyncPartialError::set_allocated_message(::std::string* PROTOB
 
 // BatchSyncWeatherResponse
 
-// .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-inline bool BatchSyncWeatherResponse::has_header() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000004U);
-  PROTOBUF_ASSUME(!value || _impl_.header_ != nullptr);
-  return value;
-}
-inline void BatchSyncWeatherResponse::clear_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ != nullptr) _impl_.header_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& BatchSyncWeatherResponse::_internal_header() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* p = _impl_.header_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(&::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& BatchSyncWeatherResponse::header() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.header)
-  return _internal_header();
-}
-inline void BatchSyncWeatherResponse::unsafe_arena_set_allocated_header(
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.header)
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE BatchSyncWeatherResponse::release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* released = _impl_.header_;
-  _impl_.header_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE BatchSyncWeatherResponse::unsafe_arena_release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.header)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* temp = _impl_.header_;
-  _impl_.header_ = nullptr;
-  return temp;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL BatchSyncWeatherResponse::_internal_mutable_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(GetArena());
-    _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(p);
-  }
-  return _impl_.header_;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL BatchSyncWeatherResponse::mutable_header()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* _msg = _internal_mutable_header();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.header)
-  return _msg;
-}
-inline void BatchSyncWeatherResponse::set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  }
-
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.header)
-}
-
-// string run_id = 2 [json_name = "run_id"];
+// string run_id = 1 [json_name = "run_id"];
 inline void BatchSyncWeatherResponse::clear_run_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.run_id_.ClearToEmpty();
@@ -17206,11 +14934,11 @@ inline void BatchSyncWeatherResponse::set_allocated_run_id(::std::string* PROTOB
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.run_id)
 }
 
-// .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
+// .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
 inline void BatchSyncWeatherResponse::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus BatchSyncWeatherResponse::status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.status)
@@ -17218,7 +14946,7 @@ inline ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus BatchSyncWeathe
 }
 inline void BatchSyncWeatherResponse::set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value) {
   _internal_set_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.status)
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus BatchSyncWeatherResponse::_internal_status() const {
@@ -17230,11 +14958,11 @@ inline void BatchSyncWeatherResponse::_internal_set_status(::fusion::ai::proto::
   _impl_.status_ = value;
 }
 
-// int32 task_total = 4 [json_name = "task_total"];
+// int32 task_total = 3 [json_name = "task_total"];
 inline void BatchSyncWeatherResponse::clear_task_total() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.task_total_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
 }
 inline ::int32_t BatchSyncWeatherResponse::task_total() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.task_total)
@@ -17242,7 +14970,7 @@ inline ::int32_t BatchSyncWeatherResponse::task_total() const {
 }
 inline void BatchSyncWeatherResponse::set_task_total(::int32_t value) {
   _internal_set_task_total(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.task_total)
 }
 inline ::int32_t BatchSyncWeatherResponse::_internal_task_total() const {
@@ -17254,11 +14982,11 @@ inline void BatchSyncWeatherResponse::_internal_set_task_total(::int32_t value) 
   _impl_.task_total_ = value;
 }
 
-// int32 task_failed = 5 [json_name = "task_failed"];
+// int32 task_failed = 4 [json_name = "task_failed"];
 inline void BatchSyncWeatherResponse::clear_task_failed() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.task_failed_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
 }
 inline ::int32_t BatchSyncWeatherResponse::task_failed() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.task_failed)
@@ -17266,7 +14994,7 @@ inline ::int32_t BatchSyncWeatherResponse::task_failed() const {
 }
 inline void BatchSyncWeatherResponse::set_task_failed(::int32_t value) {
   _internal_set_task_failed(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.task_failed)
 }
 inline ::int32_t BatchSyncWeatherResponse::_internal_task_failed() const {
@@ -17278,7 +15006,7 @@ inline void BatchSyncWeatherResponse::_internal_set_task_failed(::int32_t value)
   _impl_.task_failed_ = value;
 }
 
-// repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];
+// repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];
 inline int BatchSyncWeatherResponse::_internal_partial_errors_size() const {
   return _internal_partial_errors().size();
 }
@@ -17409,105 +15137,7 @@ inline void RetryFailedWeatherSyncRequest::set_allocated_run_id(::std::string* P
 
 // RetryFailedWeatherSyncResponse
 
-// .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-inline bool RetryFailedWeatherSyncResponse::has_header() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
-  PROTOBUF_ASSUME(!value || _impl_.header_ != nullptr);
-  return value;
-}
-inline void RetryFailedWeatherSyncResponse::clear_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ != nullptr) _impl_.header_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& RetryFailedWeatherSyncResponse::_internal_header() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* p = _impl_.header_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(&::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& RetryFailedWeatherSyncResponse::header() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
-  return _internal_header();
-}
-inline void RetryFailedWeatherSyncResponse::unsafe_arena_set_allocated_header(
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE RetryFailedWeatherSyncResponse::release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* released = _impl_.header_;
-  _impl_.header_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE RetryFailedWeatherSyncResponse::unsafe_arena_release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* temp = _impl_.header_;
-  _impl_.header_ = nullptr;
-  return temp;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL RetryFailedWeatherSyncResponse::_internal_mutable_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(GetArena());
-    _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(p);
-  }
-  return _impl_.header_;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL RetryFailedWeatherSyncResponse::mutable_header()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* _msg = _internal_mutable_header();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
-  return _msg;
-}
-inline void RetryFailedWeatherSyncResponse::set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
-  }
-
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.header)
-}
-
-// string run_id = 2 [json_name = "run_id"];
+// string run_id = 1 [json_name = "run_id"];
 inline void RetryFailedWeatherSyncResponse::clear_run_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.run_id_.ClearToEmpty();
@@ -17571,11 +15201,11 @@ inline void RetryFailedWeatherSyncResponse::set_allocated_run_id(::std::string* 
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.run_id)
 }
 
-// .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];
+// .fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];
 inline void RetryFailedWeatherSyncResponse::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus RetryFailedWeatherSyncResponse::status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status)
@@ -17583,7 +15213,7 @@ inline ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus RetryFailedWeat
 }
 inline void RetryFailedWeatherSyncResponse::set_status(::fusion::ai::proto::data_readiness::WeatherSyncRunStatus value) {
   _internal_set_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status)
 }
 inline ::fusion::ai::proto::data_readiness::WeatherSyncRunStatus RetryFailedWeatherSyncResponse::_internal_status() const {
@@ -17795,105 +15425,7 @@ inline void CreateWeatherExcelImportJobRequest::set_allocated_filename(::std::st
 
 // CreateWeatherExcelImportJobResponse
 
-// .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-inline bool CreateWeatherExcelImportJobResponse::has_header() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000004U);
-  PROTOBUF_ASSUME(!value || _impl_.header_ != nullptr);
-  return value;
-}
-inline void CreateWeatherExcelImportJobResponse::clear_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ != nullptr) _impl_.header_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& CreateWeatherExcelImportJobResponse::_internal_header() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* p = _impl_.header_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(&::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& CreateWeatherExcelImportJobResponse::header() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.header)
-  return _internal_header();
-}
-inline void CreateWeatherExcelImportJobResponse::unsafe_arena_set_allocated_header(
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.header)
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE CreateWeatherExcelImportJobResponse::release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* released = _impl_.header_;
-  _impl_.header_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE CreateWeatherExcelImportJobResponse::unsafe_arena_release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.header)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* temp = _impl_.header_;
-  _impl_.header_ = nullptr;
-  return temp;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL CreateWeatherExcelImportJobResponse::_internal_mutable_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(GetArena());
-    _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(p);
-  }
-  return _impl_.header_;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL CreateWeatherExcelImportJobResponse::mutable_header()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* _msg = _internal_mutable_header();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.header)
-  return _msg;
-}
-inline void CreateWeatherExcelImportJobResponse::set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
-  }
-
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.header)
-}
-
-// string job_id = 2 [json_name = "job_id"];
+// string job_id = 1 [json_name = "job_id"];
 inline void CreateWeatherExcelImportJobResponse::clear_job_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.job_id_.ClearToEmpty();
@@ -17957,15 +15489,15 @@ inline void CreateWeatherExcelImportJobResponse::set_allocated_job_id(::std::str
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.job_id)
 }
 
-// optional int32 accepted_rows = 3 [json_name = "accepted_rows"];
+// optional int32 accepted_rows = 2 [json_name = "accepted_rows"];
 inline bool CreateWeatherExcelImportJobResponse::has_accepted_rows() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000004U);
   return value;
 }
 inline void CreateWeatherExcelImportJobResponse::clear_accepted_rows() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.accepted_rows_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
 }
 inline ::int32_t CreateWeatherExcelImportJobResponse::accepted_rows() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.accepted_rows)
@@ -17973,7 +15505,7 @@ inline ::int32_t CreateWeatherExcelImportJobResponse::accepted_rows() const {
 }
 inline void CreateWeatherExcelImportJobResponse::set_accepted_rows(::int32_t value) {
   _internal_set_accepted_rows(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.accepted_rows)
 }
 inline ::int32_t CreateWeatherExcelImportJobResponse::_internal_accepted_rows() const {
@@ -17985,15 +15517,15 @@ inline void CreateWeatherExcelImportJobResponse::_internal_set_accepted_rows(::i
   _impl_.accepted_rows_ = value;
 }
 
-// optional int32 failed_rows = 4 [json_name = "failed_rows"];
+// optional int32 failed_rows = 3 [json_name = "failed_rows"];
 inline bool CreateWeatherExcelImportJobResponse::has_failed_rows() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
   return value;
 }
 inline void CreateWeatherExcelImportJobResponse::clear_failed_rows() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.failed_rows_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
 }
 inline ::int32_t CreateWeatherExcelImportJobResponse::failed_rows() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.failed_rows)
@@ -18001,7 +15533,7 @@ inline ::int32_t CreateWeatherExcelImportJobResponse::failed_rows() const {
 }
 inline void CreateWeatherExcelImportJobResponse::set_failed_rows(::int32_t value) {
   _internal_set_failed_rows(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse.failed_rows)
 }
 inline ::int32_t CreateWeatherExcelImportJobResponse::_internal_failed_rows() const {
@@ -18013,7 +15545,7 @@ inline void CreateWeatherExcelImportJobResponse::_internal_set_failed_rows(::int
   _impl_.failed_rows_ = value;
 }
 
-// optional string error_report_url = 5 [json_name = "error_report_url"];
+// optional string error_report_url = 4 [json_name = "error_report_url"];
 inline bool CreateWeatherExcelImportJobResponse::has_error_report_url() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000002U);
   return value;
@@ -18089,105 +15621,7 @@ inline void CreateWeatherExcelImportJobResponse::set_allocated_error_report_url(
 
 // GetWeatherExcelTemplateResponse
 
-// .fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];
-inline bool GetWeatherExcelTemplateResponse::has_header() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
-  PROTOBUF_ASSUME(!value || _impl_.header_ != nullptr);
-  return value;
-}
-inline void GetWeatherExcelTemplateResponse::clear_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ != nullptr) _impl_.header_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& GetWeatherExcelTemplateResponse::_internal_header() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* p = _impl_.header_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(&::fusion::ai::proto::data_readiness::DataReadinessReplyHeader_globals_);
-}
-inline const ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader& GetWeatherExcelTemplateResponse::header() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.header)
-  return _internal_header();
-}
-inline void GetWeatherExcelTemplateResponse::unsafe_arena_set_allocated_header(
-    ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.header)
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE GetWeatherExcelTemplateResponse::release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* released = _impl_.header_;
-  _impl_.header_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE GetWeatherExcelTemplateResponse::unsafe_arena_release_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.header)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* temp = _impl_.header_;
-  _impl_.header_ = nullptr;
-  return temp;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL GetWeatherExcelTemplateResponse::_internal_mutable_header() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.header_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader>(GetArena());
-    _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(p);
-  }
-  return _impl_.header_;
-}
-inline ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NONNULL GetWeatherExcelTemplateResponse::mutable_header()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
-  ::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* _msg = _internal_mutable_header();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.header)
-  return _msg;
-}
-inline void GetWeatherExcelTemplateResponse::set_allocated_header(::fusion::ai::proto::data_readiness::DataReadinessReplyHeader* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.header_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
-  }
-
-  _impl_.header_ = reinterpret_cast<::fusion::ai::proto::data_readiness::DataReadinessReplyHeader*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.header)
-}
-
-// bytes file = 2 [json_name = "file"];
+// bytes file = 1 [json_name = "file"];
 inline void GetWeatherExcelTemplateResponse::clear_file() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.file_.ClearToEmpty();
@@ -18251,7 +15685,7 @@ inline void GetWeatherExcelTemplateResponse::set_allocated_file(::std::string* P
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.file)
 }
 
-// string filename = 3 [json_name = "filename"];
+// string filename = 2 [json_name = "filename"];
 inline void GetWeatherExcelTemplateResponse::clear_filename() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.filename_.ClearToEmpty();
@@ -18315,7 +15749,7 @@ inline void GetWeatherExcelTemplateResponse::set_allocated_filename(::std::strin
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse.filename)
 }
 
-// string content_type = 4 [json_name = "content_type"];
+// string content_type = 3 [json_name = "content_type"];
 inline void GetWeatherExcelTemplateResponse::clear_content_type() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.content_type_.ClearToEmpty();
@@ -18853,290 +16287,6 @@ inline void UploadBackfillFileResponse::set_allocated_job_id(::std::string* PROT
     _impl_.job_id_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.UploadBackfillFileResponse.job_id)
-}
-
-// -------------------------------------------------------------------
-
-// BatchPullPowerRequest
-
-// repeated string registration_ids = 1 [json_name = "registration_ids", (.buf.validate.field) = {
-inline int BatchPullPowerRequest::_internal_registration_ids_size() const {
-  return _internal_registration_ids().size();
-}
-inline int BatchPullPowerRequest::registration_ids_size() const {
-  return _internal_registration_ids_size();
-}
-inline void BatchPullPowerRequest::clear_registration_ids() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.registration_ids_.Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline ::std::string* PROTOBUF_NONNULL BatchPullPowerRequest::add_registration_ids()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::std::string* _s =
-      _internal_mutable_registration_ids()->InternalAddWithArena(
-          ::google::protobuf::MessageLite::internal_visibility(), GetArena());
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  // @@protoc_insertion_point(field_add_mutable:fusion.ai.proto.data_readiness.BatchPullPowerRequest.registration_ids)
-  return _s;
-}
-inline const ::std::string& BatchPullPowerRequest::registration_ids(int index) const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.BatchPullPowerRequest.registration_ids)
-  return _internal_registration_ids().Get(index);
-}
-inline ::std::string* PROTOBUF_NONNULL BatchPullPowerRequest::mutable_registration_ids(int index)
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.BatchPullPowerRequest.registration_ids)
-  return _internal_mutable_registration_ids()->Mutable(index);
-}
-template <typename Arg_, typename... Args_>
-inline void BatchPullPowerRequest::set_registration_ids(int index, Arg_&& value, Args_... args) {
-  ::google::protobuf::internal::AssignToString(
-      *_internal_mutable_registration_ids()->Mutable(index),
-      ::std::forward<Arg_>(value), args... );
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.BatchPullPowerRequest.registration_ids)
-}
-template <typename Arg_, typename... Args_>
-inline void BatchPullPowerRequest::add_registration_ids(Arg_&& value, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::google::protobuf::internal::AddToRepeatedPtrField(
-      ::google::protobuf::MessageLite::internal_visibility(), GetArena(),
-      *_internal_mutable_registration_ids(), ::std::forward<Arg_>(value),
-      args... );
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  // @@protoc_insertion_point(field_add:fusion.ai.proto.data_readiness.BatchPullPowerRequest.registration_ids)
-}
-inline const ::google::protobuf::RepeatedPtrField<::std::string>& BatchPullPowerRequest::registration_ids()
-    const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_list:fusion.ai.proto.data_readiness.BatchPullPowerRequest.registration_ids)
-  return _internal_registration_ids();
-}
-inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
-BatchPullPowerRequest::mutable_registration_ids() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  // @@protoc_insertion_point(field_mutable_list:fusion.ai.proto.data_readiness.BatchPullPowerRequest.registration_ids)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _internal_mutable_registration_ids();
-}
-inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-BatchPullPowerRequest::_internal_registration_ids() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.registration_ids_;
-}
-inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
-BatchPullPowerRequest::_internal_mutable_registration_ids() {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return &_impl_.registration_ids_;
-}
-
-// -------------------------------------------------------------------
-
-// BatchPullPowerResponse
-
-// string run_id = 1 [json_name = "run_id"];
-inline void BatchPullPowerResponse::clear_run_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.run_id_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline const ::std::string& BatchPullPowerResponse::run_id() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.BatchPullPowerResponse.run_id)
-  return _internal_run_id();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void BatchPullPowerResponse::set_run_id(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  _impl_.run_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.BatchPullPowerResponse.run_id)
-}
-inline ::std::string* PROTOBUF_NONNULL BatchPullPowerResponse::mutable_run_id()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::std::string* _s = _internal_mutable_run_id();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.BatchPullPowerResponse.run_id)
-  return _s;
-}
-inline const ::std::string& BatchPullPowerResponse::_internal_run_id() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.run_id_.Get();
-}
-inline void BatchPullPowerResponse::_internal_set_run_id(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.run_id_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL BatchPullPowerResponse::_internal_mutable_run_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.run_id_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE BatchPullPowerResponse::release_run_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.BatchPullPowerResponse.run_id)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  auto* released = _impl_.run_id_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.run_id_.Set("", GetArena());
-  }
-  return released;
-}
-inline void BatchPullPowerResponse::set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-  _impl_.run_id_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.run_id_.IsDefault()) {
-    _impl_.run_id_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.BatchPullPowerResponse.run_id)
-}
-
-// -------------------------------------------------------------------
-
-// RetryFailedPullPowerRequest
-
-// optional string run_id = 1 [json_name = "run_id", (.buf.validate.field) = {
-inline bool RetryFailedPullPowerRequest::has_run_id() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000001U);
-  return value;
-}
-inline void RetryFailedPullPowerRequest::clear_run_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.run_id_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline const ::std::string& RetryFailedPullPowerRequest::run_id() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest.run_id)
-  return _internal_run_id();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void RetryFailedPullPowerRequest::set_run_id(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  _impl_.run_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest.run_id)
-}
-inline ::std::string* PROTOBUF_NONNULL RetryFailedPullPowerRequest::mutable_run_id()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::std::string* _s = _internal_mutable_run_id();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest.run_id)
-  return _s;
-}
-inline const ::std::string& RetryFailedPullPowerRequest::_internal_run_id() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.run_id_.Get();
-}
-inline void RetryFailedPullPowerRequest::_internal_set_run_id(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.run_id_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL RetryFailedPullPowerRequest::_internal_mutable_run_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.run_id_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE RetryFailedPullPowerRequest::release_run_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest.run_id)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  auto* released = _impl_.run_id_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.run_id_.Set("", GetArena());
-  }
-  return released;
-}
-inline void RetryFailedPullPowerRequest::set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-  _impl_.run_id_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.run_id_.IsDefault()) {
-    _impl_.run_id_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.RetryFailedPullPowerRequest.run_id)
-}
-
-// -------------------------------------------------------------------
-
-// RetryFailedPullPowerResponse
-
-// string run_id = 1 [json_name = "run_id"];
-inline void RetryFailedPullPowerResponse::clear_run_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.run_id_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-}
-inline const ::std::string& RetryFailedPullPowerResponse::run_id() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse.run_id)
-  return _internal_run_id();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void RetryFailedPullPowerResponse::set_run_id(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  _impl_.run_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse.run_id)
-}
-inline ::std::string* PROTOBUF_NONNULL RetryFailedPullPowerResponse::mutable_run_id()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  ::std::string* _s = _internal_mutable_run_id();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse.run_id)
-  return _s;
-}
-inline const ::std::string& RetryFailedPullPowerResponse::_internal_run_id() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.run_id_.Get();
-}
-inline void RetryFailedPullPowerResponse::_internal_set_run_id(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.run_id_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL RetryFailedPullPowerResponse::_internal_mutable_run_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.run_id_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE RetryFailedPullPowerResponse::release_run_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse.run_id)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
-    return nullptr;
-  }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  auto* released = _impl_.run_id_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.run_id_.Set("", GetArena());
-  }
-  return released;
-}
-inline void RetryFailedPullPowerResponse::set_allocated_run_id(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
-  }
-  _impl_.run_id_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.run_id_.IsDefault()) {
-    _impl_.run_id_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.RetryFailedPullPowerResponse.run_id)
 }
 
 #ifdef __GNUC__

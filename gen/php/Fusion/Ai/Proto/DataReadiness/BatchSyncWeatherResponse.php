@@ -15,27 +15,23 @@ use Google\Protobuf\RepeatedField;
 class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    protected $header = null;
-    /**
-     * Generated from protobuf field <code>string run_id = 2 [json_name = "run_id"];</code>
+     * Generated from protobuf field <code>string run_id = 1 [json_name = "run_id"];</code>
      */
     protected $run_id = '';
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>int32 task_total = 4 [json_name = "task_total"];</code>
+     * Generated from protobuf field <code>int32 task_total = 3 [json_name = "task_total"];</code>
      */
     protected $task_total = 0;
     /**
-     * Generated from protobuf field <code>int32 task_failed = 5 [json_name = "task_failed"];</code>
+     * Generated from protobuf field <code>int32 task_failed = 4 [json_name = "task_failed"];</code>
      */
     protected $task_failed = 0;
     /**
-     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      */
     private $partial_errors;
 
@@ -45,7 +41,6 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader $header
      *     @type string $run_id
      *     @type int $status
      *     @type int $task_total
@@ -60,38 +55,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader|null
-     */
-    public function getHeader()
-    {
-        return $this->header;
-    }
-
-    public function hasHeader()
-    {
-        return isset($this->header);
-    }
-
-    public function clearHeader()
-    {
-        unset($this->header);
-    }
-
-    /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @param \Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader $var
-     * @return $this
-     */
-    public function setHeader(\Fusion\Ai\Proto\DataReadiness\DataReadinessReplyHeader|null $var)
-    {
-        $this->header = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string run_id = 2 [json_name = "run_id"];</code>
+     * Generated from protobuf field <code>string run_id = 1 [json_name = "run_id"];</code>
      * @return string
      */
     public function getRunId()
@@ -100,7 +64,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string run_id = 2 [json_name = "run_id"];</code>
+     * Generated from protobuf field <code>string run_id = 1 [json_name = "run_id"];</code>
      * @param string $var
      * @return $this
      */
@@ -113,7 +77,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\DataReadiness\WeatherSyncRunStatus}
      */
     public function getStatus()
@@ -122,7 +86,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 3 [json_name = "status"];</code>
+     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.WeatherSyncRunStatus status = 2 [json_name = "status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\DataReadiness\WeatherSyncRunStatus}
      * @return $this
      */
@@ -135,7 +99,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 task_total = 4 [json_name = "task_total"];</code>
+     * Generated from protobuf field <code>int32 task_total = 3 [json_name = "task_total"];</code>
      * @return int
      */
     public function getTaskTotal()
@@ -144,7 +108,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 task_total = 4 [json_name = "task_total"];</code>
+     * Generated from protobuf field <code>int32 task_total = 3 [json_name = "task_total"];</code>
      * @param int $var
      * @return $this
      */
@@ -157,7 +121,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 task_failed = 5 [json_name = "task_failed"];</code>
+     * Generated from protobuf field <code>int32 task_failed = 4 [json_name = "task_failed"];</code>
      * @return int
      */
     public function getTaskFailed()
@@ -166,7 +130,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 task_failed = 5 [json_name = "task_failed"];</code>
+     * Generated from protobuf field <code>int32 task_failed = 4 [json_name = "task_failed"];</code>
      * @param int $var
      * @return $this
      */
@@ -179,7 +143,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      * @return RepeatedField<\Fusion\Ai\Proto\DataReadiness\WeatherSyncPartialError>
      */
     public function getPartialErrors()
@@ -188,7 +152,7 @@ class BatchSyncWeatherResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 6 [json_name = "partial_errors"];</code>
+     * Generated from protobuf field <code>repeated .fusion.ai.proto.data_readiness.WeatherSyncPartialError partial_errors = 5 [json_name = "partial_errors"];</code>
      * @param \Fusion\Ai\Proto\DataReadiness\WeatherSyncPartialError[] $var
      * @return $this
      */

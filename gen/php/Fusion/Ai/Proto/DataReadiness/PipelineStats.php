@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * PipelineStats 接入监控。weather_job_line 仅光伏有值。
+ *
  * Generated from protobuf message <code>fusion.ai.proto.data_readiness.PipelineStats</code>
  */
 class PipelineStats extends \Google\Protobuf\Internal\Message
@@ -19,7 +21,7 @@ class PipelineStats extends \Google\Protobuf\Internal\Message
      */
     protected $push_line = null;
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      */
     protected $weather_job_line = null;
     /**
@@ -30,10 +32,6 @@ class PipelineStats extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.PipelineLine validation_queue_line = 4 [json_name = "validation_queue_line"];</code>
      */
     protected $validation_queue_line = null;
-    /**
-     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     */
-    protected $pull_line = null;
 
     /**
      * Constructor.
@@ -45,7 +43,6 @@ class PipelineStats extends \Google\Protobuf\Internal\Message
      *     @type \Fusion\Ai\Proto\DataReadiness\PipelineLine $weather_job_line
      *     @type \Fusion\Ai\Proto\DataReadiness\PipelineLine $excel_line
      *     @type \Fusion\Ai\Proto\DataReadiness\PipelineLine $validation_queue_line
-     *     @type \Fusion\Ai\Proto\DataReadiness\PipelineLine $pull_line
      * }
      */
     public function __construct($data = null)
@@ -86,7 +83,7 @@ class PipelineStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      * @return \Fusion\Ai\Proto\DataReadiness\PipelineLine|null
      */
     public function getWeatherJobLine()
@@ -105,7 +102,7 @@ class PipelineStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
+     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.PipelineLine weather_job_line = 2 [json_name = "weather_job_line"];</code>
      * @param \Fusion\Ai\Proto\DataReadiness\PipelineLine $var
      * @return $this
      */
@@ -174,37 +171,6 @@ class PipelineStats extends \Google\Protobuf\Internal\Message
     public function setValidationQueueLine(\Fusion\Ai\Proto\DataReadiness\PipelineLine|null $var)
     {
         $this->validation_queue_line = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     * @return \Fusion\Ai\Proto\DataReadiness\PipelineLine|null
-     */
-    public function getPullLine()
-    {
-        return $this->pull_line;
-    }
-
-    public function hasPullLine()
-    {
-        return isset($this->pull_line);
-    }
-
-    public function clearPullLine()
-    {
-        unset($this->pull_line);
-    }
-
-    /**
-     * Generated from protobuf field <code>optional .fusion.ai.proto.data_readiness.PipelineLine pull_line = 5 [json_name = "pull_line"];</code>
-     * @param \Fusion\Ai\Proto\DataReadiness\PipelineLine $var
-     * @return $this
-     */
-    public function setPullLine(\Fusion\Ai\Proto\DataReadiness\PipelineLine|null $var)
-    {
-        $this->pull_line = $var;
 
         return $this;
     }

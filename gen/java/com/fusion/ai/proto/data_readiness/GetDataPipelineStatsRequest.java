@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetDataPipelineStatsRequest() {
+    serviceType_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -48,6 +49,54 @@ private static final long serialVersionUID = 0L;
             com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest.class, com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest.Builder.class);
   }
 
+  private int bitField0_;
+  public static final int SERVICE_TYPE_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceType_ = "";
+  /**
+   * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+   * @return Whether the serviceType field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+   * @return The serviceType.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceType() {
+    java.lang.Object ref = serviceType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+   * @return The bytes for serviceType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getServiceTypeBytes() {
+    java.lang.Object ref = serviceType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      serviceType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -62,7 +111,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, serviceType_);
+    }
     getUnknownFields().writeTo(output);
+  }
+  private int computeSerializedSize_0() {
+    int size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, serviceType_);
+    }
+    return size;
   }
   @java.lang.Override
   public int getSerializedSize() {
@@ -70,6 +129,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -85,6 +145,11 @@ private static final long serialVersionUID = 0L;
     }
     com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest other = (com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest) obj;
 
+    if (hasServiceType() != other.hasServiceType()) return false;
+    if (hasServiceType()) {
+      if (!getServiceType()
+          .equals(other.getServiceType())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -96,6 +161,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasServiceType()) {
+      hash = (37 * hash) + SERVICE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceType().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -226,6 +295,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      serviceType_ = "";
       return this;
     }
 
@@ -252,8 +323,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest buildPartial() {
       com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest result = new com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest(this);
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceType_ = serviceType_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -268,6 +350,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest other) {
       if (other == com.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest.getDefaultInstance()) return this;
+      if (other.hasServiceType()) {
+        serviceType_ = other.serviceType_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -292,6 +379,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            case 10: {
+              serviceType_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -305,6 +397,86 @@ private static final long serialVersionUID = 0L;
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+    private int bitField0_;
+
+    private java.lang.Object serviceType_ = "";
+    /**
+     * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+     * @return Whether the serviceType field is set.
+     */
+    public boolean hasServiceType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+     * @return The serviceType.
+     */
+    public java.lang.String getServiceType() {
+      java.lang.Object ref = serviceType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+     * @return The bytes for serviceType.
+     */
+    public com.google.protobuf.ByteString
+        getServiceTypeBytes() {
+      java.lang.Object ref = serviceType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        serviceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+     * @param value The serviceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceType(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      serviceType_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceType() {
+      serviceType_ = getDefaultInstance().getServiceType();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+     * @param value The bytes for serviceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceTypeBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      serviceType_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
 

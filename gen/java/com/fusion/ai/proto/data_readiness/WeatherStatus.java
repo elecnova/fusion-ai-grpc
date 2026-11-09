@@ -7,7 +7,7 @@ package com.fusion.ai.proto.data_readiness;
 
 /**
  * <pre>
- * WeatherStatus 矩阵「天气」列投影
+ * WeatherStatus 矩阵「天气」列投影（仅 pv_prediction；非光伏勿填或 UNSPECIFIED）
  * </pre>
  *
  * Protobuf enum {@code fusion.ai.proto.data_readiness.WeatherStatus}

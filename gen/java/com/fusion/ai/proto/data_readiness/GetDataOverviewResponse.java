@@ -49,44 +49,18 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int HEADER_FIELD_NUMBER = 1;
-  private com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header_;
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  @java.lang.Override
-  public boolean hasHeader() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader() {
-    return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-  }
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  @java.lang.Override
-  public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder() {
-    return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-  }
-
-  public static final int OVERVIEW_FIELD_NUMBER = 2;
+  public static final int OVERVIEW_FIELD_NUMBER = 1;
   private com.fusion.ai.proto.data_readiness.DataOverview overview_;
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
    * @return Whether the overview field is set.
    */
   @java.lang.Override
   public boolean hasOverview() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
    * @return The overview.
    */
   @java.lang.Override
@@ -94,7 +68,7 @@ private static final long serialVersionUID = 0L;
     return overview_ == null ? com.fusion.ai.proto.data_readiness.DataOverview.getDefaultInstance() : overview_;
   }
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
    */
   @java.lang.Override
   public com.fusion.ai.proto.data_readiness.DataOverviewOrBuilder getOverviewOrBuilder() {
@@ -116,10 +90,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getHeader());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(2, getOverview());
+      output.writeMessage(1, getOverview());
     }
     getUnknownFields().writeTo(output);
   }
@@ -127,11 +98,7 @@ private static final long serialVersionUID = 0L;
     int size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getHeader());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getOverview());
+        .computeMessageSize(1, getOverview());
     }
     return size;
   }
@@ -157,11 +124,6 @@ private static final long serialVersionUID = 0L;
     }
     com.fusion.ai.proto.data_readiness.GetDataOverviewResponse other = (com.fusion.ai.proto.data_readiness.GetDataOverviewResponse) obj;
 
-    if (hasHeader() != other.hasHeader()) return false;
-    if (hasHeader()) {
-      if (!getHeader()
-          .equals(other.getHeader())) return false;
-    }
     if (hasOverview() != other.hasOverview()) return false;
     if (hasOverview()) {
       if (!getOverview()
@@ -178,10 +140,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasHeader()) {
-      hash = (37 * hash) + HEADER_FIELD_NUMBER;
-      hash = (53 * hash) + getHeader().hashCode();
-    }
     if (hasOverview()) {
       hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
       hash = (53 * hash) + getOverview().hashCode();
@@ -316,7 +274,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage
               .alwaysUseFieldBuilders) {
-        internalGetHeaderFieldBuilder();
         internalGetOverviewFieldBuilder();
       }
     }
@@ -324,11 +281,6 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      header_ = null;
-      if (headerBuilder_ != null) {
-        headerBuilder_.dispose();
-        headerBuilder_ = null;
-      }
       overview_ = null;
       if (overviewBuilder_ != null) {
         overviewBuilder_.dispose();
@@ -369,16 +321,10 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.header_ = headerBuilder_ == null
-            ? header_
-            : headerBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.overview_ = overviewBuilder_ == null
             ? overview_
             : overviewBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000001;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -395,9 +341,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.fusion.ai.proto.data_readiness.GetDataOverviewResponse other) {
       if (other == com.fusion.ai.proto.data_readiness.GetDataOverviewResponse.getDefaultInstance()) return this;
-      if (other.hasHeader()) {
-        mergeHeader(other.getHeader());
-      }
       if (other.hasOverview()) {
         mergeOverview(other.getOverview());
       }
@@ -427,18 +370,11 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               input.readMessage(
-                  internalGetHeaderFieldBuilder().getBuilder(),
+                  internalGetOverviewFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              input.readMessage(
-                  internalGetOverviewFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -456,137 +392,18 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder> headerBuilder_;
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return Whether the header field is set.
-     */
-    public boolean hasHeader() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     * @return The header.
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader() {
-      if (headerBuilder_ == null) {
-        return header_ == null ? com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-      } else {
-        return headerBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder setHeader(com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader value) {
-      if (headerBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        header_ = value;
-      } else {
-        headerBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder setHeader(
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder builderForValue) {
-      if (headerBuilder_ == null) {
-        header_ = builderForValue.build();
-      } else {
-        headerBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder mergeHeader(com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader value) {
-      if (headerBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
-          header_ != null &&
-          header_ != com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance()) {
-          getHeaderBuilder().mergeFrom(value);
-        } else {
-          header_ = value;
-        }
-      } else {
-        headerBuilder_.mergeFrom(value);
-      }
-      if (header_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public Builder clearHeader() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      header_ = null;
-      if (headerBuilder_ != null) {
-        headerBuilder_.dispose();
-        headerBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder getHeaderBuilder() {
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return internalGetHeaderFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    public com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder() {
-      if (headerBuilder_ != null) {
-        return headerBuilder_.getMessageOrBuilder();
-      } else {
-        return header_ == null ?
-            com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.getDefaultInstance() : header_;
-      }
-    }
-    /**
-     * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder> 
-        internalGetHeaderFieldBuilder() {
-      if (headerBuilder_ == null) {
-        headerBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader.Builder, com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder>(
-                getHeader(),
-                getParentForChildren(),
-                isClean());
-        header_ = null;
-      }
-      return headerBuilder_;
-    }
-
     private com.fusion.ai.proto.data_readiness.DataOverview overview_;
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.data_readiness.DataOverview, com.fusion.ai.proto.data_readiness.DataOverview.Builder, com.fusion.ai.proto.data_readiness.DataOverviewOrBuilder> overviewBuilder_;
     /**
-     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
      * @return Whether the overview field is set.
      */
     public boolean hasOverview() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
      * @return The overview.
      */
     public com.fusion.ai.proto.data_readiness.DataOverview getOverview() {
@@ -597,7 +414,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
      */
     public Builder setOverview(com.fusion.ai.proto.data_readiness.DataOverview value) {
       if (overviewBuilder_ == null) {
@@ -606,12 +423,12 @@ private static final long serialVersionUID = 0L;
       } else {
         overviewBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
      */
     public Builder setOverview(
         com.fusion.ai.proto.data_readiness.DataOverview.Builder builderForValue) {
@@ -620,16 +437,16 @@ private static final long serialVersionUID = 0L;
       } else {
         overviewBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
      */
     public Builder mergeOverview(com.fusion.ai.proto.data_readiness.DataOverview value) {
       if (overviewBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
+        if (((bitField0_ & 0x00000001) != 0) &&
           overview_ != null &&
           overview_ != com.fusion.ai.proto.data_readiness.DataOverview.getDefaultInstance()) {
           getOverviewBuilder().mergeFrom(value);
@@ -640,16 +457,16 @@ private static final long serialVersionUID = 0L;
         overviewBuilder_.mergeFrom(value);
       }
       if (overview_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
      */
     public Builder clearOverview() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       overview_ = null;
       if (overviewBuilder_ != null) {
         overviewBuilder_.dispose();
@@ -659,15 +476,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
      */
     public com.fusion.ai.proto.data_readiness.DataOverview.Builder getOverviewBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return internalGetOverviewFieldBuilder().getBuilder();
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
      */
     public com.fusion.ai.proto.data_readiness.DataOverviewOrBuilder getOverviewOrBuilder() {
       if (overviewBuilder_ != null) {
@@ -678,7 +495,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+     * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.data_readiness.DataOverview, com.fusion.ai.proto.data_readiness.DataOverview.Builder, com.fusion.ai.proto.data_readiness.DataOverviewOrBuilder> 

@@ -11,32 +11,17 @@ public interface GetDataOverviewResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return Whether the header field is set.
-   */
-  boolean hasHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   * @return The header.
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeader getHeader();
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataReadinessReplyHeader header = 1 [json_name = "header"];</code>
-   */
-  com.fusion.ai.proto.data_readiness.DataReadinessReplyHeaderOrBuilder getHeaderOrBuilder();
-
-  /**
-   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
    * @return Whether the overview field is set.
    */
   boolean hasOverview();
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
    * @return The overview.
    */
   com.fusion.ai.proto.data_readiness.DataOverview getOverview();
   /**
-   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 2 [json_name = "overview"];</code>
+   * <code>.fusion.ai.proto.data_readiness.DataOverview overview = 1 [json_name = "overview"];</code>
    */
   com.fusion.ai.proto.data_readiness.DataOverviewOrBuilder getOverviewOrBuilder();
 }

@@ -29,7 +29,6 @@ private static final long serialVersionUID = 0L;
   }
   private ListDataSiteRowsRequest() {
     serviceType_ = "";
-    dataSource_ = 0;
     readinessStatus_ = 0;
     q_ = "";
   }
@@ -138,49 +137,24 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DATA_SOURCE_FIELD_NUMBER = 4;
-  private int dataSource_ = 0;
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-   * @return Whether the dataSource field is set.
-   */
-  @java.lang.Override public boolean hasDataSource() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-   * @return The enum numeric value on the wire for dataSource.
-   */
-  @java.lang.Override public int getDataSourceValue() {
-    return dataSource_;
-  }
-  /**
-   * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-   * @return The dataSource.
-   */
-  @java.lang.Override public com.fusion.ai.proto.data_readiness.DataSource getDataSource() {
-    com.fusion.ai.proto.data_readiness.DataSource result = com.fusion.ai.proto.data_readiness.DataSource.forNumber(dataSource_);
-    return result == null ? com.fusion.ai.proto.data_readiness.DataSource.UNRECOGNIZED : result;
-  }
-
-  public static final int READINESS_STATUS_FIELD_NUMBER = 5;
+  public static final int READINESS_STATUS_FIELD_NUMBER = 4;
   private int readinessStatus_ = 0;
   /**
-   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
    * @return Whether the readinessStatus field is set.
    */
   @java.lang.Override public boolean hasReadinessStatus() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
    * @return The enum numeric value on the wire for readinessStatus.
    */
   @java.lang.Override public int getReadinessStatusValue() {
     return readinessStatus_;
   }
   /**
-   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+   * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
    * @return The readinessStatus.
    */
   @java.lang.Override public com.fusion.ai.proto.data_readiness.ReadinessStatus getReadinessStatus() {
@@ -188,38 +162,27 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.fusion.ai.proto.data_readiness.ReadinessStatus.UNRECOGNIZED : result;
   }
 
-  public static final int GRANULARITY_MIN_FIELD_NUMBER = 6;
-  private int granularityMin_ = 0;
-  /**
-   * <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-   * @return Whether the granularityMin field is set.
-   */
-  @java.lang.Override
-  public boolean hasGranularityMin() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-   * @return The granularityMin.
-   */
-  @java.lang.Override
-  public int getGranularityMin() {
-    return granularityMin_;
-  }
-
-  public static final int Q_FIELD_NUMBER = 7;
+  public static final int Q_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private volatile java.lang.Object q_ = "";
   /**
-   * <code>optional string q = 7 [json_name = "q"];</code>
+   * <pre>
+   * 场站名 / registration_id 模糊搜
+   * </pre>
+   *
+   * <code>optional string q = 5 [json_name = "q"];</code>
    * @return Whether the q field is set.
    */
   @java.lang.Override
   public boolean hasQ() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>optional string q = 7 [json_name = "q"];</code>
+   * <pre>
+   * 场站名 / registration_id 模糊搜
+   * </pre>
+   *
+   * <code>optional string q = 5 [json_name = "q"];</code>
    * @return The q.
    */
   @java.lang.Override
@@ -236,7 +199,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string q = 7 [json_name = "q"];</code>
+   * <pre>
+   * 场站名 / registration_id 模糊搜
+   * </pre>
+   *
+   * <code>optional string q = 5 [json_name = "q"];</code>
    * @return The bytes for q.
    */
   @java.lang.Override
@@ -278,16 +245,10 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessage.writeString(output, 3, serviceType_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(4, dataSource_);
+      output.writeEnum(4, readinessStatus_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(5, readinessStatus_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeInt32(6, granularityMin_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, q_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, q_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -306,18 +267,10 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, dataSource_);
+        .computeEnumSize(4, readinessStatus_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, readinessStatus_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, granularityMin_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, q_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, q_);
     }
     return size;
   }
@@ -358,18 +311,9 @@ private static final long serialVersionUID = 0L;
       if (!getServiceType()
           .equals(other.getServiceType())) return false;
     }
-    if (hasDataSource() != other.hasDataSource()) return false;
-    if (hasDataSource()) {
-      if (dataSource_ != other.dataSource_) return false;
-    }
     if (hasReadinessStatus() != other.hasReadinessStatus()) return false;
     if (hasReadinessStatus()) {
       if (readinessStatus_ != other.readinessStatus_) return false;
-    }
-    if (hasGranularityMin() != other.hasGranularityMin()) return false;
-    if (hasGranularityMin()) {
-      if (getGranularityMin()
-          != other.getGranularityMin()) return false;
     }
     if (hasQ() != other.hasQ()) return false;
     if (hasQ()) {
@@ -399,17 +343,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SERVICE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getServiceType().hashCode();
     }
-    if (hasDataSource()) {
-      hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
-      hash = (53 * hash) + dataSource_;
-    }
     if (hasReadinessStatus()) {
       hash = (37 * hash) + READINESS_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + readinessStatus_;
-    }
-    if (hasGranularityMin()) {
-      hash = (37 * hash) + GRANULARITY_MIN_FIELD_NUMBER;
-      hash = (53 * hash) + getGranularityMin();
     }
     if (hasQ()) {
       hash = (37 * hash) + Q_FIELD_NUMBER;
@@ -549,9 +485,7 @@ private static final long serialVersionUID = 0L;
       page_ = 0;
       pageSize_ = 0;
       serviceType_ = "";
-      dataSource_ = 0;
       readinessStatus_ = 0;
-      granularityMin_ = 0;
       q_ = "";
       return this;
     }
@@ -600,20 +534,12 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.dataSource_ = dataSource_;
+        result.readinessStatus_ = readinessStatus_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.readinessStatus_ = readinessStatus_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.granularityMin_ = granularityMin_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.q_ = q_;
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -641,18 +567,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (other.hasDataSource()) {
-        setDataSourceValue(other.getDataSourceValue());
-      }
       if (other.hasReadinessStatus()) {
         setReadinessStatusValue(other.getReadinessStatusValue());
       }
-      if (other.hasGranularityMin()) {
-        setGranularityMin(other.getGranularityMin());
-      }
       if (other.hasQ()) {
         q_ = other.q_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -695,25 +615,15 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 26
             case 32: {
-              dataSource_ = input.readEnum();
+              readinessStatus_ = input.readEnum();
               bitField0_ |= 0x00000008;
               break;
             } // case 32
-            case 40: {
-              readinessStatus_ = input.readEnum();
+            case 42: {
+              q_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
-            } // case 40
-            case 48: {
-              granularityMin_ = input.readInt32();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 48
-            case 58: {
-              q_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 58
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -890,93 +800,34 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int dataSource_ = 0;
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-     * @return Whether the dataSource field is set.
-     */
-    @java.lang.Override public boolean hasDataSource() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-     * @return The enum numeric value on the wire for dataSource.
-     */
-    @java.lang.Override public int getDataSourceValue() {
-      return dataSource_;
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-     * @param value The enum numeric value on the wire for dataSource to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDataSourceValue(int value) {
-      dataSource_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-     * @return The dataSource.
-     */
-    @java.lang.Override
-    public com.fusion.ai.proto.data_readiness.DataSource getDataSource() {
-      com.fusion.ai.proto.data_readiness.DataSource result = com.fusion.ai.proto.data_readiness.DataSource.forNumber(dataSource_);
-      return result == null ? com.fusion.ai.proto.data_readiness.DataSource.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-     * @param value The dataSource to set.
-     * @throws IllegalArgumentException if UNRECOGNIZED is provided.
-     * @return This builder for chaining.
-     */
-    public Builder setDataSource(com.fusion.ai.proto.data_readiness.DataSource value) {
-      java.util.Objects.requireNonNull(value);
-      bitField0_ |= 0x00000008;
-      dataSource_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .fusion.ai.proto.data_readiness.DataSource data_source = 4 [json_name = "data_source"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDataSource() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      dataSource_ = 0;
-      onChanged();
-      return this;
-    }
-
     private int readinessStatus_ = 0;
     /**
-     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
      * @return Whether the readinessStatus field is set.
      */
     @java.lang.Override public boolean hasReadinessStatus() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
      * @return The enum numeric value on the wire for readinessStatus.
      */
     @java.lang.Override public int getReadinessStatusValue() {
       return readinessStatus_;
     }
     /**
-     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
      * @param value The enum numeric value on the wire for readinessStatus to set.
      * @return This builder for chaining.
      */
     public Builder setReadinessStatusValue(int value) {
       readinessStatus_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
      * @return The readinessStatus.
      */
     @java.lang.Override
@@ -985,79 +836,47 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.data_readiness.ReadinessStatus.UNRECOGNIZED : result;
     }
     /**
-     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
      * @param value The readinessStatus to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
      */
     public Builder setReadinessStatus(com.fusion.ai.proto.data_readiness.ReadinessStatus value) {
       java.util.Objects.requireNonNull(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       readinessStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 5 [json_name = "readiness_status"];</code>
+     * <code>optional .fusion.ai.proto.data_readiness.ReadinessStatus readiness_status = 4 [json_name = "readiness_status"];</code>
      * @return This builder for chaining.
      */
     public Builder clearReadinessStatus() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       readinessStatus_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int granularityMin_ ;
-    /**
-     * <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-     * @return Whether the granularityMin field is set.
-     */
-    @java.lang.Override
-    public boolean hasGranularityMin() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-     * @return The granularityMin.
-     */
-    @java.lang.Override
-    public int getGranularityMin() {
-      return granularityMin_;
-    }
-    /**
-     * <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-     * @param value The granularityMin to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGranularityMin(int value) {
-
-      granularityMin_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional int32 granularity_min = 6 [json_name = "granularity_min"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearGranularityMin() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      granularityMin_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object q_ = "";
     /**
-     * <code>optional string q = 7 [json_name = "q"];</code>
+     * <pre>
+     * 场站名 / registration_id 模糊搜
+     * </pre>
+     *
+     * <code>optional string q = 5 [json_name = "q"];</code>
      * @return Whether the q field is set.
      */
     public boolean hasQ() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional string q = 7 [json_name = "q"];</code>
+     * <pre>
+     * 场站名 / registration_id 模糊搜
+     * </pre>
+     *
+     * <code>optional string q = 5 [json_name = "q"];</code>
      * @return The q.
      */
     public java.lang.String getQ() {
@@ -1073,7 +892,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string q = 7 [json_name = "q"];</code>
+     * <pre>
+     * 场站名 / registration_id 模糊搜
+     * </pre>
+     *
+     * <code>optional string q = 5 [json_name = "q"];</code>
      * @return The bytes for q.
      */
     public com.google.protobuf.ByteString
@@ -1090,7 +913,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string q = 7 [json_name = "q"];</code>
+     * <pre>
+     * 场站名 / registration_id 模糊搜
+     * </pre>
+     *
+     * <code>optional string q = 5 [json_name = "q"];</code>
      * @param value The q to set.
      * @return This builder for chaining.
      */
@@ -1098,22 +925,30 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
       q_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string q = 7 [json_name = "q"];</code>
+     * <pre>
+     * 场站名 / registration_id 模糊搜
+     * </pre>
+     *
+     * <code>optional string q = 5 [json_name = "q"];</code>
      * @return This builder for chaining.
      */
     public Builder clearQ() {
       q_ = getDefaultInstance().getQ();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string q = 7 [json_name = "q"];</code>
+     * <pre>
+     * 场站名 / registration_id 模糊搜
+     * </pre>
+     *
+     * <code>optional string q = 5 [json_name = "q"];</code>
      * @param value The bytes for q to set.
      * @return This builder for chaining.
      */
@@ -1122,7 +957,7 @@ private static final long serialVersionUID = 0L;
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       q_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

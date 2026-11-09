@@ -54,6 +54,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceType_ = "";
   /**
+   * <pre>
+   * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+   * </pre>
+   *
    * <code>optional string service_type = 1 [json_name = "service_type"];</code>
    * @return Whether the serviceType field is set.
    */
@@ -62,6 +66,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+   * </pre>
+   *
    * <code>optional string service_type = 1 [json_name = "service_type"];</code>
    * @return The serviceType.
    */
@@ -79,6 +87,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+   * </pre>
+   *
    * <code>optional string service_type = 1 [json_name = "service_type"];</code>
    * @return The bytes for serviceType.
    */
@@ -403,6 +415,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object serviceType_ = "";
     /**
+     * <pre>
+     * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+     * </pre>
+     *
      * <code>optional string service_type = 1 [json_name = "service_type"];</code>
      * @return Whether the serviceType field is set.
      */
@@ -410,6 +426,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     * <pre>
+     * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+     * </pre>
+     *
      * <code>optional string service_type = 1 [json_name = "service_type"];</code>
      * @return The serviceType.
      */
@@ -426,6 +446,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+     * </pre>
+     *
      * <code>optional string service_type = 1 [json_name = "service_type"];</code>
      * @return The bytes for serviceType.
      */
@@ -443,6 +467,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+     * </pre>
+     *
      * <code>optional string service_type = 1 [json_name = "service_type"];</code>
      * @param value The serviceType to set.
      * @return This builder for chaining.
@@ -456,6 +484,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+     * </pre>
+     *
      * <code>optional string service_type = 1 [json_name = "service_type"];</code>
      * @return This builder for chaining.
      */
@@ -466,6 +498,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * pv_prediction | load_prediction | ess_prediction；缺省按实现默认（通常 pv）
+     * </pre>
+     *
      * <code>optional string service_type = 1 [json_name = "service_type"];</code>
      * @param value The bytes for serviceType to set.
      * @return This builder for chaining.

@@ -9,4 +9,21 @@ package com.fusion.ai.proto.data_readiness;
 public interface GetDataPipelineStatsRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+   * @return Whether the serviceType field is set.
+   */
+  boolean hasServiceType();
+  /**
+   * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+   * @return The serviceType.
+   */
+  java.lang.String getServiceType();
+  /**
+   * <code>optional string service_type = 1 [json_name = "service_type"];</code>
+   * @return The bytes for serviceType.
+   */
+  com.google.protobuf.ByteString
+      getServiceTypeBytes();
 }

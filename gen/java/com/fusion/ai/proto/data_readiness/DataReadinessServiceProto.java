@@ -36,10 +36,10 @@ public final class DataReadinessServiceProto extends com.google.protobuf.Generat
   static {
     java.lang.String[] descriptorData = {
       "\n+data_readiness/data_readiness_service." +
-      "proto\022\036fusion.ai.proto.data_readiness\032\034g" +
-      "oogle/api/annotations.proto\032\027google/api/" +
-      "client.proto\032+data_readiness/data_readin" +
-      "ess_message.proto2\344\026\n\024DataReadinessServi" +
+      "proto\022\036fusion.ai.proto.data_readiness\032+d" +
+      "ata_readiness/data_readiness_message.pro" +
+      "to\032\034google/api/annotations.proto\032\027google" +
+      "/api/client.proto2\334\022\n\024DataReadinessServi" +
       "ce\022\257\001\n\017GetDataOverview\0226.fusion.ai.proto" +
       ".data_readiness.GetDataOverviewRequest\0327" +
       ".fusion.ai.proto.data_readiness.GetDataO" +
@@ -54,65 +54,52 @@ public final class DataReadinessServiceProto extends com.google.protobuf.Generat
       "equest\032<.fusion.ai.proto.data_readiness." +
       "GetDataSiteReadinessResponse\"G\332A\017registr" +
       "ation_id\202\323\344\223\002/\022-/ai/v2/data/sites/{regis" +
-      "tration_id}/readiness\022\265\001\n\024GetDataPipelin" +
+      "tration_id}/readiness\022\304\001\n\024GetDataPipelin" +
       "eStats\022;.fusion.ai.proto.data_readiness." +
       "GetDataPipelineStatsRequest\032<.fusion.ai." +
       "proto.data_readiness.GetDataPipelineStat" +
-      "sResponse\"\"\202\323\344\223\002\034\022\032/ai/v2/data/pipeline/" +
-      "stats\022\240\001\n\016ExportDataGaps\0225.fusion.ai.pro" +
-      "to.data_readiness.ExportDataGapsRequest\032" +
-      "6.fusion.ai.proto.data_readiness.ExportD" +
-      "ataGapsResponse\"\037\202\323\344\223\002\031\022\027/ai/v2/data/gap" +
-      "s/export\022\307\001\n\027GetWeatherExcelTemplate\022>.f" +
-      "usion.ai.proto.data_readiness.GetWeather" +
-      "ExcelTemplateRequest\032?.fusion.ai.proto.d" +
-      "ata_readiness.GetWeatherExcelTemplateRes" +
-      "ponse\"+\202\323\344\223\002%\022#/ai/v2/data/weather/impor" +
-      "t/template\022\306\001\n\016GetWeatherSite\0225.fusion.a" +
-      "i.proto.data_readiness.GetWeatherSiteReq" +
-      "uest\0326.fusion.ai.proto.data_readiness.Ge" +
-      "tWeatherSiteResponse\"E\332A\017registration_id" +
-      "\202\323\344\223\002-\022+/ai/v2/data/sites/{registration_" +
-      "id}/weather\022\301\001\n\021GetWeatherSyncRun\0228.fusi" +
-      "on.ai.proto.data_readiness.GetWeatherSyn" +
-      "cRunRequest\0329.fusion.ai.proto.data_readi" +
-      "ness.GetWeatherSyncRunResponse\"7\332A\006run_i" +
-      "d\202\323\344\223\002(\022&/ai/v2/data/weather/sync/runs/{" +
-      "run_id}\022\256\001\n\020BatchSyncWeather\0227.fusion.ai" +
-      ".proto.data_readiness.BatchSyncWeatherRe" +
-      "quest\0328.fusion.ai.proto.data_readiness.B" +
-      "atchSyncWeatherResponse\"\'\332A\001*\202\323\344\223\002\035\"\030/ai" +
-      "/v2/data/weather/sync:\001*\022\306\001\n\026RetryFailed" +
-      "WeatherSync\022=.fusion.ai.proto.data_readi" +
-      "ness.RetryFailedWeatherSyncRequest\032>.fus" +
-      "ion.ai.proto.data_readiness.RetryFailedW" +
-      "eatherSyncResponse\"-\332A\001*\202\323\344\223\002#\"\036/ai/v2/d" +
-      "ata/weather/sync/retry:\001*\022\326\001\n\033CreateWeat" +
-      "herExcelImportJob\022B.fusion.ai.proto.data" +
+      "sResponse\"1\332A\014service_type\202\323\344\223\002\034\022\032/ai/v2" +
+      "/data/pipeline/stats\022\307\001\n\027GetWeatherExcel" +
+      "Template\022>.fusion.ai.proto.data_readines" +
+      "s.GetWeatherExcelTemplateRequest\032?.fusio" +
+      "n.ai.proto.data_readiness.GetWeatherExce" +
+      "lTemplateResponse\"+\202\323\344\223\002%\022#/ai/v2/data/w" +
+      "eather/import/template\022\306\001\n\016GetWeatherSit" +
+      "e\0225.fusion.ai.proto.data_readiness.GetWe" +
+      "atherSiteRequest\0326.fusion.ai.proto.data_" +
+      "readiness.GetWeatherSiteResponse\"E\332A\017reg" +
+      "istration_id\202\323\344\223\002-\022+/ai/v2/data/sites/{r" +
+      "egistration_id}/weather\022\301\001\n\021GetWeatherSy" +
+      "ncRun\0228.fusion.ai.proto.data_readiness.G" +
+      "etWeatherSyncRunRequest\0329.fusion.ai.prot" +
+      "o.data_readiness.GetWeatherSyncRunRespon" +
+      "se\"7\332A\006run_id\202\323\344\223\002(\022&/ai/v2/data/weather" +
+      "/sync/runs/{run_id}\022\256\001\n\020BatchSyncWeather" +
+      "\0227.fusion.ai.proto.data_readiness.BatchS" +
+      "yncWeatherRequest\0328.fusion.ai.proto.data" +
+      "_readiness.BatchSyncWeatherResponse\"\'\332A\001" +
+      "*\202\323\344\223\002\035\"\030/ai/v2/data/weather/sync:\001*\022\306\001\n" +
+      "\026RetryFailedWeatherSync\022=.fusion.ai.prot" +
+      "o.data_readiness.RetryFailedWeatherSyncR" +
+      "equest\032>.fusion.ai.proto.data_readiness." +
+      "RetryFailedWeatherSyncResponse\"-\332A\001*\202\323\344\223" +
+      "\002#\"\036/ai/v2/data/weather/sync/retry:\001*\022\326\001" +
+      "\n\033CreateWeatherExcelImportJob\022B.fusion.a" +
+      "i.proto.data_readiness.CreateWeatherExce" +
+      "lImportJobRequest\032C.fusion.ai.proto.data" +
       "_readiness.CreateWeatherExcelImportJobRe" +
-      "quest\032C.fusion.ai.proto.data_readiness.C" +
-      "reateWeatherExcelImportJobResponse\".\332A\001*" +
-      "\202\323\344\223\002$\"\037/ai/v2/data/weather/import/jobs:" +
-      "\001*\022\276\001\n\025CreateDataBackfillJob\022<.fusion.ai" +
-      ".proto.data_readiness.CreateDataBackfill" +
-      "JobRequest\032=.fusion.ai.proto.data_readin" +
-      "ess.CreateDataBackfillJobResponse\"(\332A\001*\202" +
-      "\323\344\223\002\036\"\031/ai/v2/data/backfill/jobs:\001*\022\311\001\n\022" +
-      "UploadBackfillFile\0229.fusion.ai.proto.dat" +
-      "a_readiness.UploadBackfillFileRequest\032:." +
-      "fusion.ai.proto.data_readiness.UploadBac" +
-      "kfillFileResponse\"<\332A\006job_id\202\323\344\223\002-\"(/ai/" +
-      "v2/data/backfill/jobs/{job_id}/files:\001*\022" +
-      "\253\001\n\016BatchPullPower\0225.fusion.ai.proto.dat" +
-      "a_readiness.BatchPullPowerRequest\0326.fusi" +
-      "on.ai.proto.data_readiness.BatchPullPowe" +
-      "rResponse\"*\332A\001*\202\323\344\223\002 \"\033/ai/v2/data/power" +
-      "/pull/sync:\001*\022\303\001\n\024RetryFailedPullPower\022;" +
-      ".fusion.ai.proto.data_readiness.RetryFai" +
-      "ledPullPowerRequest\032<.fusion.ai.proto.da" +
-      "ta_readiness.RetryFailedPullPowerRespons" +
-      "e\"0\332A\001*\202\323\344\223\002&\"!/ai/v2/data/power/pull/sy" +
-      "nc/retry:\001*\032\003\312A\000B\206\002\n\"com.fusion.ai.proto" +
+      "sponse\".\332A\001*\202\323\344\223\002$\"\037/ai/v2/data/weather/" +
+      "import/jobs:\001*\022\276\001\n\025CreateDataBackfillJob" +
+      "\022<.fusion.ai.proto.data_readiness.Create" +
+      "DataBackfillJobRequest\032=.fusion.ai.proto" +
+      ".data_readiness.CreateDataBackfillJobRes" +
+      "ponse\"(\332A\001*\202\323\344\223\002\036\"\031/ai/v2/data/backfill/" +
+      "jobs:\001*\022\311\001\n\022UploadBackfillFile\0229.fusion." +
+      "ai.proto.data_readiness.UploadBackfillFi" +
+      "leRequest\032:.fusion.ai.proto.data_readine" +
+      "ss.UploadBackfillFileResponse\"<\332A\006job_id" +
+      "\202\323\344\223\002-\"(/ai/v2/data/backfill/jobs/{job_i" +
+      "d}/files:\001*\032\003\312A\000B\206\002\n\"com.fusion.ai.proto" +
       ".data_readinessB\031DataReadinessServicePro" +
       "toP\001Z-fusion.ai.proto.data_readiness;dat" +
       "a_readiness\242\002\004FAPD\252\002\035Fusion.Ai.Proto.Dat" +
@@ -124,14 +111,14 @@ public final class DataReadinessServiceProto extends com.google.protobuf.Generat
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.fusion.ai.proto.data_readiness.DataReadinessMessageProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ClientProto.getDescriptor(),
-          com.fusion.ai.proto.data_readiness.DataReadinessMessageProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
+    com.fusion.ai.proto.data_readiness.DataReadinessMessageProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
-    com.fusion.ai.proto.data_readiness.DataReadinessMessageProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

@@ -29,7 +29,20 @@ public interface DataOverviewOrBuilder extends
   int getNeedFillCount();
 
   /**
-   * <code>int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+   * <pre>
+   * 仅 service_type=pv_prediction 时填写；其它业务不返回
+   * </pre>
+   *
+   * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
+   * @return Whether the weatherMissingCount field is set.
+   */
+  boolean hasWeatherMissingCount();
+  /**
+   * <pre>
+   * 仅 service_type=pv_prediction 时填写；其它业务不返回
+   * </pre>
+   *
+   * <code>optional int32 weather_missing_count = 4 [json_name = "weather_missing_count"];</code>
    * @return The weatherMissingCount.
    */
   int getWeatherMissingCount();

@@ -31,6 +31,8 @@ class ReadinessStatus
      */
     const READINESS_STATUS_SEVERE = 3;
     /**
+     * 仅 pv_prediction 有意义
+     *
      * Generated from protobuf enum <code>READINESS_STATUS_WEATHER_MISSING = 4;</code>
      */
     const READINESS_STATUS_WEATHER_MISSING = 4;
@@ -38,10 +40,6 @@ class ReadinessStatus
      * Generated from protobuf enum <code>READINESS_STATUS_OFFLINE = 5;</code>
      */
     const READINESS_STATUS_OFFLINE = 5;
-    /**
-     * Generated from protobuf enum <code>READINESS_STATUS_PULL_UNKNOWN = 6;</code>
-     */
-    const READINESS_STATUS_PULL_UNKNOWN = 6;
 
     private static $valueToName = [
         self::READINESS_STATUS_UNSPECIFIED => 'READINESS_STATUS_UNSPECIFIED',
@@ -50,7 +48,6 @@ class ReadinessStatus
         self::READINESS_STATUS_SEVERE => 'READINESS_STATUS_SEVERE',
         self::READINESS_STATUS_WEATHER_MISSING => 'READINESS_STATUS_WEATHER_MISSING',
         self::READINESS_STATUS_OFFLINE => 'READINESS_STATUS_OFFLINE',
-        self::READINESS_STATUS_PULL_UNKNOWN => 'READINESS_STATUS_PULL_UNKNOWN',
     ];
 
     public static function name($value)
