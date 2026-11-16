@@ -133,7 +133,7 @@ public enum JobStatus
   }
   public static com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.fusion.ai.proto.workbench.WorkbenchMessageProto.getDescriptor().getEnumType(4);
+    return com.fusion.ai.proto.workbench.WorkbenchMessageProto.getDescriptor().getEnumType(3);
   }
 
   private static final JobStatus[] VALUES = values();

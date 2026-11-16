@@ -2,7 +2,7 @@
 // All rights reserved.
 //
 // Filename: workbench_service.proto
-// Description: 算法预测工作台 API — WorkbenchService（HTTP 前缀 /ai/v2/workbench/）
+// Description: 算法预测工作台 API — WorkbenchService（HTTP 前缀 /api/v2/workbench/）
 //
 // http://www.sfere-elec.com/
 
@@ -31,7 +31,7 @@ const (
 	WorkbenchService_GetFusionModel_FullMethodName       = "/fusion.ai.proto.workbench.WorkbenchService/GetFusionModel"
 	WorkbenchService_CreateTrainJob_FullMethodName       = "/fusion.ai.proto.workbench.WorkbenchService/CreateTrainJob"
 	WorkbenchService_CreatePredictJob_FullMethodName     = "/fusion.ai.proto.workbench.WorkbenchService/CreatePredictJob"
-	WorkbenchService_GetJob_FullMethodName               = "/fusion.ai.proto.workbench.WorkbenchService/GetJob"
+	WorkbenchService_GetPredict_FullMethodName           = "/fusion.ai.proto.workbench.WorkbenchService/GetPredict"
 	WorkbenchService_GetEvalDaySeries_FullMethodName     = "/fusion.ai.proto.workbench.WorkbenchService/GetEvalDaySeries"
 	WorkbenchService_GetEvalDayMetrics_FullMethodName    = "/fusion.ai.proto.workbench.WorkbenchService/GetEvalDayMetrics"
 	WorkbenchService_ListEvalDailyMetrics_FullMethodName = "/fusion.ai.proto.workbench.WorkbenchService/ListEvalDailyMetrics"
@@ -43,6 +43,7 @@ const (
 //
 // WorkbenchService 算法预测工作台 Portal 接口（与 /3rd-api 解耦）。
 // 失败统一 gRPC status + fusion-code。
+// 进度：进页 HTTP 拉快照，之后靠 WS 增量；不做 job 轮询。
 type WorkbenchServiceClient interface {
 	// 左栏：今日数据就绪检查（功率/天气覆盖、缺口、重新检查）
 	GetDataReadyCheck(ctx context.Context, in *GetDataReadyCheckRequest, opts ...grpc.CallOption) (*GetDataReadyCheckResponse, error)
@@ -52,8 +53,9 @@ type WorkbenchServiceClient interface {
 	CreateTrainJob(ctx context.Context, in *CreateTrainJobRequest, opts ...grpc.CallOption) (*CreateTrainJobResponse, error)
 	// 中栏：触发预测
 	CreatePredictJob(ctx context.Context, in *CreatePredictJobRequest, opts ...grpc.CallOption) (*CreatePredictJobResponse, error)
-	// 训练/预测进度轮询
-	GetJob(ctx context.Context, in *GetJobRequest, opts ...grpc.CallOption) (*GetJobResponse, error)
+	// 中栏：进页预测进度快照（current + 当前 job；无任务时 job 为空）
+	// 之后进度靠 WS predict/*，不要轮询。
+	GetPredict(ctx context.Context, in *GetPredictRequest, opts ...grpc.CallOption) (*GetPredictResponse, error)
 	// 中栏：评估日 预测 vs 真实 序列
 	GetEvalDaySeries(ctx context.Context, in *GetEvalDaySeriesRequest, opts ...grpc.CallOption) (*GetEvalDaySeriesResponse, error)
 	// 右栏：单日指标 KPI
@@ -110,10 +112,10 @@ func (c *workbenchServiceClient) CreatePredictJob(ctx context.Context, in *Creat
 	return out, nil
 }
 
-func (c *workbenchServiceClient) GetJob(ctx context.Context, in *GetJobRequest, opts ...grpc.CallOption) (*GetJobResponse, error) {
+func (c *workbenchServiceClient) GetPredict(ctx context.Context, in *GetPredictRequest, opts ...grpc.CallOption) (*GetPredictResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetJobResponse)
-	err := c.cc.Invoke(ctx, WorkbenchService_GetJob_FullMethodName, in, out, cOpts...)
+	out := new(GetPredictResponse)
+	err := c.cc.Invoke(ctx, WorkbenchService_GetPredict_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -156,6 +158,7 @@ func (c *workbenchServiceClient) ListEvalDailyMetrics(ctx context.Context, in *L
 //
 // WorkbenchService 算法预测工作台 Portal 接口（与 /3rd-api 解耦）。
 // 失败统一 gRPC status + fusion-code。
+// 进度：进页 HTTP 拉快照，之后靠 WS 增量；不做 job 轮询。
 type WorkbenchServiceServer interface {
 	// 左栏：今日数据就绪检查（功率/天气覆盖、缺口、重新检查）
 	GetDataReadyCheck(context.Context, *GetDataReadyCheckRequest) (*GetDataReadyCheckResponse, error)
@@ -165,8 +168,9 @@ type WorkbenchServiceServer interface {
 	CreateTrainJob(context.Context, *CreateTrainJobRequest) (*CreateTrainJobResponse, error)
 	// 中栏：触发预测
 	CreatePredictJob(context.Context, *CreatePredictJobRequest) (*CreatePredictJobResponse, error)
-	// 训练/预测进度轮询
-	GetJob(context.Context, *GetJobRequest) (*GetJobResponse, error)
+	// 中栏：进页预测进度快照（current + 当前 job；无任务时 job 为空）
+	// 之后进度靠 WS predict/*，不要轮询。
+	GetPredict(context.Context, *GetPredictRequest) (*GetPredictResponse, error)
 	// 中栏：评估日 预测 vs 真实 序列
 	GetEvalDaySeries(context.Context, *GetEvalDaySeriesRequest) (*GetEvalDaySeriesResponse, error)
 	// 右栏：单日指标 KPI
@@ -195,8 +199,8 @@ func (UnimplementedWorkbenchServiceServer) CreateTrainJob(context.Context, *Crea
 func (UnimplementedWorkbenchServiceServer) CreatePredictJob(context.Context, *CreatePredictJobRequest) (*CreatePredictJobResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreatePredictJob not implemented")
 }
-func (UnimplementedWorkbenchServiceServer) GetJob(context.Context, *GetJobRequest) (*GetJobResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method GetJob not implemented")
+func (UnimplementedWorkbenchServiceServer) GetPredict(context.Context, *GetPredictRequest) (*GetPredictResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPredict not implemented")
 }
 func (UnimplementedWorkbenchServiceServer) GetEvalDaySeries(context.Context, *GetEvalDaySeriesRequest) (*GetEvalDaySeriesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetEvalDaySeries not implemented")
@@ -300,20 +304,20 @@ func _WorkbenchService_CreatePredictJob_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _WorkbenchService_GetJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetJobRequest)
+func _WorkbenchService_GetPredict_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPredictRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkbenchServiceServer).GetJob(ctx, in)
+		return srv.(WorkbenchServiceServer).GetPredict(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: WorkbenchService_GetJob_FullMethodName,
+		FullMethod: WorkbenchService_GetPredict_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkbenchServiceServer).GetJob(ctx, req.(*GetJobRequest))
+		return srv.(WorkbenchServiceServer).GetPredict(ctx, req.(*GetPredictRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -396,8 +400,8 @@ var WorkbenchService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _WorkbenchService_CreatePredictJob_Handler,
 		},
 		{
-			MethodName: "GetJob",
-			Handler:    _WorkbenchService_GetJob_Handler,
+			MethodName: "GetPredict",
+			Handler:    _WorkbenchService_GetPredict_Handler,
 		},
 		{
 			MethodName: "GetEvalDaySeries",

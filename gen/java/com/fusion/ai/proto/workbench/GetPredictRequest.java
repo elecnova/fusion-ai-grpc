@@ -6,13 +6,13 @@
 package com.fusion.ai.proto.workbench;
 
 /**
- * Protobuf type {@code fusion.ai.proto.workbench.GetJobRequest}
+ * Protobuf type {@code fusion.ai.proto.workbench.GetPredictRequest}
  */
 @com.google.protobuf.Generated
-public final class GetJobRequest extends
+public final class GetPredictRequest extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:fusion.ai.proto.workbench.GetJobRequest)
-    GetJobRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:fusion.ai.proto.workbench.GetPredictRequest)
+    GetPredictRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -21,67 +21,67 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 36,
       /* patch= */ 2,
       /* suffix= */ "",
-      "GetJobRequest");
+      "GetPredictRequest");
   }
-  // Use GetJobRequest.newBuilder() to construct.
-  private GetJobRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use GetPredictRequest.newBuilder() to construct.
+  private GetPredictRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private GetJobRequest() {
-    jobId_ = "";
+  private GetPredictRequest() {
+    registrationId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetJobRequest_descriptor;
+    return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetPredictRequest_descriptor;
   }
 
   @java.lang.Override
   public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-    return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetJobRequest_descriptor;
+    return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetPredictRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetJobRequest_fieldAccessorTable
+    return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetPredictRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.fusion.ai.proto.workbench.GetJobRequest.class, com.fusion.ai.proto.workbench.GetJobRequest.Builder.class);
+            com.fusion.ai.proto.workbench.GetPredictRequest.class, com.fusion.ai.proto.workbench.GetPredictRequest.Builder.class);
   }
 
-  public static final int JOB_ID_FIELD_NUMBER = 1;
+  public static final int REGISTRATION_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object jobId_ = "";
+  private volatile java.lang.Object registrationId_ = "";
   /**
-   * <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = { ... }</code>
-   * @return The jobId.
+   * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
+   * @return The registrationId.
    */
   @java.lang.Override
-  public java.lang.String getJobId() {
-    java.lang.Object ref = jobId_;
+  public java.lang.String getRegistrationId() {
+    java.lang.Object ref = registrationId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      jobId_ = s;
+      registrationId_ = s;
       return s;
     }
   }
   /**
-   * <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for jobId.
+   * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for registrationId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getJobIdBytes() {
-    java.lang.Object ref = jobId_;
+      getRegistrationIdBytes() {
+    java.lang.Object ref = registrationId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      jobId_ = b;
+      registrationId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -102,15 +102,15 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(jobId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, jobId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, registrationId_);
     }
     getUnknownFields().writeTo(output);
   }
   private int computeSerializedSize_0() {
     int size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(jobId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, jobId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(registrationId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, registrationId_);
     }
     return size;
   }
@@ -131,13 +131,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.fusion.ai.proto.workbench.GetJobRequest)) {
+    if (!(obj instanceof com.fusion.ai.proto.workbench.GetPredictRequest)) {
       return super.equals(obj);
     }
-    com.fusion.ai.proto.workbench.GetJobRequest other = (com.fusion.ai.proto.workbench.GetJobRequest) obj;
+    com.fusion.ai.proto.workbench.GetPredictRequest other = (com.fusion.ai.proto.workbench.GetPredictRequest) obj;
 
-    if (!getJobId()
-        .equals(other.getJobId())) return false;
+    if (!getRegistrationId()
+        .equals(other.getRegistrationId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -149,51 +149,51 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getJobId().hashCode();
+    hash = (37 * hash) + REGISTRATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRegistrationId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(byte[] data)
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(java.io.InputStream input)
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -201,26 +201,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseDelimitedFrom(
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.fusion.ai.proto.workbench.GetJobRequest parseFrom(
+  public static com.fusion.ai.proto.workbench.GetPredictRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.fusion.ai.proto.workbench.GetJobRequest prototype) {
+  public static Builder newBuilder(com.fusion.ai.proto.workbench.GetPredictRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -249,26 +249,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code fusion.ai.proto.workbench.GetJobRequest}
+   * Protobuf type {@code fusion.ai.proto.workbench.GetPredictRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:fusion.ai.proto.workbench.GetJobRequest)
-      com.fusion.ai.proto.workbench.GetJobRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:fusion.ai.proto.workbench.GetPredictRequest)
+      com.fusion.ai.proto.workbench.GetPredictRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetJobRequest_descriptor;
+      return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetPredictRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetJobRequest_fieldAccessorTable
+      return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetPredictRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.fusion.ai.proto.workbench.GetJobRequest.class, com.fusion.ai.proto.workbench.GetJobRequest.Builder.class);
+              com.fusion.ai.proto.workbench.GetPredictRequest.class, com.fusion.ai.proto.workbench.GetPredictRequest.Builder.class);
     }
 
-    // Construct using com.fusion.ai.proto.workbench.GetJobRequest.newBuilder()
+    // Construct using com.fusion.ai.proto.workbench.GetPredictRequest.newBuilder()
     private Builder() {
 
     }
@@ -282,24 +282,24 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      jobId_ = "";
+      registrationId_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetJobRequest_descriptor;
+      return com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_GetPredictRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.fusion.ai.proto.workbench.GetJobRequest getDefaultInstanceForType() {
-      return com.fusion.ai.proto.workbench.GetJobRequest.getDefaultInstance();
+    public com.fusion.ai.proto.workbench.GetPredictRequest getDefaultInstanceForType() {
+      return com.fusion.ai.proto.workbench.GetPredictRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.fusion.ai.proto.workbench.GetJobRequest build() {
-      com.fusion.ai.proto.workbench.GetJobRequest result = buildPartial();
+    public com.fusion.ai.proto.workbench.GetPredictRequest build() {
+      com.fusion.ai.proto.workbench.GetPredictRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -307,34 +307,34 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.fusion.ai.proto.workbench.GetJobRequest buildPartial() {
-      com.fusion.ai.proto.workbench.GetJobRequest result = new com.fusion.ai.proto.workbench.GetJobRequest(this);
+    public com.fusion.ai.proto.workbench.GetPredictRequest buildPartial() {
+      com.fusion.ai.proto.workbench.GetPredictRequest result = new com.fusion.ai.proto.workbench.GetPredictRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.fusion.ai.proto.workbench.GetJobRequest result) {
+    private void buildPartial0(com.fusion.ai.proto.workbench.GetPredictRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.jobId_ = jobId_;
+        result.registrationId_ = registrationId_;
       }
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.fusion.ai.proto.workbench.GetJobRequest) {
-        return mergeFrom((com.fusion.ai.proto.workbench.GetJobRequest)other);
+      if (other instanceof com.fusion.ai.proto.workbench.GetPredictRequest) {
+        return mergeFrom((com.fusion.ai.proto.workbench.GetPredictRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.fusion.ai.proto.workbench.GetJobRequest other) {
-      if (other == com.fusion.ai.proto.workbench.GetJobRequest.getDefaultInstance()) return this;
-      if (!other.getJobId().isEmpty()) {
-        jobId_ = other.jobId_;
+    public Builder mergeFrom(com.fusion.ai.proto.workbench.GetPredictRequest other) {
+      if (other == com.fusion.ai.proto.workbench.GetPredictRequest.getDefaultInstance()) return this;
+      if (!other.getRegistrationId().isEmpty()) {
+        registrationId_ = other.registrationId_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -363,7 +363,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              jobId_ = input.readStringRequireUtf8();
+              registrationId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
@@ -384,95 +384,95 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object jobId_ = "";
+    private java.lang.Object registrationId_ = "";
     /**
-     * <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = { ... }</code>
-     * @return The jobId.
+     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
+     * @return The registrationId.
      */
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
+    public java.lang.String getRegistrationId() {
+      java.lang.Object ref = registrationId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
+        registrationId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for jobId.
+     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
+     * @return The bytes for registrationId.
      */
     public com.google.protobuf.ByteString
-        getJobIdBytes() {
-      java.lang.Object ref = jobId_;
+        getRegistrationIdBytes() {
+      java.lang.Object ref = registrationId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        jobId_ = b;
+        registrationId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = { ... }</code>
-     * @param value The jobId to set.
+     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
+     * @param value The registrationId to set.
      * @return This builder for chaining.
      */
-    public Builder setJobId(
+    public Builder setRegistrationId(
         java.lang.String value) {
       java.util.Objects.requireNonNull(value);
-      jobId_ = value;
+      registrationId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = { ... }</code>
+     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearJobId() {
-      jobId_ = getDefaultInstance().getJobId();
+    public Builder clearRegistrationId() {
+      registrationId_ = getDefaultInstance().getRegistrationId();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for jobId to set.
+     * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
+     * @param value The bytes for registrationId to set.
      * @return This builder for chaining.
      */
-    public Builder setJobIdBytes(
+    public Builder setRegistrationIdBytes(
         com.google.protobuf.ByteString value) {
       java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
-      jobId_ = value;
+      registrationId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:fusion.ai.proto.workbench.GetJobRequest)
+    // @@protoc_insertion_point(builder_scope:fusion.ai.proto.workbench.GetPredictRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.GetJobRequest)
-  private static final com.fusion.ai.proto.workbench.GetJobRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.GetPredictRequest)
+  private static final com.fusion.ai.proto.workbench.GetPredictRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.fusion.ai.proto.workbench.GetJobRequest();
+    DEFAULT_INSTANCE = new com.fusion.ai.proto.workbench.GetPredictRequest();
   }
 
-  public static com.fusion.ai.proto.workbench.GetJobRequest getDefaultInstance() {
+  public static com.fusion.ai.proto.workbench.GetPredictRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetJobRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetJobRequest>() {
+  private static final com.google.protobuf.Parser<GetPredictRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetPredictRequest>() {
     @java.lang.Override
-    public GetJobRequest parsePartialFrom(
+    public GetPredictRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -491,17 +491,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<GetJobRequest> parser() {
+  public static com.google.protobuf.Parser<GetPredictRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetJobRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetPredictRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.fusion.ai.proto.workbench.GetJobRequest getDefaultInstanceForType() {
+  public com.fusion.ai.proto.workbench.GetPredictRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

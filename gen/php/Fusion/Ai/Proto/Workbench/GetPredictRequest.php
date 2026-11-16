@@ -10,14 +10,14 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Generated from protobuf message <code>fusion.ai.proto.workbench.GetJobRequest</code>
+ * Generated from protobuf message <code>fusion.ai.proto.workbench.GetPredictRequest</code>
  */
-class GetJobRequest extends \Google\Protobuf\Internal\Message
+class GetPredictRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      */
-    protected $job_id = '';
+    protected $registration_id = '';
 
     /**
      * Constructor.
@@ -25,7 +25,7 @@ class GetJobRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $job_id
+     *     @type string $registration_id
      * }
      */
     public function __construct($data = null)
@@ -35,23 +35,23 @@ class GetJobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @return string
      */
-    public function getJobId()
+    public function getRegistrationId()
     {
-        return $this->job_id;
+        return $this->registration_id;
     }
 
     /**
-     * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
      */
-    public function setJobId(string $var)
+    public function setRegistrationId(string $var)
     {
         GPBUtil::checkString($var, true);
-        $this->job_id = $var;
+        $this->registration_id = $var;
 
         return $this;
     }

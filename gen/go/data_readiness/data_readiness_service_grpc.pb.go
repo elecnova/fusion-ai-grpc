@@ -2,7 +2,7 @@
 // All rights reserved.
 //
 // Filename: data_readiness_service.proto
-// Description: 数据管理页 API — DataReadinessService（HTTP 前缀 /ai/v2/data/）
+// Description: 数据管理页 API — DataReadinessService（HTTP 前缀 /api/v2/data/）
 //
 // http://www.sfere-elec.com/
 

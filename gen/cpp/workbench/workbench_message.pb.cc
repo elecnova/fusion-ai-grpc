@@ -39,7 +39,9 @@ PROTOBUF_CONSTINIT ::google::protobuf::internal::ReflectionData
         {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::workbench::FusionModelView
         {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
-        // ::fusion::ai::proto::workbench::JobView
+        // ::fusion::ai::proto::workbench::PredictJobView_StagesEntry_DoNotUse
+        {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
+        // ::fusion::ai::proto::workbench::PredictJobView
         {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::workbench::SeriesPoint
         {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
@@ -67,9 +69,9 @@ PROTOBUF_CONSTINIT ::google::protobuf::internal::ReflectionData
         {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::workbench::CreatePredictJobResponse
         {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
-        // ::fusion::ai::proto::workbench::GetJobRequest
+        // ::fusion::ai::proto::workbench::GetPredictRequest
         {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
-        // ::fusion::ai::proto::workbench::GetJobResponse
+        // ::fusion::ai::proto::workbench::GetPredictResponse
         {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
         // ::fusion::ai::proto::workbench::GetEvalDaySeriesRequest
         {&::_pbi::kDescriptorMethods, &::descriptor_table_workbench_2fworkbench_5fmessage_2eproto, /* tracker*/ nullptr,},
@@ -194,7 +196,7 @@ constexpr auto SeriesPoint::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[6],
+      &file_reflection_data[7],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -241,6 +243,142 @@ const ::_pbi::ClassData* SeriesPoint_get_class_data() {
   return SeriesPoint_globals_.GetClassData();
 #else
   return SeriesPoint_class_data_.base();
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+}
+}  // namespace
+#endif  // PROTOBUF_CUSTOM_VTABLE
+constexpr PredictJobView_StagesEntry_DoNotUse::ParseTableT_ PredictJobView_StagesEntry_DoNotUse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+  return ParseTableT_{
+    {
+      PROTOBUF_FIELD_OFFSET(PredictJobView_StagesEntry_DoNotUse, _impl_._has_bits_),
+      0, // no _extensions_
+      2, 8,  // max_field_number, fast_idx_mask
+      offsetof(ParseTableT_, field_lookup_table),
+      4294967292,  // skipmap
+      offsetof(ParseTableT_, field_entries),
+      2,  // num_field_entries
+      0,  // num_aux_entries
+      offsetof(ParseTableT_, field_names),  // no aux_entries
+      class_data,
+      nullptr,  // post_loop_handler
+      ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+      #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::workbench::PredictJobView_StagesEntry_DoNotUse>(),  // to_prefetch
+      #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+    }, {{
+      // string value = 2 [json_name = "value"];
+      {::_pbi::TcParser::FastUS1,
+       {18, 1, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView_StagesEntry_DoNotUse, _impl_.value_)}},
+      // string key = 1 [json_name = "key"];
+      {::_pbi::TcParser::FastUS1,
+       {10, 0, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView_StagesEntry_DoNotUse, _impl_.key_)}},
+    }}, {{
+      65535, 65535
+    }}, {{
+      // string key = 1 [json_name = "key"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView_StagesEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string value = 2 [json_name = "value"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView_StagesEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    }},
+    // no aux_entries
+    {{
+      "\64\3\5\0\0\0\0\0"
+      "fusion.ai.proto.workbench.PredictJobView.StagesEntry"
+      "key"
+      "value"
+    }},
+  };
+}
+
+template <typename>
+constexpr PredictJobView_StagesEntry_DoNotUse::PredictJobView_StagesEntry_DoNotUse(::_pbi::ConstantInitialized,
+                       const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
+    : Super_(
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          class_data
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      ) {
+}
+inline void* PROTOBUF_NONNULL PredictJobView_StagesEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) PredictJobView_StagesEntry_DoNotUse(arena);
+}
+constexpr auto PredictJobView_StagesEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(PredictJobView_StagesEntry_DoNotUse), alignof(PredictJobView_StagesEntry_DoNotUse));
+}
+constexpr auto PredictJobView_StagesEntry_DoNotUse::InternalGenerateClassData_(
+    const MessageLite& prototype,
+    const ::google::protobuf::internal::TcParseTableBase* tc_table) {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &prototype,
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+          &_table_.header,
+#else
+          tc_table,
+#endif
+          nullptr,  // IsInitialized
+          &PredictJobView_StagesEntry_DoNotUse::MergeImpl,
+          Super_::GetNewImpl<PredictJobView_StagesEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &PredictJobView_StagesEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&PredictJobView_StagesEntry_DoNotUse::ClearImpl),
+              Super_::ByteSizeLongImpl, Super_::_InternalSerializeImpl,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(PredictJobView_StagesEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+      &file_reflection_data[5],
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+      &::_pbi::kDescriptorMethods,
+      &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
+      nullptr,  // tracker
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  };
+}
+struct PredictJobView_StagesEntry_DoNotUseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr PredictJobView_StagesEntry_DoNotUseGlobalsTypeInternal()
+      :
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+        _default(::_pbi::ConstantInitialized{},
+                 PredictJobView_StagesEntry_DoNotUse_class_data_.base())
+#else   // !PROTOBUF_MESSAGE_GLOBALS
+        MessageGlobalsBase(PredictJobView_StagesEntry_DoNotUse::InternalGenerateClassData_(
+            _default, &PredictJobView_StagesEntry_DoNotUse_globals_._table.header)),
+        _default(::_pbi::ConstantInitialized{}, GetClassData()),
+        _table(::_pbi::PrivateAccess::GenerateParseTable<PredictJobView_StagesEntry_DoNotUse>(
+            GetClassData()))
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+  {
+  }
+  ~PredictJobView_StagesEntry_DoNotUseGlobalsTypeInternal() {}
+  union {
+    alignas(::_pbi::kMaxMessageAlignment) PredictJobView_StagesEntry_DoNotUse _default;
+  };
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<PredictJobView_StagesEntry_DoNotUse>(
+      ::std::declval<const ::_pbi::ClassData*>())) _table;
+#endif
+};
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+static_assert(PROTOBUF_FIELD_OFFSET(PredictJobView_StagesEntry_DoNotUseGlobalsTypeInternal, _default) ==
+              ::_pbi::MessageGlobalsBase::OffsetToDefault());
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST PredictJobView_StagesEntry_DoNotUseGlobalsTypeInternal PredictJobView_StagesEntry_DoNotUse_globals_
+        PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+namespace {
+const ::_pbi::ClassData* PredictJobView_StagesEntry_DoNotUse_get_class_data() {
+#ifdef PROTOBUF_MESSAGE_GLOBALS
+  return PredictJobView_StagesEntry_DoNotUse_globals_.GetClassData();
+#else
+  return PredictJobView_StagesEntry_DoNotUse_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -363,7 +501,7 @@ constexpr auto ListEvalDailyMetricsRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[25],
+      &file_reflection_data[26],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -414,17 +552,17 @@ const ::_pbi::ClassData* ListEvalDailyMetricsRequest_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
-class GetJobRequest::_Internal {
+class GetPredictRequest::_Internal {
  public:
-  using HasBits = decltype(::std::declval<GetJobRequest>()._impl_._has_bits_);
+  using HasBits = decltype(::std::declval<GetPredictRequest>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(GetJobRequest, _impl_._has_bits_);
+      8 * PROTOBUF_FIELD_OFFSET(GetPredictRequest, _impl_._has_bits_);
 };
 
-constexpr GetJobRequest::ParseTableT_ GetJobRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+constexpr GetPredictRequest::ParseTableT_ GetPredictRequest::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
   return ParseTableT_{
     {
-      PROTOBUF_FIELD_OFFSET(GetJobRequest, _impl_._has_bits_),
+      PROTOBUF_FIELD_OFFSET(GetPredictRequest, _impl_._has_bits_),
       0, // no _extensions_
       1, 0,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
@@ -437,38 +575,38 @@ constexpr GetJobRequest::ParseTableT_ GetJobRequest::InternalGenerateParseTable_
       nullptr,  // post_loop_handler
       ::_pbi::TcParser::MpUnknownFields,  // fallback
       #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::workbench::GetJobRequest>(),  // to_prefetch
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::workbench::GetPredictRequest>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      // string job_id = 1 [json_name = "job_id", (.buf.validate.field) = {
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
       {::_pbi::TcParser::FastUS1,
        {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(GetJobRequest, _impl_.job_id_)}},
+        PROTOBUF_FIELD_OFFSET(GetPredictRequest, _impl_.registration_id_)}},
     }}, {{
       65535, 65535
     }}, {{
-      // string job_id = 1 [json_name = "job_id", (.buf.validate.field) = {
-      {PROTOBUF_FIELD_OFFSET(GetJobRequest, _impl_.job_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+      {PROTOBUF_FIELD_OFFSET(GetPredictRequest, _impl_.registration_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     }},
     // no aux_entries
     {{
-      "\47\6\0\0\0\0\0\0"
-      "fusion.ai.proto.workbench.GetJobRequest"
-      "job_id"
+      "\53\17\0\0\0\0\0\0"
+      "fusion.ai.proto.workbench.GetPredictRequest"
+      "registration_id"
     }},
   };
 }
 
 
-inline constexpr GetJobRequest::Impl_::Impl_(
+inline constexpr GetPredictRequest::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     ::_pbi::ConstantInitialized) noexcept
-      : job_id_(
+      : registration_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()) {}
 
 template <typename>
-constexpr GetJobRequest::GetJobRequest(::_pbi::ConstantInitialized,
+constexpr GetPredictRequest::GetPredictRequest(::_pbi::ConstantInitialized,
                        const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
     : Super_(
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -477,15 +615,15 @@ constexpr GetJobRequest::GetJobRequest(::_pbi::ConstantInitialized,
           ),
       _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
 }
-inline void* PROTOBUF_NONNULL GetJobRequest::PlacementNew_(
+inline void* PROTOBUF_NONNULL GetPredictRequest::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) GetJobRequest(arena);
+  return ::new (mem) GetPredictRequest(arena);
 }
-constexpr auto GetJobRequest::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetJobRequest), alignof(GetJobRequest));
+constexpr auto GetPredictRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetPredictRequest), alignof(GetPredictRequest));
 }
-constexpr auto GetJobRequest::InternalGenerateClassData_(
+constexpr auto GetPredictRequest::InternalGenerateClassData_(
     const MessageLite& prototype,
     const ::google::protobuf::internal::TcParseTableBase* tc_table) {
   return ::google::protobuf::internal::ClassDataFull{
@@ -497,18 +635,18 @@ constexpr auto GetJobRequest::InternalGenerateClassData_(
           tc_table,
 #endif
           nullptr,  // IsInitialized
-          &GetJobRequest::MergeImpl,
-          Super_::GetNewImpl<GetJobRequest>(),
+          &GetPredictRequest::MergeImpl,
+          Super_::GetNewImpl<GetPredictRequest>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &GetJobRequest::SharedDtor,
-          Super_::GetClearImpl<GetJobRequest>(), &GetJobRequest::ByteSizeLong,
-              &GetJobRequest::_InternalSerialize,
+          &GetPredictRequest::SharedDtor,
+          Super_::GetClearImpl<GetPredictRequest>(), &GetPredictRequest::ByteSizeLong,
+              &GetPredictRequest::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(GetJobRequest, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(GetPredictRequest, _impl_._cached_size_),
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[19],
+      &file_reflection_data[20],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -516,45 +654,45 @@ constexpr auto GetJobRequest::InternalGenerateClassData_(
 #endif  // PROTOBUF_MESSAGE_GLOBALS
   };
 }
-struct GetJobRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr GetJobRequestGlobalsTypeInternal()
+struct GetPredictRequestGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr GetPredictRequestGlobalsTypeInternal()
       :
 #ifndef PROTOBUF_MESSAGE_GLOBALS
         _default(::_pbi::ConstantInitialized{},
-                 GetJobRequest_class_data_.base())
+                 GetPredictRequest_class_data_.base())
 #else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(GetJobRequest::InternalGenerateClassData_(
-            _default, &GetJobRequest_globals_._table.header)),
+        MessageGlobalsBase(GetPredictRequest::InternalGenerateClassData_(
+            _default, &GetPredictRequest_globals_._table.header)),
         _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<GetJobRequest>(
+        _table(::_pbi::PrivateAccess::GenerateParseTable<GetPredictRequest>(
             GetClassData()))
 #endif  // PROTOBUF_MESSAGE_GLOBALS
   {
   }
-  ~GetJobRequestGlobalsTypeInternal() {}
+  ~GetPredictRequestGlobalsTypeInternal() {}
   union {
-    alignas(::_pbi::kMaxMessageAlignment) GetJobRequest _default;
+    alignas(::_pbi::kMaxMessageAlignment) GetPredictRequest _default;
   };
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetJobRequest>(
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetPredictRequest>(
       ::std::declval<const ::_pbi::ClassData*>())) _table;
 #endif
 };
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(GetJobRequestGlobalsTypeInternal, _default) ==
+static_assert(PROTOBUF_FIELD_OFFSET(GetPredictRequestGlobalsTypeInternal, _default) ==
               ::_pbi::MessageGlobalsBase::OffsetToDefault());
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetJobRequestGlobalsTypeInternal GetJobRequest_globals_
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetPredictRequestGlobalsTypeInternal GetPredictRequest_globals_
         PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
 #if defined(PROTOBUF_CUSTOM_VTABLE)
 namespace {
-const ::_pbi::ClassData* GetJobRequest_get_class_data() {
+const ::_pbi::ClassData* GetPredictRequest_get_class_data() {
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-  return GetJobRequest_globals_.GetClassData();
+  return GetPredictRequest_globals_.GetClassData();
 #else
-  return GetJobRequest_class_data_.base();
+  return GetPredictRequest_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -653,7 +791,7 @@ constexpr auto GetFusionModelRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[13],
+      &file_reflection_data[14],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -816,7 +954,7 @@ constexpr auto GetEvalDaySeriesRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[21],
+      &file_reflection_data[22],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -971,7 +1109,7 @@ constexpr auto GetEvalDayMetricsRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[23],
+      &file_reflection_data[24],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -1134,7 +1272,7 @@ constexpr auto GetDataReadyCheckRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[11],
+      &file_reflection_data[12],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -1473,7 +1611,7 @@ constexpr auto EvalDayMetricsRow::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[9],
+      &file_reflection_data[10],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -1696,7 +1834,7 @@ constexpr auto EvalDayMetrics::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[8],
+      &file_reflection_data[9],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -1848,7 +1986,7 @@ constexpr auto CreateTrainJobResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[16],
+      &file_reflection_data[17],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -1993,7 +2131,7 @@ constexpr auto CreateTrainJobRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[15],
+      &file_reflection_data[16],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -2145,7 +2283,7 @@ constexpr auto CreatePredictJobResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[18],
+      &file_reflection_data[19],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -2314,7 +2452,7 @@ constexpr auto CreatePredictJobRequest::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[17],
+      &file_reflection_data[18],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -2520,111 +2658,128 @@ const ::_pbi::ClassData* CoveragePoint_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
-class JobView::_Internal {
+class PredictJobView::_Internal {
  public:
-  using HasBits = decltype(::std::declval<JobView>()._impl_._has_bits_);
+  using HasBits = decltype(::std::declval<PredictJobView>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(JobView, _impl_._has_bits_);
+      8 * PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_._has_bits_);
 };
 
-constexpr JobView::ParseTableT_ JobView::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+constexpr PredictJobView::ParseTableT_ PredictJobView::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
   return ParseTableT_{
     {
-      PROTOBUF_FIELD_OFFSET(JobView, _impl_._has_bits_),
+      PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_._has_bits_),
       0, // no _extensions_
-      12, 120,  // max_field_number, fast_idx_mask
+      15, 120,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294963200,  // skipmap
+      4294934528,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      12,  // num_field_entries
-      3,  // num_aux_entries
+      15,  // num_field_entries
+      4,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
       nullptr,  // post_loop_handler
       ::_pbi::TcParser::MpUnknownFields,  // fallback
       #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::workbench::JobView>(),  // to_prefetch
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::workbench::PredictJobView>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
       {::_pbi::TcParser::MiniParse, {}},
       // string job_id = 1 [json_name = "job_id"];
       {::_pbi::TcParser::FastUS1,
        {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.job_id_)}},
-      // .fusion.ai.proto.workbench.JobType type = 2 [json_name = "type"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(JobView, _impl_.type_), 9>(),
-       {16, 9, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.type_)}},
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.job_id_)}},
+      // string registration_id = 2 [json_name = "registration_id"];
+      {::_pbi::TcParser::FastUS1,
+       {18, 1, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.registration_id_)}},
       // .fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(JobView, _impl_.status_), 10>(),
-       {24, 10, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.status_)}},
-      // string registration_id = 4 [json_name = "registration_id"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PredictJobView, _impl_.status_), 9>(),
+       {24, 9, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.status_)}},
+      // int32 progress_pct = 4 [json_name = "progress_pct"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PredictJobView, _impl_.progress_pct_), 10>(),
+       {32, 10, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.progress_pct_)}},
+      // string stage = 5 [json_name = "stage"];
       {::_pbi::TcParser::FastUS1,
-       {34, 1, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.registration_id_)}},
-      // int32 progress_pct = 5 [json_name = "progress_pct"];
-      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(JobView, _impl_.progress_pct_), 11>(),
-       {40, 11, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.progress_pct_)}},
-      // string message = 6 [json_name = "message"];
-      {::_pbi::TcParser::FastUS1,
-       {50, 2, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.message_)}},
-      // optional string eval_date = 7 [json_name = "eval_date"];
+       {42, 2, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.stage_)}},
+      // map<string, string> stages = 6 [json_name = "stages"];
+      {::_pbi::TcParser::FastMiniParse1,
+       {50, ::uint8_t{7},
+        ::uint32_t{
+            PROTOBUF_FIELD_OFFSET(ParseTableT_, field_entries) +
+            sizeof(_pbi::TcParseTableBase::FieldEntry) * 5}}},
+      // string eval_date = 7 [json_name = "eval_date"];
       {::_pbi::TcParser::FastUS1,
        {58, 3, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.eval_date_)}},
-      // optional string model_version = 8 [json_name = "model_version"];
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.eval_date_)}},
+      // int32 day_offset = 8 [json_name = "day_offset"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PredictJobView, _impl_.day_offset_), 11>(),
+       {64, 11, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.day_offset_)}},
+      // int32 granularity_min = 9 [json_name = "granularity_min"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PredictJobView, _impl_.granularity_min_), 12>(),
+       {72, 12, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.granularity_min_)}},
+      // int32 horizon_hours = 10 [json_name = "horizon_hours"];
+      {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PredictJobView, _impl_.horizon_hours_), 13>(),
+       {80, 13, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.horizon_hours_)}},
+      // string model_id = 11 [json_name = "model_id"];
       {::_pbi::TcParser::FastUS1,
-       {66, 4, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.model_version_)}},
-      // .google.protobuf.Timestamp created_at = 9 [json_name = "created_at"];
-      {::_pbi::TcParser::FastMtS1,
-       {74, 6, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.created_at_)}},
-      // optional .google.protobuf.Timestamp started_at = 10 [json_name = "started_at"];
-      {::_pbi::TcParser::FastMtS1,
-       {82, 7, 1,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.started_at_)}},
-      // optional .google.protobuf.Timestamp finished_at = 11 [json_name = "finished_at"];
-      {::_pbi::TcParser::FastMtS1,
-       {90, 8, 2,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.finished_at_)}},
-      // string error_message = 12 [json_name = "error_message"];
+       {90, 4, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.model_id_)}},
+      // string message = 12 [json_name = "message"];
       {::_pbi::TcParser::FastUS1,
        {98, 5, 0,
-        PROTOBUF_FIELD_OFFSET(JobView, _impl_.error_message_)}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
-      {::_pbi::TcParser::MiniParse, {}},
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.message_)}},
+      // optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];
+      {::_pbi::TcParser::FastMtS1,
+       {106, 6, 0,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.started_at_)}},
+      // optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];
+      {::_pbi::TcParser::FastMtS1,
+       {114, 7, 1,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.finished_at_)}},
+      // optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];
+      {::_pbi::TcParser::FastMtS1,
+       {122, 8, 2,
+        PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.updated_at_)}},
     }}, {{
       65535, 65535
     }}, {{
       // string job_id = 1 [json_name = "job_id"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.job_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // .fusion.ai.proto.workbench.JobType type = 2 [json_name = "type"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.type_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.job_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string registration_id = 2 [json_name = "registration_id"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.registration_id_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
       // .fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.status_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-      // string registration_id = 4 [json_name = "registration_id"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.registration_id_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // int32 progress_pct = 5 [json_name = "progress_pct"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.progress_pct_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-      // string message = 6 [json_name = "message"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.message_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // optional string eval_date = 7 [json_name = "eval_date"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.eval_date_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // optional string model_version = 8 [json_name = "model_version"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.model_version_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // .google.protobuf.Timestamp created_at = 9 [json_name = "created_at"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.created_at_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // optional .google.protobuf.Timestamp started_at = 10 [json_name = "started_at"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.started_at_), _Internal::kHasBitsOffset + 7, 1, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // optional .google.protobuf.Timestamp finished_at = 11 [json_name = "finished_at"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.finished_at_), _Internal::kHasBitsOffset + 8, 2, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-      // string error_message = 12 [json_name = "error_message"];
-      {PROTOBUF_FIELD_OFFSET(JobView, _impl_.error_message_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.status_), _Internal::kHasBitsOffset + 9, 0, (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+      // int32 progress_pct = 4 [json_name = "progress_pct"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.progress_pct_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // string stage = 5 [json_name = "stage"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.stage_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // map<string, string> stages = 6 [json_name = "stages"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.stages_), _Internal::kHasBitsOffset + 14, 3, (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+      // string eval_date = 7 [json_name = "eval_date"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.eval_date_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // int32 day_offset = 8 [json_name = "day_offset"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.day_offset_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // int32 granularity_min = 9 [json_name = "granularity_min"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.granularity_min_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // int32 horizon_hours = 10 [json_name = "horizon_hours"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.horizon_hours_), _Internal::kHasBitsOffset + 13, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+      // string model_id = 11 [json_name = "model_id"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.model_id_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string message = 12 [json_name = "message"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.message_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.started_at_), _Internal::kHasBitsOffset + 6, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.finished_at_), _Internal::kHasBitsOffset + 7, 1, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];
+      {PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.updated_at_), _Internal::kHasBitsOffset + 8, 2, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     }},
     {{
         #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -2642,22 +2797,25 @@ constexpr JobView::ParseTableT_ JobView::InternalGenerateParseTable_(const ::_pb
         #else
         {::_pbi::FieldAuxMessageGlobals(), &::google::protobuf::Timestamp_globals_},
         #endif
+        {::_pbi::TcParser::GetMapAuxInfo(
+            1, 0, 9, 9, 0)},
     }},
     {{
-      "\41\6\0\0\17\0\7\11\15\0\0\0\15\0\0\0"
-      "fusion.ai.proto.workbench.JobView"
+      "\50\6\17\0\0\5\6\11\0\0\0\10\7\0\0\0"
+      "fusion.ai.proto.workbench.PredictJobView"
       "job_id"
       "registration_id"
-      "message"
+      "stage"
+      "stages"
       "eval_date"
-      "model_version"
-      "error_message"
+      "model_id"
+      "message"
     }},
   };
 }
 
 
-inline constexpr JobView::Impl_::Impl_(
+inline constexpr PredictJobView::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     ::_pbi::ConstantInitialized) noexcept
       : job_id_(
@@ -2666,27 +2824,34 @@ inline constexpr JobView::Impl_::Impl_(
         registration_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        message_(
+        stage_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         eval_date_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        model_version_(
+        model_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        error_message_(
+        message_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        created_at_{nullptr},
         started_at_{nullptr},
         finished_at_{nullptr},
-        type_{static_cast< ::fusion::ai::proto::workbench::JobType >(0)},
+        updated_at_{nullptr},
         status_{static_cast< ::fusion::ai::proto::workbench::JobStatus >(0)},
-        progress_pct_{0} {}
+        progress_pct_{0},
+        day_offset_{0},
+        granularity_min_{0},
+        horizon_hours_{0},
+        stages_ { visibility, ::_pbi::InternalMetadataOffset::Build<
+            ::fusion::ai::proto::workbench::PredictJobView,
+            PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.stages_)>()
+         }
+     {}
 
 template <typename>
-constexpr JobView::JobView(::_pbi::ConstantInitialized,
+constexpr PredictJobView::PredictJobView(::_pbi::ConstantInitialized,
                        const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
     : Super_(
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -2695,15 +2860,15 @@ constexpr JobView::JobView(::_pbi::ConstantInitialized,
           ),
       _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
 }
-inline void* PROTOBUF_NONNULL JobView::PlacementNew_(
+inline void* PROTOBUF_NONNULL PredictJobView::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) JobView(arena);
+  return ::new (mem) PredictJobView(arena);
 }
-constexpr auto JobView::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(JobView), alignof(JobView));
+constexpr auto PredictJobView::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(PredictJobView), alignof(PredictJobView));
 }
-constexpr auto JobView::InternalGenerateClassData_(
+constexpr auto PredictJobView::InternalGenerateClassData_(
     const MessageLite& prototype,
     const ::google::protobuf::internal::TcParseTableBase* tc_table) {
   return ::google::protobuf::internal::ClassDataFull{
@@ -2715,18 +2880,18 @@ constexpr auto JobView::InternalGenerateClassData_(
           tc_table,
 #endif
           nullptr,  // IsInitialized
-          &JobView::MergeImpl,
-          Super_::GetNewImpl<JobView>(),
+          &PredictJobView::MergeImpl,
+          Super_::GetNewImpl<PredictJobView>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &JobView::SharedDtor,
-          Super_::GetClearImpl<JobView>(), &JobView::ByteSizeLong,
-              &JobView::_InternalSerialize,
+          &PredictJobView::SharedDtor,
+          Super_::GetClearImpl<PredictJobView>(), &PredictJobView::ByteSizeLong,
+              &PredictJobView::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(JobView, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_._cached_size_),
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[5],
+      &file_reflection_data[6],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -2734,45 +2899,45 @@ constexpr auto JobView::InternalGenerateClassData_(
 #endif  // PROTOBUF_MESSAGE_GLOBALS
   };
 }
-struct JobViewGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr JobViewGlobalsTypeInternal()
+struct PredictJobViewGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr PredictJobViewGlobalsTypeInternal()
       :
 #ifndef PROTOBUF_MESSAGE_GLOBALS
         _default(::_pbi::ConstantInitialized{},
-                 JobView_class_data_.base())
+                 PredictJobView_class_data_.base())
 #else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(JobView::InternalGenerateClassData_(
-            _default, &JobView_globals_._table.header)),
+        MessageGlobalsBase(PredictJobView::InternalGenerateClassData_(
+            _default, &PredictJobView_globals_._table.header)),
         _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<JobView>(
+        _table(::_pbi::PrivateAccess::GenerateParseTable<PredictJobView>(
             GetClassData()))
 #endif  // PROTOBUF_MESSAGE_GLOBALS
   {
   }
-  ~JobViewGlobalsTypeInternal() {}
+  ~PredictJobViewGlobalsTypeInternal() {}
   union {
-    alignas(::_pbi::kMaxMessageAlignment) JobView _default;
+    alignas(::_pbi::kMaxMessageAlignment) PredictJobView _default;
   };
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<JobView>(
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<PredictJobView>(
       ::std::declval<const ::_pbi::ClassData*>())) _table;
 #endif
 };
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(JobViewGlobalsTypeInternal, _default) ==
+static_assert(PROTOBUF_FIELD_OFFSET(PredictJobViewGlobalsTypeInternal, _default) ==
               ::_pbi::MessageGlobalsBase::OffsetToDefault());
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST JobViewGlobalsTypeInternal JobView_globals_
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST PredictJobViewGlobalsTypeInternal PredictJobView_globals_
         PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
 #if defined(PROTOBUF_CUSTOM_VTABLE)
 namespace {
-const ::_pbi::ClassData* JobView_get_class_data() {
+const ::_pbi::ClassData* PredictJobView_get_class_data() {
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-  return JobView_globals_.GetClassData();
+  return PredictJobView_globals_.GetClassData();
 #else
-  return JobView_class_data_.base();
+  return PredictJobView_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -2872,7 +3037,7 @@ constexpr auto GetEvalDayMetricsResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[24],
+      &file_reflection_data[25],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -3279,7 +3444,7 @@ constexpr auto EvalDaySeries::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[7],
+      &file_reflection_data[8],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -3450,7 +3615,7 @@ constexpr auto EvalDayMetricsPage::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[10],
+      &file_reflection_data[11],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -3797,7 +3962,7 @@ constexpr auto ListEvalDailyMetricsResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[26],
+      &file_reflection_data[27],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -3848,62 +4013,85 @@ const ::_pbi::ClassData* ListEvalDailyMetricsResponse_get_class_data() {
 }
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
-class GetJobResponse::_Internal {
+class GetPredictResponse::_Internal {
  public:
-  using HasBits = decltype(::std::declval<GetJobResponse>()._impl_._has_bits_);
+  using HasBits = decltype(::std::declval<GetPredictResponse>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(GetJobResponse, _impl_._has_bits_);
+      8 * PROTOBUF_FIELD_OFFSET(GetPredictResponse, _impl_._has_bits_);
 };
 
-constexpr GetJobResponse::ParseTableT_ GetJobResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
+constexpr GetPredictResponse::ParseTableT_ GetPredictResponse::InternalGenerateParseTable_(const ::_pbi::ClassData* class_data) {
   return ParseTableT_{
     {
-      PROTOBUF_FIELD_OFFSET(GetJobResponse, _impl_._has_bits_),
+      PROTOBUF_FIELD_OFFSET(GetPredictResponse, _impl_._has_bits_),
       0, // no _extensions_
-      1, 0,  // max_field_number, fast_idx_mask
+      3, 24,  // max_field_number, fast_idx_mask
       offsetof(ParseTableT_, field_lookup_table),
-      4294967294,  // skipmap
+      4294967288,  // skipmap
       offsetof(ParseTableT_, field_entries),
-      1,  // num_field_entries
+      3,  // num_field_entries
       1,  // num_aux_entries
       offsetof(ParseTableT_, aux_entries),
       class_data,
       nullptr,  // post_loop_handler
       ::_pbi::TcParser::MpUnknownFields,  // fallback
       #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-      ::_pbi::TcParser::GetTable<::fusion::ai::proto::workbench::GetJobResponse>(),  // to_prefetch
+      ::_pbi::TcParser::GetTable<::fusion::ai::proto::workbench::GetPredictResponse>(),  // to_prefetch
       #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
     }, {{
-      // .fusion.ai.proto.workbench.JobView job = 1 [json_name = "job"];
-      {::_pbi::TcParser::FastMtS1,
+      {::_pbi::TcParser::MiniParse, {}},
+      // string registration_id = 1 [json_name = "registration_id"];
+      {::_pbi::TcParser::FastUS1,
        {10, 0, 0,
-        PROTOBUF_FIELD_OFFSET(GetJobResponse, _impl_.job_)}},
+        PROTOBUF_FIELD_OFFSET(GetPredictResponse, _impl_.registration_id_)}},
+      // string current_predict_job_id = 2 [json_name = "current_predict_job_id"];
+      {::_pbi::TcParser::FastUS1,
+       {18, 1, 0,
+        PROTOBUF_FIELD_OFFSET(GetPredictResponse, _impl_.current_predict_job_id_)}},
+      // optional .fusion.ai.proto.workbench.PredictJobView job = 3 [json_name = "job"];
+      {::_pbi::TcParser::FastMtS1,
+       {26, 2, 0,
+        PROTOBUF_FIELD_OFFSET(GetPredictResponse, _impl_.job_)}},
     }}, {{
       65535, 65535
     }}, {{
-      // .fusion.ai.proto.workbench.JobView job = 1 [json_name = "job"];
-      {PROTOBUF_FIELD_OFFSET(GetJobResponse, _impl_.job_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+      // string registration_id = 1 [json_name = "registration_id"];
+      {PROTOBUF_FIELD_OFFSET(GetPredictResponse, _impl_.registration_id_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // string current_predict_job_id = 2 [json_name = "current_predict_job_id"];
+      {PROTOBUF_FIELD_OFFSET(GetPredictResponse, _impl_.current_predict_job_id_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+      // optional .fusion.ai.proto.workbench.PredictJobView job = 3 [json_name = "job"];
+      {PROTOBUF_FIELD_OFFSET(GetPredictResponse, _impl_.job_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     }},
     {{
         #ifndef PROTOBUF_MESSAGE_GLOBALS
-        {::_pbi::TcParser::GetTable<::fusion::ai::proto::workbench::JobView>()},
+        {::_pbi::TcParser::GetTable<::fusion::ai::proto::workbench::PredictJobView>()},
         #else
-        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::workbench::JobView_globals_},
+        {::_pbi::FieldAuxMessageGlobals(), &::fusion::ai::proto::workbench::PredictJobView_globals_},
         #endif
     }},
     {{
+      "\54\17\26\0\0\0\0\0"
+      "fusion.ai.proto.workbench.GetPredictResponse"
+      "registration_id"
+      "current_predict_job_id"
     }},
   };
 }
 
 
-inline constexpr GetJobResponse::Impl_::Impl_(
+inline constexpr GetPredictResponse::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     ::_pbi::ConstantInitialized) noexcept
-      : job_{nullptr} {}
+      : registration_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        current_predict_job_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        job_{nullptr} {}
 
 template <typename>
-constexpr GetJobResponse::GetJobResponse(::_pbi::ConstantInitialized,
+constexpr GetPredictResponse::GetPredictResponse(::_pbi::ConstantInitialized,
                        const ::_pbi::ClassData* PROTOBUF_NONNULL class_data)
     : Super_(
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -3912,15 +4100,15 @@ constexpr GetJobResponse::GetJobResponse(::_pbi::ConstantInitialized,
           ),
       _impl_(internal_visibility(), ::_pbi::ConstantInitialized()) {
 }
-inline void* PROTOBUF_NONNULL GetJobResponse::PlacementNew_(
+inline void* PROTOBUF_NONNULL GetPredictResponse::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) GetJobResponse(arena);
+  return ::new (mem) GetPredictResponse(arena);
 }
-constexpr auto GetJobResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(GetJobResponse), alignof(GetJobResponse));
+constexpr auto GetPredictResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(GetPredictResponse), alignof(GetPredictResponse));
 }
-constexpr auto GetJobResponse::InternalGenerateClassData_(
+constexpr auto GetPredictResponse::InternalGenerateClassData_(
     const MessageLite& prototype,
     const ::google::protobuf::internal::TcParseTableBase* tc_table) {
   return ::google::protobuf::internal::ClassDataFull{
@@ -3932,18 +4120,18 @@ constexpr auto GetJobResponse::InternalGenerateClassData_(
           tc_table,
 #endif
           nullptr,  // IsInitialized
-          &GetJobResponse::MergeImpl,
-          Super_::GetNewImpl<GetJobResponse>(),
+          &GetPredictResponse::MergeImpl,
+          Super_::GetNewImpl<GetPredictResponse>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &GetJobResponse::SharedDtor,
-          Super_::GetClearImpl<GetJobResponse>(), &GetJobResponse::ByteSizeLong,
-              &GetJobResponse::_InternalSerialize,
+          &GetPredictResponse::SharedDtor,
+          Super_::GetClearImpl<GetPredictResponse>(), &GetPredictResponse::ByteSizeLong,
+              &GetPredictResponse::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(GetJobResponse, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(GetPredictResponse, _impl_._cached_size_),
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[20],
+      &file_reflection_data[21],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -3951,45 +4139,45 @@ constexpr auto GetJobResponse::InternalGenerateClassData_(
 #endif  // PROTOBUF_MESSAGE_GLOBALS
   };
 }
-struct GetJobResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
-  constexpr GetJobResponseGlobalsTypeInternal()
+struct GetPredictResponseGlobalsTypeInternal : ::_pbi::MessageGlobalsBase {
+  constexpr GetPredictResponseGlobalsTypeInternal()
       :
 #ifndef PROTOBUF_MESSAGE_GLOBALS
         _default(::_pbi::ConstantInitialized{},
-                 GetJobResponse_class_data_.base())
+                 GetPredictResponse_class_data_.base())
 #else   // !PROTOBUF_MESSAGE_GLOBALS
-        MessageGlobalsBase(GetJobResponse::InternalGenerateClassData_(
-            _default, &GetJobResponse_globals_._table.header)),
+        MessageGlobalsBase(GetPredictResponse::InternalGenerateClassData_(
+            _default, &GetPredictResponse_globals_._table.header)),
         _default(::_pbi::ConstantInitialized{}, GetClassData()),
-        _table(::_pbi::PrivateAccess::GenerateParseTable<GetJobResponse>(
+        _table(::_pbi::PrivateAccess::GenerateParseTable<GetPredictResponse>(
             GetClassData()))
 #endif  // PROTOBUF_MESSAGE_GLOBALS
   {
   }
-  ~GetJobResponseGlobalsTypeInternal() {}
+  ~GetPredictResponseGlobalsTypeInternal() {}
   union {
-    alignas(::_pbi::kMaxMessageAlignment) GetJobResponse _default;
+    alignas(::_pbi::kMaxMessageAlignment) GetPredictResponse _default;
   };
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetJobResponse>(
+  decltype(::_pbi::PrivateAccess::GenerateParseTable<GetPredictResponse>(
       ::std::declval<const ::_pbi::ClassData*>())) _table;
 #endif
 };
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-static_assert(PROTOBUF_FIELD_OFFSET(GetJobResponseGlobalsTypeInternal, _default) ==
+static_assert(PROTOBUF_FIELD_OFFSET(GetPredictResponseGlobalsTypeInternal, _default) ==
               ::_pbi::MessageGlobalsBase::OffsetToDefault());
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetJobResponseGlobalsTypeInternal GetJobResponse_globals_
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PROTOBUF_MESSAGE_GLOBALS_CONST GetPredictResponseGlobalsTypeInternal GetPredictResponse_globals_
         PROTOBUF_MESSAGE_GLOBALS_SECTION(.data.rel.ro);
 #if defined(PROTOBUF_CUSTOM_VTABLE)
 namespace {
-const ::_pbi::ClassData* GetJobResponse_get_class_data() {
+const ::_pbi::ClassData* GetPredictResponse_get_class_data() {
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-  return GetJobResponse_globals_.GetClassData();
+  return GetPredictResponse_globals_.GetClassData();
 #else
-  return GetJobResponse_class_data_.base();
+  return GetPredictResponse_class_data_.base();
 #endif  // PROTOBUF_MESSAGE_GLOBALS
 }
 }  // namespace
@@ -4089,7 +4277,7 @@ constexpr auto GetFusionModelResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[14],
+      &file_reflection_data[15],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -4235,7 +4423,7 @@ constexpr auto GetEvalDaySeriesResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[22],
+      &file_reflection_data[23],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -4591,7 +4779,7 @@ constexpr auto GetDataReadyCheckResponse::InternalGenerateClassData_(
           false,
       },
 #ifdef PROTOBUF_MESSAGE_GLOBALS
-      &file_reflection_data[12],
+      &file_reflection_data[13],
 #else   // !PROTOBUF_MESSAGE_GLOBALS
       &::_pbi::kDescriptorMethods,
       &descriptor_table_workbench_2fworkbench_5fmessage_2eproto,
@@ -4647,7 +4835,7 @@ const ::_pbi::ClassData* GetDataReadyCheckResponse_get_class_data() {
 }  // namespace ai
 }  // namespace fusion
 static const ::_pb::EnumDescriptor* PROTOBUF_NONNULL
-    file_level_enum_descriptors_workbench_2fworkbench_5fmessage_2eproto[5];
+    file_level_enum_descriptors_workbench_2fworkbench_5fmessage_2eproto[4];
 static constexpr const ::_pb::ServiceDescriptor* PROTOBUF_NONNULL* PROTOBUF_NULLABLE
     file_level_service_descriptors_workbench_2fworkbench_5fmessage_2eproto = nullptr;
 const ::uint32_t
@@ -4723,32 +4911,45 @@ const ::uint32_t
         4,
         3,
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_._has_bits_),
-        15, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.job_id_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.type_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.status_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.registration_id_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.progress_pct_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.message_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.eval_date_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.model_version_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.created_at_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.started_at_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.finished_at_),
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::JobView, _impl_.error_message_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView_StagesEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView_StagesEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView_StagesEntry_DoNotUse, _impl_.value_),
         0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_._has_bits_),
+        18, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.job_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.registration_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.progress_pct_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.stage_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.stages_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.eval_date_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.day_offset_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.granularity_min_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.horizon_hours_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.model_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.message_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.started_at_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.finished_at_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.updated_at_),
+        0,
+        1,
         9,
         10,
-        1,
-        11,
         2,
+        14,
         3,
+        11,
+        12,
+        13,
         4,
+        5,
         6,
         7,
         8,
-        5,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::SeriesPoint, _impl_._has_bits_),
         6, // hasbit index offset
@@ -4873,15 +5074,19 @@ const ::uint32_t
         0,
         1,
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetJobRequest, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetPredictRequest, _impl_._has_bits_),
         4, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetJobRequest, _impl_.job_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetPredictRequest, _impl_.registration_id_),
         0,
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetJobResponse, _impl_._has_bits_),
-        4, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetJobResponse, _impl_.job_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetPredictResponse, _impl_._has_bits_),
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetPredictResponse, _impl_.registration_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetPredictResponse, _impl_.current_predict_job_id_),
+        PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetPredictResponse, _impl_.job_),
         0,
+        1,
+        2,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::GetEvalDaySeriesRequest, _impl_._has_bits_),
         6, // hasbit index offset
@@ -4933,28 +5138,29 @@ static const ::_pbi::MigrationSchema
         {22, sizeof(::fusion::ai::proto::workbench::CoverageBand)},
         {37, sizeof(::fusion::ai::proto::workbench::DataReadyCheck)},
         {54, sizeof(::fusion::ai::proto::workbench::FusionModelView)},
-        {69, sizeof(::fusion::ai::proto::workbench::JobView)},
-        {96, sizeof(::fusion::ai::proto::workbench::SeriesPoint)},
-        {105, sizeof(::fusion::ai::proto::workbench::EvalDaySeries)},
-        {122, sizeof(::fusion::ai::proto::workbench::EvalDayMetrics)},
-        {145, sizeof(::fusion::ai::proto::workbench::EvalDayMetricsRow)},
-        {154, sizeof(::fusion::ai::proto::workbench::EvalDayMetricsPage)},
-        {165, sizeof(::fusion::ai::proto::workbench::GetDataReadyCheckRequest)},
-        {174, sizeof(::fusion::ai::proto::workbench::GetDataReadyCheckResponse)},
-        {179, sizeof(::fusion::ai::proto::workbench::GetFusionModelRequest)},
-        {184, sizeof(::fusion::ai::proto::workbench::GetFusionModelResponse)},
-        {189, sizeof(::fusion::ai::proto::workbench::CreateTrainJobRequest)},
-        {194, sizeof(::fusion::ai::proto::workbench::CreateTrainJobResponse)},
-        {201, sizeof(::fusion::ai::proto::workbench::CreatePredictJobRequest)},
-        {212, sizeof(::fusion::ai::proto::workbench::CreatePredictJobResponse)},
-        {219, sizeof(::fusion::ai::proto::workbench::GetJobRequest)},
-        {224, sizeof(::fusion::ai::proto::workbench::GetJobResponse)},
-        {229, sizeof(::fusion::ai::proto::workbench::GetEvalDaySeriesRequest)},
-        {238, sizeof(::fusion::ai::proto::workbench::GetEvalDaySeriesResponse)},
-        {243, sizeof(::fusion::ai::proto::workbench::GetEvalDayMetricsRequest)},
-        {250, sizeof(::fusion::ai::proto::workbench::GetEvalDayMetricsResponse)},
-        {255, sizeof(::fusion::ai::proto::workbench::ListEvalDailyMetricsRequest)},
-        {266, sizeof(::fusion::ai::proto::workbench::ListEvalDailyMetricsResponse)},
+        {69, sizeof(::fusion::ai::proto::workbench::PredictJobView_StagesEntry_DoNotUse)},
+        {76, sizeof(::fusion::ai::proto::workbench::PredictJobView)},
+        {109, sizeof(::fusion::ai::proto::workbench::SeriesPoint)},
+        {118, sizeof(::fusion::ai::proto::workbench::EvalDaySeries)},
+        {135, sizeof(::fusion::ai::proto::workbench::EvalDayMetrics)},
+        {158, sizeof(::fusion::ai::proto::workbench::EvalDayMetricsRow)},
+        {167, sizeof(::fusion::ai::proto::workbench::EvalDayMetricsPage)},
+        {178, sizeof(::fusion::ai::proto::workbench::GetDataReadyCheckRequest)},
+        {187, sizeof(::fusion::ai::proto::workbench::GetDataReadyCheckResponse)},
+        {192, sizeof(::fusion::ai::proto::workbench::GetFusionModelRequest)},
+        {197, sizeof(::fusion::ai::proto::workbench::GetFusionModelResponse)},
+        {202, sizeof(::fusion::ai::proto::workbench::CreateTrainJobRequest)},
+        {207, sizeof(::fusion::ai::proto::workbench::CreateTrainJobResponse)},
+        {214, sizeof(::fusion::ai::proto::workbench::CreatePredictJobRequest)},
+        {225, sizeof(::fusion::ai::proto::workbench::CreatePredictJobResponse)},
+        {232, sizeof(::fusion::ai::proto::workbench::GetPredictRequest)},
+        {237, sizeof(::fusion::ai::proto::workbench::GetPredictResponse)},
+        {246, sizeof(::fusion::ai::proto::workbench::GetEvalDaySeriesRequest)},
+        {255, sizeof(::fusion::ai::proto::workbench::GetEvalDaySeriesResponse)},
+        {260, sizeof(::fusion::ai::proto::workbench::GetEvalDayMetricsRequest)},
+        {267, sizeof(::fusion::ai::proto::workbench::GetEvalDayMetricsResponse)},
+        {272, sizeof(::fusion::ai::proto::workbench::ListEvalDailyMetricsRequest)},
+        {283, sizeof(::fusion::ai::proto::workbench::ListEvalDailyMetricsResponse)},
 };
 static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
     file_message_globals[] = {
@@ -4963,7 +5169,8 @@ static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
         &::fusion::ai::proto::workbench::CoverageBand_globals_,
         &::fusion::ai::proto::workbench::DataReadyCheck_globals_,
         &::fusion::ai::proto::workbench::FusionModelView_globals_,
-        &::fusion::ai::proto::workbench::JobView_globals_,
+        &::fusion::ai::proto::workbench::PredictJobView_StagesEntry_DoNotUse_globals_,
+        &::fusion::ai::proto::workbench::PredictJobView_globals_,
         &::fusion::ai::proto::workbench::SeriesPoint_globals_,
         &::fusion::ai::proto::workbench::EvalDaySeries_globals_,
         &::fusion::ai::proto::workbench::EvalDayMetrics_globals_,
@@ -4977,8 +5184,8 @@ static const ::_pbi::MessageGlobalsBase* PROTOBUF_NONNULL const
         &::fusion::ai::proto::workbench::CreateTrainJobResponse_globals_,
         &::fusion::ai::proto::workbench::CreatePredictJobRequest_globals_,
         &::fusion::ai::proto::workbench::CreatePredictJobResponse_globals_,
-        &::fusion::ai::proto::workbench::GetJobRequest_globals_,
-        &::fusion::ai::proto::workbench::GetJobResponse_globals_,
+        &::fusion::ai::proto::workbench::GetPredictRequest_globals_,
+        &::fusion::ai::proto::workbench::GetPredictResponse_globals_,
         &::fusion::ai::proto::workbench::GetEvalDaySeriesRequest_globals_,
         &::fusion::ai::proto::workbench::GetEvalDaySeriesResponse_globals_,
         &::fusion::ai::proto::workbench::GetEvalDayMetricsRequest_globals_,
@@ -5024,119 +5231,124 @@ const char descriptor_table_protodef_workbench_2fworkbench_5fmessage_2eproto[] A
     "\032.google.protobuf.TimestampH\000R\017last_trai"
     "ned_at\210\001\001\022\'\n\014artifact_uri\030\006 \001(\tH\001R\014artif"
     "act_uri\210\001\001B\022\n\020_last_trained_atB\017\n\r_artif"
-    "act_uri\"\362\004\n\007JobView\022\026\n\006job_id\030\001 \001(\tR\006job"
-    "_id\0226\n\004type\030\002 \001(\0162\".fusion.ai.proto.work"
-    "bench.JobTypeR\004type\022<\n\006status\030\003 \001(\0162$.fu"
-    "sion.ai.proto.workbench.JobStatusR\006statu"
-    "s\022(\n\017registration_id\030\004 \001(\tR\017registration"
-    "_id\022\"\n\014progress_pct\030\005 \001(\005R\014progress_pct\022"
-    "\030\n\007message\030\006 \001(\tR\007message\022!\n\teval_date\030\007"
-    " \001(\tH\000R\teval_date\210\001\001\022)\n\rmodel_version\030\010 "
-    "\001(\tH\001R\rmodel_version\210\001\001\022:\n\ncreated_at\030\t "
-    "\001(\0132\032.google.protobuf.TimestampR\ncreated"
-    "_at\022\?\n\nstarted_at\030\n \001(\0132\032.google.protobu"
-    "f.TimestampH\002R\nstarted_at\210\001\001\022A\n\013finished"
-    "_at\030\013 \001(\0132\032.google.protobuf.TimestampH\003R"
-    "\013finished_at\210\001\001\022$\n\rerror_message\030\014 \001(\tR\r"
-    "error_messageB\014\n\n_eval_dateB\020\n\016_model_ve"
-    "rsionB\r\n\013_started_atB\016\n\014_finished_at\"\216\001\n"
-    "\013SeriesPoint\022\024\n\005ts_ms\030\001 \001(\003R\005ts_ms\022\'\n\014pr"
-    "edicted_kw\030\002 \001(\001H\000R\014predicted_kw\210\001\001\022!\n\ta"
-    "ctual_kw\030\003 \001(\001H\001R\tactual_kw\210\001\001B\017\n\r_predi"
-    "cted_kwB\014\n\n_actual_kw\"\270\002\n\rEvalDaySeries\022"
-    "(\n\017registration_id\030\001 \001(\tR\017registration_i"
-    "d\022\034\n\teval_date\030\002 \001(\tR\teval_date\022\032\n\010timez"
-    "one\030\003 \001(\tR\010timezone\022(\n\017granularity_min\030\004"
-    " \001(\005R\017granularity_min\022\034\n\tmodel_key\030\005 \001(\t"
-    "R\tmodel_key\022)\n\rmodel_version\030\006 \001(\tH\000R\rmo"
-    "del_version\210\001\001\022>\n\006points\030\007 \003(\0132&.fusion."
-    "ai.proto.workbench.SeriesPointR\006pointsB\020"
-    "\n\016_model_version\"\240\003\n\016EvalDayMetrics\022(\n\017r"
-    "egistration_id\030\001 \001(\tR\017registration_id\022\034\n"
-    "\teval_date\030\002 \001(\tR\teval_date\022\034\n\tmodel_key"
-    "\030\003 \001(\tR\tmodel_key\022)\n\rmodel_version\030\004 \001(\t"
-    "H\000R\rmodel_version\210\001\001\022\027\n\004mape\030\005 \001(\001H\001R\004ma"
-    "pe\210\001\001\022\027\n\004rmse\030\006 \001(\001H\002R\004rmse\210\001\001\022\025\n\003mae\030\007 "
-    "\001(\001H\003R\003mae\210\001\001\022\031\n\005smape\030\010 \001(\001H\004R\005smape\210\001\001"
-    "\022!\n\tpass_rate\030\t \001(\001H\005R\tpass_rate\210\001\001\022#\n\nm"
-    "ape_delta\030\n \001(\001H\006R\nmape_delta\210\001\001B\020\n\016_mod"
-    "el_versionB\007\n\005_mapeB\007\n\005_rmseB\006\n\004_maeB\010\n\006"
-    "_smapeB\014\n\n_pass_rateB\r\n\013_mape_delta\"u\n\021E"
-    "valDayMetricsRow\022\034\n\teval_date\030\001 \001(\tR\teva"
-    "l_date\022\027\n\004mape\030\002 \001(\001H\000R\004mape\210\001\001\022\027\n\004rmse\030"
-    "\003 \001(\001H\001R\004rmse\210\001\001B\007\n\005_mapeB\007\n\005_rmse\"\236\001\n\022E"
-    "valDayMetricsPage\022@\n\004rows\030\001 \003(\0132,.fusion"
-    ".ai.proto.workbench.EvalDayMetricsRowR\004r"
-    "ows\022\024\n\005total\030\002 \001(\005R\005total\022\022\n\004page\030\003 \001(\005R"
-    "\004page\022\034\n\tpage_size\030\004 \001(\005R\tpage_size\"\345\001\n\030"
-    "GetDataReadyCheckRequest\0223\n\017registration"
-    "_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\022F\n"
-    "\teval_date\030\002 \001(\tB#\272H r\0362\034^[0-9]{4}-[0-9]"
-    "{2}-[0-9]{2}$H\000R\teval_date\210\001\001\022+\n\016include"
-    "_points\030\003 \001(\010H\001R\016include_points\210\001\001B\014\n\n_e"
-    "val_dateB\021\n\017_include_points\"\\\n\031GetDataRe"
-    "adyCheckResponse\022\?\n\005check\030\001 \001(\0132).fusion"
-    ".ai.proto.workbench.DataReadyCheckR\005chec"
-    "k\"L\n\025GetFusionModelRequest\0223\n\017registrati"
-    "on_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\""
-    "Z\n\026GetFusionModelResponse\022@\n\005model\030\001 \001(\013"
-    "2*.fusion.ai.proto.workbench.FusionModel"
-    "ViewR\005model\"L\n\025CreateTrainJobRequest\0223\n\017"
-    "registration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017regist"
-    "ration_id\"n\n\026CreateTrainJobResponse\022\026\n\006j"
-    "ob_id\030\001 \001(\tR\006job_id\022<\n\006status\030\002 \001(\0162$.fu"
-    "sion.ai.proto.workbench.JobStatusR\006statu"
-    "s\"\277\002\n\027CreatePredictJobRequest\0223\n\017registr"
+    "act_uri\"\213\006\n\016PredictJobView\022\026\n\006job_id\030\001 \001"
+    "(\tR\006job_id\022(\n\017registration_id\030\002 \001(\tR\017reg"
+    "istration_id\022<\n\006status\030\003 \001(\0162$.fusion.ai"
+    ".proto.workbench.JobStatusR\006status\022\"\n\014pr"
+    "ogress_pct\030\004 \001(\005R\014progress_pct\022\024\n\005stage\030"
+    "\005 \001(\tR\005stage\022M\n\006stages\030\006 \003(\01325.fusion.ai"
+    ".proto.workbench.PredictJobView.StagesEn"
+    "tryR\006stages\022\034\n\teval_date\030\007 \001(\tR\teval_dat"
+    "e\022\036\n\nday_offset\030\010 \001(\005R\nday_offset\022(\n\017gra"
+    "nularity_min\030\t \001(\005R\017granularity_min\022$\n\rh"
+    "orizon_hours\030\n \001(\005R\rhorizon_hours\022\032\n\010mod"
+    "el_id\030\013 \001(\tR\010model_id\022\030\n\007message\030\014 \001(\tR\007"
+    "message\022\?\n\nstarted_at\030\r \001(\0132\032.google.pro"
+    "tobuf.TimestampH\000R\nstarted_at\210\001\001\022A\n\013fini"
+    "shed_at\030\016 \001(\0132\032.google.protobuf.Timestam"
+    "pH\001R\013finished_at\210\001\001\022\?\n\nupdated_at\030\017 \001(\0132"
+    "\032.google.protobuf.TimestampH\002R\nupdated_a"
+    "t\210\001\001\0329\n\013StagesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n"
+    "\005value\030\002 \001(\tR\005value:\0028\001B\r\n\013_started_atB\016"
+    "\n\014_finished_atB\r\n\013_updated_at\"\216\001\n\013Series"
+    "Point\022\024\n\005ts_ms\030\001 \001(\003R\005ts_ms\022\'\n\014predicted"
+    "_kw\030\002 \001(\001H\000R\014predicted_kw\210\001\001\022!\n\tactual_k"
+    "w\030\003 \001(\001H\001R\tactual_kw\210\001\001B\017\n\r_predicted_kw"
+    "B\014\n\n_actual_kw\"\270\002\n\rEvalDaySeries\022(\n\017regi"
+    "stration_id\030\001 \001(\tR\017registration_id\022\034\n\tev"
+    "al_date\030\002 \001(\tR\teval_date\022\032\n\010timezone\030\003 \001"
+    "(\tR\010timezone\022(\n\017granularity_min\030\004 \001(\005R\017g"
+    "ranularity_min\022\034\n\tmodel_key\030\005 \001(\tR\tmodel"
+    "_key\022)\n\rmodel_version\030\006 \001(\tH\000R\rmodel_ver"
+    "sion\210\001\001\022>\n\006points\030\007 \003(\0132&.fusion.ai.prot"
+    "o.workbench.SeriesPointR\006pointsB\020\n\016_mode"
+    "l_version\"\240\003\n\016EvalDayMetrics\022(\n\017registra"
+    "tion_id\030\001 \001(\tR\017registration_id\022\034\n\teval_d"
+    "ate\030\002 \001(\tR\teval_date\022\034\n\tmodel_key\030\003 \001(\tR"
+    "\tmodel_key\022)\n\rmodel_version\030\004 \001(\tH\000R\rmod"
+    "el_version\210\001\001\022\027\n\004mape\030\005 \001(\001H\001R\004mape\210\001\001\022\027"
+    "\n\004rmse\030\006 \001(\001H\002R\004rmse\210\001\001\022\025\n\003mae\030\007 \001(\001H\003R\003"
+    "mae\210\001\001\022\031\n\005smape\030\010 \001(\001H\004R\005smape\210\001\001\022!\n\tpas"
+    "s_rate\030\t \001(\001H\005R\tpass_rate\210\001\001\022#\n\nmape_del"
+    "ta\030\n \001(\001H\006R\nmape_delta\210\001\001B\020\n\016_model_vers"
+    "ionB\007\n\005_mapeB\007\n\005_rmseB\006\n\004_maeB\010\n\006_smapeB"
+    "\014\n\n_pass_rateB\r\n\013_mape_delta\"u\n\021EvalDayM"
+    "etricsRow\022\034\n\teval_date\030\001 \001(\tR\teval_date\022"
+    "\027\n\004mape\030\002 \001(\001H\000R\004mape\210\001\001\022\027\n\004rmse\030\003 \001(\001H\001"
+    "R\004rmse\210\001\001B\007\n\005_mapeB\007\n\005_rmse\"\236\001\n\022EvalDayM"
+    "etricsPage\022@\n\004rows\030\001 \003(\0132,.fusion.ai.pro"
+    "to.workbench.EvalDayMetricsRowR\004rows\022\024\n\005"
+    "total\030\002 \001(\005R\005total\022\022\n\004page\030\003 \001(\005R\004page\022\034"
+    "\n\tpage_size\030\004 \001(\005R\tpage_size\"\345\001\n\030GetData"
+    "ReadyCheckRequest\0223\n\017registration_id\030\001 \001"
+    "(\tB\t\272H\006r\004\020\001\030@R\017registration_id\022F\n\teval_d"
+    "ate\030\002 \001(\tB#\272H r\0362\034^[0-9]{4}-[0-9]{2}-[0-"
+    "9]{2}$H\000R\teval_date\210\001\001\022+\n\016include_points"
+    "\030\003 \001(\010H\001R\016include_points\210\001\001B\014\n\n_eval_dat"
+    "eB\021\n\017_include_points\"\\\n\031GetDataReadyChec"
+    "kResponse\022\?\n\005check\030\001 \001(\0132).fusion.ai.pro"
+    "to.workbench.DataReadyCheckR\005check\"L\n\025Ge"
+    "tFusionModelRequest\0223\n\017registration_id\030\001"
+    " \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\"Z\n\026GetF"
+    "usionModelResponse\022@\n\005model\030\001 \001(\0132*.fusi"
+    "on.ai.proto.workbench.FusionModelViewR\005m"
+    "odel\"L\n\025CreateTrainJobRequest\0223\n\017registr"
     "ation_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_"
-    "id\022F\n\teval_date\030\002 \001(\tB#\272H r\0362\034^[0-9]{4}-"
-    "[0-9]{2}-[0-9]{2}$H\000R\teval_date\210\001\001\022<\n\017gr"
-    "anularity_min\030\003 \001(\005B\r\272H\n\032\0100\0050\0170\0360<H\001R\017gr"
-    "anularity_min\210\001\001\0225\n\rhorizon_hours\030\004 \001(\005B"
-    "\n\272H\007\032\005\030\250\001(\001H\002R\rhorizon_hours\210\001\001B\014\n\n_eval"
-    "_dateB\022\n\020_granularity_minB\020\n\016_horizon_ho"
-    "urs\"p\n\030CreatePredictJobResponse\022\026\n\006job_i"
-    "d\030\001 \001(\tR\006job_id\022<\n\006status\030\002 \001(\0162$.fusion"
-    ".ai.proto.workbench.JobStatusR\006status\"2\n"
-    "\rGetJobRequest\022!\n\006job_id\030\001 \001(\tB\t\272H\006r\004\020\001\030"
-    "@R\006job_id\"F\n\016GetJobResponse\0224\n\003job\030\001 \001(\013"
-    "2\".fusion.ai.proto.workbench.JobViewR\003jo"
-    "b\"\343\001\n\027GetEvalDaySeriesRequest\0223\n\017registr"
-    "ation_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_"
-    "id\022A\n\teval_date\030\002 \001(\tB#\272H r\0362\034^[0-9]{4}-"
-    "[0-9]{2}-[0-9]{2}$R\teval_date\022<\n\017granula"
-    "rity_min\030\003 \001(\005B\r\272H\n\032\0100\0050\0170\0360<H\000R\017granula"
-    "rity_min\210\001\001B\022\n\020_granularity_min\"\\\n\030GetEv"
-    "alDaySeriesResponse\022@\n\006series\030\001 \001(\0132(.fu"
-    "sion.ai.proto.workbench.EvalDaySeriesR\006s"
-    "eries\"\222\001\n\030GetEvalDayMetricsRequest\0223\n\017re"
-    "gistration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registra"
-    "tion_id\022A\n\teval_date\030\002 \001(\tB#\272H r\0362\034^[0-9"
-    "]{4}-[0-9]{2}-[0-9]{2}$R\teval_date\"`\n\031Ge"
-    "tEvalDayMetricsResponse\022C\n\007metrics\030\001 \001(\013"
-    "2).fusion.ai.proto.workbench.EvalDayMetr"
-    "icsR\007metrics\"\370\001\n\033ListEvalDailyMetricsReq"
-    "uest\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@"
-    "R\017registration_id\022\027\n\004page\030\002 \001(\005H\000R\004page\210"
-    "\001\001\022!\n\tpage_size\030\003 \001(\005H\001R\tpage_size\210\001\001\022D\n"
-    "\010end_date\030\004 \001(\tB#\272H r\0362\034^[0-9]{4}-[0-9]{"
-    "2}-[0-9]{2}$H\002R\010end_date\210\001\001B\007\n\005_pageB\014\n\n"
-    "_page_sizeB\013\n\t_end_date\"a\n\034ListEvalDaily"
-    "MetricsResponse\022A\n\004page\030\001 \001(\0132-.fusion.a"
-    "i.proto.workbench.EvalDayMetricsPageR\004pa"
-    "ge*\215\001\n\020ReadyCheckStatus\022\"\n\036READY_CHECK_S"
-    "TATUS_UNSPECIFIED\020\000\022\033\n\027READY_CHECK_STATU"
-    "S_PASS\020\001\022\033\n\027READY_CHECK_STATUS_WARN\020\002\022\033\n"
-    "\027READY_CHECK_STATUS_FAIL\020\003*|\n\022CoverageSe"
-    "riesKind\022$\n COVERAGE_SERIES_KIND_UNSPECI"
-    "FIED\020\000\022\036\n\032COVERAGE_SERIES_KIND_POWER\020\001\022 "
-    "\n\034COVERAGE_SERIES_KIND_WEATHER\020\002*\263\001\n\020Mod"
-    "elReadyStatus\022\"\n\036MODEL_READY_STATUS_UNSP"
-    "ECIFIED\020\000\022\034\n\030MODEL_READY_STATUS_READY\020\001\022"
-    "\037\n\033MODEL_READY_STATUS_TRAINING\020\002\022\034\n\030MODE"
-    "L_READY_STATUS_STALE\020\003\022\036\n\032MODEL_READY_ST"
-    "ATUS_MISSING\020\004*`\n\007JobType\022\030\n\024JOB_TYPE_UN"
-    "SPECIFIED\020\000\022\022\n\016JOB_TYPE_TRAIN\020\001\022\024\n\020JOB_T"
-    "YPE_PREDICT\020\002\022\021\n\rJOB_TYPE_EVAL\020\003*\241\001\n\tJob"
+    "id\"n\n\026CreateTrainJobResponse\022\026\n\006job_id\030\001"
+    " \001(\tR\006job_id\022<\n\006status\030\002 \001(\0162$.fusion.ai"
+    ".proto.workbench.JobStatusR\006status\"\277\002\n\027C"
+    "reatePredictJobRequest\0223\n\017registration_i"
+    "d\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\022F\n\te"
+    "val_date\030\002 \001(\tB#\272H r\0362\034^[0-9]{4}-[0-9]{2"
+    "}-[0-9]{2}$H\000R\teval_date\210\001\001\022<\n\017granulari"
+    "ty_min\030\003 \001(\005B\r\272H\n\032\0100\0050\0170\0360<H\001R\017granulari"
+    "ty_min\210\001\001\0225\n\rhorizon_hours\030\004 \001(\005B\n\272H\007\032\005\030"
+    "\250\001(\001H\002R\rhorizon_hours\210\001\001B\014\n\n_eval_dateB\022"
+    "\n\020_granularity_minB\020\n\016_horizon_hours\"p\n\030"
+    "CreatePredictJobResponse\022\026\n\006job_id\030\001 \001(\t"
+    "R\006job_id\022<\n\006status\030\002 \001(\0162$.fusion.ai.pro"
+    "to.workbench.JobStatusR\006status\"H\n\021GetPre"
+    "dictRequest\0223\n\017registration_id\030\001 \001(\tB\t\272H"
+    "\006r\004\020\001\030@R\017registration_id\"\300\001\n\022GetPredictR"
+    "esponse\022(\n\017registration_id\030\001 \001(\tR\017regist"
+    "ration_id\0226\n\026current_predict_job_id\030\002 \001("
+    "\tR\026current_predict_job_id\022@\n\003job\030\003 \001(\0132)"
+    ".fusion.ai.proto.workbench.PredictJobVie"
+    "wH\000R\003job\210\001\001B\006\n\004_job\"\343\001\n\027GetEvalDaySeries"
+    "Request\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020"
+    "\001\030@R\017registration_id\022A\n\teval_date\030\002 \001(\tB"
+    "#\272H r\0362\034^[0-9]{4}-[0-9]{2}-[0-9]{2}$R\tev"
+    "al_date\022<\n\017granularity_min\030\003 \001(\005B\r\272H\n\032\0100"
+    "\0050\0170\0360<H\000R\017granularity_min\210\001\001B\022\n\020_granul"
+    "arity_min\"\\\n\030GetEvalDaySeriesResponse\022@\n"
+    "\006series\030\001 \001(\0132(.fusion.ai.proto.workbenc"
+    "h.EvalDaySeriesR\006series\"\222\001\n\030GetEvalDayMe"
+    "tricsRequest\0223\n\017registration_id\030\001 \001(\tB\t\272"
+    "H\006r\004\020\001\030@R\017registration_id\022A\n\teval_date\030\002"
+    " \001(\tB#\272H r\0362\034^[0-9]{4}-[0-9]{2}-[0-9]{2}"
+    "$R\teval_date\"`\n\031GetEvalDayMetricsRespons"
+    "e\022C\n\007metrics\030\001 \001(\0132).fusion.ai.proto.wor"
+    "kbench.EvalDayMetricsR\007metrics\"\370\001\n\033ListE"
+    "valDailyMetricsRequest\0223\n\017registration_i"
+    "d\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\022\027\n\004p"
+    "age\030\002 \001(\005H\000R\004page\210\001\001\022!\n\tpage_size\030\003 \001(\005H"
+    "\001R\tpage_size\210\001\001\022D\n\010end_date\030\004 \001(\tB#\272H r\036"
+    "2\034^[0-9]{4}-[0-9]{2}-[0-9]{2}$H\002R\010end_da"
+    "te\210\001\001B\007\n\005_pageB\014\n\n_page_sizeB\013\n\t_end_dat"
+    "e\"a\n\034ListEvalDailyMetricsResponse\022A\n\004pag"
+    "e\030\001 \001(\0132-.fusion.ai.proto.workbench.Eval"
+    "DayMetricsPageR\004page*\215\001\n\020ReadyCheckStatu"
+    "s\022\"\n\036READY_CHECK_STATUS_UNSPECIFIED\020\000\022\033\n"
+    "\027READY_CHECK_STATUS_PASS\020\001\022\033\n\027READY_CHEC"
+    "K_STATUS_WARN\020\002\022\033\n\027READY_CHECK_STATUS_FA"
+    "IL\020\003*|\n\022CoverageSeriesKind\022$\n COVERAGE_S"
+    "ERIES_KIND_UNSPECIFIED\020\000\022\036\n\032COVERAGE_SER"
+    "IES_KIND_POWER\020\001\022 \n\034COVERAGE_SERIES_KIND"
+    "_WEATHER\020\002*\263\001\n\020ModelReadyStatus\022\"\n\036MODEL"
+    "_READY_STATUS_UNSPECIFIED\020\000\022\034\n\030MODEL_REA"
+    "DY_STATUS_READY\020\001\022\037\n\033MODEL_READY_STATUS_"
+    "TRAINING\020\002\022\034\n\030MODEL_READY_STATUS_STALE\020\003"
+    "\022\036\n\032MODEL_READY_STATUS_MISSING\020\004*\241\001\n\tJob"
     "Status\022\032\n\026JOB_STATUS_UNSPECIFIED\020\000\022\025\n\021JO"
     "B_STATUS_QUEUED\020\001\022\026\n\022JOB_STATUS_RUNNING\020"
     "\002\022\030\n\024JOB_STATUS_SUCCEEDED\020\003\022\025\n\021JOB_STATU"
@@ -5157,13 +5369,13 @@ static ::absl::once_flag descriptor_table_workbench_2fworkbench_5fmessage_2eprot
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_workbench_2fworkbench_5fmessage_2eproto = {
     false,
     false,
-    6354,
+    6554,
     descriptor_table_protodef_workbench_2fworkbench_5fmessage_2eproto,
     "workbench/workbench_message.proto",
     &descriptor_table_workbench_2fworkbench_5fmessage_2eproto_once,
     descriptor_table_workbench_2fworkbench_5fmessage_2eproto_deps,
     2,
-    27,
+    28,
     schemas,
     file_message_globals,
     TableStruct_workbench_2fworkbench_5fmessage_2eproto::offsets,
@@ -5196,16 +5408,9 @@ ModelReadyStatus_descriptor() {
 PROTOBUF_CONSTINIT const uint32_t ModelReadyStatus_internal_data_[] = {
     327680u, 0u, };
 [[nodiscard]] const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL
-JobType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_workbench_2fworkbench_5fmessage_2eproto);
-  return file_level_enum_descriptors_workbench_2fworkbench_5fmessage_2eproto[3];
-}
-PROTOBUF_CONSTINIT const uint32_t JobType_internal_data_[] = {
-    262144u, 0u, };
-[[nodiscard]] const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL
 JobStatus_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&descriptor_table_workbench_2fworkbench_5fmessage_2eproto);
-  return file_level_enum_descriptors_workbench_2fworkbench_5fmessage_2eproto[4];
+  return file_level_enum_descriptors_workbench_2fworkbench_5fmessage_2eproto[3];
 }
 PROTOBUF_CONSTINIT const uint32_t JobStatus_internal_data_[] = {
     393216u, 0u, };
@@ -6946,101 +7151,151 @@ void FusionModelView::InternalSwap(FusionModelView* PROTOBUF_RESTRICT PROTOBUF_N
 }
 // ===================================================================
 
-void JobView::clear_created_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.created_at_ != nullptr) _impl_.created_at_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+PredictJobView_StagesEntry_DoNotUse::PredictJobView_StagesEntry_DoNotUse() : Super_(PredictJobView_StagesEntry_DoNotUse_get_class_data()) {}
+PredictJobView_StagesEntry_DoNotUse::PredictJobView_StagesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : Super_(arena, PredictJobView_StagesEntry_DoNotUse_get_class_data()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+PredictJobView_StagesEntry_DoNotUse::PredictJobView_StagesEntry_DoNotUse() : Super_() {}
+PredictJobView_StagesEntry_DoNotUse::PredictJobView_StagesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : Super_(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull PredictJobView_StagesEntry_DoNotUse_class_data_ =
+        PredictJobView_StagesEntry_DoNotUse::InternalGenerateClassData_(PredictJobView_StagesEntry_DoNotUse_globals_._default);
+
+// including ~ all the vtables and everything they use become part
+// of the same ~ SCC.
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+PredictJobView_StagesEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&PredictJobView_StagesEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(PredictJobView_StagesEntry_DoNotUse_class_data_.tc_table);
+  return PredictJobView_StagesEntry_DoNotUse_class_data_.base();
 }
-void JobView::clear_started_at() {
+#else
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+PredictJobView_StagesEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&PredictJobView_StagesEntry_DoNotUse_globals_);
+  ::google::protobuf::internal::PrefetchToLocalCache(
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&PredictJobView_StagesEntry_DoNotUse_globals_));
+  return PredictJobView_StagesEntry_DoNotUse_globals_.GetClassData();
+}
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const PredictJobView_StagesEntry_DoNotUse::ParseTableT_
+    PredictJobView_StagesEntry_DoNotUse::_table_ =
+        PredictJobView_StagesEntry_DoNotUse::InternalGenerateParseTable_(PredictJobView_StagesEntry_DoNotUse_class_data_.base());
+#endif  // !PROTOBUF_MESSAGE_GLOBALS
+// ===================================================================
+
+void PredictJobView::clear_started_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.started_at_ != nullptr) _impl_.started_at_->Clear();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
 }
-void JobView::clear_finished_at() {
+void PredictJobView::clear_finished_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.finished_at_ != nullptr) _impl_.finished_at_->Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+}
+void PredictJobView::clear_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.updated_at_ != nullptr) _impl_.updated_at_->Clear();
   ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
 }
-JobView::JobView(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+PredictJobView::PredictJobView(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, JobView_get_class_data()) {
+    : Super_(arena, PredictJobView_get_class_data()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : Super_(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.workbench.JobView)
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.workbench.PredictJobView)
 }
-PROTOBUF_NDEBUG_INLINE JobView::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE PredictJobView::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::workbench::JobView& from_msg)
+    [[maybe_unused]] const ::fusion::ai::proto::workbench::PredictJobView& from_msg)
       : _has_bits_{from._has_bits_},
         job_id_(arena, from.job_id_),
         registration_id_(arena, from.registration_id_),
-        message_(arena, from.message_),
+        stage_(arena, from.stage_),
         eval_date_(arena, from.eval_date_),
-        model_version_(arena, from.model_version_),
-        error_message_(arena, from.error_message_) {}
+        model_id_(arena, from.model_id_),
+        message_(arena, from.message_),
+        stages_ {
+          visibility, ::_pbi::InternalMetadataOffset::Build<
+              ::fusion::ai::proto::workbench::PredictJobView,
+              PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.stages_)>()
+          , arena, from.stages_
+        }
+     {}
 
-JobView::JobView(
+PredictJobView::PredictJobView(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const JobView& from)
+    const PredictJobView& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, JobView_get_class_data()) {
+    : Super_(arena, PredictJobView_get_class_data()) {
 
 #else   // PROTOBUF_CUSTOM_VTABLE
     : Super_(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  JobView* const _this = this;
+  PredictJobView* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.created_at_ = (CheckHasBit(cached_has_bits, 0x00000040U))
-                 ? Super_::CopyConstruct(arena, *from._impl_.created_at_)
-                 : nullptr;
-  _impl_.started_at_ = (CheckHasBit(cached_has_bits, 0x00000080U))
+  _impl_.started_at_ = (CheckHasBit(cached_has_bits, 0x00000040U))
                  ? Super_::CopyConstruct(arena, *from._impl_.started_at_)
                  : nullptr;
-  _impl_.finished_at_ = (CheckHasBit(cached_has_bits, 0x00000100U))
+  _impl_.finished_at_ = (CheckHasBit(cached_has_bits, 0x00000080U))
                  ? Super_::CopyConstruct(arena, *from._impl_.finished_at_)
                  : nullptr;
+  _impl_.updated_at_ = (CheckHasBit(cached_has_bits, 0x00000100U))
+                 ? Super_::CopyConstruct(arena, *from._impl_.updated_at_)
+                 : nullptr;
   ::memcpy(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, type_),
+               offsetof(Impl_, status_),
            reinterpret_cast<const char*>(&from._impl_) +
-               offsetof(Impl_, type_),
-           offsetof(Impl_, progress_pct_) -
-               offsetof(Impl_, type_) +
-               sizeof(Impl_::progress_pct_));
+               offsetof(Impl_, status_),
+           offsetof(Impl_, horizon_hours_) -
+               offsetof(Impl_, status_) +
+               sizeof(Impl_::horizon_hours_));
 
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.workbench.JobView)
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.workbench.PredictJobView)
 }
-PROTOBUF_NDEBUG_INLINE JobView::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE PredictJobView::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : job_id_(arena),
         registration_id_(arena),
-        message_(arena),
+        stage_(arena),
         eval_date_(arena),
-        model_version_(arena),
-        error_message_(arena) {}
+        model_id_(arena),
+        message_(arena),
+        stages_ { visibility, ::_pbi::InternalMetadataOffset::Build<
+            ::fusion::ai::proto::workbench::PredictJobView,
+            PROTOBUF_FIELD_OFFSET(::fusion::ai::proto::workbench::PredictJobView, _impl_.stages_)>()
+         }
+     {}
 
-inline void JobView::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void PredictJobView::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char*>(&_impl_) +
-               offsetof(Impl_, created_at_),
+               offsetof(Impl_, started_at_),
            0,
-           offsetof(Impl_, progress_pct_) -
-               offsetof(Impl_, created_at_) +
-               sizeof(Impl_::progress_pct_));
+           offsetof(Impl_, horizon_hours_) -
+               offsetof(Impl_, started_at_) +
+               sizeof(Impl_::horizon_hours_));
 }
-JobView::~JobView() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.workbench.JobView)
+PredictJobView::~PredictJobView() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.workbench.PredictJobView)
   SharedDtor(*this);
 }
-inline void JobView::SharedDtor(MessageLite& self) {
-  JobView& this_ = static_cast<JobView&>(self);
+inline void PredictJobView::SharedDtor(MessageLite& self) {
+  PredictJobView& this_ = static_cast<PredictJobView&>(self);
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     this_.CheckHasBitConsistency();
   }
@@ -7048,45 +7303,45 @@ inline void JobView::SharedDtor(MessageLite& self) {
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.job_id_.Destroy();
   this_._impl_.registration_id_.Destroy();
-  this_._impl_.message_.Destroy();
+  this_._impl_.stage_.Destroy();
   this_._impl_.eval_date_.Destroy();
-  this_._impl_.model_version_.Destroy();
-  this_._impl_.error_message_.Destroy();
-  delete this_._impl_.created_at_;
+  this_._impl_.model_id_.Destroy();
+  this_._impl_.message_.Destroy();
   delete this_._impl_.started_at_;
   delete this_._impl_.finished_at_;
+  delete this_._impl_.updated_at_;
   this_._impl_.~Impl_();
 }
 
 #ifndef PROTOBUF_MESSAGE_GLOBALS
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull JobView_class_data_ =
-        JobView::InternalGenerateClassData_(JobView_globals_._default);
+    ::google::protobuf::internal::ClassDataFull PredictJobView_class_data_ =
+        PredictJobView::InternalGenerateClassData_(PredictJobView_globals_._default);
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-JobView::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&JobView_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(JobView_class_data_.tc_table);
-  return JobView_class_data_.base();
+PredictJobView::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&PredictJobView_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(PredictJobView_class_data_.tc_table);
+  return PredictJobView_class_data_.base();
 }
 #else
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-JobView::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&JobView_globals_);
+PredictJobView::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&PredictJobView_globals_);
   ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&JobView_globals_));
-  return JobView_globals_.GetClassData();
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&PredictJobView_globals_));
+  return PredictJobView_globals_.GetClassData();
 }
 #endif  // !PROTOBUF_MESSAGE_GLOBALS
 #ifndef PROTOBUF_MESSAGE_GLOBALS
 PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const JobView::ParseTableT_
-    JobView::_table_ =
-        JobView::InternalGenerateParseTable_(JobView_class_data_.base());
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const PredictJobView::ParseTableT_
+    PredictJobView::_table_ =
+        PredictJobView::InternalGenerateParseTable_(PredictJobView_class_data_.base());
 #endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void JobView::Clear() {
+PROTOBUF_NOINLINE void PredictJobView::Clear() {
   auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.workbench.JobView)
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.workbench.PredictJobView)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
@@ -7099,56 +7354,59 @@ PROTOBUF_NOINLINE void JobView::Clear() {
       this_._impl_.registration_id_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
-      this_._impl_.message_.ClearNonDefaultToEmpty();
+      this_._impl_.stage_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000008U)) {
       this_._impl_.eval_date_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      this_._impl_.model_version_.ClearNonDefaultToEmpty();
+      this_._impl_.model_id_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      this_._impl_.error_message_.ClearNonDefaultToEmpty();
+      this_._impl_.message_.ClearNonDefaultToEmpty();
     }
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      ABSL_DCHECK(this_._impl_.created_at_ != nullptr);
-      this_._impl_.created_at_->Clear();
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
       ABSL_DCHECK(this_._impl_.started_at_ != nullptr);
       this_._impl_.started_at_->Clear();
     }
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+      ABSL_DCHECK(this_._impl_.finished_at_ != nullptr);
+      this_._impl_.finished_at_->Clear();
+    }
   }
   if (CheckHasBit(cached_has_bits, 0x00000100U)) {
-    ABSL_DCHECK(this_._impl_.finished_at_ != nullptr);
-    this_._impl_.finished_at_->Clear();
+    ABSL_DCHECK(this_._impl_.updated_at_ != nullptr);
+    this_._impl_.updated_at_->Clear();
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x00000e00U)) {
-    ::memset(&this_._impl_.type_, 0,
+  if (BatchCheckHasBit(cached_has_bits, 0x00007e00U)) {
+    ::memset(&this_._impl_.status_, 0,
              static_cast<::size_t>(
-                 reinterpret_cast<char*>(&this_._impl_.progress_pct_) -
-                 reinterpret_cast<char*>(&this_._impl_.type_)) +
-                 sizeof(_impl_.progress_pct_));
+                 reinterpret_cast<char*>(&this_._impl_.horizon_hours_) -
+                 reinterpret_cast<char*>(&this_._impl_.status_)) +
+                 sizeof(_impl_.horizon_hours_));
+    if (CheckHasBit(cached_has_bits, 0x00004000U)) {
+      _impl_.stages_.Clear();
+    }
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL JobView::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL PredictJobView::_InternalSerialize(
     const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const JobView& this_ = static_cast<const JobView&>(base);
+  const PredictJobView& this_ = static_cast<const PredictJobView&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL JobView::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL PredictJobView::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const JobView& this_ = *this;
+  const PredictJobView& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     this_.CheckHasBitConsistency();
   }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.workbench.JobView)
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.workbench.PredictJobView)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -7158,22 +7416,23 @@ PROTOBUF_NOINLINE void JobView::Clear() {
     if (!this_._internal_job_id().empty()) {
       const ::std::string& _s = this_._internal_job_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.JobView.job_id");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.job_id");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
 
-  // .fusion.ai.proto.workbench.JobType type = 2 [json_name = "type"];
-  if (CheckHasBit(cached_has_bits, 0x00000200U)) {
-    if (this_._internal_type() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          2, this_._internal_type(), target);
+  // string registration_id = 2 [json_name = "registration_id"];
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.registration_id");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
     }
   }
 
   // .fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];
-  if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+  if (CheckHasBit(cached_has_bits, 0x00000200U)) {
     if (this_._internal_status() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteEnumToArray(
@@ -7181,80 +7440,136 @@ PROTOBUF_NOINLINE void JobView::Clear() {
     }
   }
 
-  // string registration_id = 4 [json_name = "registration_id"];
-  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
-    if (!this_._internal_registration_id().empty()) {
-      const ::std::string& _s = this_._internal_registration_id();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.JobView.registration_id");
-      target = stream->WriteStringMaybeAliased(4, _s, target);
-    }
-  }
-
-  // int32 progress_pct = 5 [json_name = "progress_pct"];
-  if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+  // int32 progress_pct = 4 [json_name = "progress_pct"];
+  if (CheckHasBit(cached_has_bits, 0x00000400U)) {
     if (this_._internal_progress_pct() != 0) {
       target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<5>(
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<4>(
               stream, this_._internal_progress_pct(), target);
     }
   }
 
-  // string message = 6 [json_name = "message"];
+  // string stage = 5 [json_name = "stage"];
   if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+    if (!this_._internal_stage().empty()) {
+      const ::std::string& _s = this_._internal_stage();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.stage");
+      target = stream->WriteStringMaybeAliased(5, _s, target);
+    }
+  }
+
+  // map<string, string> stages = 6 [json_name = "stages"];
+  if (CheckHasBit(cached_has_bits, 0x00004000U)) {
+    if (!this_._internal_stages().empty()) {
+      using MapType = ::google::protobuf::Map<::std::string, ::std::string>;
+      using WireHelper = _pbi::MapEntryFuncs<::std::string, ::std::string,
+                                     _pbi::WireFormatLite::TYPE_STRING,
+                                     _pbi::WireFormatLite::TYPE_STRING>;
+      const auto& field = this_._internal_stages();
+
+      if (stream->IsSerializationDeterministic() && field.size() > 1) {
+        for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+          target = WireHelper::InternalSerialize(
+              6, entry.first, entry.second, target, stream);
+          ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+              entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.stages");
+          ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+              entry.second.data(), static_cast<int>(entry.second.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.stages");
+        }
+      } else {
+        for (const auto& entry : field) {
+          target = WireHelper::InternalSerialize(
+              6, entry.first, entry.second, target, stream);
+          ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+              entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.stages");
+          ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+              entry.second.data(), static_cast<int>(entry.second.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.stages");
+        }
+      }
+    }
+  }
+
+  // string eval_date = 7 [json_name = "eval_date"];
+  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+    if (!this_._internal_eval_date().empty()) {
+      const ::std::string& _s = this_._internal_eval_date();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.eval_date");
+      target = stream->WriteStringMaybeAliased(7, _s, target);
+    }
+  }
+
+  // int32 day_offset = 8 [json_name = "day_offset"];
+  if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+    if (this_._internal_day_offset() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<8>(
+              stream, this_._internal_day_offset(), target);
+    }
+  }
+
+  // int32 granularity_min = 9 [json_name = "granularity_min"];
+  if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+    if (this_._internal_granularity_min() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<9>(
+              stream, this_._internal_granularity_min(), target);
+    }
+  }
+
+  // int32 horizon_hours = 10 [json_name = "horizon_hours"];
+  if (CheckHasBit(cached_has_bits, 0x00002000U)) {
+    if (this_._internal_horizon_hours() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<10>(
+              stream, this_._internal_horizon_hours(), target);
+    }
+  }
+
+  // string model_id = 11 [json_name = "model_id"];
+  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+    if (!this_._internal_model_id().empty()) {
+      const ::std::string& _s = this_._internal_model_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.model_id");
+      target = stream->WriteStringMaybeAliased(11, _s, target);
+    }
+  }
+
+  // string message = 12 [json_name = "message"];
+  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
     if (!this_._internal_message().empty()) {
       const ::std::string& _s = this_._internal_message();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.JobView.message");
-      target = stream->WriteStringMaybeAliased(6, _s, target);
-    }
-  }
-
-  // optional string eval_date = 7 [json_name = "eval_date"];
-  if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-    const ::std::string& _s = this_._internal_eval_date();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.JobView.eval_date");
-    target = stream->WriteStringMaybeAliased(7, _s, target);
-  }
-
-  // optional string model_version = 8 [json_name = "model_version"];
-  if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-    const ::std::string& _s = this_._internal_model_version();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.JobView.model_version");
-    target = stream->WriteStringMaybeAliased(8, _s, target);
-  }
-
-  // .google.protobuf.Timestamp created_at = 9 [json_name = "created_at"];
-  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        9, *this_._impl_.created_at_, this_._impl_.created_at_->GetCachedSize(), target,
-        stream);
-  }
-
-  // optional .google.protobuf.Timestamp started_at = 10 [json_name = "started_at"];
-  if (CheckHasBit(cached_has_bits, 0x00000080U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        10, *this_._impl_.started_at_, this_._impl_.started_at_->GetCachedSize(), target,
-        stream);
-  }
-
-  // optional .google.protobuf.Timestamp finished_at = 11 [json_name = "finished_at"];
-  if (CheckHasBit(cached_has_bits, 0x00000100U)) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        11, *this_._impl_.finished_at_, this_._impl_.finished_at_->GetCachedSize(), target,
-        stream);
-  }
-
-  // string error_message = 12 [json_name = "error_message"];
-  if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-    if (!this_._internal_error_message().empty()) {
-      const ::std::string& _s = this_._internal_error_message();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.JobView.error_message");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.PredictJobView.message");
       target = stream->WriteStringMaybeAliased(12, _s, target);
     }
+  }
+
+  // optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];
+  if (CheckHasBit(cached_has_bits, 0x00000040U)) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        13, *this_._impl_.started_at_, this_._impl_.started_at_->GetCachedSize(), target,
+        stream);
+  }
+
+  // optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];
+  if (CheckHasBit(cached_has_bits, 0x00000080U)) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        14, *this_._impl_.finished_at_, this_._impl_.finished_at_->GetCachedSize(), target,
+        stream);
+  }
+
+  // optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];
+  if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        15, *this_._impl_.updated_at_, this_._impl_.updated_at_->GetCachedSize(), target,
+        stream);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -7262,18 +7577,18 @@ PROTOBUF_NOINLINE void JobView::Clear() {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.workbench.JobView)
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.workbench.PredictJobView)
   return target;
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t JobView::ByteSizeLong(const MessageLite& base) {
-  const JobView& this_ = static_cast<const JobView&>(base);
+::size_t PredictJobView::ByteSizeLong(const MessageLite& base) {
+  const PredictJobView& this_ = static_cast<const PredictJobView&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::size_t JobView::ByteSizeLong() const {
-  const JobView& this_ = *this;
+::size_t PredictJobView::ByteSizeLong() const {
+  const PredictJobView& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.workbench.JobView)
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.workbench.PredictJobView)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
@@ -7288,73 +7603,101 @@ PROTOBUF_NOINLINE void JobView::Clear() {
                                         this_._internal_job_id());
       }
     }
-    // string registration_id = 4 [json_name = "registration_id"];
+    // string registration_id = 2 [json_name = "registration_id"];
     if (CheckHasBit(cached_has_bits, 0x00000002U)) {
       if (!this_._internal_registration_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_registration_id());
       }
     }
-    // string message = 6 [json_name = "message"];
+    // string stage = 5 [json_name = "stage"];
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!this_._internal_stage().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_stage());
+      }
+    }
+    // string eval_date = 7 [json_name = "eval_date"];
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!this_._internal_eval_date().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_eval_date());
+      }
+    }
+    // string model_id = 11 [json_name = "model_id"];
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!this_._internal_model_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_model_id());
+      }
+    }
+    // string message = 12 [json_name = "message"];
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
       if (!this_._internal_message().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_message());
       }
     }
-    // optional string eval_date = 7 [json_name = "eval_date"];
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_eval_date());
-    }
-    // optional string model_version = 8 [json_name = "model_version"];
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_model_version());
-    }
-    // string error_message = 12 [json_name = "error_message"];
-    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (!this_._internal_error_message().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_error_message());
-      }
-    }
-    // .google.protobuf.Timestamp created_at = 9 [json_name = "created_at"];
+    // optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.created_at_);
-    }
-    // optional .google.protobuf.Timestamp started_at = 10 [json_name = "started_at"];
-    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.started_at_);
     }
-  }
-  if (BatchCheckHasBit(cached_has_bits, 0x00000f00U)) {
-    // optional .google.protobuf.Timestamp finished_at = 11 [json_name = "finished_at"];
-    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+    // optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.finished_at_);
     }
-    // .fusion.ai.proto.workbench.JobType type = 2 [json_name = "type"];
-    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
-      if (this_._internal_type() != 0) {
-        total_size += 1 +
-                      ::_pbi::WireFormatLite::EnumSize(this_._internal_type());
-      }
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00007f00U)) {
+    // optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.updated_at_);
     }
     // .fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];
-    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
       if (this_._internal_status() != 0) {
         total_size += 1 +
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_status());
       }
     }
-    // int32 progress_pct = 5 [json_name = "progress_pct"];
-    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+    // int32 progress_pct = 4 [json_name = "progress_pct"];
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
       if (this_._internal_progress_pct() != 0) {
         total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
             this_._internal_progress_pct());
+      }
+    }
+    // int32 day_offset = 8 [json_name = "day_offset"];
+    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+      if (this_._internal_day_offset() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_day_offset());
+      }
+    }
+    // int32 granularity_min = 9 [json_name = "granularity_min"];
+    if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+      if (this_._internal_granularity_min() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_granularity_min());
+      }
+    }
+    // int32 horizon_hours = 10 [json_name = "horizon_hours"];
+    if (CheckHasBit(cached_has_bits, 0x00002000U)) {
+      if (this_._internal_horizon_hours() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_horizon_hours());
+      }
+    }
+    // map<string, string> stages = 6 [json_name = "stages"];
+    if (CheckHasBit(cached_has_bits, 0x00004000U)) {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_stages_size());
+      for (const auto& entry : this_._internal_stages()) {
+        total_size += _pbi::MapEntryFuncs<::std::string, ::std::string,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_STRING>::ByteSizeLong(entry.first, entry.second);
       }
     }
   }
@@ -7362,15 +7705,15 @@ PROTOBUF_NOINLINE void JobView::Clear() {
                                              &this_._impl_._cached_size_);
 }
 
-void JobView::MergeImpl(::google::protobuf::MessageLite& to_msg,
+void PredictJobView::MergeImpl(::google::protobuf::MessageLite& to_msg,
                       const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<JobView*>(&to_msg);
-  auto& from = static_cast<const JobView&>(from_msg);
+   auto* const _this = static_cast<PredictJobView*>(&to_msg);
+  auto& from = static_cast<const PredictJobView&>(from_msg);
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     from.CheckHasBitConsistency();
   }
   ::google::protobuf::Arena* arena = _this->GetArena();
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.workbench.JobView)
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.workbench.PredictJobView)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
@@ -7396,6 +7739,33 @@ void JobView::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      if (!from._internal_stage().empty()) {
+        _this->_internal_set_stage(from._internal_stage());
+      } else {
+        if (_this->_impl_.stage_.IsDefault()) {
+          _this->_internal_set_stage("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
+      if (!from._internal_eval_date().empty()) {
+        _this->_internal_set_eval_date(from._internal_eval_date());
+      } else {
+        if (_this->_impl_.eval_date_.IsDefault()) {
+          _this->_internal_set_eval_date("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
+      if (!from._internal_model_id().empty()) {
+        _this->_internal_set_model_id(from._internal_model_id());
+      } else {
+        if (_this->_impl_.model_id_.IsDefault()) {
+          _this->_internal_set_model_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
       if (!from._internal_message().empty()) {
         _this->_internal_set_message(from._internal_message());
       } else {
@@ -7404,30 +7774,7 @@ void JobView::MergeImpl(::google::protobuf::MessageLite& to_msg,
         }
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000008U)) {
-      _this->_internal_set_eval_date(from._internal_eval_date());
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000010U)) {
-      _this->_internal_set_model_version(from._internal_model_version());
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000020U)) {
-      if (!from._internal_error_message().empty()) {
-        _this->_internal_set_error_message(from._internal_error_message());
-      } else {
-        if (_this->_impl_.error_message_.IsDefault()) {
-          _this->_internal_set_error_message("");
-        }
-      }
-    }
     if (CheckHasBit(cached_has_bits, 0x00000040U)) {
-      ABSL_DCHECK(from._impl_.created_at_ != nullptr);
-      if (_this->_impl_.created_at_ == nullptr) {
-        _this->_impl_.created_at_ = Super_::CopyConstruct(arena, *from._impl_.created_at_);
-      } else {
-        _this->_impl_.created_at_->MergeFrom(*from._impl_.created_at_);
-      }
-    }
-    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
       ABSL_DCHECK(from._impl_.started_at_ != nullptr);
       if (_this->_impl_.started_at_ == nullptr) {
         _this->_impl_.started_at_ = Super_::CopyConstruct(arena, *from._impl_.started_at_);
@@ -7435,9 +7782,7 @@ void JobView::MergeImpl(::google::protobuf::MessageLite& to_msg,
         _this->_impl_.started_at_->MergeFrom(*from._impl_.started_at_);
       }
     }
-  }
-  if (BatchCheckHasBit(cached_has_bits, 0x00000f00U)) {
-    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000080U)) {
       ABSL_DCHECK(from._impl_.finished_at_ != nullptr);
       if (_this->_impl_.finished_at_ == nullptr) {
         _this->_impl_.finished_at_ = Super_::CopyConstruct(arena, *from._impl_.finished_at_);
@@ -7445,20 +7790,43 @@ void JobView::MergeImpl(::google::protobuf::MessageLite& to_msg,
         _this->_impl_.finished_at_->MergeFrom(*from._impl_.finished_at_);
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
-      if (from._internal_type() != 0) {
-        _this->_impl_.type_ = from._impl_.type_;
+  }
+  if (BatchCheckHasBit(cached_has_bits, 0x00007f00U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000100U)) {
+      ABSL_DCHECK(from._impl_.updated_at_ != nullptr);
+      if (_this->_impl_.updated_at_ == nullptr) {
+        _this->_impl_.updated_at_ = Super_::CopyConstruct(arena, *from._impl_.updated_at_);
+      } else {
+        _this->_impl_.updated_at_->MergeFrom(*from._impl_.updated_at_);
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000200U)) {
       if (from._internal_status() != 0) {
         _this->_impl_.status_ = from._impl_.status_;
       }
     }
-    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000400U)) {
       if (from._internal_progress_pct() != 0) {
         _this->_impl_.progress_pct_ = from._impl_.progress_pct_;
       }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000800U)) {
+      if (from._internal_day_offset() != 0) {
+        _this->_impl_.day_offset_ = from._impl_.day_offset_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00001000U)) {
+      if (from._internal_granularity_min() != 0) {
+        _this->_impl_.granularity_min_ = from._impl_.granularity_min_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00002000U)) {
+      if (from._internal_horizon_hours() != 0) {
+        _this->_impl_.horizon_hours_ = from._impl_.horizon_hours_;
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00004000U)) {
+      _this->_impl_.stages_.MergeFrom(from._impl_.stages_);
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -7466,15 +7834,15 @@ void JobView::MergeImpl(::google::protobuf::MessageLite& to_msg,
       from._internal_metadata_);
 }
 
-void JobView::CopyFrom(const JobView& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.workbench.JobView)
+void PredictJobView::CopyFrom(const PredictJobView& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.workbench.PredictJobView)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void JobView::InternalSwap(JobView* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void PredictJobView::InternalSwap(PredictJobView* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
@@ -7482,19 +7850,20 @@ void JobView::InternalSwap(JobView* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.job_id_, &other->_impl_.job_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.stage_, &other->_impl_.stage_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.eval_date_, &other->_impl_.eval_date_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.model_version_, &other->_impl_.model_version_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.error_message_, &other->_impl_.error_message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.model_id_, &other->_impl_.model_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(JobView, _impl_.progress_pct_)
-      + sizeof(JobView::_impl_.progress_pct_)
-      - PROTOBUF_FIELD_OFFSET(JobView, _impl_.created_at_)>(
-          reinterpret_cast<char*>(&_impl_.created_at_),
-          reinterpret_cast<char*>(&other->_impl_.created_at_));
+      PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.horizon_hours_)
+      + sizeof(PredictJobView::_impl_.horizon_hours_)
+      - PROTOBUF_FIELD_OFFSET(PredictJobView, _impl_.started_at_)>(
+          reinterpret_cast<char*>(&_impl_.started_at_),
+          reinterpret_cast<char*>(&other->_impl_.started_at_));
+  _impl_.stages_.InternalSwap(&other->_impl_.stages_);
 }
 
-::google::protobuf::Metadata JobView::GetMetadata() const {
+::google::protobuf::Metadata PredictJobView::GetMetadata() const {
   return Super_::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================
@@ -10944,127 +11313,127 @@ void CreatePredictJobResponse::InternalSwap(CreatePredictJobResponse* PROTOBUF_R
 }
 // ===================================================================
 
-GetJobRequest::GetJobRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+GetPredictRequest::GetPredictRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, GetJobRequest_get_class_data()) {
+    : Super_(arena, GetPredictRequest_get_class_data()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : Super_(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.workbench.GetJobRequest)
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.workbench.GetPredictRequest)
 }
-PROTOBUF_NDEBUG_INLINE GetJobRequest::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE GetPredictRequest::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::workbench::GetJobRequest& from_msg)
+    [[maybe_unused]] const ::fusion::ai::proto::workbench::GetPredictRequest& from_msg)
       : _has_bits_{from._has_bits_},
-        job_id_(arena, from.job_id_) {}
+        registration_id_(arena, from.registration_id_) {}
 
-GetJobRequest::GetJobRequest(
+GetPredictRequest::GetPredictRequest(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const GetJobRequest& from)
+    const GetPredictRequest& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, GetJobRequest_get_class_data()) {
+    : Super_(arena, GetPredictRequest_get_class_data()) {
 
 #else   // PROTOBUF_CUSTOM_VTABLE
     : Super_(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  GetJobRequest* const _this = this;
+  GetPredictRequest* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
 
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.workbench.GetJobRequest)
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.workbench.GetPredictRequest)
 }
-PROTOBUF_NDEBUG_INLINE GetJobRequest::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE GetPredictRequest::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : job_id_(arena) {}
+      : registration_id_(arena) {}
 
-inline void GetJobRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void GetPredictRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
 }
-GetJobRequest::~GetJobRequest() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.workbench.GetJobRequest)
+GetPredictRequest::~GetPredictRequest() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.workbench.GetPredictRequest)
   SharedDtor(*this);
 }
-inline void GetJobRequest::SharedDtor(MessageLite& self) {
-  GetJobRequest& this_ = static_cast<GetJobRequest&>(self);
+inline void GetPredictRequest::SharedDtor(MessageLite& self) {
+  GetPredictRequest& this_ = static_cast<GetPredictRequest&>(self);
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     this_.CheckHasBitConsistency();
   }
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.job_id_.Destroy();
+  this_._impl_.registration_id_.Destroy();
   this_._impl_.~Impl_();
 }
 
 #ifndef PROTOBUF_MESSAGE_GLOBALS
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull GetJobRequest_class_data_ =
-        GetJobRequest::InternalGenerateClassData_(GetJobRequest_globals_._default);
+    ::google::protobuf::internal::ClassDataFull GetPredictRequest_class_data_ =
+        GetPredictRequest::InternalGenerateClassData_(GetPredictRequest_globals_._default);
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-GetJobRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&GetJobRequest_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(GetJobRequest_class_data_.tc_table);
-  return GetJobRequest_class_data_.base();
+GetPredictRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetPredictRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(GetPredictRequest_class_data_.tc_table);
+  return GetPredictRequest_class_data_.base();
 }
 #else
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-GetJobRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&GetJobRequest_globals_);
+GetPredictRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetPredictRequest_globals_);
   ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&GetJobRequest_globals_));
-  return GetJobRequest_globals_.GetClassData();
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&GetPredictRequest_globals_));
+  return GetPredictRequest_globals_.GetClassData();
 }
 #endif  // !PROTOBUF_MESSAGE_GLOBALS
 #ifndef PROTOBUF_MESSAGE_GLOBALS
 PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetJobRequest::ParseTableT_
-    GetJobRequest::_table_ =
-        GetJobRequest::InternalGenerateParseTable_(GetJobRequest_class_data_.base());
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetPredictRequest::ParseTableT_
+    GetPredictRequest::_table_ =
+        GetPredictRequest::InternalGenerateParseTable_(GetPredictRequest_class_data_.base());
 #endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void GetJobRequest::Clear() {
+PROTOBUF_NOINLINE void GetPredictRequest::Clear() {
   auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.workbench.GetJobRequest)
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.workbench.GetPredictRequest)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    this_._impl_.job_id_.ClearNonDefaultToEmpty();
+    this_._impl_.registration_id_.ClearNonDefaultToEmpty();
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL GetJobRequest::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL GetPredictRequest::_InternalSerialize(
     const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const GetJobRequest& this_ = static_cast<const GetJobRequest&>(base);
+  const GetPredictRequest& this_ = static_cast<const GetPredictRequest&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL GetJobRequest::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL GetPredictRequest::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const GetJobRequest& this_ = *this;
+  const GetPredictRequest& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     this_.CheckHasBitConsistency();
   }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.workbench.GetJobRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.workbench.GetPredictRequest)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // string job_id = 1 [json_name = "job_id", (.buf.validate.field) = {
+  // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    if (!this_._internal_job_id().empty()) {
-      const ::std::string& _s = this_._internal_job_id();
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.GetJobRequest.job_id");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.GetPredictRequest.registration_id");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
@@ -11074,29 +11443,29 @@ PROTOBUF_NOINLINE void GetJobRequest::Clear() {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.workbench.GetJobRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.workbench.GetPredictRequest)
   return target;
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t GetJobRequest::ByteSizeLong(const MessageLite& base) {
-  const GetJobRequest& this_ = static_cast<const GetJobRequest&>(base);
+::size_t GetPredictRequest::ByteSizeLong(const MessageLite& base) {
+  const GetPredictRequest& this_ = static_cast<const GetPredictRequest&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::size_t GetJobRequest::ByteSizeLong() const {
-  const GetJobRequest& this_ = *this;
+::size_t GetPredictRequest::ByteSizeLong() const {
+  const GetPredictRequest& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.workbench.GetJobRequest)
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.workbench.GetPredictRequest)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
    {
-    // string job_id = 1 [json_name = "job_id", (.buf.validate.field) = {
+    // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
     cached_has_bits = this_._impl_._has_bits_[0];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-      if (!this_._internal_job_id().empty()) {
+      if (!this_._internal_registration_id().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_job_id());
+                                        this_._internal_registration_id());
       }
     }
   }
@@ -11104,25 +11473,25 @@ PROTOBUF_NOINLINE void GetJobRequest::Clear() {
                                              &this_._impl_._cached_size_);
 }
 
-void GetJobRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
+void GetPredictRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
                       const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<GetJobRequest*>(&to_msg);
-  auto& from = static_cast<const GetJobRequest&>(from_msg);
+   auto* const _this = static_cast<GetPredictRequest*>(&to_msg);
+  auto& from = static_cast<const GetPredictRequest&>(from_msg);
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     from.CheckHasBitConsistency();
   }
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.workbench.GetJobRequest)
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.workbench.GetPredictRequest)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    if (!from._internal_job_id().empty()) {
-      _this->_internal_set_job_id(from._internal_job_id());
+    if (!from._internal_registration_id().empty()) {
+      _this->_internal_set_registration_id(from._internal_registration_id());
     } else {
-      if (_this->_impl_.job_id_.IsDefault()) {
-        _this->_internal_set_job_id("");
+      if (_this->_impl_.registration_id_.IsDefault()) {
+        _this->_internal_set_registration_id("");
       }
     }
   }
@@ -11131,152 +11500,185 @@ void GetJobRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
       from._internal_metadata_);
 }
 
-void GetJobRequest::CopyFrom(const GetJobRequest& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.workbench.GetJobRequest)
+void GetPredictRequest::CopyFrom(const GetPredictRequest& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.workbench.GetPredictRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void GetJobRequest::InternalSwap(GetJobRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void GetPredictRequest::InternalSwap(GetPredictRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.job_id_, &other->_impl_.job_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
 }
 
-::google::protobuf::Metadata GetJobRequest::GetMetadata() const {
+::google::protobuf::Metadata GetPredictRequest::GetMetadata() const {
   return Super_::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================
 
-GetJobResponse::GetJobResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+GetPredictResponse::GetPredictResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, GetJobResponse_get_class_data()) {
+    : Super_(arena, GetPredictResponse_get_class_data()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : Super_(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.workbench.GetJobResponse)
+  // @@protoc_insertion_point(arena_constructor:fusion.ai.proto.workbench.GetPredictResponse)
 }
-PROTOBUF_NDEBUG_INLINE GetJobResponse::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE GetPredictResponse::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    [[maybe_unused]] const ::fusion::ai::proto::workbench::GetJobResponse& from_msg)
-      : _has_bits_{from._has_bits_} {}
+    [[maybe_unused]] const ::fusion::ai::proto::workbench::GetPredictResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        registration_id_(arena, from.registration_id_),
+        current_predict_job_id_(arena, from.current_predict_job_id_) {}
 
-GetJobResponse::GetJobResponse(
+GetPredictResponse::GetPredictResponse(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const GetJobResponse& from)
+    const GetPredictResponse& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : Super_(arena, GetJobResponse_get_class_data()) {
+    : Super_(arena, GetPredictResponse_get_class_data()) {
 
 #else   // PROTOBUF_CUSTOM_VTABLE
     : Super_(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  GetJobResponse* const _this = this;
+  GetPredictResponse* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.job_ = (CheckHasBit(cached_has_bits, 0x00000001U))
+  _impl_.job_ = (CheckHasBit(cached_has_bits, 0x00000004U))
                  ? Super_::CopyConstruct(arena, *from._impl_.job_)
                  : nullptr;
 
-  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.workbench.GetJobResponse)
+  // @@protoc_insertion_point(copy_constructor:fusion.ai.proto.workbench.GetPredictResponse)
 }
-PROTOBUF_NDEBUG_INLINE GetJobResponse::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE GetPredictResponse::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
     [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-     {}
+      : registration_id_(arena),
+        current_predict_job_id_(arena) {}
 
-inline void GetJobResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void GetPredictResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   _impl_.job_ = {};
 }
-GetJobResponse::~GetJobResponse() {
-  // @@protoc_insertion_point(destructor:fusion.ai.proto.workbench.GetJobResponse)
+GetPredictResponse::~GetPredictResponse() {
+  // @@protoc_insertion_point(destructor:fusion.ai.proto.workbench.GetPredictResponse)
   SharedDtor(*this);
 }
-inline void GetJobResponse::SharedDtor(MessageLite& self) {
-  GetJobResponse& this_ = static_cast<GetJobResponse&>(self);
+inline void GetPredictResponse::SharedDtor(MessageLite& self) {
+  GetPredictResponse& this_ = static_cast<GetPredictResponse&>(self);
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     this_.CheckHasBitConsistency();
   }
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.registration_id_.Destroy();
+  this_._impl_.current_predict_job_id_.Destroy();
   delete this_._impl_.job_;
   this_._impl_.~Impl_();
 }
 
 #ifndef PROTOBUF_MESSAGE_GLOBALS
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull GetJobResponse_class_data_ =
-        GetJobResponse::InternalGenerateClassData_(GetJobResponse_globals_._default);
+    ::google::protobuf::internal::ClassDataFull GetPredictResponse_class_data_ =
+        GetPredictResponse::InternalGenerateClassData_(GetPredictResponse_globals_._default);
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-GetJobResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&GetJobResponse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(GetJobResponse_class_data_.tc_table);
-  return GetJobResponse_class_data_.base();
+GetPredictResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetPredictResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(GetPredictResponse_class_data_.tc_table);
+  return GetPredictResponse_class_data_.base();
 }
 #else
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-GetJobResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&GetJobResponse_globals_);
+GetPredictResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&GetPredictResponse_globals_);
   ::google::protobuf::internal::PrefetchToLocalCache(
-      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&GetJobResponse_globals_));
-  return GetJobResponse_globals_.GetClassData();
+      ::google::protobuf::internal::MessageGlobalsBase::ToParseTableBase(&GetPredictResponse_globals_));
+  return GetPredictResponse_globals_.GetClassData();
 }
 #endif  // !PROTOBUF_MESSAGE_GLOBALS
 #ifndef PROTOBUF_MESSAGE_GLOBALS
 PROTOBUF_CONSTINIT
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetJobResponse::ParseTableT_
-    GetJobResponse::_table_ =
-        GetJobResponse::InternalGenerateParseTable_(GetJobResponse_class_data_.base());
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const GetPredictResponse::ParseTableT_
+    GetPredictResponse::_table_ =
+        GetPredictResponse::InternalGenerateParseTable_(GetPredictResponse_class_data_.base());
 #endif  // !PROTOBUF_MESSAGE_GLOBALS
-PROTOBUF_NOINLINE void GetJobResponse::Clear() {
+PROTOBUF_NOINLINE void GetPredictResponse::Clear() {
   auto& this_ [[maybe_unused]] = *this;
-  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.workbench.GetJobResponse)
+  // @@protoc_insertion_point(message_clear_start:fusion.ai.proto.workbench.GetPredictResponse)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    ABSL_DCHECK(this_._impl_.job_ != nullptr);
-    this_._impl_.job_->Clear();
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      this_._impl_.registration_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      this_._impl_.current_predict_job_id_.ClearNonDefaultToEmpty();
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      ABSL_DCHECK(this_._impl_.job_ != nullptr);
+      this_._impl_.job_->Clear();
+    }
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL GetJobResponse::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL GetPredictResponse::_InternalSerialize(
     const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const GetJobResponse& this_ = static_cast<const GetJobResponse&>(base);
+  const GetPredictResponse& this_ = static_cast<const GetPredictResponse&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL GetJobResponse::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL GetPredictResponse::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const GetJobResponse& this_ = *this;
+  const GetPredictResponse& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     this_.CheckHasBitConsistency();
   }
-  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.workbench.GetJobResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:fusion.ai.proto.workbench.GetPredictResponse)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .fusion.ai.proto.workbench.JobView job = 1 [json_name = "job"];
+  // string registration_id = 1 [json_name = "registration_id"];
   if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+    if (!this_._internal_registration_id().empty()) {
+      const ::std::string& _s = this_._internal_registration_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.GetPredictResponse.registration_id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string current_predict_job_id = 2 [json_name = "current_predict_job_id"];
+  if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+    if (!this_._internal_current_predict_job_id().empty()) {
+      const ::std::string& _s = this_._internal_current_predict_job_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "fusion.ai.proto.workbench.GetPredictResponse.current_predict_job_id");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // optional .fusion.ai.proto.workbench.PredictJobView job = 3 [json_name = "job"];
+  if (CheckHasBit(cached_has_bits, 0x00000004U)) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        1, *this_._impl_.job_, this_._impl_.job_->GetCachedSize(), target,
+        3, *this_._impl_.job_, this_._impl_.job_->GetCachedSize(), target,
         stream);
   }
 
@@ -11285,26 +11687,41 @@ PROTOBUF_NOINLINE void GetJobResponse::Clear() {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.workbench.GetJobResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:fusion.ai.proto.workbench.GetPredictResponse)
   return target;
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t GetJobResponse::ByteSizeLong(const MessageLite& base) {
-  const GetJobResponse& this_ = static_cast<const GetJobResponse&>(base);
+::size_t GetPredictResponse::ByteSizeLong(const MessageLite& base) {
+  const GetPredictResponse& this_ = static_cast<const GetPredictResponse&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::size_t GetJobResponse::ByteSizeLong() const {
-  const GetJobResponse& this_ = *this;
+::size_t GetPredictResponse::ByteSizeLong() const {
+  const GetPredictResponse& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.workbench.GetJobResponse)
+  // @@protoc_insertion_point(message_byte_size_start:fusion.ai.proto.workbench.GetPredictResponse)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits [[maybe_unused]] = 0;
 
-   {
-    // .fusion.ai.proto.workbench.JobView job = 1 [json_name = "job"];
-    cached_has_bits = this_._impl_._has_bits_[0];
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+    // string registration_id = 1 [json_name = "registration_id"];
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!this_._internal_registration_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_registration_id());
+      }
+    }
+    // string current_predict_job_id = 2 [json_name = "current_predict_job_id"];
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!this_._internal_current_predict_job_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_current_predict_job_id());
+      }
+    }
+    // optional .fusion.ai.proto.workbench.PredictJobView job = 3 [json_name = "job"];
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.job_);
     }
@@ -11313,26 +11730,46 @@ PROTOBUF_NOINLINE void GetJobResponse::Clear() {
                                              &this_._impl_._cached_size_);
 }
 
-void GetJobResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
+void GetPredictResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
                       const ::google::protobuf::MessageLite& from_msg) {
-   auto* const _this = static_cast<GetJobResponse*>(&to_msg);
-  auto& from = static_cast<const GetJobResponse&>(from_msg);
+   auto* const _this = static_cast<GetPredictResponse*>(&to_msg);
+  auto& from = static_cast<const GetPredictResponse&>(from_msg);
   if constexpr (::_pbi::DebugHardenCheckHasBitConsistency()) {
     from.CheckHasBitConsistency();
   }
   ::google::protobuf::Arena* arena = _this->GetArena();
-  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.workbench.GetJobResponse)
+  // @@protoc_insertion_point(class_specific_merge_from_start:fusion.ai.proto.workbench.GetPredictResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (CheckHasBit(cached_has_bits, 0x00000001U)) {
-    ABSL_DCHECK(from._impl_.job_ != nullptr);
-    if (_this->_impl_.job_ == nullptr) {
-      _this->_impl_.job_ = Super_::CopyConstruct(arena, *from._impl_.job_);
-    } else {
-      _this->_impl_.job_->MergeFrom(*from._impl_.job_);
+  if (BatchCheckHasBit(cached_has_bits, 0x00000007U)) {
+    if (CheckHasBit(cached_has_bits, 0x00000001U)) {
+      if (!from._internal_registration_id().empty()) {
+        _this->_internal_set_registration_id(from._internal_registration_id());
+      } else {
+        if (_this->_impl_.registration_id_.IsDefault()) {
+          _this->_internal_set_registration_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000002U)) {
+      if (!from._internal_current_predict_job_id().empty()) {
+        _this->_internal_set_current_predict_job_id(from._internal_current_predict_job_id());
+      } else {
+        if (_this->_impl_.current_predict_job_id_.IsDefault()) {
+          _this->_internal_set_current_predict_job_id("");
+        }
+      }
+    }
+    if (CheckHasBit(cached_has_bits, 0x00000004U)) {
+      ABSL_DCHECK(from._impl_.job_ != nullptr);
+      if (_this->_impl_.job_ == nullptr) {
+        _this->_impl_.job_ = Super_::CopyConstruct(arena, *from._impl_.job_);
+      } else {
+        _this->_impl_.job_->MergeFrom(*from._impl_.job_);
+      }
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -11340,22 +11777,26 @@ void GetJobResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
       from._internal_metadata_);
 }
 
-void GetJobResponse::CopyFrom(const GetJobResponse& from) {
-  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.workbench.GetJobResponse)
+void GetPredictResponse::CopyFrom(const GetPredictResponse& from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:fusion.ai.proto.workbench.GetPredictResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void GetJobResponse::InternalSwap(GetJobResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void GetPredictResponse::InternalSwap(GetPredictResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.registration_id_, &other->_impl_.registration_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.current_predict_job_id_, &other->_impl_.current_predict_job_id_, arena);
   swap(_impl_.job_, other->_impl_.job_);
 }
 
-::google::protobuf::Metadata GetJobResponse::GetMetadata() const {
+::google::protobuf::Metadata GetPredictResponse::GetMetadata() const {
   return Super_::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

@@ -457,7 +457,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataOverview", runtime.WithHTTPPathPattern("/ai/v2/data/overview"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataOverview", runtime.WithHTTPPathPattern("/api/v2/data/overview"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -477,7 +477,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/ListDataSiteRows", runtime.WithHTTPPathPattern("/ai/v2/data/sites"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/ListDataSiteRows", runtime.WithHTTPPathPattern("/api/v2/data/sites"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -497,7 +497,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataSiteReadiness", runtime.WithHTTPPathPattern("/ai/v2/data/sites/{registration_id}/readiness"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataSiteReadiness", runtime.WithHTTPPathPattern("/api/v2/data/sites/{registration_id}/readiness"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -517,7 +517,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataPipelineStats", runtime.WithHTTPPathPattern("/ai/v2/data/pipeline/stats"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataPipelineStats", runtime.WithHTTPPathPattern("/api/v2/data/pipeline/stats"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -537,7 +537,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherExcelTemplate", runtime.WithHTTPPathPattern("/ai/v2/data/weather/import/template"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherExcelTemplate", runtime.WithHTTPPathPattern("/api/v2/data/weather/import/template"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -557,7 +557,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSite", runtime.WithHTTPPathPattern("/ai/v2/data/sites/{registration_id}/weather"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSite", runtime.WithHTTPPathPattern("/api/v2/data/sites/{registration_id}/weather"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -577,7 +577,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSyncRun", runtime.WithHTTPPathPattern("/ai/v2/data/weather/sync/runs/{run_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSyncRun", runtime.WithHTTPPathPattern("/api/v2/data/weather/sync/runs/{run_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -597,7 +597,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/BatchSyncWeather", runtime.WithHTTPPathPattern("/ai/v2/data/weather/sync"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/BatchSyncWeather", runtime.WithHTTPPathPattern("/api/v2/data/weather/sync"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -617,7 +617,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/RetryFailedWeatherSync", runtime.WithHTTPPathPattern("/ai/v2/data/weather/sync/retry"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/RetryFailedWeatherSync", runtime.WithHTTPPathPattern("/api/v2/data/weather/sync/retry"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -637,7 +637,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/CreateWeatherExcelImportJob", runtime.WithHTTPPathPattern("/ai/v2/data/weather/import/jobs"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/CreateWeatherExcelImportJob", runtime.WithHTTPPathPattern("/api/v2/data/weather/import/jobs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -657,7 +657,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/CreateDataBackfillJob", runtime.WithHTTPPathPattern("/ai/v2/data/backfill/jobs"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/CreateDataBackfillJob", runtime.WithHTTPPathPattern("/api/v2/data/backfill/jobs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -677,7 +677,7 @@ func RegisterDataReadinessServiceHandlerServer(ctx context.Context, mux *runtime
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/UploadBackfillFile", runtime.WithHTTPPathPattern("/ai/v2/data/backfill/jobs/{job_id}/files"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/UploadBackfillFile", runtime.WithHTTPPathPattern("/api/v2/data/backfill/jobs/{job_id}/files"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -735,7 +735,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataOverview", runtime.WithHTTPPathPattern("/ai/v2/data/overview"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataOverview", runtime.WithHTTPPathPattern("/api/v2/data/overview"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -752,7 +752,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/ListDataSiteRows", runtime.WithHTTPPathPattern("/ai/v2/data/sites"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/ListDataSiteRows", runtime.WithHTTPPathPattern("/api/v2/data/sites"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -769,7 +769,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataSiteReadiness", runtime.WithHTTPPathPattern("/ai/v2/data/sites/{registration_id}/readiness"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataSiteReadiness", runtime.WithHTTPPathPattern("/api/v2/data/sites/{registration_id}/readiness"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -786,7 +786,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataPipelineStats", runtime.WithHTTPPathPattern("/ai/v2/data/pipeline/stats"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetDataPipelineStats", runtime.WithHTTPPathPattern("/api/v2/data/pipeline/stats"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -803,7 +803,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherExcelTemplate", runtime.WithHTTPPathPattern("/ai/v2/data/weather/import/template"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherExcelTemplate", runtime.WithHTTPPathPattern("/api/v2/data/weather/import/template"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -820,7 +820,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSite", runtime.WithHTTPPathPattern("/ai/v2/data/sites/{registration_id}/weather"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSite", runtime.WithHTTPPathPattern("/api/v2/data/sites/{registration_id}/weather"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -837,7 +837,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSyncRun", runtime.WithHTTPPathPattern("/ai/v2/data/weather/sync/runs/{run_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/GetWeatherSyncRun", runtime.WithHTTPPathPattern("/api/v2/data/weather/sync/runs/{run_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -854,7 +854,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/BatchSyncWeather", runtime.WithHTTPPathPattern("/ai/v2/data/weather/sync"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/BatchSyncWeather", runtime.WithHTTPPathPattern("/api/v2/data/weather/sync"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -871,7 +871,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/RetryFailedWeatherSync", runtime.WithHTTPPathPattern("/ai/v2/data/weather/sync/retry"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/RetryFailedWeatherSync", runtime.WithHTTPPathPattern("/api/v2/data/weather/sync/retry"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -888,7 +888,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/CreateWeatherExcelImportJob", runtime.WithHTTPPathPattern("/ai/v2/data/weather/import/jobs"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/CreateWeatherExcelImportJob", runtime.WithHTTPPathPattern("/api/v2/data/weather/import/jobs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -905,7 +905,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/CreateDataBackfillJob", runtime.WithHTTPPathPattern("/ai/v2/data/backfill/jobs"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/CreateDataBackfillJob", runtime.WithHTTPPathPattern("/api/v2/data/backfill/jobs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -922,7 +922,7 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/UploadBackfillFile", runtime.WithHTTPPathPattern("/ai/v2/data/backfill/jobs/{job_id}/files"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.data_readiness.DataReadinessService/UploadBackfillFile", runtime.WithHTTPPathPattern("/api/v2/data/backfill/jobs/{job_id}/files"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -939,18 +939,18 @@ func RegisterDataReadinessServiceHandlerClient(ctx context.Context, mux *runtime
 }
 
 var (
-	pattern_DataReadinessService_GetDataOverview_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"ai", "v2", "data", "overview"}, ""))
-	pattern_DataReadinessService_ListDataSiteRows_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"ai", "v2", "data", "sites"}, ""))
-	pattern_DataReadinessService_GetDataSiteReadiness_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"ai", "v2", "data", "sites", "registration_id", "readiness"}, ""))
-	pattern_DataReadinessService_GetDataPipelineStats_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"ai", "v2", "data", "pipeline", "stats"}, ""))
-	pattern_DataReadinessService_GetWeatherExcelTemplate_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"ai", "v2", "data", "weather", "import", "template"}, ""))
-	pattern_DataReadinessService_GetWeatherSite_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"ai", "v2", "data", "sites", "registration_id", "weather"}, ""))
-	pattern_DataReadinessService_GetWeatherSyncRun_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"ai", "v2", "data", "weather", "sync", "runs", "run_id"}, ""))
-	pattern_DataReadinessService_BatchSyncWeather_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"ai", "v2", "data", "weather", "sync"}, ""))
-	pattern_DataReadinessService_RetryFailedWeatherSync_0      = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"ai", "v2", "data", "weather", "sync", "retry"}, ""))
-	pattern_DataReadinessService_CreateWeatherExcelImportJob_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"ai", "v2", "data", "weather", "import", "jobs"}, ""))
-	pattern_DataReadinessService_CreateDataBackfillJob_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"ai", "v2", "data", "backfill", "jobs"}, ""))
-	pattern_DataReadinessService_UploadBackfillFile_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5, 2, 6}, []string{"ai", "v2", "data", "backfill", "jobs", "job_id", "files"}, ""))
+	pattern_DataReadinessService_GetDataOverview_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v2", "data", "overview"}, ""))
+	pattern_DataReadinessService_ListDataSiteRows_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v2", "data", "sites"}, ""))
+	pattern_DataReadinessService_GetDataSiteReadiness_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"api", "v2", "data", "sites", "registration_id", "readiness"}, ""))
+	pattern_DataReadinessService_GetDataPipelineStats_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"api", "v2", "data", "pipeline", "stats"}, ""))
+	pattern_DataReadinessService_GetWeatherExcelTemplate_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"api", "v2", "data", "weather", "import", "template"}, ""))
+	pattern_DataReadinessService_GetWeatherSite_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"api", "v2", "data", "sites", "registration_id", "weather"}, ""))
+	pattern_DataReadinessService_GetWeatherSyncRun_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v2", "data", "weather", "sync", "runs", "run_id"}, ""))
+	pattern_DataReadinessService_BatchSyncWeather_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"api", "v2", "data", "weather", "sync"}, ""))
+	pattern_DataReadinessService_RetryFailedWeatherSync_0      = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"api", "v2", "data", "weather", "sync", "retry"}, ""))
+	pattern_DataReadinessService_CreateWeatherExcelImportJob_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5}, []string{"api", "v2", "data", "weather", "import", "jobs"}, ""))
+	pattern_DataReadinessService_CreateDataBackfillJob_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"api", "v2", "data", "backfill", "jobs"}, ""))
+	pattern_DataReadinessService_UploadBackfillFile_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5, 2, 6}, []string{"api", "v2", "data", "backfill", "jobs", "job_id", "files"}, ""))
 )
 
 var (

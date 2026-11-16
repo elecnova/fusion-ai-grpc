@@ -2,7 +2,7 @@
 // All rights reserved.
 //
 // Filename: workbench_message.proto
-// Description: 算法预测工作台读模型与写请求（Portal /ai/v2/workbench/）
+// Description: 算法预测工作台读模型与写请求（Portal /api/v2/workbench/）
 //
 // http://www.sfere-elec.com/
 
@@ -21,7 +21,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file workbench/workbench_message.proto.
  */
 export const file_workbench_workbench_message: GenFile = /*@__PURE__*/
-  fileDesc("CiF3b3JrYmVuY2gvd29ya2JlbmNoX21lc3NhZ2UucHJvdG8SGWZ1c2lvbi5haS5wcm90by53b3JrYmVuY2gioAEKC0dhcEludGVydmFsEhoKCHN0YXJ0X21zGAEgASgDUghzdGFydF9tcxIWCgZlbmRfbXMYAiABKANSBmVuZF9tcxImCg5taXNzaW5nX3BvaW50cxgDIAEoBVIObWlzc2luZ19wb2ludHMSDwoHZGlzcGxheRgEIAEoCRIkCg1iYWNrZmlsbF9ocmVmGAUgASgJUg1iYWNrZmlsbF9ocmVmIlQKDUNvdmVyYWdlUG9pbnQSFAoFdHNfbXMYASABKANSBXRzX21zEhIKBXZhbHVlGAIgASgBSACIAQESDwoHcHJlc2VudBgDIAEoCEIICgZfdmFsdWUiowIKDENvdmVyYWdlQmFuZBI7CgRraW5kGAEgASgOMi0uZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Db3ZlcmFnZVNlcmllc0tpbmQSJgoOY292ZXJhZ2VfcmF0aW8YAiABKAFSDmNvdmVyYWdlX3JhdGlvEhoKCGdyaWRfbWluGAMgASgFUghncmlkX21pbhIiCgxzb3VyY2VfbGFiZWwYBCABKAlSDHNvdXJjZV9sYWJlbBI4CgZwb2ludHMYBSADKAsyKC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkNvdmVyYWdlUG9pbnQSNAoEZ2FwcxgGIAMoCzImLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guR2FwSW50ZXJ2YWwi5gIKDkRhdGFSZWFkeUNoZWNrEigKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCVIPcmVnaXN0cmF0aW9uX2lkEhwKCWV2YWxfZGF0ZRgCIAEoCVIJZXZhbF9kYXRlEhAKCHRpbWV6b25lGAMgASgJEjsKBnN0YXR1cxgEIAEoDjIrLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guUmVhZHlDaGVja1N0YXR1cxI2CgVwb3dlchgFIAEoCzInLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guQ292ZXJhZ2VCYW5kEj0KB3dlYXRoZXIYBiABKAsyJy5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkNvdmVyYWdlQmFuZEgAiAEBEjoKCmNoZWNrZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjaGVja2VkX2F0QgoKCF93ZWF0aGVyIsACCg9GdXNpb25Nb2RlbFZpZXcSKAoPcmVnaXN0cmF0aW9uX2lkGAEgASgJUg9yZWdpc3RyYXRpb25faWQSHAoJbW9kZWxfa2V5GAIgASgJUgltb2RlbF9rZXkSDwoHdmVyc2lvbhgDIAEoCRI7CgZzdGF0dXMYBCABKA4yKy5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLk1vZGVsUmVhZHlTdGF0dXMSSQoPbGFzdF90cmFpbmVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgAUg9sYXN0X3RyYWluZWRfYXSIAQESJwoMYXJ0aWZhY3RfdXJpGAYgASgJSAFSDGFydGlmYWN0X3VyaYgBAUISChBfbGFzdF90cmFpbmVkX2F0Qg8KDV9hcnRpZmFjdF91cmki2wQKB0pvYlZpZXcSFgoGam9iX2lkGAEgASgJUgZqb2JfaWQSMAoEdHlwZRgCIAEoDjIiLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guSm9iVHlwZRI0CgZzdGF0dXMYAyABKA4yJC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkpvYlN0YXR1cxIoCg9yZWdpc3RyYXRpb25faWQYBCABKAlSD3JlZ2lzdHJhdGlvbl9pZBIiCgxwcm9ncmVzc19wY3QYBSABKAVSDHByb2dyZXNzX3BjdBIPCgdtZXNzYWdlGAYgASgJEiEKCWV2YWxfZGF0ZRgHIAEoCUgAUglldmFsX2RhdGWIAQESKQoNbW9kZWxfdmVyc2lvbhgIIAEoCUgBUg1tb2RlbF92ZXJzaW9uiAEBEjoKCmNyZWF0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVkX2F0Ej8KCnN0YXJ0ZWRfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAJSCnN0YXJ0ZWRfYXSIAQESQQoLZmluaXNoZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSANSC2ZpbmlzaGVkX2F0iAEBEiQKDWVycm9yX21lc3NhZ2UYDCABKAlSDWVycm9yX21lc3NhZ2VCDAoKX2V2YWxfZGF0ZUIQCg5fbW9kZWxfdmVyc2lvbkINCgtfc3RhcnRlZF9hdEIOCgxfZmluaXNoZWRfYXQijgEKC1Nlcmllc1BvaW50EhQKBXRzX21zGAEgASgDUgV0c19tcxInCgxwcmVkaWN0ZWRfa3cYAiABKAFIAFIMcHJlZGljdGVkX2t3iAEBEiEKCWFjdHVhbF9rdxgDIAEoAUgBUglhY3R1YWxfa3eIAQFCDwoNX3ByZWRpY3RlZF9rd0IMCgpfYWN0dWFsX2t3IqYCCg1FdmFsRGF5U2VyaWVzEigKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCVIPcmVnaXN0cmF0aW9uX2lkEhwKCWV2YWxfZGF0ZRgCIAEoCVIJZXZhbF9kYXRlEhAKCHRpbWV6b25lGAMgASgJEigKD2dyYW51bGFyaXR5X21pbhgEIAEoBVIPZ3JhbnVsYXJpdHlfbWluEhwKCW1vZGVsX2tleRgFIAEoCVIJbW9kZWxfa2V5EikKDW1vZGVsX3ZlcnNpb24YBiABKAlIAFINbW9kZWxfdmVyc2lvbogBARI2CgZwb2ludHMYByADKAsyJi5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLlNlcmllc1BvaW50QhAKDl9tb2RlbF92ZXJzaW9uIogDCg5FdmFsRGF5TWV0cmljcxIoCg9yZWdpc3RyYXRpb25faWQYASABKAlSD3JlZ2lzdHJhdGlvbl9pZBIcCglldmFsX2RhdGUYAiABKAlSCWV2YWxfZGF0ZRIcCgltb2RlbF9rZXkYAyABKAlSCW1vZGVsX2tleRIpCg1tb2RlbF92ZXJzaW9uGAQgASgJSABSDW1vZGVsX3ZlcnNpb26IAQESEQoEbWFwZRgFIAEoAUgBiAEBEhEKBHJtc2UYBiABKAFIAogBARIQCgNtYWUYByABKAFIA4gBARISCgVzbWFwZRgIIAEoAUgEiAEBEiEKCXBhc3NfcmF0ZRgJIAEoAUgFUglwYXNzX3JhdGWIAQESIwoKbWFwZV9kZWx0YRgKIAEoAUgGUgptYXBlX2RlbHRhiAEBQhAKDl9tb2RlbF92ZXJzaW9uQgcKBV9tYXBlQgcKBV9ybXNlQgYKBF9tYWVCCAoGX3NtYXBlQgwKCl9wYXNzX3JhdGVCDQoLX21hcGVfZGVsdGEiaQoRRXZhbERheU1ldHJpY3NSb3cSHAoJZXZhbF9kYXRlGAEgASgJUglldmFsX2RhdGUSEQoEbWFwZRgCIAEoAUgAiAEBEhEKBHJtc2UYAyABKAFIAYgBAUIHCgVfbWFwZUIHCgVfcm1zZSKLAQoSRXZhbERheU1ldHJpY3NQYWdlEjoKBHJvd3MYASADKAsyLC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkV2YWxEYXlNZXRyaWNzUm93Eg0KBXRvdGFsGAIgASgFEgwKBHBhZ2UYAyABKAUSHAoJcGFnZV9zaXplGAQgASgFUglwYWdlX3NpemUi5QEKGEdldERhdGFSZWFkeUNoZWNrUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEkYKCWV2YWxfZGF0ZRgCIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRIAFIJZXZhbF9kYXRliAEBEisKDmluY2x1ZGVfcG9pbnRzGAMgASgISAFSDmluY2x1ZGVfcG9pbnRziAEBQgwKCl9ldmFsX2RhdGVCEQoPX2luY2x1ZGVfcG9pbnRzIlUKGUdldERhdGFSZWFkeUNoZWNrUmVzcG9uc2USOAoFY2hlY2sYASABKAsyKS5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkRhdGFSZWFkeUNoZWNrIkwKFUdldEZ1c2lvbk1vZGVsUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkIlMKFkdldEZ1c2lvbk1vZGVsUmVzcG9uc2USOQoFbW9kZWwYASABKAsyKi5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkZ1c2lvbk1vZGVsVmlldyJMChVDcmVhdGVUcmFpbkpvYlJlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZCJmChZDcmVhdGVUcmFpbkpvYlJlc3BvbnNlEhYKBmpvYl9pZBgBIAEoCVIGam9iX2lkEjQKBnN0YXR1cxgCIAEoDjIkLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guSm9iU3RhdHVzIr8CChdDcmVhdGVQcmVkaWN0Sm9iUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEkYKCWV2YWxfZGF0ZRgCIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRIAFIJZXZhbF9kYXRliAEBEjwKD2dyYW51bGFyaXR5X21pbhgDIAEoBUINukgKGggwBTAPMB4wPEgBUg9ncmFudWxhcml0eV9taW6IAQESNQoNaG9yaXpvbl9ob3VycxgEIAEoBUIKukgHGgUYqAEoAUgCUg1ob3Jpem9uX2hvdXJziAEBQgwKCl9ldmFsX2RhdGVCEgoQX2dyYW51bGFyaXR5X21pbkIQCg5faG9yaXpvbl9ob3VycyJoChhDcmVhdGVQcmVkaWN0Sm9iUmVzcG9uc2USFgoGam9iX2lkGAEgASgJUgZqb2JfaWQSNAoGc3RhdHVzGAIgASgOMiQuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Kb2JTdGF0dXMiMgoNR2V0Sm9iUmVxdWVzdBIhCgZqb2JfaWQYASABKAlCCbpIBnIEEAEYQFIGam9iX2lkIkEKDkdldEpvYlJlc3BvbnNlEi8KA2pvYhgBIAEoCzIiLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guSm9iVmlldyLjAQoXR2V0RXZhbERheVNlcmllc1JlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBJBCglldmFsX2RhdGUYAiABKAlCI7pIIHIeMhxeWzAtOV17NH0tWzAtOV17Mn0tWzAtOV17Mn0kUglldmFsX2RhdGUSPAoPZ3JhbnVsYXJpdHlfbWluGAMgASgFQg26SAoaCDAFMA8wHjA8SABSD2dyYW51bGFyaXR5X21pbogBAUISChBfZ3JhbnVsYXJpdHlfbWluIlQKGEdldEV2YWxEYXlTZXJpZXNSZXNwb25zZRI4CgZzZXJpZXMYASABKAsyKC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkV2YWxEYXlTZXJpZXMikgEKGEdldEV2YWxEYXlNZXRyaWNzUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEkEKCWV2YWxfZGF0ZRgCIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRSCWV2YWxfZGF0ZSJXChlHZXRFdmFsRGF5TWV0cmljc1Jlc3BvbnNlEjoKB21ldHJpY3MYASABKAsyKS5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkV2YWxEYXlNZXRyaWNzIvIBChtMaXN0RXZhbERhaWx5TWV0cmljc1JlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBIRCgRwYWdlGAIgASgFSACIAQESIQoJcGFnZV9zaXplGAMgASgFSAFSCXBhZ2Vfc2l6ZYgBARJECghlbmRfZGF0ZRgEIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRIAlIIZW5kX2RhdGWIAQFCBwoFX3BhZ2VCDAoKX3BhZ2Vfc2l6ZUILCglfZW5kX2RhdGUiWwocTGlzdEV2YWxEYWlseU1ldHJpY3NSZXNwb25zZRI7CgRwYWdlGAEgASgLMi0uZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5FdmFsRGF5TWV0cmljc1BhZ2UqjQEKEFJlYWR5Q2hlY2tTdGF0dXMSIgoeUkVBRFlfQ0hFQ0tfU1RBVFVTX1VOU1BFQ0lGSUVEEAASGwoXUkVBRFlfQ0hFQ0tfU1RBVFVTX1BBU1MQARIbChdSRUFEWV9DSEVDS19TVEFUVVNfV0FSThACEhsKF1JFQURZX0NIRUNLX1NUQVRVU19GQUlMEAMqfAoSQ292ZXJhZ2VTZXJpZXNLaW5kEiQKIENPVkVSQUdFX1NFUklFU19LSU5EX1VOU1BFQ0lGSUVEEAASHgoaQ09WRVJBR0VfU0VSSUVTX0tJTkRfUE9XRVIQARIgChxDT1ZFUkFHRV9TRVJJRVNfS0lORF9XRUFUSEVSEAIqswEKEE1vZGVsUmVhZHlTdGF0dXMSIgoeTU9ERUxfUkVBRFlfU1RBVFVTX1VOU1BFQ0lGSUVEEAASHAoYTU9ERUxfUkVBRFlfU1RBVFVTX1JFQURZEAESHwobTU9ERUxfUkVBRFlfU1RBVFVTX1RSQUlOSU5HEAISHAoYTU9ERUxfUkVBRFlfU1RBVFVTX1NUQUxFEAMSHgoaTU9ERUxfUkVBRFlfU1RBVFVTX01JU1NJTkcQBCpgCgdKb2JUeXBlEhgKFEpPQl9UWVBFX1VOU1BFQ0lGSUVEEAASEgoOSk9CX1RZUEVfVFJBSU4QARIUChBKT0JfVFlQRV9QUkVESUNUEAISEQoNSk9CX1RZUEVfRVZBTBADKqEBCglKb2JTdGF0dXMSGgoWSk9CX1NUQVRVU19VTlNQRUNJRklFRBAAEhUKEUpPQl9TVEFUVVNfUVVFVUVEEAESFgoSSk9CX1NUQVRVU19SVU5OSU5HEAISGAoUSk9CX1NUQVRVU19TVUNDRUVERUQQAxIVChFKT0JfU1RBVFVTX0ZBSUxFRBAEEhgKFEpPQl9TVEFUVVNfQ0FOQ0VMTEVEEAVC4wEKHWNvbS5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoQhVXb3JrYmVuY2hNZXNzYWdlUHJvdG9QAVojZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaDt3b3JrYmVuY2iiAgRGQVBXqgIZRnVzaW9uLkFpLlByb3RvLldvcmtiZW5jaMoCGUZ1c2lvblxBaVxQcm90b1xXb3JrYmVuY2jiAiVGdXNpb25cQWlcUHJvdG9cV29ya2JlbmNoXEdQQk1ldGFkYXRh6gIcRnVzaW9uOjpBaTo6UHJvdG86OldvcmtiZW5jaGIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("CiF3b3JrYmVuY2gvd29ya2JlbmNoX21lc3NhZ2UucHJvdG8SGWZ1c2lvbi5haS5wcm90by53b3JrYmVuY2gioAEKC0dhcEludGVydmFsEhoKCHN0YXJ0X21zGAEgASgDUghzdGFydF9tcxIWCgZlbmRfbXMYAiABKANSBmVuZF9tcxImCg5taXNzaW5nX3BvaW50cxgDIAEoBVIObWlzc2luZ19wb2ludHMSDwoHZGlzcGxheRgEIAEoCRIkCg1iYWNrZmlsbF9ocmVmGAUgASgJUg1iYWNrZmlsbF9ocmVmIlQKDUNvdmVyYWdlUG9pbnQSFAoFdHNfbXMYASABKANSBXRzX21zEhIKBXZhbHVlGAIgASgBSACIAQESDwoHcHJlc2VudBgDIAEoCEIICgZfdmFsdWUiowIKDENvdmVyYWdlQmFuZBI7CgRraW5kGAEgASgOMi0uZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Db3ZlcmFnZVNlcmllc0tpbmQSJgoOY292ZXJhZ2VfcmF0aW8YAiABKAFSDmNvdmVyYWdlX3JhdGlvEhoKCGdyaWRfbWluGAMgASgFUghncmlkX21pbhIiCgxzb3VyY2VfbGFiZWwYBCABKAlSDHNvdXJjZV9sYWJlbBI4CgZwb2ludHMYBSADKAsyKC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkNvdmVyYWdlUG9pbnQSNAoEZ2FwcxgGIAMoCzImLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guR2FwSW50ZXJ2YWwi5gIKDkRhdGFSZWFkeUNoZWNrEigKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCVIPcmVnaXN0cmF0aW9uX2lkEhwKCWV2YWxfZGF0ZRgCIAEoCVIJZXZhbF9kYXRlEhAKCHRpbWV6b25lGAMgASgJEjsKBnN0YXR1cxgEIAEoDjIrLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guUmVhZHlDaGVja1N0YXR1cxI2CgVwb3dlchgFIAEoCzInLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guQ292ZXJhZ2VCYW5kEj0KB3dlYXRoZXIYBiABKAsyJy5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkNvdmVyYWdlQmFuZEgAiAEBEjoKCmNoZWNrZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjaGVja2VkX2F0QgoKCF93ZWF0aGVyIsACCg9GdXNpb25Nb2RlbFZpZXcSKAoPcmVnaXN0cmF0aW9uX2lkGAEgASgJUg9yZWdpc3RyYXRpb25faWQSHAoJbW9kZWxfa2V5GAIgASgJUgltb2RlbF9rZXkSDwoHdmVyc2lvbhgDIAEoCRI7CgZzdGF0dXMYBCABKA4yKy5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLk1vZGVsUmVhZHlTdGF0dXMSSQoPbGFzdF90cmFpbmVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgAUg9sYXN0X3RyYWluZWRfYXSIAQESJwoMYXJ0aWZhY3RfdXJpGAYgASgJSAFSDGFydGlmYWN0X3VyaYgBAUISChBfbGFzdF90cmFpbmVkX2F0Qg8KDV9hcnRpZmFjdF91cmki3wUKDlByZWRpY3RKb2JWaWV3EhYKBmpvYl9pZBgBIAEoCVIGam9iX2lkEigKD3JlZ2lzdHJhdGlvbl9pZBgCIAEoCVIPcmVnaXN0cmF0aW9uX2lkEjQKBnN0YXR1cxgDIAEoDjIkLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guSm9iU3RhdHVzEiIKDHByb2dyZXNzX3BjdBgEIAEoBVIMcHJvZ3Jlc3NfcGN0Eg0KBXN0YWdlGAUgASgJEkUKBnN0YWdlcxgGIAMoCzI1LmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guUHJlZGljdEpvYlZpZXcuU3RhZ2VzRW50cnkSHAoJZXZhbF9kYXRlGAcgASgJUglldmFsX2RhdGUSHgoKZGF5X29mZnNldBgIIAEoBVIKZGF5X29mZnNldBIoCg9ncmFudWxhcml0eV9taW4YCSABKAVSD2dyYW51bGFyaXR5X21pbhIkCg1ob3Jpem9uX2hvdXJzGAogASgFUg1ob3Jpem9uX2hvdXJzEhoKCG1vZGVsX2lkGAsgASgJUghtb2RlbF9pZBIPCgdtZXNzYWdlGAwgASgJEj8KCnN0YXJ0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSCnN0YXJ0ZWRfYXSIAQESQQoLZmluaXNoZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAFSC2ZpbmlzaGVkX2F0iAEBEj8KCnVwZGF0ZWRfYXQYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAJSCnVwZGF0ZWRfYXSIAQEaLQoLU3RhZ2VzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4AUINCgtfc3RhcnRlZF9hdEIOCgxfZmluaXNoZWRfYXRCDQoLX3VwZGF0ZWRfYXQijgEKC1Nlcmllc1BvaW50EhQKBXRzX21zGAEgASgDUgV0c19tcxInCgxwcmVkaWN0ZWRfa3cYAiABKAFIAFIMcHJlZGljdGVkX2t3iAEBEiEKCWFjdHVhbF9rdxgDIAEoAUgBUglhY3R1YWxfa3eIAQFCDwoNX3ByZWRpY3RlZF9rd0IMCgpfYWN0dWFsX2t3IqYCCg1FdmFsRGF5U2VyaWVzEigKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCVIPcmVnaXN0cmF0aW9uX2lkEhwKCWV2YWxfZGF0ZRgCIAEoCVIJZXZhbF9kYXRlEhAKCHRpbWV6b25lGAMgASgJEigKD2dyYW51bGFyaXR5X21pbhgEIAEoBVIPZ3JhbnVsYXJpdHlfbWluEhwKCW1vZGVsX2tleRgFIAEoCVIJbW9kZWxfa2V5EikKDW1vZGVsX3ZlcnNpb24YBiABKAlIAFINbW9kZWxfdmVyc2lvbogBARI2CgZwb2ludHMYByADKAsyJi5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLlNlcmllc1BvaW50QhAKDl9tb2RlbF92ZXJzaW9uIogDCg5FdmFsRGF5TWV0cmljcxIoCg9yZWdpc3RyYXRpb25faWQYASABKAlSD3JlZ2lzdHJhdGlvbl9pZBIcCglldmFsX2RhdGUYAiABKAlSCWV2YWxfZGF0ZRIcCgltb2RlbF9rZXkYAyABKAlSCW1vZGVsX2tleRIpCg1tb2RlbF92ZXJzaW9uGAQgASgJSABSDW1vZGVsX3ZlcnNpb26IAQESEQoEbWFwZRgFIAEoAUgBiAEBEhEKBHJtc2UYBiABKAFIAogBARIQCgNtYWUYByABKAFIA4gBARISCgVzbWFwZRgIIAEoAUgEiAEBEiEKCXBhc3NfcmF0ZRgJIAEoAUgFUglwYXNzX3JhdGWIAQESIwoKbWFwZV9kZWx0YRgKIAEoAUgGUgptYXBlX2RlbHRhiAEBQhAKDl9tb2RlbF92ZXJzaW9uQgcKBV9tYXBlQgcKBV9ybXNlQgYKBF9tYWVCCAoGX3NtYXBlQgwKCl9wYXNzX3JhdGVCDQoLX21hcGVfZGVsdGEiaQoRRXZhbERheU1ldHJpY3NSb3cSHAoJZXZhbF9kYXRlGAEgASgJUglldmFsX2RhdGUSEQoEbWFwZRgCIAEoAUgAiAEBEhEKBHJtc2UYAyABKAFIAYgBAUIHCgVfbWFwZUIHCgVfcm1zZSKLAQoSRXZhbERheU1ldHJpY3NQYWdlEjoKBHJvd3MYASADKAsyLC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkV2YWxEYXlNZXRyaWNzUm93Eg0KBXRvdGFsGAIgASgFEgwKBHBhZ2UYAyABKAUSHAoJcGFnZV9zaXplGAQgASgFUglwYWdlX3NpemUi5QEKGEdldERhdGFSZWFkeUNoZWNrUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEkYKCWV2YWxfZGF0ZRgCIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRIAFIJZXZhbF9kYXRliAEBEisKDmluY2x1ZGVfcG9pbnRzGAMgASgISAFSDmluY2x1ZGVfcG9pbnRziAEBQgwKCl9ldmFsX2RhdGVCEQoPX2luY2x1ZGVfcG9pbnRzIlUKGUdldERhdGFSZWFkeUNoZWNrUmVzcG9uc2USOAoFY2hlY2sYASABKAsyKS5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkRhdGFSZWFkeUNoZWNrIkwKFUdldEZ1c2lvbk1vZGVsUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkIlMKFkdldEZ1c2lvbk1vZGVsUmVzcG9uc2USOQoFbW9kZWwYASABKAsyKi5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkZ1c2lvbk1vZGVsVmlldyJMChVDcmVhdGVUcmFpbkpvYlJlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZCJmChZDcmVhdGVUcmFpbkpvYlJlc3BvbnNlEhYKBmpvYl9pZBgBIAEoCVIGam9iX2lkEjQKBnN0YXR1cxgCIAEoDjIkLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guSm9iU3RhdHVzIr8CChdDcmVhdGVQcmVkaWN0Sm9iUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEkYKCWV2YWxfZGF0ZRgCIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRIAFIJZXZhbF9kYXRliAEBEjwKD2dyYW51bGFyaXR5X21pbhgDIAEoBUINukgKGggwBTAPMB4wPEgBUg9ncmFudWxhcml0eV9taW6IAQESNQoNaG9yaXpvbl9ob3VycxgEIAEoBUIKukgHGgUYqAEoAUgCUg1ob3Jpem9uX2hvdXJziAEBQgwKCl9ldmFsX2RhdGVCEgoQX2dyYW51bGFyaXR5X21pbkIQCg5faG9yaXpvbl9ob3VycyJoChhDcmVhdGVQcmVkaWN0Sm9iUmVzcG9uc2USFgoGam9iX2lkGAEgASgJUgZqb2JfaWQSNAoGc3RhdHVzGAIgASgOMiQuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Kb2JTdGF0dXMiSAoRR2V0UHJlZGljdFJlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZCK7AQoSR2V0UHJlZGljdFJlc3BvbnNlEigKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCVIPcmVnaXN0cmF0aW9uX2lkEjYKFmN1cnJlbnRfcHJlZGljdF9qb2JfaWQYAiABKAlSFmN1cnJlbnRfcHJlZGljdF9qb2JfaWQSOwoDam9iGAMgASgLMikuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5QcmVkaWN0Sm9iVmlld0gAiAEBQgYKBF9qb2Ii4wEKF0dldEV2YWxEYXlTZXJpZXNSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSQQoJZXZhbF9kYXRlGAIgASgJQiO6SCByHjIcXlswLTldezR9LVswLTldezJ9LVswLTldezJ9JFIJZXZhbF9kYXRlEjwKD2dyYW51bGFyaXR5X21pbhgDIAEoBUINukgKGggwBTAPMB4wPEgAUg9ncmFudWxhcml0eV9taW6IAQFCEgoQX2dyYW51bGFyaXR5X21pbiJUChhHZXRFdmFsRGF5U2VyaWVzUmVzcG9uc2USOAoGc2VyaWVzGAEgASgLMiguZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5FdmFsRGF5U2VyaWVzIpIBChhHZXRFdmFsRGF5TWV0cmljc1JlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBJBCglldmFsX2RhdGUYAiABKAlCI7pIIHIeMhxeWzAtOV17NH0tWzAtOV17Mn0tWzAtOV17Mn0kUglldmFsX2RhdGUiVwoZR2V0RXZhbERheU1ldHJpY3NSZXNwb25zZRI6CgdtZXRyaWNzGAEgASgLMikuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5FdmFsRGF5TWV0cmljcyLyAQobTGlzdEV2YWxEYWlseU1ldHJpY3NSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSEQoEcGFnZRgCIAEoBUgAiAEBEiEKCXBhZ2Vfc2l6ZRgDIAEoBUgBUglwYWdlX3NpemWIAQESRAoIZW5kX2RhdGUYBCABKAlCI7pIIHIeMhxeWzAtOV17NH0tWzAtOV17Mn0tWzAtOV17Mn0kSAJSCGVuZF9kYXRliAEBQgcKBV9wYWdlQgwKCl9wYWdlX3NpemVCCwoJX2VuZF9kYXRlIlsKHExpc3RFdmFsRGFpbHlNZXRyaWNzUmVzcG9uc2USOwoEcGFnZRgBIAEoCzItLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guRXZhbERheU1ldHJpY3NQYWdlKo0BChBSZWFkeUNoZWNrU3RhdHVzEiIKHlJFQURZX0NIRUNLX1NUQVRVU19VTlNQRUNJRklFRBAAEhsKF1JFQURZX0NIRUNLX1NUQVRVU19QQVNTEAESGwoXUkVBRFlfQ0hFQ0tfU1RBVFVTX1dBUk4QAhIbChdSRUFEWV9DSEVDS19TVEFUVVNfRkFJTBADKnwKEkNvdmVyYWdlU2VyaWVzS2luZBIkCiBDT1ZFUkFHRV9TRVJJRVNfS0lORF9VTlNQRUNJRklFRBAAEh4KGkNPVkVSQUdFX1NFUklFU19LSU5EX1BPV0VSEAESIAocQ09WRVJBR0VfU0VSSUVTX0tJTkRfV0VBVEhFUhACKrMBChBNb2RlbFJlYWR5U3RhdHVzEiIKHk1PREVMX1JFQURZX1NUQVRVU19VTlNQRUNJRklFRBAAEhwKGE1PREVMX1JFQURZX1NUQVRVU19SRUFEWRABEh8KG01PREVMX1JFQURZX1NUQVRVU19UUkFJTklORxACEhwKGE1PREVMX1JFQURZX1NUQVRVU19TVEFMRRADEh4KGk1PREVMX1JFQURZX1NUQVRVU19NSVNTSU5HEAQqoQEKCUpvYlN0YXR1cxIaChZKT0JfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFQoRSk9CX1NUQVRVU19RVUVVRUQQARIWChJKT0JfU1RBVFVTX1JVTk5JTkcQAhIYChRKT0JfU1RBVFVTX1NVQ0NFRURFRBADEhUKEUpPQl9TVEFUVVNfRkFJTEVEEAQSGAoUSk9CX1NUQVRVU19DQU5DRUxMRUQQBULjAQodY29tLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2hCFVdvcmtiZW5jaE1lc3NhZ2VQcm90b1ABWiNmdXNpb24uYWkucHJvdG8ud29ya2JlbmNoO3dvcmtiZW5jaKICBEZBUFeqAhlGdXNpb24uQWkuUHJvdG8uV29ya2JlbmNoygIZRnVzaW9uXEFpXFByb3RvXFdvcmtiZW5jaOICJUZ1c2lvblxBaVxQcm90b1xXb3JrYmVuY2hcR1BCTWV0YWRhdGHqAhxGdXNpb246OkFpOjpQcm90bzo6V29ya2JlbmNoYgZwcm90bzM", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GapInterval
@@ -237,18 +237,21 @@ export const FusionModelViewSchema: GenMessage<FusionModelView> = /*@__PURE__*/
   messageDesc(file_workbench_workbench_message, 4);
 
 /**
- * @generated from message fusion.ai.proto.workbench.JobView
+ * 五步 stages 键：data_ready | model_loaded | infer | persist | compare_refresh
+ * 每步取值：pending | running | done | failed
+ *
+ * @generated from message fusion.ai.proto.workbench.PredictJobView
  */
-export type JobView = Message<"fusion.ai.proto.workbench.JobView"> & {
+export type PredictJobView = Message<"fusion.ai.proto.workbench.PredictJobView"> & {
   /**
    * @generated from field: string job_id = 1 [json_name = "job_id"];
    */
   jobId: string;
 
   /**
-   * @generated from field: fusion.ai.proto.workbench.JobType type = 2;
+   * @generated from field: string registration_id = 2 [json_name = "registration_id"];
    */
-  type: JobType;
+  registrationId: string;
 
   /**
    * @generated from field: fusion.ai.proto.workbench.JobStatus status = 3;
@@ -256,58 +259,75 @@ export type JobView = Message<"fusion.ai.proto.workbench.JobView"> & {
   status: JobStatus;
 
   /**
-   * @generated from field: string registration_id = 4 [json_name = "registration_id"];
-   */
-  registrationId: string;
-
-  /**
    * 0~100
    *
-   * @generated from field: int32 progress_pct = 5 [json_name = "progress_pct"];
+   * @generated from field: int32 progress_pct = 4 [json_name = "progress_pct"];
    */
   progressPct: number;
 
   /**
-   * @generated from field: string message = 6;
+   * 当前步键，如 infer
+   *
+   * @generated from field: string stage = 5;
+   */
+  stage: string;
+
+  /**
+   * @generated from field: map<string, string> stages = 6;
+   */
+  stages: { [key: string]: string };
+
+  /**
+   * @generated from field: string eval_date = 7 [json_name = "eval_date"];
+   */
+  evalDate: string;
+
+  /**
+   * @generated from field: int32 day_offset = 8 [json_name = "day_offset"];
+   */
+  dayOffset: number;
+
+  /**
+   * @generated from field: int32 granularity_min = 9 [json_name = "granularity_min"];
+   */
+  granularityMin: number;
+
+  /**
+   * @generated from field: int32 horizon_hours = 10 [json_name = "horizon_hours"];
+   */
+  horizonHours: number;
+
+  /**
+   * @generated from field: string model_id = 11 [json_name = "model_id"];
+   */
+  modelId: string;
+
+  /**
+   * @generated from field: string message = 12;
    */
   message: string;
 
   /**
-   * @generated from field: optional string eval_date = 7 [json_name = "eval_date"];
-   */
-  evalDate?: string | undefined;
-
-  /**
-   * @generated from field: optional string model_version = 8 [json_name = "model_version"];
-   */
-  modelVersion?: string | undefined;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 9 [json_name = "created_at"];
-   */
-  createdAt?: Timestamp | undefined;
-
-  /**
-   * @generated from field: optional google.protobuf.Timestamp started_at = 10 [json_name = "started_at"];
+   * @generated from field: optional google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];
    */
   startedAt?: Timestamp | undefined;
 
   /**
-   * @generated from field: optional google.protobuf.Timestamp finished_at = 11 [json_name = "finished_at"];
+   * @generated from field: optional google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];
    */
   finishedAt?: Timestamp | undefined;
 
   /**
-   * @generated from field: string error_message = 12 [json_name = "error_message"];
+   * @generated from field: optional google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];
    */
-  errorMessage: string;
+  updatedAt?: Timestamp | undefined;
 };
 
 /**
- * Describes the message fusion.ai.proto.workbench.JobView.
- * Use `create(JobViewSchema)` to create a new message.
+ * Describes the message fusion.ai.proto.workbench.PredictJobView.
+ * Use `create(PredictJobViewSchema)` to create a new message.
  */
-export const JobViewSchema: GenMessage<JobView> = /*@__PURE__*/
+export const PredictJobViewSchema: GenMessage<PredictJobView> = /*@__PURE__*/
   messageDesc(file_workbench_workbench_message, 5);
 
 /**
@@ -693,37 +713,51 @@ export const CreatePredictJobResponseSchema: GenMessage<CreatePredictJobResponse
   messageDesc(file_workbench_workbench_message, 18);
 
 /**
- * @generated from message fusion.ai.proto.workbench.GetJobRequest
+ * @generated from message fusion.ai.proto.workbench.GetPredictRequest
  */
-export type GetJobRequest = Message<"fusion.ai.proto.workbench.GetJobRequest"> & {
+export type GetPredictRequest = Message<"fusion.ai.proto.workbench.GetPredictRequest"> & {
   /**
-   * @generated from field: string job_id = 1 [json_name = "job_id"];
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
-  jobId: string;
+  registrationId: string;
 };
 
 /**
- * Describes the message fusion.ai.proto.workbench.GetJobRequest.
- * Use `create(GetJobRequestSchema)` to create a new message.
+ * Describes the message fusion.ai.proto.workbench.GetPredictRequest.
+ * Use `create(GetPredictRequestSchema)` to create a new message.
  */
-export const GetJobRequestSchema: GenMessage<GetJobRequest> = /*@__PURE__*/
+export const GetPredictRequestSchema: GenMessage<GetPredictRequest> = /*@__PURE__*/
   messageDesc(file_workbench_workbench_message, 19);
 
 /**
- * @generated from message fusion.ai.proto.workbench.GetJobResponse
+ * @generated from message fusion.ai.proto.workbench.GetPredictResponse
  */
-export type GetJobResponse = Message<"fusion.ai.proto.workbench.GetJobResponse"> & {
+export type GetPredictResponse = Message<"fusion.ai.proto.workbench.GetPredictResponse"> & {
   /**
-   * @generated from field: fusion.ai.proto.workbench.JobView job = 1;
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
-  job?: JobView | undefined;
+  registrationId: string;
+
+  /**
+   * 当前预测任务 id；无任务时为空
+   *
+   * @generated from field: string current_predict_job_id = 2 [json_name = "current_predict_job_id"];
+   */
+  currentPredictJobId: string;
+
+  /**
+   * 当前 job 全量；无任务时不填
+   *
+   * @generated from field: optional fusion.ai.proto.workbench.PredictJobView job = 3;
+   */
+  job?: PredictJobView | undefined;
 };
 
 /**
- * Describes the message fusion.ai.proto.workbench.GetJobResponse.
- * Use `create(GetJobResponseSchema)` to create a new message.
+ * Describes the message fusion.ai.proto.workbench.GetPredictResponse.
+ * Use `create(GetPredictResponseSchema)` to create a new message.
  */
-export const GetJobResponseSchema: GenMessage<GetJobResponse> = /*@__PURE__*/
+export const GetPredictResponseSchema: GenMessage<GetPredictResponse> = /*@__PURE__*/
   messageDesc(file_workbench_workbench_message, 20);
 
 /**
@@ -954,37 +988,6 @@ export const ModelReadyStatusSchema: GenEnum<ModelReadyStatus> = /*@__PURE__*/
   enumDesc(file_workbench_workbench_message, 2);
 
 /**
- * @generated from enum fusion.ai.proto.workbench.JobType
- */
-export enum JobType {
-  /**
-   * @generated from enum value: JOB_TYPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: JOB_TYPE_TRAIN = 1;
-   */
-  TRAIN = 1,
-
-  /**
-   * @generated from enum value: JOB_TYPE_PREDICT = 2;
-   */
-  PREDICT = 2,
-
-  /**
-   * @generated from enum value: JOB_TYPE_EVAL = 3;
-   */
-  EVAL = 3,
-}
-
-/**
- * Describes the enum fusion.ai.proto.workbench.JobType.
- */
-export const JobTypeSchema: GenEnum<JobType> = /*@__PURE__*/
-  enumDesc(file_workbench_workbench_message, 3);
-
-/**
  * @generated from enum fusion.ai.proto.workbench.JobStatus
  */
 export enum JobStatus {
@@ -1023,5 +1026,5 @@ export enum JobStatus {
  * Describes the enum fusion.ai.proto.workbench.JobStatus.
  */
 export const JobStatusSchema: GenEnum<JobStatus> = /*@__PURE__*/
-  enumDesc(file_workbench_workbench_message, 4);
+  enumDesc(file_workbench_workbench_message, 3);
 

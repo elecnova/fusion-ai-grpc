@@ -2,7 +2,7 @@
 // All rights reserved.
 //
 // Filename: data_readiness_service.proto
-// Description: 数据管理页 API — DataReadinessService（HTTP 前缀 /ai/v2/data/）
+// Description: 数据管理页 API — DataReadinessService（HTTP 前缀 /api/v2/data/）
 //
 // http://www.sfere-elec.com/
 
@@ -33,20 +33,20 @@ var File_data_readiness_data_readiness_service_proto protoreflect.FileDescriptor
 
 const file_data_readiness_data_readiness_service_proto_rawDesc = "" +
 	"\n" +
-	"+data_readiness/data_readiness_service.proto\x12\x1efusion.ai.proto.data_readiness\x1a+data_readiness/data_readiness_message.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto2\xdc\x12\n" +
-	"\x14DataReadinessService\x12\xaf\x01\n" +
-	"\x0fGetDataOverview\x126.fusion.ai.proto.data_readiness.GetDataOverviewRequest\x1a7.fusion.ai.proto.data_readiness.GetDataOverviewResponse\"+\xdaA\fservice_type\x82\xd3\xe4\x93\x02\x16\x12\x14/ai/v2/data/overview\x12\xb1\x01\n" +
-	"\x10ListDataSiteRows\x127.fusion.ai.proto.data_readiness.ListDataSiteRowsRequest\x1a8.fusion.ai.proto.data_readiness.ListDataSiteRowsResponse\"*\xdaA\x0epage,page_size\x82\xd3\xe4\x93\x02\x13\x12\x11/ai/v2/data/sites\x12\xda\x01\n" +
-	"\x14GetDataSiteReadiness\x12;.fusion.ai.proto.data_readiness.GetDataSiteReadinessRequest\x1a<.fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse\"G\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02/\x12-/ai/v2/data/sites/{registration_id}/readiness\x12\xc4\x01\n" +
-	"\x14GetDataPipelineStats\x12;.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest\x1a<.fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse\"1\xdaA\fservice_type\x82\xd3\xe4\x93\x02\x1c\x12\x1a/ai/v2/data/pipeline/stats\x12\xc7\x01\n" +
-	"\x17GetWeatherExcelTemplate\x12>.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest\x1a?.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse\"+\x82\xd3\xe4\x93\x02%\x12#/ai/v2/data/weather/import/template\x12\xc6\x01\n" +
-	"\x0eGetWeatherSite\x125.fusion.ai.proto.data_readiness.GetWeatherSiteRequest\x1a6.fusion.ai.proto.data_readiness.GetWeatherSiteResponse\"E\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02-\x12+/ai/v2/data/sites/{registration_id}/weather\x12\xc1\x01\n" +
-	"\x11GetWeatherSyncRun\x128.fusion.ai.proto.data_readiness.GetWeatherSyncRunRequest\x1a9.fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse\"7\xdaA\x06run_id\x82\xd3\xe4\x93\x02(\x12&/ai/v2/data/weather/sync/runs/{run_id}\x12\xae\x01\n" +
-	"\x10BatchSyncWeather\x127.fusion.ai.proto.data_readiness.BatchSyncWeatherRequest\x1a8.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse\"'\xdaA\x01*\x82\xd3\xe4\x93\x02\x1d:\x01*\"\x18/ai/v2/data/weather/sync\x12\xc6\x01\n" +
-	"\x16RetryFailedWeatherSync\x12=.fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest\x1a>.fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse\"-\xdaA\x01*\x82\xd3\xe4\x93\x02#:\x01*\"\x1e/ai/v2/data/weather/sync/retry\x12\xd6\x01\n" +
-	"\x1bCreateWeatherExcelImportJob\x12B.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest\x1aC.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse\".\xdaA\x01*\x82\xd3\xe4\x93\x02$:\x01*\"\x1f/ai/v2/data/weather/import/jobs\x12\xbe\x01\n" +
-	"\x15CreateDataBackfillJob\x12<.fusion.ai.proto.data_readiness.CreateDataBackfillJobRequest\x1a=.fusion.ai.proto.data_readiness.CreateDataBackfillJobResponse\"(\xdaA\x01*\x82\xd3\xe4\x93\x02\x1e:\x01*\"\x19/ai/v2/data/backfill/jobs\x12\xc9\x01\n" +
-	"\x12UploadBackfillFile\x129.fusion.ai.proto.data_readiness.UploadBackfillFileRequest\x1a:.fusion.ai.proto.data_readiness.UploadBackfillFileResponse\"<\xdaA\x06job_id\x82\xd3\xe4\x93\x02-:\x01*\"(/ai/v2/data/backfill/jobs/{job_id}/files\x1a\x03\xcaA\x00B\x86\x02\n" +
+	"+data_readiness/data_readiness_service.proto\x12\x1efusion.ai.proto.data_readiness\x1a+data_readiness/data_readiness_message.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto2\xe8\x12\n" +
+	"\x14DataReadinessService\x12\xb0\x01\n" +
+	"\x0fGetDataOverview\x126.fusion.ai.proto.data_readiness.GetDataOverviewRequest\x1a7.fusion.ai.proto.data_readiness.GetDataOverviewResponse\",\xdaA\fservice_type\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v2/data/overview\x12\xb2\x01\n" +
+	"\x10ListDataSiteRows\x127.fusion.ai.proto.data_readiness.ListDataSiteRowsRequest\x1a8.fusion.ai.proto.data_readiness.ListDataSiteRowsResponse\"+\xdaA\x0epage,page_size\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v2/data/sites\x12\xdb\x01\n" +
+	"\x14GetDataSiteReadiness\x12;.fusion.ai.proto.data_readiness.GetDataSiteReadinessRequest\x1a<.fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse\"H\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x020\x12./api/v2/data/sites/{registration_id}/readiness\x12\xc5\x01\n" +
+	"\x14GetDataPipelineStats\x12;.fusion.ai.proto.data_readiness.GetDataPipelineStatsRequest\x1a<.fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse\"2\xdaA\fservice_type\x82\xd3\xe4\x93\x02\x1d\x12\x1b/api/v2/data/pipeline/stats\x12\xc8\x01\n" +
+	"\x17GetWeatherExcelTemplate\x12>.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateRequest\x1a?.fusion.ai.proto.data_readiness.GetWeatherExcelTemplateResponse\",\x82\xd3\xe4\x93\x02&\x12$/api/v2/data/weather/import/template\x12\xc7\x01\n" +
+	"\x0eGetWeatherSite\x125.fusion.ai.proto.data_readiness.GetWeatherSiteRequest\x1a6.fusion.ai.proto.data_readiness.GetWeatherSiteResponse\"F\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02.\x12,/api/v2/data/sites/{registration_id}/weather\x12\xc2\x01\n" +
+	"\x11GetWeatherSyncRun\x128.fusion.ai.proto.data_readiness.GetWeatherSyncRunRequest\x1a9.fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse\"8\xdaA\x06run_id\x82\xd3\xe4\x93\x02)\x12'/api/v2/data/weather/sync/runs/{run_id}\x12\xaf\x01\n" +
+	"\x10BatchSyncWeather\x127.fusion.ai.proto.data_readiness.BatchSyncWeatherRequest\x1a8.fusion.ai.proto.data_readiness.BatchSyncWeatherResponse\"(\xdaA\x01*\x82\xd3\xe4\x93\x02\x1e:\x01*\"\x19/api/v2/data/weather/sync\x12\xc7\x01\n" +
+	"\x16RetryFailedWeatherSync\x12=.fusion.ai.proto.data_readiness.RetryFailedWeatherSyncRequest\x1a>.fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse\".\xdaA\x01*\x82\xd3\xe4\x93\x02$:\x01*\"\x1f/api/v2/data/weather/sync/retry\x12\xd7\x01\n" +
+	"\x1bCreateWeatherExcelImportJob\x12B.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobRequest\x1aC.fusion.ai.proto.data_readiness.CreateWeatherExcelImportJobResponse\"/\xdaA\x01*\x82\xd3\xe4\x93\x02%:\x01*\" /api/v2/data/weather/import/jobs\x12\xbf\x01\n" +
+	"\x15CreateDataBackfillJob\x12<.fusion.ai.proto.data_readiness.CreateDataBackfillJobRequest\x1a=.fusion.ai.proto.data_readiness.CreateDataBackfillJobResponse\")\xdaA\x01*\x82\xd3\xe4\x93\x02\x1f:\x01*\"\x1a/api/v2/data/backfill/jobs\x12\xca\x01\n" +
+	"\x12UploadBackfillFile\x129.fusion.ai.proto.data_readiness.UploadBackfillFileRequest\x1a:.fusion.ai.proto.data_readiness.UploadBackfillFileResponse\"=\xdaA\x06job_id\x82\xd3\xe4\x93\x02.:\x01*\")/api/v2/data/backfill/jobs/{job_id}/files\x1a\x03\xcaA\x00B\x86\x02\n" +
 	"\"com.fusion.ai.proto.data_readinessB\x19DataReadinessServiceProtoP\x01Z-fusion.ai.proto.data_readiness;data_readiness\xa2\x02\x04FAPD\xaa\x02\x1dFusion.Ai.Proto.DataReadiness\xca\x02\x1dFusion\\Ai\\Proto\\DataReadiness\xe2\x02)Fusion\\Ai\\Proto\\DataReadiness\\GPBMetadata\xea\x02 Fusion::Ai::Proto::DataReadinessb\x06proto3"
 
 var file_data_readiness_data_readiness_service_proto_goTypes = []any{

@@ -2,7 +2,7 @@
 // All rights reserved.
 //
 // Filename: workbench_message.proto
-// Description: 算法预测工作台读模型与写请求（Portal /ai/v2/workbench/）
+// Description: 算法预测工作台读模型与写请求（Portal /api/v2/workbench/）
 //
 // http://www.sfere-elec.com/
 
@@ -187,58 +187,6 @@ func (ModelReadyStatus) EnumDescriptor() ([]byte, []int) {
 	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{2}
 }
 
-type JobType int32
-
-const (
-	JobType_JOB_TYPE_UNSPECIFIED JobType = 0
-	JobType_JOB_TYPE_TRAIN       JobType = 1
-	JobType_JOB_TYPE_PREDICT     JobType = 2
-	JobType_JOB_TYPE_EVAL        JobType = 3
-)
-
-// Enum value maps for JobType.
-var (
-	JobType_name = map[int32]string{
-		0: "JOB_TYPE_UNSPECIFIED",
-		1: "JOB_TYPE_TRAIN",
-		2: "JOB_TYPE_PREDICT",
-		3: "JOB_TYPE_EVAL",
-	}
-	JobType_value = map[string]int32{
-		"JOB_TYPE_UNSPECIFIED": 0,
-		"JOB_TYPE_TRAIN":       1,
-		"JOB_TYPE_PREDICT":     2,
-		"JOB_TYPE_EVAL":        3,
-	}
-)
-
-func (x JobType) Enum() *JobType {
-	p := new(JobType)
-	*p = x
-	return p
-}
-
-func (x JobType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (JobType) Descriptor() protoreflect.EnumDescriptor {
-	return file_workbench_workbench_message_proto_enumTypes[3].Descriptor()
-}
-
-func (JobType) Type() protoreflect.EnumType {
-	return &file_workbench_workbench_message_proto_enumTypes[3]
-}
-
-func (x JobType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use JobType.Descriptor instead.
-func (JobType) EnumDescriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{3}
-}
-
 type JobStatus int32
 
 const (
@@ -281,11 +229,11 @@ func (x JobStatus) String() string {
 }
 
 func (JobStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_workbench_workbench_message_proto_enumTypes[4].Descriptor()
+	return file_workbench_workbench_message_proto_enumTypes[3].Descriptor()
 }
 
 func (JobStatus) Type() protoreflect.EnumType {
-	return &file_workbench_workbench_message_proto_enumTypes[4]
+	return &file_workbench_workbench_message_proto_enumTypes[3]
 }
 
 func (x JobStatus) Number() protoreflect.EnumNumber {
@@ -294,7 +242,7 @@ func (x JobStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use JobStatus.Descriptor instead.
 func (JobStatus) EnumDescriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{4}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{3}
 }
 
 type GapInterval struct {
@@ -702,39 +650,45 @@ func (x *FusionModelView) GetArtifactUri() string {
 	return ""
 }
 
-type JobView struct {
+// 五步 stages 键：data_ready | model_loaded | infer | persist | compare_refresh
+// 每步取值：pending | running | done | failed
+type PredictJobView struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	JobId          string                 `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
-	Type           JobType                `protobuf:"varint,2,opt,name=type,proto3,enum=fusion.ai.proto.workbench.JobType" json:"type,omitempty"`
+	RegistrationId string                 `protobuf:"bytes,2,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	Status         JobStatus              `protobuf:"varint,3,opt,name=status,proto3,enum=fusion.ai.proto.workbench.JobStatus" json:"status,omitempty"`
-	RegistrationId string                 `protobuf:"bytes,4,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	// 0~100
-	ProgressPct   int32                  `protobuf:"varint,5,opt,name=progress_pct,proto3" json:"progress_pct,omitempty"`
-	Message       string                 `protobuf:"bytes,6,opt,name=message,proto3" json:"message,omitempty"`
-	EvalDate      *string                `protobuf:"bytes,7,opt,name=eval_date,proto3,oneof" json:"eval_date,omitempty"`
-	ModelVersion  *string                `protobuf:"bytes,8,opt,name=model_version,proto3,oneof" json:"model_version,omitempty"`
-	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=created_at,proto3" json:"created_at,omitempty"`
-	StartedAt     *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=started_at,proto3,oneof" json:"started_at,omitempty"`
-	FinishedAt    *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=finished_at,proto3,oneof" json:"finished_at,omitempty"`
-	ErrorMessage  string                 `protobuf:"bytes,12,opt,name=error_message,proto3" json:"error_message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	ProgressPct int32 `protobuf:"varint,4,opt,name=progress_pct,proto3" json:"progress_pct,omitempty"`
+	// 当前步键，如 infer
+	Stage          string                 `protobuf:"bytes,5,opt,name=stage,proto3" json:"stage,omitempty"`
+	Stages         map[string]string      `protobuf:"bytes,6,rep,name=stages,proto3" json:"stages,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	EvalDate       string                 `protobuf:"bytes,7,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
+	DayOffset      int32                  `protobuf:"varint,8,opt,name=day_offset,proto3" json:"day_offset,omitempty"`
+	GranularityMin int32                  `protobuf:"varint,9,opt,name=granularity_min,proto3" json:"granularity_min,omitempty"`
+	HorizonHours   int32                  `protobuf:"varint,10,opt,name=horizon_hours,proto3" json:"horizon_hours,omitempty"`
+	ModelId        string                 `protobuf:"bytes,11,opt,name=model_id,proto3" json:"model_id,omitempty"`
+	Message        string                 `protobuf:"bytes,12,opt,name=message,proto3" json:"message,omitempty"`
+	StartedAt      *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=started_at,proto3,oneof" json:"started_at,omitempty"`
+	FinishedAt     *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=finished_at,proto3,oneof" json:"finished_at,omitempty"`
+	UpdatedAt      *timestamppb.Timestamp `protobuf:"bytes,15,opt,name=updated_at,proto3,oneof" json:"updated_at,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
-func (x *JobView) Reset() {
-	*x = JobView{}
+func (x *PredictJobView) Reset() {
+	*x = PredictJobView{}
 	mi := &file_workbench_workbench_message_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *JobView) String() string {
+func (x *PredictJobView) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*JobView) ProtoMessage() {}
+func (*PredictJobView) ProtoMessage() {}
 
-func (x *JobView) ProtoReflect() protoreflect.Message {
+func (x *PredictJobView) ProtoReflect() protoreflect.Message {
 	mi := &file_workbench_workbench_message_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -746,93 +700,114 @@ func (x *JobView) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use JobView.ProtoReflect.Descriptor instead.
-func (*JobView) Descriptor() ([]byte, []int) {
+// Deprecated: Use PredictJobView.ProtoReflect.Descriptor instead.
+func (*PredictJobView) Descriptor() ([]byte, []int) {
 	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *JobView) GetJobId() string {
+func (x *PredictJobView) GetJobId() string {
 	if x != nil {
 		return x.JobId
 	}
 	return ""
 }
 
-func (x *JobView) GetType() JobType {
-	if x != nil {
-		return x.Type
-	}
-	return JobType_JOB_TYPE_UNSPECIFIED
-}
-
-func (x *JobView) GetStatus() JobStatus {
-	if x != nil {
-		return x.Status
-	}
-	return JobStatus_JOB_STATUS_UNSPECIFIED
-}
-
-func (x *JobView) GetRegistrationId() string {
+func (x *PredictJobView) GetRegistrationId() string {
 	if x != nil {
 		return x.RegistrationId
 	}
 	return ""
 }
 
-func (x *JobView) GetProgressPct() int32 {
+func (x *PredictJobView) GetStatus() JobStatus {
+	if x != nil {
+		return x.Status
+	}
+	return JobStatus_JOB_STATUS_UNSPECIFIED
+}
+
+func (x *PredictJobView) GetProgressPct() int32 {
 	if x != nil {
 		return x.ProgressPct
 	}
 	return 0
 }
 
-func (x *JobView) GetMessage() string {
+func (x *PredictJobView) GetStage() string {
+	if x != nil {
+		return x.Stage
+	}
+	return ""
+}
+
+func (x *PredictJobView) GetStages() map[string]string {
+	if x != nil {
+		return x.Stages
+	}
+	return nil
+}
+
+func (x *PredictJobView) GetEvalDate() string {
+	if x != nil {
+		return x.EvalDate
+	}
+	return ""
+}
+
+func (x *PredictJobView) GetDayOffset() int32 {
+	if x != nil {
+		return x.DayOffset
+	}
+	return 0
+}
+
+func (x *PredictJobView) GetGranularityMin() int32 {
+	if x != nil {
+		return x.GranularityMin
+	}
+	return 0
+}
+
+func (x *PredictJobView) GetHorizonHours() int32 {
+	if x != nil {
+		return x.HorizonHours
+	}
+	return 0
+}
+
+func (x *PredictJobView) GetModelId() string {
+	if x != nil {
+		return x.ModelId
+	}
+	return ""
+}
+
+func (x *PredictJobView) GetMessage() string {
 	if x != nil {
 		return x.Message
 	}
 	return ""
 }
 
-func (x *JobView) GetEvalDate() string {
-	if x != nil && x.EvalDate != nil {
-		return *x.EvalDate
-	}
-	return ""
-}
-
-func (x *JobView) GetModelVersion() string {
-	if x != nil && x.ModelVersion != nil {
-		return *x.ModelVersion
-	}
-	return ""
-}
-
-func (x *JobView) GetCreatedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.CreatedAt
-	}
-	return nil
-}
-
-func (x *JobView) GetStartedAt() *timestamppb.Timestamp {
+func (x *PredictJobView) GetStartedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.StartedAt
 	}
 	return nil
 }
 
-func (x *JobView) GetFinishedAt() *timestamppb.Timestamp {
+func (x *PredictJobView) GetFinishedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.FinishedAt
 	}
 	return nil
 }
 
-func (x *JobView) GetErrorMessage() string {
+func (x *PredictJobView) GetUpdatedAt() *timestamppb.Timestamp {
 	if x != nil {
-		return x.ErrorMessage
+		return x.UpdatedAt
 	}
-	return ""
+	return nil
 }
 
 type SeriesPoint struct {
@@ -1647,27 +1622,27 @@ func (x *CreatePredictJobResponse) GetStatus() JobStatus {
 	return JobStatus_JOB_STATUS_UNSPECIFIED
 }
 
-type GetJobRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	JobId         string                 `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+type GetPredictRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
-func (x *GetJobRequest) Reset() {
-	*x = GetJobRequest{}
+func (x *GetPredictRequest) Reset() {
+	*x = GetPredictRequest{}
 	mi := &file_workbench_workbench_message_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetJobRequest) String() string {
+func (x *GetPredictRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetJobRequest) ProtoMessage() {}
+func (*GetPredictRequest) ProtoMessage() {}
 
-func (x *GetJobRequest) ProtoReflect() protoreflect.Message {
+func (x *GetPredictRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_workbench_workbench_message_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1679,39 +1654,43 @@ func (x *GetJobRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetJobRequest.ProtoReflect.Descriptor instead.
-func (*GetJobRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPredictRequest.ProtoReflect.Descriptor instead.
+func (*GetPredictRequest) Descriptor() ([]byte, []int) {
 	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{19}
 }
 
-func (x *GetJobRequest) GetJobId() string {
+func (x *GetPredictRequest) GetRegistrationId() string {
 	if x != nil {
-		return x.JobId
+		return x.RegistrationId
 	}
 	return ""
 }
 
-type GetJobResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Job           *JobView               `protobuf:"bytes,1,opt,name=job,proto3" json:"job,omitempty"`
+type GetPredictResponse struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 当前预测任务 id；无任务时为空
+	CurrentPredictJobId string `protobuf:"bytes,2,opt,name=current_predict_job_id,proto3" json:"current_predict_job_id,omitempty"`
+	// 当前 job 全量；无任务时不填
+	Job           *PredictJobView `protobuf:"bytes,3,opt,name=job,proto3,oneof" json:"job,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetJobResponse) Reset() {
-	*x = GetJobResponse{}
+func (x *GetPredictResponse) Reset() {
+	*x = GetPredictResponse{}
 	mi := &file_workbench_workbench_message_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetJobResponse) String() string {
+func (x *GetPredictResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetJobResponse) ProtoMessage() {}
+func (*GetPredictResponse) ProtoMessage() {}
 
-func (x *GetJobResponse) ProtoReflect() protoreflect.Message {
+func (x *GetPredictResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_workbench_workbench_message_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1723,12 +1702,26 @@ func (x *GetJobResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetJobResponse.ProtoReflect.Descriptor instead.
-func (*GetJobResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPredictResponse.ProtoReflect.Descriptor instead.
+func (*GetPredictResponse) Descriptor() ([]byte, []int) {
 	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{20}
 }
 
-func (x *GetJobResponse) GetJob() *JobView {
+func (x *GetPredictResponse) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *GetPredictResponse) GetCurrentPredictJobId() string {
+	if x != nil {
+		return x.CurrentPredictJobId
+	}
+	return ""
+}
+
+func (x *GetPredictResponse) GetJob() *PredictJobView {
 	if x != nil {
 		return x.Job
 	}
@@ -2091,30 +2084,36 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"\x0flast_trained_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampH\x00R\x0flast_trained_at\x88\x01\x01\x12'\n" +
 	"\fartifact_uri\x18\x06 \x01(\tH\x01R\fartifact_uri\x88\x01\x01B\x12\n" +
 	"\x10_last_trained_atB\x0f\n" +
-	"\r_artifact_uri\"\xf2\x04\n" +
-	"\aJobView\x12\x16\n" +
-	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x126\n" +
-	"\x04type\x18\x02 \x01(\x0e2\".fusion.ai.proto.workbench.JobTypeR\x04type\x12<\n" +
-	"\x06status\x18\x03 \x01(\x0e2$.fusion.ai.proto.workbench.JobStatusR\x06status\x12(\n" +
-	"\x0fregistration_id\x18\x04 \x01(\tR\x0fregistration_id\x12\"\n" +
-	"\fprogress_pct\x18\x05 \x01(\x05R\fprogress_pct\x12\x18\n" +
-	"\amessage\x18\x06 \x01(\tR\amessage\x12!\n" +
-	"\teval_date\x18\a \x01(\tH\x00R\teval_date\x88\x01\x01\x12)\n" +
-	"\rmodel_version\x18\b \x01(\tH\x01R\rmodel_version\x88\x01\x01\x12:\n" +
+	"\r_artifact_uri\"\x8b\x06\n" +
+	"\x0ePredictJobView\x12\x16\n" +
+	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x12(\n" +
+	"\x0fregistration_id\x18\x02 \x01(\tR\x0fregistration_id\x12<\n" +
+	"\x06status\x18\x03 \x01(\x0e2$.fusion.ai.proto.workbench.JobStatusR\x06status\x12\"\n" +
+	"\fprogress_pct\x18\x04 \x01(\x05R\fprogress_pct\x12\x14\n" +
+	"\x05stage\x18\x05 \x01(\tR\x05stage\x12M\n" +
+	"\x06stages\x18\x06 \x03(\v25.fusion.ai.proto.workbench.PredictJobView.StagesEntryR\x06stages\x12\x1c\n" +
+	"\teval_date\x18\a \x01(\tR\teval_date\x12\x1e\n" +
 	"\n" +
-	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"created_at\x12?\n" +
+	"day_offset\x18\b \x01(\x05R\n" +
+	"day_offset\x12(\n" +
+	"\x0fgranularity_min\x18\t \x01(\x05R\x0fgranularity_min\x12$\n" +
+	"\rhorizon_hours\x18\n" +
+	" \x01(\x05R\rhorizon_hours\x12\x1a\n" +
+	"\bmodel_id\x18\v \x01(\tR\bmodel_id\x12\x18\n" +
+	"\amessage\x18\f \x01(\tR\amessage\x12?\n" +
 	"\n" +
-	"started_at\x18\n" +
-	" \x01(\v2\x1a.google.protobuf.TimestampH\x02R\n" +
+	"started_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampH\x00R\n" +
 	"started_at\x88\x01\x01\x12A\n" +
-	"\vfinished_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampH\x03R\vfinished_at\x88\x01\x01\x12$\n" +
-	"\rerror_message\x18\f \x01(\tR\rerror_messageB\f\n" +
+	"\vfinished_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampH\x01R\vfinished_at\x88\x01\x01\x12?\n" +
 	"\n" +
-	"_eval_dateB\x10\n" +
-	"\x0e_model_versionB\r\n" +
+	"updated_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampH\x02R\n" +
+	"updated_at\x88\x01\x01\x1a9\n" +
+	"\vStagesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\r\n" +
 	"\v_started_atB\x0e\n" +
-	"\f_finished_at\"\x8e\x01\n" +
+	"\f_finished_atB\r\n" +
+	"\v_updated_at\"\x8e\x01\n" +
 	"\vSeriesPoint\x12\x14\n" +
 	"\x05ts_ms\x18\x01 \x01(\x03R\x05ts_ms\x12'\n" +
 	"\fpredicted_kw\x18\x02 \x01(\x01H\x00R\fpredicted_kw\x88\x01\x01\x12!\n" +
@@ -2195,11 +2194,14 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"\x0e_horizon_hours\"p\n" +
 	"\x18CreatePredictJobResponse\x12\x16\n" +
 	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x12<\n" +
-	"\x06status\x18\x02 \x01(\x0e2$.fusion.ai.proto.workbench.JobStatusR\x06status\"2\n" +
-	"\rGetJobRequest\x12!\n" +
-	"\x06job_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x06job_id\"F\n" +
-	"\x0eGetJobResponse\x124\n" +
-	"\x03job\x18\x01 \x01(\v2\".fusion.ai.proto.workbench.JobViewR\x03job\"\xe3\x01\n" +
+	"\x06status\x18\x02 \x01(\x0e2$.fusion.ai.proto.workbench.JobStatusR\x06status\"H\n" +
+	"\x11GetPredictRequest\x123\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\"\xc0\x01\n" +
+	"\x12GetPredictResponse\x12(\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x126\n" +
+	"\x16current_predict_job_id\x18\x02 \x01(\tR\x16current_predict_job_id\x12@\n" +
+	"\x03job\x18\x03 \x01(\v2).fusion.ai.proto.workbench.PredictJobViewH\x00R\x03job\x88\x01\x01B\x06\n" +
+	"\x04_job\"\xe3\x01\n" +
 	"\x17GetEvalDaySeriesRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12A\n" +
 	"\teval_date\x18\x02 \x01(\tB#\xbaH r\x1e2\x1c^[0-9]{4}-[0-9]{2}-[0-9]{2}$R\teval_date\x12<\n" +
@@ -2238,12 +2240,7 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"\x18MODEL_READY_STATUS_READY\x10\x01\x12\x1f\n" +
 	"\x1bMODEL_READY_STATUS_TRAINING\x10\x02\x12\x1c\n" +
 	"\x18MODEL_READY_STATUS_STALE\x10\x03\x12\x1e\n" +
-	"\x1aMODEL_READY_STATUS_MISSING\x10\x04*`\n" +
-	"\aJobType\x12\x18\n" +
-	"\x14JOB_TYPE_UNSPECIFIED\x10\x00\x12\x12\n" +
-	"\x0eJOB_TYPE_TRAIN\x10\x01\x12\x14\n" +
-	"\x10JOB_TYPE_PREDICT\x10\x02\x12\x11\n" +
-	"\rJOB_TYPE_EVAL\x10\x03*\xa1\x01\n" +
+	"\x1aMODEL_READY_STATUS_MISSING\x10\x04*\xa1\x01\n" +
 	"\tJobStatus\x12\x1a\n" +
 	"\x16JOB_STATUS_UNSPECIFIED\x10\x00\x12\x15\n" +
 	"\x11JOB_STATUS_QUEUED\x10\x01\x12\x16\n" +
@@ -2265,68 +2262,68 @@ func file_workbench_workbench_message_proto_rawDescGZIP() []byte {
 	return file_workbench_workbench_message_proto_rawDescData
 }
 
-var file_workbench_workbench_message_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_workbench_workbench_message_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
+var file_workbench_workbench_message_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_workbench_workbench_message_proto_msgTypes = make([]protoimpl.MessageInfo, 28)
 var file_workbench_workbench_message_proto_goTypes = []any{
 	(ReadyCheckStatus)(0),                // 0: fusion.ai.proto.workbench.ReadyCheckStatus
 	(CoverageSeriesKind)(0),              // 1: fusion.ai.proto.workbench.CoverageSeriesKind
 	(ModelReadyStatus)(0),                // 2: fusion.ai.proto.workbench.ModelReadyStatus
-	(JobType)(0),                         // 3: fusion.ai.proto.workbench.JobType
-	(JobStatus)(0),                       // 4: fusion.ai.proto.workbench.JobStatus
-	(*GapInterval)(nil),                  // 5: fusion.ai.proto.workbench.GapInterval
-	(*CoveragePoint)(nil),                // 6: fusion.ai.proto.workbench.CoveragePoint
-	(*CoverageBand)(nil),                 // 7: fusion.ai.proto.workbench.CoverageBand
-	(*DataReadyCheck)(nil),               // 8: fusion.ai.proto.workbench.DataReadyCheck
-	(*FusionModelView)(nil),              // 9: fusion.ai.proto.workbench.FusionModelView
-	(*JobView)(nil),                      // 10: fusion.ai.proto.workbench.JobView
-	(*SeriesPoint)(nil),                  // 11: fusion.ai.proto.workbench.SeriesPoint
-	(*EvalDaySeries)(nil),                // 12: fusion.ai.proto.workbench.EvalDaySeries
-	(*EvalDayMetrics)(nil),               // 13: fusion.ai.proto.workbench.EvalDayMetrics
-	(*EvalDayMetricsRow)(nil),            // 14: fusion.ai.proto.workbench.EvalDayMetricsRow
-	(*EvalDayMetricsPage)(nil),           // 15: fusion.ai.proto.workbench.EvalDayMetricsPage
-	(*GetDataReadyCheckRequest)(nil),     // 16: fusion.ai.proto.workbench.GetDataReadyCheckRequest
-	(*GetDataReadyCheckResponse)(nil),    // 17: fusion.ai.proto.workbench.GetDataReadyCheckResponse
-	(*GetFusionModelRequest)(nil),        // 18: fusion.ai.proto.workbench.GetFusionModelRequest
-	(*GetFusionModelResponse)(nil),       // 19: fusion.ai.proto.workbench.GetFusionModelResponse
-	(*CreateTrainJobRequest)(nil),        // 20: fusion.ai.proto.workbench.CreateTrainJobRequest
-	(*CreateTrainJobResponse)(nil),       // 21: fusion.ai.proto.workbench.CreateTrainJobResponse
-	(*CreatePredictJobRequest)(nil),      // 22: fusion.ai.proto.workbench.CreatePredictJobRequest
-	(*CreatePredictJobResponse)(nil),     // 23: fusion.ai.proto.workbench.CreatePredictJobResponse
-	(*GetJobRequest)(nil),                // 24: fusion.ai.proto.workbench.GetJobRequest
-	(*GetJobResponse)(nil),               // 25: fusion.ai.proto.workbench.GetJobResponse
-	(*GetEvalDaySeriesRequest)(nil),      // 26: fusion.ai.proto.workbench.GetEvalDaySeriesRequest
-	(*GetEvalDaySeriesResponse)(nil),     // 27: fusion.ai.proto.workbench.GetEvalDaySeriesResponse
-	(*GetEvalDayMetricsRequest)(nil),     // 28: fusion.ai.proto.workbench.GetEvalDayMetricsRequest
-	(*GetEvalDayMetricsResponse)(nil),    // 29: fusion.ai.proto.workbench.GetEvalDayMetricsResponse
-	(*ListEvalDailyMetricsRequest)(nil),  // 30: fusion.ai.proto.workbench.ListEvalDailyMetricsRequest
-	(*ListEvalDailyMetricsResponse)(nil), // 31: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse
+	(JobStatus)(0),                       // 3: fusion.ai.proto.workbench.JobStatus
+	(*GapInterval)(nil),                  // 4: fusion.ai.proto.workbench.GapInterval
+	(*CoveragePoint)(nil),                // 5: fusion.ai.proto.workbench.CoveragePoint
+	(*CoverageBand)(nil),                 // 6: fusion.ai.proto.workbench.CoverageBand
+	(*DataReadyCheck)(nil),               // 7: fusion.ai.proto.workbench.DataReadyCheck
+	(*FusionModelView)(nil),              // 8: fusion.ai.proto.workbench.FusionModelView
+	(*PredictJobView)(nil),               // 9: fusion.ai.proto.workbench.PredictJobView
+	(*SeriesPoint)(nil),                  // 10: fusion.ai.proto.workbench.SeriesPoint
+	(*EvalDaySeries)(nil),                // 11: fusion.ai.proto.workbench.EvalDaySeries
+	(*EvalDayMetrics)(nil),               // 12: fusion.ai.proto.workbench.EvalDayMetrics
+	(*EvalDayMetricsRow)(nil),            // 13: fusion.ai.proto.workbench.EvalDayMetricsRow
+	(*EvalDayMetricsPage)(nil),           // 14: fusion.ai.proto.workbench.EvalDayMetricsPage
+	(*GetDataReadyCheckRequest)(nil),     // 15: fusion.ai.proto.workbench.GetDataReadyCheckRequest
+	(*GetDataReadyCheckResponse)(nil),    // 16: fusion.ai.proto.workbench.GetDataReadyCheckResponse
+	(*GetFusionModelRequest)(nil),        // 17: fusion.ai.proto.workbench.GetFusionModelRequest
+	(*GetFusionModelResponse)(nil),       // 18: fusion.ai.proto.workbench.GetFusionModelResponse
+	(*CreateTrainJobRequest)(nil),        // 19: fusion.ai.proto.workbench.CreateTrainJobRequest
+	(*CreateTrainJobResponse)(nil),       // 20: fusion.ai.proto.workbench.CreateTrainJobResponse
+	(*CreatePredictJobRequest)(nil),      // 21: fusion.ai.proto.workbench.CreatePredictJobRequest
+	(*CreatePredictJobResponse)(nil),     // 22: fusion.ai.proto.workbench.CreatePredictJobResponse
+	(*GetPredictRequest)(nil),            // 23: fusion.ai.proto.workbench.GetPredictRequest
+	(*GetPredictResponse)(nil),           // 24: fusion.ai.proto.workbench.GetPredictResponse
+	(*GetEvalDaySeriesRequest)(nil),      // 25: fusion.ai.proto.workbench.GetEvalDaySeriesRequest
+	(*GetEvalDaySeriesResponse)(nil),     // 26: fusion.ai.proto.workbench.GetEvalDaySeriesResponse
+	(*GetEvalDayMetricsRequest)(nil),     // 27: fusion.ai.proto.workbench.GetEvalDayMetricsRequest
+	(*GetEvalDayMetricsResponse)(nil),    // 28: fusion.ai.proto.workbench.GetEvalDayMetricsResponse
+	(*ListEvalDailyMetricsRequest)(nil),  // 29: fusion.ai.proto.workbench.ListEvalDailyMetricsRequest
+	(*ListEvalDailyMetricsResponse)(nil), // 30: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse
+	nil,                                  // 31: fusion.ai.proto.workbench.PredictJobView.StagesEntry
 	(*timestamppb.Timestamp)(nil),        // 32: google.protobuf.Timestamp
 }
 var file_workbench_workbench_message_proto_depIdxs = []int32{
 	1,  // 0: fusion.ai.proto.workbench.CoverageBand.kind:type_name -> fusion.ai.proto.workbench.CoverageSeriesKind
-	6,  // 1: fusion.ai.proto.workbench.CoverageBand.points:type_name -> fusion.ai.proto.workbench.CoveragePoint
-	5,  // 2: fusion.ai.proto.workbench.CoverageBand.gaps:type_name -> fusion.ai.proto.workbench.GapInterval
+	5,  // 1: fusion.ai.proto.workbench.CoverageBand.points:type_name -> fusion.ai.proto.workbench.CoveragePoint
+	4,  // 2: fusion.ai.proto.workbench.CoverageBand.gaps:type_name -> fusion.ai.proto.workbench.GapInterval
 	0,  // 3: fusion.ai.proto.workbench.DataReadyCheck.status:type_name -> fusion.ai.proto.workbench.ReadyCheckStatus
-	7,  // 4: fusion.ai.proto.workbench.DataReadyCheck.power:type_name -> fusion.ai.proto.workbench.CoverageBand
-	7,  // 5: fusion.ai.proto.workbench.DataReadyCheck.weather:type_name -> fusion.ai.proto.workbench.CoverageBand
+	6,  // 4: fusion.ai.proto.workbench.DataReadyCheck.power:type_name -> fusion.ai.proto.workbench.CoverageBand
+	6,  // 5: fusion.ai.proto.workbench.DataReadyCheck.weather:type_name -> fusion.ai.proto.workbench.CoverageBand
 	32, // 6: fusion.ai.proto.workbench.DataReadyCheck.checked_at:type_name -> google.protobuf.Timestamp
 	2,  // 7: fusion.ai.proto.workbench.FusionModelView.status:type_name -> fusion.ai.proto.workbench.ModelReadyStatus
 	32, // 8: fusion.ai.proto.workbench.FusionModelView.last_trained_at:type_name -> google.protobuf.Timestamp
-	3,  // 9: fusion.ai.proto.workbench.JobView.type:type_name -> fusion.ai.proto.workbench.JobType
-	4,  // 10: fusion.ai.proto.workbench.JobView.status:type_name -> fusion.ai.proto.workbench.JobStatus
-	32, // 11: fusion.ai.proto.workbench.JobView.created_at:type_name -> google.protobuf.Timestamp
-	32, // 12: fusion.ai.proto.workbench.JobView.started_at:type_name -> google.protobuf.Timestamp
-	32, // 13: fusion.ai.proto.workbench.JobView.finished_at:type_name -> google.protobuf.Timestamp
-	11, // 14: fusion.ai.proto.workbench.EvalDaySeries.points:type_name -> fusion.ai.proto.workbench.SeriesPoint
-	14, // 15: fusion.ai.proto.workbench.EvalDayMetricsPage.rows:type_name -> fusion.ai.proto.workbench.EvalDayMetricsRow
-	8,  // 16: fusion.ai.proto.workbench.GetDataReadyCheckResponse.check:type_name -> fusion.ai.proto.workbench.DataReadyCheck
-	9,  // 17: fusion.ai.proto.workbench.GetFusionModelResponse.model:type_name -> fusion.ai.proto.workbench.FusionModelView
-	4,  // 18: fusion.ai.proto.workbench.CreateTrainJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
-	4,  // 19: fusion.ai.proto.workbench.CreatePredictJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
-	10, // 20: fusion.ai.proto.workbench.GetJobResponse.job:type_name -> fusion.ai.proto.workbench.JobView
-	12, // 21: fusion.ai.proto.workbench.GetEvalDaySeriesResponse.series:type_name -> fusion.ai.proto.workbench.EvalDaySeries
-	13, // 22: fusion.ai.proto.workbench.GetEvalDayMetricsResponse.metrics:type_name -> fusion.ai.proto.workbench.EvalDayMetrics
-	15, // 23: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse.page:type_name -> fusion.ai.proto.workbench.EvalDayMetricsPage
+	3,  // 9: fusion.ai.proto.workbench.PredictJobView.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	31, // 10: fusion.ai.proto.workbench.PredictJobView.stages:type_name -> fusion.ai.proto.workbench.PredictJobView.StagesEntry
+	32, // 11: fusion.ai.proto.workbench.PredictJobView.started_at:type_name -> google.protobuf.Timestamp
+	32, // 12: fusion.ai.proto.workbench.PredictJobView.finished_at:type_name -> google.protobuf.Timestamp
+	32, // 13: fusion.ai.proto.workbench.PredictJobView.updated_at:type_name -> google.protobuf.Timestamp
+	10, // 14: fusion.ai.proto.workbench.EvalDaySeries.points:type_name -> fusion.ai.proto.workbench.SeriesPoint
+	13, // 15: fusion.ai.proto.workbench.EvalDayMetricsPage.rows:type_name -> fusion.ai.proto.workbench.EvalDayMetricsRow
+	7,  // 16: fusion.ai.proto.workbench.GetDataReadyCheckResponse.check:type_name -> fusion.ai.proto.workbench.DataReadyCheck
+	8,  // 17: fusion.ai.proto.workbench.GetFusionModelResponse.model:type_name -> fusion.ai.proto.workbench.FusionModelView
+	3,  // 18: fusion.ai.proto.workbench.CreateTrainJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	3,  // 19: fusion.ai.proto.workbench.CreatePredictJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	9,  // 20: fusion.ai.proto.workbench.GetPredictResponse.job:type_name -> fusion.ai.proto.workbench.PredictJobView
+	11, // 21: fusion.ai.proto.workbench.GetEvalDaySeriesResponse.series:type_name -> fusion.ai.proto.workbench.EvalDaySeries
+	12, // 22: fusion.ai.proto.workbench.GetEvalDayMetricsResponse.metrics:type_name -> fusion.ai.proto.workbench.EvalDayMetrics
+	14, // 23: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse.page:type_name -> fusion.ai.proto.workbench.EvalDayMetricsPage
 	24, // [24:24] is the sub-list for method output_type
 	24, // [24:24] is the sub-list for method input_type
 	24, // [24:24] is the sub-list for extension type_name
@@ -2349,6 +2346,7 @@ func file_workbench_workbench_message_proto_init() {
 	file_workbench_workbench_message_proto_msgTypes[9].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[11].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[17].OneofWrappers = []any{}
+	file_workbench_workbench_message_proto_msgTypes[20].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[21].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[25].OneofWrappers = []any{}
 	type x struct{}
@@ -2356,8 +2354,8 @@ func file_workbench_workbench_message_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_workbench_workbench_message_proto_rawDesc), len(file_workbench_workbench_message_proto_rawDesc)),
-			NumEnums:      5,
-			NumMessages:   27,
+			NumEnums:      4,
+			NumMessages:   28,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
