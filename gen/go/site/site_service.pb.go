@@ -38,13 +38,13 @@ const file_site_site_service_proto_rawDesc = "" +
 	"\x17site/site_service.proto\x12\x14fusion.ai.proto.site\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x17site/site_message.proto2\xe4\x05\n" +
 	"\vSiteService\x12\x80\x01\n" +
 	"\n" +
-	"CreateSite\x12'.fusion.ai.proto.site.CreateSiteRequest\x1a(.fusion.ai.proto.site.CreateSiteResponse\"\x1f\xdaA\x01*\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/3rd-api/v1/site\x12\x80\x01\n" +
+	"CreateSite\x12'.fusion.ai.proto.site.CreateSiteRequest\x1a(.fusion.ai.proto.site.CreateSiteResponse\"\x1f\xdaA\x01*\x82\xd3\xe4\x93\x02\x15:\x01*\"\x10/3rd-api/v2/site\x12\x80\x01\n" +
 	"\n" +
-	"UpdateSite\x12'.fusion.ai.proto.site.UpdateSiteRequest\x1a(.fusion.ai.proto.site.UpdateSiteResponse\"\x1f\xdaA\x01*\x82\xd3\xe4\x93\x02\x15:\x01*\x1a\x10/3rd-api/v1/site\x12\x9d\x01\n" +
+	"UpdateSite\x12'.fusion.ai.proto.site.UpdateSiteRequest\x1a(.fusion.ai.proto.site.UpdateSiteResponse\"\x1f\xdaA\x01*\x82\xd3\xe4\x93\x02\x15:\x01*\x1a\x10/3rd-api/v2/site\x12\x9d\x01\n" +
 	"\n" +
-	"DeleteSite\x12'.fusion.ai.proto.site.DeleteSiteRequest\x1a(.fusion.ai.proto.site.DeleteSiteResponse\"<\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02$*\"/3rd-api/v1/site/{registration_id}\x12\x84\x01\n" +
-	"\aGetSite\x12$.fusion.ai.proto.site.GetSiteRequest\x1a%.fusion.ai.proto.site.GetSiteResponse\",\xdaA\asite_id\x82\xd3\xe4\x93\x02\x1c\x12\x1a/3rd-api/v1/site/{site_id}\x12\xa7\x01\n" +
-	"\fGetSiteByReg\x12).fusion.ai.proto.site.GetSiteByRegRequest\x1a*.fusion.ai.proto.site.GetSiteByRegResponse\"@\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02(\x12&/3rd-api/v1/site/reg/{registration_id}B\xbb\x01\n" +
+	"DeleteSite\x12'.fusion.ai.proto.site.DeleteSiteRequest\x1a(.fusion.ai.proto.site.DeleteSiteResponse\"<\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02$*\"/3rd-api/v2/site/{registration_id}\x12\x84\x01\n" +
+	"\aGetSite\x12$.fusion.ai.proto.site.GetSiteRequest\x1a%.fusion.ai.proto.site.GetSiteResponse\",\xdaA\asite_id\x82\xd3\xe4\x93\x02\x1c\x12\x1a/3rd-api/v2/site/{site_id}\x12\xa7\x01\n" +
+	"\fGetSiteByReg\x12).fusion.ai.proto.site.GetSiteByRegRequest\x1a*.fusion.ai.proto.site.GetSiteByRegResponse\"@\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02(\x12&/3rd-api/v2/site/reg/{registration_id}B\xbb\x01\n" +
 	"\x18com.fusion.ai.proto.siteB\x10SiteServiceProtoP\x01Z\x19fusion.ai.proto.site;site\xa2\x02\x04FAPS\xaa\x02\x14Fusion.Ai.Proto.Site\xca\x02\x14Fusion\\Ai\\Proto\\Site\xe2\x02 Fusion\\Ai\\Proto\\Site\\GPBMetadata\xea\x02\x17Fusion::Ai::Proto::Siteb\x06proto3"
 
 var file_site_site_service_proto_goTypes = []any{

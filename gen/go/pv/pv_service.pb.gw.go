@@ -176,7 +176,7 @@ func RegisterPvServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.pv.PvService/GetPvPredictions", runtime.WithHTTPPathPattern("/3rd-api/v1/pv/predictions"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.pv.PvService/GetPvPredictions", runtime.WithHTTPPathPattern("/3rd-api/v2/pv/predictions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -268,7 +268,7 @@ func RegisterPvServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.pv.PvService/GetPvPredictions", runtime.WithHTTPPathPattern("/3rd-api/v1/pv/predictions"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.pv.PvService/GetPvPredictions", runtime.WithHTTPPathPattern("/3rd-api/v2/pv/predictions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -287,7 +287,7 @@ func RegisterPvServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 var (
 	pattern_PvService_UploadPvData_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"3rd-api", "v2", "pv"}, ""))
 	pattern_PvService_PullPvData_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"3rd-api", "v2", "pv", "pull"}, ""))
-	pattern_PvService_GetPvPredictions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"3rd-api", "v1", "pv", "predictions"}, ""))
+	pattern_PvService_GetPvPredictions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"3rd-api", "v2", "pv", "predictions"}, ""))
 )
 
 var (

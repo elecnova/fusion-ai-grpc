@@ -48,7 +48,7 @@ public final class PvServiceProto extends com.google.protobuf.GeneratedFile {
       "ctions\022+.fusion.ai.proto.pv.GetPvPredict" +
       "ionsRequest\032,.fusion.ai.proto.pv.GetPvPr" +
       "edictionsResponse\"4\332A\017registration_id\202\323\344" +
-      "\223\002\034\022\032/3rd-api/v1/pv/predictionsB\253\001\n\026com." +
+      "\223\002\034\022\032/3rd-api/v2/pv/predictionsB\253\001\n\026com." +
       "fusion.ai.proto.pvB\016PvServiceProtoP\001Z\025fu" +
       "sion.ai.proto.pv;pv\242\002\004FAPP\252\002\022Fusion.Ai.P" +
       "roto.Pv\312\002\022Fusion\\Ai\\Proto\\Pv\342\002\036Fusion\\Ai" +

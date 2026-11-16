@@ -218,7 +218,7 @@ func RegisterSiteServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/CreateSite", runtime.WithHTTPPathPattern("/3rd-api/v1/site"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/CreateSite", runtime.WithHTTPPathPattern("/3rd-api/v2/site"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -238,7 +238,7 @@ func RegisterSiteServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/UpdateSite", runtime.WithHTTPPathPattern("/3rd-api/v1/site"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/UpdateSite", runtime.WithHTTPPathPattern("/3rd-api/v2/site"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -258,7 +258,7 @@ func RegisterSiteServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/DeleteSite", runtime.WithHTTPPathPattern("/3rd-api/v1/site/{registration_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/DeleteSite", runtime.WithHTTPPathPattern("/3rd-api/v2/site/{registration_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -278,7 +278,7 @@ func RegisterSiteServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/GetSite", runtime.WithHTTPPathPattern("/3rd-api/v1/site/{site_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/GetSite", runtime.WithHTTPPathPattern("/3rd-api/v2/site/{site_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -298,7 +298,7 @@ func RegisterSiteServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/GetSiteByReg", runtime.WithHTTPPathPattern("/3rd-api/v1/site/reg/{registration_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/GetSiteByReg", runtime.WithHTTPPathPattern("/3rd-api/v2/site/reg/{registration_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -356,7 +356,7 @@ func RegisterSiteServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/CreateSite", runtime.WithHTTPPathPattern("/3rd-api/v1/site"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/CreateSite", runtime.WithHTTPPathPattern("/3rd-api/v2/site"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -373,7 +373,7 @@ func RegisterSiteServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/UpdateSite", runtime.WithHTTPPathPattern("/3rd-api/v1/site"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/UpdateSite", runtime.WithHTTPPathPattern("/3rd-api/v2/site"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -390,7 +390,7 @@ func RegisterSiteServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/DeleteSite", runtime.WithHTTPPathPattern("/3rd-api/v1/site/{registration_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/DeleteSite", runtime.WithHTTPPathPattern("/3rd-api/v2/site/{registration_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -407,7 +407,7 @@ func RegisterSiteServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/GetSite", runtime.WithHTTPPathPattern("/3rd-api/v1/site/{site_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/GetSite", runtime.WithHTTPPathPattern("/3rd-api/v2/site/{site_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -424,7 +424,7 @@ func RegisterSiteServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/GetSiteByReg", runtime.WithHTTPPathPattern("/3rd-api/v1/site/reg/{registration_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.site.SiteService/GetSiteByReg", runtime.WithHTTPPathPattern("/3rd-api/v2/site/reg/{registration_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -441,11 +441,11 @@ func RegisterSiteServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 }
 
 var (
-	pattern_SiteService_CreateSite_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"3rd-api", "v1", "site"}, ""))
-	pattern_SiteService_UpdateSite_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"3rd-api", "v1", "site"}, ""))
-	pattern_SiteService_DeleteSite_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"3rd-api", "v1", "site", "registration_id"}, ""))
-	pattern_SiteService_GetSite_0      = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"3rd-api", "v1", "site", "site_id"}, ""))
-	pattern_SiteService_GetSiteByReg_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"3rd-api", "v1", "site", "reg", "registration_id"}, ""))
+	pattern_SiteService_CreateSite_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"3rd-api", "v2", "site"}, ""))
+	pattern_SiteService_UpdateSite_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"3rd-api", "v2", "site"}, ""))
+	pattern_SiteService_DeleteSite_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"3rd-api", "v2", "site", "registration_id"}, ""))
+	pattern_SiteService_GetSite_0      = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"3rd-api", "v2", "site", "site_id"}, ""))
+	pattern_SiteService_GetSiteByReg_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"3rd-api", "v2", "site", "reg", "registration_id"}, ""))
 )
 
 var (

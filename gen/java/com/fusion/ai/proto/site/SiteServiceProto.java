@@ -42,21 +42,21 @@ public final class SiteServiceProto extends com.google.protobuf.GeneratedFile {
       "\013SiteService\022\200\001\n\nCreateSite\022\'.fusion.ai." +
       "proto.site.CreateSiteRequest\032(.fusion.ai" +
       ".proto.site.CreateSiteResponse\"\037\332A\001*\202\323\344\223" +
-      "\002\025\"\020/3rd-api/v1/site:\001*\022\200\001\n\nUpdateSite\022\'" +
+      "\002\025\"\020/3rd-api/v2/site:\001*\022\200\001\n\nUpdateSite\022\'" +
       ".fusion.ai.proto.site.UpdateSiteRequest\032" +
       "(.fusion.ai.proto.site.UpdateSiteRespons" +
-      "e\"\037\332A\001*\202\323\344\223\002\025\032\020/3rd-api/v1/site:\001*\022\235\001\n\nD" +
+      "e\"\037\332A\001*\202\323\344\223\002\025\032\020/3rd-api/v2/site:\001*\022\235\001\n\nD" +
       "eleteSite\022\'.fusion.ai.proto.site.DeleteS" +
       "iteRequest\032(.fusion.ai.proto.site.Delete" +
       "SiteResponse\"<\332A\017registration_id\202\323\344\223\002$*\"" +
-      "/3rd-api/v1/site/{registration_id}\022\204\001\n\007G" +
+      "/3rd-api/v2/site/{registration_id}\022\204\001\n\007G" +
       "etSite\022$.fusion.ai.proto.site.GetSiteReq" +
       "uest\032%.fusion.ai.proto.site.GetSiteRespo" +
-      "nse\",\332A\007site_id\202\323\344\223\002\034\022\032/3rd-api/v1/site/" +
+      "nse\",\332A\007site_id\202\323\344\223\002\034\022\032/3rd-api/v2/site/" +
       "{site_id}\022\247\001\n\014GetSiteByReg\022).fusion.ai.p" +
       "roto.site.GetSiteByRegRequest\032*.fusion.a" +
       "i.proto.site.GetSiteByRegResponse\"@\332A\017re" +
-      "gistration_id\202\323\344\223\002(\022&/3rd-api/v1/site/re" +
+      "gistration_id\202\323\344\223\002(\022&/3rd-api/v2/site/re" +
       "g/{registration_id}B\273\001\n\030com.fusion.ai.pr" +
       "oto.siteB\020SiteServiceProtoP\001Z\031fusion.ai." +
       "proto.site;site\242\002\004FAPS\252\002\024Fusion.Ai.Proto" +

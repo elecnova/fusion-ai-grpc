@@ -40,7 +40,7 @@ const file_pv_pv_service_proto_rawDesc = "" +
 	"\fUploadPvData\x12'.fusion.ai.proto.pv.UploadPvDataRequest\x1a\x16.google.protobuf.Empty\"\x1d\xdaA\x01*\x82\xd3\xe4\x93\x02\x13:\x01*\"\x0e/3rd-api/v2/pv\x12o\n" +
 	"\n" +
 	"PullPvData\x12%.fusion.ai.proto.pv.PullPvDataRequest\x1a\x16.google.protobuf.Empty\"\"\xdaA\x01*\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/3rd-api/v2/pv/pull\x12\xa3\x01\n" +
-	"\x10GetPvPredictions\x12+.fusion.ai.proto.pv.GetPvPredictionsRequest\x1a,.fusion.ai.proto.pv.GetPvPredictionsResponse\"4\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02\x1c\x12\x1a/3rd-api/v1/pv/predictionsB\xab\x01\n" +
+	"\x10GetPvPredictions\x12+.fusion.ai.proto.pv.GetPvPredictionsRequest\x1a,.fusion.ai.proto.pv.GetPvPredictionsResponse\"4\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02\x1c\x12\x1a/3rd-api/v2/pv/predictionsB\xab\x01\n" +
 	"\x16com.fusion.ai.proto.pvB\x0ePvServiceProtoP\x01Z\x15fusion.ai.proto.pv;pv\xa2\x02\x04FAPP\xaa\x02\x12Fusion.Ai.Proto.Pv\xca\x02\x12Fusion\\Ai\\Proto\\Pv\xe2\x02\x1eFusion\\Ai\\Proto\\Pv\\GPBMetadata\xea\x02\x15Fusion::Ai::Proto::Pvb\x06proto3"
 
 var file_pv_pv_service_proto_goTypes = []any{
