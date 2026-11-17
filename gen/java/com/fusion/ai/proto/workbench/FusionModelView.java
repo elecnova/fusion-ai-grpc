@@ -32,6 +32,7 @@ private static final long serialVersionUID = 0L;
     modelKey_ = "";
     version_ = "";
     status_ = 0;
+    lastTrainedAt_ = "";
     artifactUri_ = "";
   }
 
@@ -197,31 +198,66 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.fusion.ai.proto.workbench.ModelReadyStatus.UNRECOGNIZED : result;
   }
 
-  public static final int LAST_TRAINED_AT_MS_FIELD_NUMBER = 5;
-  private long lastTrainedAtMs_ = 0L;
+  public static final int LAST_TRAINED_AT_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastTrainedAt_ = "";
   /**
    * <pre>
-   * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
-   * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
-   * @return Whether the lastTrainedAtMs field is set.
+   * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+   * @return Whether the lastTrainedAt field is set.
    */
   @java.lang.Override
-  public boolean hasLastTrainedAtMs() {
+  public boolean hasLastTrainedAt() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
-   * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
-   * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
-   * @return The lastTrainedAtMs.
+   * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+   * @return The lastTrainedAt.
    */
   @java.lang.Override
-  public long getLastTrainedAtMs() {
-    return lastTrainedAtMs_;
+  public java.lang.String getLastTrainedAt() {
+    java.lang.Object ref = lastTrainedAt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      lastTrainedAt_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
+   * </pre>
+   *
+   * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+   * @return The bytes for lastTrainedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLastTrainedAtBytes() {
+    java.lang.Object ref = lastTrainedAt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      lastTrainedAt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ARTIFACT_URI_FIELD_NUMBER = 6;
@@ -298,7 +334,7 @@ private static final long serialVersionUID = 0L;
       output.writeEnum(4, status_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeInt64(5, lastTrainedAtMs_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, lastTrainedAt_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, artifactUri_);
@@ -321,8 +357,7 @@ private static final long serialVersionUID = 0L;
         .computeEnumSize(4, status_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, lastTrainedAtMs_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, lastTrainedAt_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, artifactUri_);
@@ -358,10 +393,10 @@ private static final long serialVersionUID = 0L;
     if (!getVersion()
         .equals(other.getVersion())) return false;
     if (status_ != other.status_) return false;
-    if (hasLastTrainedAtMs() != other.hasLastTrainedAtMs()) return false;
-    if (hasLastTrainedAtMs()) {
-      if (getLastTrainedAtMs()
-          != other.getLastTrainedAtMs()) return false;
+    if (hasLastTrainedAt() != other.hasLastTrainedAt()) return false;
+    if (hasLastTrainedAt()) {
+      if (!getLastTrainedAt()
+          .equals(other.getLastTrainedAt())) return false;
     }
     if (hasArtifactUri() != other.hasArtifactUri()) return false;
     if (hasArtifactUri()) {
@@ -387,10 +422,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getVersion().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
-    if (hasLastTrainedAtMs()) {
-      hash = (37 * hash) + LAST_TRAINED_AT_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLastTrainedAtMs());
+    if (hasLastTrainedAt()) {
+      hash = (37 * hash) + LAST_TRAINED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getLastTrainedAt().hashCode();
     }
     if (hasArtifactUri()) {
       hash = (37 * hash) + ARTIFACT_URI_FIELD_NUMBER;
@@ -531,7 +565,7 @@ private static final long serialVersionUID = 0L;
       modelKey_ = "";
       version_ = "";
       status_ = 0;
-      lastTrainedAtMs_ = 0L;
+      lastTrainedAt_ = "";
       artifactUri_ = "";
       return this;
     }
@@ -580,7 +614,7 @@ private static final long serialVersionUID = 0L;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.lastTrainedAtMs_ = lastTrainedAtMs_;
+        result.lastTrainedAt_ = lastTrainedAt_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
@@ -620,8 +654,10 @@ private static final long serialVersionUID = 0L;
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
-      if (other.hasLastTrainedAtMs()) {
-        setLastTrainedAtMs(other.getLastTrainedAtMs());
+      if (other.hasLastTrainedAt()) {
+        lastTrainedAt_ = other.lastTrainedAt_;
+        bitField0_ |= 0x00000010;
+        onChanged();
       }
       if (other.hasArtifactUri()) {
         artifactUri_ = other.artifactUri_;
@@ -672,11 +708,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 32
-            case 40: {
-              lastTrainedAtMs_ = input.readInt64();
+            case 42: {
+              lastTrainedAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
-            } // case 40
+            } // case 42
             case 50: {
               artifactUri_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
@@ -987,58 +1023,111 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long lastTrainedAtMs_ ;
+    private java.lang.Object lastTrainedAt_ = "";
     /**
      * <pre>
-     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
-     * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
-     * @return Whether the lastTrainedAtMs field is set.
+     * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * @return Whether the lastTrainedAt field is set.
      */
-    @java.lang.Override
-    public boolean hasLastTrainedAtMs() {
+    public boolean hasLastTrainedAt() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
-     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
-     * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
-     * @return The lastTrainedAtMs.
+     * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * @return The lastTrainedAt.
      */
-    @java.lang.Override
-    public long getLastTrainedAtMs() {
-      return lastTrainedAtMs_;
+    public java.lang.String getLastTrainedAt() {
+      java.lang.Object ref = lastTrainedAt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastTrainedAt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
-     * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
-     * @param value The lastTrainedAtMs to set.
+     * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * @return The bytes for lastTrainedAt.
+     */
+    public com.google.protobuf.ByteString
+        getLastTrainedAtBytes() {
+      java.lang.Object ref = lastTrainedAt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastTrainedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
+     * </pre>
+     *
+     * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * @param value The lastTrainedAt to set.
      * @return This builder for chaining.
      */
-    public Builder setLastTrainedAtMs(long value) {
-
-      lastTrainedAtMs_ = value;
+    public Builder setLastTrainedAt(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      lastTrainedAt_ = value;
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
-     * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+     * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearLastTrainedAtMs() {
+    public Builder clearLastTrainedAt() {
+      lastTrainedAt_ = getDefaultInstance().getLastTrainedAt();
       bitField0_ = (bitField0_ & ~0x00000010);
-      lastTrainedAtMs_ = 0L;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
+     * </pre>
+     *
+     * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * @param value The bytes for lastTrainedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLastTrainedAtBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      lastTrainedAt_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

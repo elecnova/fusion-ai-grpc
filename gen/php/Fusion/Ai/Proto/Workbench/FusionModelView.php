@@ -33,11 +33,12 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      *
-     * Generated from protobuf field <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+     * Generated from protobuf field <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
      */
-    protected $last_trained_at_ms = null;
+    protected $last_trained_at = null;
     /**
      * Generated from protobuf field <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      */
@@ -54,8 +55,9 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
      *           固定产物名，如 fusion-ai
      *     @type string $version
      *     @type int $status
-     *     @type int|string $last_trained_at_ms
-     *           上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     *     @type string $last_trained_at
+     *           上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     *           例：2026-11-17T16:12:00+08:00
      *     @type string $artifact_uri
      * }
      */
@@ -158,37 +160,39 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      *
-     * Generated from protobuf field <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
-     * @return int|string
+     * Generated from protobuf field <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * @return string
      */
-    public function getLastTrainedAtMs()
+    public function getLastTrainedAt()
     {
-        return isset($this->last_trained_at_ms) ? $this->last_trained_at_ms : GPBUtil::compatibleInt64(0, '0');
+        return isset($this->last_trained_at) ? $this->last_trained_at : '';
     }
 
-    public function hasLastTrainedAtMs()
+    public function hasLastTrainedAt()
     {
-        return isset($this->last_trained_at_ms);
+        return isset($this->last_trained_at);
     }
 
-    public function clearLastTrainedAtMs()
+    public function clearLastTrainedAt()
     {
-        unset($this->last_trained_at_ms);
+        unset($this->last_trained_at);
     }
 
     /**
-     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      *
-     * Generated from protobuf field <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setLastTrainedAtMs(int|string $var)
+    public function setLastTrainedAt(string $var)
     {
-        GPBUtil::checkInt64($var);
-        $this->last_trained_at_ms = $var;
+        GPBUtil::checkString($var, true);
+        $this->last_trained_at = $var;
 
         return $this;
     }

@@ -572,11 +572,12 @@ type FusionModelView struct {
 	ModelKey string           `protobuf:"bytes,2,opt,name=model_key,proto3" json:"model_key,omitempty"`
 	Version  string           `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
 	Status   ModelReadyStatus `protobuf:"varint,4,opt,name=status,proto3,enum=fusion.ai.proto.workbench.ModelReadyStatus" json:"status,omitempty"`
-	// 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
-	LastTrainedAtMs *int64  `protobuf:"varint,5,opt,name=last_trained_at_ms,proto3,oneof" json:"last_trained_at_ms,omitempty"`
-	ArtifactUri     *string `protobuf:"bytes,6,opt,name=artifact_uri,proto3,oneof" json:"artifact_uri,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	// 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+	// 例：2026-11-17T16:12:00+08:00
+	LastTrainedAt *string `protobuf:"bytes,5,opt,name=last_trained_at,proto3,oneof" json:"last_trained_at,omitempty"`
+	ArtifactUri   *string `protobuf:"bytes,6,opt,name=artifact_uri,proto3,oneof" json:"artifact_uri,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *FusionModelView) Reset() {
@@ -637,11 +638,11 @@ func (x *FusionModelView) GetStatus() ModelReadyStatus {
 	return ModelReadyStatus_MODEL_READY_STATUS_UNSPECIFIED
 }
 
-func (x *FusionModelView) GetLastTrainedAtMs() int64 {
-	if x != nil && x.LastTrainedAtMs != nil {
-		return *x.LastTrainedAtMs
+func (x *FusionModelView) GetLastTrainedAt() string {
+	if x != nil && x.LastTrainedAt != nil {
+		return *x.LastTrainedAt
 	}
-	return 0
+	return ""
 }
 
 func (x *FusionModelView) GetArtifactUri() string {
@@ -669,10 +670,11 @@ type PredictJobView struct {
 	HorizonHours   int32             `protobuf:"varint,10,opt,name=horizon_hours,proto3" json:"horizon_hours,omitempty"`
 	ModelId        string            `protobuf:"bytes,11,opt,name=model_id,proto3" json:"model_id,omitempty"`
 	Message        string            `protobuf:"bytes,12,opt,name=message,proto3" json:"message,omitempty"`
-	// 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
-	StartedAtMs   *int64 `protobuf:"varint,13,opt,name=started_at_ms,proto3,oneof" json:"started_at_ms,omitempty"`
-	FinishedAtMs  *int64 `protobuf:"varint,14,opt,name=finished_at_ms,proto3,oneof" json:"finished_at_ms,omitempty"`
-	UpdatedAtMs   *int64 `protobuf:"varint,15,opt,name=updated_at_ms,proto3,oneof" json:"updated_at_ms,omitempty"`
+	// 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+	// 例：2026-11-17T16:12:00+08:00
+	StartedAt     *string `protobuf:"bytes,13,opt,name=started_at,proto3,oneof" json:"started_at,omitempty"`
+	FinishedAt    *string `protobuf:"bytes,14,opt,name=finished_at,proto3,oneof" json:"finished_at,omitempty"`
+	UpdatedAt     *string `protobuf:"bytes,15,opt,name=updated_at,proto3,oneof" json:"updated_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -791,25 +793,25 @@ func (x *PredictJobView) GetMessage() string {
 	return ""
 }
 
-func (x *PredictJobView) GetStartedAtMs() int64 {
-	if x != nil && x.StartedAtMs != nil {
-		return *x.StartedAtMs
+func (x *PredictJobView) GetStartedAt() string {
+	if x != nil && x.StartedAt != nil {
+		return *x.StartedAt
 	}
-	return 0
+	return ""
 }
 
-func (x *PredictJobView) GetFinishedAtMs() int64 {
-	if x != nil && x.FinishedAtMs != nil {
-		return *x.FinishedAtMs
+func (x *PredictJobView) GetFinishedAt() string {
+	if x != nil && x.FinishedAt != nil {
+		return *x.FinishedAt
 	}
-	return 0
+	return ""
 }
 
-func (x *PredictJobView) GetUpdatedAtMs() int64 {
-	if x != nil && x.UpdatedAtMs != nil {
-		return *x.UpdatedAtMs
+func (x *PredictJobView) GetUpdatedAt() string {
+	if x != nil && x.UpdatedAt != nil {
+		return *x.UpdatedAt
 	}
-	return 0
+	return ""
 }
 
 type SeriesPoint struct {
@@ -2077,16 +2079,16 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"checked_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"checked_atB\n" +
 	"\n" +
-	"\b_weather\"\xbe\x02\n" +
+	"\b_weather\"\xb5\x02\n" +
 	"\x0fFusionModelView\x12(\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x12\x1c\n" +
 	"\tmodel_key\x18\x02 \x01(\tR\tmodel_key\x12\x18\n" +
 	"\aversion\x18\x03 \x01(\tR\aversion\x12C\n" +
-	"\x06status\x18\x04 \x01(\x0e2+.fusion.ai.proto.workbench.ModelReadyStatusR\x06status\x123\n" +
-	"\x12last_trained_at_ms\x18\x05 \x01(\x03H\x00R\x12last_trained_at_ms\x88\x01\x01\x12'\n" +
-	"\fartifact_uri\x18\x06 \x01(\tH\x01R\fartifact_uri\x88\x01\x01B\x15\n" +
-	"\x13_last_trained_at_msB\x0f\n" +
-	"\r_artifact_uri\"\xd2\x05\n" +
+	"\x06status\x18\x04 \x01(\x0e2+.fusion.ai.proto.workbench.ModelReadyStatusR\x06status\x12-\n" +
+	"\x0flast_trained_at\x18\x05 \x01(\tH\x00R\x0flast_trained_at\x88\x01\x01\x12'\n" +
+	"\fartifact_uri\x18\x06 \x01(\tH\x01R\fartifact_uri\x88\x01\x01B\x12\n" +
+	"\x10_last_trained_atB\x0f\n" +
+	"\r_artifact_uri\"\xb7\x05\n" +
 	"\x0ePredictJobView\x12\x16\n" +
 	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x12(\n" +
 	"\x0fregistration_id\x18\x02 \x01(\tR\x0fregistration_id\x12<\n" +
@@ -2102,16 +2104,20 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"\rhorizon_hours\x18\n" +
 	" \x01(\x05R\rhorizon_hours\x12\x1a\n" +
 	"\bmodel_id\x18\v \x01(\tR\bmodel_id\x12\x18\n" +
-	"\amessage\x18\f \x01(\tR\amessage\x12)\n" +
-	"\rstarted_at_ms\x18\r \x01(\x03H\x00R\rstarted_at_ms\x88\x01\x01\x12+\n" +
-	"\x0efinished_at_ms\x18\x0e \x01(\x03H\x01R\x0efinished_at_ms\x88\x01\x01\x12)\n" +
-	"\rupdated_at_ms\x18\x0f \x01(\x03H\x02R\rupdated_at_ms\x88\x01\x01\x1a9\n" +
+	"\amessage\x18\f \x01(\tR\amessage\x12#\n" +
+	"\n" +
+	"started_at\x18\r \x01(\tH\x00R\n" +
+	"started_at\x88\x01\x01\x12%\n" +
+	"\vfinished_at\x18\x0e \x01(\tH\x01R\vfinished_at\x88\x01\x01\x12#\n" +
+	"\n" +
+	"updated_at\x18\x0f \x01(\tH\x02R\n" +
+	"updated_at\x88\x01\x01\x1a9\n" +
 	"\vStagesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x10\n" +
-	"\x0e_started_at_msB\x11\n" +
-	"\x0f_finished_at_msB\x10\n" +
-	"\x0e_updated_at_ms\"\x8e\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\r\n" +
+	"\v_started_atB\x0e\n" +
+	"\f_finished_atB\r\n" +
+	"\v_updated_at\"\x8e\x01\n" +
 	"\vSeriesPoint\x12\x14\n" +
 	"\x05ts_ms\x18\x01 \x01(\x03R\x05ts_ms\x12'\n" +
 	"\fpredicted_kw\x18\x02 \x01(\x01H\x00R\fpredicted_kw\x88\x01\x01\x12!\n" +

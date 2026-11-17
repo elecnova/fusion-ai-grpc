@@ -40,6 +40,9 @@ private static final long serialVersionUID = 0L;
     evalDate_ = "";
     modelId_ = "";
     message_ = "";
+    startedAt_ = "";
+    finishedAt_ = "";
+    updatedAt_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -460,69 +463,160 @@ java.lang.String defaultValue) {
     }
   }
 
-  public static final int STARTED_AT_MS_FIELD_NUMBER = 13;
-  private long startedAtMs_ = 0L;
+  public static final int STARTED_AT_FIELD_NUMBER = 13;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startedAt_ = "";
   /**
    * <pre>
-   * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
-   * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
-   * @return Whether the startedAtMs field is set.
+   * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+   * @return Whether the startedAt field is set.
    */
   @java.lang.Override
-  public boolean hasStartedAtMs() {
+  public boolean hasStartedAt() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
-   * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
-   * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
-   * @return The startedAtMs.
+   * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+   * @return The startedAt.
    */
   @java.lang.Override
-  public long getStartedAtMs() {
-    return startedAtMs_;
+  public java.lang.String getStartedAt() {
+    java.lang.Object ref = startedAt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      startedAt_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
+   * </pre>
+   *
+   * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+   * @return The bytes for startedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStartedAtBytes() {
+    java.lang.Object ref = startedAt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      startedAt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int FINISHED_AT_MS_FIELD_NUMBER = 14;
-  private long finishedAtMs_ = 0L;
+  public static final int FINISHED_AT_FIELD_NUMBER = 14;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object finishedAt_ = "";
   /**
-   * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
-   * @return Whether the finishedAtMs field is set.
+   * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+   * @return Whether the finishedAt field is set.
    */
   @java.lang.Override
-  public boolean hasFinishedAtMs() {
+  public boolean hasFinishedAt() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
-   * @return The finishedAtMs.
+   * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+   * @return The finishedAt.
    */
   @java.lang.Override
-  public long getFinishedAtMs() {
-    return finishedAtMs_;
+  public java.lang.String getFinishedAt() {
+    java.lang.Object ref = finishedAt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      finishedAt_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+   * @return The bytes for finishedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFinishedAtBytes() {
+    java.lang.Object ref = finishedAt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      finishedAt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int UPDATED_AT_MS_FIELD_NUMBER = 15;
-  private long updatedAtMs_ = 0L;
+  public static final int UPDATED_AT_FIELD_NUMBER = 15;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updatedAt_ = "";
   /**
-   * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
-   * @return Whether the updatedAtMs field is set.
+   * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+   * @return Whether the updatedAt field is set.
    */
   @java.lang.Override
-  public boolean hasUpdatedAtMs() {
+  public boolean hasUpdatedAt() {
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
-   * @return The updatedAtMs.
+   * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+   * @return The updatedAt.
    */
   @java.lang.Override
-  public long getUpdatedAtMs() {
-    return updatedAtMs_;
+  public java.lang.String getUpdatedAt() {
+    java.lang.Object ref = updatedAt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      updatedAt_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+   * @return The bytes for updatedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUpdatedAtBytes() {
+    java.lang.Object ref = updatedAt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      updatedAt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -579,13 +673,13 @@ java.lang.String defaultValue) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, message_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeInt64(13, startedAtMs_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, startedAt_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeInt64(14, finishedAtMs_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, finishedAt_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeInt64(15, updatedAtMs_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, updatedAt_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -640,16 +734,13 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(12, message_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(13, startedAtMs_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(13, startedAt_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(14, finishedAtMs_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(14, finishedAt_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(15, updatedAtMs_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, updatedAt_);
     }
     return size;
   }
@@ -698,20 +789,20 @@ java.lang.String defaultValue) {
         .equals(other.getModelId())) return false;
     if (!getMessage()
         .equals(other.getMessage())) return false;
-    if (hasStartedAtMs() != other.hasStartedAtMs()) return false;
-    if (hasStartedAtMs()) {
-      if (getStartedAtMs()
-          != other.getStartedAtMs()) return false;
+    if (hasStartedAt() != other.hasStartedAt()) return false;
+    if (hasStartedAt()) {
+      if (!getStartedAt()
+          .equals(other.getStartedAt())) return false;
     }
-    if (hasFinishedAtMs() != other.hasFinishedAtMs()) return false;
-    if (hasFinishedAtMs()) {
-      if (getFinishedAtMs()
-          != other.getFinishedAtMs()) return false;
+    if (hasFinishedAt() != other.hasFinishedAt()) return false;
+    if (hasFinishedAt()) {
+      if (!getFinishedAt()
+          .equals(other.getFinishedAt())) return false;
     }
-    if (hasUpdatedAtMs() != other.hasUpdatedAtMs()) return false;
-    if (hasUpdatedAtMs()) {
-      if (getUpdatedAtMs()
-          != other.getUpdatedAtMs()) return false;
+    if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+    if (hasUpdatedAt()) {
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -750,20 +841,17 @@ java.lang.String defaultValue) {
     hash = (53 * hash) + getModelId().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
-    if (hasStartedAtMs()) {
-      hash = (37 * hash) + STARTED_AT_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getStartedAtMs());
+    if (hasStartedAt()) {
+      hash = (37 * hash) + STARTED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getStartedAt().hashCode();
     }
-    if (hasFinishedAtMs()) {
-      hash = (37 * hash) + FINISHED_AT_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getFinishedAtMs());
+    if (hasFinishedAt()) {
+      hash = (37 * hash) + FINISHED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getFinishedAt().hashCode();
     }
-    if (hasUpdatedAtMs()) {
-      hash = (37 * hash) + UPDATED_AT_MS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUpdatedAtMs());
+    if (hasUpdatedAt()) {
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -935,9 +1023,9 @@ java.lang.String defaultValue) {
       horizonHours_ = 0;
       modelId_ = "";
       message_ = "";
-      startedAtMs_ = 0L;
-      finishedAtMs_ = 0L;
-      updatedAtMs_ = 0L;
+      startedAt_ = "";
+      finishedAt_ = "";
+      updatedAt_ = "";
       return this;
     }
 
@@ -1010,15 +1098,15 @@ java.lang.String defaultValue) {
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.startedAtMs_ = startedAtMs_;
+        result.startedAt_ = startedAt_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.finishedAtMs_ = finishedAtMs_;
+        result.finishedAt_ = finishedAt_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.updatedAtMs_ = updatedAtMs_;
+        result.updatedAt_ = updatedAt_;
         to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1084,14 +1172,20 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000800;
         onChanged();
       }
-      if (other.hasStartedAtMs()) {
-        setStartedAtMs(other.getStartedAtMs());
+      if (other.hasStartedAt()) {
+        startedAt_ = other.startedAt_;
+        bitField0_ |= 0x00001000;
+        onChanged();
       }
-      if (other.hasFinishedAtMs()) {
-        setFinishedAtMs(other.getFinishedAtMs());
+      if (other.hasFinishedAt()) {
+        finishedAt_ = other.finishedAt_;
+        bitField0_ |= 0x00002000;
+        onChanged();
       }
-      if (other.hasUpdatedAtMs()) {
-        setUpdatedAtMs(other.getUpdatedAtMs());
+      if (other.hasUpdatedAt()) {
+        updatedAt_ = other.updatedAt_;
+        bitField0_ |= 0x00004000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1181,21 +1275,21 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000800;
               break;
             } // case 98
-            case 104: {
-              startedAtMs_ = input.readInt64();
+            case 106: {
+              startedAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00001000;
               break;
-            } // case 104
-            case 112: {
-              finishedAtMs_ = input.readInt64();
+            } // case 106
+            case 114: {
+              finishedAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00002000;
               break;
-            } // case 112
-            case 120: {
-              updatedAtMs_ = input.readInt64();
+            } // case 114
+            case 122: {
+              updatedAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00004000;
               break;
-            } // case 120
+            } // case 122
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1984,138 +2078,269 @@ java.lang.String defaultValue) {
       return this;
     }
 
-    private long startedAtMs_ ;
+    private java.lang.Object startedAt_ = "";
     /**
      * <pre>
-     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
-     * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
-     * @return Whether the startedAtMs field is set.
+     * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+     * @return Whether the startedAt field is set.
      */
-    @java.lang.Override
-    public boolean hasStartedAtMs() {
+    public boolean hasStartedAt() {
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <pre>
-     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
-     * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
-     * @return The startedAtMs.
+     * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+     * @return The startedAt.
      */
-    @java.lang.Override
-    public long getStartedAtMs() {
-      return startedAtMs_;
+    public java.lang.String getStartedAt() {
+      java.lang.Object ref = startedAt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startedAt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
-     * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
-     * @param value The startedAtMs to set.
+     * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+     * @return The bytes for startedAt.
+     */
+    public com.google.protobuf.ByteString
+        getStartedAtBytes() {
+      java.lang.Object ref = startedAt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
+     * </pre>
+     *
+     * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+     * @param value The startedAt to set.
      * @return This builder for chaining.
      */
-    public Builder setStartedAtMs(long value) {
-
-      startedAtMs_ = value;
+    public Builder setStartedAt(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      startedAt_ = value;
       bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
-     * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+     * <code>optional string started_at = 13 [json_name = "started_at"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearStartedAtMs() {
+    public Builder clearStartedAt() {
+      startedAt_ = getDefaultInstance().getStartedAt();
       bitField0_ = (bitField0_ & ~0x00001000);
-      startedAtMs_ = 0L;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
+     * </pre>
+     *
+     * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+     * @param value The bytes for startedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartedAtBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      startedAt_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
 
-    private long finishedAtMs_ ;
+    private java.lang.Object finishedAt_ = "";
     /**
-     * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
-     * @return Whether the finishedAtMs field is set.
+     * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+     * @return Whether the finishedAt field is set.
      */
-    @java.lang.Override
-    public boolean hasFinishedAtMs() {
+    public boolean hasFinishedAt() {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
-     * @return The finishedAtMs.
+     * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+     * @return The finishedAt.
      */
-    @java.lang.Override
-    public long getFinishedAtMs() {
-      return finishedAtMs_;
+    public java.lang.String getFinishedAt() {
+      java.lang.Object ref = finishedAt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        finishedAt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
-     * @param value The finishedAtMs to set.
+     * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+     * @return The bytes for finishedAt.
+     */
+    public com.google.protobuf.ByteString
+        getFinishedAtBytes() {
+      java.lang.Object ref = finishedAt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        finishedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+     * @param value The finishedAt to set.
      * @return This builder for chaining.
      */
-    public Builder setFinishedAtMs(long value) {
-
-      finishedAtMs_ = value;
+    public Builder setFinishedAt(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      finishedAt_ = value;
       bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+     * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearFinishedAtMs() {
+    public Builder clearFinishedAt() {
+      finishedAt_ = getDefaultInstance().getFinishedAt();
       bitField0_ = (bitField0_ & ~0x00002000);
-      finishedAtMs_ = 0L;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+     * @param value The bytes for finishedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFinishedAtBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      finishedAt_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
 
-    private long updatedAtMs_ ;
+    private java.lang.Object updatedAt_ = "";
     /**
-     * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
-     * @return Whether the updatedAtMs field is set.
+     * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+     * @return Whether the updatedAt field is set.
      */
-    @java.lang.Override
-    public boolean hasUpdatedAtMs() {
+    public boolean hasUpdatedAt() {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
-     * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
-     * @return The updatedAtMs.
+     * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+     * @return The updatedAt.
      */
-    @java.lang.Override
-    public long getUpdatedAtMs() {
-      return updatedAtMs_;
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
-     * @param value The updatedAtMs to set.
+     * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+     * @return The bytes for updatedAt.
+     */
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+     * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
-    public Builder setUpdatedAtMs(long value) {
-
-      updatedAtMs_ = value;
+    public Builder setUpdatedAt(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      updatedAt_ = value;
       bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+     * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearUpdatedAtMs() {
+    public Builder clearUpdatedAt() {
+      updatedAt_ = getDefaultInstance().getUpdatedAt();
       bitField0_ = (bitField0_ & ~0x00004000);
-      updatedAtMs_ = 0L;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+     * @param value The bytes for updatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdatedAtBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      updatedAt_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

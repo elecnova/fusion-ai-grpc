@@ -2535,8 +2535,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::go
     kRegistrationIdFieldNumber = 1,
     kModelKeyFieldNumber = 2,
     kVersionFieldNumber = 3,
+    kLastTrainedAtFieldNumber = 5,
     kArtifactUriFieldNumber = 6,
-    kLastTrainedAtMsFieldNumber = 5,
     kStatusFieldNumber = 4,
   };
   // string registration_id = 1 [json_name = "registration_id"];
@@ -2584,6 +2584,22 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::go
   ::std::string* PROTOBUF_NONNULL _internal_mutable_version();
 
   public:
+  // optional string last_trained_at = 5 [json_name = "last_trained_at"];
+  [[nodiscard]] bool has_last_trained_at() const;
+  void clear_last_trained_at() ;
+  [[nodiscard]] const ::std::string& last_trained_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_last_trained_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_last_trained_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_last_trained_at();
+  void set_allocated_last_trained_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_last_trained_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_last_trained_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_last_trained_at();
+
+  public:
   // optional string artifact_uri = 6 [json_name = "artifact_uri"];
   [[nodiscard]] bool has_artifact_uri() const;
   void clear_artifact_uri() ;
@@ -2598,17 +2614,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::go
   const ::std::string& _internal_artifact_uri() const;
   PROTOBUF_ALWAYS_INLINE void _internal_set_artifact_uri(const ::std::string& value);
   ::std::string* PROTOBUF_NONNULL _internal_mutable_artifact_uri();
-
-  public:
-  // optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];
-  [[nodiscard]] bool has_last_trained_at_ms() const;
-  void clear_last_trained_at_ms() ;
-  [[nodiscard]] ::int64_t last_trained_at_ms() const;
-  void set_last_trained_at_ms(::int64_t value);
-
-  private:
-  ::int64_t _internal_last_trained_at_ms() const;
-  void _internal_set_last_trained_at_ms(::int64_t value);
 
   public:
   // .fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];
@@ -2626,7 +2631,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::go
   class _Internal;
   using ParseTableT_ =
       ::google::protobuf::internal::TcParseTable<3, 6,
-                          0, 93,
+                          0, 108,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -2657,8 +2662,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::go
     ::google::protobuf::internal::ArenaStringPtr registration_id_;
     ::google::protobuf::internal::ArenaStringPtr model_key_;
     ::google::protobuf::internal::ArenaStringPtr version_;
+    ::google::protobuf::internal::ArenaStringPtr last_trained_at_;
     ::google::protobuf::internal::ArenaStringPtr artifact_uri_;
-    ::int64_t last_trained_at_ms_;
     int status_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -4507,13 +4512,13 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
     kEvalDateFieldNumber = 7,
     kModelIdFieldNumber = 11,
     kMessageFieldNumber = 12,
+    kStartedAtFieldNumber = 13,
+    kFinishedAtFieldNumber = 14,
+    kUpdatedAtFieldNumber = 15,
     kStatusFieldNumber = 3,
     kProgressPctFieldNumber = 4,
     kDayOffsetFieldNumber = 8,
     kGranularityMinFieldNumber = 9,
-    kStartedAtMsFieldNumber = 13,
-    kFinishedAtMsFieldNumber = 14,
-    kUpdatedAtMsFieldNumber = 15,
     kHorizonHoursFieldNumber = 10,
     kStagesFieldNumber = 6,
   };
@@ -4607,6 +4612,54 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
   ::std::string* PROTOBUF_NONNULL _internal_mutable_message();
 
   public:
+  // optional string started_at = 13 [json_name = "started_at"];
+  [[nodiscard]] bool has_started_at() const;
+  void clear_started_at() ;
+  [[nodiscard]] const ::std::string& started_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_started_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_started_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_started_at();
+  void set_allocated_started_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_started_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_started_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_started_at();
+
+  public:
+  // optional string finished_at = 14 [json_name = "finished_at"];
+  [[nodiscard]] bool has_finished_at() const;
+  void clear_finished_at() ;
+  [[nodiscard]] const ::std::string& finished_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_finished_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_finished_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_finished_at();
+  void set_allocated_finished_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_finished_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_finished_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_finished_at();
+
+  public:
+  // optional string updated_at = 15 [json_name = "updated_at"];
+  [[nodiscard]] bool has_updated_at() const;
+  void clear_updated_at() ;
+  [[nodiscard]] const ::std::string& updated_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_updated_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_updated_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_updated_at();
+  void set_allocated_updated_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_updated_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_updated_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_updated_at();
+
+  public:
   // .fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];
   void clear_status() ;
   [[nodiscard]] ::fusion::ai::proto::workbench::JobStatus status() const;
@@ -4647,39 +4700,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
   void _internal_set_granularity_min(::int32_t value);
 
   public:
-  // optional int64 started_at_ms = 13 [json_name = "started_at_ms"];
-  [[nodiscard]] bool has_started_at_ms() const;
-  void clear_started_at_ms() ;
-  [[nodiscard]] ::int64_t started_at_ms() const;
-  void set_started_at_ms(::int64_t value);
-
-  private:
-  ::int64_t _internal_started_at_ms() const;
-  void _internal_set_started_at_ms(::int64_t value);
-
-  public:
-  // optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];
-  [[nodiscard]] bool has_finished_at_ms() const;
-  void clear_finished_at_ms() ;
-  [[nodiscard]] ::int64_t finished_at_ms() const;
-  void set_finished_at_ms(::int64_t value);
-
-  private:
-  ::int64_t _internal_finished_at_ms() const;
-  void _internal_set_finished_at_ms(::int64_t value);
-
-  public:
-  // optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];
-  [[nodiscard]] bool has_updated_at_ms() const;
-  void clear_updated_at_ms() ;
-  [[nodiscard]] ::int64_t updated_at_ms() const;
-  void set_updated_at_ms(::int64_t value);
-
-  private:
-  ::int64_t _internal_updated_at_ms() const;
-  void _internal_set_updated_at_ms(::int64_t value);
-
-  public:
   // int32 horizon_hours = 10 [json_name = "horizon_hours"];
   void clear_horizon_hours() ;
   [[nodiscard]] ::int32_t horizon_hours() const;
@@ -4710,7 +4730,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
   class _Internal;
   using ParseTableT_ =
       ::google::protobuf::internal::TcParseTable<4, 15,
-                          1, 113,
+                          1, 144,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -4744,13 +4764,13 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
     ::google::protobuf::internal::ArenaStringPtr eval_date_;
     ::google::protobuf::internal::ArenaStringPtr model_id_;
     ::google::protobuf::internal::ArenaStringPtr message_;
+    ::google::protobuf::internal::ArenaStringPtr started_at_;
+    ::google::protobuf::internal::ArenaStringPtr finished_at_;
+    ::google::protobuf::internal::ArenaStringPtr updated_at_;
     int status_;
     ::int32_t progress_pct_;
     ::int32_t day_offset_;
     ::int32_t granularity_min_;
-    ::int64_t started_at_ms_;
-    ::int64_t finished_at_ms_;
-    ::int64_t updated_at_ms_;
     ::int32_t horizon_hours_;
     ::google::protobuf::internal::MapField<PredictJobView_StagesEntry_DoNotUse, ::std::string, ::std::string> stages_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -8449,43 +8469,83 @@ inline void FusionModelView::_internal_set_status(::fusion::ai::proto::workbench
   _impl_.status_ = value;
 }
 
-// optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];
-inline bool FusionModelView::has_last_trained_at_ms() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
+// optional string last_trained_at = 5 [json_name = "last_trained_at"];
+inline bool FusionModelView::has_last_trained_at() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
   return value;
 }
-inline void FusionModelView::clear_last_trained_at_ms() {
+inline void FusionModelView::clear_last_trained_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.last_trained_at_ms_ = ::int64_t{0};
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  _impl_.last_trained_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
 }
-inline ::int64_t FusionModelView::last_trained_at_ms() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.FusionModelView.last_trained_at_ms)
-  return _internal_last_trained_at_ms();
+inline const ::std::string& FusionModelView::last_trained_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
+  return _internal_last_trained_at();
 }
-inline void FusionModelView::set_last_trained_at_ms(::int64_t value) {
-  _internal_set_last_trained_at_ms(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.FusionModelView.last_trained_at_ms)
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void FusionModelView::set_last_trained_at(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  _impl_.last_trained_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
 }
-inline ::int64_t FusionModelView::_internal_last_trained_at_ms() const {
+inline ::std::string* PROTOBUF_NONNULL FusionModelView::mutable_last_trained_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ::std::string* _s = _internal_mutable_last_trained_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
+  return _s;
+}
+inline const ::std::string& FusionModelView::_internal_last_trained_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.last_trained_at_ms_;
+  return _impl_.last_trained_at_.Get();
 }
-inline void FusionModelView::_internal_set_last_trained_at_ms(::int64_t value) {
+inline void FusionModelView::_internal_set_last_trained_at(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.last_trained_at_ms_ = value;
+  _impl_.last_trained_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL FusionModelView::_internal_mutable_last_trained_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.last_trained_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE FusionModelView::release_last_trained_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000008U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  auto* released = _impl_.last_trained_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.last_trained_at_.Set("", GetArena());
+  }
+  return released;
+}
+inline void FusionModelView::set_allocated_last_trained_at(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  }
+  _impl_.last_trained_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.last_trained_at_.IsDefault()) {
+    _impl_.last_trained_at_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
 }
 
 // optional string artifact_uri = 6 [json_name = "artifact_uri"];
 inline bool FusionModelView::has_artifact_uri() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
   return value;
 }
 inline void FusionModelView::clear_artifact_uri() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.artifact_uri_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
 }
 inline const ::std::string& FusionModelView::artifact_uri() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -8495,13 +8555,13 @@ inline const ::std::string& FusionModelView::artifact_uri() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void FusionModelView::set_artifact_uri(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
   _impl_.artifact_uri_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.FusionModelView.artifact_uri)
 }
 inline ::std::string* PROTOBUF_NONNULL FusionModelView::mutable_artifact_uri()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
   ::std::string* _s = _internal_mutable_artifact_uri();
   // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.FusionModelView.artifact_uri)
   return _s;
@@ -8521,10 +8581,10 @@ inline ::std::string* PROTOBUF_NONNULL FusionModelView::_internal_mutable_artifa
 inline ::std::string* PROTOBUF_NULLABLE FusionModelView::release_artifact_uri() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.FusionModelView.artifact_uri)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000008U)) {
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000010U)) {
     return nullptr;
   }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
   auto* released = _impl_.artifact_uri_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.artifact_uri_.Set("", GetArena());
@@ -8534,9 +8594,9 @@ inline ::std::string* PROTOBUF_NULLABLE FusionModelView::release_artifact_uri() 
 inline void FusionModelView::set_allocated_artifact_uri(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
   }
   _impl_.artifact_uri_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.artifact_uri_.IsDefault()) {
@@ -8683,7 +8743,7 @@ inline void PredictJobView::set_allocated_registration_id(::std::string* PROTOBU
 inline void PredictJobView::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
 }
 inline ::fusion::ai::proto::workbench::JobStatus PredictJobView::status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.status)
@@ -8691,7 +8751,7 @@ inline ::fusion::ai::proto::workbench::JobStatus PredictJobView::status() const 
 }
 inline void PredictJobView::set_status(::fusion::ai::proto::workbench::JobStatus value) {
   _internal_set_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000200U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.status)
 }
 inline ::fusion::ai::proto::workbench::JobStatus PredictJobView::_internal_status() const {
@@ -8707,7 +8767,7 @@ inline void PredictJobView::_internal_set_status(::fusion::ai::proto::workbench:
 inline void PredictJobView::clear_progress_pct() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.progress_pct_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000400U);
 }
 inline ::int32_t PredictJobView::progress_pct() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.progress_pct)
@@ -8715,7 +8775,7 @@ inline ::int32_t PredictJobView::progress_pct() const {
 }
 inline void PredictJobView::set_progress_pct(::int32_t value) {
   _internal_set_progress_pct(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000400U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.progress_pct)
 }
 inline ::int32_t PredictJobView::_internal_progress_pct() const {
@@ -8890,7 +8950,7 @@ inline void PredictJobView::set_allocated_eval_date(::std::string* PROTOBUF_NULL
 inline void PredictJobView::clear_day_offset() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.day_offset_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000800U);
 }
 inline ::int32_t PredictJobView::day_offset() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.day_offset)
@@ -8898,7 +8958,7 @@ inline ::int32_t PredictJobView::day_offset() const {
 }
 inline void PredictJobView::set_day_offset(::int32_t value) {
   _internal_set_day_offset(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000800U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.day_offset)
 }
 inline ::int32_t PredictJobView::_internal_day_offset() const {
@@ -8914,7 +8974,7 @@ inline void PredictJobView::_internal_set_day_offset(::int32_t value) {
 inline void PredictJobView::clear_granularity_min() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.granularity_min_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
 }
 inline ::int32_t PredictJobView::granularity_min() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.granularity_min)
@@ -8922,7 +8982,7 @@ inline ::int32_t PredictJobView::granularity_min() const {
 }
 inline void PredictJobView::set_granularity_min(::int32_t value) {
   _internal_set_granularity_min(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000200U);
+  SetHasBit(_impl_._has_bits_[0], 0x00001000U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.granularity_min)
 }
 inline ::int32_t PredictJobView::_internal_granularity_min() const {
@@ -9086,88 +9146,208 @@ inline void PredictJobView::set_allocated_message(::std::string* PROTOBUF_NULLAB
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.PredictJobView.message)
 }
 
-// optional int64 started_at_ms = 13 [json_name = "started_at_ms"];
-inline bool PredictJobView::has_started_at_ms() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000400U);
+// optional string started_at = 13 [json_name = "started_at"];
+inline bool PredictJobView::has_started_at() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000040U);
   return value;
 }
-inline void PredictJobView::clear_started_at_ms() {
+inline void PredictJobView::clear_started_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.started_at_ms_ = ::int64_t{0};
-  ClearHasBit(_impl_._has_bits_[0], 0x00000400U);
+  _impl_.started_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
 }
-inline ::int64_t PredictJobView::started_at_ms() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.started_at_ms)
-  return _internal_started_at_ms();
+inline const ::std::string& PredictJobView::started_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.started_at)
+  return _internal_started_at();
 }
-inline void PredictJobView::set_started_at_ms(::int64_t value) {
-  _internal_set_started_at_ms(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000400U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.started_at_ms)
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void PredictJobView::set_started_at(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  _impl_.started_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.started_at)
 }
-inline ::int64_t PredictJobView::_internal_started_at_ms() const {
+inline ::std::string* PROTOBUF_NONNULL PredictJobView::mutable_started_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ::std::string* _s = _internal_mutable_started_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.PredictJobView.started_at)
+  return _s;
+}
+inline const ::std::string& PredictJobView::_internal_started_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.started_at_ms_;
+  return _impl_.started_at_.Get();
 }
-inline void PredictJobView::_internal_set_started_at_ms(::int64_t value) {
+inline void PredictJobView::_internal_set_started_at(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.started_at_ms_ = value;
+  _impl_.started_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL PredictJobView::_internal_mutable_started_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.started_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE PredictJobView::release_started_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.PredictJobView.started_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000040U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  auto* released = _impl_.started_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.started_at_.Set("", GetArena());
+  }
+  return released;
+}
+inline void PredictJobView::set_allocated_started_at(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  }
+  _impl_.started_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.started_at_.IsDefault()) {
+    _impl_.started_at_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.PredictJobView.started_at)
 }
 
-// optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];
-inline bool PredictJobView::has_finished_at_ms() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000800U);
+// optional string finished_at = 14 [json_name = "finished_at"];
+inline bool PredictJobView::has_finished_at() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000080U);
   return value;
 }
-inline void PredictJobView::clear_finished_at_ms() {
+inline void PredictJobView::clear_finished_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.finished_at_ms_ = ::int64_t{0};
-  ClearHasBit(_impl_._has_bits_[0], 0x00000800U);
+  _impl_.finished_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
 }
-inline ::int64_t PredictJobView::finished_at_ms() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.finished_at_ms)
-  return _internal_finished_at_ms();
+inline const ::std::string& PredictJobView::finished_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.finished_at)
+  return _internal_finished_at();
 }
-inline void PredictJobView::set_finished_at_ms(::int64_t value) {
-  _internal_set_finished_at_ms(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000800U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.finished_at_ms)
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void PredictJobView::set_finished_at(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  _impl_.finished_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.finished_at)
 }
-inline ::int64_t PredictJobView::_internal_finished_at_ms() const {
+inline ::std::string* PROTOBUF_NONNULL PredictJobView::mutable_finished_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  ::std::string* _s = _internal_mutable_finished_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.PredictJobView.finished_at)
+  return _s;
+}
+inline const ::std::string& PredictJobView::_internal_finished_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.finished_at_ms_;
+  return _impl_.finished_at_.Get();
 }
-inline void PredictJobView::_internal_set_finished_at_ms(::int64_t value) {
+inline void PredictJobView::_internal_set_finished_at(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.finished_at_ms_ = value;
+  _impl_.finished_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL PredictJobView::_internal_mutable_finished_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.finished_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE PredictJobView::release_finished_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.PredictJobView.finished_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000080U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  auto* released = _impl_.finished_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.finished_at_.Set("", GetArena());
+  }
+  return released;
+}
+inline void PredictJobView::set_allocated_finished_at(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  }
+  _impl_.finished_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.finished_at_.IsDefault()) {
+    _impl_.finished_at_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.PredictJobView.finished_at)
 }
 
-// optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];
-inline bool PredictJobView::has_updated_at_ms() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00001000U);
+// optional string updated_at = 15 [json_name = "updated_at"];
+inline bool PredictJobView::has_updated_at() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000100U);
   return value;
 }
-inline void PredictJobView::clear_updated_at_ms() {
+inline void PredictJobView::clear_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.updated_at_ms_ = ::int64_t{0};
-  ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
+  _impl_.updated_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
 }
-inline ::int64_t PredictJobView::updated_at_ms() const {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.updated_at_ms)
-  return _internal_updated_at_ms();
+inline const ::std::string& PredictJobView::updated_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.updated_at)
+  return _internal_updated_at();
 }
-inline void PredictJobView::set_updated_at_ms(::int64_t value) {
-  _internal_set_updated_at_ms(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00001000U);
-  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.updated_at_ms)
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void PredictJobView::set_updated_at(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
+  _impl_.updated_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.updated_at)
 }
-inline ::int64_t PredictJobView::_internal_updated_at_ms() const {
+inline ::std::string* PROTOBUF_NONNULL PredictJobView::mutable_updated_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
+  ::std::string* _s = _internal_mutable_updated_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.PredictJobView.updated_at)
+  return _s;
+}
+inline const ::std::string& PredictJobView::_internal_updated_at() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.updated_at_ms_;
+  return _impl_.updated_at_.Get();
 }
-inline void PredictJobView::_internal_set_updated_at_ms(::int64_t value) {
+inline void PredictJobView::_internal_set_updated_at(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.updated_at_ms_ = value;
+  _impl_.updated_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL PredictJobView::_internal_mutable_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.updated_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE PredictJobView::release_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.PredictJobView.updated_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000100U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
+  auto* released = _impl_.updated_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.updated_at_.Set("", GetArena());
+  }
+  return released;
+}
+inline void PredictJobView::set_allocated_updated_at(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000100U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
+  }
+  _impl_.updated_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.updated_at_.IsDefault()) {
+    _impl_.updated_at_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.PredictJobView.updated_at)
 }
 
 // -------------------------------------------------------------------

@@ -67,22 +67,35 @@ public interface FusionModelViewOrBuilder extends
 
   /**
    * <pre>
-   * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
-   * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
-   * @return Whether the lastTrainedAtMs field is set.
+   * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+   * @return Whether the lastTrainedAt field is set.
    */
-  boolean hasLastTrainedAtMs();
+  boolean hasLastTrainedAt();
   /**
    * <pre>
-   * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
-   * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
-   * @return The lastTrainedAtMs.
+   * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+   * @return The lastTrainedAt.
    */
-  long getLastTrainedAtMs();
+  java.lang.String getLastTrainedAt();
+  /**
+   * <pre>
+   * 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
+   * </pre>
+   *
+   * <code>optional string last_trained_at = 5 [json_name = "last_trained_at"];</code>
+   * @return The bytes for lastTrainedAt.
+   */
+  com.google.protobuf.ByteString
+      getLastTrainedAtBytes();
 
   /**
    * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>

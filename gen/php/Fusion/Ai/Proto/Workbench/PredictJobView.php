@@ -70,19 +70,20 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
      */
     protected $message = '';
     /**
-     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      *
-     * Generated from protobuf field <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+     * Generated from protobuf field <code>optional string started_at = 13 [json_name = "started_at"];</code>
      */
-    protected $started_at_ms = null;
+    protected $started_at = null;
     /**
-     * Generated from protobuf field <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+     * Generated from protobuf field <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      */
-    protected $finished_at_ms = null;
+    protected $finished_at = null;
     /**
-     * Generated from protobuf field <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+     * Generated from protobuf field <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      */
-    protected $updated_at_ms = null;
+    protected $updated_at = null;
 
     /**
      * Constructor.
@@ -104,10 +105,11 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
      *     @type int $horizon_hours
      *     @type string $model_id
      *     @type string $message
-     *     @type int|string $started_at_ms
-     *           开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
-     *     @type int|string $finished_at_ms
-     *     @type int|string $updated_at_ms
+     *     @type string $started_at
+     *           开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     *           例：2026-11-17T16:12:00+08:00
+     *     @type string $finished_at
+     *     @type string $updated_at
      * }
      */
     public function __construct($data = null)
@@ -389,101 +391,103 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      *
-     * Generated from protobuf field <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
-     * @return int|string
+     * Generated from protobuf field <code>optional string started_at = 13 [json_name = "started_at"];</code>
+     * @return string
      */
-    public function getStartedAtMs()
+    public function getStartedAt()
     {
-        return isset($this->started_at_ms) ? $this->started_at_ms : GPBUtil::compatibleInt64(0, '0');
+        return isset($this->started_at) ? $this->started_at : '';
     }
 
-    public function hasStartedAtMs()
+    public function hasStartedAt()
     {
-        return isset($this->started_at_ms);
+        return isset($this->started_at);
     }
 
-    public function clearStartedAtMs()
+    public function clearStartedAt()
     {
-        unset($this->started_at_ms);
+        unset($this->started_at);
     }
 
     /**
-     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 例：2026-11-17T16:12:00+08:00
      *
-     * Generated from protobuf field <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>optional string started_at = 13 [json_name = "started_at"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setStartedAtMs(int|string $var)
+    public function setStartedAt(string $var)
     {
-        GPBUtil::checkInt64($var);
-        $this->started_at_ms = $var;
+        GPBUtil::checkString($var, true);
+        $this->started_at = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
-     * @return int|string
+     * Generated from protobuf field <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+     * @return string
      */
-    public function getFinishedAtMs()
+    public function getFinishedAt()
     {
-        return isset($this->finished_at_ms) ? $this->finished_at_ms : GPBUtil::compatibleInt64(0, '0');
+        return isset($this->finished_at) ? $this->finished_at : '';
     }
 
-    public function hasFinishedAtMs()
+    public function hasFinishedAt()
     {
-        return isset($this->finished_at_ms);
+        return isset($this->finished_at);
     }
 
-    public function clearFinishedAtMs()
+    public function clearFinishedAt()
     {
-        unset($this->finished_at_ms);
+        unset($this->finished_at);
     }
 
     /**
-     * Generated from protobuf field <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setFinishedAtMs(int|string $var)
+    public function setFinishedAt(string $var)
     {
-        GPBUtil::checkInt64($var);
-        $this->finished_at_ms = $var;
+        GPBUtil::checkString($var, true);
+        $this->finished_at = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
-     * @return int|string
+     * Generated from protobuf field <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+     * @return string
      */
-    public function getUpdatedAtMs()
+    public function getUpdatedAt()
     {
-        return isset($this->updated_at_ms) ? $this->updated_at_ms : GPBUtil::compatibleInt64(0, '0');
+        return isset($this->updated_at) ? $this->updated_at : '';
     }
 
-    public function hasUpdatedAtMs()
+    public function hasUpdatedAt()
     {
-        return isset($this->updated_at_ms);
+        return isset($this->updated_at);
     }
 
-    public function clearUpdatedAtMs()
+    public function clearUpdatedAt()
     {
-        unset($this->updated_at_ms);
+        unset($this->updated_at);
     }
 
     /**
-     * Generated from protobuf field <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setUpdatedAtMs(int|string $var)
+    public function setUpdatedAt(string $var)
     {
-        GPBUtil::checkInt64($var);
-        $this->updated_at_ms = $var;
+        GPBUtil::checkString($var, true);
+        $this->updated_at = $var;
 
         return $this;
     }

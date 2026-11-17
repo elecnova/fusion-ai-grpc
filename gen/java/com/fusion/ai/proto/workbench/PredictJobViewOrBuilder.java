@@ -165,42 +165,67 @@ java.lang.String defaultValue);
 
   /**
    * <pre>
-   * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
-   * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
-   * @return Whether the startedAtMs field is set.
+   * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+   * @return Whether the startedAt field is set.
    */
-  boolean hasStartedAtMs();
+  boolean hasStartedAt();
   /**
    * <pre>
-   * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
-   * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
-   * @return The startedAtMs.
+   * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+   * @return The startedAt.
    */
-  long getStartedAtMs();
+  java.lang.String getStartedAt();
+  /**
+   * <pre>
+   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 例：2026-11-17T16:12:00+08:00
+   * </pre>
+   *
+   * <code>optional string started_at = 13 [json_name = "started_at"];</code>
+   * @return The bytes for startedAt.
+   */
+  com.google.protobuf.ByteString
+      getStartedAtBytes();
 
   /**
-   * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
-   * @return Whether the finishedAtMs field is set.
+   * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+   * @return Whether the finishedAt field is set.
    */
-  boolean hasFinishedAtMs();
+  boolean hasFinishedAt();
   /**
-   * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
-   * @return The finishedAtMs.
+   * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+   * @return The finishedAt.
    */
-  long getFinishedAtMs();
+  java.lang.String getFinishedAt();
+  /**
+   * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
+   * @return The bytes for finishedAt.
+   */
+  com.google.protobuf.ByteString
+      getFinishedAtBytes();
 
   /**
-   * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
-   * @return Whether the updatedAtMs field is set.
+   * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+   * @return Whether the updatedAt field is set.
    */
-  boolean hasUpdatedAtMs();
+  boolean hasUpdatedAt();
   /**
-   * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
-   * @return The updatedAtMs.
+   * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+   * @return The updatedAt.
    */
-  long getUpdatedAtMs();
+  java.lang.String getUpdatedAt();
+  /**
+   * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
+   * @return The bytes for updatedAt.
+   */
+  com.google.protobuf.ByteString
+      getUpdatedAtBytes();
 }
