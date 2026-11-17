@@ -66,19 +66,23 @@ public interface FusionModelViewOrBuilder extends
   com.fusion.ai.proto.workbench.ModelReadyStatus getStatus();
 
   /**
-   * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-   * @return Whether the lastTrainedAt field is set.
+   * <pre>
+   * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * </pre>
+   *
+   * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+   * @return Whether the lastTrainedAtMs field is set.
    */
-  boolean hasLastTrainedAt();
+  boolean hasLastTrainedAtMs();
   /**
-   * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-   * @return The lastTrainedAt.
+   * <pre>
+   * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * </pre>
+   *
+   * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+   * @return The lastTrainedAtMs.
    */
-  com.google.protobuf.Timestamp getLastTrainedAt();
-  /**
-   * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getLastTrainedAtOrBuilder();
+  long getLastTrainedAtMs();
 
   /**
    * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>

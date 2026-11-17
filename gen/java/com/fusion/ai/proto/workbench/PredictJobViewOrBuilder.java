@@ -164,47 +164,43 @@ java.lang.String defaultValue);
       getMessageBytes();
 
   /**
-   * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-   * @return Whether the startedAt field is set.
+   * <pre>
+   * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * </pre>
+   *
+   * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+   * @return Whether the startedAtMs field is set.
    */
-  boolean hasStartedAt();
+  boolean hasStartedAtMs();
   /**
-   * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-   * @return The startedAt.
+   * <pre>
+   * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * </pre>
+   *
+   * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+   * @return The startedAtMs.
    */
-  com.google.protobuf.Timestamp getStartedAt();
-  /**
-   * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getStartedAtOrBuilder();
+  long getStartedAtMs();
 
   /**
-   * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-   * @return Whether the finishedAt field is set.
+   * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+   * @return Whether the finishedAtMs field is set.
    */
-  boolean hasFinishedAt();
+  boolean hasFinishedAtMs();
   /**
-   * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-   * @return The finishedAt.
+   * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+   * @return The finishedAtMs.
    */
-  com.google.protobuf.Timestamp getFinishedAt();
-  /**
-   * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getFinishedAtOrBuilder();
+  long getFinishedAtMs();
 
   /**
-   * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-   * @return Whether the updatedAt field is set.
+   * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+   * @return Whether the updatedAtMs field is set.
    */
-  boolean hasUpdatedAt();
+  boolean hasUpdatedAtMs();
   /**
-   * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-   * @return The updatedAt.
+   * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+   * @return The updatedAtMs.
    */
-  com.google.protobuf.Timestamp getUpdatedAt();
-  /**
-   * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
+  long getUpdatedAtMs();
 }

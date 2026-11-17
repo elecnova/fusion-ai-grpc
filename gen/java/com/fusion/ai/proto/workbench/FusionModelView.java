@@ -197,30 +197,31 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.fusion.ai.proto.workbench.ModelReadyStatus.UNRECOGNIZED : result;
   }
 
-  public static final int LAST_TRAINED_AT_FIELD_NUMBER = 5;
-  private com.google.protobuf.Timestamp lastTrainedAt_;
+  public static final int LAST_TRAINED_AT_MS_FIELD_NUMBER = 5;
+  private long lastTrainedAtMs_ = 0L;
   /**
-   * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-   * @return Whether the lastTrainedAt field is set.
+   * <pre>
+   * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * </pre>
+   *
+   * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+   * @return Whether the lastTrainedAtMs field is set.
    */
   @java.lang.Override
-  public boolean hasLastTrainedAt() {
+  public boolean hasLastTrainedAtMs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-   * @return The lastTrainedAt.
+   * <pre>
+   * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * </pre>
+   *
+   * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+   * @return The lastTrainedAtMs.
    */
   @java.lang.Override
-  public com.google.protobuf.Timestamp getLastTrainedAt() {
-    return lastTrainedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastTrainedAt_;
-  }
-  /**
-   * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getLastTrainedAtOrBuilder() {
-    return lastTrainedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastTrainedAt_;
+  public long getLastTrainedAtMs() {
+    return lastTrainedAtMs_;
   }
 
   public static final int ARTIFACT_URI_FIELD_NUMBER = 6;
@@ -297,7 +298,7 @@ private static final long serialVersionUID = 0L;
       output.writeEnum(4, status_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(5, getLastTrainedAt());
+      output.writeInt64(5, lastTrainedAtMs_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, artifactUri_);
@@ -321,7 +322,7 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getLastTrainedAt());
+        .computeInt64Size(5, lastTrainedAtMs_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, artifactUri_);
@@ -357,10 +358,10 @@ private static final long serialVersionUID = 0L;
     if (!getVersion()
         .equals(other.getVersion())) return false;
     if (status_ != other.status_) return false;
-    if (hasLastTrainedAt() != other.hasLastTrainedAt()) return false;
-    if (hasLastTrainedAt()) {
-      if (!getLastTrainedAt()
-          .equals(other.getLastTrainedAt())) return false;
+    if (hasLastTrainedAtMs() != other.hasLastTrainedAtMs()) return false;
+    if (hasLastTrainedAtMs()) {
+      if (getLastTrainedAtMs()
+          != other.getLastTrainedAtMs()) return false;
     }
     if (hasArtifactUri() != other.hasArtifactUri()) return false;
     if (hasArtifactUri()) {
@@ -386,9 +387,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getVersion().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
-    if (hasLastTrainedAt()) {
-      hash = (37 * hash) + LAST_TRAINED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + getLastTrainedAt().hashCode();
+    if (hasLastTrainedAtMs()) {
+      hash = (37 * hash) + LAST_TRAINED_AT_MS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLastTrainedAtMs());
     }
     if (hasArtifactUri()) {
       hash = (37 * hash) + ARTIFACT_URI_FIELD_NUMBER;
@@ -513,19 +515,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.fusion.ai.proto.workbench.FusionModelView.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetLastTrainedAtFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -535,11 +531,7 @@ private static final long serialVersionUID = 0L;
       modelKey_ = "";
       version_ = "";
       status_ = 0;
-      lastTrainedAt_ = null;
-      if (lastTrainedAtBuilder_ != null) {
-        lastTrainedAtBuilder_.dispose();
-        lastTrainedAtBuilder_ = null;
-      }
+      lastTrainedAtMs_ = 0L;
       artifactUri_ = "";
       return this;
     }
@@ -588,9 +580,7 @@ private static final long serialVersionUID = 0L;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.lastTrainedAt_ = lastTrainedAtBuilder_ == null
-            ? lastTrainedAt_
-            : lastTrainedAtBuilder_.build();
+        result.lastTrainedAtMs_ = lastTrainedAtMs_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
@@ -630,8 +620,8 @@ private static final long serialVersionUID = 0L;
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
-      if (other.hasLastTrainedAt()) {
-        mergeLastTrainedAt(other.getLastTrainedAt());
+      if (other.hasLastTrainedAtMs()) {
+        setLastTrainedAtMs(other.getLastTrainedAtMs());
       }
       if (other.hasArtifactUri()) {
         artifactUri_ = other.artifactUri_;
@@ -682,13 +672,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 32
-            case 42: {
-              input.readMessage(
-                  internalGetLastTrainedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            case 40: {
+              lastTrainedAtMs_ = input.readInt64();
               bitField0_ |= 0x00000010;
               break;
-            } // case 42
+            } // case 40
             case 50: {
               artifactUri_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
@@ -999,123 +987,60 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Timestamp lastTrainedAt_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastTrainedAtBuilder_;
+    private long lastTrainedAtMs_ ;
     /**
-     * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-     * @return Whether the lastTrainedAt field is set.
+     * <pre>
+     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * </pre>
+     *
+     * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+     * @return Whether the lastTrainedAtMs field is set.
      */
-    public boolean hasLastTrainedAt() {
+    @java.lang.Override
+    public boolean hasLastTrainedAtMs() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-     * @return The lastTrainedAt.
+     * <pre>
+     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * </pre>
+     *
+     * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+     * @return The lastTrainedAtMs.
      */
-    public com.google.protobuf.Timestamp getLastTrainedAt() {
-      if (lastTrainedAtBuilder_ == null) {
-        return lastTrainedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastTrainedAt_;
-      } else {
-        return lastTrainedAtBuilder_.getMessage();
-      }
+    @java.lang.Override
+    public long getLastTrainedAtMs() {
+      return lastTrainedAtMs_;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * <pre>
+     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * </pre>
+     *
+     * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+     * @param value The lastTrainedAtMs to set.
+     * @return This builder for chaining.
      */
-    public Builder setLastTrainedAt(com.google.protobuf.Timestamp value) {
-      if (lastTrainedAtBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        lastTrainedAt_ = value;
-      } else {
-        lastTrainedAtBuilder_.setMessage(value);
-      }
+    public Builder setLastTrainedAtMs(long value) {
+
+      lastTrainedAtMs_ = value;
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * <pre>
+     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * </pre>
+     *
+     * <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+     * @return This builder for chaining.
      */
-    public Builder setLastTrainedAt(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (lastTrainedAtBuilder_ == null) {
-        lastTrainedAt_ = builderForValue.build();
-      } else {
-        lastTrainedAtBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-     */
-    public Builder mergeLastTrainedAt(com.google.protobuf.Timestamp value) {
-      if (lastTrainedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0) &&
-          lastTrainedAt_ != null &&
-          lastTrainedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getLastTrainedAtBuilder().mergeFrom(value);
-        } else {
-          lastTrainedAt_ = value;
-        }
-      } else {
-        lastTrainedAtBuilder_.mergeFrom(value);
-      }
-      if (lastTrainedAt_ != null) {
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-     */
-    public Builder clearLastTrainedAt() {
+    public Builder clearLastTrainedAtMs() {
       bitField0_ = (bitField0_ & ~0x00000010);
-      lastTrainedAt_ = null;
-      if (lastTrainedAtBuilder_ != null) {
-        lastTrainedAtBuilder_.dispose();
-        lastTrainedAtBuilder_ = null;
-      }
+      lastTrainedAtMs_ = 0L;
       onChanged();
       return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getLastTrainedAtBuilder() {
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return internalGetLastTrainedAtFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getLastTrainedAtOrBuilder() {
-      if (lastTrainedAtBuilder_ != null) {
-        return lastTrainedAtBuilder_.getMessageOrBuilder();
-      } else {
-        return lastTrainedAt_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastTrainedAt_;
-      }
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetLastTrainedAtFieldBuilder() {
-      if (lastTrainedAtBuilder_ == null) {
-        lastTrainedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastTrainedAt(),
-                getParentForChildren(),
-                isClean());
-        lastTrainedAt_ = null;
-      }
-      return lastTrainedAtBuilder_;
     }
 
     private java.lang.Object artifactUri_ = "";

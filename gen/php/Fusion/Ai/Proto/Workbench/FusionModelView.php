@@ -33,9 +33,11 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
+     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     *
+     * Generated from protobuf field <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
      */
-    protected $last_trained_at = null;
+    protected $last_trained_at_ms = null;
     /**
      * Generated from protobuf field <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      */
@@ -52,7 +54,8 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
      *           固定产物名，如 fusion-ai
      *     @type string $version
      *     @type int $status
-     *     @type \Google\Protobuf\Timestamp $last_trained_at
+     *     @type int|string $last_trained_at_ms
+     *           上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
      *     @type string $artifact_uri
      * }
      */
@@ -155,32 +158,37 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-     * @return \Google\Protobuf\Timestamp|null
+     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     *
+     * Generated from protobuf field <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+     * @return int|string
      */
-    public function getLastTrainedAt()
+    public function getLastTrainedAtMs()
     {
-        return $this->last_trained_at;
+        return isset($this->last_trained_at_ms) ? $this->last_trained_at_ms : GPBUtil::compatibleInt64(0, '0');
     }
 
-    public function hasLastTrainedAt()
+    public function hasLastTrainedAtMs()
     {
-        return isset($this->last_trained_at);
+        return isset($this->last_trained_at_ms);
     }
 
-    public function clearLastTrainedAt()
+    public function clearLastTrainedAtMs()
     {
-        unset($this->last_trained_at);
+        unset($this->last_trained_at_ms);
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     *
+     * Generated from protobuf field <code>optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setLastTrainedAt(\Google\Protobuf\Timestamp|null $var)
+    public function setLastTrainedAtMs(int|string $var)
     {
-        $this->last_trained_at = $var;
+        GPBUtil::checkInt64($var);
+        $this->last_trained_at_ms = $var;
 
         return $this;
     }

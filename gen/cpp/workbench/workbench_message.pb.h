@@ -2384,6 +2384,289 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GapInterval final : public ::google
 };
 // -------------------------------------------------------------------
 
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.FusionModelView) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline FusionModelView() : FusionModelView(nullptr) {}
+  ~FusionModelView() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(FusionModelView* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(FusionModelView));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr FusionModelView(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline FusionModelView(const FusionModelView& from) : FusionModelView(nullptr, from) {}
+  inline FusionModelView(FusionModelView&& from) noexcept : FusionModelView(nullptr, ::std::move(from)) {}
+  inline FusionModelView& operator=(const FusionModelView& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FusionModelView& operator=(FusionModelView&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const FusionModelView& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<FusionModelView>(&FusionModelView_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 4;
+  friend void swap(FusionModelView& a, FusionModelView& b) { a.Swap(&b); }
+  inline void Swap(FusionModelView* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FusionModelView* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] FusionModelView* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<FusionModelView>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const FusionModelView& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const FusionModelView& from) { FusionModelView::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(FusionModelView* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.workbench.FusionModelView"; }
+
+  explicit FusionModelView(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  FusionModelView(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const FusionModelView& from);
+  FusionModelView(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, FusionModelView&& from) noexcept
+      : FusionModelView(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRegistrationIdFieldNumber = 1,
+    kModelKeyFieldNumber = 2,
+    kVersionFieldNumber = 3,
+    kArtifactUriFieldNumber = 6,
+    kLastTrainedAtMsFieldNumber = 5,
+    kStatusFieldNumber = 4,
+  };
+  // string registration_id = 1 [json_name = "registration_id"];
+  void clear_registration_id() ;
+  [[nodiscard]] const ::std::string& registration_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_registration_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_registration_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_registration_id();
+  void set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_registration_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_registration_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
+
+  public:
+  // string model_key = 2 [json_name = "model_key"];
+  void clear_model_key() ;
+  [[nodiscard]] const ::std::string& model_key() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_model_key(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_model_key();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_model_key();
+  void set_allocated_model_key(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_model_key() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_model_key(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_model_key();
+
+  public:
+  // string version = 3 [json_name = "version"];
+  void clear_version() ;
+  [[nodiscard]] const ::std::string& version() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_version(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_version();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_version();
+  void set_allocated_version(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_version() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_version(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_version();
+
+  public:
+  // optional string artifact_uri = 6 [json_name = "artifact_uri"];
+  [[nodiscard]] bool has_artifact_uri() const;
+  void clear_artifact_uri() ;
+  [[nodiscard]] const ::std::string& artifact_uri() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_artifact_uri(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_artifact_uri();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_artifact_uri();
+  void set_allocated_artifact_uri(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_artifact_uri() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_artifact_uri(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_artifact_uri();
+
+  public:
+  // optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];
+  [[nodiscard]] bool has_last_trained_at_ms() const;
+  void clear_last_trained_at_ms() ;
+  [[nodiscard]] ::int64_t last_trained_at_ms() const;
+  void set_last_trained_at_ms(::int64_t value);
+
+  private:
+  ::int64_t _internal_last_trained_at_ms() const;
+  void _internal_set_last_trained_at_ms(::int64_t value);
+
+  public:
+  // .fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];
+  void clear_status() ;
+  [[nodiscard]] ::fusion::ai::proto::workbench::ModelReadyStatus status() const;
+  void set_status(::fusion::ai::proto::workbench::ModelReadyStatus value);
+
+  private:
+  ::fusion::ai::proto::workbench::ModelReadyStatus _internal_status() const;
+  void _internal_set_status(::fusion::ai::proto::workbench::ModelReadyStatus value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.FusionModelView)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<3, 6,
+                          0, 93,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const FusionModelView& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr registration_id_;
+    ::google::protobuf::internal::ArenaStringPtr model_key_;
+    ::google::protobuf::internal::ArenaStringPtr version_;
+    ::google::protobuf::internal::ArenaStringPtr artifact_uri_;
+    ::int64_t last_trained_at_ms_;
+    int status_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_workbench_2fworkbench_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED EvalDayMetricsRow final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.EvalDayMetricsRow) */ {
   using Super_ = ::google::protobuf::Message;
@@ -4224,13 +4507,13 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
     kEvalDateFieldNumber = 7,
     kModelIdFieldNumber = 11,
     kMessageFieldNumber = 12,
-    kStartedAtFieldNumber = 13,
-    kFinishedAtFieldNumber = 14,
-    kUpdatedAtFieldNumber = 15,
     kStatusFieldNumber = 3,
     kProgressPctFieldNumber = 4,
     kDayOffsetFieldNumber = 8,
     kGranularityMinFieldNumber = 9,
+    kStartedAtMsFieldNumber = 13,
+    kFinishedAtMsFieldNumber = 14,
+    kUpdatedAtMsFieldNumber = 15,
     kHorizonHoursFieldNumber = 10,
     kStagesFieldNumber = 6,
   };
@@ -4324,51 +4607,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
   ::std::string* PROTOBUF_NONNULL _internal_mutable_message();
 
   public:
-  // optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];
-  [[nodiscard]] bool has_started_at() const;
-  void clear_started_at() ;
-  [[nodiscard]] const ::google::protobuf::Timestamp& started_at() const;
-  [[nodiscard]] ::google::protobuf::Timestamp* PROTOBUF_NULLABLE release_started_at();
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL mutable_started_at();
-  void set_allocated_started_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_started_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  ::google::protobuf::Timestamp* PROTOBUF_NULLABLE unsafe_arena_release_started_at();
-
-  private:
-  const ::google::protobuf::Timestamp& _internal_started_at() const;
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_started_at();
-
-  public:
-  // optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];
-  [[nodiscard]] bool has_finished_at() const;
-  void clear_finished_at() ;
-  [[nodiscard]] const ::google::protobuf::Timestamp& finished_at() const;
-  [[nodiscard]] ::google::protobuf::Timestamp* PROTOBUF_NULLABLE release_finished_at();
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL mutable_finished_at();
-  void set_allocated_finished_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_finished_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  ::google::protobuf::Timestamp* PROTOBUF_NULLABLE unsafe_arena_release_finished_at();
-
-  private:
-  const ::google::protobuf::Timestamp& _internal_finished_at() const;
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_finished_at();
-
-  public:
-  // optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];
-  [[nodiscard]] bool has_updated_at() const;
-  void clear_updated_at() ;
-  [[nodiscard]] const ::google::protobuf::Timestamp& updated_at() const;
-  [[nodiscard]] ::google::protobuf::Timestamp* PROTOBUF_NULLABLE release_updated_at();
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL mutable_updated_at();
-  void set_allocated_updated_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_updated_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  ::google::protobuf::Timestamp* PROTOBUF_NULLABLE unsafe_arena_release_updated_at();
-
-  private:
-  const ::google::protobuf::Timestamp& _internal_updated_at() const;
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_updated_at();
-
-  public:
   // .fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];
   void clear_status() ;
   [[nodiscard]] ::fusion::ai::proto::workbench::JobStatus status() const;
@@ -4409,6 +4647,39 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
   void _internal_set_granularity_min(::int32_t value);
 
   public:
+  // optional int64 started_at_ms = 13 [json_name = "started_at_ms"];
+  [[nodiscard]] bool has_started_at_ms() const;
+  void clear_started_at_ms() ;
+  [[nodiscard]] ::int64_t started_at_ms() const;
+  void set_started_at_ms(::int64_t value);
+
+  private:
+  ::int64_t _internal_started_at_ms() const;
+  void _internal_set_started_at_ms(::int64_t value);
+
+  public:
+  // optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];
+  [[nodiscard]] bool has_finished_at_ms() const;
+  void clear_finished_at_ms() ;
+  [[nodiscard]] ::int64_t finished_at_ms() const;
+  void set_finished_at_ms(::int64_t value);
+
+  private:
+  ::int64_t _internal_finished_at_ms() const;
+  void _internal_set_finished_at_ms(::int64_t value);
+
+  public:
+  // optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];
+  [[nodiscard]] bool has_updated_at_ms() const;
+  void clear_updated_at_ms() ;
+  [[nodiscard]] ::int64_t updated_at_ms() const;
+  void set_updated_at_ms(::int64_t value);
+
+  private:
+  ::int64_t _internal_updated_at_ms() const;
+  void _internal_set_updated_at_ms(::int64_t value);
+
+  public:
   // int32 horizon_hours = 10 [json_name = "horizon_hours"];
   void clear_horizon_hours() ;
   [[nodiscard]] ::int32_t horizon_hours() const;
@@ -4439,7 +4710,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
   class _Internal;
   using ParseTableT_ =
       ::google::protobuf::internal::TcParseTable<4, 15,
-                          4, 113,
+                          1, 113,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -4473,15 +4744,221 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
     ::google::protobuf::internal::ArenaStringPtr eval_date_;
     ::google::protobuf::internal::ArenaStringPtr model_id_;
     ::google::protobuf::internal::ArenaStringPtr message_;
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE started_at_;
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE finished_at_;
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE updated_at_;
     int status_;
     ::int32_t progress_pct_;
     ::int32_t day_offset_;
     ::int32_t granularity_min_;
+    ::int64_t started_at_ms_;
+    ::int64_t finished_at_ms_;
+    ::int64_t updated_at_ms_;
     ::int32_t horizon_hours_;
     ::google::protobuf::internal::MapField<PredictJobView_StagesEntry_DoNotUse, ::std::string, ::std::string> stages_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_workbench_2fworkbench_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetFusionModelResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.GetFusionModelResponse) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline GetFusionModelResponse() : GetFusionModelResponse(nullptr) {}
+  ~GetFusionModelResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(GetFusionModelResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetFusionModelResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr GetFusionModelResponse(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline GetFusionModelResponse(const GetFusionModelResponse& from) : GetFusionModelResponse(nullptr, from) {}
+  inline GetFusionModelResponse(GetFusionModelResponse&& from) noexcept : GetFusionModelResponse(nullptr, ::std::move(from)) {}
+  inline GetFusionModelResponse& operator=(const GetFusionModelResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetFusionModelResponse& operator=(GetFusionModelResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const GetFusionModelResponse& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetFusionModelResponse>(&GetFusionModelResponse_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 15;
+  friend void swap(GetFusionModelResponse& a, GetFusionModelResponse& b) { a.Swap(&b); }
+  inline void Swap(GetFusionModelResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetFusionModelResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] GetFusionModelResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<GetFusionModelResponse>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const GetFusionModelResponse& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const GetFusionModelResponse& from) { GetFusionModelResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetFusionModelResponse* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.workbench.GetFusionModelResponse"; }
+
+  explicit GetFusionModelResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  GetFusionModelResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetFusionModelResponse& from);
+  GetFusionModelResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetFusionModelResponse&& from) noexcept
+      : GetFusionModelResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kModelFieldNumber = 1,
+  };
+  // .fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];
+  [[nodiscard]] bool has_model() const;
+  void clear_model() ;
+  [[nodiscard]] const ::fusion::ai::proto::workbench::FusionModelView& model() const;
+  [[nodiscard]] ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE release_model();
+  ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NONNULL mutable_model();
+  void set_allocated_model(::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_model(::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE value);
+  ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE unsafe_arena_release_model();
+
+  private:
+  const ::fusion::ai::proto::workbench::FusionModelView& _internal_model() const;
+  ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NONNULL _internal_mutable_model();
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.GetFusionModelResponse)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<0, 1,
+                          1, 0,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const GetFusionModelResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE model_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -4688,293 +5165,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetEvalDayMetricsResponse final : p
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::fusion::ai::proto::workbench::EvalDayMetrics* PROTOBUF_NULLABLE metrics_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_workbench_2fworkbench_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.FusionModelView) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline FusionModelView() : FusionModelView(nullptr) {}
-  ~FusionModelView() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(FusionModelView* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(FusionModelView));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr FusionModelView(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline FusionModelView(const FusionModelView& from) : FusionModelView(nullptr, from) {}
-  inline FusionModelView(FusionModelView&& from) noexcept : FusionModelView(nullptr, ::std::move(from)) {}
-  inline FusionModelView& operator=(const FusionModelView& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline FusionModelView& operator=(FusionModelView&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const FusionModelView& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<FusionModelView>(&FusionModelView_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 4;
-  friend void swap(FusionModelView& a, FusionModelView& b) { a.Swap(&b); }
-  inline void Swap(FusionModelView* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(FusionModelView* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] FusionModelView* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<FusionModelView>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const FusionModelView& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const FusionModelView& from) { FusionModelView::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(FusionModelView* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.workbench.FusionModelView"; }
-
-  explicit FusionModelView(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  FusionModelView(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const FusionModelView& from);
-  FusionModelView(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, FusionModelView&& from) noexcept
-      : FusionModelView(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kRegistrationIdFieldNumber = 1,
-    kModelKeyFieldNumber = 2,
-    kVersionFieldNumber = 3,
-    kArtifactUriFieldNumber = 6,
-    kLastTrainedAtFieldNumber = 5,
-    kStatusFieldNumber = 4,
-  };
-  // string registration_id = 1 [json_name = "registration_id"];
-  void clear_registration_id() ;
-  [[nodiscard]] const ::std::string& registration_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_registration_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_registration_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_registration_id();
-  void set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_registration_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_registration_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
-
-  public:
-  // string model_key = 2 [json_name = "model_key"];
-  void clear_model_key() ;
-  [[nodiscard]] const ::std::string& model_key() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_model_key(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_model_key();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_model_key();
-  void set_allocated_model_key(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_model_key() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_model_key(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_model_key();
-
-  public:
-  // string version = 3 [json_name = "version"];
-  void clear_version() ;
-  [[nodiscard]] const ::std::string& version() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_version(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_version();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_version();
-  void set_allocated_version(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_version() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_version(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_version();
-
-  public:
-  // optional string artifact_uri = 6 [json_name = "artifact_uri"];
-  [[nodiscard]] bool has_artifact_uri() const;
-  void clear_artifact_uri() ;
-  [[nodiscard]] const ::std::string& artifact_uri() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_artifact_uri(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_artifact_uri();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_artifact_uri();
-  void set_allocated_artifact_uri(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_artifact_uri() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_artifact_uri(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_artifact_uri();
-
-  public:
-  // optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];
-  [[nodiscard]] bool has_last_trained_at() const;
-  void clear_last_trained_at() ;
-  [[nodiscard]] const ::google::protobuf::Timestamp& last_trained_at() const;
-  [[nodiscard]] ::google::protobuf::Timestamp* PROTOBUF_NULLABLE release_last_trained_at();
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL mutable_last_trained_at();
-  void set_allocated_last_trained_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_last_trained_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  ::google::protobuf::Timestamp* PROTOBUF_NULLABLE unsafe_arena_release_last_trained_at();
-
-  private:
-  const ::google::protobuf::Timestamp& _internal_last_trained_at() const;
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_last_trained_at();
-
-  public:
-  // .fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];
-  void clear_status() ;
-  [[nodiscard]] ::fusion::ai::proto::workbench::ModelReadyStatus status() const;
-  void set_status(::fusion::ai::proto::workbench::ModelReadyStatus value);
-
-  private:
-  ::fusion::ai::proto::workbench::ModelReadyStatus _internal_status() const;
-  void _internal_set_status(::fusion::ai::proto::workbench::ModelReadyStatus value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.FusionModelView)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<3, 6,
-                          1, 93,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const FusionModelView& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr registration_id_;
-    ::google::protobuf::internal::ArenaStringPtr model_key_;
-    ::google::protobuf::internal::ArenaStringPtr version_;
-    ::google::protobuf::internal::ArenaStringPtr artifact_uri_;
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE last_trained_at_;
-    int status_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -6263,212 +6453,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPredictResponse final : public :
     ::google::protobuf::internal::ArenaStringPtr registration_id_;
     ::google::protobuf::internal::ArenaStringPtr current_predict_job_id_;
     ::fusion::ai::proto::workbench::PredictJobView* PROTOBUF_NULLABLE job_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_workbench_2fworkbench_5fmessage_2eproto;
-};
-// -------------------------------------------------------------------
-
-class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetFusionModelResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.GetFusionModelResponse) */ {
-  using Super_ = ::google::protobuf::Message;
-
- public:
-  inline GetFusionModelResponse() : GetFusionModelResponse(nullptr) {}
-  ~GetFusionModelResponse() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(GetFusionModelResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetFusionModelResponse));
-  }
-#endif
-
-  template <typename = void>
-  explicit constexpr GetFusionModelResponse(::google::protobuf::internal::ConstantInitialized,
-                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-                               class_data);
-
-  inline GetFusionModelResponse(const GetFusionModelResponse& from) : GetFusionModelResponse(nullptr, from) {}
-  inline GetFusionModelResponse(GetFusionModelResponse&& from) noexcept : GetFusionModelResponse(nullptr, ::std::move(from)) {}
-  inline GetFusionModelResponse& operator=(const GetFusionModelResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline GetFusionModelResponse& operator=(GetFusionModelResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  [[nodiscard]] static const GetFusionModelResponse& default_instance() {
-    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetFusionModelResponse>(&GetFusionModelResponse_globals_);
-  }
-  static constexpr int kIndexInFileMessages = 15;
-  friend void swap(GetFusionModelResponse& a, GetFusionModelResponse& b) { a.Swap(&b); }
-  inline void Swap(GetFusionModelResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(GetFusionModelResponse* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  [[nodiscard]] GetFusionModelResponse* PROTOBUF_NONNULL
-  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return Super_::DefaultConstruct<GetFusionModelResponse>(arena);
-  }
-  using Super_::CopyFrom;
-  void CopyFrom(const GetFusionModelResponse& from);
-  using Super_::MergeFrom;
-  void MergeFrom(const GetFusionModelResponse& from) { GetFusionModelResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  [[nodiscard]] bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] ::size_t ByteSizeLong() const final;
-  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  [[nodiscard]] int GetCachedSize() const {
-    return _impl_._cached_size_.Get();
-  }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(GetFusionModelResponse* PROTOBUF_NONNULL other);
- private:
-  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.workbench.GetFusionModelResponse"; }
-
-  explicit GetFusionModelResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  GetFusionModelResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetFusionModelResponse& from);
-  GetFusionModelResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetFusionModelResponse&& from) noexcept
-      : GetFusionModelResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_(
-      const MessageLite& prototype,
-      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
-
-  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kModelFieldNumber = 1,
-  };
-  // .fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];
-  [[nodiscard]] bool has_model() const;
-  void clear_model() ;
-  [[nodiscard]] const ::fusion::ai::proto::workbench::FusionModelView& model() const;
-  [[nodiscard]] ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE release_model();
-  ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NONNULL mutable_model();
-  void set_allocated_model(::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_model(::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE value);
-  ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE unsafe_arena_release_model();
-
-  private:
-  const ::fusion::ai::proto::workbench::FusionModelView& _internal_model() const;
-  ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NONNULL _internal_mutable_model();
-
-  public:
-  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.GetFusionModelResponse)
- private:
-  class _Internal;
-  using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<0, 1,
-                          1, 0,
-                          2>;
-  static constexpr ParseTableT_ InternalGenerateParseTable_(
-      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
-  friend class ::google::protobuf::internal::TcParser;
-  #ifndef PROTOBUF_MESSAGE_GLOBALS
-  static const ParseTableT_ _table_;
-  #endif
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  friend ::google::protobuf::internal::PrivateAccess;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const GetFusionModelResponse& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE model_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -8465,97 +8449,32 @@ inline void FusionModelView::_internal_set_status(::fusion::ai::proto::workbench
   _impl_.status_ = value;
 }
 
-// optional .google.protobuf.Timestamp last_trained_at = 5 [json_name = "last_trained_at"];
-inline bool FusionModelView::has_last_trained_at() const {
+// optional int64 last_trained_at_ms = 5 [json_name = "last_trained_at_ms"];
+inline bool FusionModelView::has_last_trained_at_ms() const {
   bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
-  PROTOBUF_ASSUME(!value || _impl_.last_trained_at_ != nullptr);
   return value;
 }
-inline const ::google::protobuf::Timestamp& FusionModelView::_internal_last_trained_at() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::google::protobuf::Timestamp* p = _impl_.last_trained_at_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::google::protobuf::Timestamp>(&::google::protobuf::Timestamp_globals_);
-}
-inline const ::google::protobuf::Timestamp& FusionModelView::last_trained_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
-  return _internal_last_trained_at();
-}
-inline void FusionModelView::unsafe_arena_set_allocated_last_trained_at(
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
+inline void FusionModelView::clear_last_trained_at_ms() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.last_trained_at_);
-  }
-  _impl_.last_trained_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE FusionModelView::release_last_trained_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
+  _impl_.last_trained_at_ms_ = ::int64_t{0};
   ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  ::google::protobuf::Timestamp* released = _impl_.last_trained_at_;
-  _impl_.last_trained_at_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
 }
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE FusionModelView::unsafe_arena_release_last_trained_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  ::google::protobuf::Timestamp* temp = _impl_.last_trained_at_;
-  _impl_.last_trained_at_ = nullptr;
-  return temp;
+inline ::int64_t FusionModelView::last_trained_at_ms() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.FusionModelView.last_trained_at_ms)
+  return _internal_last_trained_at_ms();
 }
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL FusionModelView::_internal_mutable_last_trained_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.last_trained_at_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
-    _impl_.last_trained_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
-  }
-  return _impl_.last_trained_at_;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL FusionModelView::mutable_last_trained_at()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline void FusionModelView::set_last_trained_at_ms(::int64_t value) {
+  _internal_set_last_trained_at_ms(value);
   SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  ::google::protobuf::Timestamp* _msg = _internal_mutable_last_trained_at();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
-  return _msg;
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.FusionModelView.last_trained_at_ms)
 }
-inline void FusionModelView::set_allocated_last_trained_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
+inline ::int64_t FusionModelView::_internal_last_trained_at_ms() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.last_trained_at_ms_;
+}
+inline void FusionModelView::_internal_set_last_trained_at_ms(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.last_trained_at_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
-  }
-
-  _impl_.last_trained_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.FusionModelView.last_trained_at)
+  _impl_.last_trained_at_ms_ = value;
 }
 
 // optional string artifact_uri = 6 [json_name = "artifact_uri"];
@@ -8764,7 +8683,7 @@ inline void PredictJobView::set_allocated_registration_id(::std::string* PROTOBU
 inline void PredictJobView::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
 }
 inline ::fusion::ai::proto::workbench::JobStatus PredictJobView::status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.status)
@@ -8772,7 +8691,7 @@ inline ::fusion::ai::proto::workbench::JobStatus PredictJobView::status() const 
 }
 inline void PredictJobView::set_status(::fusion::ai::proto::workbench::JobStatus value) {
   _internal_set_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000200U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.status)
 }
 inline ::fusion::ai::proto::workbench::JobStatus PredictJobView::_internal_status() const {
@@ -8788,7 +8707,7 @@ inline void PredictJobView::_internal_set_status(::fusion::ai::proto::workbench:
 inline void PredictJobView::clear_progress_pct() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.progress_pct_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000400U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
 }
 inline ::int32_t PredictJobView::progress_pct() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.progress_pct)
@@ -8796,7 +8715,7 @@ inline ::int32_t PredictJobView::progress_pct() const {
 }
 inline void PredictJobView::set_progress_pct(::int32_t value) {
   _internal_set_progress_pct(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000400U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.progress_pct)
 }
 inline ::int32_t PredictJobView::_internal_progress_pct() const {
@@ -8971,7 +8890,7 @@ inline void PredictJobView::set_allocated_eval_date(::std::string* PROTOBUF_NULL
 inline void PredictJobView::clear_day_offset() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.day_offset_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000800U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
 }
 inline ::int32_t PredictJobView::day_offset() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.day_offset)
@@ -8979,7 +8898,7 @@ inline ::int32_t PredictJobView::day_offset() const {
 }
 inline void PredictJobView::set_day_offset(::int32_t value) {
   _internal_set_day_offset(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000800U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.day_offset)
 }
 inline ::int32_t PredictJobView::_internal_day_offset() const {
@@ -8995,7 +8914,7 @@ inline void PredictJobView::_internal_set_day_offset(::int32_t value) {
 inline void PredictJobView::clear_granularity_min() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.granularity_min_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000200U);
 }
 inline ::int32_t PredictJobView::granularity_min() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.granularity_min)
@@ -9003,7 +8922,7 @@ inline ::int32_t PredictJobView::granularity_min() const {
 }
 inline void PredictJobView::set_granularity_min(::int32_t value) {
   _internal_set_granularity_min(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00001000U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000200U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.granularity_min)
 }
 inline ::int32_t PredictJobView::_internal_granularity_min() const {
@@ -9167,283 +9086,88 @@ inline void PredictJobView::set_allocated_message(::std::string* PROTOBUF_NULLAB
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.PredictJobView.message)
 }
 
-// optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];
-inline bool PredictJobView::has_started_at() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000040U);
-  PROTOBUF_ASSUME(!value || _impl_.started_at_ != nullptr);
+// optional int64 started_at_ms = 13 [json_name = "started_at_ms"];
+inline bool PredictJobView::has_started_at_ms() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000400U);
   return value;
 }
-inline const ::google::protobuf::Timestamp& PredictJobView::_internal_started_at() const {
+inline void PredictJobView::clear_started_at_ms() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.started_at_ms_ = ::int64_t{0};
+  ClearHasBit(_impl_._has_bits_[0], 0x00000400U);
+}
+inline ::int64_t PredictJobView::started_at_ms() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.started_at_ms)
+  return _internal_started_at_ms();
+}
+inline void PredictJobView::set_started_at_ms(::int64_t value) {
+  _internal_set_started_at_ms(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000400U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.started_at_ms)
+}
+inline ::int64_t PredictJobView::_internal_started_at_ms() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::google::protobuf::Timestamp* p = _impl_.started_at_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::google::protobuf::Timestamp>(&::google::protobuf::Timestamp_globals_);
+  return _impl_.started_at_ms_;
 }
-inline const ::google::protobuf::Timestamp& PredictJobView::started_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.started_at)
-  return _internal_started_at();
-}
-inline void PredictJobView::unsafe_arena_set_allocated_started_at(
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
+inline void PredictJobView::_internal_set_started_at_ms(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.started_at_);
-  }
-  _impl_.started_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000040U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.workbench.PredictJobView.started_at)
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE PredictJobView::release_started_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
-  ::google::protobuf::Timestamp* released = _impl_.started_at_;
-  _impl_.started_at_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE PredictJobView::unsafe_arena_release_started_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.PredictJobView.started_at)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
-  ::google::protobuf::Timestamp* temp = _impl_.started_at_;
-  _impl_.started_at_ = nullptr;
-  return temp;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL PredictJobView::_internal_mutable_started_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.started_at_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
-    _impl_.started_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
-  }
-  return _impl_.started_at_;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL PredictJobView::mutable_started_at()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
-  ::google::protobuf::Timestamp* _msg = _internal_mutable_started_at();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.PredictJobView.started_at)
-  return _msg;
-}
-inline void PredictJobView::set_allocated_started_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.started_at_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000040U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
-  }
-
-  _impl_.started_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.PredictJobView.started_at)
+  _impl_.started_at_ms_ = value;
 }
 
-// optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];
-inline bool PredictJobView::has_finished_at() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000080U);
-  PROTOBUF_ASSUME(!value || _impl_.finished_at_ != nullptr);
+// optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];
+inline bool PredictJobView::has_finished_at_ms() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000800U);
   return value;
 }
-inline const ::google::protobuf::Timestamp& PredictJobView::_internal_finished_at() const {
+inline void PredictJobView::clear_finished_at_ms() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.finished_at_ms_ = ::int64_t{0};
+  ClearHasBit(_impl_._has_bits_[0], 0x00000800U);
+}
+inline ::int64_t PredictJobView::finished_at_ms() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.finished_at_ms)
+  return _internal_finished_at_ms();
+}
+inline void PredictJobView::set_finished_at_ms(::int64_t value) {
+  _internal_set_finished_at_ms(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000800U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.finished_at_ms)
+}
+inline ::int64_t PredictJobView::_internal_finished_at_ms() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::google::protobuf::Timestamp* p = _impl_.finished_at_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::google::protobuf::Timestamp>(&::google::protobuf::Timestamp_globals_);
+  return _impl_.finished_at_ms_;
 }
-inline const ::google::protobuf::Timestamp& PredictJobView::finished_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.finished_at)
-  return _internal_finished_at();
-}
-inline void PredictJobView::unsafe_arena_set_allocated_finished_at(
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
+inline void PredictJobView::_internal_set_finished_at_ms(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.finished_at_);
-  }
-  _impl_.finished_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000080U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.workbench.PredictJobView.finished_at)
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE PredictJobView::release_finished_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
-  ::google::protobuf::Timestamp* released = _impl_.finished_at_;
-  _impl_.finished_at_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE PredictJobView::unsafe_arena_release_finished_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.PredictJobView.finished_at)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
-  ::google::protobuf::Timestamp* temp = _impl_.finished_at_;
-  _impl_.finished_at_ = nullptr;
-  return temp;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL PredictJobView::_internal_mutable_finished_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.finished_at_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
-    _impl_.finished_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
-  }
-  return _impl_.finished_at_;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL PredictJobView::mutable_finished_at()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
-  ::google::protobuf::Timestamp* _msg = _internal_mutable_finished_at();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.PredictJobView.finished_at)
-  return _msg;
-}
-inline void PredictJobView::set_allocated_finished_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.finished_at_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000080U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
-  }
-
-  _impl_.finished_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.PredictJobView.finished_at)
+  _impl_.finished_at_ms_ = value;
 }
 
-// optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];
-inline bool PredictJobView::has_updated_at() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000100U);
-  PROTOBUF_ASSUME(!value || _impl_.updated_at_ != nullptr);
+// optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];
+inline bool PredictJobView::has_updated_at_ms() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00001000U);
   return value;
 }
-inline const ::google::protobuf::Timestamp& PredictJobView::_internal_updated_at() const {
+inline void PredictJobView::clear_updated_at_ms() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.updated_at_ms_ = ::int64_t{0};
+  ClearHasBit(_impl_._has_bits_[0], 0x00001000U);
+}
+inline ::int64_t PredictJobView::updated_at_ms() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.updated_at_ms)
+  return _internal_updated_at_ms();
+}
+inline void PredictJobView::set_updated_at_ms(::int64_t value) {
+  _internal_set_updated_at_ms(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00001000U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.PredictJobView.updated_at_ms)
+}
+inline ::int64_t PredictJobView::_internal_updated_at_ms() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::google::protobuf::Timestamp* p = _impl_.updated_at_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::google::protobuf::Timestamp>(&::google::protobuf::Timestamp_globals_);
+  return _impl_.updated_at_ms_;
 }
-inline const ::google::protobuf::Timestamp& PredictJobView::updated_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.PredictJobView.updated_at)
-  return _internal_updated_at();
-}
-inline void PredictJobView::unsafe_arena_set_allocated_updated_at(
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
+inline void PredictJobView::_internal_set_updated_at_ms(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.updated_at_);
-  }
-  _impl_.updated_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000100U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.workbench.PredictJobView.updated_at)
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE PredictJobView::release_updated_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
-  ::google::protobuf::Timestamp* released = _impl_.updated_at_;
-  _impl_.updated_at_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE PredictJobView::unsafe_arena_release_updated_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.PredictJobView.updated_at)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
-  ::google::protobuf::Timestamp* temp = _impl_.updated_at_;
-  _impl_.updated_at_ = nullptr;
-  return temp;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL PredictJobView::_internal_mutable_updated_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.updated_at_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
-    _impl_.updated_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
-  }
-  return _impl_.updated_at_;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL PredictJobView::mutable_updated_at()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
-  ::google::protobuf::Timestamp* _msg = _internal_mutable_updated_at();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.PredictJobView.updated_at)
-  return _msg;
-}
-inline void PredictJobView::set_allocated_updated_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.updated_at_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000100U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
-  }
-
-  _impl_.updated_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.PredictJobView.updated_at)
+  _impl_.updated_at_ms_ = value;
 }
 
 // -------------------------------------------------------------------

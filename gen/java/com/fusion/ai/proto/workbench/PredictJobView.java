@@ -460,82 +460,69 @@ java.lang.String defaultValue) {
     }
   }
 
-  public static final int STARTED_AT_FIELD_NUMBER = 13;
-  private com.google.protobuf.Timestamp startedAt_;
+  public static final int STARTED_AT_MS_FIELD_NUMBER = 13;
+  private long startedAtMs_ = 0L;
   /**
-   * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-   * @return Whether the startedAt field is set.
+   * <pre>
+   * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * </pre>
+   *
+   * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+   * @return Whether the startedAtMs field is set.
    */
   @java.lang.Override
-  public boolean hasStartedAt() {
+  public boolean hasStartedAtMs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-   * @return The startedAt.
+   * <pre>
+   * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+   * </pre>
+   *
+   * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+   * @return The startedAtMs.
    */
   @java.lang.Override
-  public com.google.protobuf.Timestamp getStartedAt() {
-    return startedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
-  }
-  /**
-   * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getStartedAtOrBuilder() {
-    return startedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
+  public long getStartedAtMs() {
+    return startedAtMs_;
   }
 
-  public static final int FINISHED_AT_FIELD_NUMBER = 14;
-  private com.google.protobuf.Timestamp finishedAt_;
+  public static final int FINISHED_AT_MS_FIELD_NUMBER = 14;
+  private long finishedAtMs_ = 0L;
   /**
-   * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-   * @return Whether the finishedAt field is set.
+   * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+   * @return Whether the finishedAtMs field is set.
    */
   @java.lang.Override
-  public boolean hasFinishedAt() {
+  public boolean hasFinishedAtMs() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-   * @return The finishedAt.
+   * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+   * @return The finishedAtMs.
    */
   @java.lang.Override
-  public com.google.protobuf.Timestamp getFinishedAt() {
-    return finishedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishedAt_;
-  }
-  /**
-   * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getFinishedAtOrBuilder() {
-    return finishedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishedAt_;
+  public long getFinishedAtMs() {
+    return finishedAtMs_;
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 15;
-  private com.google.protobuf.Timestamp updatedAt_;
+  public static final int UPDATED_AT_MS_FIELD_NUMBER = 15;
+  private long updatedAtMs_ = 0L;
   /**
-   * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-   * @return Whether the updatedAt field is set.
+   * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+   * @return Whether the updatedAtMs field is set.
    */
   @java.lang.Override
-  public boolean hasUpdatedAt() {
+  public boolean hasUpdatedAtMs() {
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-   * @return The updatedAt.
+   * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+   * @return The updatedAtMs.
    */
   @java.lang.Override
-  public com.google.protobuf.Timestamp getUpdatedAt() {
-    return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
-  }
-  /**
-   * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
-    return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+  public long getUpdatedAtMs() {
+    return updatedAtMs_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -592,13 +579,13 @@ java.lang.String defaultValue) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, message_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(13, getStartedAt());
+      output.writeInt64(13, startedAtMs_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(14, getFinishedAt());
+      output.writeInt64(14, finishedAtMs_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(15, getUpdatedAt());
+      output.writeInt64(15, updatedAtMs_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -654,15 +641,15 @@ java.lang.String defaultValue) {
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getStartedAt());
+        .computeInt64Size(13, startedAtMs_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, getFinishedAt());
+        .computeInt64Size(14, finishedAtMs_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(15, getUpdatedAt());
+        .computeInt64Size(15, updatedAtMs_);
     }
     return size;
   }
@@ -711,20 +698,20 @@ java.lang.String defaultValue) {
         .equals(other.getModelId())) return false;
     if (!getMessage()
         .equals(other.getMessage())) return false;
-    if (hasStartedAt() != other.hasStartedAt()) return false;
-    if (hasStartedAt()) {
-      if (!getStartedAt()
-          .equals(other.getStartedAt())) return false;
+    if (hasStartedAtMs() != other.hasStartedAtMs()) return false;
+    if (hasStartedAtMs()) {
+      if (getStartedAtMs()
+          != other.getStartedAtMs()) return false;
     }
-    if (hasFinishedAt() != other.hasFinishedAt()) return false;
-    if (hasFinishedAt()) {
-      if (!getFinishedAt()
-          .equals(other.getFinishedAt())) return false;
+    if (hasFinishedAtMs() != other.hasFinishedAtMs()) return false;
+    if (hasFinishedAtMs()) {
+      if (getFinishedAtMs()
+          != other.getFinishedAtMs()) return false;
     }
-    if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
-    if (hasUpdatedAt()) {
-      if (!getUpdatedAt()
-          .equals(other.getUpdatedAt())) return false;
+    if (hasUpdatedAtMs() != other.hasUpdatedAtMs()) return false;
+    if (hasUpdatedAtMs()) {
+      if (getUpdatedAtMs()
+          != other.getUpdatedAtMs()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -763,17 +750,20 @@ java.lang.String defaultValue) {
     hash = (53 * hash) + getModelId().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
-    if (hasStartedAt()) {
-      hash = (37 * hash) + STARTED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + getStartedAt().hashCode();
+    if (hasStartedAtMs()) {
+      hash = (37 * hash) + STARTED_AT_MS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStartedAtMs());
     }
-    if (hasFinishedAt()) {
-      hash = (37 * hash) + FINISHED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + getFinishedAt().hashCode();
+    if (hasFinishedAtMs()) {
+      hash = (37 * hash) + FINISHED_AT_MS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFinishedAtMs());
     }
-    if (hasUpdatedAt()) {
-      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdatedAt().hashCode();
+    if (hasUpdatedAtMs()) {
+      hash = (37 * hash) + UPDATED_AT_MS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUpdatedAtMs());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -921,21 +911,13 @@ java.lang.String defaultValue) {
 
     // Construct using com.fusion.ai.proto.workbench.PredictJobView.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetStartedAtFieldBuilder();
-        internalGetFinishedAtFieldBuilder();
-        internalGetUpdatedAtFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -953,21 +935,9 @@ java.lang.String defaultValue) {
       horizonHours_ = 0;
       modelId_ = "";
       message_ = "";
-      startedAt_ = null;
-      if (startedAtBuilder_ != null) {
-        startedAtBuilder_.dispose();
-        startedAtBuilder_ = null;
-      }
-      finishedAt_ = null;
-      if (finishedAtBuilder_ != null) {
-        finishedAtBuilder_.dispose();
-        finishedAtBuilder_ = null;
-      }
-      updatedAt_ = null;
-      if (updatedAtBuilder_ != null) {
-        updatedAtBuilder_.dispose();
-        updatedAtBuilder_ = null;
-      }
+      startedAtMs_ = 0L;
+      finishedAtMs_ = 0L;
+      updatedAtMs_ = 0L;
       return this;
     }
 
@@ -1040,21 +1010,15 @@ java.lang.String defaultValue) {
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.startedAt_ = startedAtBuilder_ == null
-            ? startedAt_
-            : startedAtBuilder_.build();
+        result.startedAtMs_ = startedAtMs_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.finishedAt_ = finishedAtBuilder_ == null
-            ? finishedAt_
-            : finishedAtBuilder_.build();
+        result.finishedAtMs_ = finishedAtMs_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.updatedAt_ = updatedAtBuilder_ == null
-            ? updatedAt_
-            : updatedAtBuilder_.build();
+        result.updatedAtMs_ = updatedAtMs_;
         to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1120,14 +1084,14 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000800;
         onChanged();
       }
-      if (other.hasStartedAt()) {
-        mergeStartedAt(other.getStartedAt());
+      if (other.hasStartedAtMs()) {
+        setStartedAtMs(other.getStartedAtMs());
       }
-      if (other.hasFinishedAt()) {
-        mergeFinishedAt(other.getFinishedAt());
+      if (other.hasFinishedAtMs()) {
+        setFinishedAtMs(other.getFinishedAtMs());
       }
-      if (other.hasUpdatedAt()) {
-        mergeUpdatedAt(other.getUpdatedAt());
+      if (other.hasUpdatedAtMs()) {
+        setUpdatedAtMs(other.getUpdatedAtMs());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1217,27 +1181,21 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000800;
               break;
             } // case 98
-            case 106: {
-              input.readMessage(
-                  internalGetStartedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            case 104: {
+              startedAtMs_ = input.readInt64();
               bitField0_ |= 0x00001000;
               break;
-            } // case 106
-            case 114: {
-              input.readMessage(
-                  internalGetFinishedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            } // case 104
+            case 112: {
+              finishedAtMs_ = input.readInt64();
               bitField0_ |= 0x00002000;
               break;
-            } // case 114
-            case 122: {
-              input.readMessage(
-                  internalGetUpdatedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            } // case 112
+            case 120: {
+              updatedAtMs_ = input.readInt64();
               bitField0_ |= 0x00004000;
               break;
-            } // case 122
+            } // case 120
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2026,361 +1984,140 @@ java.lang.String defaultValue) {
       return this;
     }
 
-    private com.google.protobuf.Timestamp startedAt_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startedAtBuilder_;
+    private long startedAtMs_ ;
     /**
-     * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-     * @return Whether the startedAt field is set.
+     * <pre>
+     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * </pre>
+     *
+     * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+     * @return Whether the startedAtMs field is set.
      */
-    public boolean hasStartedAt() {
+    @java.lang.Override
+    public boolean hasStartedAtMs() {
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-     * @return The startedAt.
+     * <pre>
+     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * </pre>
+     *
+     * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+     * @return The startedAtMs.
      */
-    public com.google.protobuf.Timestamp getStartedAt() {
-      if (startedAtBuilder_ == null) {
-        return startedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
-      } else {
-        return startedAtBuilder_.getMessage();
-      }
+    @java.lang.Override
+    public long getStartedAtMs() {
+      return startedAtMs_;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
+     * <pre>
+     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * </pre>
+     *
+     * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+     * @param value The startedAtMs to set.
+     * @return This builder for chaining.
      */
-    public Builder setStartedAt(com.google.protobuf.Timestamp value) {
-      if (startedAtBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        startedAt_ = value;
-      } else {
-        startedAtBuilder_.setMessage(value);
-      }
+    public Builder setStartedAtMs(long value) {
+
+      startedAtMs_ = value;
       bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
+     * <pre>
+     * 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+     * </pre>
+     *
+     * <code>optional int64 started_at_ms = 13 [json_name = "started_at_ms"];</code>
+     * @return This builder for chaining.
      */
-    public Builder setStartedAt(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (startedAtBuilder_ == null) {
-        startedAt_ = builderForValue.build();
-      } else {
-        startedAtBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-     */
-    public Builder mergeStartedAt(com.google.protobuf.Timestamp value) {
-      if (startedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0) &&
-          startedAt_ != null &&
-          startedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getStartedAtBuilder().mergeFrom(value);
-        } else {
-          startedAt_ = value;
-        }
-      } else {
-        startedAtBuilder_.mergeFrom(value);
-      }
-      if (startedAt_ != null) {
-        bitField0_ |= 0x00001000;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-     */
-    public Builder clearStartedAt() {
+    public Builder clearStartedAtMs() {
       bitField0_ = (bitField0_ & ~0x00001000);
-      startedAt_ = null;
-      if (startedAtBuilder_ != null) {
-        startedAtBuilder_.dispose();
-        startedAtBuilder_ = null;
-      }
+      startedAtMs_ = 0L;
       onChanged();
       return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getStartedAtBuilder() {
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return internalGetStartedAtFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getStartedAtOrBuilder() {
-      if (startedAtBuilder_ != null) {
-        return startedAtBuilder_.getMessageOrBuilder();
-      } else {
-        return startedAt_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
-      }
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp started_at = 13 [json_name = "started_at"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetStartedAtFieldBuilder() {
-      if (startedAtBuilder_ == null) {
-        startedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartedAt(),
-                getParentForChildren(),
-                isClean());
-        startedAt_ = null;
-      }
-      return startedAtBuilder_;
     }
 
-    private com.google.protobuf.Timestamp finishedAt_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> finishedAtBuilder_;
+    private long finishedAtMs_ ;
     /**
-     * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-     * @return Whether the finishedAt field is set.
+     * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+     * @return Whether the finishedAtMs field is set.
      */
-    public boolean hasFinishedAt() {
+    @java.lang.Override
+    public boolean hasFinishedAtMs() {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-     * @return The finishedAt.
+     * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+     * @return The finishedAtMs.
      */
-    public com.google.protobuf.Timestamp getFinishedAt() {
-      if (finishedAtBuilder_ == null) {
-        return finishedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishedAt_;
-      } else {
-        return finishedAtBuilder_.getMessage();
-      }
+    @java.lang.Override
+    public long getFinishedAtMs() {
+      return finishedAtMs_;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
+     * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+     * @param value The finishedAtMs to set.
+     * @return This builder for chaining.
      */
-    public Builder setFinishedAt(com.google.protobuf.Timestamp value) {
-      if (finishedAtBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        finishedAt_ = value;
-      } else {
-        finishedAtBuilder_.setMessage(value);
-      }
+    public Builder setFinishedAtMs(long value) {
+
+      finishedAtMs_ = value;
       bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
+     * <code>optional int64 finished_at_ms = 14 [json_name = "finished_at_ms"];</code>
+     * @return This builder for chaining.
      */
-    public Builder setFinishedAt(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (finishedAtBuilder_ == null) {
-        finishedAt_ = builderForValue.build();
-      } else {
-        finishedAtBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00002000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-     */
-    public Builder mergeFinishedAt(com.google.protobuf.Timestamp value) {
-      if (finishedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0) &&
-          finishedAt_ != null &&
-          finishedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getFinishedAtBuilder().mergeFrom(value);
-        } else {
-          finishedAt_ = value;
-        }
-      } else {
-        finishedAtBuilder_.mergeFrom(value);
-      }
-      if (finishedAt_ != null) {
-        bitField0_ |= 0x00002000;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-     */
-    public Builder clearFinishedAt() {
+    public Builder clearFinishedAtMs() {
       bitField0_ = (bitField0_ & ~0x00002000);
-      finishedAt_ = null;
-      if (finishedAtBuilder_ != null) {
-        finishedAtBuilder_.dispose();
-        finishedAtBuilder_ = null;
-      }
+      finishedAtMs_ = 0L;
       onChanged();
       return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getFinishedAtBuilder() {
-      bitField0_ |= 0x00002000;
-      onChanged();
-      return internalGetFinishedAtFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getFinishedAtOrBuilder() {
-      if (finishedAtBuilder_ != null) {
-        return finishedAtBuilder_.getMessageOrBuilder();
-      } else {
-        return finishedAt_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : finishedAt_;
-      }
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp finished_at = 14 [json_name = "finished_at"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetFinishedAtFieldBuilder() {
-      if (finishedAtBuilder_ == null) {
-        finishedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getFinishedAt(),
-                getParentForChildren(),
-                isClean());
-        finishedAt_ = null;
-      }
-      return finishedAtBuilder_;
     }
 
-    private com.google.protobuf.Timestamp updatedAt_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
+    private long updatedAtMs_ ;
     /**
-     * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-     * @return Whether the updatedAt field is set.
+     * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+     * @return Whether the updatedAtMs field is set.
      */
-    public boolean hasUpdatedAt() {
+    @java.lang.Override
+    public boolean hasUpdatedAtMs() {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-     * @return The updatedAt.
+     * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+     * @return The updatedAtMs.
      */
-    public com.google.protobuf.Timestamp getUpdatedAt() {
-      if (updatedAtBuilder_ == null) {
-        return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
-      } else {
-        return updatedAtBuilder_.getMessage();
-      }
+    @java.lang.Override
+    public long getUpdatedAtMs() {
+      return updatedAtMs_;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
+     * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+     * @param value The updatedAtMs to set.
+     * @return This builder for chaining.
      */
-    public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
-      if (updatedAtBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        updatedAt_ = value;
-      } else {
-        updatedAtBuilder_.setMessage(value);
-      }
+    public Builder setUpdatedAtMs(long value) {
+
+      updatedAtMs_ = value;
       bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
+     * <code>optional int64 updated_at_ms = 15 [json_name = "updated_at_ms"];</code>
+     * @return This builder for chaining.
      */
-    public Builder setUpdatedAt(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (updatedAtBuilder_ == null) {
-        updatedAt_ = builderForValue.build();
-      } else {
-        updatedAtBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00004000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-     */
-    public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
-      if (updatedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0) &&
-          updatedAt_ != null &&
-          updatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getUpdatedAtBuilder().mergeFrom(value);
-        } else {
-          updatedAt_ = value;
-        }
-      } else {
-        updatedAtBuilder_.mergeFrom(value);
-      }
-      if (updatedAt_ != null) {
-        bitField0_ |= 0x00004000;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-     */
-    public Builder clearUpdatedAt() {
+    public Builder clearUpdatedAtMs() {
       bitField0_ = (bitField0_ & ~0x00004000);
-      updatedAt_ = null;
-      if (updatedAtBuilder_ != null) {
-        updatedAtBuilder_.dispose();
-        updatedAtBuilder_ = null;
-      }
+      updatedAtMs_ = 0L;
       onChanged();
       return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
-      bitField0_ |= 0x00004000;
-      onChanged();
-      return internalGetUpdatedAtFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
-      if (updatedAtBuilder_ != null) {
-        return updatedAtBuilder_.getMessageOrBuilder();
-      } else {
-        return updatedAt_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
-      }
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp updated_at = 15 [json_name = "updated_at"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetUpdatedAtFieldBuilder() {
-      if (updatedAtBuilder_ == null) {
-        updatedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdatedAt(),
-                getParentForChildren(),
-                isClean());
-        updatedAt_ = null;
-      }
-      return updatedAtBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:fusion.ai.proto.workbench.PredictJobView)

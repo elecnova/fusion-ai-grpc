@@ -569,13 +569,14 @@ type FusionModelView struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	// 固定产物名，如 fusion-ai
-	ModelKey      string                 `protobuf:"bytes,2,opt,name=model_key,proto3" json:"model_key,omitempty"`
-	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
-	Status        ModelReadyStatus       `protobuf:"varint,4,opt,name=status,proto3,enum=fusion.ai.proto.workbench.ModelReadyStatus" json:"status,omitempty"`
-	LastTrainedAt *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=last_trained_at,proto3,oneof" json:"last_trained_at,omitempty"`
-	ArtifactUri   *string                `protobuf:"bytes,6,opt,name=artifact_uri,proto3,oneof" json:"artifact_uri,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	ModelKey string           `protobuf:"bytes,2,opt,name=model_key,proto3" json:"model_key,omitempty"`
+	Version  string           `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
+	Status   ModelReadyStatus `protobuf:"varint,4,opt,name=status,proto3,enum=fusion.ai.proto.workbench.ModelReadyStatus" json:"status,omitempty"`
+	// 上次训练完成时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+	LastTrainedAtMs *int64  `protobuf:"varint,5,opt,name=last_trained_at_ms,proto3,oneof" json:"last_trained_at_ms,omitempty"`
+	ArtifactUri     *string `protobuf:"bytes,6,opt,name=artifact_uri,proto3,oneof" json:"artifact_uri,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *FusionModelView) Reset() {
@@ -636,11 +637,11 @@ func (x *FusionModelView) GetStatus() ModelReadyStatus {
 	return ModelReadyStatus_MODEL_READY_STATUS_UNSPECIFIED
 }
 
-func (x *FusionModelView) GetLastTrainedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.LastTrainedAt
+func (x *FusionModelView) GetLastTrainedAtMs() int64 {
+	if x != nil && x.LastTrainedAtMs != nil {
+		return *x.LastTrainedAtMs
 	}
-	return nil
+	return 0
 }
 
 func (x *FusionModelView) GetArtifactUri() string {
@@ -660,19 +661,20 @@ type PredictJobView struct {
 	// 0~100
 	ProgressPct int32 `protobuf:"varint,4,opt,name=progress_pct,proto3" json:"progress_pct,omitempty"`
 	// 当前步键，如 infer
-	Stage          string                 `protobuf:"bytes,5,opt,name=stage,proto3" json:"stage,omitempty"`
-	Stages         map[string]string      `protobuf:"bytes,6,rep,name=stages,proto3" json:"stages,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	EvalDate       string                 `protobuf:"bytes,7,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
-	DayOffset      int32                  `protobuf:"varint,8,opt,name=day_offset,proto3" json:"day_offset,omitempty"`
-	GranularityMin int32                  `protobuf:"varint,9,opt,name=granularity_min,proto3" json:"granularity_min,omitempty"`
-	HorizonHours   int32                  `protobuf:"varint,10,opt,name=horizon_hours,proto3" json:"horizon_hours,omitempty"`
-	ModelId        string                 `protobuf:"bytes,11,opt,name=model_id,proto3" json:"model_id,omitempty"`
-	Message        string                 `protobuf:"bytes,12,opt,name=message,proto3" json:"message,omitempty"`
-	StartedAt      *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=started_at,proto3,oneof" json:"started_at,omitempty"`
-	FinishedAt     *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=finished_at,proto3,oneof" json:"finished_at,omitempty"`
-	UpdatedAt      *timestamppb.Timestamp `protobuf:"bytes,15,opt,name=updated_at,proto3,oneof" json:"updated_at,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	Stage          string            `protobuf:"bytes,5,opt,name=stage,proto3" json:"stage,omitempty"`
+	Stages         map[string]string `protobuf:"bytes,6,rep,name=stages,proto3" json:"stages,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	EvalDate       string            `protobuf:"bytes,7,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
+	DayOffset      int32             `protobuf:"varint,8,opt,name=day_offset,proto3" json:"day_offset,omitempty"`
+	GranularityMin int32             `protobuf:"varint,9,opt,name=granularity_min,proto3" json:"granularity_min,omitempty"`
+	HorizonHours   int32             `protobuf:"varint,10,opt,name=horizon_hours,proto3" json:"horizon_hours,omitempty"`
+	ModelId        string            `protobuf:"bytes,11,opt,name=model_id,proto3" json:"model_id,omitempty"`
+	Message        string            `protobuf:"bytes,12,opt,name=message,proto3" json:"message,omitempty"`
+	// 开始/结束/更新时间，Unix 毫秒；etcd 缺分/秒时服务端补 0 再转 ms
+	StartedAtMs   *int64 `protobuf:"varint,13,opt,name=started_at_ms,proto3,oneof" json:"started_at_ms,omitempty"`
+	FinishedAtMs  *int64 `protobuf:"varint,14,opt,name=finished_at_ms,proto3,oneof" json:"finished_at_ms,omitempty"`
+	UpdatedAtMs   *int64 `protobuf:"varint,15,opt,name=updated_at_ms,proto3,oneof" json:"updated_at_ms,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PredictJobView) Reset() {
@@ -789,25 +791,25 @@ func (x *PredictJobView) GetMessage() string {
 	return ""
 }
 
-func (x *PredictJobView) GetStartedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.StartedAt
+func (x *PredictJobView) GetStartedAtMs() int64 {
+	if x != nil && x.StartedAtMs != nil {
+		return *x.StartedAtMs
 	}
-	return nil
+	return 0
 }
 
-func (x *PredictJobView) GetFinishedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.FinishedAt
+func (x *PredictJobView) GetFinishedAtMs() int64 {
+	if x != nil && x.FinishedAtMs != nil {
+		return *x.FinishedAtMs
 	}
-	return nil
+	return 0
 }
 
-func (x *PredictJobView) GetUpdatedAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.UpdatedAt
+func (x *PredictJobView) GetUpdatedAtMs() int64 {
+	if x != nil && x.UpdatedAtMs != nil {
+		return *x.UpdatedAtMs
 	}
-	return nil
+	return 0
 }
 
 type SeriesPoint struct {
@@ -2075,16 +2077,16 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"checked_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"checked_atB\n" +
 	"\n" +
-	"\b_weather\"\xd1\x02\n" +
+	"\b_weather\"\xbe\x02\n" +
 	"\x0fFusionModelView\x12(\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x12\x1c\n" +
 	"\tmodel_key\x18\x02 \x01(\tR\tmodel_key\x12\x18\n" +
 	"\aversion\x18\x03 \x01(\tR\aversion\x12C\n" +
-	"\x06status\x18\x04 \x01(\x0e2+.fusion.ai.proto.workbench.ModelReadyStatusR\x06status\x12I\n" +
-	"\x0flast_trained_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampH\x00R\x0flast_trained_at\x88\x01\x01\x12'\n" +
-	"\fartifact_uri\x18\x06 \x01(\tH\x01R\fartifact_uri\x88\x01\x01B\x12\n" +
-	"\x10_last_trained_atB\x0f\n" +
-	"\r_artifact_uri\"\x8b\x06\n" +
+	"\x06status\x18\x04 \x01(\x0e2+.fusion.ai.proto.workbench.ModelReadyStatusR\x06status\x123\n" +
+	"\x12last_trained_at_ms\x18\x05 \x01(\x03H\x00R\x12last_trained_at_ms\x88\x01\x01\x12'\n" +
+	"\fartifact_uri\x18\x06 \x01(\tH\x01R\fartifact_uri\x88\x01\x01B\x15\n" +
+	"\x13_last_trained_at_msB\x0f\n" +
+	"\r_artifact_uri\"\xd2\x05\n" +
 	"\x0ePredictJobView\x12\x16\n" +
 	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x12(\n" +
 	"\x0fregistration_id\x18\x02 \x01(\tR\x0fregistration_id\x12<\n" +
@@ -2100,20 +2102,16 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"\rhorizon_hours\x18\n" +
 	" \x01(\x05R\rhorizon_hours\x12\x1a\n" +
 	"\bmodel_id\x18\v \x01(\tR\bmodel_id\x12\x18\n" +
-	"\amessage\x18\f \x01(\tR\amessage\x12?\n" +
-	"\n" +
-	"started_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampH\x00R\n" +
-	"started_at\x88\x01\x01\x12A\n" +
-	"\vfinished_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampH\x01R\vfinished_at\x88\x01\x01\x12?\n" +
-	"\n" +
-	"updated_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampH\x02R\n" +
-	"updated_at\x88\x01\x01\x1a9\n" +
+	"\amessage\x18\f \x01(\tR\amessage\x12)\n" +
+	"\rstarted_at_ms\x18\r \x01(\x03H\x00R\rstarted_at_ms\x88\x01\x01\x12+\n" +
+	"\x0efinished_at_ms\x18\x0e \x01(\x03H\x01R\x0efinished_at_ms\x88\x01\x01\x12)\n" +
+	"\rupdated_at_ms\x18\x0f \x01(\x03H\x02R\rupdated_at_ms\x88\x01\x01\x1a9\n" +
 	"\vStagesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\r\n" +
-	"\v_started_atB\x0e\n" +
-	"\f_finished_atB\r\n" +
-	"\v_updated_at\"\x8e\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x10\n" +
+	"\x0e_started_at_msB\x11\n" +
+	"\x0f_finished_at_msB\x10\n" +
+	"\x0e_updated_at_ms\"\x8e\x01\n" +
 	"\vSeriesPoint\x12\x14\n" +
 	"\x05ts_ms\x18\x01 \x01(\x03R\x05ts_ms\x12'\n" +
 	"\fpredicted_kw\x18\x02 \x01(\x01H\x00R\fpredicted_kw\x88\x01\x01\x12!\n" +
@@ -2308,27 +2306,23 @@ var file_workbench_workbench_message_proto_depIdxs = []int32{
 	6,  // 5: fusion.ai.proto.workbench.DataReadyCheck.weather:type_name -> fusion.ai.proto.workbench.CoverageBand
 	32, // 6: fusion.ai.proto.workbench.DataReadyCheck.checked_at:type_name -> google.protobuf.Timestamp
 	2,  // 7: fusion.ai.proto.workbench.FusionModelView.status:type_name -> fusion.ai.proto.workbench.ModelReadyStatus
-	32, // 8: fusion.ai.proto.workbench.FusionModelView.last_trained_at:type_name -> google.protobuf.Timestamp
-	3,  // 9: fusion.ai.proto.workbench.PredictJobView.status:type_name -> fusion.ai.proto.workbench.JobStatus
-	31, // 10: fusion.ai.proto.workbench.PredictJobView.stages:type_name -> fusion.ai.proto.workbench.PredictJobView.StagesEntry
-	32, // 11: fusion.ai.proto.workbench.PredictJobView.started_at:type_name -> google.protobuf.Timestamp
-	32, // 12: fusion.ai.proto.workbench.PredictJobView.finished_at:type_name -> google.protobuf.Timestamp
-	32, // 13: fusion.ai.proto.workbench.PredictJobView.updated_at:type_name -> google.protobuf.Timestamp
-	10, // 14: fusion.ai.proto.workbench.EvalDaySeries.points:type_name -> fusion.ai.proto.workbench.SeriesPoint
-	13, // 15: fusion.ai.proto.workbench.EvalDayMetricsPage.rows:type_name -> fusion.ai.proto.workbench.EvalDayMetricsRow
-	7,  // 16: fusion.ai.proto.workbench.GetDataReadyCheckResponse.check:type_name -> fusion.ai.proto.workbench.DataReadyCheck
-	8,  // 17: fusion.ai.proto.workbench.GetFusionModelResponse.model:type_name -> fusion.ai.proto.workbench.FusionModelView
-	3,  // 18: fusion.ai.proto.workbench.CreateTrainJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
-	3,  // 19: fusion.ai.proto.workbench.CreatePredictJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
-	9,  // 20: fusion.ai.proto.workbench.GetPredictResponse.job:type_name -> fusion.ai.proto.workbench.PredictJobView
-	11, // 21: fusion.ai.proto.workbench.GetEvalDaySeriesResponse.series:type_name -> fusion.ai.proto.workbench.EvalDaySeries
-	12, // 22: fusion.ai.proto.workbench.GetEvalDayMetricsResponse.metrics:type_name -> fusion.ai.proto.workbench.EvalDayMetrics
-	14, // 23: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse.page:type_name -> fusion.ai.proto.workbench.EvalDayMetricsPage
-	24, // [24:24] is the sub-list for method output_type
-	24, // [24:24] is the sub-list for method input_type
-	24, // [24:24] is the sub-list for extension type_name
-	24, // [24:24] is the sub-list for extension extendee
-	0,  // [0:24] is the sub-list for field type_name
+	3,  // 8: fusion.ai.proto.workbench.PredictJobView.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	31, // 9: fusion.ai.proto.workbench.PredictJobView.stages:type_name -> fusion.ai.proto.workbench.PredictJobView.StagesEntry
+	10, // 10: fusion.ai.proto.workbench.EvalDaySeries.points:type_name -> fusion.ai.proto.workbench.SeriesPoint
+	13, // 11: fusion.ai.proto.workbench.EvalDayMetricsPage.rows:type_name -> fusion.ai.proto.workbench.EvalDayMetricsRow
+	7,  // 12: fusion.ai.proto.workbench.GetDataReadyCheckResponse.check:type_name -> fusion.ai.proto.workbench.DataReadyCheck
+	8,  // 13: fusion.ai.proto.workbench.GetFusionModelResponse.model:type_name -> fusion.ai.proto.workbench.FusionModelView
+	3,  // 14: fusion.ai.proto.workbench.CreateTrainJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	3,  // 15: fusion.ai.proto.workbench.CreatePredictJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	9,  // 16: fusion.ai.proto.workbench.GetPredictResponse.job:type_name -> fusion.ai.proto.workbench.PredictJobView
+	11, // 17: fusion.ai.proto.workbench.GetEvalDaySeriesResponse.series:type_name -> fusion.ai.proto.workbench.EvalDaySeries
+	12, // 18: fusion.ai.proto.workbench.GetEvalDayMetricsResponse.metrics:type_name -> fusion.ai.proto.workbench.EvalDayMetrics
+	14, // 19: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse.page:type_name -> fusion.ai.proto.workbench.EvalDayMetricsPage
+	20, // [20:20] is the sub-list for method output_type
+	20, // [20:20] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_workbench_workbench_message_proto_init() }
