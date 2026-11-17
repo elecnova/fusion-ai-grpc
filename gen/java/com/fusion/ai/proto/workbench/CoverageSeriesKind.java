@@ -6,20 +6,36 @@
 package com.fusion.ai.proto.workbench;
 
 /**
+ * <pre>
+ * CoverageSeriesKind 覆盖序列类型。
+ * </pre>
+ *
  * Protobuf enum {@code fusion.ai.proto.workbench.CoverageSeriesKind}
  */
 @com.google.protobuf.Generated
 public enum CoverageSeriesKind
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * 未设置
+   * </pre>
+   *
    * <code>COVERAGE_SERIES_KIND_UNSPECIFIED = 0;</code>
    */
   COVERAGE_SERIES_KIND_UNSPECIFIED(0),
   /**
+   * <pre>
+   * 功率（实发）
+   * </pre>
+   *
    * <code>COVERAGE_SERIES_KIND_POWER = 1;</code>
    */
   COVERAGE_SERIES_KIND_POWER(1),
   /**
+   * <pre>
+   * 天气（仅光伏）
+   * </pre>
+   *
    * <code>COVERAGE_SERIES_KIND_WEATHER = 2;</code>
    */
   COVERAGE_SERIES_KIND_WEATHER(2),
@@ -36,14 +52,26 @@ public enum CoverageSeriesKind
       "CoverageSeriesKind");
   }
   /**
+   * <pre>
+   * 未设置
+   * </pre>
+   *
    * <code>COVERAGE_SERIES_KIND_UNSPECIFIED = 0;</code>
    */
   public static final int COVERAGE_SERIES_KIND_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * 功率（实发）
+   * </pre>
+   *
    * <code>COVERAGE_SERIES_KIND_POWER = 1;</code>
    */
   public static final int COVERAGE_SERIES_KIND_POWER_VALUE = 1;
   /**
+   * <pre>
+   * 天气（仅光伏）
+   * </pre>
+   *
    * <code>COVERAGE_SERIES_KIND_WEATHER = 2;</code>
    */
   public static final int COVERAGE_SERIES_KIND_WEATHER_VALUE = 2;

@@ -57,6 +57,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
@@ -74,6 +78,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -143,6 +151,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object timezone_ = "";
   /**
+   * <pre>
+   * IANA 时区，如 Asia/Shanghai
+   * </pre>
+   *
    * <code>string timezone = 3 [json_name = "timezone"];</code>
    * @return The timezone.
    */
@@ -160,6 +172,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * IANA 时区，如 Asia/Shanghai
+   * </pre>
+   *
    * <code>string timezone = 3 [json_name = "timezone"];</code>
    * @return The bytes for timezone.
    */
@@ -181,6 +197,10 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_FIELD_NUMBER = 4;
   private int status_ = 0;
   /**
+   * <pre>
+   * 就绪总览：PASS / WARN / FAIL
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
@@ -188,6 +208,10 @@ private static final long serialVersionUID = 0L;
     return status_;
   }
   /**
+   * <pre>
+   * 就绪总览：PASS / WARN / FAIL
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
    * @return The status.
    */
@@ -199,6 +223,10 @@ private static final long serialVersionUID = 0L;
   public static final int POWER_FIELD_NUMBER = 5;
   private com.fusion.ai.proto.workbench.CoverageBand power_;
   /**
+   * <pre>
+   * 功率覆盖
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
    * @return Whether the power field is set.
    */
@@ -207,6 +235,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 功率覆盖
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
    * @return The power.
    */
@@ -215,6 +247,10 @@ private static final long serialVersionUID = 0L;
     return power_ == null ? com.fusion.ai.proto.workbench.CoverageBand.getDefaultInstance() : power_;
   }
   /**
+   * <pre>
+   * 功率覆盖
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
    */
   @java.lang.Override
@@ -226,7 +262,7 @@ private static final long serialVersionUID = 0L;
   private com.fusion.ai.proto.workbench.CoverageBand weather_;
   /**
    * <pre>
-   * 仅光伏；负荷/储能可不填
+   * 天气覆盖；仅光伏有值，负荷/储能可不填
    * </pre>
    *
    * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -238,7 +274,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 仅光伏；负荷/储能可不填
+   * 天气覆盖；仅光伏有值，负荷/储能可不填
    * </pre>
    *
    * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -250,7 +286,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 仅光伏；负荷/储能可不填
+   * 天气覆盖；仅光伏有值，负荷/储能可不填
    * </pre>
    *
    * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -263,6 +299,10 @@ private static final long serialVersionUID = 0L;
   public static final int CHECKED_AT_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp checkedAt_;
   /**
+   * <pre>
+   * 本次检查完成时间（UTC Timestamp）
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
    * @return Whether the checkedAt field is set.
    */
@@ -271,6 +311,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
+   * <pre>
+   * 本次检查完成时间（UTC Timestamp）
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
    * @return The checkedAt.
    */
@@ -279,6 +323,10 @@ private static final long serialVersionUID = 0L;
     return checkedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : checkedAt_;
   }
   /**
+   * <pre>
+   * 本次检查完成时间（UTC Timestamp）
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
    */
   @java.lang.Override
@@ -775,6 +823,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The registrationId.
      */
@@ -791,6 +843,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The bytes for registrationId.
      */
@@ -808,6 +864,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -821,6 +881,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return This builder for chaining.
      */
@@ -831,6 +895,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.
@@ -939,6 +1007,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object timezone_ = "";
     /**
+     * <pre>
+     * IANA 时区，如 Asia/Shanghai
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @return The timezone.
      */
@@ -955,6 +1027,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * IANA 时区，如 Asia/Shanghai
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @return The bytes for timezone.
      */
@@ -972,6 +1048,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * IANA 时区，如 Asia/Shanghai
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @param value The timezone to set.
      * @return This builder for chaining.
@@ -985,6 +1065,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * IANA 时区，如 Asia/Shanghai
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @return This builder for chaining.
      */
@@ -995,6 +1079,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * IANA 时区，如 Asia/Shanghai
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @param value The bytes for timezone to set.
      * @return This builder for chaining.
@@ -1011,6 +1099,10 @@ private static final long serialVersionUID = 0L;
 
     private int status_ = 0;
     /**
+     * <pre>
+     * 就绪总览：PASS / WARN / FAIL
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
      * @return The enum numeric value on the wire for status.
      */
@@ -1018,6 +1110,10 @@ private static final long serialVersionUID = 0L;
       return status_;
     }
     /**
+     * <pre>
+     * 就绪总览：PASS / WARN / FAIL
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
@@ -1029,6 +1125,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 就绪总览：PASS / WARN / FAIL
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
      * @return The status.
      */
@@ -1038,6 +1138,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.workbench.ReadyCheckStatus.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * 就绪总览：PASS / WARN / FAIL
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
      * @param value The status to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
@@ -1051,6 +1155,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 就绪总览：PASS / WARN / FAIL
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
      * @return This builder for chaining.
      */
@@ -1065,6 +1173,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.workbench.CoverageBand, com.fusion.ai.proto.workbench.CoverageBand.Builder, com.fusion.ai.proto.workbench.CoverageBandOrBuilder> powerBuilder_;
     /**
+     * <pre>
+     * 功率覆盖
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      * @return Whether the power field is set.
      */
@@ -1072,6 +1184,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
+     * <pre>
+     * 功率覆盖
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      * @return The power.
      */
@@ -1083,6 +1199,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 功率覆盖
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      */
     public Builder setPower(com.fusion.ai.proto.workbench.CoverageBand value) {
@@ -1097,6 +1217,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 功率覆盖
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      */
     public Builder setPower(
@@ -1111,6 +1235,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 功率覆盖
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      */
     public Builder mergePower(com.fusion.ai.proto.workbench.CoverageBand value) {
@@ -1132,6 +1260,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 功率覆盖
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      */
     public Builder clearPower() {
@@ -1145,6 +1277,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 功率覆盖
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      */
     public com.fusion.ai.proto.workbench.CoverageBand.Builder getPowerBuilder() {
@@ -1153,6 +1289,10 @@ private static final long serialVersionUID = 0L;
       return internalGetPowerFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 功率覆盖
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      */
     public com.fusion.ai.proto.workbench.CoverageBandOrBuilder getPowerOrBuilder() {
@@ -1164,6 +1304,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 功率覆盖
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -1185,7 +1329,7 @@ private static final long serialVersionUID = 0L;
         com.fusion.ai.proto.workbench.CoverageBand, com.fusion.ai.proto.workbench.CoverageBand.Builder, com.fusion.ai.proto.workbench.CoverageBandOrBuilder> weatherBuilder_;
     /**
      * <pre>
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      * </pre>
      *
      * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -1196,7 +1340,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      * </pre>
      *
      * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -1211,7 +1355,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      * </pre>
      *
      * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -1229,7 +1373,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      * </pre>
      *
      * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -1247,7 +1391,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      * </pre>
      *
      * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -1272,7 +1416,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      * </pre>
      *
      * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -1289,7 +1433,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      * </pre>
      *
      * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -1301,7 +1445,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      * </pre>
      *
      * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -1316,7 +1460,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      * </pre>
      *
      * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -1339,6 +1483,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> checkedAtBuilder_;
     /**
+     * <pre>
+     * 本次检查完成时间（UTC Timestamp）
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      * @return Whether the checkedAt field is set.
      */
@@ -1346,6 +1494,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
+     * <pre>
+     * 本次检查完成时间（UTC Timestamp）
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      * @return The checkedAt.
      */
@@ -1357,6 +1509,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 本次检查完成时间（UTC Timestamp）
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      */
     public Builder setCheckedAt(com.google.protobuf.Timestamp value) {
@@ -1371,6 +1527,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 本次检查完成时间（UTC Timestamp）
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      */
     public Builder setCheckedAt(
@@ -1385,6 +1545,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 本次检查完成时间（UTC Timestamp）
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      */
     public Builder mergeCheckedAt(com.google.protobuf.Timestamp value) {
@@ -1406,6 +1570,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 本次检查完成时间（UTC Timestamp）
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      */
     public Builder clearCheckedAt() {
@@ -1419,6 +1587,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 本次检查完成时间（UTC Timestamp）
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCheckedAtBuilder() {
@@ -1427,6 +1599,10 @@ private static final long serialVersionUID = 0L;
       return internalGetCheckedAtFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 本次检查完成时间（UTC Timestamp）
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCheckedAtOrBuilder() {
@@ -1438,6 +1614,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 本次检查完成时间（UTC Timestamp）
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<

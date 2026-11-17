@@ -8,19 +8,27 @@ namespace Fusion\Ai\Proto\Workbench;
 use UnexpectedValueException;
 
 /**
+ * CoverageSeriesKind 覆盖序列类型。
+ *
  * Protobuf type <code>fusion.ai.proto.workbench.CoverageSeriesKind</code>
  */
 class CoverageSeriesKind
 {
     /**
+     * 未设置
+     *
      * Generated from protobuf enum <code>COVERAGE_SERIES_KIND_UNSPECIFIED = 0;</code>
      */
     const COVERAGE_SERIES_KIND_UNSPECIFIED = 0;
     /**
+     * 功率（实发）
+     *
      * Generated from protobuf enum <code>COVERAGE_SERIES_KIND_POWER = 1;</code>
      */
     const COVERAGE_SERIES_KIND_POWER = 1;
     /**
+     * 天气（仅光伏）
+     *
      * Generated from protobuf enum <code>COVERAGE_SERIES_KIND_WEATHER = 2;</code>
      */
     const COVERAGE_SERIES_KIND_WEATHER = 2;

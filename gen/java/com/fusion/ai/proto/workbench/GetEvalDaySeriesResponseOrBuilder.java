@@ -11,16 +11,28 @@ public interface GetEvalDaySeriesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 评估日曲线
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
    * @return Whether the series field is set.
    */
   boolean hasSeries();
   /**
+   * <pre>
+   * 评估日曲线
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
    * @return The series.
    */
   com.fusion.ai.proto.workbench.EvalDaySeries getSeries();
   /**
+   * <pre>
+   * 评估日曲线
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
    */
   com.fusion.ai.proto.workbench.EvalDaySeriesOrBuilder getSeriesOrBuilder();

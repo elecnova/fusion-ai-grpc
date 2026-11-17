@@ -52,6 +52,10 @@ private static final long serialVersionUID = 0L;
   public static final int MODEL_FIELD_NUMBER = 1;
   private com.fusion.ai.proto.workbench.FusionModelView model_;
   /**
+   * <pre>
+   * 融合模型卡片
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
    * @return Whether the model field is set.
    */
@@ -60,6 +64,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 融合模型卡片
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
    * @return The model.
    */
@@ -68,6 +76,10 @@ private static final long serialVersionUID = 0L;
     return model_ == null ? com.fusion.ai.proto.workbench.FusionModelView.getDefaultInstance() : model_;
   }
   /**
+   * <pre>
+   * 融合模型卡片
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
    */
   @java.lang.Override
@@ -396,6 +408,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.workbench.FusionModelView, com.fusion.ai.proto.workbench.FusionModelView.Builder, com.fusion.ai.proto.workbench.FusionModelViewOrBuilder> modelBuilder_;
     /**
+     * <pre>
+     * 融合模型卡片
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      * @return Whether the model field is set.
      */
@@ -403,6 +419,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     * <pre>
+     * 融合模型卡片
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      * @return The model.
      */
@@ -414,6 +434,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 融合模型卡片
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      */
     public Builder setModel(com.fusion.ai.proto.workbench.FusionModelView value) {
@@ -428,6 +452,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 融合模型卡片
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      */
     public Builder setModel(
@@ -442,6 +470,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 融合模型卡片
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      */
     public Builder mergeModel(com.fusion.ai.proto.workbench.FusionModelView value) {
@@ -463,6 +495,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 融合模型卡片
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      */
     public Builder clearModel() {
@@ -476,6 +512,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 融合模型卡片
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      */
     public com.fusion.ai.proto.workbench.FusionModelView.Builder getModelBuilder() {
@@ -484,6 +524,10 @@ private static final long serialVersionUID = 0L;
       return internalGetModelFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 融合模型卡片
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      */
     public com.fusion.ai.proto.workbench.FusionModelViewOrBuilder getModelOrBuilder() {
@@ -495,6 +539,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 融合模型卡片
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<

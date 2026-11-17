@@ -55,6 +55,10 @@ private static final long serialVersionUID = 0L;
   public static final int KIND_FIELD_NUMBER = 1;
   private int kind_ = 0;
   /**
+   * <pre>
+   * 序列类型：功率 / 天气
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
    * @return The enum numeric value on the wire for kind.
    */
@@ -62,6 +66,10 @@ private static final long serialVersionUID = 0L;
     return kind_;
   }
   /**
+   * <pre>
+   * 序列类型：功率 / 天气
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
    * @return The kind.
    */
@@ -74,7 +82,7 @@ private static final long serialVersionUID = 0L;
   private double coverageRatio_ = 0D;
   /**
    * <pre>
-   * 覆盖率 0~1
+   * 覆盖率 0~1（1=全覆盖）
    * </pre>
    *
    * <code>double coverage_ratio = 2 [json_name = "coverage_ratio"];</code>
@@ -104,6 +112,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceLabel_ = "";
   /**
+   * <pre>
+   * 数据来源展示名，如「实发功率」「数值天气预报」
+   * </pre>
+   *
    * <code>string source_label = 4 [json_name = "source_label"];</code>
    * @return The sourceLabel.
    */
@@ -121,6 +133,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 数据来源展示名，如「实发功率」「数值天气预报」
+   * </pre>
+   *
    * <code>string source_label = 4 [json_name = "source_label"];</code>
    * @return The bytes for sourceLabel.
    */
@@ -143,6 +159,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.fusion.ai.proto.workbench.CoveragePoint> points_;
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -150,6 +170,10 @@ private static final long serialVersionUID = 0L;
     return points_;
   }
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -158,6 +182,10 @@ private static final long serialVersionUID = 0L;
     return points_;
   }
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -165,6 +193,10 @@ private static final long serialVersionUID = 0L;
     return points_.size();
   }
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -172,6 +204,10 @@ private static final long serialVersionUID = 0L;
     return points_.get(index);
   }
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -184,6 +220,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.fusion.ai.proto.workbench.GapInterval> gaps_;
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   @java.lang.Override
@@ -191,6 +231,10 @@ private static final long serialVersionUID = 0L;
     return gaps_;
   }
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   @java.lang.Override
@@ -199,6 +243,10 @@ private static final long serialVersionUID = 0L;
     return gaps_;
   }
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   @java.lang.Override
@@ -206,6 +254,10 @@ private static final long serialVersionUID = 0L;
     return gaps_.size();
   }
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   @java.lang.Override
@@ -213,6 +265,10 @@ private static final long serialVersionUID = 0L;
     return gaps_.get(index);
   }
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   @java.lang.Override
@@ -739,6 +795,10 @@ private static final long serialVersionUID = 0L;
 
     private int kind_ = 0;
     /**
+     * <pre>
+     * 序列类型：功率 / 天气
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
      * @return The enum numeric value on the wire for kind.
      */
@@ -746,6 +806,10 @@ private static final long serialVersionUID = 0L;
       return kind_;
     }
     /**
+     * <pre>
+     * 序列类型：功率 / 天气
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
      * @param value The enum numeric value on the wire for kind to set.
      * @return This builder for chaining.
@@ -757,6 +821,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 序列类型：功率 / 天气
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
      * @return The kind.
      */
@@ -766,6 +834,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.workbench.CoverageSeriesKind.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * 序列类型：功率 / 天气
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
      * @param value The kind to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
@@ -779,6 +851,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 序列类型：功率 / 天气
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
      * @return This builder for chaining.
      */
@@ -792,7 +868,7 @@ private static final long serialVersionUID = 0L;
     private double coverageRatio_ ;
     /**
      * <pre>
-     * 覆盖率 0~1
+     * 覆盖率 0~1（1=全覆盖）
      * </pre>
      *
      * <code>double coverage_ratio = 2 [json_name = "coverage_ratio"];</code>
@@ -804,7 +880,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 覆盖率 0~1
+     * 覆盖率 0~1（1=全覆盖）
      * </pre>
      *
      * <code>double coverage_ratio = 2 [json_name = "coverage_ratio"];</code>
@@ -820,7 +896,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 覆盖率 0~1
+     * 覆盖率 0~1（1=全覆盖）
      * </pre>
      *
      * <code>double coverage_ratio = 2 [json_name = "coverage_ratio"];</code>
@@ -879,6 +955,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object sourceLabel_ = "";
     /**
+     * <pre>
+     * 数据来源展示名，如「实发功率」「数值天气预报」
+     * </pre>
+     *
      * <code>string source_label = 4 [json_name = "source_label"];</code>
      * @return The sourceLabel.
      */
@@ -895,6 +975,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 数据来源展示名，如「实发功率」「数值天气预报」
+     * </pre>
+     *
      * <code>string source_label = 4 [json_name = "source_label"];</code>
      * @return The bytes for sourceLabel.
      */
@@ -912,6 +996,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 数据来源展示名，如「实发功率」「数值天气预报」
+     * </pre>
+     *
      * <code>string source_label = 4 [json_name = "source_label"];</code>
      * @param value The sourceLabel to set.
      * @return This builder for chaining.
@@ -925,6 +1013,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 数据来源展示名，如「实发功率」「数值天气预报」
+     * </pre>
+     *
      * <code>string source_label = 4 [json_name = "source_label"];</code>
      * @return This builder for chaining.
      */
@@ -935,6 +1027,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 数据来源展示名，如「实发功率」「数值天气预报」
+     * </pre>
+     *
      * <code>string source_label = 4 [json_name = "source_label"];</code>
      * @param value The bytes for sourceLabel to set.
      * @return This builder for chaining.
@@ -962,6 +1058,10 @@ private static final long serialVersionUID = 0L;
         com.fusion.ai.proto.workbench.CoveragePoint, com.fusion.ai.proto.workbench.CoveragePoint.Builder, com.fusion.ai.proto.workbench.CoveragePointOrBuilder> pointsBuilder_;
 
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public java.util.List<com.fusion.ai.proto.workbench.CoveragePoint> getPointsList() {
@@ -972,6 +1072,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public int getPointsCount() {
@@ -982,6 +1086,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.CoveragePoint getPoints(int index) {
@@ -992,6 +1100,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public Builder setPoints(
@@ -1007,6 +1119,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public Builder setPoints(
@@ -1021,6 +1137,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public Builder addPoints(com.fusion.ai.proto.workbench.CoveragePoint value) {
@@ -1035,6 +1155,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public Builder addPoints(
@@ -1050,6 +1174,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public Builder addPoints(
@@ -1064,6 +1192,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public Builder addPoints(
@@ -1078,6 +1210,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public Builder addAllPoints(
@@ -1093,6 +1229,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public Builder clearPoints() {
@@ -1106,6 +1246,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public Builder removePoints(int index) {
@@ -1119,6 +1263,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.CoveragePoint.Builder getPointsBuilder(
@@ -1126,6 +1274,10 @@ private static final long serialVersionUID = 0L;
       return internalGetPointsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.CoveragePointOrBuilder getPointsOrBuilder(
@@ -1136,6 +1288,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public java.util.List<? extends com.fusion.ai.proto.workbench.CoveragePointOrBuilder> 
@@ -1147,6 +1303,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.CoveragePoint.Builder addPointsBuilder() {
@@ -1154,6 +1314,10 @@ private static final long serialVersionUID = 0L;
           com.fusion.ai.proto.workbench.CoveragePoint.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.CoveragePoint.Builder addPointsBuilder(
@@ -1162,6 +1326,10 @@ private static final long serialVersionUID = 0L;
           index, com.fusion.ai.proto.workbench.CoveragePoint.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 逐点覆盖（include_points=false 时可为空）
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     public java.util.List<com.fusion.ai.proto.workbench.CoveragePoint.Builder> 
@@ -1196,6 +1364,10 @@ private static final long serialVersionUID = 0L;
         com.fusion.ai.proto.workbench.GapInterval, com.fusion.ai.proto.workbench.GapInterval.Builder, com.fusion.ai.proto.workbench.GapIntervalOrBuilder> gapsBuilder_;
 
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public java.util.List<com.fusion.ai.proto.workbench.GapInterval> getGapsList() {
@@ -1206,6 +1378,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public int getGapsCount() {
@@ -1216,6 +1392,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public com.fusion.ai.proto.workbench.GapInterval getGaps(int index) {
@@ -1226,6 +1406,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public Builder setGaps(
@@ -1241,6 +1425,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public Builder setGaps(
@@ -1255,6 +1443,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public Builder addGaps(com.fusion.ai.proto.workbench.GapInterval value) {
@@ -1269,6 +1461,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public Builder addGaps(
@@ -1284,6 +1480,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public Builder addGaps(
@@ -1298,6 +1498,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public Builder addGaps(
@@ -1312,6 +1516,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public Builder addAllGaps(
@@ -1327,6 +1535,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public Builder clearGaps() {
@@ -1340,6 +1552,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public Builder removeGaps(int index) {
@@ -1353,6 +1569,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public com.fusion.ai.proto.workbench.GapInterval.Builder getGapsBuilder(
@@ -1360,6 +1580,10 @@ private static final long serialVersionUID = 0L;
       return internalGetGapsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public com.fusion.ai.proto.workbench.GapIntervalOrBuilder getGapsOrBuilder(
@@ -1370,6 +1594,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public java.util.List<? extends com.fusion.ai.proto.workbench.GapIntervalOrBuilder> 
@@ -1381,6 +1609,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public com.fusion.ai.proto.workbench.GapInterval.Builder addGapsBuilder() {
@@ -1388,6 +1620,10 @@ private static final long serialVersionUID = 0L;
           com.fusion.ai.proto.workbench.GapInterval.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public com.fusion.ai.proto.workbench.GapInterval.Builder addGapsBuilder(
@@ -1396,6 +1632,10 @@ private static final long serialVersionUID = 0L;
           index, com.fusion.ai.proto.workbench.GapInterval.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 缺口列表
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     public java.util.List<com.fusion.ai.proto.workbench.GapInterval.Builder> 

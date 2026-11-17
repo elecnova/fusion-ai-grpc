@@ -15,14 +15,20 @@ use Google\Protobuf\RepeatedField;
 class EvalDayMetricsRow extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 1 [json_name = "eval_date"];</code>
      */
     protected $eval_date = '';
     /**
+     * MAPE 百分比数值
+     *
      * Generated from protobuf field <code>optional double mape = 2 [json_name = "mape"];</code>
      */
     protected $mape = null;
     /**
+     * RMSE（kW）
+     *
      * Generated from protobuf field <code>optional double rmse = 3 [json_name = "rmse"];</code>
      */
     protected $rmse = null;
@@ -34,8 +40,11 @@ class EvalDayMetricsRow extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $eval_date
+     *           评估日 YYYY-MM-DD
      *     @type float $mape
+     *           MAPE 百分比数值
      *     @type float $rmse
+     *           RMSE（kW）
      * }
      */
     public function __construct($data = null)
@@ -45,6 +54,8 @@ class EvalDayMetricsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 1 [json_name = "eval_date"];</code>
      * @return string
      */
@@ -54,6 +65,8 @@ class EvalDayMetricsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 1 [json_name = "eval_date"];</code>
      * @param string $var
      * @return $this
@@ -67,6 +80,8 @@ class EvalDayMetricsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * MAPE 百分比数值
+     *
      * Generated from protobuf field <code>optional double mape = 2 [json_name = "mape"];</code>
      * @return float
      */
@@ -86,6 +101,8 @@ class EvalDayMetricsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * MAPE 百分比数值
+     *
      * Generated from protobuf field <code>optional double mape = 2 [json_name = "mape"];</code>
      * @param float $var
      * @return $this
@@ -98,6 +115,8 @@ class EvalDayMetricsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * RMSE（kW）
+     *
      * Generated from protobuf field <code>optional double rmse = 3 [json_name = "rmse"];</code>
      * @return float
      */
@@ -117,6 +136,8 @@ class EvalDayMetricsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * RMSE（kW）
+     *
      * Generated from protobuf field <code>optional double rmse = 3 [json_name = "rmse"];</code>
      * @param float $var
      * @return $this

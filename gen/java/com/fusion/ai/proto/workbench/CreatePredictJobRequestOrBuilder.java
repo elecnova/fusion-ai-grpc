@@ -11,11 +11,19 @@ public interface CreatePredictJobRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 场站 registration_id（必填真实场站，不可用 shared）
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 场站 registration_id（必填真实场站，不可用 shared）
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */

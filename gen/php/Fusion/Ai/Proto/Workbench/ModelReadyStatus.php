@@ -8,30 +8,49 @@ namespace Fusion\Ai\Proto\Workbench;
 use UnexpectedValueException;
 
 /**
+ * ModelReadyStatus 融合模型卡片状态（etcd model/current.status）。
+ * 与算法写入字符串对应：ready / training / failed；stale/missing 由 API 推断。
+ *
  * Protobuf type <code>fusion.ai.proto.workbench.ModelReadyStatus</code>
  */
 class ModelReadyStatus
 {
     /**
+     * 未设置 / 未知
+     *
      * Generated from protobuf enum <code>MODEL_READY_STATUS_UNSPECIFIED = 0;</code>
      */
     const MODEL_READY_STATUS_UNSPECIFIED = 0;
     /**
+     * 可用：有产物，可发起预测
+     *
      * Generated from protobuf enum <code>MODEL_READY_STATUS_READY = 1;</code>
      */
     const MODEL_READY_STATUS_READY = 1;
     /**
+     * 训练中：current_train_job_id 指向进行中任务
+     *
      * Generated from protobuf enum <code>MODEL_READY_STATUS_TRAINING = 2;</code>
      */
     const MODEL_READY_STATUS_TRAINING = 2;
     /**
+     * 过期：有版本但建议重训（非算法直写，API 推断）
+     *
      * Generated from protobuf enum <code>MODEL_READY_STATUS_STALE = 3;</code>
      */
     const MODEL_READY_STATUS_STALE = 3;
     /**
+     * 缺失：尚无模型产物
+     *
      * Generated from protobuf enum <code>MODEL_READY_STATUS_MISSING = 4;</code>
      */
     const MODEL_READY_STATUS_MISSING = 4;
+    /**
+     * 失败：最近一次训练失败（etcd status=failed）
+     *
+     * Generated from protobuf enum <code>MODEL_READY_STATUS_FAILED = 5;</code>
+     */
+    const MODEL_READY_STATUS_FAILED = 5;
 
     private static $valueToName = [
         self::MODEL_READY_STATUS_UNSPECIFIED => 'MODEL_READY_STATUS_UNSPECIFIED',
@@ -39,6 +58,7 @@ class ModelReadyStatus
         self::MODEL_READY_STATUS_TRAINING => 'MODEL_READY_STATUS_TRAINING',
         self::MODEL_READY_STATUS_STALE => 'MODEL_READY_STATUS_STALE',
         self::MODEL_READY_STATUS_MISSING => 'MODEL_READY_STATUS_MISSING',
+        self::MODEL_READY_STATUS_FAILED => 'MODEL_READY_STATUS_FAILED',
     ];
 
     public static function name($value)

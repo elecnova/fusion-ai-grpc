@@ -11,11 +11,19 @@ public interface CreateTrainJobRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 模型 registration_id；空或 shared → 光伏通用模型
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 模型 registration_id；空或 shared → 光伏通用模型
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */

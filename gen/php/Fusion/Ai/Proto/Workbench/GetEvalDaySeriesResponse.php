@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class GetEvalDaySeriesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 评估日曲线
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      */
     protected $series = null;
@@ -26,6 +28,7 @@ class GetEvalDaySeriesResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Fusion\Ai\Proto\Workbench\EvalDaySeries $series
+     *           评估日曲线
      * }
      */
     public function __construct($data = null)
@@ -35,6 +38,8 @@ class GetEvalDaySeriesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日曲线
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      * @return \Fusion\Ai\Proto\Workbench\EvalDaySeries|null
      */
@@ -54,6 +59,8 @@ class GetEvalDaySeriesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日曲线
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      * @param \Fusion\Ai\Proto\Workbench\EvalDaySeries $var
      * @return $this

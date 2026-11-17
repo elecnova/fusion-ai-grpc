@@ -52,6 +52,10 @@ private static final long serialVersionUID = 0L;
   public static final int CHECK_FIELD_NUMBER = 1;
   private com.fusion.ai.proto.workbench.DataReadyCheck check_;
   /**
+   * <pre>
+   * 就绪检查结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
    * @return Whether the check field is set.
    */
@@ -60,6 +64,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 就绪检查结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
    * @return The check.
    */
@@ -68,6 +76,10 @@ private static final long serialVersionUID = 0L;
     return check_ == null ? com.fusion.ai.proto.workbench.DataReadyCheck.getDefaultInstance() : check_;
   }
   /**
+   * <pre>
+   * 就绪检查结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
    */
   @java.lang.Override
@@ -396,6 +408,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.workbench.DataReadyCheck, com.fusion.ai.proto.workbench.DataReadyCheck.Builder, com.fusion.ai.proto.workbench.DataReadyCheckOrBuilder> checkBuilder_;
     /**
+     * <pre>
+     * 就绪检查结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      * @return Whether the check field is set.
      */
@@ -403,6 +419,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     * <pre>
+     * 就绪检查结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      * @return The check.
      */
@@ -414,6 +434,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 就绪检查结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      */
     public Builder setCheck(com.fusion.ai.proto.workbench.DataReadyCheck value) {
@@ -428,6 +452,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 就绪检查结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      */
     public Builder setCheck(
@@ -442,6 +470,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 就绪检查结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      */
     public Builder mergeCheck(com.fusion.ai.proto.workbench.DataReadyCheck value) {
@@ -463,6 +495,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 就绪检查结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      */
     public Builder clearCheck() {
@@ -476,6 +512,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 就绪检查结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      */
     public com.fusion.ai.proto.workbench.DataReadyCheck.Builder getCheckBuilder() {
@@ -484,6 +524,10 @@ private static final long serialVersionUID = 0L;
       return internalGetCheckFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 就绪检查结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      */
     public com.fusion.ai.proto.workbench.DataReadyCheckOrBuilder getCheckOrBuilder() {
@@ -495,6 +539,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 就绪检查结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<

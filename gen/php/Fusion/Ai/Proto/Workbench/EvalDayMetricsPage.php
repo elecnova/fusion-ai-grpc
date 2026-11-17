@@ -15,18 +15,26 @@ use Google\Protobuf\RepeatedField;
 class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 历史评估行
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     private $rows;
     /**
+     * 总行数
+     *
      * Generated from protobuf field <code>int32 total = 2 [json_name = "total"];</code>
      */
     protected $total = 0;
     /**
+     * 当前页（从 1 起）
+     *
      * Generated from protobuf field <code>int32 page = 3 [json_name = "page"];</code>
      */
     protected $page = 0;
     /**
+     * 每页条数
+     *
      * Generated from protobuf field <code>int32 page_size = 4 [json_name = "page_size"];</code>
      */
     protected $page_size = 0;
@@ -38,9 +46,13 @@ class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Fusion\Ai\Proto\Workbench\EvalDayMetricsRow[] $rows
+     *           历史评估行
      *     @type int $total
+     *           总行数
      *     @type int $page
+     *           当前页（从 1 起）
      *     @type int $page_size
+     *           每页条数
      * }
      */
     public function __construct($data = null)
@@ -50,6 +62,8 @@ class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 历史评估行
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      * @return RepeatedField<\Fusion\Ai\Proto\Workbench\EvalDayMetricsRow>
      */
@@ -59,6 +73,8 @@ class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 历史评估行
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      * @param \Fusion\Ai\Proto\Workbench\EvalDayMetricsRow[] $var
      * @return $this
@@ -72,6 +88,8 @@ class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 总行数
+     *
      * Generated from protobuf field <code>int32 total = 2 [json_name = "total"];</code>
      * @return int
      */
@@ -81,6 +99,8 @@ class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 总行数
+     *
      * Generated from protobuf field <code>int32 total = 2 [json_name = "total"];</code>
      * @param int $var
      * @return $this
@@ -94,6 +114,8 @@ class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 当前页（从 1 起）
+     *
      * Generated from protobuf field <code>int32 page = 3 [json_name = "page"];</code>
      * @return int
      */
@@ -103,6 +125,8 @@ class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 当前页（从 1 起）
+     *
      * Generated from protobuf field <code>int32 page = 3 [json_name = "page"];</code>
      * @param int $var
      * @return $this
@@ -116,6 +140,8 @@ class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 每页条数
+     *
      * Generated from protobuf field <code>int32 page_size = 4 [json_name = "page_size"];</code>
      * @return int
      */
@@ -125,6 +151,8 @@ class EvalDayMetricsPage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 每页条数
+     *
      * Generated from protobuf field <code>int32 page_size = 4 [json_name = "page_size"];</code>
      * @param int $var
      * @return $this

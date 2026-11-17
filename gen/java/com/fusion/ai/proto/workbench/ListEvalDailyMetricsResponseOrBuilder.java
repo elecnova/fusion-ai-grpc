@@ -11,16 +11,28 @@ public interface ListEvalDailyMetricsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 分页结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
    * @return Whether the page field is set.
    */
   boolean hasPage();
   /**
+   * <pre>
+   * 分页结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
    * @return The page.
    */
   com.fusion.ai.proto.workbench.EvalDayMetricsPage getPage();
   /**
+   * <pre>
+   * 分页结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
    */
   com.fusion.ai.proto.workbench.EvalDayMetricsPageOrBuilder getPageOrBuilder();

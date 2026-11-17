@@ -11,11 +11,19 @@ public interface FusionModelViewOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 模型所属 registration；本期训练多为光伏通用模型常量
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 模型所属 registration；本期训练多为光伏通用模型常量
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -43,11 +51,19 @@ public interface FusionModelViewOrBuilder extends
       getModelKeyBytes();
 
   /**
+   * <pre>
+   * 模型版本号，如 v2026.10.29；无则空
+   * </pre>
+   *
    * <code>string version = 3 [json_name = "version"];</code>
    * @return The version.
    */
   java.lang.String getVersion();
   /**
+   * <pre>
+   * 模型版本号，如 v2026.10.29；无则空
+   * </pre>
+   *
    * <code>string version = 3 [json_name = "version"];</code>
    * @return The bytes for version.
    */
@@ -55,11 +71,19 @@ public interface FusionModelViewOrBuilder extends
       getVersionBytes();
 
   /**
+   * <pre>
+   * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
+   * <pre>
+   * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
    * @return The status.
    */
@@ -98,19 +122,51 @@ public interface FusionModelViewOrBuilder extends
       getLastTrainedAtBytes();
 
   /**
+   * <pre>
+   * 产物 URI（可选）
+   * </pre>
+   *
    * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
    * @return Whether the artifactUri field is set.
    */
   boolean hasArtifactUri();
   /**
+   * <pre>
+   * 产物 URI（可选）
+   * </pre>
+   *
    * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
    * @return The artifactUri.
    */
   java.lang.String getArtifactUri();
   /**
+   * <pre>
+   * 产物 URI（可选）
+   * </pre>
+   *
    * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
    * @return The bytes for artifactUri.
    */
   com.google.protobuf.ByteString
       getArtifactUriBytes();
+
+  /**
+   * <pre>
+   * 当前训练任务 id；无任务时为空
+   * </pre>
+   *
+   * <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+   * @return The currentTrainJobId.
+   */
+  java.lang.String getCurrentTrainJobId();
+  /**
+   * <pre>
+   * 当前训练任务 id；无任务时为空
+   * </pre>
+   *
+   * <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+   * @return The bytes for currentTrainJobId.
+   */
+  com.google.protobuf.ByteString
+      getCurrentTrainJobIdBytes();
 }

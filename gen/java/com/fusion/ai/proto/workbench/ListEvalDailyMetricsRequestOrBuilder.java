@@ -11,11 +11,19 @@ public interface ListEvalDailyMetricsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */
@@ -23,22 +31,38 @@ public interface ListEvalDailyMetricsRequestOrBuilder extends
       getRegistrationIdBytes();
 
   /**
+   * <pre>
+   * 页码，从 1 起；缺省 1
+   * </pre>
+   *
    * <code>optional int32 page = 2 [json_name = "page"];</code>
    * @return Whether the page field is set.
    */
   boolean hasPage();
   /**
+   * <pre>
+   * 页码，从 1 起；缺省 1
+   * </pre>
+   *
    * <code>optional int32 page = 2 [json_name = "page"];</code>
    * @return The page.
    */
   int getPage();
 
   /**
+   * <pre>
+   * 每页条数；缺省由服务端定
+   * </pre>
+   *
    * <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
    * @return Whether the pageSize field is set.
    */
   boolean hasPageSize();
   /**
+   * <pre>
+   * 每页条数；缺省由服务端定
+   * </pre>
+   *
    * <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
    * @return The pageSize.
    */

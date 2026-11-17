@@ -15,11 +15,13 @@ use Google\Protobuf\RepeatedField;
 class CoverageBand extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 序列类型：功率 / 天气
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
      */
     protected $kind = 0;
     /**
-     * 覆盖率 0~1
+     * 覆盖率 0~1（1=全覆盖）
      *
      * Generated from protobuf field <code>double coverage_ratio = 2 [json_name = "coverage_ratio"];</code>
      */
@@ -31,14 +33,20 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
      */
     protected $grid_min = 0;
     /**
+     * 数据来源展示名，如「实发功率」「数值天气预报」
+     *
      * Generated from protobuf field <code>string source_label = 4 [json_name = "source_label"];</code>
      */
     protected $source_label = '';
     /**
+     * 逐点覆盖（include_points=false 时可为空）
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      */
     private $points;
     /**
+     * 缺口列表
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      */
     private $gaps;
@@ -50,13 +58,17 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $kind
+     *           序列类型：功率 / 天气
      *     @type float $coverage_ratio
-     *           覆盖率 0~1
+     *           覆盖率 0~1（1=全覆盖）
      *     @type int $grid_min
      *           检查格点分钟；功率侧原始入库为 5，展示可对齐评估步长
      *     @type string $source_label
+     *           数据来源展示名，如「实发功率」「数值天气预报」
      *     @type \Fusion\Ai\Proto\Workbench\CoveragePoint[] $points
+     *           逐点覆盖（include_points=false 时可为空）
      *     @type \Fusion\Ai\Proto\Workbench\GapInterval[] $gaps
+     *           缺口列表
      * }
      */
     public function __construct($data = null)
@@ -66,6 +78,8 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 序列类型：功率 / 天气
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\Workbench\CoverageSeriesKind}
      */
@@ -75,6 +89,8 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 序列类型：功率 / 天气
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\Workbench\CoverageSeriesKind}
      * @return $this
@@ -88,7 +104,7 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 覆盖率 0~1
+     * 覆盖率 0~1（1=全覆盖）
      *
      * Generated from protobuf field <code>double coverage_ratio = 2 [json_name = "coverage_ratio"];</code>
      * @return float
@@ -99,7 +115,7 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 覆盖率 0~1
+     * 覆盖率 0~1（1=全覆盖）
      *
      * Generated from protobuf field <code>double coverage_ratio = 2 [json_name = "coverage_ratio"];</code>
      * @param float $var
@@ -139,6 +155,8 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 数据来源展示名，如「实发功率」「数值天气预报」
+     *
      * Generated from protobuf field <code>string source_label = 4 [json_name = "source_label"];</code>
      * @return string
      */
@@ -148,6 +166,8 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 数据来源展示名，如「实发功率」「数值天气预报」
+     *
      * Generated from protobuf field <code>string source_label = 4 [json_name = "source_label"];</code>
      * @param string $var
      * @return $this
@@ -161,6 +181,8 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 逐点覆盖（include_points=false 时可为空）
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      * @return RepeatedField<\Fusion\Ai\Proto\Workbench\CoveragePoint>
      */
@@ -170,6 +192,8 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 逐点覆盖（include_points=false 时可为空）
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
      * @param \Fusion\Ai\Proto\Workbench\CoveragePoint[] $var
      * @return $this
@@ -183,6 +207,8 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 缺口列表
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      * @return RepeatedField<\Fusion\Ai\Proto\Workbench\GapInterval>
      */
@@ -192,6 +218,8 @@ class CoverageBand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 缺口列表
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
      * @param \Fusion\Ai\Proto\Workbench\GapInterval[] $var
      * @return $this

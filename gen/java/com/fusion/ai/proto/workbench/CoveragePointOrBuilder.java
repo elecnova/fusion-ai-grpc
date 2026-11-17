@@ -11,6 +11,10 @@ public interface CoveragePointOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 格点时间 Unix 毫秒
+   * </pre>
+   *
    * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
    * @return The tsMs.
    */
@@ -18,7 +22,7 @@ public interface CoveragePointOrBuilder extends
 
   /**
    * <pre>
-   * 缺测时可不填 value
+   * 实测值；缺测时不填
    * </pre>
    *
    * <code>optional double value = 2 [json_name = "value"];</code>
@@ -27,7 +31,7 @@ public interface CoveragePointOrBuilder extends
   boolean hasValue();
   /**
    * <pre>
-   * 缺测时可不填 value
+   * 实测值；缺测时不填
    * </pre>
    *
    * <code>optional double value = 2 [json_name = "value"];</code>
@@ -36,6 +40,10 @@ public interface CoveragePointOrBuilder extends
   double getValue();
 
   /**
+   * <pre>
+   * 该格点是否有数据
+   * </pre>
+   *
    * <code>bool present = 3 [json_name = "present"];</code>
    * @return The present.
    */

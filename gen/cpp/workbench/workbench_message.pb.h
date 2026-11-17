@@ -63,6 +63,8 @@ enum ModelReadyStatus : int;
 extern const uint32_t ModelReadyStatus_internal_data_[];
 enum ReadyCheckStatus : int;
 extern const uint32_t ReadyCheckStatus_internal_data_[];
+enum StageStepStatus : int;
+extern const uint32_t StageStepStatus_internal_data_[];
 class CoverageBand;
 struct CoverageBandGlobalsTypeInternal;
 #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -247,6 +249,22 @@ extern const ::google::protobuf::internal::ClassDataFull GetPredictResponse_clas
 #else
 extern const GetPredictResponseGlobalsTypeInternal GetPredictResponse_globals_;
 #endif  // PROTOBUF_MESSAGE_GLOBALS
+class GetTrainRequest;
+struct GetTrainRequestGlobalsTypeInternal;
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+extern GetTrainRequestGlobalsTypeInternal GetTrainRequest_globals_;
+extern const ::google::protobuf::internal::ClassDataFull GetTrainRequest_class_data_;
+#else
+extern const GetTrainRequestGlobalsTypeInternal GetTrainRequest_globals_;
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+class GetTrainResponse;
+struct GetTrainResponseGlobalsTypeInternal;
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+extern GetTrainResponseGlobalsTypeInternal GetTrainResponse_globals_;
+extern const ::google::protobuf::internal::ClassDataFull GetTrainResponse_class_data_;
+#else
+extern const GetTrainResponseGlobalsTypeInternal GetTrainResponse_globals_;
+#endif  // PROTOBUF_MESSAGE_GLOBALS
 class ListEvalDailyMetricsRequest;
 struct ListEvalDailyMetricsRequestGlobalsTypeInternal;
 #ifndef PROTOBUF_MESSAGE_GLOBALS
@@ -287,6 +305,22 @@ extern const ::google::protobuf::internal::ClassDataFull SeriesPoint_class_data_
 #else
 extern const SeriesPointGlobalsTypeInternal SeriesPoint_globals_;
 #endif  // PROTOBUF_MESSAGE_GLOBALS
+class TrainJobView;
+struct TrainJobViewGlobalsTypeInternal;
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+extern TrainJobViewGlobalsTypeInternal TrainJobView_globals_;
+extern const ::google::protobuf::internal::ClassDataFull TrainJobView_class_data_;
+#else
+extern const TrainJobViewGlobalsTypeInternal TrainJobView_globals_;
+#endif  // PROTOBUF_MESSAGE_GLOBALS
+class TrainLogLine;
+struct TrainLogLineGlobalsTypeInternal;
+#ifndef PROTOBUF_MESSAGE_GLOBALS
+extern TrainLogLineGlobalsTypeInternal TrainLogLine_globals_;
+extern const ::google::protobuf::internal::ClassDataFull TrainLogLine_class_data_;
+#else
+extern const TrainLogLineGlobalsTypeInternal TrainLogLine_globals_;
+#endif  // PROTOBUF_MESSAGE_GLOBALS
 }  // namespace workbench
 }  // namespace proto
 }  // namespace ai
@@ -305,6 +339,9 @@ internal::EnumTraitsT<::fusion::ai::proto::workbench::ModelReadyStatus_internal_
 template <>
 internal::EnumTraitsT<::fusion::ai::proto::workbench::ReadyCheckStatus_internal_data_>
     internal::EnumTraitsImpl::value<::fusion::ai::proto::workbench::ReadyCheckStatus>;
+template <>
+internal::EnumTraitsT<::fusion::ai::proto::workbench::StageStepStatus_internal_data_>
+    internal::EnumTraitsImpl::value<::fusion::ai::proto::workbench::StageStepStatus>;
 }  // namespace protobuf
 }  // namespace google
 
@@ -401,6 +438,7 @@ enum ModelReadyStatus : int {
   MODEL_READY_STATUS_TRAINING = 2,
   MODEL_READY_STATUS_STALE = 3,
   MODEL_READY_STATUS_MISSING = 4,
+  MODEL_READY_STATUS_FAILED = 5,
   ModelReadyStatus_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
   ModelReadyStatus_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -411,11 +449,11 @@ extern const uint32_t ModelReadyStatus_internal_data_[];
 inline constexpr ModelReadyStatus ModelReadyStatus_MIN =
     static_cast<ModelReadyStatus>(0);
 inline constexpr ModelReadyStatus ModelReadyStatus_MAX =
-    static_cast<ModelReadyStatus>(4);
+    static_cast<ModelReadyStatus>(5);
 [[nodiscard]] inline bool ModelReadyStatus_IsValid(int value) {
-  return 0 <= value && value <= 4;
+  return 0 <= value && value <= 5;
 }
-inline constexpr int ModelReadyStatus_ARRAYSIZE = 4 + 1;
+inline constexpr int ModelReadyStatus_ARRAYSIZE = 5 + 1;
 [[nodiscard]] const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL
 ModelReadyStatus_descriptor();
 [[nodiscard]] inline auto ProtobufInternalGetEnumDescriptor(ModelReadyStatus) {
@@ -430,7 +468,7 @@ template <typename T>
 }
 template <>
 [[nodiscard]] inline const ::std::string& ModelReadyStatus_Name(ModelReadyStatus value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<ModelReadyStatus_descriptor, 0, 4>(
+  return ::google::protobuf::internal::NameOfDenseEnum<ModelReadyStatus_descriptor, 0, 5>(
       static_cast<int>(value));
 }
 [[nodiscard]] inline bool ModelReadyStatus_Parse(
@@ -482,12 +520,307 @@ template <>
   return ::google::protobuf::internal::ParseNamedEnum<JobStatus>(JobStatus_descriptor(), name,
                                            value);
 }
+enum StageStepStatus : int {
+  STAGE_STEP_STATUS_UNSPECIFIED = 0,
+  STAGE_STEP_STATUS_PENDING = 1,
+  STAGE_STEP_STATUS_RUNNING = 2,
+  STAGE_STEP_STATUS_DONE = 3,
+  STAGE_STEP_STATUS_FAILED = 4,
+  StageStepStatus_INT_MIN_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::min(),
+  StageStepStatus_INT_MAX_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::max(),
+};
+
+extern const uint32_t StageStepStatus_internal_data_[];
+inline constexpr StageStepStatus StageStepStatus_MIN =
+    static_cast<StageStepStatus>(0);
+inline constexpr StageStepStatus StageStepStatus_MAX =
+    static_cast<StageStepStatus>(4);
+[[nodiscard]] inline bool StageStepStatus_IsValid(int value) {
+  return 0 <= value && value <= 4;
+}
+inline constexpr int StageStepStatus_ARRAYSIZE = 4 + 1;
+[[nodiscard]] const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL
+StageStepStatus_descriptor();
+[[nodiscard]] inline auto ProtobufInternalGetEnumDescriptor(StageStepStatus) {
+  return StageStepStatus_descriptor();
+}
+template <typename T>
+[[nodiscard]] const ::std::string& StageStepStatus_Name(T value) {
+  static_assert(::std::is_same<T, StageStepStatus>::value ||
+                    ::std::is_integral<T>::value,
+                "Incorrect type passed to StageStepStatus_Name().");
+  return StageStepStatus_Name(static_cast<StageStepStatus>(value));
+}
+template <>
+[[nodiscard]] inline const ::std::string& StageStepStatus_Name(StageStepStatus value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<StageStepStatus_descriptor, 0, 4>(
+      static_cast<int>(value));
+}
+[[nodiscard]] inline bool StageStepStatus_Parse(
+    ::absl::string_view name, StageStepStatus* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<StageStepStatus>(StageStepStatus_descriptor(), name,
+                                           value);
+}
 using ::google::protobuf::internal::generated_enum::AbslParseFlag;
 using ::google::protobuf::internal::generated_enum::AbslUnparseFlag;
 
 // ===================================================================
 
 
+// -------------------------------------------------------------------
+
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED TrainLogLine final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.TrainLogLine) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline TrainLogLine() : TrainLogLine(nullptr) {}
+  ~TrainLogLine() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(TrainLogLine* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(TrainLogLine));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr TrainLogLine(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline TrainLogLine(const TrainLogLine& from) : TrainLogLine(nullptr, from) {}
+  inline TrainLogLine(TrainLogLine&& from) noexcept : TrainLogLine(nullptr, ::std::move(from)) {}
+  inline TrainLogLine& operator=(const TrainLogLine& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TrainLogLine& operator=(TrainLogLine&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const TrainLogLine& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<TrainLogLine>(&TrainLogLine_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 5;
+  friend void swap(TrainLogLine& a, TrainLogLine& b) { a.Swap(&b); }
+  inline void Swap(TrainLogLine* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TrainLogLine* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] TrainLogLine* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<TrainLogLine>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const TrainLogLine& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const TrainLogLine& from) { TrainLogLine::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(TrainLogLine* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.workbench.TrainLogLine"; }
+
+  explicit TrainLogLine(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  TrainLogLine(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const TrainLogLine& from);
+  TrainLogLine(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, TrainLogLine&& from) noexcept
+      : TrainLogLine(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kTsFieldNumber = 2,
+    kLevelFieldNumber = 3,
+    kLineFieldNumber = 4,
+    kSeqFieldNumber = 1,
+  };
+  // string ts = 2 [json_name = "ts"];
+  void clear_ts() ;
+  [[nodiscard]] const ::std::string& ts() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_ts(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_ts();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_ts();
+  void set_allocated_ts(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_ts() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_ts(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_ts();
+
+  public:
+  // string level = 3 [json_name = "level"];
+  void clear_level() ;
+  [[nodiscard]] const ::std::string& level() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_level(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_level();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_level();
+  void set_allocated_level(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_level() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_level(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_level();
+
+  public:
+  // string line = 4 [json_name = "line"];
+  void clear_line() ;
+  [[nodiscard]] const ::std::string& line() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_line(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_line();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_line();
+  void set_allocated_line(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_line() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_line(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_line();
+
+  public:
+  // int64 seq = 1 [json_name = "seq"];
+  void clear_seq() ;
+  [[nodiscard]] ::int64_t seq() const;
+  void set_seq(::int64_t value);
+
+  private:
+  ::int64_t _internal_seq() const;
+  void _internal_set_seq(::int64_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.TrainLogLine)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<2, 4,
+                          0, 58,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const TrainLogLine& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr ts_;
+    ::google::protobuf::internal::ArenaStringPtr level_;
+    ::google::protobuf::internal::ArenaStringPtr line_;
+    ::int64_t seq_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_workbench_2fworkbench_5fmessage_2eproto;
+};
 // -------------------------------------------------------------------
 
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED SeriesPoint final : public ::google::protobuf::Message
@@ -548,7 +881,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED SeriesPoint final : public ::google
   [[nodiscard]] static const SeriesPoint& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<SeriesPoint>(&SeriesPoint_globals_);
   }
-  static constexpr int kIndexInFileMessages = 7;
+  static constexpr int kIndexInFileMessages = 9;
   friend void swap(SeriesPoint& a, SeriesPoint& b) { a.Swap(&b); }
   inline void Swap(SeriesPoint* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -718,13 +1051,13 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED SeriesPoint final : public ::google
 // -------------------------------------------------------------------
 
 class PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView_StagesEntry_DoNotUse final
-    : public ::google::protobuf::internal::MapEntry<::std::string, ::std::string,
+    : public ::google::protobuf::internal::MapEntry<::std::string, ::fusion::ai::proto::workbench::StageStepStatus,
                              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING> {
+                             ::google::protobuf::internal::WireFormatLite::TYPE_ENUM> {
   using Super_ =
-      ::google::protobuf::internal::MapEntry<::std::string, ::std::string,
+      ::google::protobuf::internal::MapEntry<::std::string, ::fusion::ai::proto::workbench::StageStepStatus,
                       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING>;
+                      ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>;
 
  public:
   PredictJobView_StagesEntry_DoNotUse();
@@ -750,7 +1083,7 @@ class PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView_StagesEntry_DoNotUse 
 
   using ParseTableT_ =
       ::google::protobuf::internal::TcParseTable<1, 2,
-                          0, 69,
+                          0, 64,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -825,7 +1158,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListEvalDailyMetricsRequest final :
   [[nodiscard]] static const ListEvalDailyMetricsRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<ListEvalDailyMetricsRequest>(&ListEvalDailyMetricsRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 26;
+  static constexpr int kIndexInFileMessages = 30;
   friend void swap(ListEvalDailyMetricsRequest& a, ListEvalDailyMetricsRequest& b) { a.Swap(&b); }
   inline void Swap(ListEvalDailyMetricsRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1017,6 +1350,212 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListEvalDailyMetricsRequest final :
 };
 // -------------------------------------------------------------------
 
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetTrainRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.GetTrainRequest) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline GetTrainRequest() : GetTrainRequest(nullptr) {}
+  ~GetTrainRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(GetTrainRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetTrainRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr GetTrainRequest(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline GetTrainRequest(const GetTrainRequest& from) : GetTrainRequest(nullptr, from) {}
+  inline GetTrainRequest(GetTrainRequest&& from) noexcept : GetTrainRequest(nullptr, ::std::move(from)) {}
+  inline GetTrainRequest& operator=(const GetTrainRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTrainRequest& operator=(GetTrainRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const GetTrainRequest& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetTrainRequest>(&GetTrainRequest_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 22;
+  friend void swap(GetTrainRequest& a, GetTrainRequest& b) { a.Swap(&b); }
+  inline void Swap(GetTrainRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTrainRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] GetTrainRequest* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<GetTrainRequest>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const GetTrainRequest& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const GetTrainRequest& from) { GetTrainRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetTrainRequest* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.workbench.GetTrainRequest"; }
+
+  explicit GetTrainRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  GetTrainRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetTrainRequest& from);
+  GetTrainRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetTrainRequest&& from) noexcept
+      : GetTrainRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRegistrationIdFieldNumber = 1,
+  };
+  // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+  void clear_registration_id() ;
+  [[nodiscard]] const ::std::string& registration_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_registration_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_registration_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_registration_id();
+  void set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_registration_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_registration_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.GetTrainRequest)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<0, 1,
+                          0, 65,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const GetTrainRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr registration_id_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_workbench_2fworkbench_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPredictRequest final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.GetPredictRequest) */ {
   using Super_ = ::google::protobuf::Message;
@@ -1075,7 +1614,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPredictRequest final : public ::
   [[nodiscard]] static const GetPredictRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetPredictRequest>(&GetPredictRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 20;
+  static constexpr int kIndexInFileMessages = 24;
   friend void swap(GetPredictRequest& a, GetPredictRequest& b) { a.Swap(&b); }
   inline void Swap(GetPredictRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1281,7 +1820,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetFusionModelRequest final : publi
   [[nodiscard]] static const GetFusionModelRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetFusionModelRequest>(&GetFusionModelRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 14;
+  static constexpr int kIndexInFileMessages = 16;
   friend void swap(GetFusionModelRequest& a, GetFusionModelRequest& b) { a.Swap(&b); }
   inline void Swap(GetFusionModelRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1487,7 +2026,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetEvalDaySeriesRequest final : pub
   [[nodiscard]] static const GetEvalDaySeriesRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetEvalDaySeriesRequest>(&GetEvalDaySeriesRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 22;
+  static constexpr int kIndexInFileMessages = 26;
   friend void swap(GetEvalDaySeriesRequest& a, GetEvalDaySeriesRequest& b) { a.Swap(&b); }
   inline void Swap(GetEvalDaySeriesRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1723,7 +2262,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetEvalDayMetricsRequest final : pu
   [[nodiscard]] static const GetEvalDayMetricsRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetEvalDayMetricsRequest>(&GetEvalDayMetricsRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 24;
+  static constexpr int kIndexInFileMessages = 28;
   friend void swap(GetEvalDayMetricsRequest& a, GetEvalDayMetricsRequest& b) { a.Swap(&b); }
   inline void Swap(GetEvalDayMetricsRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1946,7 +2485,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataReadyCheckRequest final : pu
   [[nodiscard]] static const GetDataReadyCheckRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetDataReadyCheckRequest>(&GetDataReadyCheckRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 12;
+  static constexpr int kIndexInFileMessages = 14;
   friend void swap(GetDataReadyCheckRequest& a, GetDataReadyCheckRequest& b) { a.Swap(&b); }
   inline void Swap(GetDataReadyCheckRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2537,6 +3076,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::go
     kVersionFieldNumber = 3,
     kLastTrainedAtFieldNumber = 5,
     kArtifactUriFieldNumber = 6,
+    kCurrentTrainJobIdFieldNumber = 7,
     kStatusFieldNumber = 4,
   };
   // string registration_id = 1 [json_name = "registration_id"];
@@ -2616,6 +3156,21 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::go
   ::std::string* PROTOBUF_NONNULL _internal_mutable_artifact_uri();
 
   public:
+  // string current_train_job_id = 7 [json_name = "current_train_job_id"];
+  void clear_current_train_job_id() ;
+  [[nodiscard]] const ::std::string& current_train_job_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_current_train_job_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_current_train_job_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_current_train_job_id();
+  void set_allocated_current_train_job_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_current_train_job_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_current_train_job_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_current_train_job_id();
+
+  public:
   // .fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];
   void clear_status() ;
   [[nodiscard]] ::fusion::ai::proto::workbench::ModelReadyStatus status() const;
@@ -2630,8 +3185,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::go
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<3, 6,
-                          0, 108,
+      ::google::protobuf::internal::TcParseTable<3, 7,
+                          0, 128,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -2664,6 +3219,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED FusionModelView final : public ::go
     ::google::protobuf::internal::ArenaStringPtr version_;
     ::google::protobuf::internal::ArenaStringPtr last_trained_at_;
     ::google::protobuf::internal::ArenaStringPtr artifact_uri_;
+    ::google::protobuf::internal::ArenaStringPtr current_train_job_id_;
     int status_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -2730,7 +3286,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED EvalDayMetricsRow final : public ::
   [[nodiscard]] static const EvalDayMetricsRow& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<EvalDayMetricsRow>(&EvalDayMetricsRow_globals_);
   }
-  static constexpr int kIndexInFileMessages = 10;
+  static constexpr int kIndexInFileMessages = 12;
   friend void swap(EvalDayMetricsRow& a, EvalDayMetricsRow& b) { a.Swap(&b); }
   inline void Swap(EvalDayMetricsRow* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2962,7 +3518,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED EvalDayMetrics final : public ::goo
   [[nodiscard]] static const EvalDayMetrics& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<EvalDayMetrics>(&EvalDayMetrics_globals_);
   }
-  static constexpr int kIndexInFileMessages = 9;
+  static constexpr int kIndexInFileMessages = 11;
   friend void swap(EvalDayMetrics& a, EvalDayMetrics& b) { a.Swap(&b); }
   inline void Swap(EvalDayMetrics* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3298,7 +3854,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateTrainJobResponse final : publ
   [[nodiscard]] static const CreateTrainJobResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CreateTrainJobResponse>(&CreateTrainJobResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 17;
+  static constexpr int kIndexInFileMessages = 19;
   friend void swap(CreateTrainJobResponse& a, CreateTrainJobResponse& b) { a.Swap(&b); }
   inline void Swap(CreateTrainJobResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3516,7 +4072,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateTrainJobRequest final : publi
   [[nodiscard]] static const CreateTrainJobRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CreateTrainJobRequest>(&CreateTrainJobRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 16;
+  static constexpr int kIndexInFileMessages = 18;
   friend void swap(CreateTrainJobRequest& a, CreateTrainJobRequest& b) { a.Swap(&b); }
   inline void Swap(CreateTrainJobRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3722,7 +4278,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreatePredictJobResponse final : pu
   [[nodiscard]] static const CreatePredictJobResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CreatePredictJobResponse>(&CreatePredictJobResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 19;
+  static constexpr int kIndexInFileMessages = 21;
   friend void swap(CreatePredictJobResponse& a, CreatePredictJobResponse& b) { a.Swap(&b); }
   inline void Swap(CreatePredictJobResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3940,7 +4496,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreatePredictJobRequest final : pub
   [[nodiscard]] static const CreatePredictJobRequest& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<CreatePredictJobRequest>(&CreatePredictJobRequest_globals_);
   }
-  static constexpr int kIndexInFileMessages = 18;
+  static constexpr int kIndexInFileMessages = 20;
   friend void swap(CreatePredictJobRequest& a, CreatePredictJobRequest& b) { a.Swap(&b); }
   inline void Swap(CreatePredictJobRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4358,6 +4914,311 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CoveragePoint final : public ::goog
 };
 // -------------------------------------------------------------------
 
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED TrainJobView final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.TrainJobView) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline TrainJobView() : TrainJobView(nullptr) {}
+  ~TrainJobView() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(TrainJobView* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(TrainJobView));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr TrainJobView(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline TrainJobView(const TrainJobView& from) : TrainJobView(nullptr, from) {}
+  inline TrainJobView(TrainJobView&& from) noexcept : TrainJobView(nullptr, ::std::move(from)) {}
+  inline TrainJobView& operator=(const TrainJobView& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TrainJobView& operator=(TrainJobView&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const TrainJobView& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<TrainJobView>(&TrainJobView_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 6;
+  friend void swap(TrainJobView& a, TrainJobView& b) { a.Swap(&b); }
+  inline void Swap(TrainJobView* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TrainJobView* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] TrainJobView* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<TrainJobView>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const TrainJobView& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const TrainJobView& from) { TrainJobView::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(TrainJobView* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.workbench.TrainJobView"; }
+
+  explicit TrainJobView(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  TrainJobView(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const TrainJobView& from);
+  TrainJobView(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, TrainJobView&& from) noexcept
+      : TrainJobView(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kLogsFieldNumber = 7,
+    kJobIdFieldNumber = 1,
+    kRegistrationIdFieldNumber = 2,
+    kStartedAtFieldNumber = 4,
+    kFinishedAtFieldNumber = 5,
+    kLogSeqFieldNumber = 6,
+    kStatusFieldNumber = 3,
+  };
+  // repeated .fusion.ai.proto.workbench.TrainLogLine logs = 7 [json_name = "logs"];
+  [[nodiscard]] int logs_size() const;
+  private:
+  int _internal_logs_size() const;
+
+  public:
+  void clear_logs() ;
+  [[nodiscard]] const ::fusion::ai::proto::workbench::TrainLogLine& logs(int index) const;
+  [[nodiscard]] ::fusion::ai::proto::workbench::TrainLogLine* PROTOBUF_NONNULL mutable_logs(int index);
+  ::fusion::ai::proto::workbench::TrainLogLine* PROTOBUF_NONNULL add_logs();
+  [[nodiscard]] const ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::workbench::TrainLogLine>&
+  logs() const;
+  [[nodiscard]] ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::workbench::TrainLogLine>* PROTOBUF_NONNULL
+  mutable_logs();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::workbench::TrainLogLine>& _internal_logs() const;
+  ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::workbench::TrainLogLine>* PROTOBUF_NONNULL _internal_mutable_logs();
+
+  public:
+  // string job_id = 1 [json_name = "job_id"];
+  void clear_job_id() ;
+  [[nodiscard]] const ::std::string& job_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_job_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_job_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_job_id();
+  void set_allocated_job_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_job_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_job_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_job_id();
+
+  public:
+  // string registration_id = 2 [json_name = "registration_id"];
+  void clear_registration_id() ;
+  [[nodiscard]] const ::std::string& registration_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_registration_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_registration_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_registration_id();
+  void set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_registration_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_registration_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
+
+  public:
+  // optional string started_at = 4 [json_name = "started_at"];
+  [[nodiscard]] bool has_started_at() const;
+  void clear_started_at() ;
+  [[nodiscard]] const ::std::string& started_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_started_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_started_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_started_at();
+  void set_allocated_started_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_started_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_started_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_started_at();
+
+  public:
+  // optional string finished_at = 5 [json_name = "finished_at"];
+  [[nodiscard]] bool has_finished_at() const;
+  void clear_finished_at() ;
+  [[nodiscard]] const ::std::string& finished_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_finished_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_finished_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_finished_at();
+  void set_allocated_finished_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_finished_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_finished_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_finished_at();
+
+  public:
+  // int64 log_seq = 6 [json_name = "log_seq"];
+  void clear_log_seq() ;
+  [[nodiscard]] ::int64_t log_seq() const;
+  void set_log_seq(::int64_t value);
+
+  private:
+  ::int64_t _internal_log_seq() const;
+  void _internal_set_log_seq(::int64_t value);
+
+  public:
+  // .fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];
+  void clear_status() ;
+  [[nodiscard]] ::fusion::ai::proto::workbench::JobStatus status() const;
+  void set_status(::fusion::ai::proto::workbench::JobStatus value);
+
+  private:
+  ::fusion::ai::proto::workbench::JobStatus _internal_status() const;
+  void _internal_set_status(::fusion::ai::proto::workbench::JobStatus value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.TrainJobView)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<3, 7,
+                          1, 89,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const TrainJobView& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField< ::fusion::ai::proto::workbench::TrainLogLine > logs_;
+    ::google::protobuf::internal::ArenaStringPtr job_id_;
+    ::google::protobuf::internal::ArenaStringPtr registration_id_;
+    ::google::protobuf::internal::ArenaStringPtr started_at_;
+    ::google::protobuf::internal::ArenaStringPtr finished_at_;
+    ::int64_t log_seq_;
+    int status_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_workbench_2fworkbench_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.PredictJobView) */ {
   using Super_ = ::google::protobuf::Message;
@@ -4416,7 +5277,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
   [[nodiscard]] static const PredictJobView& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<PredictJobView>(&PredictJobView_globals_);
   }
-  static constexpr int kIndexInFileMessages = 6;
+  static constexpr int kIndexInFileMessages = 8;
   friend void swap(PredictJobView& a, PredictJobView& b) { a.Swap(&b); }
   inline void Swap(PredictJobView* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4710,19 +5571,19 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
   void _internal_set_horizon_hours(::int32_t value);
 
   public:
-  // map<string, string> stages = 6 [json_name = "stages"];
+  // map<string, .fusion.ai.proto.workbench.StageStepStatus> stages = 6 [json_name = "stages"];
   [[nodiscard]] int stages_size() const;
   private:
   int _internal_stages_size() const;
 
   public:
   void clear_stages() ;
-  [[nodiscard]] const ::google::protobuf::Map<::std::string, ::std::string>& stages() const;
-  [[nodiscard]] ::google::protobuf::Map<::std::string, ::std::string>* PROTOBUF_NONNULL mutable_stages();
+  [[nodiscard]] const ::google::protobuf::Map<::std::string, ::fusion::ai::proto::workbench::StageStepStatus>& stages() const;
+  [[nodiscard]] ::google::protobuf::Map<::std::string, ::fusion::ai::proto::workbench::StageStepStatus>* PROTOBUF_NONNULL mutable_stages();
 
   private:
-  const ::google::protobuf::Map<::std::string, ::std::string>& _internal_stages() const;
-  ::google::protobuf::Map<::std::string, ::std::string>* PROTOBUF_NONNULL _internal_mutable_stages();
+  const ::google::protobuf::Map<::std::string, ::fusion::ai::proto::workbench::StageStepStatus>& _internal_stages() const;
+  ::google::protobuf::Map<::std::string, ::fusion::ai::proto::workbench::StageStepStatus>* PROTOBUF_NONNULL _internal_mutable_stages();
 
   public:
   // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.PredictJobView)
@@ -4772,7 +5633,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED PredictJobView final : public ::goo
     ::int32_t day_offset_;
     ::int32_t granularity_min_;
     ::int32_t horizon_hours_;
-    ::google::protobuf::internal::MapField<PredictJobView_StagesEntry_DoNotUse, ::std::string, ::std::string> stages_;
+    ::google::protobuf::internal::MapField<PredictJobView_StagesEntry_DoNotUse, ::std::string, ::fusion::ai::proto::workbench::StageStepStatus> stages_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -4838,7 +5699,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetFusionModelResponse final : publ
   [[nodiscard]] static const GetFusionModelResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetFusionModelResponse>(&GetFusionModelResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 15;
+  static constexpr int kIndexInFileMessages = 17;
   friend void swap(GetFusionModelResponse& a, GetFusionModelResponse& b) { a.Swap(&b); }
   inline void Swap(GetFusionModelResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5044,7 +5905,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetEvalDayMetricsResponse final : p
   [[nodiscard]] static const GetEvalDayMetricsResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetEvalDayMetricsResponse>(&GetEvalDayMetricsResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 25;
+  static constexpr int kIndexInFileMessages = 29;
   friend void swap(GetEvalDayMetricsResponse& a, GetEvalDayMetricsResponse& b) { a.Swap(&b); }
   inline void Swap(GetEvalDayMetricsResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5250,7 +6111,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED EvalDaySeries final : public ::goog
   [[nodiscard]] static const EvalDaySeries& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<EvalDaySeries>(&EvalDaySeries_globals_);
   }
-  static constexpr int kIndexInFileMessages = 8;
+  static constexpr int kIndexInFileMessages = 10;
   friend void swap(EvalDaySeries& a, EvalDaySeries& b) { a.Swap(&b); }
   inline void Swap(EvalDaySeries* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5559,7 +6420,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED EvalDayMetricsPage final : public :
   [[nodiscard]] static const EvalDayMetricsPage& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<EvalDayMetricsPage>(&EvalDayMetricsPage_globals_);
   }
-  static constexpr int kIndexInFileMessages = 11;
+  static constexpr int kIndexInFileMessages = 13;
   friend void swap(EvalDayMetricsPage& a, EvalDayMetricsPage& b) { a.Swap(&b); }
   inline void Swap(EvalDayMetricsPage* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6092,7 +6953,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListEvalDailyMetricsResponse final 
   [[nodiscard]] static const ListEvalDailyMetricsResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<ListEvalDailyMetricsResponse>(&ListEvalDailyMetricsResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 27;
+  static constexpr int kIndexInFileMessages = 31;
   friend void swap(ListEvalDailyMetricsResponse& a, ListEvalDailyMetricsResponse& b) { a.Swap(&b); }
   inline void Swap(ListEvalDailyMetricsResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6240,6 +7101,263 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED ListEvalDailyMetricsResponse final 
 };
 // -------------------------------------------------------------------
 
+class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetTrainResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.GetTrainResponse) */ {
+  using Super_ = ::google::protobuf::Message;
+
+ public:
+  inline GetTrainResponse() : GetTrainResponse(nullptr) {}
+  ~GetTrainResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(GetTrainResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(GetTrainResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit constexpr GetTrainResponse(::google::protobuf::internal::ConstantInitialized,
+                           const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+                               class_data);
+
+  inline GetTrainResponse(const GetTrainResponse& from) : GetTrainResponse(nullptr, from) {}
+  inline GetTrainResponse(GetTrainResponse&& from) noexcept : GetTrainResponse(nullptr, ::std::move(from)) {}
+  inline GetTrainResponse& operator=(const GetTrainResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetTrainResponse& operator=(GetTrainResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  [[nodiscard]] inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  [[nodiscard]] inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  [[nodiscard]] static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  [[nodiscard]] static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  [[nodiscard]] static const GetTrainResponse& default_instance() {
+    return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetTrainResponse>(&GetTrainResponse_globals_);
+  }
+  static constexpr int kIndexInFileMessages = 23;
+  friend void swap(GetTrainResponse& a, GetTrainResponse& b) { a.Swap(&b); }
+  inline void Swap(GetTrainResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetTrainResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  [[nodiscard]] GetTrainResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return Super_::DefaultConstruct<GetTrainResponse>(arena);
+  }
+  using Super_::CopyFrom;
+  void CopyFrom(const GetTrainResponse& from);
+  using Super_::MergeFrom;
+  void MergeFrom(const GetTrainResponse& from) { GetTrainResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  [[nodiscard]] bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  [[nodiscard]] static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  [[nodiscard]] static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  [[nodiscard]] ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] ::size_t ByteSizeLong() const final;
+  [[nodiscard]] ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  [[nodiscard]] int GetCachedSize() const {
+    return _impl_._cached_size_.Get();
+  }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(GetTrainResponse* PROTOBUF_NONNULL other);
+ private:
+  static ::absl::string_view FullMessageName() { return "fusion.ai.proto.workbench.GetTrainResponse"; }
+
+  explicit GetTrainResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  GetTrainResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const GetTrainResponse& from);
+  GetTrainResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, GetTrainResponse&& from) noexcept
+      : GetTrainResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_(
+      const MessageLite& prototype,
+      const ::google::protobuf::internal::TcParseTableBase* PROTOBUF_NULLABLE tc_table = nullptr);
+
+  [[nodiscard]] ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRegistrationIdFieldNumber = 1,
+    kCurrentTrainJobIdFieldNumber = 2,
+    kModelFieldNumber = 3,
+    kJobFieldNumber = 4,
+  };
+  // string registration_id = 1 [json_name = "registration_id"];
+  void clear_registration_id() ;
+  [[nodiscard]] const ::std::string& registration_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_registration_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_registration_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_registration_id();
+  void set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_registration_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_registration_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_registration_id();
+
+  public:
+  // string current_train_job_id = 2 [json_name = "current_train_job_id"];
+  void clear_current_train_job_id() ;
+  [[nodiscard]] const ::std::string& current_train_job_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_current_train_job_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_current_train_job_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_current_train_job_id();
+  void set_allocated_current_train_job_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_current_train_job_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_current_train_job_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_current_train_job_id();
+
+  public:
+  // optional .fusion.ai.proto.workbench.FusionModelView model = 3 [json_name = "model"];
+  [[nodiscard]] bool has_model() const;
+  void clear_model() ;
+  [[nodiscard]] const ::fusion::ai::proto::workbench::FusionModelView& model() const;
+  [[nodiscard]] ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE release_model();
+  ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NONNULL mutable_model();
+  void set_allocated_model(::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_model(::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE value);
+  ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE unsafe_arena_release_model();
+
+  private:
+  const ::fusion::ai::proto::workbench::FusionModelView& _internal_model() const;
+  ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NONNULL _internal_mutable_model();
+
+  public:
+  // optional .fusion.ai.proto.workbench.TrainJobView job = 4 [json_name = "job"];
+  [[nodiscard]] bool has_job() const;
+  void clear_job() ;
+  [[nodiscard]] const ::fusion::ai::proto::workbench::TrainJobView& job() const;
+  [[nodiscard]] ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE release_job();
+  ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NONNULL mutable_job();
+  void set_allocated_job(::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_job(::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE value);
+  ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE unsafe_arena_release_job();
+
+  private:
+  const ::fusion::ai::proto::workbench::TrainJobView& _internal_job() const;
+  ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NONNULL _internal_mutable_job();
+
+  public:
+  // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.GetTrainResponse)
+ private:
+  class _Internal;
+  using ParseTableT_ =
+      ::google::protobuf::internal::TcParseTable<2, 4,
+                          2, 86,
+                          2>;
+  static constexpr ParseTableT_ InternalGenerateParseTable_(
+      const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
+  friend class ::google::protobuf::internal::TcParser;
+  #ifndef PROTOBUF_MESSAGE_GLOBALS
+  static const ParseTableT_ _table_;
+  #endif
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  friend ::google::protobuf::internal::PrivateAccess;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                                    ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const GetTrainResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr registration_id_;
+    ::google::protobuf::internal::ArenaStringPtr current_train_job_id_;
+    ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE model_;
+    ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE job_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_workbench_2fworkbench_5fmessage_2eproto;
+};
+// -------------------------------------------------------------------
+
 class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPredictResponse final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:fusion.ai.proto.workbench.GetPredictResponse) */ {
   using Super_ = ::google::protobuf::Message;
@@ -6298,7 +7416,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPredictResponse final : public :
   [[nodiscard]] static const GetPredictResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetPredictResponse>(&GetPredictResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 21;
+  static constexpr int kIndexInFileMessages = 25;
   friend void swap(GetPredictResponse& a, GetPredictResponse& b) { a.Swap(&b); }
   inline void Swap(GetPredictResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6538,7 +7656,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetEvalDaySeriesResponse final : pu
   [[nodiscard]] static const GetEvalDaySeriesResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetEvalDaySeriesResponse>(&GetEvalDaySeriesResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 23;
+  static constexpr int kIndexInFileMessages = 27;
   friend void swap(GetEvalDaySeriesResponse& a, GetEvalDaySeriesResponse& b) { a.Swap(&b); }
   inline void Swap(GetEvalDaySeriesResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7047,7 +8165,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetDataReadyCheckResponse final : p
   [[nodiscard]] static const GetDataReadyCheckResponse& default_instance() {
     return *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<GetDataReadyCheckResponse>(&GetDataReadyCheckResponse_globals_);
   }
-  static constexpr int kIndexInFileMessages = 13;
+  static constexpr int kIndexInFileMessages = 15;
   friend void swap(GetDataReadyCheckResponse& a, GetDataReadyCheckResponse& b) { a.Swap(&b); }
   inline void Swap(GetDataReadyCheckResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8449,7 +9567,7 @@ inline void FusionModelView::set_allocated_version(::std::string* PROTOBUF_NULLA
 inline void FusionModelView::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.status_ = 0;
-  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
 }
 inline ::fusion::ai::proto::workbench::ModelReadyStatus FusionModelView::status() const {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.FusionModelView.status)
@@ -8457,7 +9575,7 @@ inline ::fusion::ai::proto::workbench::ModelReadyStatus FusionModelView::status(
 }
 inline void FusionModelView::set_status(::fusion::ai::proto::workbench::ModelReadyStatus value) {
   _internal_set_status(value);
-  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
   // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.FusionModelView.status)
 }
 inline ::fusion::ai::proto::workbench::ModelReadyStatus FusionModelView::_internal_status() const {
@@ -8603,6 +9721,661 @@ inline void FusionModelView::set_allocated_artifact_uri(::std::string* PROTOBUF_
     _impl_.artifact_uri_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.FusionModelView.artifact_uri)
+}
+
+// string current_train_job_id = 7 [json_name = "current_train_job_id"];
+inline void FusionModelView::clear_current_train_job_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.current_train_job_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+}
+inline const ::std::string& FusionModelView::current_train_job_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.FusionModelView.current_train_job_id)
+  return _internal_current_train_job_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void FusionModelView::set_current_train_job_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  _impl_.current_train_job_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.FusionModelView.current_train_job_id)
+}
+inline ::std::string* PROTOBUF_NONNULL FusionModelView::mutable_current_train_job_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  ::std::string* _s = _internal_mutable_current_train_job_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.FusionModelView.current_train_job_id)
+  return _s;
+}
+inline const ::std::string& FusionModelView::_internal_current_train_job_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.current_train_job_id_.Get();
+}
+inline void FusionModelView::_internal_set_current_train_job_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.current_train_job_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL FusionModelView::_internal_mutable_current_train_job_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.current_train_job_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE FusionModelView::release_current_train_job_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.FusionModelView.current_train_job_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000020U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  auto* released = _impl_.current_train_job_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.current_train_job_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void FusionModelView::set_allocated_current_train_job_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+  }
+  _impl_.current_train_job_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.current_train_job_id_.IsDefault()) {
+    _impl_.current_train_job_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.FusionModelView.current_train_job_id)
+}
+
+// -------------------------------------------------------------------
+
+// TrainLogLine
+
+// int64 seq = 1 [json_name = "seq"];
+inline void TrainLogLine::clear_seq() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.seq_ = ::int64_t{0};
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+}
+inline ::int64_t TrainLogLine::seq() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainLogLine.seq)
+  return _internal_seq();
+}
+inline void TrainLogLine::set_seq(::int64_t value) {
+  _internal_set_seq(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainLogLine.seq)
+}
+inline ::int64_t TrainLogLine::_internal_seq() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.seq_;
+}
+inline void TrainLogLine::_internal_set_seq(::int64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.seq_ = value;
+}
+
+// string ts = 2 [json_name = "ts"];
+inline void TrainLogLine::clear_ts() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.ts_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::std::string& TrainLogLine::ts() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainLogLine.ts)
+  return _internal_ts();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TrainLogLine::set_ts(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  _impl_.ts_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainLogLine.ts)
+}
+inline ::std::string* PROTOBUF_NONNULL TrainLogLine::mutable_ts()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::std::string* _s = _internal_mutable_ts();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.TrainLogLine.ts)
+  return _s;
+}
+inline const ::std::string& TrainLogLine::_internal_ts() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.ts_.Get();
+}
+inline void TrainLogLine::_internal_set_ts(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.ts_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TrainLogLine::_internal_mutable_ts() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.ts_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TrainLogLine::release_ts() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.TrainLogLine.ts)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  auto* released = _impl_.ts_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.ts_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TrainLogLine::set_allocated_ts(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  }
+  _impl_.ts_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.ts_.IsDefault()) {
+    _impl_.ts_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.TrainLogLine.ts)
+}
+
+// string level = 3 [json_name = "level"];
+inline void TrainLogLine::clear_level() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.level_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline const ::std::string& TrainLogLine::level() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainLogLine.level)
+  return _internal_level();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TrainLogLine::set_level(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  _impl_.level_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainLogLine.level)
+}
+inline ::std::string* PROTOBUF_NONNULL TrainLogLine::mutable_level()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::std::string* _s = _internal_mutable_level();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.TrainLogLine.level)
+  return _s;
+}
+inline const ::std::string& TrainLogLine::_internal_level() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.level_.Get();
+}
+inline void TrainLogLine::_internal_set_level(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.level_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TrainLogLine::_internal_mutable_level() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.level_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TrainLogLine::release_level() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.TrainLogLine.level)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  auto* released = _impl_.level_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.level_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TrainLogLine::set_allocated_level(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+  _impl_.level_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.level_.IsDefault()) {
+    _impl_.level_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.TrainLogLine.level)
+}
+
+// string line = 4 [json_name = "line"];
+inline void TrainLogLine::clear_line() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.line_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+}
+inline const ::std::string& TrainLogLine::line() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainLogLine.line)
+  return _internal_line();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TrainLogLine::set_line(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  _impl_.line_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainLogLine.line)
+}
+inline ::std::string* PROTOBUF_NONNULL TrainLogLine::mutable_line()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ::std::string* _s = _internal_mutable_line();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.TrainLogLine.line)
+  return _s;
+}
+inline const ::std::string& TrainLogLine::_internal_line() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.line_.Get();
+}
+inline void TrainLogLine::_internal_set_line(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.line_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TrainLogLine::_internal_mutable_line() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.line_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TrainLogLine::release_line() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.TrainLogLine.line)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000004U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  auto* released = _impl_.line_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.line_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TrainLogLine::set_allocated_line(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  }
+  _impl_.line_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.line_.IsDefault()) {
+    _impl_.line_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.TrainLogLine.line)
+}
+
+// -------------------------------------------------------------------
+
+// TrainJobView
+
+// string job_id = 1 [json_name = "job_id"];
+inline void TrainJobView::clear_job_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.job_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline const ::std::string& TrainJobView::job_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainJobView.job_id)
+  return _internal_job_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TrainJobView::set_job_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  _impl_.job_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainJobView.job_id)
+}
+inline ::std::string* PROTOBUF_NONNULL TrainJobView::mutable_job_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::std::string* _s = _internal_mutable_job_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.TrainJobView.job_id)
+  return _s;
+}
+inline const ::std::string& TrainJobView::_internal_job_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.job_id_.Get();
+}
+inline void TrainJobView::_internal_set_job_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.job_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TrainJobView::_internal_mutable_job_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.job_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TrainJobView::release_job_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.TrainJobView.job_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  auto* released = _impl_.job_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.job_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TrainJobView::set_allocated_job_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+  _impl_.job_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.job_id_.IsDefault()) {
+    _impl_.job_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.TrainJobView.job_id)
+}
+
+// string registration_id = 2 [json_name = "registration_id"];
+inline void TrainJobView::clear_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+}
+inline const ::std::string& TrainJobView::registration_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainJobView.registration_id)
+  return _internal_registration_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TrainJobView::set_registration_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  _impl_.registration_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainJobView.registration_id)
+}
+inline ::std::string* PROTOBUF_NONNULL TrainJobView::mutable_registration_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ::std::string* _s = _internal_mutable_registration_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.TrainJobView.registration_id)
+  return _s;
+}
+inline const ::std::string& TrainJobView::_internal_registration_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.registration_id_.Get();
+}
+inline void TrainJobView::_internal_set_registration_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TrainJobView::_internal_mutable_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.registration_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TrainJobView::release_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.TrainJobView.registration_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000004U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  auto* released = _impl_.registration_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TrainJobView::set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  }
+  _impl_.registration_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.registration_id_.IsDefault()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.TrainJobView.registration_id)
+}
+
+// .fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];
+inline void TrainJobView::clear_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.status_ = 0;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+}
+inline ::fusion::ai::proto::workbench::JobStatus TrainJobView::status() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainJobView.status)
+  return _internal_status();
+}
+inline void TrainJobView::set_status(::fusion::ai::proto::workbench::JobStatus value) {
+  _internal_set_status(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainJobView.status)
+}
+inline ::fusion::ai::proto::workbench::JobStatus TrainJobView::_internal_status() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return static_cast<::fusion::ai::proto::workbench::JobStatus>(_impl_.status_);
+}
+inline void TrainJobView::_internal_set_status(::fusion::ai::proto::workbench::JobStatus value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.status_ = value;
+}
+
+// optional string started_at = 4 [json_name = "started_at"];
+inline bool TrainJobView::has_started_at() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
+  return value;
+}
+inline void TrainJobView::clear_started_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.started_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+}
+inline const ::std::string& TrainJobView::started_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainJobView.started_at)
+  return _internal_started_at();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TrainJobView::set_started_at(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  _impl_.started_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainJobView.started_at)
+}
+inline ::std::string* PROTOBUF_NONNULL TrainJobView::mutable_started_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ::std::string* _s = _internal_mutable_started_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.TrainJobView.started_at)
+  return _s;
+}
+inline const ::std::string& TrainJobView::_internal_started_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.started_at_.Get();
+}
+inline void TrainJobView::_internal_set_started_at(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.started_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TrainJobView::_internal_mutable_started_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.started_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TrainJobView::release_started_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.TrainJobView.started_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000008U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  auto* released = _impl_.started_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.started_at_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TrainJobView::set_allocated_started_at(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  }
+  _impl_.started_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.started_at_.IsDefault()) {
+    _impl_.started_at_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.TrainJobView.started_at)
+}
+
+// optional string finished_at = 5 [json_name = "finished_at"];
+inline bool TrainJobView::has_finished_at() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000010U);
+  return value;
+}
+inline void TrainJobView::clear_finished_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.finished_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+}
+inline const ::std::string& TrainJobView::finished_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainJobView.finished_at)
+  return _internal_finished_at();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TrainJobView::set_finished_at(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  _impl_.finished_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainJobView.finished_at)
+}
+inline ::std::string* PROTOBUF_NONNULL TrainJobView::mutable_finished_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  ::std::string* _s = _internal_mutable_finished_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.TrainJobView.finished_at)
+  return _s;
+}
+inline const ::std::string& TrainJobView::_internal_finished_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.finished_at_.Get();
+}
+inline void TrainJobView::_internal_set_finished_at(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.finished_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TrainJobView::_internal_mutable_finished_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.finished_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TrainJobView::release_finished_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.TrainJobView.finished_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000010U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  auto* released = _impl_.finished_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.finished_at_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TrainJobView::set_allocated_finished_at(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+  }
+  _impl_.finished_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.finished_at_.IsDefault()) {
+    _impl_.finished_at_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.TrainJobView.finished_at)
+}
+
+// int64 log_seq = 6 [json_name = "log_seq"];
+inline void TrainJobView::clear_log_seq() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.log_seq_ = ::int64_t{0};
+  ClearHasBit(_impl_._has_bits_[0], 0x00000020U);
+}
+inline ::int64_t TrainJobView::log_seq() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainJobView.log_seq)
+  return _internal_log_seq();
+}
+inline void TrainJobView::set_log_seq(::int64_t value) {
+  _internal_set_log_seq(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000020U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.TrainJobView.log_seq)
+}
+inline ::int64_t TrainJobView::_internal_log_seq() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.log_seq_;
+}
+inline void TrainJobView::_internal_set_log_seq(::int64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.log_seq_ = value;
+}
+
+// repeated .fusion.ai.proto.workbench.TrainLogLine logs = 7 [json_name = "logs"];
+inline int TrainJobView::_internal_logs_size() const {
+  return _internal_logs().size();
+}
+inline int TrainJobView::logs_size() const {
+  return _internal_logs_size();
+}
+inline void TrainJobView::clear_logs() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.logs_.Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::fusion::ai::proto::workbench::TrainLogLine& TrainJobView::logs(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.TrainJobView.logs)
+  return _internal_logs().Get(index);
+}
+inline ::fusion::ai::proto::workbench::TrainLogLine* PROTOBUF_NONNULL TrainJobView::mutable_logs(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.TrainJobView.logs)
+  return _internal_mutable_logs()->Mutable(index);
+}
+inline ::fusion::ai::proto::workbench::TrainLogLine* PROTOBUF_NONNULL TrainJobView::add_logs()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::fusion::ai::proto::workbench::TrainLogLine* _add =
+      _internal_mutable_logs()->InternalAddWithArena(
+          ::google::protobuf::MessageLite::internal_visibility(), GetArena());
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  // @@protoc_insertion_point(field_add:fusion.ai.proto.workbench.TrainJobView.logs)
+  return _add;
+}
+inline const ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::workbench::TrainLogLine>& TrainJobView::logs() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:fusion.ai.proto.workbench.TrainJobView.logs)
+  return _internal_logs();
+}
+inline ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::workbench::TrainLogLine>* PROTOBUF_NONNULL
+TrainJobView::mutable_logs() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  // @@protoc_insertion_point(field_mutable_list:fusion.ai.proto.workbench.TrainJobView.logs)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_logs();
+}
+inline const ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::workbench::TrainLogLine>&
+TrainJobView::_internal_logs() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.logs_;
+}
+inline ::google::protobuf::RepeatedPtrField<::fusion::ai::proto::workbench::TrainLogLine>* PROTOBUF_NONNULL
+TrainJobView::_internal_mutable_logs() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.logs_;
 }
 
 // -------------------------------------------------------------------
@@ -8851,7 +10624,7 @@ inline void PredictJobView::set_allocated_stage(::std::string* PROTOBUF_NULLABLE
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.PredictJobView.stage)
 }
 
-// map<string, string> stages = 6 [json_name = "stages"];
+// map<string, .fusion.ai.proto.workbench.StageStepStatus> stages = 6 [json_name = "stages"];
 inline int PredictJobView::_internal_stages_size() const {
   return _internal_stages().size();
 }
@@ -8863,19 +10636,19 @@ inline void PredictJobView::clear_stages() {
   _impl_.stages_.Clear();
   ClearHasBit(_impl_._has_bits_[0], 0x00004000U);
 }
-inline const ::google::protobuf::Map<::std::string, ::std::string>& PredictJobView::_internal_stages() const {
+inline const ::google::protobuf::Map<::std::string, ::fusion::ai::proto::workbench::StageStepStatus>& PredictJobView::_internal_stages() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.stages_.GetMap();
 }
-inline const ::google::protobuf::Map<::std::string, ::std::string>& PredictJobView::stages() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::google::protobuf::Map<::std::string, ::fusion::ai::proto::workbench::StageStepStatus>& PredictJobView::stages() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_map:fusion.ai.proto.workbench.PredictJobView.stages)
   return _internal_stages();
 }
-inline ::google::protobuf::Map<::std::string, ::std::string>* PROTOBUF_NONNULL PredictJobView::_internal_mutable_stages() {
+inline ::google::protobuf::Map<::std::string, ::fusion::ai::proto::workbench::StageStepStatus>* PROTOBUF_NONNULL PredictJobView::_internal_mutable_stages() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.stages_.MutableMap();
 }
-inline ::google::protobuf::Map<::std::string, ::std::string>* PROTOBUF_NONNULL PredictJobView::mutable_stages()
+inline ::google::protobuf::Map<::std::string, ::fusion::ai::proto::workbench::StageStepStatus>* PROTOBUF_NONNULL PredictJobView::mutable_stages()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   SetHasBit(_impl_._has_bits_[0], 0x00004000U);
   // @@protoc_insertion_point(field_mutable_map:fusion.ai.proto.workbench.PredictJobView.stages)
@@ -11410,6 +13183,402 @@ inline void CreatePredictJobResponse::_internal_set_status(::fusion::ai::proto::
 
 // -------------------------------------------------------------------
 
+// GetTrainRequest
+
+// string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
+inline void GetTrainRequest::clear_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::std::string& GetTrainRequest::registration_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.GetTrainRequest.registration_id)
+  return _internal_registration_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetTrainRequest::set_registration_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  _impl_.registration_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.GetTrainRequest.registration_id)
+}
+inline ::std::string* PROTOBUF_NONNULL GetTrainRequest::mutable_registration_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::std::string* _s = _internal_mutable_registration_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.GetTrainRequest.registration_id)
+  return _s;
+}
+inline const ::std::string& GetTrainRequest::_internal_registration_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.registration_id_.Get();
+}
+inline void GetTrainRequest::_internal_set_registration_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetTrainRequest::_internal_mutable_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.registration_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetTrainRequest::release_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.GetTrainRequest.registration_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  auto* released = _impl_.registration_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetTrainRequest::set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  }
+  _impl_.registration_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.registration_id_.IsDefault()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.GetTrainRequest.registration_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetTrainResponse
+
+// string registration_id = 1 [json_name = "registration_id"];
+inline void GetTrainResponse::clear_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+}
+inline const ::std::string& GetTrainResponse::registration_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.GetTrainResponse.registration_id)
+  return _internal_registration_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetTrainResponse::set_registration_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  _impl_.registration_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.GetTrainResponse.registration_id)
+}
+inline ::std::string* PROTOBUF_NONNULL GetTrainResponse::mutable_registration_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  ::std::string* _s = _internal_mutable_registration_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.GetTrainResponse.registration_id)
+  return _s;
+}
+inline const ::std::string& GetTrainResponse::_internal_registration_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.registration_id_.Get();
+}
+inline void GetTrainResponse::_internal_set_registration_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.registration_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetTrainResponse::_internal_mutable_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.registration_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetTrainResponse::release_registration_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.GetTrainResponse.registration_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000001U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  auto* released = _impl_.registration_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetTrainResponse::set_allocated_registration_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000001U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000001U);
+  }
+  _impl_.registration_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.registration_id_.IsDefault()) {
+    _impl_.registration_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.GetTrainResponse.registration_id)
+}
+
+// string current_train_job_id = 2 [json_name = "current_train_job_id"];
+inline void GetTrainResponse::clear_current_train_job_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.current_train_job_id_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+}
+inline const ::std::string& GetTrainResponse::current_train_job_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.GetTrainResponse.current_train_job_id)
+  return _internal_current_train_job_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void GetTrainResponse::set_current_train_job_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  _impl_.current_train_job_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.GetTrainResponse.current_train_job_id)
+}
+inline ::std::string* PROTOBUF_NONNULL GetTrainResponse::mutable_current_train_job_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  ::std::string* _s = _internal_mutable_current_train_job_id();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.GetTrainResponse.current_train_job_id)
+  return _s;
+}
+inline const ::std::string& GetTrainResponse::_internal_current_train_job_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.current_train_job_id_.Get();
+}
+inline void GetTrainResponse::_internal_set_current_train_job_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.current_train_job_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL GetTrainResponse::_internal_mutable_current_train_job_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.current_train_job_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE GetTrainResponse::release_current_train_job_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.GetTrainResponse.current_train_job_id)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000002U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  auto* released = _impl_.current_train_job_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.current_train_job_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void GetTrainResponse::set_allocated_current_train_job_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000002U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000002U);
+  }
+  _impl_.current_train_job_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.current_train_job_id_.IsDefault()) {
+    _impl_.current_train_job_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.GetTrainResponse.current_train_job_id)
+}
+
+// optional .fusion.ai.proto.workbench.FusionModelView model = 3 [json_name = "model"];
+inline bool GetTrainResponse::has_model() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000004U);
+  PROTOBUF_ASSUME(!value || _impl_.model_ != nullptr);
+  return value;
+}
+inline void GetTrainResponse::clear_model() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.model_ != nullptr) _impl_.model_->Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+}
+inline const ::fusion::ai::proto::workbench::FusionModelView& GetTrainResponse::_internal_model() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::fusion::ai::proto::workbench::FusionModelView* p = _impl_.model_;
+  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::workbench::FusionModelView>(&::fusion::ai::proto::workbench::FusionModelView_globals_);
+}
+inline const ::fusion::ai::proto::workbench::FusionModelView& GetTrainResponse::model() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.GetTrainResponse.model)
+  return _internal_model();
+}
+inline void GetTrainResponse::unsafe_arena_set_allocated_model(
+    ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.model_);
+  }
+  _impl_.model_ = reinterpret_cast<::fusion::ai::proto::workbench::FusionModelView*>(value);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.workbench.GetTrainResponse.model)
+}
+inline ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE GetTrainResponse::release_model() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ::fusion::ai::proto::workbench::FusionModelView* released = _impl_.model_;
+  _impl_.model_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE GetTrainResponse::unsafe_arena_release_model() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.GetTrainResponse.model)
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ::fusion::ai::proto::workbench::FusionModelView* temp = _impl_.model_;
+  _impl_.model_ = nullptr;
+  return temp;
+}
+inline ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NONNULL GetTrainResponse::_internal_mutable_model() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.model_ == nullptr) {
+    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::workbench::FusionModelView>(GetArena());
+    _impl_.model_ = reinterpret_cast<::fusion::ai::proto::workbench::FusionModelView*>(p);
+  }
+  return _impl_.model_;
+}
+inline ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NONNULL GetTrainResponse::mutable_model()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  ::fusion::ai::proto::workbench::FusionModelView* _msg = _internal_mutable_model();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.GetTrainResponse.model)
+  return _msg;
+}
+inline void GetTrainResponse::set_allocated_model(::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.model_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    SetHasBit(_impl_._has_bits_[0], 0x00000004U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000004U);
+  }
+
+  _impl_.model_ = reinterpret_cast<::fusion::ai::proto::workbench::FusionModelView*>(value);
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.GetTrainResponse.model)
+}
+
+// optional .fusion.ai.proto.workbench.TrainJobView job = 4 [json_name = "job"];
+inline bool GetTrainResponse::has_job() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000008U);
+  PROTOBUF_ASSUME(!value || _impl_.job_ != nullptr);
+  return value;
+}
+inline void GetTrainResponse::clear_job() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.job_ != nullptr) _impl_.job_->Clear();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+}
+inline const ::fusion::ai::proto::workbench::TrainJobView& GetTrainResponse::_internal_job() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::fusion::ai::proto::workbench::TrainJobView* p = _impl_.job_;
+  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::fusion::ai::proto::workbench::TrainJobView>(&::fusion::ai::proto::workbench::TrainJobView_globals_);
+}
+inline const ::fusion::ai::proto::workbench::TrainJobView& GetTrainResponse::job() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.GetTrainResponse.job)
+  return _internal_job();
+}
+inline void GetTrainResponse::unsafe_arena_set_allocated_job(
+    ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.job_);
+  }
+  _impl_.job_ = reinterpret_cast<::fusion::ai::proto::workbench::TrainJobView*>(value);
+  if (value != nullptr) {
+    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.workbench.GetTrainResponse.job)
+}
+inline ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE GetTrainResponse::release_job() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ::fusion::ai::proto::workbench::TrainJobView* released = _impl_.job_;
+  _impl_.job_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE GetTrainResponse::unsafe_arena_release_job() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.workbench.GetTrainResponse.job)
+
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ::fusion::ai::proto::workbench::TrainJobView* temp = _impl_.job_;
+  _impl_.job_ = nullptr;
+  return temp;
+}
+inline ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NONNULL GetTrainResponse::_internal_mutable_job() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.job_ == nullptr) {
+    auto* p = Super_::DefaultConstruct<::fusion::ai::proto::workbench::TrainJobView>(GetArena());
+    _impl_.job_ = reinterpret_cast<::fusion::ai::proto::workbench::TrainJobView*>(p);
+  }
+  return _impl_.job_;
+}
+inline ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NONNULL GetTrainResponse::mutable_job()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  ::fusion::ai::proto::workbench::TrainJobView* _msg = _internal_mutable_job();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.workbench.GetTrainResponse.job)
+  return _msg;
+}
+inline void GetTrainResponse::set_allocated_job(::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.job_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  } else {
+    ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+  }
+
+  _impl_.job_ = reinterpret_cast<::fusion::ai::proto::workbench::TrainJobView*>(value);
+  // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.GetTrainResponse.job)
+}
+
+// -------------------------------------------------------------------
+
 // GetPredictRequest
 
 // string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {
@@ -12533,6 +14702,12 @@ struct is_proto_enum<::fusion::ai::proto::workbench::JobStatus> : std::true_type
 template <>
 inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::fusion::ai::proto::workbench::JobStatus>() {
   return ::fusion::ai::proto::workbench::JobStatus_descriptor();
+}
+template <>
+struct is_proto_enum<::fusion::ai::proto::workbench::StageStepStatus> : std::true_type {};
+template <>
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::fusion::ai::proto::workbench::StageStepStatus>() {
+  return ::fusion::ai::proto::workbench::StageStepStatus_descriptor();
 }
 
 }  // namespace protobuf

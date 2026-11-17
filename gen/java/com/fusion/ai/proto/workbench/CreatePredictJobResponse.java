@@ -54,6 +54,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
   /**
+   * <pre>
+   * 新预测任务 id
+   * </pre>
+   *
    * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The jobId.
    */
@@ -71,6 +75,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 新预测任务 id
+   * </pre>
+   *
    * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The bytes for jobId.
    */
@@ -92,6 +100,10 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_FIELD_NUMBER = 2;
   private int status_ = 0;
   /**
+   * <pre>
+   * 受理后初始状态，一般为 QUEUED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
@@ -99,6 +111,10 @@ private static final long serialVersionUID = 0L;
     return status_;
   }
   /**
+   * <pre>
+   * 受理后初始状态，一般为 QUEUED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
    * @return The status.
    */
@@ -427,6 +443,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object jobId_ = "";
     /**
+     * <pre>
+     * 新预测任务 id
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return The jobId.
      */
@@ -443,6 +463,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 新预测任务 id
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return The bytes for jobId.
      */
@@ -460,6 +484,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 新预测任务 id
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @param value The jobId to set.
      * @return This builder for chaining.
@@ -473,6 +501,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 新预测任务 id
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return This builder for chaining.
      */
@@ -483,6 +515,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 新预测任务 id
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @param value The bytes for jobId to set.
      * @return This builder for chaining.
@@ -499,6 +535,10 @@ private static final long serialVersionUID = 0L;
 
     private int status_ = 0;
     /**
+     * <pre>
+     * 受理后初始状态，一般为 QUEUED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
      * @return The enum numeric value on the wire for status.
      */
@@ -506,6 +546,10 @@ private static final long serialVersionUID = 0L;
       return status_;
     }
     /**
+     * <pre>
+     * 受理后初始状态，一般为 QUEUED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
@@ -517,6 +561,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 受理后初始状态，一般为 QUEUED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
      * @return The status.
      */
@@ -526,6 +574,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.workbench.JobStatus.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * 受理后初始状态，一般为 QUEUED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
      * @param value The status to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
@@ -539,6 +591,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 受理后初始状态，一般为 QUEUED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
      * @return This builder for chaining.
      */

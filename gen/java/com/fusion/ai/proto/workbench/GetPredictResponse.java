@@ -6,6 +6,10 @@
 package com.fusion.ai.proto.workbench;
 
 /**
+ * <pre>
+ * GetPredictResponse 预测进页快照；无任务时 job 不填。之后进度靠 WS predict/&#42;，不要轮询。
+ * </pre>
+ *
  * Protobuf type {@code fusion.ai.proto.workbench.GetPredictResponse}
  */
 @com.google.protobuf.Generated
@@ -55,6 +59,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
@@ -72,6 +80,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -362,6 +374,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * GetPredictResponse 预测进页快照；无任务时 job 不填。之后进度靠 WS predict/&#42;，不要轮询。
+   * </pre>
+   *
    * Protobuf type {@code fusion.ai.proto.workbench.GetPredictResponse}
    */
   public static final class Builder extends
@@ -542,6 +558,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The registrationId.
      */
@@ -558,6 +578,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The bytes for registrationId.
      */
@@ -575,6 +599,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -588,6 +616,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return This builder for chaining.
      */
@@ -598,6 +630,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.

@@ -57,6 +57,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
@@ -74,6 +78,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -96,6 +104,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object evalDate_ = "";
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date"];</code>
    * @return The evalDate.
    */
@@ -113,6 +125,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date"];</code>
    * @return The bytes for evalDate.
    */
@@ -135,6 +151,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelKey_ = "";
   /**
+   * <pre>
+   * 模型 key
+   * </pre>
+   *
    * <code>string model_key = 3 [json_name = "model_key"];</code>
    * @return The modelKey.
    */
@@ -152,6 +172,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 模型 key
+   * </pre>
+   *
    * <code>string model_key = 3 [json_name = "model_key"];</code>
    * @return The bytes for modelKey.
    */
@@ -174,6 +198,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelVersion_ = "";
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 4 [json_name = "model_version"];</code>
    * @return Whether the modelVersion field is set.
    */
@@ -182,6 +210,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 4 [json_name = "model_version"];</code>
    * @return The modelVersion.
    */
@@ -199,6 +231,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 4 [json_name = "model_version"];</code>
    * @return The bytes for modelVersion.
    */
@@ -221,7 +257,7 @@ private static final long serialVersionUID = 0L;
   private double mape_ = 0D;
   /**
    * <pre>
-   * 百分比数值，如 8.23 表示 8.23%
+   * MAPE 百分比数值，如 8.23 表示 8.23%
    * </pre>
    *
    * <code>optional double mape = 5 [json_name = "mape"];</code>
@@ -233,7 +269,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 百分比数值，如 8.23 表示 8.23%
+   * MAPE 百分比数值，如 8.23 表示 8.23%
    * </pre>
    *
    * <code>optional double mape = 5 [json_name = "mape"];</code>
@@ -247,6 +283,10 @@ private static final long serialVersionUID = 0L;
   public static final int RMSE_FIELD_NUMBER = 6;
   private double rmse_ = 0D;
   /**
+   * <pre>
+   * RMSE（kW）
+   * </pre>
+   *
    * <code>optional double rmse = 6 [json_name = "rmse"];</code>
    * @return Whether the rmse field is set.
    */
@@ -255,6 +295,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
+   * <pre>
+   * RMSE（kW）
+   * </pre>
+   *
    * <code>optional double rmse = 6 [json_name = "rmse"];</code>
    * @return The rmse.
    */
@@ -266,6 +310,10 @@ private static final long serialVersionUID = 0L;
   public static final int MAE_FIELD_NUMBER = 7;
   private double mae_ = 0D;
   /**
+   * <pre>
+   * MAE（kW）
+   * </pre>
+   *
    * <code>optional double mae = 7 [json_name = "mae"];</code>
    * @return Whether the mae field is set.
    */
@@ -274,6 +322,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
+   * <pre>
+   * MAE（kW）
+   * </pre>
+   *
    * <code>optional double mae = 7 [json_name = "mae"];</code>
    * @return The mae.
    */
@@ -285,6 +337,10 @@ private static final long serialVersionUID = 0L;
   public static final int SMAPE_FIELD_NUMBER = 8;
   private double smape_ = 0D;
   /**
+   * <pre>
+   * sMAPE 百分比数值
+   * </pre>
+   *
    * <code>optional double smape = 8 [json_name = "smape"];</code>
    * @return Whether the smape field is set.
    */
@@ -293,6 +349,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
+   * <pre>
+   * sMAPE 百分比数值
+   * </pre>
+   *
    * <code>optional double smape = 8 [json_name = "smape"];</code>
    * @return The smape.
    */
@@ -919,6 +979,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The registrationId.
      */
@@ -935,6 +999,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The bytes for registrationId.
      */
@@ -952,6 +1020,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -965,6 +1037,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return This builder for chaining.
      */
@@ -975,6 +1051,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.
@@ -991,6 +1071,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object evalDate_ = "";
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @return The evalDate.
      */
@@ -1007,6 +1091,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @return The bytes for evalDate.
      */
@@ -1024,6 +1112,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @param value The evalDate to set.
      * @return This builder for chaining.
@@ -1037,6 +1129,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @return This builder for chaining.
      */
@@ -1047,6 +1143,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @param value The bytes for evalDate to set.
      * @return This builder for chaining.
@@ -1063,6 +1163,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object modelKey_ = "";
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 3 [json_name = "model_key"];</code>
      * @return The modelKey.
      */
@@ -1079,6 +1183,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 3 [json_name = "model_key"];</code>
      * @return The bytes for modelKey.
      */
@@ -1096,6 +1204,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 3 [json_name = "model_key"];</code>
      * @param value The modelKey to set.
      * @return This builder for chaining.
@@ -1109,6 +1221,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 3 [json_name = "model_key"];</code>
      * @return This builder for chaining.
      */
@@ -1119,6 +1235,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 3 [json_name = "model_key"];</code>
      * @param value The bytes for modelKey to set.
      * @return This builder for chaining.
@@ -1135,6 +1255,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object modelVersion_ = "";
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 4 [json_name = "model_version"];</code>
      * @return Whether the modelVersion field is set.
      */
@@ -1142,6 +1266,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 4 [json_name = "model_version"];</code>
      * @return The modelVersion.
      */
@@ -1158,6 +1286,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 4 [json_name = "model_version"];</code>
      * @return The bytes for modelVersion.
      */
@@ -1175,6 +1307,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 4 [json_name = "model_version"];</code>
      * @param value The modelVersion to set.
      * @return This builder for chaining.
@@ -1188,6 +1324,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 4 [json_name = "model_version"];</code>
      * @return This builder for chaining.
      */
@@ -1198,6 +1338,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 4 [json_name = "model_version"];</code>
      * @param value The bytes for modelVersion to set.
      * @return This builder for chaining.
@@ -1215,7 +1359,7 @@ private static final long serialVersionUID = 0L;
     private double mape_ ;
     /**
      * <pre>
-     * 百分比数值，如 8.23 表示 8.23%
+     * MAPE 百分比数值，如 8.23 表示 8.23%
      * </pre>
      *
      * <code>optional double mape = 5 [json_name = "mape"];</code>
@@ -1227,7 +1371,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 百分比数值，如 8.23 表示 8.23%
+     * MAPE 百分比数值，如 8.23 表示 8.23%
      * </pre>
      *
      * <code>optional double mape = 5 [json_name = "mape"];</code>
@@ -1239,7 +1383,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 百分比数值，如 8.23 表示 8.23%
+     * MAPE 百分比数值，如 8.23 表示 8.23%
      * </pre>
      *
      * <code>optional double mape = 5 [json_name = "mape"];</code>
@@ -1255,7 +1399,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 百分比数值，如 8.23 表示 8.23%
+     * MAPE 百分比数值，如 8.23 表示 8.23%
      * </pre>
      *
      * <code>optional double mape = 5 [json_name = "mape"];</code>
@@ -1270,6 +1414,10 @@ private static final long serialVersionUID = 0L;
 
     private double rmse_ ;
     /**
+     * <pre>
+     * RMSE（kW）
+     * </pre>
+     *
      * <code>optional double rmse = 6 [json_name = "rmse"];</code>
      * @return Whether the rmse field is set.
      */
@@ -1278,6 +1426,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
+     * <pre>
+     * RMSE（kW）
+     * </pre>
+     *
      * <code>optional double rmse = 6 [json_name = "rmse"];</code>
      * @return The rmse.
      */
@@ -1286,6 +1438,10 @@ private static final long serialVersionUID = 0L;
       return rmse_;
     }
     /**
+     * <pre>
+     * RMSE（kW）
+     * </pre>
+     *
      * <code>optional double rmse = 6 [json_name = "rmse"];</code>
      * @param value The rmse to set.
      * @return This builder for chaining.
@@ -1298,6 +1454,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * RMSE（kW）
+     * </pre>
+     *
      * <code>optional double rmse = 6 [json_name = "rmse"];</code>
      * @return This builder for chaining.
      */
@@ -1310,6 +1470,10 @@ private static final long serialVersionUID = 0L;
 
     private double mae_ ;
     /**
+     * <pre>
+     * MAE（kW）
+     * </pre>
+     *
      * <code>optional double mae = 7 [json_name = "mae"];</code>
      * @return Whether the mae field is set.
      */
@@ -1318,6 +1482,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
+     * <pre>
+     * MAE（kW）
+     * </pre>
+     *
      * <code>optional double mae = 7 [json_name = "mae"];</code>
      * @return The mae.
      */
@@ -1326,6 +1494,10 @@ private static final long serialVersionUID = 0L;
       return mae_;
     }
     /**
+     * <pre>
+     * MAE（kW）
+     * </pre>
+     *
      * <code>optional double mae = 7 [json_name = "mae"];</code>
      * @param value The mae to set.
      * @return This builder for chaining.
@@ -1338,6 +1510,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * MAE（kW）
+     * </pre>
+     *
      * <code>optional double mae = 7 [json_name = "mae"];</code>
      * @return This builder for chaining.
      */
@@ -1350,6 +1526,10 @@ private static final long serialVersionUID = 0L;
 
     private double smape_ ;
     /**
+     * <pre>
+     * sMAPE 百分比数值
+     * </pre>
+     *
      * <code>optional double smape = 8 [json_name = "smape"];</code>
      * @return Whether the smape field is set.
      */
@@ -1358,6 +1538,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
+     * <pre>
+     * sMAPE 百分比数值
+     * </pre>
+     *
      * <code>optional double smape = 8 [json_name = "smape"];</code>
      * @return The smape.
      */
@@ -1366,6 +1550,10 @@ private static final long serialVersionUID = 0L;
       return smape_;
     }
     /**
+     * <pre>
+     * sMAPE 百分比数值
+     * </pre>
+     *
      * <code>optional double smape = 8 [json_name = "smape"];</code>
      * @param value The smape to set.
      * @return This builder for chaining.
@@ -1378,6 +1566,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * sMAPE 百分比数值
+     * </pre>
+     *
      * <code>optional double smape = 8 [json_name = "smape"];</code>
      * @return This builder for chaining.
      */

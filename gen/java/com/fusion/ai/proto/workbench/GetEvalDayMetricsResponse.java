@@ -52,6 +52,10 @@ private static final long serialVersionUID = 0L;
   public static final int METRICS_FIELD_NUMBER = 1;
   private com.fusion.ai.proto.workbench.EvalDayMetrics metrics_;
   /**
+   * <pre>
+   * 单日 KPI
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
    * @return Whether the metrics field is set.
    */
@@ -60,6 +64,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 单日 KPI
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
    * @return The metrics.
    */
@@ -68,6 +76,10 @@ private static final long serialVersionUID = 0L;
     return metrics_ == null ? com.fusion.ai.proto.workbench.EvalDayMetrics.getDefaultInstance() : metrics_;
   }
   /**
+   * <pre>
+   * 单日 KPI
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
    */
   @java.lang.Override
@@ -396,6 +408,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.workbench.EvalDayMetrics, com.fusion.ai.proto.workbench.EvalDayMetrics.Builder, com.fusion.ai.proto.workbench.EvalDayMetricsOrBuilder> metricsBuilder_;
     /**
+     * <pre>
+     * 单日 KPI
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      * @return Whether the metrics field is set.
      */
@@ -403,6 +419,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     * <pre>
+     * 单日 KPI
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      * @return The metrics.
      */
@@ -414,6 +434,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 单日 KPI
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      */
     public Builder setMetrics(com.fusion.ai.proto.workbench.EvalDayMetrics value) {
@@ -428,6 +452,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 单日 KPI
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      */
     public Builder setMetrics(
@@ -442,6 +470,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 单日 KPI
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      */
     public Builder mergeMetrics(com.fusion.ai.proto.workbench.EvalDayMetrics value) {
@@ -463,6 +495,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 单日 KPI
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      */
     public Builder clearMetrics() {
@@ -476,6 +512,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 单日 KPI
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDayMetrics.Builder getMetricsBuilder() {
@@ -484,6 +524,10 @@ private static final long serialVersionUID = 0L;
       return internalGetMetricsFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 单日 KPI
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDayMetricsOrBuilder getMetricsOrBuilder() {
@@ -495,6 +539,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 单日 KPI
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<

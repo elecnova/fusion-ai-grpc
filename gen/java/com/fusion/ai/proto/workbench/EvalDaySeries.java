@@ -59,6 +59,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
@@ -76,6 +80,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -98,6 +106,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object evalDate_ = "";
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date"];</code>
    * @return The evalDate.
    */
@@ -115,6 +127,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date"];</code>
    * @return The bytes for evalDate.
    */
@@ -137,6 +153,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object timezone_ = "";
   /**
+   * <pre>
+   * IANA 时区
+   * </pre>
+   *
    * <code>string timezone = 3 [json_name = "timezone"];</code>
    * @return The timezone.
    */
@@ -154,6 +174,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * IANA 时区
+   * </pre>
+   *
    * <code>string timezone = 3 [json_name = "timezone"];</code>
    * @return The bytes for timezone.
    */
@@ -175,6 +199,10 @@ private static final long serialVersionUID = 0L;
   public static final int GRANULARITY_MIN_FIELD_NUMBER = 4;
   private int granularityMin_ = 0;
   /**
+   * <pre>
+   * 序列步长（分钟）
+   * </pre>
+   *
    * <code>int32 granularity_min = 4 [json_name = "granularity_min"];</code>
    * @return The granularityMin.
    */
@@ -187,6 +215,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelKey_ = "";
   /**
+   * <pre>
+   * 模型 key
+   * </pre>
+   *
    * <code>string model_key = 5 [json_name = "model_key"];</code>
    * @return The modelKey.
    */
@@ -204,6 +236,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 模型 key
+   * </pre>
+   *
    * <code>string model_key = 5 [json_name = "model_key"];</code>
    * @return The bytes for modelKey.
    */
@@ -226,6 +262,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelVersion_ = "";
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 6 [json_name = "model_version"];</code>
    * @return Whether the modelVersion field is set.
    */
@@ -234,6 +274,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 6 [json_name = "model_version"];</code>
    * @return The modelVersion.
    */
@@ -251,6 +295,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 6 [json_name = "model_version"];</code>
    * @return The bytes for modelVersion.
    */
@@ -273,6 +321,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.fusion.ai.proto.workbench.SeriesPoint> points_;
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -280,6 +332,10 @@ private static final long serialVersionUID = 0L;
     return points_;
   }
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -288,6 +344,10 @@ private static final long serialVersionUID = 0L;
     return points_;
   }
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -295,6 +355,10 @@ private static final long serialVersionUID = 0L;
     return points_.size();
   }
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -302,6 +366,10 @@ private static final long serialVersionUID = 0L;
     return points_.get(index);
   }
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   @java.lang.Override
@@ -812,6 +880,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The registrationId.
      */
@@ -828,6 +900,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The bytes for registrationId.
      */
@@ -845,6 +921,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -858,6 +938,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return This builder for chaining.
      */
@@ -868,6 +952,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.
@@ -884,6 +972,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object evalDate_ = "";
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @return The evalDate.
      */
@@ -900,6 +992,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @return The bytes for evalDate.
      */
@@ -917,6 +1013,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @param value The evalDate to set.
      * @return This builder for chaining.
@@ -930,6 +1030,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @return This builder for chaining.
      */
@@ -940,6 +1044,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @param value The bytes for evalDate to set.
      * @return This builder for chaining.
@@ -956,6 +1064,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object timezone_ = "";
     /**
+     * <pre>
+     * IANA 时区
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @return The timezone.
      */
@@ -972,6 +1084,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * IANA 时区
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @return The bytes for timezone.
      */
@@ -989,6 +1105,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * IANA 时区
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @param value The timezone to set.
      * @return This builder for chaining.
@@ -1002,6 +1122,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * IANA 时区
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @return This builder for chaining.
      */
@@ -1012,6 +1136,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * IANA 时区
+     * </pre>
+     *
      * <code>string timezone = 3 [json_name = "timezone"];</code>
      * @param value The bytes for timezone to set.
      * @return This builder for chaining.
@@ -1028,6 +1156,10 @@ private static final long serialVersionUID = 0L;
 
     private int granularityMin_ ;
     /**
+     * <pre>
+     * 序列步长（分钟）
+     * </pre>
+     *
      * <code>int32 granularity_min = 4 [json_name = "granularity_min"];</code>
      * @return The granularityMin.
      */
@@ -1036,6 +1168,10 @@ private static final long serialVersionUID = 0L;
       return granularityMin_;
     }
     /**
+     * <pre>
+     * 序列步长（分钟）
+     * </pre>
+     *
      * <code>int32 granularity_min = 4 [json_name = "granularity_min"];</code>
      * @param value The granularityMin to set.
      * @return This builder for chaining.
@@ -1048,6 +1184,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 序列步长（分钟）
+     * </pre>
+     *
      * <code>int32 granularity_min = 4 [json_name = "granularity_min"];</code>
      * @return This builder for chaining.
      */
@@ -1060,6 +1200,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object modelKey_ = "";
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 5 [json_name = "model_key"];</code>
      * @return The modelKey.
      */
@@ -1076,6 +1220,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 5 [json_name = "model_key"];</code>
      * @return The bytes for modelKey.
      */
@@ -1093,6 +1241,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 5 [json_name = "model_key"];</code>
      * @param value The modelKey to set.
      * @return This builder for chaining.
@@ -1106,6 +1258,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 5 [json_name = "model_key"];</code>
      * @return This builder for chaining.
      */
@@ -1116,6 +1272,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型 key
+     * </pre>
+     *
      * <code>string model_key = 5 [json_name = "model_key"];</code>
      * @param value The bytes for modelKey to set.
      * @return This builder for chaining.
@@ -1132,6 +1292,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object modelVersion_ = "";
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 6 [json_name = "model_version"];</code>
      * @return Whether the modelVersion field is set.
      */
@@ -1139,6 +1303,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 6 [json_name = "model_version"];</code>
      * @return The modelVersion.
      */
@@ -1155,6 +1323,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 6 [json_name = "model_version"];</code>
      * @return The bytes for modelVersion.
      */
@@ -1172,6 +1344,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 6 [json_name = "model_version"];</code>
      * @param value The modelVersion to set.
      * @return This builder for chaining.
@@ -1185,6 +1361,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 6 [json_name = "model_version"];</code>
      * @return This builder for chaining.
      */
@@ -1195,6 +1375,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型版本（可选）
+     * </pre>
+     *
      * <code>optional string model_version = 6 [json_name = "model_version"];</code>
      * @param value The bytes for modelVersion to set.
      * @return This builder for chaining.
@@ -1222,6 +1406,10 @@ private static final long serialVersionUID = 0L;
         com.fusion.ai.proto.workbench.SeriesPoint, com.fusion.ai.proto.workbench.SeriesPoint.Builder, com.fusion.ai.proto.workbench.SeriesPointOrBuilder> pointsBuilder_;
 
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public java.util.List<com.fusion.ai.proto.workbench.SeriesPoint> getPointsList() {
@@ -1232,6 +1420,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public int getPointsCount() {
@@ -1242,6 +1434,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.SeriesPoint getPoints(int index) {
@@ -1252,6 +1448,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public Builder setPoints(
@@ -1267,6 +1467,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public Builder setPoints(
@@ -1281,6 +1485,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public Builder addPoints(com.fusion.ai.proto.workbench.SeriesPoint value) {
@@ -1295,6 +1503,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public Builder addPoints(
@@ -1310,6 +1522,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public Builder addPoints(
@@ -1324,6 +1540,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public Builder addPoints(
@@ -1338,6 +1558,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public Builder addAllPoints(
@@ -1353,6 +1577,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public Builder clearPoints() {
@@ -1366,6 +1594,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public Builder removePoints(int index) {
@@ -1379,6 +1611,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.SeriesPoint.Builder getPointsBuilder(
@@ -1386,6 +1622,10 @@ private static final long serialVersionUID = 0L;
       return internalGetPointsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.SeriesPointOrBuilder getPointsOrBuilder(
@@ -1396,6 +1636,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public java.util.List<? extends com.fusion.ai.proto.workbench.SeriesPointOrBuilder> 
@@ -1407,6 +1651,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.SeriesPoint.Builder addPointsBuilder() {
@@ -1414,6 +1662,10 @@ private static final long serialVersionUID = 0L;
           com.fusion.ai.proto.workbench.SeriesPoint.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public com.fusion.ai.proto.workbench.SeriesPoint.Builder addPointsBuilder(
@@ -1422,6 +1674,10 @@ private static final long serialVersionUID = 0L;
           index, com.fusion.ai.proto.workbench.SeriesPoint.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 预测 vs 真实点列
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     public java.util.List<com.fusion.ai.proto.workbench.SeriesPoint.Builder> 

@@ -52,6 +52,10 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_FIELD_NUMBER = 1;
   private com.fusion.ai.proto.workbench.EvalDayMetricsPage page_;
   /**
+   * <pre>
+   * 分页结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
    * @return Whether the page field is set.
    */
@@ -60,6 +64,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 分页结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
    * @return The page.
    */
@@ -68,6 +76,10 @@ private static final long serialVersionUID = 0L;
     return page_ == null ? com.fusion.ai.proto.workbench.EvalDayMetricsPage.getDefaultInstance() : page_;
   }
   /**
+   * <pre>
+   * 分页结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
    */
   @java.lang.Override
@@ -396,6 +408,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.workbench.EvalDayMetricsPage, com.fusion.ai.proto.workbench.EvalDayMetricsPage.Builder, com.fusion.ai.proto.workbench.EvalDayMetricsPageOrBuilder> pageBuilder_;
     /**
+     * <pre>
+     * 分页结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      * @return Whether the page field is set.
      */
@@ -403,6 +419,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     * <pre>
+     * 分页结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      * @return The page.
      */
@@ -414,6 +434,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 分页结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      */
     public Builder setPage(com.fusion.ai.proto.workbench.EvalDayMetricsPage value) {
@@ -428,6 +452,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 分页结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      */
     public Builder setPage(
@@ -442,6 +470,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 分页结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      */
     public Builder mergePage(com.fusion.ai.proto.workbench.EvalDayMetricsPage value) {
@@ -463,6 +495,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 分页结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      */
     public Builder clearPage() {
@@ -476,6 +512,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 分页结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDayMetricsPage.Builder getPageBuilder() {
@@ -484,6 +524,10 @@ private static final long serialVersionUID = 0L;
       return internalGetPageFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 分页结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDayMetricsPageOrBuilder getPageOrBuilder() {
@@ -495,6 +539,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 分页结果
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<

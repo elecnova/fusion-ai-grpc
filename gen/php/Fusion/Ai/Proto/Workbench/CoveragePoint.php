@@ -15,16 +15,20 @@ use Google\Protobuf\RepeatedField;
 class CoveragePoint extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 格点时间 Unix 毫秒
+     *
      * Generated from protobuf field <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      */
     protected $ts_ms = 0;
     /**
-     * 缺测时可不填 value
+     * 实测值；缺测时不填
      *
      * Generated from protobuf field <code>optional double value = 2 [json_name = "value"];</code>
      */
     protected $value = null;
     /**
+     * 该格点是否有数据
+     *
      * Generated from protobuf field <code>bool present = 3 [json_name = "present"];</code>
      */
     protected $present = false;
@@ -36,9 +40,11 @@ class CoveragePoint extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $ts_ms
+     *           格点时间 Unix 毫秒
      *     @type float $value
-     *           缺测时可不填 value
+     *           实测值；缺测时不填
      *     @type bool $present
+     *           该格点是否有数据
      * }
      */
     public function __construct($data = null)
@@ -48,6 +54,8 @@ class CoveragePoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 格点时间 Unix 毫秒
+     *
      * Generated from protobuf field <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @return int|string
      */
@@ -57,6 +65,8 @@ class CoveragePoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 格点时间 Unix 毫秒
+     *
      * Generated from protobuf field <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @param int|string $var
      * @return $this
@@ -70,7 +80,7 @@ class CoveragePoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 缺测时可不填 value
+     * 实测值；缺测时不填
      *
      * Generated from protobuf field <code>optional double value = 2 [json_name = "value"];</code>
      * @return float
@@ -91,7 +101,7 @@ class CoveragePoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 缺测时可不填 value
+     * 实测值；缺测时不填
      *
      * Generated from protobuf field <code>optional double value = 2 [json_name = "value"];</code>
      * @param float $var
@@ -105,6 +115,8 @@ class CoveragePoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 该格点是否有数据
+     *
      * Generated from protobuf field <code>bool present = 3 [json_name = "present"];</code>
      * @return bool
      */
@@ -114,6 +126,8 @@ class CoveragePoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 该格点是否有数据
+     *
      * Generated from protobuf field <code>bool present = 3 [json_name = "present"];</code>
      * @param bool $var
      * @return $this

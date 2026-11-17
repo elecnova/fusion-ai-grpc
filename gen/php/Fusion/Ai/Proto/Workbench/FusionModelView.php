@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class FusionModelView extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 模型所属 registration；本期训练多为光伏通用模型常量
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      */
     protected $registration_id = '';
@@ -25,10 +27,14 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
      */
     protected $model_key = '';
     /**
+     * 模型版本号，如 v2026.10.29；无则空
+     *
      * Generated from protobuf field <code>string version = 3 [json_name = "version"];</code>
      */
     protected $version = '';
     /**
+     * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
      */
     protected $status = 0;
@@ -40,9 +46,17 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
      */
     protected $last_trained_at = null;
     /**
+     * 产物 URI（可选）
+     *
      * Generated from protobuf field <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      */
     protected $artifact_uri = null;
+    /**
+     * 当前训练任务 id；无任务时为空
+     *
+     * Generated from protobuf field <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+     */
+    protected $current_train_job_id = '';
 
     /**
      * Constructor.
@@ -51,14 +65,20 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           模型所属 registration；本期训练多为光伏通用模型常量
      *     @type string $model_key
      *           固定产物名，如 fusion-ai
      *     @type string $version
+     *           模型版本号，如 v2026.10.29；无则空
      *     @type int $status
+     *           卡片状态：READY / TRAINING / STALE / MISSING / FAILED
      *     @type string $last_trained_at
      *           上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
      *           例：2026-11-17T16:12:00+08:00
      *     @type string $artifact_uri
+     *           产物 URI（可选）
+     *     @type string $current_train_job_id
+     *           当前训练任务 id；无任务时为空
      * }
      */
     public function __construct($data = null)
@@ -68,6 +88,8 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型所属 registration；本期训练多为光伏通用模型常量
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return string
      */
@@ -77,6 +99,8 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型所属 registration；本期训练多为光伏通用模型常量
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param string $var
      * @return $this
@@ -116,6 +140,8 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型版本号，如 v2026.10.29；无则空
+     *
      * Generated from protobuf field <code>string version = 3 [json_name = "version"];</code>
      * @return string
      */
@@ -125,6 +151,8 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型版本号，如 v2026.10.29；无则空
+     *
      * Generated from protobuf field <code>string version = 3 [json_name = "version"];</code>
      * @param string $var
      * @return $this
@@ -138,6 +166,8 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\Workbench\ModelReadyStatus}
      */
@@ -147,6 +177,8 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\Workbench\ModelReadyStatus}
      * @return $this
@@ -198,6 +230,8 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 产物 URI（可选）
+     *
      * Generated from protobuf field <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      * @return string
      */
@@ -217,6 +251,8 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 产物 URI（可选）
+     *
      * Generated from protobuf field <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      * @param string $var
      * @return $this
@@ -225,6 +261,32 @@ class FusionModelView extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, true);
         $this->artifact_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * 当前训练任务 id；无任务时为空
+     *
+     * Generated from protobuf field <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+     * @return string
+     */
+    public function getCurrentTrainJobId()
+    {
+        return $this->current_train_job_id;
+    }
+
+    /**
+     * 当前训练任务 id；无任务时为空
+     *
+     * Generated from protobuf field <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCurrentTrainJobId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->current_train_job_id = $var;
 
         return $this;
     }

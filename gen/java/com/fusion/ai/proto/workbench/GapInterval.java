@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
   private long startMs_ = 0L;
   /**
    * <pre>
-   * Unix 毫秒，闭开区间 [start, end)
+   * 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
    * </pre>
    *
    * <code>int64 start_ms = 1 [json_name = "start_ms"];</code>
@@ -68,6 +68,10 @@ private static final long serialVersionUID = 0L;
   public static final int END_MS_FIELD_NUMBER = 2;
   private long endMs_ = 0L;
   /**
+   * <pre>
+   * 缺口终点 Unix 毫秒（不含）
+   * </pre>
+   *
    * <code>int64 end_ms = 2 [json_name = "end_ms"];</code>
    * @return The endMs.
    */
@@ -79,6 +83,10 @@ private static final long serialVersionUID = 0L;
   public static final int MISSING_POINTS_FIELD_NUMBER = 3;
   private int missingPoints_ = 0;
   /**
+   * <pre>
+   * 缺口内缺失格点数
+   * </pre>
+   *
    * <code>int32 missing_points = 3 [json_name = "missing_points"];</code>
    * @return The missingPoints.
    */
@@ -139,7 +147,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object backfillHref_ = "";
   /**
    * <pre>
-   * 跳转数据管理补录深链（可选）
+   * 跳转数据管理补录深链（可选；无可空）
    * </pre>
    *
    * <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
@@ -160,7 +168,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 跳转数据管理补录深链（可选）
+   * 跳转数据管理补录深链（可选；无可空）
    * </pre>
    *
    * <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
@@ -575,7 +583,7 @@ private static final long serialVersionUID = 0L;
     private long startMs_ ;
     /**
      * <pre>
-     * Unix 毫秒，闭开区间 [start, end)
+     * 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
      * </pre>
      *
      * <code>int64 start_ms = 1 [json_name = "start_ms"];</code>
@@ -587,7 +595,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unix 毫秒，闭开区间 [start, end)
+     * 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
      * </pre>
      *
      * <code>int64 start_ms = 1 [json_name = "start_ms"];</code>
@@ -603,7 +611,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unix 毫秒，闭开区间 [start, end)
+     * 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
      * </pre>
      *
      * <code>int64 start_ms = 1 [json_name = "start_ms"];</code>
@@ -618,6 +626,10 @@ private static final long serialVersionUID = 0L;
 
     private long endMs_ ;
     /**
+     * <pre>
+     * 缺口终点 Unix 毫秒（不含）
+     * </pre>
+     *
      * <code>int64 end_ms = 2 [json_name = "end_ms"];</code>
      * @return The endMs.
      */
@@ -626,6 +638,10 @@ private static final long serialVersionUID = 0L;
       return endMs_;
     }
     /**
+     * <pre>
+     * 缺口终点 Unix 毫秒（不含）
+     * </pre>
+     *
      * <code>int64 end_ms = 2 [json_name = "end_ms"];</code>
      * @param value The endMs to set.
      * @return This builder for chaining.
@@ -638,6 +654,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口终点 Unix 毫秒（不含）
+     * </pre>
+     *
      * <code>int64 end_ms = 2 [json_name = "end_ms"];</code>
      * @return This builder for chaining.
      */
@@ -650,6 +670,10 @@ private static final long serialVersionUID = 0L;
 
     private int missingPoints_ ;
     /**
+     * <pre>
+     * 缺口内缺失格点数
+     * </pre>
+     *
      * <code>int32 missing_points = 3 [json_name = "missing_points"];</code>
      * @return The missingPoints.
      */
@@ -658,6 +682,10 @@ private static final long serialVersionUID = 0L;
       return missingPoints_;
     }
     /**
+     * <pre>
+     * 缺口内缺失格点数
+     * </pre>
+     *
      * <code>int32 missing_points = 3 [json_name = "missing_points"];</code>
      * @param value The missingPoints to set.
      * @return This builder for chaining.
@@ -670,6 +698,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 缺口内缺失格点数
+     * </pre>
+     *
      * <code>int32 missing_points = 3 [json_name = "missing_points"];</code>
      * @return This builder for chaining.
      */
@@ -775,7 +807,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object backfillHref_ = "";
     /**
      * <pre>
-     * 跳转数据管理补录深链（可选）
+     * 跳转数据管理补录深链（可选；无可空）
      * </pre>
      *
      * <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
@@ -795,7 +827,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 跳转数据管理补录深链（可选）
+     * 跳转数据管理补录深链（可选；无可空）
      * </pre>
      *
      * <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
@@ -816,7 +848,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 跳转数据管理补录深链（可选）
+     * 跳转数据管理补录深链（可选；无可空）
      * </pre>
      *
      * <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
@@ -833,7 +865,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 跳转数据管理补录深链（可选）
+     * 跳转数据管理补录深链（可选；无可空）
      * </pre>
      *
      * <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
@@ -847,7 +879,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 跳转数据管理补录深链（可选）
+     * 跳转数据管理补录深链（可选；无可空）
      * </pre>
      *
      * <code>string backfill_href = 5 [json_name = "backfill_href"];</code>

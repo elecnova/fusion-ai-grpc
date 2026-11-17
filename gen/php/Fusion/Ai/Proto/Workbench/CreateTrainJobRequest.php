@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class CreateTrainJobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 模型 registration_id；空或 shared → 光伏通用模型
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      */
     protected $registration_id = '';
@@ -26,6 +28,7 @@ class CreateTrainJobRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           模型 registration_id；空或 shared → 光伏通用模型
      * }
      */
     public function __construct($data = null)
@@ -35,6 +38,8 @@ class CreateTrainJobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型 registration_id；空或 shared → 光伏通用模型
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @return string
      */
@@ -44,6 +49,8 @@ class CreateTrainJobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型 registration_id；空或 shared → 光伏通用模型
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this

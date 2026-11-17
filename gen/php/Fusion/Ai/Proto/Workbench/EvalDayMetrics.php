@@ -15,36 +15,50 @@ use Google\Protobuf\RepeatedField;
 class EvalDayMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      */
     protected $registration_id = '';
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 2 [json_name = "eval_date"];</code>
      */
     protected $eval_date = '';
     /**
+     * 模型 key
+     *
      * Generated from protobuf field <code>string model_key = 3 [json_name = "model_key"];</code>
      */
     protected $model_key = '';
     /**
+     * 模型版本（可选）
+     *
      * Generated from protobuf field <code>optional string model_version = 4 [json_name = "model_version"];</code>
      */
     protected $model_version = null;
     /**
-     * 百分比数值，如 8.23 表示 8.23%
+     * MAPE 百分比数值，如 8.23 表示 8.23%
      *
      * Generated from protobuf field <code>optional double mape = 5 [json_name = "mape"];</code>
      */
     protected $mape = null;
     /**
+     * RMSE（kW）
+     *
      * Generated from protobuf field <code>optional double rmse = 6 [json_name = "rmse"];</code>
      */
     protected $rmse = null;
     /**
+     * MAE（kW）
+     *
      * Generated from protobuf field <code>optional double mae = 7 [json_name = "mae"];</code>
      */
     protected $mae = null;
     /**
+     * sMAPE 百分比数值
+     *
      * Generated from protobuf field <code>optional double smape = 8 [json_name = "smape"];</code>
      */
     protected $smape = null;
@@ -68,14 +82,21 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           场站 registration_id
      *     @type string $eval_date
+     *           评估日 YYYY-MM-DD
      *     @type string $model_key
+     *           模型 key
      *     @type string $model_version
+     *           模型版本（可选）
      *     @type float $mape
-     *           百分比数值，如 8.23 表示 8.23%
+     *           MAPE 百分比数值，如 8.23 表示 8.23%
      *     @type float $rmse
+     *           RMSE（kW）
      *     @type float $mae
+     *           MAE（kW）
      *     @type float $smape
+     *           sMAPE 百分比数值
      *     @type float $pass_rate
      *           MAPE < 阈值点位占比，0~1
      *     @type float $mape_delta
@@ -89,6 +110,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return string
      */
@@ -98,6 +121,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param string $var
      * @return $this
@@ -111,6 +136,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @return string
      */
@@ -120,6 +147,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @param string $var
      * @return $this
@@ -133,6 +162,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型 key
+     *
      * Generated from protobuf field <code>string model_key = 3 [json_name = "model_key"];</code>
      * @return string
      */
@@ -142,6 +173,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型 key
+     *
      * Generated from protobuf field <code>string model_key = 3 [json_name = "model_key"];</code>
      * @param string $var
      * @return $this
@@ -155,6 +188,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型版本（可选）
+     *
      * Generated from protobuf field <code>optional string model_version = 4 [json_name = "model_version"];</code>
      * @return string
      */
@@ -174,6 +209,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型版本（可选）
+     *
      * Generated from protobuf field <code>optional string model_version = 4 [json_name = "model_version"];</code>
      * @param string $var
      * @return $this
@@ -187,7 +224,7 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 百分比数值，如 8.23 表示 8.23%
+     * MAPE 百分比数值，如 8.23 表示 8.23%
      *
      * Generated from protobuf field <code>optional double mape = 5 [json_name = "mape"];</code>
      * @return float
@@ -208,7 +245,7 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 百分比数值，如 8.23 表示 8.23%
+     * MAPE 百分比数值，如 8.23 表示 8.23%
      *
      * Generated from protobuf field <code>optional double mape = 5 [json_name = "mape"];</code>
      * @param float $var
@@ -222,6 +259,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * RMSE（kW）
+     *
      * Generated from protobuf field <code>optional double rmse = 6 [json_name = "rmse"];</code>
      * @return float
      */
@@ -241,6 +280,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * RMSE（kW）
+     *
      * Generated from protobuf field <code>optional double rmse = 6 [json_name = "rmse"];</code>
      * @param float $var
      * @return $this
@@ -253,6 +294,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * MAE（kW）
+     *
      * Generated from protobuf field <code>optional double mae = 7 [json_name = "mae"];</code>
      * @return float
      */
@@ -272,6 +315,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * MAE（kW）
+     *
      * Generated from protobuf field <code>optional double mae = 7 [json_name = "mae"];</code>
      * @param float $var
      * @return $this
@@ -284,6 +329,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * sMAPE 百分比数值
+     *
      * Generated from protobuf field <code>optional double smape = 8 [json_name = "smape"];</code>
      * @return float
      */
@@ -303,6 +350,8 @@ class EvalDayMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * sMAPE 百分比数值
+     *
      * Generated from protobuf field <code>optional double smape = 8 [json_name = "smape"];</code>
      * @param float $var
      * @return $this

@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class GetDataReadyCheckResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 就绪检查结果
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      */
     protected $check = null;
@@ -26,6 +28,7 @@ class GetDataReadyCheckResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Fusion\Ai\Proto\Workbench\DataReadyCheck $check
+     *           就绪检查结果
      * }
      */
     public function __construct($data = null)
@@ -35,6 +38,8 @@ class GetDataReadyCheckResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 就绪检查结果
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      * @return \Fusion\Ai\Proto\Workbench\DataReadyCheck|null
      */
@@ -54,6 +59,8 @@ class GetDataReadyCheckResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 就绪检查结果
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
      * @param \Fusion\Ai\Proto\Workbench\DataReadyCheck $var
      * @return $this

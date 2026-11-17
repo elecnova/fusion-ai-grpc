@@ -15,16 +15,20 @@ use Google\Protobuf\RepeatedField;
 class GapInterval extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Unix 毫秒，闭开区间 [start, end)
+     * 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
      *
      * Generated from protobuf field <code>int64 start_ms = 1 [json_name = "start_ms"];</code>
      */
     protected $start_ms = 0;
     /**
+     * 缺口终点 Unix 毫秒（不含）
+     *
      * Generated from protobuf field <code>int64 end_ms = 2 [json_name = "end_ms"];</code>
      */
     protected $end_ms = 0;
     /**
+     * 缺口内缺失格点数
+     *
      * Generated from protobuf field <code>int32 missing_points = 3 [json_name = "missing_points"];</code>
      */
     protected $missing_points = 0;
@@ -35,7 +39,7 @@ class GapInterval extends \Google\Protobuf\Internal\Message
      */
     protected $display = '';
     /**
-     * 跳转数据管理补录深链（可选）
+     * 跳转数据管理补录深链（可选；无可空）
      *
      * Generated from protobuf field <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
      */
@@ -48,13 +52,15 @@ class GapInterval extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $start_ms
-     *           Unix 毫秒，闭开区间 [start, end)
+     *           缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
      *     @type int|string $end_ms
+     *           缺口终点 Unix 毫秒（不含）
      *     @type int $missing_points
+     *           缺口内缺失格点数
      *     @type string $display
      *           展示文案，如「10-29 06:00 – 09:15」
      *     @type string $backfill_href
-     *           跳转数据管理补录深链（可选）
+     *           跳转数据管理补录深链（可选；无可空）
      * }
      */
     public function __construct($data = null)
@@ -64,7 +70,7 @@ class GapInterval extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unix 毫秒，闭开区间 [start, end)
+     * 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
      *
      * Generated from protobuf field <code>int64 start_ms = 1 [json_name = "start_ms"];</code>
      * @return int|string
@@ -75,7 +81,7 @@ class GapInterval extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unix 毫秒，闭开区间 [start, end)
+     * 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
      *
      * Generated from protobuf field <code>int64 start_ms = 1 [json_name = "start_ms"];</code>
      * @param int|string $var
@@ -90,6 +96,8 @@ class GapInterval extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 缺口终点 Unix 毫秒（不含）
+     *
      * Generated from protobuf field <code>int64 end_ms = 2 [json_name = "end_ms"];</code>
      * @return int|string
      */
@@ -99,6 +107,8 @@ class GapInterval extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 缺口终点 Unix 毫秒（不含）
+     *
      * Generated from protobuf field <code>int64 end_ms = 2 [json_name = "end_ms"];</code>
      * @param int|string $var
      * @return $this
@@ -112,6 +122,8 @@ class GapInterval extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 缺口内缺失格点数
+     *
      * Generated from protobuf field <code>int32 missing_points = 3 [json_name = "missing_points"];</code>
      * @return int
      */
@@ -121,6 +133,8 @@ class GapInterval extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 缺口内缺失格点数
+     *
      * Generated from protobuf field <code>int32 missing_points = 3 [json_name = "missing_points"];</code>
      * @param int $var
      * @return $this
@@ -160,7 +174,7 @@ class GapInterval extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 跳转数据管理补录深链（可选）
+     * 跳转数据管理补录深链（可选；无可空）
      *
      * Generated from protobuf field <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
      * @return string
@@ -171,7 +185,7 @@ class GapInterval extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 跳转数据管理补录深链（可选）
+     * 跳转数据管理补录深链（可选；无可空）
      *
      * Generated from protobuf field <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
      * @param string $var

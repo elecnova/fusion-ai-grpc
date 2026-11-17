@@ -52,6 +52,10 @@ private static final long serialVersionUID = 0L;
   public static final int TS_MS_FIELD_NUMBER = 1;
   private long tsMs_ = 0L;
   /**
+   * <pre>
+   * 点时间 Unix 毫秒
+   * </pre>
+   *
    * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
    * @return The tsMs.
    */
@@ -63,6 +67,10 @@ private static final long serialVersionUID = 0L;
   public static final int PREDICTED_KW_FIELD_NUMBER = 2;
   private double predictedKw_ = 0D;
   /**
+   * <pre>
+   * 预测功率 kW；缺测不填
+   * </pre>
+   *
    * <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
    * @return Whether the predictedKw field is set.
    */
@@ -71,6 +79,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 预测功率 kW；缺测不填
+   * </pre>
+   *
    * <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
    * @return The predictedKw.
    */
@@ -82,6 +94,10 @@ private static final long serialVersionUID = 0L;
   public static final int ACTUAL_KW_FIELD_NUMBER = 3;
   private double actualKw_ = 0D;
   /**
+   * <pre>
+   * 真实功率 kW；缺测不填
+   * </pre>
+   *
    * <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
    * @return Whether the actualKw field is set.
    */
@@ -90,6 +106,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
+   * <pre>
+   * 真实功率 kW；缺测不填
+   * </pre>
+   *
    * <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
    * @return The actualKw.
    */
@@ -460,6 +480,10 @@ private static final long serialVersionUID = 0L;
 
     private long tsMs_ ;
     /**
+     * <pre>
+     * 点时间 Unix 毫秒
+     * </pre>
+     *
      * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @return The tsMs.
      */
@@ -468,6 +492,10 @@ private static final long serialVersionUID = 0L;
       return tsMs_;
     }
     /**
+     * <pre>
+     * 点时间 Unix 毫秒
+     * </pre>
+     *
      * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @param value The tsMs to set.
      * @return This builder for chaining.
@@ -480,6 +508,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 点时间 Unix 毫秒
+     * </pre>
+     *
      * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @return This builder for chaining.
      */
@@ -492,6 +524,10 @@ private static final long serialVersionUID = 0L;
 
     private double predictedKw_ ;
     /**
+     * <pre>
+     * 预测功率 kW；缺测不填
+     * </pre>
+     *
      * <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
      * @return Whether the predictedKw field is set.
      */
@@ -500,6 +536,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
+     * <pre>
+     * 预测功率 kW；缺测不填
+     * </pre>
+     *
      * <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
      * @return The predictedKw.
      */
@@ -508,6 +548,10 @@ private static final long serialVersionUID = 0L;
       return predictedKw_;
     }
     /**
+     * <pre>
+     * 预测功率 kW；缺测不填
+     * </pre>
+     *
      * <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
      * @param value The predictedKw to set.
      * @return This builder for chaining.
@@ -520,6 +564,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预测功率 kW；缺测不填
+     * </pre>
+     *
      * <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
      * @return This builder for chaining.
      */
@@ -532,6 +580,10 @@ private static final long serialVersionUID = 0L;
 
     private double actualKw_ ;
     /**
+     * <pre>
+     * 真实功率 kW；缺测不填
+     * </pre>
+     *
      * <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
      * @return Whether the actualKw field is set.
      */
@@ -540,6 +592,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
+     * <pre>
+     * 真实功率 kW；缺测不填
+     * </pre>
+     *
      * <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
      * @return The actualKw.
      */
@@ -548,6 +604,10 @@ private static final long serialVersionUID = 0L;
       return actualKw_;
     }
     /**
+     * <pre>
+     * 真实功率 kW；缺测不填
+     * </pre>
+     *
      * <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
      * @param value The actualKw to set.
      * @return This builder for chaining.
@@ -560,6 +620,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 真实功率 kW；缺测不填
+     * </pre>
+     *
      * <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
      * @return This builder for chaining.
      */

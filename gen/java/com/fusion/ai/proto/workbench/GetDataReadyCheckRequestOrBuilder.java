@@ -11,11 +11,19 @@ public interface GetDataReadyCheckRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */
@@ -24,7 +32,7 @@ public interface GetDataReadyCheckRequestOrBuilder extends
 
   /**
    * <pre>
-   * YYYY-MM-DD；缺省为场站本地「今天」
+   * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
    * </pre>
    *
    * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -33,7 +41,7 @@ public interface GetDataReadyCheckRequestOrBuilder extends
   boolean hasEvalDate();
   /**
    * <pre>
-   * YYYY-MM-DD；缺省为场站本地「今天」
+   * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
    * </pre>
    *
    * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -42,7 +50,7 @@ public interface GetDataReadyCheckRequestOrBuilder extends
   java.lang.String getEvalDate();
   /**
    * <pre>
-   * YYYY-MM-DD；缺省为场站本地「今天」
+   * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
    * </pre>
    *
    * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>

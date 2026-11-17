@@ -11,16 +11,28 @@ public interface GetFusionModelResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 融合模型卡片
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
    * @return Whether the model field is set.
    */
   boolean hasModel();
   /**
+   * <pre>
+   * 融合模型卡片
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
    * @return The model.
    */
   com.fusion.ai.proto.workbench.FusionModelView getModel();
   /**
+   * <pre>
+   * 融合模型卡片
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
    */
   com.fusion.ai.proto.workbench.FusionModelViewOrBuilder getModelOrBuilder();

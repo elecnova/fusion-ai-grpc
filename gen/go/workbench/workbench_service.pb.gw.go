@@ -172,6 +172,45 @@ func local_request_WorkbenchService_CreateTrainJob_0(ctx context.Context, marsha
 	return msg, metadata, err
 }
 
+func request_WorkbenchService_GetTrain_0(ctx context.Context, marshaler runtime.Marshaler, client WorkbenchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq GetTrainRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	val, ok := pathParams["registration_id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "registration_id")
+	}
+	protoReq.RegistrationId, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "registration_id", err)
+	}
+	if req.Body != nil {
+		_, _ = io.Copy(io.Discard, req.Body)
+	}
+	msg, err := client.GetTrain(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_WorkbenchService_GetTrain_0(ctx context.Context, marshaler runtime.Marshaler, server WorkbenchServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq GetTrainRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	val, ok := pathParams["registration_id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "registration_id")
+	}
+	protoReq.RegistrationId, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "registration_id", err)
+	}
+	msg, err := server.GetTrain(ctx, &protoReq)
+	return msg, metadata, err
+}
+
 func request_WorkbenchService_CreatePredictJob_0(ctx context.Context, marshaler runtime.Marshaler, client WorkbenchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq CreatePredictJobRequest
@@ -499,6 +538,26 @@ func RegisterWorkbenchServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		}
 		forward_WorkbenchService_CreateTrainJob_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodGet, pattern_WorkbenchService_GetTrain_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/fusion.ai.proto.workbench.WorkbenchService/GetTrain", runtime.WithHTTPPathPattern("/api/v2/workbench/registrations/{registration_id}/train"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_WorkbenchService_GetTrain_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_WorkbenchService_GetTrain_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	mux.Handle(http.MethodPost, pattern_WorkbenchService_CreatePredictJob_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -690,6 +749,23 @@ func RegisterWorkbenchServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		}
 		forward_WorkbenchService_CreateTrainJob_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
+	mux.Handle(http.MethodGet, pattern_WorkbenchService_GetTrain_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/fusion.ai.proto.workbench.WorkbenchService/GetTrain", runtime.WithHTTPPathPattern("/api/v2/workbench/registrations/{registration_id}/train"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_WorkbenchService_GetTrain_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_WorkbenchService_GetTrain_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
 	mux.Handle(http.MethodPost, pattern_WorkbenchService_CreatePredictJob_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -782,6 +858,7 @@ var (
 	pattern_WorkbenchService_GetDataReadyCheck_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"api", "v2", "workbench", "registrations", "registration_id", "ready-check"}, ""))
 	pattern_WorkbenchService_GetFusionModel_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"api", "v2", "workbench", "registrations", "registration_id", "model"}, ""))
 	pattern_WorkbenchService_CreateTrainJob_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6}, []string{"api", "v2", "workbench", "registrations", "registration_id", "train", "jobs"}, ""))
+	pattern_WorkbenchService_GetTrain_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"api", "v2", "workbench", "registrations", "registration_id", "train"}, ""))
 	pattern_WorkbenchService_CreatePredictJob_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6}, []string{"api", "v2", "workbench", "registrations", "registration_id", "predict", "jobs"}, ""))
 	pattern_WorkbenchService_GetPredict_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"api", "v2", "workbench", "registrations", "registration_id", "predict"}, ""))
 	pattern_WorkbenchService_GetEvalDaySeries_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7}, []string{"api", "v2", "workbench", "registrations", "registration_id", "eval-days", "eval_date", "series"}, ""))
@@ -793,6 +870,7 @@ var (
 	forward_WorkbenchService_GetDataReadyCheck_0    = runtime.ForwardResponseMessage
 	forward_WorkbenchService_GetFusionModel_0       = runtime.ForwardResponseMessage
 	forward_WorkbenchService_CreateTrainJob_0       = runtime.ForwardResponseMessage
+	forward_WorkbenchService_GetTrain_0             = runtime.ForwardResponseMessage
 	forward_WorkbenchService_CreatePredictJob_0     = runtime.ForwardResponseMessage
 	forward_WorkbenchService_GetPredict_0           = runtime.ForwardResponseMessage
 	forward_WorkbenchService_GetEvalDaySeries_0     = runtime.ForwardResponseMessage

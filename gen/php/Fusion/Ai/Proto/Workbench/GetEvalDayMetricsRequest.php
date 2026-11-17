@@ -15,10 +15,14 @@ use Google\Protobuf\RepeatedField;
 class GetEvalDayMetricsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      */
     protected $registration_id = '';
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = {</code>
      */
     protected $eval_date = '';
@@ -30,7 +34,9 @@ class GetEvalDayMetricsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           场站 registration_id
      *     @type string $eval_date
+     *           评估日 YYYY-MM-DD
      * }
      */
     public function __construct($data = null)
@@ -40,6 +46,8 @@ class GetEvalDayMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @return string
      */
@@ -49,6 +57,8 @@ class GetEvalDayMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
@@ -62,6 +72,8 @@ class GetEvalDayMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = {</code>
      * @return string
      */
@@ -71,6 +83,8 @@ class GetEvalDayMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this

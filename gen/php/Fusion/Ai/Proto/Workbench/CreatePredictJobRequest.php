@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class CreatePredictJobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 场站 registration_id（必填真实场站，不可用 shared）
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      */
     protected $registration_id = '';
@@ -44,6 +46,7 @@ class CreatePredictJobRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           场站 registration_id（必填真实场站，不可用 shared）
      *     @type string $eval_date
      *           评估日 / 预测锚定日 YYYY-MM-DD；缺省今天
      *     @type int $granularity_min
@@ -59,6 +62,8 @@ class CreatePredictJobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id（必填真实场站，不可用 shared）
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @return string
      */
@@ -68,6 +73,8 @@ class CreatePredictJobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id（必填真实场站，不可用 shared）
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this

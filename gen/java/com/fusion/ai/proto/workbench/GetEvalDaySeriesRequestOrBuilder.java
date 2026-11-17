@@ -11,11 +11,19 @@ public interface GetEvalDaySeriesRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */
@@ -23,11 +31,19 @@ public interface GetEvalDaySeriesRequestOrBuilder extends
       getRegistrationIdBytes();
 
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
    * @return The evalDate.
    */
   java.lang.String getEvalDate();
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
    * @return The bytes for evalDate.
    */
@@ -35,11 +51,19 @@ public interface GetEvalDaySeriesRequestOrBuilder extends
       getEvalDateBytes();
 
   /**
+   * <pre>
+   * 步长分钟；缺省按注册
+   * </pre>
+   *
    * <code>optional int32 granularity_min = 3 [json_name = "granularity_min", (.buf.validate.field) = { ... }</code>
    * @return Whether the granularityMin field is set.
    */
   boolean hasGranularityMin();
   /**
+   * <pre>
+   * 步长分钟；缺省按注册
+   * </pre>
+   *
    * <code>optional int32 granularity_min = 3 [json_name = "granularity_min", (.buf.validate.field) = { ... }</code>
    * @return The granularityMin.
    */

@@ -12,7 +12,7 @@ public interface GapIntervalOrBuilder extends
 
   /**
    * <pre>
-   * Unix 毫秒，闭开区间 [start, end)
+   * 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
    * </pre>
    *
    * <code>int64 start_ms = 1 [json_name = "start_ms"];</code>
@@ -21,12 +21,20 @@ public interface GapIntervalOrBuilder extends
   long getStartMs();
 
   /**
+   * <pre>
+   * 缺口终点 Unix 毫秒（不含）
+   * </pre>
+   *
    * <code>int64 end_ms = 2 [json_name = "end_ms"];</code>
    * @return The endMs.
    */
   long getEndMs();
 
   /**
+   * <pre>
+   * 缺口内缺失格点数
+   * </pre>
+   *
    * <code>int32 missing_points = 3 [json_name = "missing_points"];</code>
    * @return The missingPoints.
    */
@@ -54,7 +62,7 @@ public interface GapIntervalOrBuilder extends
 
   /**
    * <pre>
-   * 跳转数据管理补录深链（可选）
+   * 跳转数据管理补录深链（可选；无可空）
    * </pre>
    *
    * <code>string backfill_href = 5 [json_name = "backfill_href"];</code>
@@ -63,7 +71,7 @@ public interface GapIntervalOrBuilder extends
   java.lang.String getBackfillHref();
   /**
    * <pre>
-   * 跳转数据管理补录深链（可选）
+   * 跳转数据管理补录深链（可选；无可空）
    * </pre>
    *
    * <code>string backfill_href = 5 [json_name = "backfill_href"];</code>

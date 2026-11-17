@@ -53,6 +53,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.fusion.ai.proto.workbench.EvalDayMetricsRow> rows_;
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   @java.lang.Override
@@ -60,6 +64,10 @@ private static final long serialVersionUID = 0L;
     return rows_;
   }
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   @java.lang.Override
@@ -68,6 +76,10 @@ private static final long serialVersionUID = 0L;
     return rows_;
   }
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   @java.lang.Override
@@ -75,6 +87,10 @@ private static final long serialVersionUID = 0L;
     return rows_.size();
   }
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   @java.lang.Override
@@ -82,6 +98,10 @@ private static final long serialVersionUID = 0L;
     return rows_.get(index);
   }
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   @java.lang.Override
@@ -93,6 +113,10 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_FIELD_NUMBER = 2;
   private int total_ = 0;
   /**
+   * <pre>
+   * 总行数
+   * </pre>
+   *
    * <code>int32 total = 2 [json_name = "total"];</code>
    * @return The total.
    */
@@ -104,6 +128,10 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_FIELD_NUMBER = 3;
   private int page_ = 0;
   /**
+   * <pre>
+   * 当前页（从 1 起）
+   * </pre>
+   *
    * <code>int32 page = 3 [json_name = "page"];</code>
    * @return The page.
    */
@@ -115,6 +143,10 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
   /**
+   * <pre>
+   * 每页条数
+   * </pre>
+   *
    * <code>int32 page_size = 4 [json_name = "page_size"];</code>
    * @return The pageSize.
    */
@@ -554,6 +586,10 @@ private static final long serialVersionUID = 0L;
         com.fusion.ai.proto.workbench.EvalDayMetricsRow, com.fusion.ai.proto.workbench.EvalDayMetricsRow.Builder, com.fusion.ai.proto.workbench.EvalDayMetricsRowOrBuilder> rowsBuilder_;
 
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public java.util.List<com.fusion.ai.proto.workbench.EvalDayMetricsRow> getRowsList() {
@@ -564,6 +600,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public int getRowsCount() {
@@ -574,6 +614,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDayMetricsRow getRows(int index) {
@@ -584,6 +628,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public Builder setRows(
@@ -599,6 +647,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public Builder setRows(
@@ -613,6 +665,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public Builder addRows(com.fusion.ai.proto.workbench.EvalDayMetricsRow value) {
@@ -627,6 +683,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public Builder addRows(
@@ -642,6 +702,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public Builder addRows(
@@ -656,6 +720,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public Builder addRows(
@@ -670,6 +738,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public Builder addAllRows(
@@ -685,6 +757,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public Builder clearRows() {
@@ -698,6 +774,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public Builder removeRows(int index) {
@@ -711,6 +791,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDayMetricsRow.Builder getRowsBuilder(
@@ -718,6 +802,10 @@ private static final long serialVersionUID = 0L;
       return internalGetRowsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDayMetricsRowOrBuilder getRowsOrBuilder(
@@ -728,6 +816,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public java.util.List<? extends com.fusion.ai.proto.workbench.EvalDayMetricsRowOrBuilder> 
@@ -739,6 +831,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDayMetricsRow.Builder addRowsBuilder() {
@@ -746,6 +842,10 @@ private static final long serialVersionUID = 0L;
           com.fusion.ai.proto.workbench.EvalDayMetricsRow.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDayMetricsRow.Builder addRowsBuilder(
@@ -754,6 +854,10 @@ private static final long serialVersionUID = 0L;
           index, com.fusion.ai.proto.workbench.EvalDayMetricsRow.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 历史评估行
+     * </pre>
+     *
      * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
      */
     public java.util.List<com.fusion.ai.proto.workbench.EvalDayMetricsRow.Builder> 
@@ -777,6 +881,10 @@ private static final long serialVersionUID = 0L;
 
     private int total_ ;
     /**
+     * <pre>
+     * 总行数
+     * </pre>
+     *
      * <code>int32 total = 2 [json_name = "total"];</code>
      * @return The total.
      */
@@ -785,6 +893,10 @@ private static final long serialVersionUID = 0L;
       return total_;
     }
     /**
+     * <pre>
+     * 总行数
+     * </pre>
+     *
      * <code>int32 total = 2 [json_name = "total"];</code>
      * @param value The total to set.
      * @return This builder for chaining.
@@ -797,6 +909,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 总行数
+     * </pre>
+     *
      * <code>int32 total = 2 [json_name = "total"];</code>
      * @return This builder for chaining.
      */
@@ -809,6 +925,10 @@ private static final long serialVersionUID = 0L;
 
     private int page_ ;
     /**
+     * <pre>
+     * 当前页（从 1 起）
+     * </pre>
+     *
      * <code>int32 page = 3 [json_name = "page"];</code>
      * @return The page.
      */
@@ -817,6 +937,10 @@ private static final long serialVersionUID = 0L;
       return page_;
     }
     /**
+     * <pre>
+     * 当前页（从 1 起）
+     * </pre>
+     *
      * <code>int32 page = 3 [json_name = "page"];</code>
      * @param value The page to set.
      * @return This builder for chaining.
@@ -829,6 +953,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 当前页（从 1 起）
+     * </pre>
+     *
      * <code>int32 page = 3 [json_name = "page"];</code>
      * @return This builder for chaining.
      */
@@ -841,6 +969,10 @@ private static final long serialVersionUID = 0L;
 
     private int pageSize_ ;
     /**
+     * <pre>
+     * 每页条数
+     * </pre>
+     *
      * <code>int32 page_size = 4 [json_name = "page_size"];</code>
      * @return The pageSize.
      */
@@ -849,6 +981,10 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     * <pre>
+     * 每页条数
+     * </pre>
+     *
      * <code>int32 page_size = 4 [json_name = "page_size"];</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -861,6 +997,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 每页条数
+     * </pre>
+     *
      * <code>int32 page_size = 4 [json_name = "page_size"];</code>
      * @return This builder for chaining.
      */

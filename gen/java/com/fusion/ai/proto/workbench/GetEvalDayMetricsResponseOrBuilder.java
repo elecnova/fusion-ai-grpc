@@ -11,16 +11,28 @@ public interface GetEvalDayMetricsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 单日 KPI
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
    * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
   /**
+   * <pre>
+   * 单日 KPI
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
    * @return The metrics.
    */
   com.fusion.ai.proto.workbench.EvalDayMetrics getMetrics();
   /**
+   * <pre>
+   * 单日 KPI
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
    */
   com.fusion.ai.proto.workbench.EvalDayMetricsOrBuilder getMetricsOrBuilder();

@@ -6,24 +6,44 @@
 package com.fusion.ai.proto.workbench;
 
 /**
+ * <pre>
+ * ReadyCheckStatus 今日数据就绪总览（左栏绿/黄/红）。
+ * </pre>
+ *
  * Protobuf enum {@code fusion.ai.proto.workbench.ReadyCheckStatus}
  */
 @com.google.protobuf.Generated
 public enum ReadyCheckStatus
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * 未设置 / 未知
+   * </pre>
+   *
    * <code>READY_CHECK_STATUS_UNSPECIFIED = 0;</code>
    */
   READY_CHECK_STATUS_UNSPECIFIED(0),
   /**
+   * <pre>
+   * 通过：覆盖足够，可训练/预测
+   * </pre>
+   *
    * <code>READY_CHECK_STATUS_PASS = 1;</code>
    */
   READY_CHECK_STATUS_PASS(1),
   /**
+   * <pre>
+   * 告警：有缺口或天气缺失，可继续但需关注
+   * </pre>
+   *
    * <code>READY_CHECK_STATUS_WARN = 2;</code>
    */
   READY_CHECK_STATUS_WARN(2),
   /**
+   * <pre>
+   * 失败：严重缺数或离线，不建议发起
+   * </pre>
+   *
    * <code>READY_CHECK_STATUS_FAIL = 3;</code>
    */
   READY_CHECK_STATUS_FAIL(3),
@@ -40,18 +60,34 @@ public enum ReadyCheckStatus
       "ReadyCheckStatus");
   }
   /**
+   * <pre>
+   * 未设置 / 未知
+   * </pre>
+   *
    * <code>READY_CHECK_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int READY_CHECK_STATUS_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * 通过：覆盖足够，可训练/预测
+   * </pre>
+   *
    * <code>READY_CHECK_STATUS_PASS = 1;</code>
    */
   public static final int READY_CHECK_STATUS_PASS_VALUE = 1;
   /**
+   * <pre>
+   * 告警：有缺口或天气缺失，可继续但需关注
+   * </pre>
+   *
    * <code>READY_CHECK_STATUS_WARN = 2;</code>
    */
   public static final int READY_CHECK_STATUS_WARN_VALUE = 2;
   /**
+   * <pre>
+   * 失败：严重缺数或离线，不建议发起
+   * </pre>
+   *
    * <code>READY_CHECK_STATUS_FAIL = 3;</code>
    */
   public static final int READY_CHECK_STATUS_FAIL_VALUE = 3;

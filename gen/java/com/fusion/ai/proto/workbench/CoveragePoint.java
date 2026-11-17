@@ -52,6 +52,10 @@ private static final long serialVersionUID = 0L;
   public static final int TS_MS_FIELD_NUMBER = 1;
   private long tsMs_ = 0L;
   /**
+   * <pre>
+   * 格点时间 Unix 毫秒
+   * </pre>
+   *
    * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
    * @return The tsMs.
    */
@@ -64,7 +68,7 @@ private static final long serialVersionUID = 0L;
   private double value_ = 0D;
   /**
    * <pre>
-   * 缺测时可不填 value
+   * 实测值；缺测时不填
    * </pre>
    *
    * <code>optional double value = 2 [json_name = "value"];</code>
@@ -76,7 +80,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 缺测时可不填 value
+   * 实测值；缺测时不填
    * </pre>
    *
    * <code>optional double value = 2 [json_name = "value"];</code>
@@ -90,6 +94,10 @@ private static final long serialVersionUID = 0L;
   public static final int PRESENT_FIELD_NUMBER = 3;
   private boolean present_ = false;
   /**
+   * <pre>
+   * 该格点是否有数据
+   * </pre>
+   *
    * <code>bool present = 3 [json_name = "present"];</code>
    * @return The present.
    */
@@ -453,6 +461,10 @@ private static final long serialVersionUID = 0L;
 
     private long tsMs_ ;
     /**
+     * <pre>
+     * 格点时间 Unix 毫秒
+     * </pre>
+     *
      * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @return The tsMs.
      */
@@ -461,6 +473,10 @@ private static final long serialVersionUID = 0L;
       return tsMs_;
     }
     /**
+     * <pre>
+     * 格点时间 Unix 毫秒
+     * </pre>
+     *
      * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @param value The tsMs to set.
      * @return This builder for chaining.
@@ -473,6 +489,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 格点时间 Unix 毫秒
+     * </pre>
+     *
      * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @return This builder for chaining.
      */
@@ -486,7 +506,7 @@ private static final long serialVersionUID = 0L;
     private double value_ ;
     /**
      * <pre>
-     * 缺测时可不填 value
+     * 实测值；缺测时不填
      * </pre>
      *
      * <code>optional double value = 2 [json_name = "value"];</code>
@@ -498,7 +518,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缺测时可不填 value
+     * 实测值；缺测时不填
      * </pre>
      *
      * <code>optional double value = 2 [json_name = "value"];</code>
@@ -510,7 +530,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缺测时可不填 value
+     * 实测值；缺测时不填
      * </pre>
      *
      * <code>optional double value = 2 [json_name = "value"];</code>
@@ -526,7 +546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 缺测时可不填 value
+     * 实测值；缺测时不填
      * </pre>
      *
      * <code>optional double value = 2 [json_name = "value"];</code>
@@ -541,6 +561,10 @@ private static final long serialVersionUID = 0L;
 
     private boolean present_ ;
     /**
+     * <pre>
+     * 该格点是否有数据
+     * </pre>
+     *
      * <code>bool present = 3 [json_name = "present"];</code>
      * @return The present.
      */
@@ -549,6 +573,10 @@ private static final long serialVersionUID = 0L;
       return present_;
     }
     /**
+     * <pre>
+     * 该格点是否有数据
+     * </pre>
+     *
      * <code>bool present = 3 [json_name = "present"];</code>
      * @param value The present to set.
      * @return This builder for chaining.
@@ -561,6 +589,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 该格点是否有数据
+     * </pre>
+     *
      * <code>bool present = 3 [json_name = "present"];</code>
      * @return This builder for chaining.
      */

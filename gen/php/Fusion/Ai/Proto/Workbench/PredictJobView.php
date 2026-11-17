@@ -10,77 +10,101 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * 五步 stages 键：data_ready | model_loaded | infer | persist | compare_refresh
- * 每步取值：pending | running | done | failed
+ * PredictJobView 单次预测任务。
+ * stages 键（固定五步）：data_ready | model_loaded | infer | persist | compare_refresh
  *
  * Generated from protobuf message <code>fusion.ai.proto.workbench.PredictJobView</code>
  */
 class PredictJobView extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 预测任务 id，如 pd-8291
+     *
      * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id"];</code>
      */
     protected $job_id = '';
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 2 [json_name = "registration_id"];</code>
      */
     protected $registration_id = '';
     /**
+     * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
      */
     protected $status = 0;
     /**
-     * 0~100
+     * 总进度 0~100
      *
      * Generated from protobuf field <code>int32 progress_pct = 4 [json_name = "progress_pct"];</code>
      */
     protected $progress_pct = 0;
     /**
-     * 当前步键，如 infer
+     * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
      *
      * Generated from protobuf field <code>string stage = 5 [json_name = "stage"];</code>
      */
     protected $stage = '';
     /**
-     * Generated from protobuf field <code>map<string, string> stages = 6 [json_name = "stages"];</code>
+     * 五步状态表；key=步名，value=StageStepStatus
+     *
+     * Generated from protobuf field <code>map<string, .fusion.ai.proto.workbench.StageStepStatus> stages = 6 [json_name = "stages"];</code>
      */
     private $stages;
     /**
+     * 评估日 / 预测锚定日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 7 [json_name = "eval_date"];</code>
      */
     protected $eval_date = '';
     /**
+     * 相对评估日的偏移天数；0=当日
+     *
      * Generated from protobuf field <code>int32 day_offset = 8 [json_name = "day_offset"];</code>
      */
     protected $day_offset = 0;
     /**
+     * 预测步长（分钟）：5 / 15 / 30 / 60
+     *
      * Generated from protobuf field <code>int32 granularity_min = 9 [json_name = "granularity_min"];</code>
      */
     protected $granularity_min = 0;
     /**
+     * 预测时长（小时），常见 24
+     *
      * Generated from protobuf field <code>int32 horizon_hours = 10 [json_name = "horizon_hours"];</code>
      */
     protected $horizon_hours = 0;
     /**
+     * 使用的模型 id / key，如 fusion-ai
+     *
      * Generated from protobuf field <code>string model_id = 11 [json_name = "model_id"];</code>
      */
     protected $model_id = '';
     /**
+     * 人类可读提示（失败原因或当前步说明）
+     *
      * Generated from protobuf field <code>string message = 12 [json_name = "message"];</code>
      */
     protected $message = '';
     /**
-     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      * 例：2026-11-17T16:12:00+08:00
      *
      * Generated from protobuf field <code>optional string started_at = 13 [json_name = "started_at"];</code>
      */
     protected $started_at = null;
     /**
+     * 结束时间；未结束不填
+     *
      * Generated from protobuf field <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      */
     protected $finished_at = null;
     /**
+     * 最近一次状态更新时间
+     *
      * Generated from protobuf field <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      */
     protected $updated_at = null;
@@ -92,24 +116,36 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $job_id
+     *           预测任务 id，如 pd-8291
      *     @type string $registration_id
+     *           场站 registration_id
      *     @type int $status
+     *           整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
      *     @type int $progress_pct
-     *           0~100
+     *           总进度 0~100
      *     @type string $stage
-     *           当前步键，如 infer
+     *           当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
      *     @type array|\Google\Protobuf\Internal\MapField $stages
+     *           五步状态表；key=步名，value=StageStepStatus
      *     @type string $eval_date
+     *           评估日 / 预测锚定日 YYYY-MM-DD
      *     @type int $day_offset
+     *           相对评估日的偏移天数；0=当日
      *     @type int $granularity_min
+     *           预测步长（分钟）：5 / 15 / 30 / 60
      *     @type int $horizon_hours
+     *           预测时长（小时），常见 24
      *     @type string $model_id
+     *           使用的模型 id / key，如 fusion-ai
      *     @type string $message
+     *           人类可读提示（失败原因或当前步说明）
      *     @type string $started_at
-     *           开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     *           开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      *           例：2026-11-17T16:12:00+08:00
      *     @type string $finished_at
+     *           结束时间；未结束不填
      *     @type string $updated_at
+     *           最近一次状态更新时间
      * }
      */
     public function __construct($data = null)
@@ -119,6 +155,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测任务 id，如 pd-8291
+     *
      * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return string
      */
@@ -128,6 +166,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测任务 id，如 pd-8291
+     *
      * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id"];</code>
      * @param string $var
      * @return $this
@@ -141,6 +181,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 2 [json_name = "registration_id"];</code>
      * @return string
      */
@@ -150,6 +192,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 2 [json_name = "registration_id"];</code>
      * @param string $var
      * @return $this
@@ -163,6 +207,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\Workbench\JobStatus}
      */
@@ -172,6 +218,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\Workbench\JobStatus}
      * @return $this
@@ -185,7 +233,7 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 0~100
+     * 总进度 0~100
      *
      * Generated from protobuf field <code>int32 progress_pct = 4 [json_name = "progress_pct"];</code>
      * @return int
@@ -196,7 +244,7 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 0~100
+     * 总进度 0~100
      *
      * Generated from protobuf field <code>int32 progress_pct = 4 [json_name = "progress_pct"];</code>
      * @param int $var
@@ -211,7 +259,7 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 当前步键，如 infer
+     * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
      *
      * Generated from protobuf field <code>string stage = 5 [json_name = "stage"];</code>
      * @return string
@@ -222,7 +270,7 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 当前步键，如 infer
+     * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
      *
      * Generated from protobuf field <code>string stage = 5 [json_name = "stage"];</code>
      * @param string $var
@@ -237,7 +285,9 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> stages = 6 [json_name = "stages"];</code>
+     * 五步状态表；key=步名，value=StageStepStatus
+     *
+     * Generated from protobuf field <code>map<string, .fusion.ai.proto.workbench.StageStepStatus> stages = 6 [json_name = "stages"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getStages()
@@ -246,19 +296,23 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> stages = 6 [json_name = "stages"];</code>
+     * 五步状态表；key=步名，value=StageStepStatus
+     *
+     * Generated from protobuf field <code>map<string, .fusion.ai.proto.workbench.StageStepStatus> stages = 6 [json_name = "stages"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
     public function setStages(array|\Google\Protobuf\Internal\MapField $var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::ENUM, \Fusion\Ai\Proto\Workbench\StageStepStatus::class);
         $this->stages = $arr;
 
         return $this;
     }
 
     /**
+     * 评估日 / 预测锚定日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 7 [json_name = "eval_date"];</code>
      * @return string
      */
@@ -268,6 +322,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日 / 预测锚定日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 7 [json_name = "eval_date"];</code>
      * @param string $var
      * @return $this
@@ -281,6 +337,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 相对评估日的偏移天数；0=当日
+     *
      * Generated from protobuf field <code>int32 day_offset = 8 [json_name = "day_offset"];</code>
      * @return int
      */
@@ -290,6 +348,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 相对评估日的偏移天数；0=当日
+     *
      * Generated from protobuf field <code>int32 day_offset = 8 [json_name = "day_offset"];</code>
      * @param int $var
      * @return $this
@@ -303,6 +363,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测步长（分钟）：5 / 15 / 30 / 60
+     *
      * Generated from protobuf field <code>int32 granularity_min = 9 [json_name = "granularity_min"];</code>
      * @return int
      */
@@ -312,6 +374,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测步长（分钟）：5 / 15 / 30 / 60
+     *
      * Generated from protobuf field <code>int32 granularity_min = 9 [json_name = "granularity_min"];</code>
      * @param int $var
      * @return $this
@@ -325,6 +389,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测时长（小时），常见 24
+     *
      * Generated from protobuf field <code>int32 horizon_hours = 10 [json_name = "horizon_hours"];</code>
      * @return int
      */
@@ -334,6 +400,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测时长（小时），常见 24
+     *
      * Generated from protobuf field <code>int32 horizon_hours = 10 [json_name = "horizon_hours"];</code>
      * @param int $var
      * @return $this
@@ -347,6 +415,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 使用的模型 id / key，如 fusion-ai
+     *
      * Generated from protobuf field <code>string model_id = 11 [json_name = "model_id"];</code>
      * @return string
      */
@@ -356,6 +426,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 使用的模型 id / key，如 fusion-ai
+     *
      * Generated from protobuf field <code>string model_id = 11 [json_name = "model_id"];</code>
      * @param string $var
      * @return $this
@@ -369,6 +441,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 人类可读提示（失败原因或当前步说明）
+     *
      * Generated from protobuf field <code>string message = 12 [json_name = "message"];</code>
      * @return string
      */
@@ -378,6 +452,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 人类可读提示（失败原因或当前步说明）
+     *
      * Generated from protobuf field <code>string message = 12 [json_name = "message"];</code>
      * @param string $var
      * @return $this
@@ -391,7 +467,7 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      * 例：2026-11-17T16:12:00+08:00
      *
      * Generated from protobuf field <code>optional string started_at = 13 [json_name = "started_at"];</code>
@@ -413,7 +489,7 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      * 例：2026-11-17T16:12:00+08:00
      *
      * Generated from protobuf field <code>optional string started_at = 13 [json_name = "started_at"];</code>
@@ -429,6 +505,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 结束时间；未结束不填
+     *
      * Generated from protobuf field <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      * @return string
      */
@@ -448,6 +526,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 结束时间；未结束不填
+     *
      * Generated from protobuf field <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      * @param string $var
      * @return $this
@@ -461,6 +541,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 最近一次状态更新时间
+     *
      * Generated from protobuf field <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      * @return string
      */
@@ -480,6 +562,8 @@ class PredictJobView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 最近一次状态更新时间
+     *
      * Generated from protobuf field <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      * @param string $var
      * @return $this

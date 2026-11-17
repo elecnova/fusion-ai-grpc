@@ -6,32 +6,60 @@
 package com.fusion.ai.proto.workbench;
 
 /**
+ * <pre>
+ * JobStatus 训练 / 预测整单状态（etcd train|predict job.status）。
+ * </pre>
+ *
  * Protobuf enum {@code fusion.ai.proto.workbench.JobStatus}
  */
 @com.google.protobuf.Generated
 public enum JobStatus
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * 未设置 / 未知
+   * </pre>
+   *
    * <code>JOB_STATUS_UNSPECIFIED = 0;</code>
    */
   JOB_STATUS_UNSPECIFIED(0),
   /**
+   * <pre>
+   * 已受理、排队中（Create* 成功后的初始态；算法随后写 running）
+   * </pre>
+   *
    * <code>JOB_STATUS_QUEUED = 1;</code>
    */
   JOB_STATUS_QUEUED(1),
   /**
+   * <pre>
+   * 执行中
+   * </pre>
+   *
    * <code>JOB_STATUS_RUNNING = 2;</code>
    */
   JOB_STATUS_RUNNING(2),
   /**
+   * <pre>
+   * 成功结束
+   * </pre>
+   *
    * <code>JOB_STATUS_SUCCEEDED = 3;</code>
    */
   JOB_STATUS_SUCCEEDED(3),
   /**
+   * <pre>
+   * 失败结束
+   * </pre>
+   *
    * <code>JOB_STATUS_FAILED = 4;</code>
    */
   JOB_STATUS_FAILED(4),
   /**
+   * <pre>
+   * 已取消（预留；本期算法可不写）
+   * </pre>
+   *
    * <code>JOB_STATUS_CANCELLED = 5;</code>
    */
   JOB_STATUS_CANCELLED(5),
@@ -48,26 +76,50 @@ public enum JobStatus
       "JobStatus");
   }
   /**
+   * <pre>
+   * 未设置 / 未知
+   * </pre>
+   *
    * <code>JOB_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int JOB_STATUS_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * 已受理、排队中（Create* 成功后的初始态；算法随后写 running）
+   * </pre>
+   *
    * <code>JOB_STATUS_QUEUED = 1;</code>
    */
   public static final int JOB_STATUS_QUEUED_VALUE = 1;
   /**
+   * <pre>
+   * 执行中
+   * </pre>
+   *
    * <code>JOB_STATUS_RUNNING = 2;</code>
    */
   public static final int JOB_STATUS_RUNNING_VALUE = 2;
   /**
+   * <pre>
+   * 成功结束
+   * </pre>
+   *
    * <code>JOB_STATUS_SUCCEEDED = 3;</code>
    */
   public static final int JOB_STATUS_SUCCEEDED_VALUE = 3;
   /**
+   * <pre>
+   * 失败结束
+   * </pre>
+   *
    * <code>JOB_STATUS_FAILED = 4;</code>
    */
   public static final int JOB_STATUS_FAILED_VALUE = 4;
   /**
+   * <pre>
+   * 已取消（预留；本期算法可不写）
+   * </pre>
+   *
    * <code>JOB_STATUS_CANCELLED = 5;</code>
    */
   public static final int JOB_STATUS_CANCELLED_VALUE = 5;

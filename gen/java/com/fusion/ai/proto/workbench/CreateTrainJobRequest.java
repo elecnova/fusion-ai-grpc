@@ -53,6 +53,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 模型 registration_id；空或 shared → 光伏通用模型
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
@@ -70,6 +74,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 模型 registration_id；空或 shared → 光伏通用模型
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */
@@ -386,6 +394,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 模型 registration_id；空或 shared → 光伏通用模型
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The registrationId.
      */
@@ -402,6 +414,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型 registration_id；空或 shared → 光伏通用模型
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The bytes for registrationId.
      */
@@ -419,6 +435,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型 registration_id；空或 shared → 光伏通用模型
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -432,6 +452,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型 registration_id；空或 shared → 光伏通用模型
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -442,6 +466,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型 registration_id；空或 shared → 光伏通用模型
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.

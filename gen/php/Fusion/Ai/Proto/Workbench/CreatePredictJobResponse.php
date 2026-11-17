@@ -15,10 +15,14 @@ use Google\Protobuf\RepeatedField;
 class CreatePredictJobResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 新预测任务 id
+     *
      * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id"];</code>
      */
     protected $job_id = '';
     /**
+     * 受理后初始状态，一般为 QUEUED
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
      */
     protected $status = 0;
@@ -30,7 +34,9 @@ class CreatePredictJobResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $job_id
+     *           新预测任务 id
      *     @type int $status
+     *           受理后初始状态，一般为 QUEUED
      * }
      */
     public function __construct($data = null)
@@ -40,6 +46,8 @@ class CreatePredictJobResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 新预测任务 id
+     *
      * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return string
      */
@@ -49,6 +57,8 @@ class CreatePredictJobResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 新预测任务 id
+     *
      * Generated from protobuf field <code>string job_id = 1 [json_name = "job_id"];</code>
      * @param string $var
      * @return $this
@@ -62,6 +72,8 @@ class CreatePredictJobResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 受理后初始状态，一般为 QUEUED
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\Workbench\JobStatus}
      */
@@ -71,6 +83,8 @@ class CreatePredictJobResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 受理后初始状态，一般为 QUEUED
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\Workbench\JobStatus}
      * @return $this

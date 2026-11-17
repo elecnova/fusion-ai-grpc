@@ -15,11 +15,13 @@ use Google\Protobuf\RepeatedField;
 class GetDataReadyCheckRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      */
     protected $registration_id = '';
     /**
-     * YYYY-MM-DD；缺省为场站本地「今天」
+     * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
      *
      * Generated from protobuf field <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = {</code>
      */
@@ -38,8 +40,9 @@ class GetDataReadyCheckRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           场站 registration_id
      *     @type string $eval_date
-     *           YYYY-MM-DD；缺省为场站本地「今天」
+     *           评估日 YYYY-MM-DD；缺省为场站本地「今天」
      *     @type bool $include_points
      *           是否返回逐点覆盖序列；默认 true
      * }
@@ -51,6 +54,8 @@ class GetDataReadyCheckRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @return string
      */
@@ -60,6 +65,8 @@ class GetDataReadyCheckRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
@@ -73,7 +80,7 @@ class GetDataReadyCheckRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YYYY-MM-DD；缺省为场站本地「今天」
+     * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
      *
      * Generated from protobuf field <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = {</code>
      * @return string
@@ -94,7 +101,7 @@ class GetDataReadyCheckRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YYYY-MM-DD；缺省为场站本地「今天」
+     * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
      *
      * Generated from protobuf field <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = {</code>
      * @param string $var

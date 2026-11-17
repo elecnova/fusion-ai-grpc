@@ -55,6 +55,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
@@ -72,6 +76,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */
@@ -95,7 +103,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object evalDate_ = "";
   /**
    * <pre>
-   * YYYY-MM-DD；缺省为场站本地「今天」
+   * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
    * </pre>
    *
    * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -107,7 +115,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD；缺省为场站本地「今天」
+   * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
    * </pre>
    *
    * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -128,7 +136,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * YYYY-MM-DD；缺省为场站本地「今天」
+   * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
    * </pre>
    *
    * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -536,6 +544,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The registrationId.
      */
@@ -552,6 +564,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The bytes for registrationId.
      */
@@ -569,6 +585,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -582,6 +602,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -592,6 +616,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.
@@ -609,7 +637,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object evalDate_ = "";
     /**
      * <pre>
-     * YYYY-MM-DD；缺省为场站本地「今天」
+     * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
      * </pre>
      *
      * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -620,7 +648,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD；缺省为场站本地「今天」
+     * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
      * </pre>
      *
      * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -640,7 +668,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD；缺省为场站本地「今天」
+     * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
      * </pre>
      *
      * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -661,7 +689,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD；缺省为场站本地「今天」
+     * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
      * </pre>
      *
      * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -678,7 +706,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD；缺省为场站本地「今天」
+     * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
      * </pre>
      *
      * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
@@ -692,7 +720,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * YYYY-MM-DD；缺省为场站本地「今天」
+     * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
      * </pre>
      *
      * <code>optional string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>

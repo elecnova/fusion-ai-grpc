@@ -11,16 +11,28 @@ public interface GetDataReadyCheckResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 就绪检查结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
    * @return Whether the check field is set.
    */
   boolean hasCheck();
   /**
+   * <pre>
+   * 就绪检查结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
    * @return The check.
    */
   com.fusion.ai.proto.workbench.DataReadyCheck getCheck();
   /**
+   * <pre>
+   * 就绪检查结果
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.DataReadyCheck check = 1 [json_name = "check"];</code>
    */
   com.fusion.ai.proto.workbench.DataReadyCheckOrBuilder getCheckOrBuilder();

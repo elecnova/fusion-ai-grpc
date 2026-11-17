@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class ListEvalDailyMetricsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 分页结果
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      */
     protected $page = null;
@@ -26,6 +28,7 @@ class ListEvalDailyMetricsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Fusion\Ai\Proto\Workbench\EvalDayMetricsPage $page
+     *           分页结果
      * }
      */
     public function __construct($data = null)
@@ -35,6 +38,8 @@ class ListEvalDailyMetricsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 分页结果
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      * @return \Fusion\Ai\Proto\Workbench\EvalDayMetricsPage|null
      */
@@ -54,6 +59,8 @@ class ListEvalDailyMetricsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 分页结果
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.EvalDayMetricsPage page = 1 [json_name = "page"];</code>
      * @param \Fusion\Ai\Proto\Workbench\EvalDayMetricsPage $var
      * @return $this

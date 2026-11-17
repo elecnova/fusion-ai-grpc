@@ -55,6 +55,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
@@ -72,6 +76,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */
@@ -93,6 +101,10 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_FIELD_NUMBER = 2;
   private int page_ = 0;
   /**
+   * <pre>
+   * 页码，从 1 起；缺省 1
+   * </pre>
+   *
    * <code>optional int32 page = 2 [json_name = "page"];</code>
    * @return Whether the page field is set.
    */
@@ -101,6 +113,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 页码，从 1 起；缺省 1
+   * </pre>
+   *
    * <code>optional int32 page = 2 [json_name = "page"];</code>
    * @return The page.
    */
@@ -112,6 +128,10 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
   /**
+   * <pre>
+   * 每页条数；缺省由服务端定
+   * </pre>
+   *
    * <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
    * @return Whether the pageSize field is set.
    */
@@ -120,6 +140,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
+   * <pre>
+   * 每页条数；缺省由服务端定
+   * </pre>
+   *
    * <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
    * @return The pageSize.
    */
@@ -575,6 +599,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The registrationId.
      */
@@ -591,6 +619,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The bytes for registrationId.
      */
@@ -608,6 +640,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -621,6 +657,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -631,6 +671,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.
@@ -647,6 +691,10 @@ private static final long serialVersionUID = 0L;
 
     private int page_ ;
     /**
+     * <pre>
+     * 页码，从 1 起；缺省 1
+     * </pre>
+     *
      * <code>optional int32 page = 2 [json_name = "page"];</code>
      * @return Whether the page field is set.
      */
@@ -655,6 +703,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
+     * <pre>
+     * 页码，从 1 起；缺省 1
+     * </pre>
+     *
      * <code>optional int32 page = 2 [json_name = "page"];</code>
      * @return The page.
      */
@@ -663,6 +715,10 @@ private static final long serialVersionUID = 0L;
       return page_;
     }
     /**
+     * <pre>
+     * 页码，从 1 起；缺省 1
+     * </pre>
+     *
      * <code>optional int32 page = 2 [json_name = "page"];</code>
      * @param value The page to set.
      * @return This builder for chaining.
@@ -675,6 +731,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 页码，从 1 起；缺省 1
+     * </pre>
+     *
      * <code>optional int32 page = 2 [json_name = "page"];</code>
      * @return This builder for chaining.
      */
@@ -687,6 +747,10 @@ private static final long serialVersionUID = 0L;
 
     private int pageSize_ ;
     /**
+     * <pre>
+     * 每页条数；缺省由服务端定
+     * </pre>
+     *
      * <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
      * @return Whether the pageSize field is set.
      */
@@ -695,6 +759,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
+     * <pre>
+     * 每页条数；缺省由服务端定
+     * </pre>
+     *
      * <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
      * @return The pageSize.
      */
@@ -703,6 +771,10 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     * <pre>
+     * 每页条数；缺省由服务端定
+     * </pre>
+     *
      * <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -715,6 +787,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 每页条数；缺省由服务端定
+     * </pre>
+     *
      * <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
      * @return This builder for chaining.
      */

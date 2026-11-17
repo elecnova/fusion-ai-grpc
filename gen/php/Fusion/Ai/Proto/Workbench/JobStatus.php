@@ -8,31 +8,45 @@ namespace Fusion\Ai\Proto\Workbench;
 use UnexpectedValueException;
 
 /**
+ * JobStatus 训练 / 预测整单状态（etcd train|predict job.status）。
+ *
  * Protobuf type <code>fusion.ai.proto.workbench.JobStatus</code>
  */
 class JobStatus
 {
     /**
+     * 未设置 / 未知
+     *
      * Generated from protobuf enum <code>JOB_STATUS_UNSPECIFIED = 0;</code>
      */
     const JOB_STATUS_UNSPECIFIED = 0;
     /**
+     * 已受理、排队中（Create* 成功后的初始态；算法随后写 running）
+     *
      * Generated from protobuf enum <code>JOB_STATUS_QUEUED = 1;</code>
      */
     const JOB_STATUS_QUEUED = 1;
     /**
+     * 执行中
+     *
      * Generated from protobuf enum <code>JOB_STATUS_RUNNING = 2;</code>
      */
     const JOB_STATUS_RUNNING = 2;
     /**
+     * 成功结束
+     *
      * Generated from protobuf enum <code>JOB_STATUS_SUCCEEDED = 3;</code>
      */
     const JOB_STATUS_SUCCEEDED = 3;
     /**
+     * 失败结束
+     *
      * Generated from protobuf enum <code>JOB_STATUS_FAILED = 4;</code>
      */
     const JOB_STATUS_FAILED = 4;
     /**
+     * 已取消（预留；本期算法可不写）
+     *
      * Generated from protobuf enum <code>JOB_STATUS_CANCELLED = 5;</code>
      */
     const JOB_STATUS_CANCELLED = 5;

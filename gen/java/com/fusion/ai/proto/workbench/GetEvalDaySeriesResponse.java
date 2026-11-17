@@ -52,6 +52,10 @@ private static final long serialVersionUID = 0L;
   public static final int SERIES_FIELD_NUMBER = 1;
   private com.fusion.ai.proto.workbench.EvalDaySeries series_;
   /**
+   * <pre>
+   * 评估日曲线
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
    * @return Whether the series field is set.
    */
@@ -60,6 +64,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 评估日曲线
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
    * @return The series.
    */
@@ -68,6 +76,10 @@ private static final long serialVersionUID = 0L;
     return series_ == null ? com.fusion.ai.proto.workbench.EvalDaySeries.getDefaultInstance() : series_;
   }
   /**
+   * <pre>
+   * 评估日曲线
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
    */
   @java.lang.Override
@@ -396,6 +408,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.fusion.ai.proto.workbench.EvalDaySeries, com.fusion.ai.proto.workbench.EvalDaySeries.Builder, com.fusion.ai.proto.workbench.EvalDaySeriesOrBuilder> seriesBuilder_;
     /**
+     * <pre>
+     * 评估日曲线
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      * @return Whether the series field is set.
      */
@@ -403,6 +419,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     * <pre>
+     * 评估日曲线
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      * @return The series.
      */
@@ -414,6 +434,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日曲线
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      */
     public Builder setSeries(com.fusion.ai.proto.workbench.EvalDaySeries value) {
@@ -428,6 +452,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日曲线
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      */
     public Builder setSeries(
@@ -442,6 +470,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日曲线
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      */
     public Builder mergeSeries(com.fusion.ai.proto.workbench.EvalDaySeries value) {
@@ -463,6 +495,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日曲线
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      */
     public Builder clearSeries() {
@@ -476,6 +512,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日曲线
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDaySeries.Builder getSeriesBuilder() {
@@ -484,6 +524,10 @@ private static final long serialVersionUID = 0L;
       return internalGetSeriesFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * 评估日曲线
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      */
     public com.fusion.ai.proto.workbench.EvalDaySeriesOrBuilder getSeriesOrBuilder() {
@@ -495,6 +539,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日曲线
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.EvalDaySeries series = 1 [json_name = "series"];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<

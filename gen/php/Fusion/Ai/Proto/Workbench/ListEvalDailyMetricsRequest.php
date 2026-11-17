@@ -15,14 +15,20 @@ use Google\Protobuf\RepeatedField;
 class ListEvalDailyMetricsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      */
     protected $registration_id = '';
     /**
+     * 页码，从 1 起；缺省 1
+     *
      * Generated from protobuf field <code>optional int32 page = 2 [json_name = "page"];</code>
      */
     protected $page = null;
     /**
+     * 每页条数；缺省由服务端定
+     *
      * Generated from protobuf field <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
      */
     protected $page_size = null;
@@ -40,8 +46,11 @@ class ListEvalDailyMetricsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           场站 registration_id
      *     @type int $page
+     *           页码，从 1 起；缺省 1
      *     @type int $page_size
+     *           每页条数；缺省由服务端定
      *     @type string $end_date
      *           含当日及以前；不可选未来
      * }
@@ -53,6 +62,8 @@ class ListEvalDailyMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @return string
      */
@@ -62,6 +73,8 @@ class ListEvalDailyMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = {</code>
      * @param string $var
      * @return $this
@@ -75,6 +88,8 @@ class ListEvalDailyMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 页码，从 1 起；缺省 1
+     *
      * Generated from protobuf field <code>optional int32 page = 2 [json_name = "page"];</code>
      * @return int
      */
@@ -94,6 +109,8 @@ class ListEvalDailyMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 页码，从 1 起；缺省 1
+     *
      * Generated from protobuf field <code>optional int32 page = 2 [json_name = "page"];</code>
      * @param int $var
      * @return $this
@@ -107,6 +124,8 @@ class ListEvalDailyMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 每页条数；缺省由服务端定
+     *
      * Generated from protobuf field <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
      * @return int
      */
@@ -126,6 +145,8 @@ class ListEvalDailyMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 每页条数；缺省由服务端定
+     *
      * Generated from protobuf field <code>optional int32 page_size = 3 [json_name = "page_size"];</code>
      * @param int $var
      * @return $this

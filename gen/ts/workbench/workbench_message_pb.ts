@@ -21,25 +21,29 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file workbench/workbench_message.proto.
  */
 export const file_workbench_workbench_message: GenFile = /*@__PURE__*/
-  fileDesc("CiF3b3JrYmVuY2gvd29ya2JlbmNoX21lc3NhZ2UucHJvdG8SGWZ1c2lvbi5haS5wcm90by53b3JrYmVuY2gioAEKC0dhcEludGVydmFsEhoKCHN0YXJ0X21zGAEgASgDUghzdGFydF9tcxIWCgZlbmRfbXMYAiABKANSBmVuZF9tcxImCg5taXNzaW5nX3BvaW50cxgDIAEoBVIObWlzc2luZ19wb2ludHMSDwoHZGlzcGxheRgEIAEoCRIkCg1iYWNrZmlsbF9ocmVmGAUgASgJUg1iYWNrZmlsbF9ocmVmIlQKDUNvdmVyYWdlUG9pbnQSFAoFdHNfbXMYASABKANSBXRzX21zEhIKBXZhbHVlGAIgASgBSACIAQESDwoHcHJlc2VudBgDIAEoCEIICgZfdmFsdWUiowIKDENvdmVyYWdlQmFuZBI7CgRraW5kGAEgASgOMi0uZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Db3ZlcmFnZVNlcmllc0tpbmQSJgoOY292ZXJhZ2VfcmF0aW8YAiABKAFSDmNvdmVyYWdlX3JhdGlvEhoKCGdyaWRfbWluGAMgASgFUghncmlkX21pbhIiCgxzb3VyY2VfbGFiZWwYBCABKAlSDHNvdXJjZV9sYWJlbBI4CgZwb2ludHMYBSADKAsyKC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkNvdmVyYWdlUG9pbnQSNAoEZ2FwcxgGIAMoCzImLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guR2FwSW50ZXJ2YWwi5gIKDkRhdGFSZWFkeUNoZWNrEigKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCVIPcmVnaXN0cmF0aW9uX2lkEhwKCWV2YWxfZGF0ZRgCIAEoCVIJZXZhbF9kYXRlEhAKCHRpbWV6b25lGAMgASgJEjsKBnN0YXR1cxgEIAEoDjIrLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guUmVhZHlDaGVja1N0YXR1cxI2CgVwb3dlchgFIAEoCzInLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guQ292ZXJhZ2VCYW5kEj0KB3dlYXRoZXIYBiABKAsyJy5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkNvdmVyYWdlQmFuZEgAiAEBEjoKCmNoZWNrZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjaGVja2VkX2F0QgoKCF93ZWF0aGVyIqQCCg9GdXNpb25Nb2RlbFZpZXcSKAoPcmVnaXN0cmF0aW9uX2lkGAEgASgJUg9yZWdpc3RyYXRpb25faWQSHAoJbW9kZWxfa2V5GAIgASgJUgltb2RlbF9rZXkSDwoHdmVyc2lvbhgDIAEoCRI7CgZzdGF0dXMYBCABKA4yKy5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLk1vZGVsUmVhZHlTdGF0dXMSLQoPbGFzdF90cmFpbmVkX2F0GAUgASgJSABSD2xhc3RfdHJhaW5lZF9hdIgBARInCgxhcnRpZmFjdF91cmkYBiABKAlIAVIMYXJ0aWZhY3RfdXJpiAEBQhIKEF9sYXN0X3RyYWluZWRfYXRCDwoNX2FydGlmYWN0X3VyaSKLBQoOUHJlZGljdEpvYlZpZXcSFgoGam9iX2lkGAEgASgJUgZqb2JfaWQSKAoPcmVnaXN0cmF0aW9uX2lkGAIgASgJUg9yZWdpc3RyYXRpb25faWQSNAoGc3RhdHVzGAMgASgOMiQuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Kb2JTdGF0dXMSIgoMcHJvZ3Jlc3NfcGN0GAQgASgFUgxwcm9ncmVzc19wY3QSDQoFc3RhZ2UYBSABKAkSRQoGc3RhZ2VzGAYgAygLMjUuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5QcmVkaWN0Sm9iVmlldy5TdGFnZXNFbnRyeRIcCglldmFsX2RhdGUYByABKAlSCWV2YWxfZGF0ZRIeCgpkYXlfb2Zmc2V0GAggASgFUgpkYXlfb2Zmc2V0EigKD2dyYW51bGFyaXR5X21pbhgJIAEoBVIPZ3JhbnVsYXJpdHlfbWluEiQKDWhvcml6b25faG91cnMYCiABKAVSDWhvcml6b25faG91cnMSGgoIbW9kZWxfaWQYCyABKAlSCG1vZGVsX2lkEg8KB21lc3NhZ2UYDCABKAkSIwoKc3RhcnRlZF9hdBgNIAEoCUgAUgpzdGFydGVkX2F0iAEBEiUKC2ZpbmlzaGVkX2F0GA4gASgJSAFSC2ZpbmlzaGVkX2F0iAEBEiMKCnVwZGF0ZWRfYXQYDyABKAlIAlIKdXBkYXRlZF9hdIgBARotCgtTdGFnZXNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBQg0KC19zdGFydGVkX2F0Qg4KDF9maW5pc2hlZF9hdEINCgtfdXBkYXRlZF9hdCKOAQoLU2VyaWVzUG9pbnQSFAoFdHNfbXMYASABKANSBXRzX21zEicKDHByZWRpY3RlZF9rdxgCIAEoAUgAUgxwcmVkaWN0ZWRfa3eIAQESIQoJYWN0dWFsX2t3GAMgASgBSAFSCWFjdHVhbF9rd4gBAUIPCg1fcHJlZGljdGVkX2t3QgwKCl9hY3R1YWxfa3cipgIKDUV2YWxEYXlTZXJpZXMSKAoPcmVnaXN0cmF0aW9uX2lkGAEgASgJUg9yZWdpc3RyYXRpb25faWQSHAoJZXZhbF9kYXRlGAIgASgJUglldmFsX2RhdGUSEAoIdGltZXpvbmUYAyABKAkSKAoPZ3JhbnVsYXJpdHlfbWluGAQgASgFUg9ncmFudWxhcml0eV9taW4SHAoJbW9kZWxfa2V5GAUgASgJUgltb2RlbF9rZXkSKQoNbW9kZWxfdmVyc2lvbhgGIAEoCUgAUg1tb2RlbF92ZXJzaW9uiAEBEjYKBnBvaW50cxgHIAMoCzImLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guU2VyaWVzUG9pbnRCEAoOX21vZGVsX3ZlcnNpb24iiAMKDkV2YWxEYXlNZXRyaWNzEigKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCVIPcmVnaXN0cmF0aW9uX2lkEhwKCWV2YWxfZGF0ZRgCIAEoCVIJZXZhbF9kYXRlEhwKCW1vZGVsX2tleRgDIAEoCVIJbW9kZWxfa2V5EikKDW1vZGVsX3ZlcnNpb24YBCABKAlIAFINbW9kZWxfdmVyc2lvbogBARIRCgRtYXBlGAUgASgBSAGIAQESEQoEcm1zZRgGIAEoAUgCiAEBEhAKA21hZRgHIAEoAUgDiAEBEhIKBXNtYXBlGAggASgBSASIAQESIQoJcGFzc19yYXRlGAkgASgBSAVSCXBhc3NfcmF0ZYgBARIjCgptYXBlX2RlbHRhGAogASgBSAZSCm1hcGVfZGVsdGGIAQFCEAoOX21vZGVsX3ZlcnNpb25CBwoFX21hcGVCBwoFX3Jtc2VCBgoEX21hZUIICgZfc21hcGVCDAoKX3Bhc3NfcmF0ZUINCgtfbWFwZV9kZWx0YSJpChFFdmFsRGF5TWV0cmljc1JvdxIcCglldmFsX2RhdGUYASABKAlSCWV2YWxfZGF0ZRIRCgRtYXBlGAIgASgBSACIAQESEQoEcm1zZRgDIAEoAUgBiAEBQgcKBV9tYXBlQgcKBV9ybXNlIosBChJFdmFsRGF5TWV0cmljc1BhZ2USOgoEcm93cxgBIAMoCzIsLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guRXZhbERheU1ldHJpY3NSb3cSDQoFdG90YWwYAiABKAUSDAoEcGFnZRgDIAEoBRIcCglwYWdlX3NpemUYBCABKAVSCXBhZ2Vfc2l6ZSLlAQoYR2V0RGF0YVJlYWR5Q2hlY2tSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSRgoJZXZhbF9kYXRlGAIgASgJQiO6SCByHjIcXlswLTldezR9LVswLTldezJ9LVswLTldezJ9JEgAUglldmFsX2RhdGWIAQESKwoOaW5jbHVkZV9wb2ludHMYAyABKAhIAVIOaW5jbHVkZV9wb2ludHOIAQFCDAoKX2V2YWxfZGF0ZUIRCg9faW5jbHVkZV9wb2ludHMiVQoZR2V0RGF0YVJlYWR5Q2hlY2tSZXNwb25zZRI4CgVjaGVjaxgBIAEoCzIpLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guRGF0YVJlYWR5Q2hlY2siTAoVR2V0RnVzaW9uTW9kZWxSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQiUwoWR2V0RnVzaW9uTW9kZWxSZXNwb25zZRI5CgVtb2RlbBgBIAEoCzIqLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guRnVzaW9uTW9kZWxWaWV3IkwKFUNyZWF0ZVRyYWluSm9iUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkImYKFkNyZWF0ZVRyYWluSm9iUmVzcG9uc2USFgoGam9iX2lkGAEgASgJUgZqb2JfaWQSNAoGc3RhdHVzGAIgASgOMiQuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Kb2JTdGF0dXMivwIKF0NyZWF0ZVByZWRpY3RKb2JSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQSRgoJZXZhbF9kYXRlGAIgASgJQiO6SCByHjIcXlswLTldezR9LVswLTldezJ9LVswLTldezJ9JEgAUglldmFsX2RhdGWIAQESPAoPZ3JhbnVsYXJpdHlfbWluGAMgASgFQg26SAoaCDAFMA8wHjA8SAFSD2dyYW51bGFyaXR5X21pbogBARI1Cg1ob3Jpem9uX2hvdXJzGAQgASgFQgq6SAcaBRioASgBSAJSDWhvcml6b25faG91cnOIAQFCDAoKX2V2YWxfZGF0ZUISChBfZ3JhbnVsYXJpdHlfbWluQhAKDl9ob3Jpem9uX2hvdXJzImgKGENyZWF0ZVByZWRpY3RKb2JSZXNwb25zZRIWCgZqb2JfaWQYASABKAlSBmpvYl9pZBI0CgZzdGF0dXMYAiABKA4yJC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkpvYlN0YXR1cyJIChFHZXRQcmVkaWN0UmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkIrsBChJHZXRQcmVkaWN0UmVzcG9uc2USKAoPcmVnaXN0cmF0aW9uX2lkGAEgASgJUg9yZWdpc3RyYXRpb25faWQSNgoWY3VycmVudF9wcmVkaWN0X2pvYl9pZBgCIAEoCVIWY3VycmVudF9wcmVkaWN0X2pvYl9pZBI7CgNqb2IYAyABKAsyKS5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLlByZWRpY3RKb2JWaWV3SACIAQFCBgoEX2pvYiLjAQoXR2V0RXZhbERheVNlcmllc1JlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBJBCglldmFsX2RhdGUYAiABKAlCI7pIIHIeMhxeWzAtOV17NH0tWzAtOV17Mn0tWzAtOV17Mn0kUglldmFsX2RhdGUSPAoPZ3JhbnVsYXJpdHlfbWluGAMgASgFQg26SAoaCDAFMA8wHjA8SABSD2dyYW51bGFyaXR5X21pbogBAUISChBfZ3JhbnVsYXJpdHlfbWluIlQKGEdldEV2YWxEYXlTZXJpZXNSZXNwb25zZRI4CgZzZXJpZXMYASABKAsyKC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkV2YWxEYXlTZXJpZXMikgEKGEdldEV2YWxEYXlNZXRyaWNzUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEkEKCWV2YWxfZGF0ZRgCIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRSCWV2YWxfZGF0ZSJXChlHZXRFdmFsRGF5TWV0cmljc1Jlc3BvbnNlEjoKB21ldHJpY3MYASABKAsyKS5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkV2YWxEYXlNZXRyaWNzIvIBChtMaXN0RXZhbERhaWx5TWV0cmljc1JlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBIRCgRwYWdlGAIgASgFSACIAQESIQoJcGFnZV9zaXplGAMgASgFSAFSCXBhZ2Vfc2l6ZYgBARJECghlbmRfZGF0ZRgEIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRIAlIIZW5kX2RhdGWIAQFCBwoFX3BhZ2VCDAoKX3BhZ2Vfc2l6ZUILCglfZW5kX2RhdGUiWwocTGlzdEV2YWxEYWlseU1ldHJpY3NSZXNwb25zZRI7CgRwYWdlGAEgASgLMi0uZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5FdmFsRGF5TWV0cmljc1BhZ2UqjQEKEFJlYWR5Q2hlY2tTdGF0dXMSIgoeUkVBRFlfQ0hFQ0tfU1RBVFVTX1VOU1BFQ0lGSUVEEAASGwoXUkVBRFlfQ0hFQ0tfU1RBVFVTX1BBU1MQARIbChdSRUFEWV9DSEVDS19TVEFUVVNfV0FSThACEhsKF1JFQURZX0NIRUNLX1NUQVRVU19GQUlMEAMqfAoSQ292ZXJhZ2VTZXJpZXNLaW5kEiQKIENPVkVSQUdFX1NFUklFU19LSU5EX1VOU1BFQ0lGSUVEEAASHgoaQ09WRVJBR0VfU0VSSUVTX0tJTkRfUE9XRVIQARIgChxDT1ZFUkFHRV9TRVJJRVNfS0lORF9XRUFUSEVSEAIqswEKEE1vZGVsUmVhZHlTdGF0dXMSIgoeTU9ERUxfUkVBRFlfU1RBVFVTX1VOU1BFQ0lGSUVEEAASHAoYTU9ERUxfUkVBRFlfU1RBVFVTX1JFQURZEAESHwobTU9ERUxfUkVBRFlfU1RBVFVTX1RSQUlOSU5HEAISHAoYTU9ERUxfUkVBRFlfU1RBVFVTX1NUQUxFEAMSHgoaTU9ERUxfUkVBRFlfU1RBVFVTX01JU1NJTkcQBCqhAQoJSm9iU3RhdHVzEhoKFkpPQl9TVEFUVVNfVU5TUEVDSUZJRUQQABIVChFKT0JfU1RBVFVTX1FVRVVFRBABEhYKEkpPQl9TVEFUVVNfUlVOTklORxACEhgKFEpPQl9TVEFUVVNfU1VDQ0VFREVEEAMSFQoRSk9CX1NUQVRVU19GQUlMRUQQBBIYChRKT0JfU1RBVFVTX0NBTkNFTExFRBAFQuMBCh1jb20uZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaEIVV29ya2JlbmNoTWVzc2FnZVByb3RvUAFaI2Z1c2lvbi5haS5wcm90by53b3JrYmVuY2g7d29ya2JlbmNoogIERkFQV6oCGUZ1c2lvbi5BaS5Qcm90by5Xb3JrYmVuY2jKAhlGdXNpb25cQWlcUHJvdG9cV29ya2JlbmNo4gIlRnVzaW9uXEFpXFByb3RvXFdvcmtiZW5jaFxHUEJNZXRhZGF0YeoCHEZ1c2lvbjo6QWk6OlByb3RvOjpXb3JrYmVuY2hiBnByb3RvMw", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("CiF3b3JrYmVuY2gvd29ya2JlbmNoX21lc3NhZ2UucHJvdG8SGWZ1c2lvbi5haS5wcm90by53b3JrYmVuY2gioAEKC0dhcEludGVydmFsEhoKCHN0YXJ0X21zGAEgASgDUghzdGFydF9tcxIWCgZlbmRfbXMYAiABKANSBmVuZF9tcxImCg5taXNzaW5nX3BvaW50cxgDIAEoBVIObWlzc2luZ19wb2ludHMSDwoHZGlzcGxheRgEIAEoCRIkCg1iYWNrZmlsbF9ocmVmGAUgASgJUg1iYWNrZmlsbF9ocmVmIlQKDUNvdmVyYWdlUG9pbnQSFAoFdHNfbXMYASABKANSBXRzX21zEhIKBXZhbHVlGAIgASgBSACIAQESDwoHcHJlc2VudBgDIAEoCEIICgZfdmFsdWUiowIKDENvdmVyYWdlQmFuZBI7CgRraW5kGAEgASgOMi0uZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Db3ZlcmFnZVNlcmllc0tpbmQSJgoOY292ZXJhZ2VfcmF0aW8YAiABKAFSDmNvdmVyYWdlX3JhdGlvEhoKCGdyaWRfbWluGAMgASgFUghncmlkX21pbhIiCgxzb3VyY2VfbGFiZWwYBCABKAlSDHNvdXJjZV9sYWJlbBI4CgZwb2ludHMYBSADKAsyKC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkNvdmVyYWdlUG9pbnQSNAoEZ2FwcxgGIAMoCzImLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guR2FwSW50ZXJ2YWwi5gIKDkRhdGFSZWFkeUNoZWNrEigKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCVIPcmVnaXN0cmF0aW9uX2lkEhwKCWV2YWxfZGF0ZRgCIAEoCVIJZXZhbF9kYXRlEhAKCHRpbWV6b25lGAMgASgJEjsKBnN0YXR1cxgEIAEoDjIrLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guUmVhZHlDaGVja1N0YXR1cxI2CgVwb3dlchgFIAEoCzInLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guQ292ZXJhZ2VCYW5kEj0KB3dlYXRoZXIYBiABKAsyJy5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkNvdmVyYWdlQmFuZEgAiAEBEjoKCmNoZWNrZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjaGVja2VkX2F0QgoKCF93ZWF0aGVyItgCCg9GdXNpb25Nb2RlbFZpZXcSKAoPcmVnaXN0cmF0aW9uX2lkGAEgASgJUg9yZWdpc3RyYXRpb25faWQSHAoJbW9kZWxfa2V5GAIgASgJUgltb2RlbF9rZXkSDwoHdmVyc2lvbhgDIAEoCRI7CgZzdGF0dXMYBCABKA4yKy5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLk1vZGVsUmVhZHlTdGF0dXMSLQoPbGFzdF90cmFpbmVkX2F0GAUgASgJSABSD2xhc3RfdHJhaW5lZF9hdIgBARInCgxhcnRpZmFjdF91cmkYBiABKAlIAVIMYXJ0aWZhY3RfdXJpiAEBEjIKFGN1cnJlbnRfdHJhaW5fam9iX2lkGAcgASgJUhRjdXJyZW50X3RyYWluX2pvYl9pZEISChBfbGFzdF90cmFpbmVkX2F0Qg8KDV9hcnRpZmFjdF91cmkiRAoMVHJhaW5Mb2dMaW5lEgsKA3NlcRgBIAEoAxIKCgJ0cxgCIAEoCRINCgVsZXZlbBgDIAEoCRIMCgRsaW5lGAQgASgJIsICCgxUcmFpbkpvYlZpZXcSFgoGam9iX2lkGAEgASgJUgZqb2JfaWQSKAoPcmVnaXN0cmF0aW9uX2lkGAIgASgJUg9yZWdpc3RyYXRpb25faWQSNAoGc3RhdHVzGAMgASgOMiQuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Kb2JTdGF0dXMSIwoKc3RhcnRlZF9hdBgEIAEoCUgAUgpzdGFydGVkX2F0iAEBEiUKC2ZpbmlzaGVkX2F0GAUgASgJSAFSC2ZpbmlzaGVkX2F0iAEBEhgKB2xvZ19zZXEYBiABKANSB2xvZ19zZXESNQoEbG9ncxgHIAMoCzInLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guVHJhaW5Mb2dMaW5lQg0KC19zdGFydGVkX2F0Qg4KDF9maW5pc2hlZF9hdCK3BQoOUHJlZGljdEpvYlZpZXcSFgoGam9iX2lkGAEgASgJUgZqb2JfaWQSKAoPcmVnaXN0cmF0aW9uX2lkGAIgASgJUg9yZWdpc3RyYXRpb25faWQSNAoGc3RhdHVzGAMgASgOMiQuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5Kb2JTdGF0dXMSIgoMcHJvZ3Jlc3NfcGN0GAQgASgFUgxwcm9ncmVzc19wY3QSDQoFc3RhZ2UYBSABKAkSRQoGc3RhZ2VzGAYgAygLMjUuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5QcmVkaWN0Sm9iVmlldy5TdGFnZXNFbnRyeRIcCglldmFsX2RhdGUYByABKAlSCWV2YWxfZGF0ZRIeCgpkYXlfb2Zmc2V0GAggASgFUgpkYXlfb2Zmc2V0EigKD2dyYW51bGFyaXR5X21pbhgJIAEoBVIPZ3JhbnVsYXJpdHlfbWluEiQKDWhvcml6b25faG91cnMYCiABKAVSDWhvcml6b25faG91cnMSGgoIbW9kZWxfaWQYCyABKAlSCG1vZGVsX2lkEg8KB21lc3NhZ2UYDCABKAkSIwoKc3RhcnRlZF9hdBgNIAEoCUgAUgpzdGFydGVkX2F0iAEBEiUKC2ZpbmlzaGVkX2F0GA4gASgJSAFSC2ZpbmlzaGVkX2F0iAEBEiMKCnVwZGF0ZWRfYXQYDyABKAlIAlIKdXBkYXRlZF9hdIgBARpZCgtTdGFnZXNFbnRyeRILCgNrZXkYASABKAkSOQoFdmFsdWUYAiABKA4yKi5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLlN0YWdlU3RlcFN0YXR1czoCOAFCDQoLX3N0YXJ0ZWRfYXRCDgoMX2ZpbmlzaGVkX2F0Qg0KC191cGRhdGVkX2F0Io4BCgtTZXJpZXNQb2ludBIUCgV0c19tcxgBIAEoA1IFdHNfbXMSJwoMcHJlZGljdGVkX2t3GAIgASgBSABSDHByZWRpY3RlZF9rd4gBARIhCglhY3R1YWxfa3cYAyABKAFIAVIJYWN0dWFsX2t3iAEBQg8KDV9wcmVkaWN0ZWRfa3dCDAoKX2FjdHVhbF9rdyKmAgoNRXZhbERheVNlcmllcxIoCg9yZWdpc3RyYXRpb25faWQYASABKAlSD3JlZ2lzdHJhdGlvbl9pZBIcCglldmFsX2RhdGUYAiABKAlSCWV2YWxfZGF0ZRIQCgh0aW1lem9uZRgDIAEoCRIoCg9ncmFudWxhcml0eV9taW4YBCABKAVSD2dyYW51bGFyaXR5X21pbhIcCgltb2RlbF9rZXkYBSABKAlSCW1vZGVsX2tleRIpCg1tb2RlbF92ZXJzaW9uGAYgASgJSABSDW1vZGVsX3ZlcnNpb26IAQESNgoGcG9pbnRzGAcgAygLMiYuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5TZXJpZXNQb2ludEIQCg5fbW9kZWxfdmVyc2lvbiKIAwoORXZhbERheU1ldHJpY3MSKAoPcmVnaXN0cmF0aW9uX2lkGAEgASgJUg9yZWdpc3RyYXRpb25faWQSHAoJZXZhbF9kYXRlGAIgASgJUglldmFsX2RhdGUSHAoJbW9kZWxfa2V5GAMgASgJUgltb2RlbF9rZXkSKQoNbW9kZWxfdmVyc2lvbhgEIAEoCUgAUg1tb2RlbF92ZXJzaW9uiAEBEhEKBG1hcGUYBSABKAFIAYgBARIRCgRybXNlGAYgASgBSAKIAQESEAoDbWFlGAcgASgBSAOIAQESEgoFc21hcGUYCCABKAFIBIgBARIhCglwYXNzX3JhdGUYCSABKAFIBVIJcGFzc19yYXRliAEBEiMKCm1hcGVfZGVsdGEYCiABKAFIBlIKbWFwZV9kZWx0YYgBAUIQCg5fbW9kZWxfdmVyc2lvbkIHCgVfbWFwZUIHCgVfcm1zZUIGCgRfbWFlQggKBl9zbWFwZUIMCgpfcGFzc19yYXRlQg0KC19tYXBlX2RlbHRhImkKEUV2YWxEYXlNZXRyaWNzUm93EhwKCWV2YWxfZGF0ZRgBIAEoCVIJZXZhbF9kYXRlEhEKBG1hcGUYAiABKAFIAIgBARIRCgRybXNlGAMgASgBSAGIAQFCBwoFX21hcGVCBwoFX3Jtc2UiiwEKEkV2YWxEYXlNZXRyaWNzUGFnZRI6CgRyb3dzGAEgAygLMiwuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5FdmFsRGF5TWV0cmljc1JvdxINCgV0b3RhbBgCIAEoBRIMCgRwYWdlGAMgASgFEhwKCXBhZ2Vfc2l6ZRgEIAEoBVIJcGFnZV9zaXplIuUBChhHZXREYXRhUmVhZHlDaGVja1JlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBJGCglldmFsX2RhdGUYAiABKAlCI7pIIHIeMhxeWzAtOV17NH0tWzAtOV17Mn0tWzAtOV17Mn0kSABSCWV2YWxfZGF0ZYgBARIrCg5pbmNsdWRlX3BvaW50cxgDIAEoCEgBUg5pbmNsdWRlX3BvaW50c4gBAUIMCgpfZXZhbF9kYXRlQhEKD19pbmNsdWRlX3BvaW50cyJVChlHZXREYXRhUmVhZHlDaGVja1Jlc3BvbnNlEjgKBWNoZWNrGAEgASgLMikuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5EYXRhUmVhZHlDaGVjayJMChVHZXRGdXNpb25Nb2RlbFJlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZCJTChZHZXRGdXNpb25Nb2RlbFJlc3BvbnNlEjkKBW1vZGVsGAEgASgLMiouZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5GdXNpb25Nb2RlbFZpZXciTAoVQ3JlYXRlVHJhaW5Kb2JSZXF1ZXN0EjMKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCUIJukgGcgQQARhAUg9yZWdpc3RyYXRpb25faWQiZgoWQ3JlYXRlVHJhaW5Kb2JSZXNwb25zZRIWCgZqb2JfaWQYASABKAlSBmpvYl9pZBI0CgZzdGF0dXMYAiABKA4yJC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkpvYlN0YXR1cyK/AgoXQ3JlYXRlUHJlZGljdEpvYlJlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBJGCglldmFsX2RhdGUYAiABKAlCI7pIIHIeMhxeWzAtOV17NH0tWzAtOV17Mn0tWzAtOV17Mn0kSABSCWV2YWxfZGF0ZYgBARI8Cg9ncmFudWxhcml0eV9taW4YAyABKAVCDbpIChoIMAUwDzAeMDxIAVIPZ3JhbnVsYXJpdHlfbWluiAEBEjUKDWhvcml6b25faG91cnMYBCABKAVCCrpIBxoFGKgBKAFIAlINaG9yaXpvbl9ob3Vyc4gBAUIMCgpfZXZhbF9kYXRlQhIKEF9ncmFudWxhcml0eV9taW5CEAoOX2hvcml6b25faG91cnMiaAoYQ3JlYXRlUHJlZGljdEpvYlJlc3BvbnNlEhYKBmpvYl9pZBgBIAEoCVIGam9iX2lkEjQKBnN0YXR1cxgCIAEoDjIkLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guSm9iU3RhdHVzIkYKD0dldFRyYWluUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkIv0BChBHZXRUcmFpblJlc3BvbnNlEigKD3JlZ2lzdHJhdGlvbl9pZBgBIAEoCVIPcmVnaXN0cmF0aW9uX2lkEjIKFGN1cnJlbnRfdHJhaW5fam9iX2lkGAIgASgJUhRjdXJyZW50X3RyYWluX2pvYl9pZBI+CgVtb2RlbBgDIAEoCzIqLmZ1c2lvbi5haS5wcm90by53b3JrYmVuY2guRnVzaW9uTW9kZWxWaWV3SACIAQESOQoDam9iGAQgASgLMicuZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5UcmFpbkpvYlZpZXdIAYgBAUIICgZfbW9kZWxCBgoEX2pvYiJIChFHZXRQcmVkaWN0UmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkIrsBChJHZXRQcmVkaWN0UmVzcG9uc2USKAoPcmVnaXN0cmF0aW9uX2lkGAEgASgJUg9yZWdpc3RyYXRpb25faWQSNgoWY3VycmVudF9wcmVkaWN0X2pvYl9pZBgCIAEoCVIWY3VycmVudF9wcmVkaWN0X2pvYl9pZBI7CgNqb2IYAyABKAsyKS5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLlByZWRpY3RKb2JWaWV3SACIAQFCBgoEX2pvYiLjAQoXR2V0RXZhbERheVNlcmllc1JlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBJBCglldmFsX2RhdGUYAiABKAlCI7pIIHIeMhxeWzAtOV17NH0tWzAtOV17Mn0tWzAtOV17Mn0kUglldmFsX2RhdGUSPAoPZ3JhbnVsYXJpdHlfbWluGAMgASgFQg26SAoaCDAFMA8wHjA8SABSD2dyYW51bGFyaXR5X21pbogBAUISChBfZ3JhbnVsYXJpdHlfbWluIlQKGEdldEV2YWxEYXlTZXJpZXNSZXNwb25zZRI4CgZzZXJpZXMYASABKAsyKC5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkV2YWxEYXlTZXJpZXMikgEKGEdldEV2YWxEYXlNZXRyaWNzUmVxdWVzdBIzCg9yZWdpc3RyYXRpb25faWQYASABKAlCCbpIBnIEEAEYQFIPcmVnaXN0cmF0aW9uX2lkEkEKCWV2YWxfZGF0ZRgCIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRSCWV2YWxfZGF0ZSJXChlHZXRFdmFsRGF5TWV0cmljc1Jlc3BvbnNlEjoKB21ldHJpY3MYASABKAsyKS5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoLkV2YWxEYXlNZXRyaWNzIvIBChtMaXN0RXZhbERhaWx5TWV0cmljc1JlcXVlc3QSMwoPcmVnaXN0cmF0aW9uX2lkGAEgASgJQgm6SAZyBBABGEBSD3JlZ2lzdHJhdGlvbl9pZBIRCgRwYWdlGAIgASgFSACIAQESIQoJcGFnZV9zaXplGAMgASgFSAFSCXBhZ2Vfc2l6ZYgBARJECghlbmRfZGF0ZRgEIAEoCUIjukggch4yHF5bMC05XXs0fS1bMC05XXsyfS1bMC05XXsyfSRIAlIIZW5kX2RhdGWIAQFCBwoFX3BhZ2VCDAoKX3BhZ2Vfc2l6ZUILCglfZW5kX2RhdGUiWwocTGlzdEV2YWxEYWlseU1ldHJpY3NSZXNwb25zZRI7CgRwYWdlGAEgASgLMi0uZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaC5FdmFsRGF5TWV0cmljc1BhZ2UqjQEKEFJlYWR5Q2hlY2tTdGF0dXMSIgoeUkVBRFlfQ0hFQ0tfU1RBVFVTX1VOU1BFQ0lGSUVEEAASGwoXUkVBRFlfQ0hFQ0tfU1RBVFVTX1BBU1MQARIbChdSRUFEWV9DSEVDS19TVEFUVVNfV0FSThACEhsKF1JFQURZX0NIRUNLX1NUQVRVU19GQUlMEAMqfAoSQ292ZXJhZ2VTZXJpZXNLaW5kEiQKIENPVkVSQUdFX1NFUklFU19LSU5EX1VOU1BFQ0lGSUVEEAASHgoaQ09WRVJBR0VfU0VSSUVTX0tJTkRfUE9XRVIQARIgChxDT1ZFUkFHRV9TRVJJRVNfS0lORF9XRUFUSEVSEAIq0gEKEE1vZGVsUmVhZHlTdGF0dXMSIgoeTU9ERUxfUkVBRFlfU1RBVFVTX1VOU1BFQ0lGSUVEEAASHAoYTU9ERUxfUkVBRFlfU1RBVFVTX1JFQURZEAESHwobTU9ERUxfUkVBRFlfU1RBVFVTX1RSQUlOSU5HEAISHAoYTU9ERUxfUkVBRFlfU1RBVFVTX1NUQUxFEAMSHgoaTU9ERUxfUkVBRFlfU1RBVFVTX01JU1NJTkcQBBIdChlNT0RFTF9SRUFEWV9TVEFUVVNfRkFJTEVEEAUqoQEKCUpvYlN0YXR1cxIaChZKT0JfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFQoRSk9CX1NUQVRVU19RVUVVRUQQARIWChJKT0JfU1RBVFVTX1JVTk5JTkcQAhIYChRKT0JfU1RBVFVTX1NVQ0NFRURFRBADEhUKEUpPQl9TVEFUVVNfRkFJTEVEEAQSGAoUSk9CX1NUQVRVU19DQU5DRUxMRUQQBSqsAQoPU3RhZ2VTdGVwU3RhdHVzEiEKHVNUQUdFX1NURVBfU1RBVFVTX1VOU1BFQ0lGSUVEEAASHQoZU1RBR0VfU1RFUF9TVEFUVVNfUEVORElORxABEh0KGVNUQUdFX1NURVBfU1RBVFVTX1JVTk5JTkcQAhIaChZTVEFHRV9TVEVQX1NUQVRVU19ET05FEAMSHAoYU1RBR0VfU1RFUF9TVEFUVVNfRkFJTEVEEARC4wEKHWNvbS5mdXNpb24uYWkucHJvdG8ud29ya2JlbmNoQhVXb3JrYmVuY2hNZXNzYWdlUHJvdG9QAVojZnVzaW9uLmFpLnByb3RvLndvcmtiZW5jaDt3b3JrYmVuY2iiAgRGQVBXqgIZRnVzaW9uLkFpLlByb3RvLldvcmtiZW5jaMoCGUZ1c2lvblxBaVxQcm90b1xXb3JrYmVuY2jiAiVGdXNpb25cQWlcUHJvdG9cV29ya2JlbmNoXEdQQk1ldGFkYXRh6gIcRnVzaW9uOjpBaTo6UHJvdG86OldvcmtiZW5jaGIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_timestamp]);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GapInterval
  */
 export type GapInterval = Message<"fusion.ai.proto.workbench.GapInterval"> & {
   /**
-   * Unix 毫秒，闭开区间 [start, end)
+   * 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
    *
    * @generated from field: int64 start_ms = 1 [json_name = "start_ms"];
    */
   startMs: bigint;
 
   /**
+   * 缺口终点 Unix 毫秒（不含）
+   *
    * @generated from field: int64 end_ms = 2 [json_name = "end_ms"];
    */
   endMs: bigint;
 
   /**
+   * 缺口内缺失格点数
+   *
    * @generated from field: int32 missing_points = 3 [json_name = "missing_points"];
    */
   missingPoints: number;
@@ -52,7 +56,7 @@ export type GapInterval = Message<"fusion.ai.proto.workbench.GapInterval"> & {
   display: string;
 
   /**
-   * 跳转数据管理补录深链（可选）
+   * 跳转数据管理补录深链（可选；无可空）
    *
    * @generated from field: string backfill_href = 5 [json_name = "backfill_href"];
    */
@@ -71,18 +75,22 @@ export const GapIntervalSchema: GenMessage<GapInterval> = /*@__PURE__*/
  */
 export type CoveragePoint = Message<"fusion.ai.proto.workbench.CoveragePoint"> & {
   /**
+   * 格点时间 Unix 毫秒
+   *
    * @generated from field: int64 ts_ms = 1 [json_name = "ts_ms"];
    */
   tsMs: bigint;
 
   /**
-   * 缺测时可不填 value
+   * 实测值；缺测时不填
    *
    * @generated from field: optional double value = 2;
    */
   value?: number | undefined;
 
   /**
+   * 该格点是否有数据
+   *
    * @generated from field: bool present = 3;
    */
   present: boolean;
@@ -100,12 +108,14 @@ export const CoveragePointSchema: GenMessage<CoveragePoint> = /*@__PURE__*/
  */
 export type CoverageBand = Message<"fusion.ai.proto.workbench.CoverageBand"> & {
   /**
+   * 序列类型：功率 / 天气
+   *
    * @generated from field: fusion.ai.proto.workbench.CoverageSeriesKind kind = 1;
    */
   kind: CoverageSeriesKind;
 
   /**
-   * 覆盖率 0~1
+   * 覆盖率 0~1（1=全覆盖）
    *
    * @generated from field: double coverage_ratio = 2 [json_name = "coverage_ratio"];
    */
@@ -119,16 +129,22 @@ export type CoverageBand = Message<"fusion.ai.proto.workbench.CoverageBand"> & {
   gridMin: number;
 
   /**
+   * 数据来源展示名，如「实发功率」「数值天气预报」
+   *
    * @generated from field: string source_label = 4 [json_name = "source_label"];
    */
   sourceLabel: string;
 
   /**
+   * 逐点覆盖（include_points=false 时可为空）
+   *
    * @generated from field: repeated fusion.ai.proto.workbench.CoveragePoint points = 5;
    */
   points: CoveragePoint[];
 
   /**
+   * 缺口列表
+   *
    * @generated from field: repeated fusion.ai.proto.workbench.GapInterval gaps = 6;
    */
   gaps: GapInterval[];
@@ -146,6 +162,8 @@ export const CoverageBandSchema: GenMessage<CoverageBand> = /*@__PURE__*/
  */
 export type DataReadyCheck = Message<"fusion.ai.proto.workbench.DataReadyCheck"> & {
   /**
+   * 场站 registration_id
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
@@ -158,28 +176,36 @@ export type DataReadyCheck = Message<"fusion.ai.proto.workbench.DataReadyCheck">
   evalDate: string;
 
   /**
+   * IANA 时区，如 Asia/Shanghai
+   *
    * @generated from field: string timezone = 3;
    */
   timezone: string;
 
   /**
+   * 就绪总览：PASS / WARN / FAIL
+   *
    * @generated from field: fusion.ai.proto.workbench.ReadyCheckStatus status = 4;
    */
   status: ReadyCheckStatus;
 
   /**
+   * 功率覆盖
+   *
    * @generated from field: fusion.ai.proto.workbench.CoverageBand power = 5;
    */
   power?: CoverageBand | undefined;
 
   /**
-   * 仅光伏；负荷/储能可不填
+   * 天气覆盖；仅光伏有值，负荷/储能可不填
    *
    * @generated from field: optional fusion.ai.proto.workbench.CoverageBand weather = 6;
    */
   weather?: CoverageBand | undefined;
 
   /**
+   * 本次检查完成时间（UTC Timestamp）
+   *
    * @generated from field: google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];
    */
   checkedAt?: Timestamp | undefined;
@@ -197,6 +223,8 @@ export const DataReadyCheckSchema: GenMessage<DataReadyCheck> = /*@__PURE__*/
  */
 export type FusionModelView = Message<"fusion.ai.proto.workbench.FusionModelView"> & {
   /**
+   * 模型所属 registration；本期训练多为光伏通用模型常量
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
@@ -209,11 +237,15 @@ export type FusionModelView = Message<"fusion.ai.proto.workbench.FusionModelView
   modelKey: string;
 
   /**
+   * 模型版本号，如 v2026.10.29；无则空
+   *
    * @generated from field: string version = 3;
    */
   version: string;
 
   /**
+   * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+   *
    * @generated from field: fusion.ai.proto.workbench.ModelReadyStatus status = 4;
    */
   status: ModelReadyStatus;
@@ -227,9 +259,18 @@ export type FusionModelView = Message<"fusion.ai.proto.workbench.FusionModelView
   lastTrainedAt?: string | undefined;
 
   /**
+   * 产物 URI（可选）
+   *
    * @generated from field: optional string artifact_uri = 6 [json_name = "artifact_uri"];
    */
   artifactUri?: string | undefined;
+
+  /**
+   * 当前训练任务 id；无任务时为空
+   *
+   * @generated from field: string current_train_job_id = 7 [json_name = "current_train_job_id"];
+   */
+  currentTrainJobId: string;
 };
 
 /**
@@ -240,78 +281,201 @@ export const FusionModelViewSchema: GenMessage<FusionModelView> = /*@__PURE__*/
   messageDesc(file_workbench_workbench_message, 4);
 
 /**
- * 五步 stages 键：data_ready | model_loaded | infer | persist | compare_refresh
- * 每步取值：pending | running | done | failed
- *
- * @generated from message fusion.ai.proto.workbench.PredictJobView
+ * @generated from message fusion.ai.proto.workbench.TrainLogLine
  */
-export type PredictJobView = Message<"fusion.ai.proto.workbench.PredictJobView"> & {
+export type TrainLogLine = Message<"fusion.ai.proto.workbench.TrainLogLine"> & {
   /**
+   * 日志序号（单调递增；增量用 from_seq）
+   *
+   * @generated from field: int64 seq = 1;
+   */
+  seq: bigint;
+
+  /**
+   * 日志时间。带数值时区偏移，秒两位。例：2026-11-17T16:12:00+08:00
+   *
+   * @generated from field: string ts = 2;
+   */
+  ts: string;
+
+  /**
+   * 级别：info / warn / error 等
+   *
+   * @generated from field: string level = 3;
+   */
+  level: string;
+
+  /**
+   * 日志正文（超长已在算法侧截断）
+   *
+   * @generated from field: string line = 4;
+   */
+  line: string;
+};
+
+/**
+ * Describes the message fusion.ai.proto.workbench.TrainLogLine.
+ * Use `create(TrainLogLineSchema)` to create a new message.
+ */
+export const TrainLogLineSchema: GenMessage<TrainLogLine> = /*@__PURE__*/
+  messageDesc(file_workbench_workbench_message, 5);
+
+/**
+ * TrainJobView 单次训练任务（含定长日志栈快照，LOG_CAP=200）。
+ *
+ * @generated from message fusion.ai.proto.workbench.TrainJobView
+ */
+export type TrainJobView = Message<"fusion.ai.proto.workbench.TrainJobView"> & {
+  /**
+   * 训练任务 id，如 tr-1001
+   *
    * @generated from field: string job_id = 1 [json_name = "job_id"];
    */
   jobId: string;
 
   /**
+   * 模型 registration_id（本期多为通用模型常量）
+   *
    * @generated from field: string registration_id = 2 [json_name = "registration_id"];
    */
   registrationId: string;
 
   /**
+   * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+   *
    * @generated from field: fusion.ai.proto.workbench.JobStatus status = 3;
    */
   status: JobStatus;
 
   /**
-   * 0~100
+   * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
+   *
+   * @generated from field: optional string started_at = 4 [json_name = "started_at"];
+   */
+  startedAt?: string | undefined;
+
+  /**
+   * 结束时间；未结束不填
+   *
+   * @generated from field: optional string finished_at = 5 [json_name = "finished_at"];
+   */
+  finishedAt?: string | undefined;
+
+  /**
+   * 当前日志最大 seq（便于 WS 对账）
+   *
+   * @generated from field: int64 log_seq = 6 [json_name = "log_seq"];
+   */
+  logSeq: bigint;
+
+  /**
+   * 定长日志栈快照（尾新头旧；进页全量，之后靠 logs_appended）
+   *
+   * @generated from field: repeated fusion.ai.proto.workbench.TrainLogLine logs = 7;
+   */
+  logs: TrainLogLine[];
+};
+
+/**
+ * Describes the message fusion.ai.proto.workbench.TrainJobView.
+ * Use `create(TrainJobViewSchema)` to create a new message.
+ */
+export const TrainJobViewSchema: GenMessage<TrainJobView> = /*@__PURE__*/
+  messageDesc(file_workbench_workbench_message, 6);
+
+/**
+ * PredictJobView 单次预测任务。
+ * stages 键（固定五步）：data_ready | model_loaded | infer | persist | compare_refresh
+ *
+ * @generated from message fusion.ai.proto.workbench.PredictJobView
+ */
+export type PredictJobView = Message<"fusion.ai.proto.workbench.PredictJobView"> & {
+  /**
+   * 预测任务 id，如 pd-8291
+   *
+   * @generated from field: string job_id = 1 [json_name = "job_id"];
+   */
+  jobId: string;
+
+  /**
+   * 场站 registration_id
+   *
+   * @generated from field: string registration_id = 2 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+   *
+   * @generated from field: fusion.ai.proto.workbench.JobStatus status = 3;
+   */
+  status: JobStatus;
+
+  /**
+   * 总进度 0~100
    *
    * @generated from field: int32 progress_pct = 4 [json_name = "progress_pct"];
    */
   progressPct: number;
 
   /**
-   * 当前步键，如 infer
+   * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
    *
    * @generated from field: string stage = 5;
    */
   stage: string;
 
   /**
-   * @generated from field: map<string, string> stages = 6;
+   * 五步状态表；key=步名，value=StageStepStatus
+   *
+   * @generated from field: map<string, fusion.ai.proto.workbench.StageStepStatus> stages = 6;
    */
-  stages: { [key: string]: string };
+  stages: { [key: string]: StageStepStatus };
 
   /**
+   * 评估日 / 预测锚定日 YYYY-MM-DD
+   *
    * @generated from field: string eval_date = 7 [json_name = "eval_date"];
    */
   evalDate: string;
 
   /**
+   * 相对评估日的偏移天数；0=当日
+   *
    * @generated from field: int32 day_offset = 8 [json_name = "day_offset"];
    */
   dayOffset: number;
 
   /**
+   * 预测步长（分钟）：5 / 15 / 30 / 60
+   *
    * @generated from field: int32 granularity_min = 9 [json_name = "granularity_min"];
    */
   granularityMin: number;
 
   /**
+   * 预测时长（小时），常见 24
+   *
    * @generated from field: int32 horizon_hours = 10 [json_name = "horizon_hours"];
    */
   horizonHours: number;
 
   /**
+   * 使用的模型 id / key，如 fusion-ai
+   *
    * @generated from field: string model_id = 11 [json_name = "model_id"];
    */
   modelId: string;
 
   /**
+   * 人类可读提示（失败原因或当前步说明）
+   *
    * @generated from field: string message = 12;
    */
   message: string;
 
   /**
-   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
    * 例：2026-11-17T16:12:00+08:00
    *
    * @generated from field: optional string started_at = 13 [json_name = "started_at"];
@@ -319,11 +483,15 @@ export type PredictJobView = Message<"fusion.ai.proto.workbench.PredictJobView">
   startedAt?: string | undefined;
 
   /**
+   * 结束时间；未结束不填
+   *
    * @generated from field: optional string finished_at = 14 [json_name = "finished_at"];
    */
   finishedAt?: string | undefined;
 
   /**
+   * 最近一次状态更新时间
+   *
    * @generated from field: optional string updated_at = 15 [json_name = "updated_at"];
    */
   updatedAt?: string | undefined;
@@ -334,23 +502,29 @@ export type PredictJobView = Message<"fusion.ai.proto.workbench.PredictJobView">
  * Use `create(PredictJobViewSchema)` to create a new message.
  */
 export const PredictJobViewSchema: GenMessage<PredictJobView> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 5);
+  messageDesc(file_workbench_workbench_message, 7);
 
 /**
  * @generated from message fusion.ai.proto.workbench.SeriesPoint
  */
 export type SeriesPoint = Message<"fusion.ai.proto.workbench.SeriesPoint"> & {
   /**
+   * 点时间 Unix 毫秒
+   *
    * @generated from field: int64 ts_ms = 1 [json_name = "ts_ms"];
    */
   tsMs: bigint;
 
   /**
+   * 预测功率 kW；缺测不填
+   *
    * @generated from field: optional double predicted_kw = 2 [json_name = "predicted_kw"];
    */
   predictedKw?: number | undefined;
 
   /**
+   * 真实功率 kW；缺测不填
+   *
    * @generated from field: optional double actual_kw = 3 [json_name = "actual_kw"];
    */
   actualKw?: number | undefined;
@@ -361,43 +535,57 @@ export type SeriesPoint = Message<"fusion.ai.proto.workbench.SeriesPoint"> & {
  * Use `create(SeriesPointSchema)` to create a new message.
  */
 export const SeriesPointSchema: GenMessage<SeriesPoint> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 6);
+  messageDesc(file_workbench_workbench_message, 8);
 
 /**
  * @generated from message fusion.ai.proto.workbench.EvalDaySeries
  */
 export type EvalDaySeries = Message<"fusion.ai.proto.workbench.EvalDaySeries"> & {
   /**
+   * 场站 registration_id
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
 
   /**
+   * 评估日 YYYY-MM-DD
+   *
    * @generated from field: string eval_date = 2 [json_name = "eval_date"];
    */
   evalDate: string;
 
   /**
+   * IANA 时区
+   *
    * @generated from field: string timezone = 3;
    */
   timezone: string;
 
   /**
+   * 序列步长（分钟）
+   *
    * @generated from field: int32 granularity_min = 4 [json_name = "granularity_min"];
    */
   granularityMin: number;
 
   /**
+   * 模型 key
+   *
    * @generated from field: string model_key = 5 [json_name = "model_key"];
    */
   modelKey: string;
 
   /**
+   * 模型版本（可选）
+   *
    * @generated from field: optional string model_version = 6 [json_name = "model_version"];
    */
   modelVersion?: string | undefined;
 
   /**
+   * 预测 vs 真实点列
+   *
    * @generated from field: repeated fusion.ai.proto.workbench.SeriesPoint points = 7;
    */
   points: SeriesPoint[];
@@ -408,50 +596,64 @@ export type EvalDaySeries = Message<"fusion.ai.proto.workbench.EvalDaySeries"> &
  * Use `create(EvalDaySeriesSchema)` to create a new message.
  */
 export const EvalDaySeriesSchema: GenMessage<EvalDaySeries> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 7);
+  messageDesc(file_workbench_workbench_message, 9);
 
 /**
  * @generated from message fusion.ai.proto.workbench.EvalDayMetrics
  */
 export type EvalDayMetrics = Message<"fusion.ai.proto.workbench.EvalDayMetrics"> & {
   /**
+   * 场站 registration_id
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
 
   /**
+   * 评估日 YYYY-MM-DD
+   *
    * @generated from field: string eval_date = 2 [json_name = "eval_date"];
    */
   evalDate: string;
 
   /**
+   * 模型 key
+   *
    * @generated from field: string model_key = 3 [json_name = "model_key"];
    */
   modelKey: string;
 
   /**
+   * 模型版本（可选）
+   *
    * @generated from field: optional string model_version = 4 [json_name = "model_version"];
    */
   modelVersion?: string | undefined;
 
   /**
-   * 百分比数值，如 8.23 表示 8.23%
+   * MAPE 百分比数值，如 8.23 表示 8.23%
    *
    * @generated from field: optional double mape = 5;
    */
   mape?: number | undefined;
 
   /**
+   * RMSE（kW）
+   *
    * @generated from field: optional double rmse = 6;
    */
   rmse?: number | undefined;
 
   /**
+   * MAE（kW）
+   *
    * @generated from field: optional double mae = 7;
    */
   mae?: number | undefined;
 
   /**
+   * sMAPE 百分比数值
+   *
    * @generated from field: optional double smape = 8;
    */
   smape?: number | undefined;
@@ -476,23 +678,29 @@ export type EvalDayMetrics = Message<"fusion.ai.proto.workbench.EvalDayMetrics">
  * Use `create(EvalDayMetricsSchema)` to create a new message.
  */
 export const EvalDayMetricsSchema: GenMessage<EvalDayMetrics> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 8);
+  messageDesc(file_workbench_workbench_message, 10);
 
 /**
  * @generated from message fusion.ai.proto.workbench.EvalDayMetricsRow
  */
 export type EvalDayMetricsRow = Message<"fusion.ai.proto.workbench.EvalDayMetricsRow"> & {
   /**
+   * 评估日 YYYY-MM-DD
+   *
    * @generated from field: string eval_date = 1 [json_name = "eval_date"];
    */
   evalDate: string;
 
   /**
+   * MAPE 百分比数值
+   *
    * @generated from field: optional double mape = 2;
    */
   mape?: number | undefined;
 
   /**
+   * RMSE（kW）
+   *
    * @generated from field: optional double rmse = 3;
    */
   rmse?: number | undefined;
@@ -503,28 +711,36 @@ export type EvalDayMetricsRow = Message<"fusion.ai.proto.workbench.EvalDayMetric
  * Use `create(EvalDayMetricsRowSchema)` to create a new message.
  */
 export const EvalDayMetricsRowSchema: GenMessage<EvalDayMetricsRow> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 9);
+  messageDesc(file_workbench_workbench_message, 11);
 
 /**
  * @generated from message fusion.ai.proto.workbench.EvalDayMetricsPage
  */
 export type EvalDayMetricsPage = Message<"fusion.ai.proto.workbench.EvalDayMetricsPage"> & {
   /**
+   * 历史评估行
+   *
    * @generated from field: repeated fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1;
    */
   rows: EvalDayMetricsRow[];
 
   /**
+   * 总行数
+   *
    * @generated from field: int32 total = 2;
    */
   total: number;
 
   /**
+   * 当前页（从 1 起）
+   *
    * @generated from field: int32 page = 3;
    */
   page: number;
 
   /**
+   * 每页条数
+   *
    * @generated from field: int32 page_size = 4 [json_name = "page_size"];
    */
   pageSize: number;
@@ -535,19 +751,21 @@ export type EvalDayMetricsPage = Message<"fusion.ai.proto.workbench.EvalDayMetri
  * Use `create(EvalDayMetricsPageSchema)` to create a new message.
  */
 export const EvalDayMetricsPageSchema: GenMessage<EvalDayMetricsPage> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 10);
+  messageDesc(file_workbench_workbench_message, 12);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GetDataReadyCheckRequest
  */
 export type GetDataReadyCheckRequest = Message<"fusion.ai.proto.workbench.GetDataReadyCheckRequest"> & {
   /**
+   * 场站 registration_id
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
 
   /**
-   * YYYY-MM-DD；缺省为场站本地「今天」
+   * 评估日 YYYY-MM-DD；缺省为场站本地「今天」
    *
    * @generated from field: optional string eval_date = 2 [json_name = "eval_date"];
    */
@@ -566,13 +784,15 @@ export type GetDataReadyCheckRequest = Message<"fusion.ai.proto.workbench.GetDat
  * Use `create(GetDataReadyCheckRequestSchema)` to create a new message.
  */
 export const GetDataReadyCheckRequestSchema: GenMessage<GetDataReadyCheckRequest> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 11);
+  messageDesc(file_workbench_workbench_message, 13);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GetDataReadyCheckResponse
  */
 export type GetDataReadyCheckResponse = Message<"fusion.ai.proto.workbench.GetDataReadyCheckResponse"> & {
   /**
+   * 就绪检查结果
+   *
    * @generated from field: fusion.ai.proto.workbench.DataReadyCheck check = 1;
    */
   check?: DataReadyCheck | undefined;
@@ -583,13 +803,15 @@ export type GetDataReadyCheckResponse = Message<"fusion.ai.proto.workbench.GetDa
  * Use `create(GetDataReadyCheckResponseSchema)` to create a new message.
  */
 export const GetDataReadyCheckResponseSchema: GenMessage<GetDataReadyCheckResponse> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 12);
+  messageDesc(file_workbench_workbench_message, 14);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GetFusionModelRequest
  */
 export type GetFusionModelRequest = Message<"fusion.ai.proto.workbench.GetFusionModelRequest"> & {
   /**
+   * 模型 registration_id；空或 shared 时服务端解析为光伏通用模型
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
@@ -600,13 +822,15 @@ export type GetFusionModelRequest = Message<"fusion.ai.proto.workbench.GetFusion
  * Use `create(GetFusionModelRequestSchema)` to create a new message.
  */
 export const GetFusionModelRequestSchema: GenMessage<GetFusionModelRequest> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 13);
+  messageDesc(file_workbench_workbench_message, 15);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GetFusionModelResponse
  */
 export type GetFusionModelResponse = Message<"fusion.ai.proto.workbench.GetFusionModelResponse"> & {
   /**
+   * 融合模型卡片
+   *
    * @generated from field: fusion.ai.proto.workbench.FusionModelView model = 1;
    */
   model?: FusionModelView | undefined;
@@ -617,13 +841,15 @@ export type GetFusionModelResponse = Message<"fusion.ai.proto.workbench.GetFusio
  * Use `create(GetFusionModelResponseSchema)` to create a new message.
  */
 export const GetFusionModelResponseSchema: GenMessage<GetFusionModelResponse> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 14);
+  messageDesc(file_workbench_workbench_message, 16);
 
 /**
  * @generated from message fusion.ai.proto.workbench.CreateTrainJobRequest
  */
 export type CreateTrainJobRequest = Message<"fusion.ai.proto.workbench.CreateTrainJobRequest"> & {
   /**
+   * 模型 registration_id；空或 shared → 光伏通用模型
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
@@ -634,18 +860,22 @@ export type CreateTrainJobRequest = Message<"fusion.ai.proto.workbench.CreateTra
  * Use `create(CreateTrainJobRequestSchema)` to create a new message.
  */
 export const CreateTrainJobRequestSchema: GenMessage<CreateTrainJobRequest> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 15);
+  messageDesc(file_workbench_workbench_message, 17);
 
 /**
  * @generated from message fusion.ai.proto.workbench.CreateTrainJobResponse
  */
 export type CreateTrainJobResponse = Message<"fusion.ai.proto.workbench.CreateTrainJobResponse"> & {
   /**
+   * 新训练任务 id
+   *
    * @generated from field: string job_id = 1 [json_name = "job_id"];
    */
   jobId: string;
 
   /**
+   * 受理后初始状态，一般为 QUEUED
+   *
    * @generated from field: fusion.ai.proto.workbench.JobStatus status = 2;
    */
   status: JobStatus;
@@ -656,13 +886,15 @@ export type CreateTrainJobResponse = Message<"fusion.ai.proto.workbench.CreateTr
  * Use `create(CreateTrainJobResponseSchema)` to create a new message.
  */
 export const CreateTrainJobResponseSchema: GenMessage<CreateTrainJobResponse> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 16);
+  messageDesc(file_workbench_workbench_message, 18);
 
 /**
  * @generated from message fusion.ai.proto.workbench.CreatePredictJobRequest
  */
 export type CreatePredictJobRequest = Message<"fusion.ai.proto.workbench.CreatePredictJobRequest"> & {
   /**
+   * 场站 registration_id（必填真实场站，不可用 shared）
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
@@ -694,18 +926,22 @@ export type CreatePredictJobRequest = Message<"fusion.ai.proto.workbench.CreateP
  * Use `create(CreatePredictJobRequestSchema)` to create a new message.
  */
 export const CreatePredictJobRequestSchema: GenMessage<CreatePredictJobRequest> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 17);
+  messageDesc(file_workbench_workbench_message, 19);
 
 /**
  * @generated from message fusion.ai.proto.workbench.CreatePredictJobResponse
  */
 export type CreatePredictJobResponse = Message<"fusion.ai.proto.workbench.CreatePredictJobResponse"> & {
   /**
+   * 新预测任务 id
+   *
    * @generated from field: string job_id = 1 [json_name = "job_id"];
    */
   jobId: string;
 
   /**
+   * 受理后初始状态，一般为 QUEUED
+   *
    * @generated from field: fusion.ai.proto.workbench.JobStatus status = 2;
    */
   status: JobStatus;
@@ -716,13 +952,78 @@ export type CreatePredictJobResponse = Message<"fusion.ai.proto.workbench.Create
  * Use `create(CreatePredictJobResponseSchema)` to create a new message.
  */
 export const CreatePredictJobResponseSchema: GenMessage<CreatePredictJobResponse> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 18);
+  messageDesc(file_workbench_workbench_message, 20);
+
+/**
+ * GetTrainRequest 进页训练快照（current + 当前 job + 日志）。
+ *
+ * @generated from message fusion.ai.proto.workbench.GetTrainRequest
+ */
+export type GetTrainRequest = Message<"fusion.ai.proto.workbench.GetTrainRequest"> & {
+  /**
+   * 模型 registration_id；空或 shared → 光伏通用模型
+   *
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
+   */
+  registrationId: string;
+};
+
+/**
+ * Describes the message fusion.ai.proto.workbench.GetTrainRequest.
+ * Use `create(GetTrainRequestSchema)` to create a new message.
+ */
+export const GetTrainRequestSchema: GenMessage<GetTrainRequest> = /*@__PURE__*/
+  messageDesc(file_workbench_workbench_message, 21);
+
+/**
+ * GetTrainResponse 训练进页快照；无任务时 job 不填。之后进度靠 WS train/*，不要轮询。
+ *
+ * @generated from message fusion.ai.proto.workbench.GetTrainResponse
+ */
+export type GetTrainResponse = Message<"fusion.ai.proto.workbench.GetTrainResponse"> & {
+  /**
+   * 模型 registration_id（已解析）
+   *
+   * @generated from field: string registration_id = 1 [json_name = "registration_id"];
+   */
+  registrationId: string;
+
+  /**
+   * 当前训练任务 id；无任务时为空
+   *
+   * @generated from field: string current_train_job_id = 2 [json_name = "current_train_job_id"];
+   */
+  currentTrainJobId: string;
+
+  /**
+   * 融合模型卡片（与 GetFusionModel 同结构，便于一页拉齐）
+   *
+   * @generated from field: optional fusion.ai.proto.workbench.FusionModelView model = 3;
+   */
+  model?: FusionModelView | undefined;
+
+  /**
+   * 当前训练 job 全量（含日志栈）；无任务时不填
+   *
+   * @generated from field: optional fusion.ai.proto.workbench.TrainJobView job = 4;
+   */
+  job?: TrainJobView | undefined;
+};
+
+/**
+ * Describes the message fusion.ai.proto.workbench.GetTrainResponse.
+ * Use `create(GetTrainResponseSchema)` to create a new message.
+ */
+export const GetTrainResponseSchema: GenMessage<GetTrainResponse> = /*@__PURE__*/
+  messageDesc(file_workbench_workbench_message, 22);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GetPredictRequest
  */
 export type GetPredictRequest = Message<"fusion.ai.proto.workbench.GetPredictRequest"> & {
   /**
+   * 场站 registration_id
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
@@ -733,13 +1034,17 @@ export type GetPredictRequest = Message<"fusion.ai.proto.workbench.GetPredictReq
  * Use `create(GetPredictRequestSchema)` to create a new message.
  */
 export const GetPredictRequestSchema: GenMessage<GetPredictRequest> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 19);
+  messageDesc(file_workbench_workbench_message, 23);
 
 /**
+ * GetPredictResponse 预测进页快照；无任务时 job 不填。之后进度靠 WS predict/*，不要轮询。
+ *
  * @generated from message fusion.ai.proto.workbench.GetPredictResponse
  */
 export type GetPredictResponse = Message<"fusion.ai.proto.workbench.GetPredictResponse"> & {
   /**
+   * 场站 registration_id
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
@@ -764,23 +1069,29 @@ export type GetPredictResponse = Message<"fusion.ai.proto.workbench.GetPredictRe
  * Use `create(GetPredictResponseSchema)` to create a new message.
  */
 export const GetPredictResponseSchema: GenMessage<GetPredictResponse> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 20);
+  messageDesc(file_workbench_workbench_message, 24);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GetEvalDaySeriesRequest
  */
 export type GetEvalDaySeriesRequest = Message<"fusion.ai.proto.workbench.GetEvalDaySeriesRequest"> & {
   /**
+   * 场站 registration_id
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
 
   /**
+   * 评估日 YYYY-MM-DD
+   *
    * @generated from field: string eval_date = 2 [json_name = "eval_date"];
    */
   evalDate: string;
 
   /**
+   * 步长分钟；缺省按注册
+   *
    * @generated from field: optional int32 granularity_min = 3 [json_name = "granularity_min"];
    */
   granularityMin?: number | undefined;
@@ -791,13 +1102,15 @@ export type GetEvalDaySeriesRequest = Message<"fusion.ai.proto.workbench.GetEval
  * Use `create(GetEvalDaySeriesRequestSchema)` to create a new message.
  */
 export const GetEvalDaySeriesRequestSchema: GenMessage<GetEvalDaySeriesRequest> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 21);
+  messageDesc(file_workbench_workbench_message, 25);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GetEvalDaySeriesResponse
  */
 export type GetEvalDaySeriesResponse = Message<"fusion.ai.proto.workbench.GetEvalDaySeriesResponse"> & {
   /**
+   * 评估日曲线
+   *
    * @generated from field: fusion.ai.proto.workbench.EvalDaySeries series = 1;
    */
   series?: EvalDaySeries | undefined;
@@ -808,18 +1121,22 @@ export type GetEvalDaySeriesResponse = Message<"fusion.ai.proto.workbench.GetEva
  * Use `create(GetEvalDaySeriesResponseSchema)` to create a new message.
  */
 export const GetEvalDaySeriesResponseSchema: GenMessage<GetEvalDaySeriesResponse> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 22);
+  messageDesc(file_workbench_workbench_message, 26);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GetEvalDayMetricsRequest
  */
 export type GetEvalDayMetricsRequest = Message<"fusion.ai.proto.workbench.GetEvalDayMetricsRequest"> & {
   /**
+   * 场站 registration_id
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
 
   /**
+   * 评估日 YYYY-MM-DD
+   *
    * @generated from field: string eval_date = 2 [json_name = "eval_date"];
    */
   evalDate: string;
@@ -830,13 +1147,15 @@ export type GetEvalDayMetricsRequest = Message<"fusion.ai.proto.workbench.GetEva
  * Use `create(GetEvalDayMetricsRequestSchema)` to create a new message.
  */
 export const GetEvalDayMetricsRequestSchema: GenMessage<GetEvalDayMetricsRequest> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 23);
+  messageDesc(file_workbench_workbench_message, 27);
 
 /**
  * @generated from message fusion.ai.proto.workbench.GetEvalDayMetricsResponse
  */
 export type GetEvalDayMetricsResponse = Message<"fusion.ai.proto.workbench.GetEvalDayMetricsResponse"> & {
   /**
+   * 单日 KPI
+   *
    * @generated from field: fusion.ai.proto.workbench.EvalDayMetrics metrics = 1;
    */
   metrics?: EvalDayMetrics | undefined;
@@ -847,23 +1166,29 @@ export type GetEvalDayMetricsResponse = Message<"fusion.ai.proto.workbench.GetEv
  * Use `create(GetEvalDayMetricsResponseSchema)` to create a new message.
  */
 export const GetEvalDayMetricsResponseSchema: GenMessage<GetEvalDayMetricsResponse> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 24);
+  messageDesc(file_workbench_workbench_message, 28);
 
 /**
  * @generated from message fusion.ai.proto.workbench.ListEvalDailyMetricsRequest
  */
 export type ListEvalDailyMetricsRequest = Message<"fusion.ai.proto.workbench.ListEvalDailyMetricsRequest"> & {
   /**
+   * 场站 registration_id
+   *
    * @generated from field: string registration_id = 1 [json_name = "registration_id"];
    */
   registrationId: string;
 
   /**
+   * 页码，从 1 起；缺省 1
+   *
    * @generated from field: optional int32 page = 2;
    */
   page?: number | undefined;
 
   /**
+   * 每页条数；缺省由服务端定
+   *
    * @generated from field: optional int32 page_size = 3 [json_name = "page_size"];
    */
   pageSize?: number | undefined;
@@ -881,13 +1206,15 @@ export type ListEvalDailyMetricsRequest = Message<"fusion.ai.proto.workbench.Lis
  * Use `create(ListEvalDailyMetricsRequestSchema)` to create a new message.
  */
 export const ListEvalDailyMetricsRequestSchema: GenMessage<ListEvalDailyMetricsRequest> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 25);
+  messageDesc(file_workbench_workbench_message, 29);
 
 /**
  * @generated from message fusion.ai.proto.workbench.ListEvalDailyMetricsResponse
  */
 export type ListEvalDailyMetricsResponse = Message<"fusion.ai.proto.workbench.ListEvalDailyMetricsResponse"> & {
   /**
+   * 分页结果
+   *
    * @generated from field: fusion.ai.proto.workbench.EvalDayMetricsPage page = 1;
    */
   page?: EvalDayMetricsPage | undefined;
@@ -898,28 +1225,38 @@ export type ListEvalDailyMetricsResponse = Message<"fusion.ai.proto.workbench.Li
  * Use `create(ListEvalDailyMetricsResponseSchema)` to create a new message.
  */
 export const ListEvalDailyMetricsResponseSchema: GenMessage<ListEvalDailyMetricsResponse> = /*@__PURE__*/
-  messageDesc(file_workbench_workbench_message, 26);
+  messageDesc(file_workbench_workbench_message, 30);
 
 /**
+ * ReadyCheckStatus 今日数据就绪总览（左栏绿/黄/红）。
+ *
  * @generated from enum fusion.ai.proto.workbench.ReadyCheckStatus
  */
 export enum ReadyCheckStatus {
   /**
+   * 未设置 / 未知
+   *
    * @generated from enum value: READY_CHECK_STATUS_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 通过：覆盖足够，可训练/预测
+   *
    * @generated from enum value: READY_CHECK_STATUS_PASS = 1;
    */
   PASS = 1,
 
   /**
+   * 告警：有缺口或天气缺失，可继续但需关注
+   *
    * @generated from enum value: READY_CHECK_STATUS_WARN = 2;
    */
   WARN = 2,
 
   /**
+   * 失败：严重缺数或离线，不建议发起
+   *
    * @generated from enum value: READY_CHECK_STATUS_FAIL = 3;
    */
   FAIL = 3,
@@ -932,20 +1269,28 @@ export const ReadyCheckStatusSchema: GenEnum<ReadyCheckStatus> = /*@__PURE__*/
   enumDesc(file_workbench_workbench_message, 0);
 
 /**
+ * CoverageSeriesKind 覆盖序列类型。
+ *
  * @generated from enum fusion.ai.proto.workbench.CoverageSeriesKind
  */
 export enum CoverageSeriesKind {
   /**
+   * 未设置
+   *
    * @generated from enum value: COVERAGE_SERIES_KIND_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 功率（实发）
+   *
    * @generated from enum value: COVERAGE_SERIES_KIND_POWER = 1;
    */
   POWER = 1,
 
   /**
+   * 天气（仅光伏）
+   *
    * @generated from enum value: COVERAGE_SERIES_KIND_WEATHER = 2;
    */
   WEATHER = 2,
@@ -958,33 +1303,53 @@ export const CoverageSeriesKindSchema: GenEnum<CoverageSeriesKind> = /*@__PURE__
   enumDesc(file_workbench_workbench_message, 1);
 
 /**
+ * ModelReadyStatus 融合模型卡片状态（etcd model/current.status）。
+ * 与算法写入字符串对应：ready / training / failed；stale/missing 由 API 推断。
+ *
  * @generated from enum fusion.ai.proto.workbench.ModelReadyStatus
  */
 export enum ModelReadyStatus {
   /**
+   * 未设置 / 未知
+   *
    * @generated from enum value: MODEL_READY_STATUS_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 可用：有产物，可发起预测
+   *
    * @generated from enum value: MODEL_READY_STATUS_READY = 1;
    */
   READY = 1,
 
   /**
+   * 训练中：current_train_job_id 指向进行中任务
+   *
    * @generated from enum value: MODEL_READY_STATUS_TRAINING = 2;
    */
   TRAINING = 2,
 
   /**
+   * 过期：有版本但建议重训（非算法直写，API 推断）
+   *
    * @generated from enum value: MODEL_READY_STATUS_STALE = 3;
    */
   STALE = 3,
 
   /**
+   * 缺失：尚无模型产物
+   *
    * @generated from enum value: MODEL_READY_STATUS_MISSING = 4;
    */
   MISSING = 4,
+
+  /**
+   * 失败：最近一次训练失败（etcd status=failed）
+   *
+   * @generated from enum value: MODEL_READY_STATUS_FAILED = 5;
+   */
+  FAILED = 5,
 }
 
 /**
@@ -994,35 +1359,49 @@ export const ModelReadyStatusSchema: GenEnum<ModelReadyStatus> = /*@__PURE__*/
   enumDesc(file_workbench_workbench_message, 2);
 
 /**
+ * JobStatus 训练 / 预测整单状态（etcd train|predict job.status）。
+ *
  * @generated from enum fusion.ai.proto.workbench.JobStatus
  */
 export enum JobStatus {
   /**
+   * 未设置 / 未知
+   *
    * @generated from enum value: JOB_STATUS_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 已受理、排队中（Create* 成功后的初始态；算法随后写 running）
+   *
    * @generated from enum value: JOB_STATUS_QUEUED = 1;
    */
   QUEUED = 1,
 
   /**
+   * 执行中
+   *
    * @generated from enum value: JOB_STATUS_RUNNING = 2;
    */
   RUNNING = 2,
 
   /**
+   * 成功结束
+   *
    * @generated from enum value: JOB_STATUS_SUCCEEDED = 3;
    */
   SUCCEEDED = 3,
 
   /**
+   * 失败结束
+   *
    * @generated from enum value: JOB_STATUS_FAILED = 4;
    */
   FAILED = 4,
 
   /**
+   * 已取消（预留；本期算法可不写）
+   *
    * @generated from enum value: JOB_STATUS_CANCELLED = 5;
    */
   CANCELLED = 5,
@@ -1033,4 +1412,53 @@ export enum JobStatus {
  */
 export const JobStatusSchema: GenEnum<JobStatus> = /*@__PURE__*/
   enumDesc(file_workbench_workbench_message, 3);
+
+/**
+ * StageStepStatus 预测五步每步状态（PredictJobView.stages 的 value）。
+ * 同时最多一步为 RUNNING。
+ *
+ * @generated from enum fusion.ai.proto.workbench.StageStepStatus
+ */
+export enum StageStepStatus {
+  /**
+   * 未设置 / 未知
+   *
+   * @generated from enum value: STAGE_STEP_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * 未开始
+   *
+   * @generated from enum value: STAGE_STEP_STATUS_PENDING = 1;
+   */
+  PENDING = 1,
+
+  /**
+   * 进行中
+   *
+   * @generated from enum value: STAGE_STEP_STATUS_RUNNING = 2;
+   */
+  RUNNING = 2,
+
+  /**
+   * 已完成
+   *
+   * @generated from enum value: STAGE_STEP_STATUS_DONE = 3;
+   */
+  DONE = 3,
+
+  /**
+   * 本步失败（整单通常随之 FAILED）
+   *
+   * @generated from enum value: STAGE_STEP_STATUS_FAILED = 4;
+   */
+  FAILED = 4,
+}
+
+/**
+ * Describes the enum fusion.ai.proto.workbench.StageStepStatus.
+ */
+export const StageStepStatusSchema: GenEnum<StageStepStatus> = /*@__PURE__*/
+  enumDesc(file_workbench_workbench_message, 4);
 

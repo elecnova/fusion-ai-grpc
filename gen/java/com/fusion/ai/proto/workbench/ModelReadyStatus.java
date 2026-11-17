@@ -6,31 +6,64 @@
 package com.fusion.ai.proto.workbench;
 
 /**
+ * <pre>
+ * ModelReadyStatus 融合模型卡片状态（etcd model/current.status）。
+ * 与算法写入字符串对应：ready / training / failed；stale/missing 由 API 推断。
+ * </pre>
+ *
  * Protobuf enum {@code fusion.ai.proto.workbench.ModelReadyStatus}
  */
 @com.google.protobuf.Generated
 public enum ModelReadyStatus
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * 未设置 / 未知
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_UNSPECIFIED = 0;</code>
    */
   MODEL_READY_STATUS_UNSPECIFIED(0),
   /**
+   * <pre>
+   * 可用：有产物，可发起预测
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_READY = 1;</code>
    */
   MODEL_READY_STATUS_READY(1),
   /**
+   * <pre>
+   * 训练中：current_train_job_id 指向进行中任务
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_TRAINING = 2;</code>
    */
   MODEL_READY_STATUS_TRAINING(2),
   /**
+   * <pre>
+   * 过期：有版本但建议重训（非算法直写，API 推断）
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_STALE = 3;</code>
    */
   MODEL_READY_STATUS_STALE(3),
   /**
+   * <pre>
+   * 缺失：尚无模型产物
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_MISSING = 4;</code>
    */
   MODEL_READY_STATUS_MISSING(4),
+  /**
+   * <pre>
+   * 失败：最近一次训练失败（etcd status=failed）
+   * </pre>
+   *
+   * <code>MODEL_READY_STATUS_FAILED = 5;</code>
+   */
+  MODEL_READY_STATUS_FAILED(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -44,25 +77,53 @@ public enum ModelReadyStatus
       "ModelReadyStatus");
   }
   /**
+   * <pre>
+   * 未设置 / 未知
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int MODEL_READY_STATUS_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * 可用：有产物，可发起预测
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_READY = 1;</code>
    */
   public static final int MODEL_READY_STATUS_READY_VALUE = 1;
   /**
+   * <pre>
+   * 训练中：current_train_job_id 指向进行中任务
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_TRAINING = 2;</code>
    */
   public static final int MODEL_READY_STATUS_TRAINING_VALUE = 2;
   /**
+   * <pre>
+   * 过期：有版本但建议重训（非算法直写，API 推断）
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_STALE = 3;</code>
    */
   public static final int MODEL_READY_STATUS_STALE_VALUE = 3;
   /**
+   * <pre>
+   * 缺失：尚无模型产物
+   * </pre>
+   *
    * <code>MODEL_READY_STATUS_MISSING = 4;</code>
    */
   public static final int MODEL_READY_STATUS_MISSING_VALUE = 4;
+  /**
+   * <pre>
+   * 失败：最近一次训练失败（etcd status=failed）
+   * </pre>
+   *
+   * <code>MODEL_READY_STATUS_FAILED = 5;</code>
+   */
+  public static final int MODEL_READY_STATUS_FAILED_VALUE = 5;
 
 
   public final int getNumber() {
@@ -94,6 +155,7 @@ public enum ModelReadyStatus
       case 2: return MODEL_READY_STATUS_TRAINING;
       case 3: return MODEL_READY_STATUS_STALE;
       case 4: return MODEL_READY_STATUS_MISSING;
+      case 5: return MODEL_READY_STATUS_FAILED;
       default: return null;
     }
   }

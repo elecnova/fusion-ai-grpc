@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class DataReadyCheck extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      */
     protected $registration_id = '';
@@ -25,24 +27,32 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
      */
     protected $eval_date = '';
     /**
+     * IANA 时区，如 Asia/Shanghai
+     *
      * Generated from protobuf field <code>string timezone = 3 [json_name = "timezone"];</code>
      */
     protected $timezone = '';
     /**
+     * 就绪总览：PASS / WARN / FAIL
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
      */
     protected $status = 0;
     /**
+     * 功率覆盖
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      */
     protected $power = null;
     /**
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      *
      * Generated from protobuf field <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
      */
     protected $weather = null;
     /**
+     * 本次检查完成时间（UTC Timestamp）
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      */
     protected $checked_at = null;
@@ -54,14 +64,19 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           场站 registration_id
      *     @type string $eval_date
      *           评估日 YYYY-MM-DD（场站本地日历日）
      *     @type string $timezone
+     *           IANA 时区，如 Asia/Shanghai
      *     @type int $status
+     *           就绪总览：PASS / WARN / FAIL
      *     @type \Fusion\Ai\Proto\Workbench\CoverageBand $power
+     *           功率覆盖
      *     @type \Fusion\Ai\Proto\Workbench\CoverageBand $weather
-     *           仅光伏；负荷/储能可不填
+     *           天气覆盖；仅光伏有值，负荷/储能可不填
      *     @type \Google\Protobuf\Timestamp $checked_at
+     *           本次检查完成时间（UTC Timestamp）
      * }
      */
     public function __construct($data = null)
@@ -71,6 +86,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return string
      */
@@ -80,6 +97,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param string $var
      * @return $this
@@ -119,6 +138,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * IANA 时区，如 Asia/Shanghai
+     *
      * Generated from protobuf field <code>string timezone = 3 [json_name = "timezone"];</code>
      * @return string
      */
@@ -128,6 +149,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * IANA 时区，如 Asia/Shanghai
+     *
      * Generated from protobuf field <code>string timezone = 3 [json_name = "timezone"];</code>
      * @param string $var
      * @return $this
@@ -141,6 +164,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 就绪总览：PASS / WARN / FAIL
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
      * @return int one of the values in {@see \Fusion\Ai\Proto\Workbench\ReadyCheckStatus}
      */
@@ -150,6 +175,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 就绪总览：PASS / WARN / FAIL
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
      * @param int $var one of the values in {@see \Fusion\Ai\Proto\Workbench\ReadyCheckStatus}
      * @return $this
@@ -163,6 +190,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 功率覆盖
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      * @return \Fusion\Ai\Proto\Workbench\CoverageBand|null
      */
@@ -182,6 +211,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 功率覆盖
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
      * @param \Fusion\Ai\Proto\Workbench\CoverageBand $var
      * @return $this
@@ -194,7 +225,7 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      *
      * Generated from protobuf field <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
      * @return \Fusion\Ai\Proto\Workbench\CoverageBand|null
@@ -215,7 +246,7 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 仅光伏；负荷/储能可不填
+     * 天气覆盖；仅光伏有值，负荷/储能可不填
      *
      * Generated from protobuf field <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
      * @param \Fusion\Ai\Proto\Workbench\CoverageBand $var
@@ -229,6 +260,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 本次检查完成时间（UTC Timestamp）
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
@@ -248,6 +281,8 @@ class DataReadyCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 本次检查完成时间（UTC Timestamp）
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this

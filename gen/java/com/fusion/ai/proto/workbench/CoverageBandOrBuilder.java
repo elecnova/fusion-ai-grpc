@@ -11,11 +11,19 @@ public interface CoverageBandOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 序列类型：功率 / 天气
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
+   * <pre>
+   * 序列类型：功率 / 天气
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageSeriesKind kind = 1 [json_name = "kind"];</code>
    * @return The kind.
    */
@@ -23,7 +31,7 @@ public interface CoverageBandOrBuilder extends
 
   /**
    * <pre>
-   * 覆盖率 0~1
+   * 覆盖率 0~1（1=全覆盖）
    * </pre>
    *
    * <code>double coverage_ratio = 2 [json_name = "coverage_ratio"];</code>
@@ -42,11 +50,19 @@ public interface CoverageBandOrBuilder extends
   int getGridMin();
 
   /**
+   * <pre>
+   * 数据来源展示名，如「实发功率」「数值天气预报」
+   * </pre>
+   *
    * <code>string source_label = 4 [json_name = "source_label"];</code>
    * @return The sourceLabel.
    */
   java.lang.String getSourceLabel();
   /**
+   * <pre>
+   * 数据来源展示名，如「实发功率」「数值天气预报」
+   * </pre>
+   *
    * <code>string source_label = 4 [json_name = "source_label"];</code>
    * @return The bytes for sourceLabel.
    */
@@ -54,48 +70,88 @@ public interface CoverageBandOrBuilder extends
       getSourceLabelBytes();
 
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   java.util.List<com.fusion.ai.proto.workbench.CoveragePoint> 
       getPointsList();
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   com.fusion.ai.proto.workbench.CoveragePoint getPoints(int index);
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   int getPointsCount();
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   java.util.List<? extends com.fusion.ai.proto.workbench.CoveragePointOrBuilder> 
       getPointsOrBuilderList();
   /**
+   * <pre>
+   * 逐点覆盖（include_points=false 时可为空）
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.CoveragePoint points = 5 [json_name = "points"];</code>
    */
   com.fusion.ai.proto.workbench.CoveragePointOrBuilder getPointsOrBuilder(
       int index);
 
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   java.util.List<com.fusion.ai.proto.workbench.GapInterval> 
       getGapsList();
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   com.fusion.ai.proto.workbench.GapInterval getGaps(int index);
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   int getGapsCount();
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   java.util.List<? extends com.fusion.ai.proto.workbench.GapIntervalOrBuilder> 
       getGapsOrBuilderList();
   /**
+   * <pre>
+   * 缺口列表
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.GapInterval gaps = 6 [json_name = "gaps"];</code>
    */
   com.fusion.ai.proto.workbench.GapIntervalOrBuilder getGapsOrBuilder(

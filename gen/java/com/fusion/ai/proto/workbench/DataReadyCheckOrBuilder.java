@@ -11,11 +11,19 @@ public interface DataReadyCheckOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -43,11 +51,19 @@ public interface DataReadyCheckOrBuilder extends
       getEvalDateBytes();
 
   /**
+   * <pre>
+   * IANA 时区，如 Asia/Shanghai
+   * </pre>
+   *
    * <code>string timezone = 3 [json_name = "timezone"];</code>
    * @return The timezone.
    */
   java.lang.String getTimezone();
   /**
+   * <pre>
+   * IANA 时区，如 Asia/Shanghai
+   * </pre>
+   *
    * <code>string timezone = 3 [json_name = "timezone"];</code>
    * @return The bytes for timezone.
    */
@@ -55,34 +71,54 @@ public interface DataReadyCheckOrBuilder extends
       getTimezoneBytes();
 
   /**
+   * <pre>
+   * 就绪总览：PASS / WARN / FAIL
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
+   * <pre>
+   * 就绪总览：PASS / WARN / FAIL
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.ReadyCheckStatus status = 4 [json_name = "status"];</code>
    * @return The status.
    */
   com.fusion.ai.proto.workbench.ReadyCheckStatus getStatus();
 
   /**
+   * <pre>
+   * 功率覆盖
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
    * @return Whether the power field is set.
    */
   boolean hasPower();
   /**
+   * <pre>
+   * 功率覆盖
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
    * @return The power.
    */
   com.fusion.ai.proto.workbench.CoverageBand getPower();
   /**
+   * <pre>
+   * 功率覆盖
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.CoverageBand power = 5 [json_name = "power"];</code>
    */
   com.fusion.ai.proto.workbench.CoverageBandOrBuilder getPowerOrBuilder();
 
   /**
    * <pre>
-   * 仅光伏；负荷/储能可不填
+   * 天气覆盖；仅光伏有值，负荷/储能可不填
    * </pre>
    *
    * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -91,7 +127,7 @@ public interface DataReadyCheckOrBuilder extends
   boolean hasWeather();
   /**
    * <pre>
-   * 仅光伏；负荷/储能可不填
+   * 天气覆盖；仅光伏有值，负荷/储能可不填
    * </pre>
    *
    * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -100,7 +136,7 @@ public interface DataReadyCheckOrBuilder extends
   com.fusion.ai.proto.workbench.CoverageBand getWeather();
   /**
    * <pre>
-   * 仅光伏；负荷/储能可不填
+   * 天气覆盖；仅光伏有值，负荷/储能可不填
    * </pre>
    *
    * <code>optional .fusion.ai.proto.workbench.CoverageBand weather = 6 [json_name = "weather"];</code>
@@ -108,16 +144,28 @@ public interface DataReadyCheckOrBuilder extends
   com.fusion.ai.proto.workbench.CoverageBandOrBuilder getWeatherOrBuilder();
 
   /**
+   * <pre>
+   * 本次检查完成时间（UTC Timestamp）
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
    * @return Whether the checkedAt field is set.
    */
   boolean hasCheckedAt();
   /**
+   * <pre>
+   * 本次检查完成时间（UTC Timestamp）
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
    * @return The checkedAt.
    */
   com.google.protobuf.Timestamp getCheckedAt();
   /**
+   * <pre>
+   * 本次检查完成时间（UTC Timestamp）
+   * </pre>
+   *
    * <code>.google.protobuf.Timestamp checked_at = 7 [json_name = "checked_at"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCheckedAtOrBuilder();

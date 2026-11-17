@@ -11,11 +11,19 @@ public interface EvalDayMetricsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -23,11 +31,19 @@ public interface EvalDayMetricsOrBuilder extends
       getRegistrationIdBytes();
 
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date"];</code>
    * @return The evalDate.
    */
   java.lang.String getEvalDate();
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date"];</code>
    * @return The bytes for evalDate.
    */
@@ -35,11 +51,19 @@ public interface EvalDayMetricsOrBuilder extends
       getEvalDateBytes();
 
   /**
+   * <pre>
+   * 模型 key
+   * </pre>
+   *
    * <code>string model_key = 3 [json_name = "model_key"];</code>
    * @return The modelKey.
    */
   java.lang.String getModelKey();
   /**
+   * <pre>
+   * 模型 key
+   * </pre>
+   *
    * <code>string model_key = 3 [json_name = "model_key"];</code>
    * @return The bytes for modelKey.
    */
@@ -47,16 +71,28 @@ public interface EvalDayMetricsOrBuilder extends
       getModelKeyBytes();
 
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 4 [json_name = "model_version"];</code>
    * @return Whether the modelVersion field is set.
    */
   boolean hasModelVersion();
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 4 [json_name = "model_version"];</code>
    * @return The modelVersion.
    */
   java.lang.String getModelVersion();
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 4 [json_name = "model_version"];</code>
    * @return The bytes for modelVersion.
    */
@@ -65,7 +101,7 @@ public interface EvalDayMetricsOrBuilder extends
 
   /**
    * <pre>
-   * 百分比数值，如 8.23 表示 8.23%
+   * MAPE 百分比数值，如 8.23 表示 8.23%
    * </pre>
    *
    * <code>optional double mape = 5 [json_name = "mape"];</code>
@@ -74,7 +110,7 @@ public interface EvalDayMetricsOrBuilder extends
   boolean hasMape();
   /**
    * <pre>
-   * 百分比数值，如 8.23 表示 8.23%
+   * MAPE 百分比数值，如 8.23 表示 8.23%
    * </pre>
    *
    * <code>optional double mape = 5 [json_name = "mape"];</code>
@@ -83,33 +119,57 @@ public interface EvalDayMetricsOrBuilder extends
   double getMape();
 
   /**
+   * <pre>
+   * RMSE（kW）
+   * </pre>
+   *
    * <code>optional double rmse = 6 [json_name = "rmse"];</code>
    * @return Whether the rmse field is set.
    */
   boolean hasRmse();
   /**
+   * <pre>
+   * RMSE（kW）
+   * </pre>
+   *
    * <code>optional double rmse = 6 [json_name = "rmse"];</code>
    * @return The rmse.
    */
   double getRmse();
 
   /**
+   * <pre>
+   * MAE（kW）
+   * </pre>
+   *
    * <code>optional double mae = 7 [json_name = "mae"];</code>
    * @return Whether the mae field is set.
    */
   boolean hasMae();
   /**
+   * <pre>
+   * MAE（kW）
+   * </pre>
+   *
    * <code>optional double mae = 7 [json_name = "mae"];</code>
    * @return The mae.
    */
   double getMae();
 
   /**
+   * <pre>
+   * sMAPE 百分比数值
+   * </pre>
+   *
    * <code>optional double smape = 8 [json_name = "smape"];</code>
    * @return Whether the smape field is set.
    */
   boolean hasSmape();
   /**
+   * <pre>
+   * sMAPE 百分比数值
+   * </pre>
+   *
    * <code>optional double smape = 8 [json_name = "smape"];</code>
    * @return The smape.
    */

@@ -55,6 +55,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 场站 registration_id（必填真实场站，不可用 shared）
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
@@ -72,6 +76,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 场站 registration_id（必填真实场站，不可用 shared）
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */
@@ -591,6 +599,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 场站 registration_id（必填真实场站，不可用 shared）
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The registrationId.
      */
@@ -607,6 +619,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id（必填真实场站，不可用 shared）
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The bytes for registrationId.
      */
@@ -624,6 +640,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id（必填真实场站，不可用 shared）
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -637,6 +657,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id（必填真实场站，不可用 shared）
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -647,6 +671,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id（必填真实场站，不可用 shared）
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.

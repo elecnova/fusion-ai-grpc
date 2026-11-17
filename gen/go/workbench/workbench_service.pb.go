@@ -33,11 +33,12 @@ var File_workbench_workbench_service_proto protoreflect.FileDescriptor
 
 const file_workbench_workbench_service_proto_rawDesc = "" +
 	"\n" +
-	"!workbench/workbench_service.proto\x12\x19fusion.ai.proto.workbench\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a!workbench/workbench_message.proto2\xf4\r\n" +
+	"!workbench/workbench_service.proto\x12\x19fusion.ai.proto.workbench\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a!workbench/workbench_message.proto2\xad\x0f\n" +
 	"\x10WorkbenchService\x12\xd7\x01\n" +
 	"\x11GetDataReadyCheck\x123.fusion.ai.proto.workbench.GetDataReadyCheckRequest\x1a4.fusion.ai.proto.workbench.GetDataReadyCheckResponse\"W\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02?\x12=/api/v2/workbench/registrations/{registration_id}/ready-check\x12\xc8\x01\n" +
 	"\x0eGetFusionModel\x120.fusion.ai.proto.workbench.GetFusionModelRequest\x1a1.fusion.ai.proto.workbench.GetFusionModelResponse\"Q\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x029\x127/api/v2/workbench/registrations/{registration_id}/model\x12\xd0\x01\n" +
-	"\x0eCreateTrainJob\x120.fusion.ai.proto.workbench.CreateTrainJobRequest\x1a1.fusion.ai.proto.workbench.CreateTrainJobResponse\"Y\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02A:\x01*\"</api/v2/workbench/registrations/{registration_id}/train/jobs\x12\xd8\x01\n" +
+	"\x0eCreateTrainJob\x120.fusion.ai.proto.workbench.CreateTrainJobRequest\x1a1.fusion.ai.proto.workbench.CreateTrainJobResponse\"Y\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02A:\x01*\"</api/v2/workbench/registrations/{registration_id}/train/jobs\x12\xb6\x01\n" +
+	"\bGetTrain\x12*.fusion.ai.proto.workbench.GetTrainRequest\x1a+.fusion.ai.proto.workbench.GetTrainResponse\"Q\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x029\x127/api/v2/workbench/registrations/{registration_id}/train\x12\xd8\x01\n" +
 	"\x10CreatePredictJob\x122.fusion.ai.proto.workbench.CreatePredictJobRequest\x1a3.fusion.ai.proto.workbench.CreatePredictJobResponse\"[\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02C:\x01*\">/api/v2/workbench/registrations/{registration_id}/predict/jobs\x12\xbe\x01\n" +
 	"\n" +
 	"GetPredict\x12,.fusion.ai.proto.workbench.GetPredictRequest\x1a-.fusion.ai.proto.workbench.GetPredictResponse\"S\xdaA\x0fregistration_id\x82\xd3\xe4\x93\x02;\x129/api/v2/workbench/registrations/{registration_id}/predict\x12\xef\x01\n" +
@@ -50,39 +51,43 @@ var file_workbench_workbench_service_proto_goTypes = []any{
 	(*GetDataReadyCheckRequest)(nil),     // 0: fusion.ai.proto.workbench.GetDataReadyCheckRequest
 	(*GetFusionModelRequest)(nil),        // 1: fusion.ai.proto.workbench.GetFusionModelRequest
 	(*CreateTrainJobRequest)(nil),        // 2: fusion.ai.proto.workbench.CreateTrainJobRequest
-	(*CreatePredictJobRequest)(nil),      // 3: fusion.ai.proto.workbench.CreatePredictJobRequest
-	(*GetPredictRequest)(nil),            // 4: fusion.ai.proto.workbench.GetPredictRequest
-	(*GetEvalDaySeriesRequest)(nil),      // 5: fusion.ai.proto.workbench.GetEvalDaySeriesRequest
-	(*GetEvalDayMetricsRequest)(nil),     // 6: fusion.ai.proto.workbench.GetEvalDayMetricsRequest
-	(*ListEvalDailyMetricsRequest)(nil),  // 7: fusion.ai.proto.workbench.ListEvalDailyMetricsRequest
-	(*GetDataReadyCheckResponse)(nil),    // 8: fusion.ai.proto.workbench.GetDataReadyCheckResponse
-	(*GetFusionModelResponse)(nil),       // 9: fusion.ai.proto.workbench.GetFusionModelResponse
-	(*CreateTrainJobResponse)(nil),       // 10: fusion.ai.proto.workbench.CreateTrainJobResponse
-	(*CreatePredictJobResponse)(nil),     // 11: fusion.ai.proto.workbench.CreatePredictJobResponse
-	(*GetPredictResponse)(nil),           // 12: fusion.ai.proto.workbench.GetPredictResponse
-	(*GetEvalDaySeriesResponse)(nil),     // 13: fusion.ai.proto.workbench.GetEvalDaySeriesResponse
-	(*GetEvalDayMetricsResponse)(nil),    // 14: fusion.ai.proto.workbench.GetEvalDayMetricsResponse
-	(*ListEvalDailyMetricsResponse)(nil), // 15: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse
+	(*GetTrainRequest)(nil),              // 3: fusion.ai.proto.workbench.GetTrainRequest
+	(*CreatePredictJobRequest)(nil),      // 4: fusion.ai.proto.workbench.CreatePredictJobRequest
+	(*GetPredictRequest)(nil),            // 5: fusion.ai.proto.workbench.GetPredictRequest
+	(*GetEvalDaySeriesRequest)(nil),      // 6: fusion.ai.proto.workbench.GetEvalDaySeriesRequest
+	(*GetEvalDayMetricsRequest)(nil),     // 7: fusion.ai.proto.workbench.GetEvalDayMetricsRequest
+	(*ListEvalDailyMetricsRequest)(nil),  // 8: fusion.ai.proto.workbench.ListEvalDailyMetricsRequest
+	(*GetDataReadyCheckResponse)(nil),    // 9: fusion.ai.proto.workbench.GetDataReadyCheckResponse
+	(*GetFusionModelResponse)(nil),       // 10: fusion.ai.proto.workbench.GetFusionModelResponse
+	(*CreateTrainJobResponse)(nil),       // 11: fusion.ai.proto.workbench.CreateTrainJobResponse
+	(*GetTrainResponse)(nil),             // 12: fusion.ai.proto.workbench.GetTrainResponse
+	(*CreatePredictJobResponse)(nil),     // 13: fusion.ai.proto.workbench.CreatePredictJobResponse
+	(*GetPredictResponse)(nil),           // 14: fusion.ai.proto.workbench.GetPredictResponse
+	(*GetEvalDaySeriesResponse)(nil),     // 15: fusion.ai.proto.workbench.GetEvalDaySeriesResponse
+	(*GetEvalDayMetricsResponse)(nil),    // 16: fusion.ai.proto.workbench.GetEvalDayMetricsResponse
+	(*ListEvalDailyMetricsResponse)(nil), // 17: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse
 }
 var file_workbench_workbench_service_proto_depIdxs = []int32{
 	0,  // 0: fusion.ai.proto.workbench.WorkbenchService.GetDataReadyCheck:input_type -> fusion.ai.proto.workbench.GetDataReadyCheckRequest
 	1,  // 1: fusion.ai.proto.workbench.WorkbenchService.GetFusionModel:input_type -> fusion.ai.proto.workbench.GetFusionModelRequest
 	2,  // 2: fusion.ai.proto.workbench.WorkbenchService.CreateTrainJob:input_type -> fusion.ai.proto.workbench.CreateTrainJobRequest
-	3,  // 3: fusion.ai.proto.workbench.WorkbenchService.CreatePredictJob:input_type -> fusion.ai.proto.workbench.CreatePredictJobRequest
-	4,  // 4: fusion.ai.proto.workbench.WorkbenchService.GetPredict:input_type -> fusion.ai.proto.workbench.GetPredictRequest
-	5,  // 5: fusion.ai.proto.workbench.WorkbenchService.GetEvalDaySeries:input_type -> fusion.ai.proto.workbench.GetEvalDaySeriesRequest
-	6,  // 6: fusion.ai.proto.workbench.WorkbenchService.GetEvalDayMetrics:input_type -> fusion.ai.proto.workbench.GetEvalDayMetricsRequest
-	7,  // 7: fusion.ai.proto.workbench.WorkbenchService.ListEvalDailyMetrics:input_type -> fusion.ai.proto.workbench.ListEvalDailyMetricsRequest
-	8,  // 8: fusion.ai.proto.workbench.WorkbenchService.GetDataReadyCheck:output_type -> fusion.ai.proto.workbench.GetDataReadyCheckResponse
-	9,  // 9: fusion.ai.proto.workbench.WorkbenchService.GetFusionModel:output_type -> fusion.ai.proto.workbench.GetFusionModelResponse
-	10, // 10: fusion.ai.proto.workbench.WorkbenchService.CreateTrainJob:output_type -> fusion.ai.proto.workbench.CreateTrainJobResponse
-	11, // 11: fusion.ai.proto.workbench.WorkbenchService.CreatePredictJob:output_type -> fusion.ai.proto.workbench.CreatePredictJobResponse
-	12, // 12: fusion.ai.proto.workbench.WorkbenchService.GetPredict:output_type -> fusion.ai.proto.workbench.GetPredictResponse
-	13, // 13: fusion.ai.proto.workbench.WorkbenchService.GetEvalDaySeries:output_type -> fusion.ai.proto.workbench.GetEvalDaySeriesResponse
-	14, // 14: fusion.ai.proto.workbench.WorkbenchService.GetEvalDayMetrics:output_type -> fusion.ai.proto.workbench.GetEvalDayMetricsResponse
-	15, // 15: fusion.ai.proto.workbench.WorkbenchService.ListEvalDailyMetrics:output_type -> fusion.ai.proto.workbench.ListEvalDailyMetricsResponse
-	8,  // [8:16] is the sub-list for method output_type
-	0,  // [0:8] is the sub-list for method input_type
+	3,  // 3: fusion.ai.proto.workbench.WorkbenchService.GetTrain:input_type -> fusion.ai.proto.workbench.GetTrainRequest
+	4,  // 4: fusion.ai.proto.workbench.WorkbenchService.CreatePredictJob:input_type -> fusion.ai.proto.workbench.CreatePredictJobRequest
+	5,  // 5: fusion.ai.proto.workbench.WorkbenchService.GetPredict:input_type -> fusion.ai.proto.workbench.GetPredictRequest
+	6,  // 6: fusion.ai.proto.workbench.WorkbenchService.GetEvalDaySeries:input_type -> fusion.ai.proto.workbench.GetEvalDaySeriesRequest
+	7,  // 7: fusion.ai.proto.workbench.WorkbenchService.GetEvalDayMetrics:input_type -> fusion.ai.proto.workbench.GetEvalDayMetricsRequest
+	8,  // 8: fusion.ai.proto.workbench.WorkbenchService.ListEvalDailyMetrics:input_type -> fusion.ai.proto.workbench.ListEvalDailyMetricsRequest
+	9,  // 9: fusion.ai.proto.workbench.WorkbenchService.GetDataReadyCheck:output_type -> fusion.ai.proto.workbench.GetDataReadyCheckResponse
+	10, // 10: fusion.ai.proto.workbench.WorkbenchService.GetFusionModel:output_type -> fusion.ai.proto.workbench.GetFusionModelResponse
+	11, // 11: fusion.ai.proto.workbench.WorkbenchService.CreateTrainJob:output_type -> fusion.ai.proto.workbench.CreateTrainJobResponse
+	12, // 12: fusion.ai.proto.workbench.WorkbenchService.GetTrain:output_type -> fusion.ai.proto.workbench.GetTrainResponse
+	13, // 13: fusion.ai.proto.workbench.WorkbenchService.CreatePredictJob:output_type -> fusion.ai.proto.workbench.CreatePredictJobResponse
+	14, // 14: fusion.ai.proto.workbench.WorkbenchService.GetPredict:output_type -> fusion.ai.proto.workbench.GetPredictResponse
+	15, // 15: fusion.ai.proto.workbench.WorkbenchService.GetEvalDaySeries:output_type -> fusion.ai.proto.workbench.GetEvalDaySeriesResponse
+	16, // 16: fusion.ai.proto.workbench.WorkbenchService.GetEvalDayMetrics:output_type -> fusion.ai.proto.workbench.GetEvalDayMetricsResponse
+	17, // 17: fusion.ai.proto.workbench.WorkbenchService.ListEvalDailyMetrics:output_type -> fusion.ai.proto.workbench.ListEvalDailyMetricsResponse
+	9,  // [9:18] is the sub-list for method output_type
+	0,  // [0:9] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

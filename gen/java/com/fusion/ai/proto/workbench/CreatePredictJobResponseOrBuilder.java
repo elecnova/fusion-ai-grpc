@@ -11,11 +11,19 @@ public interface CreatePredictJobResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 新预测任务 id
+   * </pre>
+   *
    * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The jobId.
    */
   java.lang.String getJobId();
   /**
+   * <pre>
+   * 新预测任务 id
+   * </pre>
+   *
    * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The bytes for jobId.
    */
@@ -23,11 +31,19 @@ public interface CreatePredictJobResponseOrBuilder extends
       getJobIdBytes();
 
   /**
+   * <pre>
+   * 受理后初始状态，一般为 QUEUED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
+   * <pre>
+   * 受理后初始状态，一般为 QUEUED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.JobStatus status = 2 [json_name = "status"];</code>
    * @return The status.
    */

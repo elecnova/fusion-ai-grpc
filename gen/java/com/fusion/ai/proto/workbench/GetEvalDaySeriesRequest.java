@@ -55,6 +55,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The registrationId.
    */
@@ -72,6 +76,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
    * @return The bytes for registrationId.
    */
@@ -94,6 +102,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object evalDate_ = "";
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
    * @return The evalDate.
    */
@@ -111,6 +123,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
    * @return The bytes for evalDate.
    */
@@ -132,6 +148,10 @@ private static final long serialVersionUID = 0L;
   public static final int GRANULARITY_MIN_FIELD_NUMBER = 3;
   private int granularityMin_ = 0;
   /**
+   * <pre>
+   * 步长分钟；缺省按注册
+   * </pre>
+   *
    * <code>optional int32 granularity_min = 3 [json_name = "granularity_min", (.buf.validate.field) = { ... }</code>
    * @return Whether the granularityMin field is set.
    */
@@ -140,6 +160,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * 步长分钟；缺省按注册
+   * </pre>
+   *
    * <code>optional int32 granularity_min = 3 [json_name = "granularity_min", (.buf.validate.field) = { ... }</code>
    * @return The granularityMin.
    */
@@ -501,6 +525,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The registrationId.
      */
@@ -517,6 +545,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return The bytes for registrationId.
      */
@@ -534,6 +566,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -547,6 +583,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -557,6 +597,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.
@@ -573,6 +617,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object evalDate_ = "";
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
      * @return The evalDate.
      */
@@ -589,6 +637,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
      * @return The bytes for evalDate.
      */
@@ -606,6 +658,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
      * @param value The evalDate to set.
      * @return This builder for chaining.
@@ -619,6 +675,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -629,6 +689,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 2 [json_name = "eval_date", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for evalDate to set.
      * @return This builder for chaining.
@@ -645,6 +709,10 @@ private static final long serialVersionUID = 0L;
 
     private int granularityMin_ ;
     /**
+     * <pre>
+     * 步长分钟；缺省按注册
+     * </pre>
+     *
      * <code>optional int32 granularity_min = 3 [json_name = "granularity_min", (.buf.validate.field) = { ... }</code>
      * @return Whether the granularityMin field is set.
      */
@@ -653,6 +721,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
+     * <pre>
+     * 步长分钟；缺省按注册
+     * </pre>
+     *
      * <code>optional int32 granularity_min = 3 [json_name = "granularity_min", (.buf.validate.field) = { ... }</code>
      * @return The granularityMin.
      */
@@ -661,6 +733,10 @@ private static final long serialVersionUID = 0L;
       return granularityMin_;
     }
     /**
+     * <pre>
+     * 步长分钟；缺省按注册
+     * </pre>
+     *
      * <code>optional int32 granularity_min = 3 [json_name = "granularity_min", (.buf.validate.field) = { ... }</code>
      * @param value The granularityMin to set.
      * @return This builder for chaining.
@@ -673,6 +749,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 步长分钟；缺省按注册
+     * </pre>
+     *
      * <code>optional int32 granularity_min = 3 [json_name = "granularity_min", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */

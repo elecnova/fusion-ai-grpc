@@ -11,11 +11,19 @@ public interface PredictJobViewOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 预测任务 id，如 pd-8291
+   * </pre>
+   *
    * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The jobId.
    */
   java.lang.String getJobId();
   /**
+   * <pre>
+   * 预测任务 id，如 pd-8291
+   * </pre>
+   *
    * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The bytes for jobId.
    */
@@ -23,11 +31,19 @@ public interface PredictJobViewOrBuilder extends
       getJobIdBytes();
 
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 2 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 2 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -35,11 +51,19 @@ public interface PredictJobViewOrBuilder extends
       getRegistrationIdBytes();
 
   /**
+   * <pre>
+   * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
+   * <pre>
+   * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
    * @return The status.
    */
@@ -47,7 +71,7 @@ public interface PredictJobViewOrBuilder extends
 
   /**
    * <pre>
-   * 0~100
+   * 总进度 0~100
    * </pre>
    *
    * <code>int32 progress_pct = 4 [json_name = "progress_pct"];</code>
@@ -57,7 +81,7 @@ public interface PredictJobViewOrBuilder extends
 
   /**
    * <pre>
-   * 当前步键，如 infer
+   * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
    * </pre>
    *
    * <code>string stage = 5 [json_name = "stage"];</code>
@@ -66,7 +90,7 @@ public interface PredictJobViewOrBuilder extends
   java.lang.String getStage();
   /**
    * <pre>
-   * 当前步键，如 infer
+   * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
    * </pre>
    *
    * <code>string stage = 5 [json_name = "stage"];</code>
@@ -76,11 +100,19 @@ public interface PredictJobViewOrBuilder extends
       getStageBytes();
 
   /**
-   * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
    */
   int getStagesCount();
   /**
-   * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
    */
   boolean containsStages(
       java.lang.String key);
@@ -88,33 +120,87 @@ public interface PredictJobViewOrBuilder extends
    * Use {@link #getStagesMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
+  java.util.Map<java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus>
   getStages();
   /**
-   * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
+  java.util.Map<java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus>
   getStagesMap();
   /**
-   * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
    */
   /* nullable */
-java.lang.String getStagesOrDefault(
+com.fusion.ai.proto.workbench.StageStepStatus getStagesOrDefault(
       java.lang.String key,
       /* nullable */
-java.lang.String defaultValue);
+com.fusion.ai.proto.workbench.StageStepStatus         defaultValue);
   /**
-   * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
    */
-  java.lang.String getStagesOrThrow(
+  com.fusion.ai.proto.workbench.StageStepStatus getStagesOrThrow(
+      java.lang.String key);
+  /**
+   * Use {@link #getStagesValueMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Integer>
+  getStagesValue();
+  /**
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.Integer>
+  getStagesValueMap();
+  /**
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+   */
+  int getStagesValueOrDefault(
+      java.lang.String key,
+      int defaultValue);
+  /**
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+   */
+  int getStagesValueOrThrow(
       java.lang.String key);
 
   /**
+   * <pre>
+   * 评估日 / 预测锚定日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 7 [json_name = "eval_date"];</code>
    * @return The evalDate.
    */
   java.lang.String getEvalDate();
   /**
+   * <pre>
+   * 评估日 / 预测锚定日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 7 [json_name = "eval_date"];</code>
    * @return The bytes for evalDate.
    */
@@ -122,29 +208,49 @@ java.lang.String defaultValue);
       getEvalDateBytes();
 
   /**
+   * <pre>
+   * 相对评估日的偏移天数；0=当日
+   * </pre>
+   *
    * <code>int32 day_offset = 8 [json_name = "day_offset"];</code>
    * @return The dayOffset.
    */
   int getDayOffset();
 
   /**
+   * <pre>
+   * 预测步长（分钟）：5 / 15 / 30 / 60
+   * </pre>
+   *
    * <code>int32 granularity_min = 9 [json_name = "granularity_min"];</code>
    * @return The granularityMin.
    */
   int getGranularityMin();
 
   /**
+   * <pre>
+   * 预测时长（小时），常见 24
+   * </pre>
+   *
    * <code>int32 horizon_hours = 10 [json_name = "horizon_hours"];</code>
    * @return The horizonHours.
    */
   int getHorizonHours();
 
   /**
+   * <pre>
+   * 使用的模型 id / key，如 fusion-ai
+   * </pre>
+   *
    * <code>string model_id = 11 [json_name = "model_id"];</code>
    * @return The modelId.
    */
   java.lang.String getModelId();
   /**
+   * <pre>
+   * 使用的模型 id / key，如 fusion-ai
+   * </pre>
+   *
    * <code>string model_id = 11 [json_name = "model_id"];</code>
    * @return The bytes for modelId.
    */
@@ -152,11 +258,19 @@ java.lang.String defaultValue);
       getModelIdBytes();
 
   /**
+   * <pre>
+   * 人类可读提示（失败原因或当前步说明）
+   * </pre>
+   *
    * <code>string message = 12 [json_name = "message"];</code>
    * @return The message.
    */
   java.lang.String getMessage();
   /**
+   * <pre>
+   * 人类可读提示（失败原因或当前步说明）
+   * </pre>
+   *
    * <code>string message = 12 [json_name = "message"];</code>
    * @return The bytes for message.
    */
@@ -165,7 +279,7 @@ java.lang.String defaultValue);
 
   /**
    * <pre>
-   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
    * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
@@ -175,7 +289,7 @@ java.lang.String defaultValue);
   boolean hasStartedAt();
   /**
    * <pre>
-   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
    * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
@@ -185,7 +299,7 @@ java.lang.String defaultValue);
   java.lang.String getStartedAt();
   /**
    * <pre>
-   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
    * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
@@ -196,16 +310,28 @@ java.lang.String defaultValue);
       getStartedAtBytes();
 
   /**
+   * <pre>
+   * 结束时间；未结束不填
+   * </pre>
+   *
    * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
    * @return Whether the finishedAt field is set.
    */
   boolean hasFinishedAt();
   /**
+   * <pre>
+   * 结束时间；未结束不填
+   * </pre>
+   *
    * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
    * @return The finishedAt.
    */
   java.lang.String getFinishedAt();
   /**
+   * <pre>
+   * 结束时间；未结束不填
+   * </pre>
+   *
    * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
    * @return The bytes for finishedAt.
    */
@@ -213,16 +339,28 @@ java.lang.String defaultValue);
       getFinishedAtBytes();
 
   /**
+   * <pre>
+   * 最近一次状态更新时间
+   * </pre>
+   *
    * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
    * @return Whether the updatedAt field is set.
    */
   boolean hasUpdatedAt();
   /**
+   * <pre>
+   * 最近一次状态更新时间
+   * </pre>
+   *
    * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
   /**
+   * <pre>
+   * 最近一次状态更新时间
+   * </pre>
+   *
    * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
    * @return The bytes for updatedAt.
    */

@@ -31,13 +31,18 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// ReadyCheckStatus 今日数据就绪总览（左栏绿/黄/红）。
 type ReadyCheckStatus int32
 
 const (
+	// 未设置 / 未知
 	ReadyCheckStatus_READY_CHECK_STATUS_UNSPECIFIED ReadyCheckStatus = 0
-	ReadyCheckStatus_READY_CHECK_STATUS_PASS        ReadyCheckStatus = 1
-	ReadyCheckStatus_READY_CHECK_STATUS_WARN        ReadyCheckStatus = 2
-	ReadyCheckStatus_READY_CHECK_STATUS_FAIL        ReadyCheckStatus = 3
+	// 通过：覆盖足够，可训练/预测
+	ReadyCheckStatus_READY_CHECK_STATUS_PASS ReadyCheckStatus = 1
+	// 告警：有缺口或天气缺失，可继续但需关注
+	ReadyCheckStatus_READY_CHECK_STATUS_WARN ReadyCheckStatus = 2
+	// 失败：严重缺数或离线，不建议发起
+	ReadyCheckStatus_READY_CHECK_STATUS_FAIL ReadyCheckStatus = 3
 )
 
 // Enum value maps for ReadyCheckStatus.
@@ -83,12 +88,16 @@ func (ReadyCheckStatus) EnumDescriptor() ([]byte, []int) {
 	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{0}
 }
 
+// CoverageSeriesKind 覆盖序列类型。
 type CoverageSeriesKind int32
 
 const (
+	// 未设置
 	CoverageSeriesKind_COVERAGE_SERIES_KIND_UNSPECIFIED CoverageSeriesKind = 0
-	CoverageSeriesKind_COVERAGE_SERIES_KIND_POWER       CoverageSeriesKind = 1
-	CoverageSeriesKind_COVERAGE_SERIES_KIND_WEATHER     CoverageSeriesKind = 2
+	// 功率（实发）
+	CoverageSeriesKind_COVERAGE_SERIES_KIND_POWER CoverageSeriesKind = 1
+	// 天气（仅光伏）
+	CoverageSeriesKind_COVERAGE_SERIES_KIND_WEATHER CoverageSeriesKind = 2
 )
 
 // Enum value maps for CoverageSeriesKind.
@@ -132,14 +141,23 @@ func (CoverageSeriesKind) EnumDescriptor() ([]byte, []int) {
 	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{1}
 }
 
+// ModelReadyStatus 融合模型卡片状态（etcd model/current.status）。
+// 与算法写入字符串对应：ready / training / failed；stale/missing 由 API 推断。
 type ModelReadyStatus int32
 
 const (
+	// 未设置 / 未知
 	ModelReadyStatus_MODEL_READY_STATUS_UNSPECIFIED ModelReadyStatus = 0
-	ModelReadyStatus_MODEL_READY_STATUS_READY       ModelReadyStatus = 1
-	ModelReadyStatus_MODEL_READY_STATUS_TRAINING    ModelReadyStatus = 2
-	ModelReadyStatus_MODEL_READY_STATUS_STALE       ModelReadyStatus = 3
-	ModelReadyStatus_MODEL_READY_STATUS_MISSING     ModelReadyStatus = 4
+	// 可用：有产物，可发起预测
+	ModelReadyStatus_MODEL_READY_STATUS_READY ModelReadyStatus = 1
+	// 训练中：current_train_job_id 指向进行中任务
+	ModelReadyStatus_MODEL_READY_STATUS_TRAINING ModelReadyStatus = 2
+	// 过期：有版本但建议重训（非算法直写，API 推断）
+	ModelReadyStatus_MODEL_READY_STATUS_STALE ModelReadyStatus = 3
+	// 缺失：尚无模型产物
+	ModelReadyStatus_MODEL_READY_STATUS_MISSING ModelReadyStatus = 4
+	// 失败：最近一次训练失败（etcd status=failed）
+	ModelReadyStatus_MODEL_READY_STATUS_FAILED ModelReadyStatus = 5
 )
 
 // Enum value maps for ModelReadyStatus.
@@ -150,6 +168,7 @@ var (
 		2: "MODEL_READY_STATUS_TRAINING",
 		3: "MODEL_READY_STATUS_STALE",
 		4: "MODEL_READY_STATUS_MISSING",
+		5: "MODEL_READY_STATUS_FAILED",
 	}
 	ModelReadyStatus_value = map[string]int32{
 		"MODEL_READY_STATUS_UNSPECIFIED": 0,
@@ -157,6 +176,7 @@ var (
 		"MODEL_READY_STATUS_TRAINING":    2,
 		"MODEL_READY_STATUS_STALE":       3,
 		"MODEL_READY_STATUS_MISSING":     4,
+		"MODEL_READY_STATUS_FAILED":      5,
 	}
 )
 
@@ -187,15 +207,22 @@ func (ModelReadyStatus) EnumDescriptor() ([]byte, []int) {
 	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{2}
 }
 
+// JobStatus 训练 / 预测整单状态（etcd train|predict job.status）。
 type JobStatus int32
 
 const (
+	// 未设置 / 未知
 	JobStatus_JOB_STATUS_UNSPECIFIED JobStatus = 0
-	JobStatus_JOB_STATUS_QUEUED      JobStatus = 1
-	JobStatus_JOB_STATUS_RUNNING     JobStatus = 2
-	JobStatus_JOB_STATUS_SUCCEEDED   JobStatus = 3
-	JobStatus_JOB_STATUS_FAILED      JobStatus = 4
-	JobStatus_JOB_STATUS_CANCELLED   JobStatus = 5
+	// 已受理、排队中（Create* 成功后的初始态；算法随后写 running）
+	JobStatus_JOB_STATUS_QUEUED JobStatus = 1
+	// 执行中
+	JobStatus_JOB_STATUS_RUNNING JobStatus = 2
+	// 成功结束
+	JobStatus_JOB_STATUS_SUCCEEDED JobStatus = 3
+	// 失败结束
+	JobStatus_JOB_STATUS_FAILED JobStatus = 4
+	// 已取消（预留；本期算法可不写）
+	JobStatus_JOB_STATUS_CANCELLED JobStatus = 5
 )
 
 // Enum value maps for JobStatus.
@@ -245,15 +272,79 @@ func (JobStatus) EnumDescriptor() ([]byte, []int) {
 	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{3}
 }
 
+// StageStepStatus 预测五步每步状态（PredictJobView.stages 的 value）。
+// 同时最多一步为 RUNNING。
+type StageStepStatus int32
+
+const (
+	// 未设置 / 未知
+	StageStepStatus_STAGE_STEP_STATUS_UNSPECIFIED StageStepStatus = 0
+	// 未开始
+	StageStepStatus_STAGE_STEP_STATUS_PENDING StageStepStatus = 1
+	// 进行中
+	StageStepStatus_STAGE_STEP_STATUS_RUNNING StageStepStatus = 2
+	// 已完成
+	StageStepStatus_STAGE_STEP_STATUS_DONE StageStepStatus = 3
+	// 本步失败（整单通常随之 FAILED）
+	StageStepStatus_STAGE_STEP_STATUS_FAILED StageStepStatus = 4
+)
+
+// Enum value maps for StageStepStatus.
+var (
+	StageStepStatus_name = map[int32]string{
+		0: "STAGE_STEP_STATUS_UNSPECIFIED",
+		1: "STAGE_STEP_STATUS_PENDING",
+		2: "STAGE_STEP_STATUS_RUNNING",
+		3: "STAGE_STEP_STATUS_DONE",
+		4: "STAGE_STEP_STATUS_FAILED",
+	}
+	StageStepStatus_value = map[string]int32{
+		"STAGE_STEP_STATUS_UNSPECIFIED": 0,
+		"STAGE_STEP_STATUS_PENDING":     1,
+		"STAGE_STEP_STATUS_RUNNING":     2,
+		"STAGE_STEP_STATUS_DONE":        3,
+		"STAGE_STEP_STATUS_FAILED":      4,
+	}
+)
+
+func (x StageStepStatus) Enum() *StageStepStatus {
+	p := new(StageStepStatus)
+	*p = x
+	return p
+}
+
+func (x StageStepStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (StageStepStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_workbench_workbench_message_proto_enumTypes[4].Descriptor()
+}
+
+func (StageStepStatus) Type() protoreflect.EnumType {
+	return &file_workbench_workbench_message_proto_enumTypes[4]
+}
+
+func (x StageStepStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use StageStepStatus.Descriptor instead.
+func (StageStepStatus) EnumDescriptor() ([]byte, []int) {
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{4}
+}
+
 type GapInterval struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Unix 毫秒，闭开区间 [start, end)
-	StartMs       int64 `protobuf:"varint,1,opt,name=start_ms,proto3" json:"start_ms,omitempty"`
-	EndMs         int64 `protobuf:"varint,2,opt,name=end_ms,proto3" json:"end_ms,omitempty"`
+	// 缺口起点 Unix 毫秒；闭开区间 [start_ms, end_ms)
+	StartMs int64 `protobuf:"varint,1,opt,name=start_ms,proto3" json:"start_ms,omitempty"`
+	// 缺口终点 Unix 毫秒（不含）
+	EndMs int64 `protobuf:"varint,2,opt,name=end_ms,proto3" json:"end_ms,omitempty"`
+	// 缺口内缺失格点数
 	MissingPoints int32 `protobuf:"varint,3,opt,name=missing_points,proto3" json:"missing_points,omitempty"`
 	// 展示文案，如「10-29 06:00 – 09:15」
 	Display string `protobuf:"bytes,4,opt,name=display,proto3" json:"display,omitempty"`
-	// 跳转数据管理补录深链（可选）
+	// 跳转数据管理补录深链（可选；无可空）
 	BackfillHref  string `protobuf:"bytes,5,opt,name=backfill_href,proto3" json:"backfill_href,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -326,10 +417,12 @@ func (x *GapInterval) GetBackfillHref() string {
 
 type CoveragePoint struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	TsMs  int64                  `protobuf:"varint,1,opt,name=ts_ms,proto3" json:"ts_ms,omitempty"`
-	// 缺测时可不填 value
-	Value         *float64 `protobuf:"fixed64,2,opt,name=value,proto3,oneof" json:"value,omitempty"`
-	Present       bool     `protobuf:"varint,3,opt,name=present,proto3" json:"present,omitempty"`
+	// 格点时间 Unix 毫秒
+	TsMs int64 `protobuf:"varint,1,opt,name=ts_ms,proto3" json:"ts_ms,omitempty"`
+	// 实测值；缺测时不填
+	Value *float64 `protobuf:"fixed64,2,opt,name=value,proto3,oneof" json:"value,omitempty"`
+	// 该格点是否有数据
+	Present       bool `protobuf:"varint,3,opt,name=present,proto3" json:"present,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -387,14 +480,18 @@ func (x *CoveragePoint) GetPresent() bool {
 
 type CoverageBand struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Kind  CoverageSeriesKind     `protobuf:"varint,1,opt,name=kind,proto3,enum=fusion.ai.proto.workbench.CoverageSeriesKind" json:"kind,omitempty"`
-	// 覆盖率 0~1
+	// 序列类型：功率 / 天气
+	Kind CoverageSeriesKind `protobuf:"varint,1,opt,name=kind,proto3,enum=fusion.ai.proto.workbench.CoverageSeriesKind" json:"kind,omitempty"`
+	// 覆盖率 0~1（1=全覆盖）
 	CoverageRatio float64 `protobuf:"fixed64,2,opt,name=coverage_ratio,proto3" json:"coverage_ratio,omitempty"`
 	// 检查格点分钟；功率侧原始入库为 5，展示可对齐评估步长
-	GridMin       int32            `protobuf:"varint,3,opt,name=grid_min,proto3" json:"grid_min,omitempty"`
-	SourceLabel   string           `protobuf:"bytes,4,opt,name=source_label,proto3" json:"source_label,omitempty"`
-	Points        []*CoveragePoint `protobuf:"bytes,5,rep,name=points,proto3" json:"points,omitempty"`
-	Gaps          []*GapInterval   `protobuf:"bytes,6,rep,name=gaps,proto3" json:"gaps,omitempty"`
+	GridMin int32 `protobuf:"varint,3,opt,name=grid_min,proto3" json:"grid_min,omitempty"`
+	// 数据来源展示名，如「实发功率」「数值天气预报」
+	SourceLabel string `protobuf:"bytes,4,opt,name=source_label,proto3" json:"source_label,omitempty"`
+	// 逐点覆盖（include_points=false 时可为空）
+	Points []*CoveragePoint `protobuf:"bytes,5,rep,name=points,proto3" json:"points,omitempty"`
+	// 缺口列表
+	Gaps          []*GapInterval `protobuf:"bytes,6,rep,name=gaps,proto3" json:"gaps,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -472,15 +569,20 @@ func (x *CoverageBand) GetGaps() []*GapInterval {
 }
 
 type DataReadyCheck struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	// 评估日 YYYY-MM-DD（场站本地日历日）
-	EvalDate string           `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
-	Timezone string           `protobuf:"bytes,3,opt,name=timezone,proto3" json:"timezone,omitempty"`
-	Status   ReadyCheckStatus `protobuf:"varint,4,opt,name=status,proto3,enum=fusion.ai.proto.workbench.ReadyCheckStatus" json:"status,omitempty"`
-	Power    *CoverageBand    `protobuf:"bytes,5,opt,name=power,proto3" json:"power,omitempty"`
-	// 仅光伏；负荷/储能可不填
-	Weather       *CoverageBand          `protobuf:"bytes,6,opt,name=weather,proto3,oneof" json:"weather,omitempty"`
+	EvalDate string `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
+	// IANA 时区，如 Asia/Shanghai
+	Timezone string `protobuf:"bytes,3,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	// 就绪总览：PASS / WARN / FAIL
+	Status ReadyCheckStatus `protobuf:"varint,4,opt,name=status,proto3,enum=fusion.ai.proto.workbench.ReadyCheckStatus" json:"status,omitempty"`
+	// 功率覆盖
+	Power *CoverageBand `protobuf:"bytes,5,opt,name=power,proto3" json:"power,omitempty"`
+	// 天气覆盖；仅光伏有值，负荷/储能可不填
+	Weather *CoverageBand `protobuf:"bytes,6,opt,name=weather,proto3,oneof" json:"weather,omitempty"`
+	// 本次检查完成时间（UTC Timestamp）
 	CheckedAt     *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=checked_at,proto3" json:"checked_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -566,18 +668,24 @@ func (x *DataReadyCheck) GetCheckedAt() *timestamppb.Timestamp {
 }
 
 type FusionModelView struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 模型所属 registration；本期训练多为光伏通用模型常量
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	// 固定产物名，如 fusion-ai
-	ModelKey string           `protobuf:"bytes,2,opt,name=model_key,proto3" json:"model_key,omitempty"`
-	Version  string           `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
-	Status   ModelReadyStatus `protobuf:"varint,4,opt,name=status,proto3,enum=fusion.ai.proto.workbench.ModelReadyStatus" json:"status,omitempty"`
+	ModelKey string `protobuf:"bytes,2,opt,name=model_key,proto3" json:"model_key,omitempty"`
+	// 模型版本号，如 v2026.10.29；无则空
+	Version string `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
+	// 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+	Status ModelReadyStatus `protobuf:"varint,4,opt,name=status,proto3,enum=fusion.ai.proto.workbench.ModelReadyStatus" json:"status,omitempty"`
 	// 上次训练完成时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
 	// 例：2026-11-17T16:12:00+08:00
 	LastTrainedAt *string `protobuf:"bytes,5,opt,name=last_trained_at,proto3,oneof" json:"last_trained_at,omitempty"`
-	ArtifactUri   *string `protobuf:"bytes,6,opt,name=artifact_uri,proto3,oneof" json:"artifact_uri,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	// 产物 URI（可选）
+	ArtifactUri *string `protobuf:"bytes,6,opt,name=artifact_uri,proto3,oneof" json:"artifact_uri,omitempty"`
+	// 当前训练任务 id；无任务时为空
+	CurrentTrainJobId string `protobuf:"bytes,7,opt,name=current_train_job_id,proto3" json:"current_train_job_id,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *FusionModelView) Reset() {
@@ -652,28 +760,219 @@ func (x *FusionModelView) GetArtifactUri() string {
 	return ""
 }
 
-// 五步 stages 键：data_ready | model_loaded | infer | persist | compare_refresh
-// 每步取值：pending | running | done | failed
+func (x *FusionModelView) GetCurrentTrainJobId() string {
+	if x != nil {
+		return x.CurrentTrainJobId
+	}
+	return ""
+}
+
+type TrainLogLine struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 日志序号（单调递增；增量用 from_seq）
+	Seq int64 `protobuf:"varint,1,opt,name=seq,proto3" json:"seq,omitempty"`
+	// 日志时间。带数值时区偏移，秒两位。例：2026-11-17T16:12:00+08:00
+	Ts string `protobuf:"bytes,2,opt,name=ts,proto3" json:"ts,omitempty"`
+	// 级别：info / warn / error 等
+	Level string `protobuf:"bytes,3,opt,name=level,proto3" json:"level,omitempty"`
+	// 日志正文（超长已在算法侧截断）
+	Line          string `protobuf:"bytes,4,opt,name=line,proto3" json:"line,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TrainLogLine) Reset() {
+	*x = TrainLogLine{}
+	mi := &file_workbench_workbench_message_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TrainLogLine) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TrainLogLine) ProtoMessage() {}
+
+func (x *TrainLogLine) ProtoReflect() protoreflect.Message {
+	mi := &file_workbench_workbench_message_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TrainLogLine.ProtoReflect.Descriptor instead.
+func (*TrainLogLine) Descriptor() ([]byte, []int) {
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *TrainLogLine) GetSeq() int64 {
+	if x != nil {
+		return x.Seq
+	}
+	return 0
+}
+
+func (x *TrainLogLine) GetTs() string {
+	if x != nil {
+		return x.Ts
+	}
+	return ""
+}
+
+func (x *TrainLogLine) GetLevel() string {
+	if x != nil {
+		return x.Level
+	}
+	return ""
+}
+
+func (x *TrainLogLine) GetLine() string {
+	if x != nil {
+		return x.Line
+	}
+	return ""
+}
+
+// TrainJobView 单次训练任务（含定长日志栈快照，LOG_CAP=200）。
+type TrainJobView struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 训练任务 id，如 tr-1001
+	JobId string `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
+	// 模型 registration_id（本期多为通用模型常量）
+	RegistrationId string `protobuf:"bytes,2,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+	Status JobStatus `protobuf:"varint,3,opt,name=status,proto3,enum=fusion.ai.proto.workbench.JobStatus" json:"status,omitempty"`
+	// 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
+	StartedAt *string `protobuf:"bytes,4,opt,name=started_at,proto3,oneof" json:"started_at,omitempty"`
+	// 结束时间；未结束不填
+	FinishedAt *string `protobuf:"bytes,5,opt,name=finished_at,proto3,oneof" json:"finished_at,omitempty"`
+	// 当前日志最大 seq（便于 WS 对账）
+	LogSeq int64 `protobuf:"varint,6,opt,name=log_seq,proto3" json:"log_seq,omitempty"`
+	// 定长日志栈快照（尾新头旧；进页全量，之后靠 logs_appended）
+	Logs          []*TrainLogLine `protobuf:"bytes,7,rep,name=logs,proto3" json:"logs,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TrainJobView) Reset() {
+	*x = TrainJobView{}
+	mi := &file_workbench_workbench_message_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TrainJobView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TrainJobView) ProtoMessage() {}
+
+func (x *TrainJobView) ProtoReflect() protoreflect.Message {
+	mi := &file_workbench_workbench_message_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TrainJobView.ProtoReflect.Descriptor instead.
+func (*TrainJobView) Descriptor() ([]byte, []int) {
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *TrainJobView) GetJobId() string {
+	if x != nil {
+		return x.JobId
+	}
+	return ""
+}
+
+func (x *TrainJobView) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *TrainJobView) GetStatus() JobStatus {
+	if x != nil {
+		return x.Status
+	}
+	return JobStatus_JOB_STATUS_UNSPECIFIED
+}
+
+func (x *TrainJobView) GetStartedAt() string {
+	if x != nil && x.StartedAt != nil {
+		return *x.StartedAt
+	}
+	return ""
+}
+
+func (x *TrainJobView) GetFinishedAt() string {
+	if x != nil && x.FinishedAt != nil {
+		return *x.FinishedAt
+	}
+	return ""
+}
+
+func (x *TrainJobView) GetLogSeq() int64 {
+	if x != nil {
+		return x.LogSeq
+	}
+	return 0
+}
+
+func (x *TrainJobView) GetLogs() []*TrainLogLine {
+	if x != nil {
+		return x.Logs
+	}
+	return nil
+}
+
+// PredictJobView 单次预测任务。
+// stages 键（固定五步）：data_ready | model_loaded | infer | persist | compare_refresh
 type PredictJobView struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	JobId          string                 `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
-	RegistrationId string                 `protobuf:"bytes,2,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	Status         JobStatus              `protobuf:"varint,3,opt,name=status,proto3,enum=fusion.ai.proto.workbench.JobStatus" json:"status,omitempty"`
-	// 0~100
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 预测任务 id，如 pd-8291
+	JobId string `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,2,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+	Status JobStatus `protobuf:"varint,3,opt,name=status,proto3,enum=fusion.ai.proto.workbench.JobStatus" json:"status,omitempty"`
+	// 总进度 0~100
 	ProgressPct int32 `protobuf:"varint,4,opt,name=progress_pct,proto3" json:"progress_pct,omitempty"`
-	// 当前步键，如 infer
-	Stage          string            `protobuf:"bytes,5,opt,name=stage,proto3" json:"stage,omitempty"`
-	Stages         map[string]string `protobuf:"bytes,6,rep,name=stages,proto3" json:"stages,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	EvalDate       string            `protobuf:"bytes,7,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
-	DayOffset      int32             `protobuf:"varint,8,opt,name=day_offset,proto3" json:"day_offset,omitempty"`
-	GranularityMin int32             `protobuf:"varint,9,opt,name=granularity_min,proto3" json:"granularity_min,omitempty"`
-	HorizonHours   int32             `protobuf:"varint,10,opt,name=horizon_hours,proto3" json:"horizon_hours,omitempty"`
-	ModelId        string            `protobuf:"bytes,11,opt,name=model_id,proto3" json:"model_id,omitempty"`
-	Message        string            `protobuf:"bytes,12,opt,name=message,proto3" json:"message,omitempty"`
-	// 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+	// 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
+	Stage string `protobuf:"bytes,5,opt,name=stage,proto3" json:"stage,omitempty"`
+	// 五步状态表；key=步名，value=StageStepStatus
+	Stages map[string]StageStepStatus `protobuf:"bytes,6,rep,name=stages,proto3" json:"stages,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value,enum=fusion.ai.proto.workbench.StageStepStatus"`
+	// 评估日 / 预测锚定日 YYYY-MM-DD
+	EvalDate string `protobuf:"bytes,7,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
+	// 相对评估日的偏移天数；0=当日
+	DayOffset int32 `protobuf:"varint,8,opt,name=day_offset,proto3" json:"day_offset,omitempty"`
+	// 预测步长（分钟）：5 / 15 / 30 / 60
+	GranularityMin int32 `protobuf:"varint,9,opt,name=granularity_min,proto3" json:"granularity_min,omitempty"`
+	// 预测时长（小时），常见 24
+	HorizonHours int32 `protobuf:"varint,10,opt,name=horizon_hours,proto3" json:"horizon_hours,omitempty"`
+	// 使用的模型 id / key，如 fusion-ai
+	ModelId string `protobuf:"bytes,11,opt,name=model_id,proto3" json:"model_id,omitempty"`
+	// 人类可读提示（失败原因或当前步说明）
+	Message string `protobuf:"bytes,12,opt,name=message,proto3" json:"message,omitempty"`
+	// 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
 	// 例：2026-11-17T16:12:00+08:00
-	StartedAt     *string `protobuf:"bytes,13,opt,name=started_at,proto3,oneof" json:"started_at,omitempty"`
-	FinishedAt    *string `protobuf:"bytes,14,opt,name=finished_at,proto3,oneof" json:"finished_at,omitempty"`
+	StartedAt *string `protobuf:"bytes,13,opt,name=started_at,proto3,oneof" json:"started_at,omitempty"`
+	// 结束时间；未结束不填
+	FinishedAt *string `protobuf:"bytes,14,opt,name=finished_at,proto3,oneof" json:"finished_at,omitempty"`
+	// 最近一次状态更新时间
 	UpdatedAt     *string `protobuf:"bytes,15,opt,name=updated_at,proto3,oneof" json:"updated_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -681,7 +980,7 @@ type PredictJobView struct {
 
 func (x *PredictJobView) Reset() {
 	*x = PredictJobView{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[5]
+	mi := &file_workbench_workbench_message_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -693,7 +992,7 @@ func (x *PredictJobView) String() string {
 func (*PredictJobView) ProtoMessage() {}
 
 func (x *PredictJobView) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[5]
+	mi := &file_workbench_workbench_message_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -706,7 +1005,7 @@ func (x *PredictJobView) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PredictJobView.ProtoReflect.Descriptor instead.
 func (*PredictJobView) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{5}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *PredictJobView) GetJobId() string {
@@ -744,7 +1043,7 @@ func (x *PredictJobView) GetStage() string {
 	return ""
 }
 
-func (x *PredictJobView) GetStages() map[string]string {
+func (x *PredictJobView) GetStages() map[string]StageStepStatus {
 	if x != nil {
 		return x.Stages
 	}
@@ -815,17 +1114,20 @@ func (x *PredictJobView) GetUpdatedAt() string {
 }
 
 type SeriesPoint struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TsMs          int64                  `protobuf:"varint,1,opt,name=ts_ms,proto3" json:"ts_ms,omitempty"`
-	PredictedKw   *float64               `protobuf:"fixed64,2,opt,name=predicted_kw,proto3,oneof" json:"predicted_kw,omitempty"`
-	ActualKw      *float64               `protobuf:"fixed64,3,opt,name=actual_kw,proto3,oneof" json:"actual_kw,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 点时间 Unix 毫秒
+	TsMs int64 `protobuf:"varint,1,opt,name=ts_ms,proto3" json:"ts_ms,omitempty"`
+	// 预测功率 kW；缺测不填
+	PredictedKw *float64 `protobuf:"fixed64,2,opt,name=predicted_kw,proto3,oneof" json:"predicted_kw,omitempty"`
+	// 真实功率 kW；缺测不填
+	ActualKw      *float64 `protobuf:"fixed64,3,opt,name=actual_kw,proto3,oneof" json:"actual_kw,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *SeriesPoint) Reset() {
 	*x = SeriesPoint{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[6]
+	mi := &file_workbench_workbench_message_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -837,7 +1139,7 @@ func (x *SeriesPoint) String() string {
 func (*SeriesPoint) ProtoMessage() {}
 
 func (x *SeriesPoint) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[6]
+	mi := &file_workbench_workbench_message_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -850,7 +1152,7 @@ func (x *SeriesPoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SeriesPoint.ProtoReflect.Descriptor instead.
 func (*SeriesPoint) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{6}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *SeriesPoint) GetTsMs() int64 {
@@ -875,21 +1177,28 @@ func (x *SeriesPoint) GetActualKw() float64 {
 }
 
 type EvalDaySeries struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	EvalDate       string                 `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
-	Timezone       string                 `protobuf:"bytes,3,opt,name=timezone,proto3" json:"timezone,omitempty"`
-	GranularityMin int32                  `protobuf:"varint,4,opt,name=granularity_min,proto3" json:"granularity_min,omitempty"`
-	ModelKey       string                 `protobuf:"bytes,5,opt,name=model_key,proto3" json:"model_key,omitempty"`
-	ModelVersion   *string                `protobuf:"bytes,6,opt,name=model_version,proto3,oneof" json:"model_version,omitempty"`
-	Points         []*SeriesPoint         `protobuf:"bytes,7,rep,name=points,proto3" json:"points,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 评估日 YYYY-MM-DD
+	EvalDate string `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
+	// IANA 时区
+	Timezone string `protobuf:"bytes,3,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	// 序列步长（分钟）
+	GranularityMin int32 `protobuf:"varint,4,opt,name=granularity_min,proto3" json:"granularity_min,omitempty"`
+	// 模型 key
+	ModelKey string `protobuf:"bytes,5,opt,name=model_key,proto3" json:"model_key,omitempty"`
+	// 模型版本（可选）
+	ModelVersion *string `protobuf:"bytes,6,opt,name=model_version,proto3,oneof" json:"model_version,omitempty"`
+	// 预测 vs 真实点列
+	Points        []*SeriesPoint `protobuf:"bytes,7,rep,name=points,proto3" json:"points,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *EvalDaySeries) Reset() {
 	*x = EvalDaySeries{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[7]
+	mi := &file_workbench_workbench_message_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -901,7 +1210,7 @@ func (x *EvalDaySeries) String() string {
 func (*EvalDaySeries) ProtoMessage() {}
 
 func (x *EvalDaySeries) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[7]
+	mi := &file_workbench_workbench_message_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -914,7 +1223,7 @@ func (x *EvalDaySeries) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EvalDaySeries.ProtoReflect.Descriptor instead.
 func (*EvalDaySeries) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{7}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *EvalDaySeries) GetRegistrationId() string {
@@ -967,15 +1276,22 @@ func (x *EvalDaySeries) GetPoints() []*SeriesPoint {
 }
 
 type EvalDayMetrics struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	EvalDate       string                 `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
-	ModelKey       string                 `protobuf:"bytes,3,opt,name=model_key,proto3" json:"model_key,omitempty"`
-	ModelVersion   *string                `protobuf:"bytes,4,opt,name=model_version,proto3,oneof" json:"model_version,omitempty"`
-	// 百分比数值，如 8.23 表示 8.23%
-	Mape  *float64 `protobuf:"fixed64,5,opt,name=mape,proto3,oneof" json:"mape,omitempty"`
-	Rmse  *float64 `protobuf:"fixed64,6,opt,name=rmse,proto3,oneof" json:"rmse,omitempty"`
-	Mae   *float64 `protobuf:"fixed64,7,opt,name=mae,proto3,oneof" json:"mae,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 评估日 YYYY-MM-DD
+	EvalDate string `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
+	// 模型 key
+	ModelKey string `protobuf:"bytes,3,opt,name=model_key,proto3" json:"model_key,omitempty"`
+	// 模型版本（可选）
+	ModelVersion *string `protobuf:"bytes,4,opt,name=model_version,proto3,oneof" json:"model_version,omitempty"`
+	// MAPE 百分比数值，如 8.23 表示 8.23%
+	Mape *float64 `protobuf:"fixed64,5,opt,name=mape,proto3,oneof" json:"mape,omitempty"`
+	// RMSE（kW）
+	Rmse *float64 `protobuf:"fixed64,6,opt,name=rmse,proto3,oneof" json:"rmse,omitempty"`
+	// MAE（kW）
+	Mae *float64 `protobuf:"fixed64,7,opt,name=mae,proto3,oneof" json:"mae,omitempty"`
+	// sMAPE 百分比数值
 	Smape *float64 `protobuf:"fixed64,8,opt,name=smape,proto3,oneof" json:"smape,omitempty"`
 	// MAPE < 阈值点位占比，0~1
 	PassRate *float64 `protobuf:"fixed64,9,opt,name=pass_rate,proto3,oneof" json:"pass_rate,omitempty"`
@@ -987,7 +1303,7 @@ type EvalDayMetrics struct {
 
 func (x *EvalDayMetrics) Reset() {
 	*x = EvalDayMetrics{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[8]
+	mi := &file_workbench_workbench_message_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -999,7 +1315,7 @@ func (x *EvalDayMetrics) String() string {
 func (*EvalDayMetrics) ProtoMessage() {}
 
 func (x *EvalDayMetrics) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[8]
+	mi := &file_workbench_workbench_message_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1012,7 +1328,7 @@ func (x *EvalDayMetrics) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EvalDayMetrics.ProtoReflect.Descriptor instead.
 func (*EvalDayMetrics) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{8}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *EvalDayMetrics) GetRegistrationId() string {
@@ -1086,17 +1402,20 @@ func (x *EvalDayMetrics) GetMapeDelta() float64 {
 }
 
 type EvalDayMetricsRow struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	EvalDate      string                 `protobuf:"bytes,1,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
-	Mape          *float64               `protobuf:"fixed64,2,opt,name=mape,proto3,oneof" json:"mape,omitempty"`
-	Rmse          *float64               `protobuf:"fixed64,3,opt,name=rmse,proto3,oneof" json:"rmse,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 评估日 YYYY-MM-DD
+	EvalDate string `protobuf:"bytes,1,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
+	// MAPE 百分比数值
+	Mape *float64 `protobuf:"fixed64,2,opt,name=mape,proto3,oneof" json:"mape,omitempty"`
+	// RMSE（kW）
+	Rmse          *float64 `protobuf:"fixed64,3,opt,name=rmse,proto3,oneof" json:"rmse,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *EvalDayMetricsRow) Reset() {
 	*x = EvalDayMetricsRow{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[9]
+	mi := &file_workbench_workbench_message_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1108,7 +1427,7 @@ func (x *EvalDayMetricsRow) String() string {
 func (*EvalDayMetricsRow) ProtoMessage() {}
 
 func (x *EvalDayMetricsRow) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[9]
+	mi := &file_workbench_workbench_message_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1121,7 +1440,7 @@ func (x *EvalDayMetricsRow) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EvalDayMetricsRow.ProtoReflect.Descriptor instead.
 func (*EvalDayMetricsRow) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{9}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *EvalDayMetricsRow) GetEvalDate() string {
@@ -1146,18 +1465,22 @@ func (x *EvalDayMetricsRow) GetRmse() float64 {
 }
 
 type EvalDayMetricsPage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Rows          []*EvalDayMetricsRow   `protobuf:"bytes,1,rep,name=rows,proto3" json:"rows,omitempty"`
-	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
-	Page          int32                  `protobuf:"varint,3,opt,name=page,proto3" json:"page,omitempty"`
-	PageSize      int32                  `protobuf:"varint,4,opt,name=page_size,proto3" json:"page_size,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 历史评估行
+	Rows []*EvalDayMetricsRow `protobuf:"bytes,1,rep,name=rows,proto3" json:"rows,omitempty"`
+	// 总行数
+	Total int32 `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+	// 当前页（从 1 起）
+	Page int32 `protobuf:"varint,3,opt,name=page,proto3" json:"page,omitempty"`
+	// 每页条数
+	PageSize      int32 `protobuf:"varint,4,opt,name=page_size,proto3" json:"page_size,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *EvalDayMetricsPage) Reset() {
 	*x = EvalDayMetricsPage{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[10]
+	mi := &file_workbench_workbench_message_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1169,7 +1492,7 @@ func (x *EvalDayMetricsPage) String() string {
 func (*EvalDayMetricsPage) ProtoMessage() {}
 
 func (x *EvalDayMetricsPage) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[10]
+	mi := &file_workbench_workbench_message_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1182,7 +1505,7 @@ func (x *EvalDayMetricsPage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EvalDayMetricsPage.ProtoReflect.Descriptor instead.
 func (*EvalDayMetricsPage) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{10}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *EvalDayMetricsPage) GetRows() []*EvalDayMetricsRow {
@@ -1214,9 +1537,10 @@ func (x *EvalDayMetricsPage) GetPageSize() int32 {
 }
 
 type GetDataReadyCheckRequest struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	// YYYY-MM-DD；缺省为场站本地「今天」
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 评估日 YYYY-MM-DD；缺省为场站本地「今天」
 	EvalDate *string `protobuf:"bytes,2,opt,name=eval_date,proto3,oneof" json:"eval_date,omitempty"`
 	// 是否返回逐点覆盖序列；默认 true
 	IncludePoints *bool `protobuf:"varint,3,opt,name=include_points,proto3,oneof" json:"include_points,omitempty"`
@@ -1226,7 +1550,7 @@ type GetDataReadyCheckRequest struct {
 
 func (x *GetDataReadyCheckRequest) Reset() {
 	*x = GetDataReadyCheckRequest{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[11]
+	mi := &file_workbench_workbench_message_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1238,7 +1562,7 @@ func (x *GetDataReadyCheckRequest) String() string {
 func (*GetDataReadyCheckRequest) ProtoMessage() {}
 
 func (x *GetDataReadyCheckRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[11]
+	mi := &file_workbench_workbench_message_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1251,7 +1575,7 @@ func (x *GetDataReadyCheckRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataReadyCheckRequest.ProtoReflect.Descriptor instead.
 func (*GetDataReadyCheckRequest) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{11}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetDataReadyCheckRequest) GetRegistrationId() string {
@@ -1276,15 +1600,16 @@ func (x *GetDataReadyCheckRequest) GetIncludePoints() bool {
 }
 
 type GetDataReadyCheckResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Check         *DataReadyCheck        `protobuf:"bytes,1,opt,name=check,proto3" json:"check,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 就绪检查结果
+	Check         *DataReadyCheck `protobuf:"bytes,1,opt,name=check,proto3" json:"check,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetDataReadyCheckResponse) Reset() {
 	*x = GetDataReadyCheckResponse{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[12]
+	mi := &file_workbench_workbench_message_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1296,7 +1621,7 @@ func (x *GetDataReadyCheckResponse) String() string {
 func (*GetDataReadyCheckResponse) ProtoMessage() {}
 
 func (x *GetDataReadyCheckResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[12]
+	mi := &file_workbench_workbench_message_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1309,7 +1634,7 @@ func (x *GetDataReadyCheckResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataReadyCheckResponse.ProtoReflect.Descriptor instead.
 func (*GetDataReadyCheckResponse) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{12}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetDataReadyCheckResponse) GetCheck() *DataReadyCheck {
@@ -1320,15 +1645,16 @@ func (x *GetDataReadyCheckResponse) GetCheck() *DataReadyCheck {
 }
 
 type GetFusionModelRequest struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 模型 registration_id；空或 shared 时服务端解析为光伏通用模型
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
 func (x *GetFusionModelRequest) Reset() {
 	*x = GetFusionModelRequest{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[13]
+	mi := &file_workbench_workbench_message_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1340,7 +1666,7 @@ func (x *GetFusionModelRequest) String() string {
 func (*GetFusionModelRequest) ProtoMessage() {}
 
 func (x *GetFusionModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[13]
+	mi := &file_workbench_workbench_message_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1353,7 +1679,7 @@ func (x *GetFusionModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFusionModelRequest.ProtoReflect.Descriptor instead.
 func (*GetFusionModelRequest) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{13}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *GetFusionModelRequest) GetRegistrationId() string {
@@ -1364,15 +1690,16 @@ func (x *GetFusionModelRequest) GetRegistrationId() string {
 }
 
 type GetFusionModelResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Model         *FusionModelView       `protobuf:"bytes,1,opt,name=model,proto3" json:"model,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 融合模型卡片
+	Model         *FusionModelView `protobuf:"bytes,1,opt,name=model,proto3" json:"model,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetFusionModelResponse) Reset() {
 	*x = GetFusionModelResponse{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[14]
+	mi := &file_workbench_workbench_message_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1384,7 +1711,7 @@ func (x *GetFusionModelResponse) String() string {
 func (*GetFusionModelResponse) ProtoMessage() {}
 
 func (x *GetFusionModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[14]
+	mi := &file_workbench_workbench_message_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1397,7 +1724,7 @@ func (x *GetFusionModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFusionModelResponse.ProtoReflect.Descriptor instead.
 func (*GetFusionModelResponse) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{14}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *GetFusionModelResponse) GetModel() *FusionModelView {
@@ -1408,15 +1735,16 @@ func (x *GetFusionModelResponse) GetModel() *FusionModelView {
 }
 
 type CreateTrainJobRequest struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 模型 registration_id；空或 shared → 光伏通用模型
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
 func (x *CreateTrainJobRequest) Reset() {
 	*x = CreateTrainJobRequest{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[15]
+	mi := &file_workbench_workbench_message_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1428,7 +1756,7 @@ func (x *CreateTrainJobRequest) String() string {
 func (*CreateTrainJobRequest) ProtoMessage() {}
 
 func (x *CreateTrainJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[15]
+	mi := &file_workbench_workbench_message_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1441,7 +1769,7 @@ func (x *CreateTrainJobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTrainJobRequest.ProtoReflect.Descriptor instead.
 func (*CreateTrainJobRequest) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{15}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *CreateTrainJobRequest) GetRegistrationId() string {
@@ -1452,16 +1780,18 @@ func (x *CreateTrainJobRequest) GetRegistrationId() string {
 }
 
 type CreateTrainJobResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	JobId         string                 `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
-	Status        JobStatus              `protobuf:"varint,2,opt,name=status,proto3,enum=fusion.ai.proto.workbench.JobStatus" json:"status,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 新训练任务 id
+	JobId string `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
+	// 受理后初始状态，一般为 QUEUED
+	Status        JobStatus `protobuf:"varint,2,opt,name=status,proto3,enum=fusion.ai.proto.workbench.JobStatus" json:"status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CreateTrainJobResponse) Reset() {
 	*x = CreateTrainJobResponse{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[16]
+	mi := &file_workbench_workbench_message_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1473,7 +1803,7 @@ func (x *CreateTrainJobResponse) String() string {
 func (*CreateTrainJobResponse) ProtoMessage() {}
 
 func (x *CreateTrainJobResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[16]
+	mi := &file_workbench_workbench_message_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1486,7 +1816,7 @@ func (x *CreateTrainJobResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTrainJobResponse.ProtoReflect.Descriptor instead.
 func (*CreateTrainJobResponse) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{16}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *CreateTrainJobResponse) GetJobId() string {
@@ -1504,8 +1834,9 @@ func (x *CreateTrainJobResponse) GetStatus() JobStatus {
 }
 
 type CreatePredictJobRequest struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id（必填真实场站，不可用 shared）
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	// 评估日 / 预测锚定日 YYYY-MM-DD；缺省今天
 	EvalDate *string `protobuf:"bytes,2,opt,name=eval_date,proto3,oneof" json:"eval_date,omitempty"`
 	// 预测步长分钟；缺省按注册（优先 15）
@@ -1518,7 +1849,7 @@ type CreatePredictJobRequest struct {
 
 func (x *CreatePredictJobRequest) Reset() {
 	*x = CreatePredictJobRequest{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[17]
+	mi := &file_workbench_workbench_message_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1530,7 +1861,7 @@ func (x *CreatePredictJobRequest) String() string {
 func (*CreatePredictJobRequest) ProtoMessage() {}
 
 func (x *CreatePredictJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[17]
+	mi := &file_workbench_workbench_message_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1543,7 +1874,7 @@ func (x *CreatePredictJobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePredictJobRequest.ProtoReflect.Descriptor instead.
 func (*CreatePredictJobRequest) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{17}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CreatePredictJobRequest) GetRegistrationId() string {
@@ -1575,16 +1906,18 @@ func (x *CreatePredictJobRequest) GetHorizonHours() int32 {
 }
 
 type CreatePredictJobResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	JobId         string                 `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
-	Status        JobStatus              `protobuf:"varint,2,opt,name=status,proto3,enum=fusion.ai.proto.workbench.JobStatus" json:"status,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 新预测任务 id
+	JobId string `protobuf:"bytes,1,opt,name=job_id,proto3" json:"job_id,omitempty"`
+	// 受理后初始状态，一般为 QUEUED
+	Status        JobStatus `protobuf:"varint,2,opt,name=status,proto3,enum=fusion.ai.proto.workbench.JobStatus" json:"status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CreatePredictJobResponse) Reset() {
 	*x = CreatePredictJobResponse{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[18]
+	mi := &file_workbench_workbench_message_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1596,7 +1929,7 @@ func (x *CreatePredictJobResponse) String() string {
 func (*CreatePredictJobResponse) ProtoMessage() {}
 
 func (x *CreatePredictJobResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[18]
+	mi := &file_workbench_workbench_message_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1609,7 +1942,7 @@ func (x *CreatePredictJobResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePredictJobResponse.ProtoReflect.Descriptor instead.
 func (*CreatePredictJobResponse) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{18}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CreatePredictJobResponse) GetJobId() string {
@@ -1626,16 +1959,136 @@ func (x *CreatePredictJobResponse) GetStatus() JobStatus {
 	return JobStatus_JOB_STATUS_UNSPECIFIED
 }
 
+// GetTrainRequest 进页训练快照（current + 当前 job + 日志）。
+type GetTrainRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 模型 registration_id；空或 shared → 光伏通用模型
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *GetTrainRequest) Reset() {
+	*x = GetTrainRequest{}
+	mi := &file_workbench_workbench_message_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTrainRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTrainRequest) ProtoMessage() {}
+
+func (x *GetTrainRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_workbench_workbench_message_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTrainRequest.ProtoReflect.Descriptor instead.
+func (*GetTrainRequest) Descriptor() ([]byte, []int) {
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *GetTrainRequest) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+// GetTrainResponse 训练进页快照；无任务时 job 不填。之后进度靠 WS train/*，不要轮询。
+type GetTrainResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 模型 registration_id（已解析）
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 当前训练任务 id；无任务时为空
+	CurrentTrainJobId string `protobuf:"bytes,2,opt,name=current_train_job_id,proto3" json:"current_train_job_id,omitempty"`
+	// 融合模型卡片（与 GetFusionModel 同结构，便于一页拉齐）
+	Model *FusionModelView `protobuf:"bytes,3,opt,name=model,proto3,oneof" json:"model,omitempty"`
+	// 当前训练 job 全量（含日志栈）；无任务时不填
+	Job           *TrainJobView `protobuf:"bytes,4,opt,name=job,proto3,oneof" json:"job,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTrainResponse) Reset() {
+	*x = GetTrainResponse{}
+	mi := &file_workbench_workbench_message_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTrainResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTrainResponse) ProtoMessage() {}
+
+func (x *GetTrainResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_workbench_workbench_message_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTrainResponse.ProtoReflect.Descriptor instead.
+func (*GetTrainResponse) Descriptor() ([]byte, []int) {
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *GetTrainResponse) GetRegistrationId() string {
+	if x != nil {
+		return x.RegistrationId
+	}
+	return ""
+}
+
+func (x *GetTrainResponse) GetCurrentTrainJobId() string {
+	if x != nil {
+		return x.CurrentTrainJobId
+	}
+	return ""
+}
+
+func (x *GetTrainResponse) GetModel() *FusionModelView {
+	if x != nil {
+		return x.Model
+	}
+	return nil
+}
+
+func (x *GetTrainResponse) GetJob() *TrainJobView {
+	if x != nil {
+		return x.Job
+	}
+	return nil
+}
+
 type GetPredictRequest struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
 func (x *GetPredictRequest) Reset() {
 	*x = GetPredictRequest{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[19]
+	mi := &file_workbench_workbench_message_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1647,7 +2100,7 @@ func (x *GetPredictRequest) String() string {
 func (*GetPredictRequest) ProtoMessage() {}
 
 func (x *GetPredictRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[19]
+	mi := &file_workbench_workbench_message_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1660,7 +2113,7 @@ func (x *GetPredictRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPredictRequest.ProtoReflect.Descriptor instead.
 func (*GetPredictRequest) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{19}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *GetPredictRequest) GetRegistrationId() string {
@@ -1670,9 +2123,11 @@ func (x *GetPredictRequest) GetRegistrationId() string {
 	return ""
 }
 
+// GetPredictResponse 预测进页快照；无任务时 job 不填。之后进度靠 WS predict/*，不要轮询。
 type GetPredictResponse struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
 	// 当前预测任务 id；无任务时为空
 	CurrentPredictJobId string `protobuf:"bytes,2,opt,name=current_predict_job_id,proto3" json:"current_predict_job_id,omitempty"`
 	// 当前 job 全量；无任务时不填
@@ -1683,7 +2138,7 @@ type GetPredictResponse struct {
 
 func (x *GetPredictResponse) Reset() {
 	*x = GetPredictResponse{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[20]
+	mi := &file_workbench_workbench_message_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1695,7 +2150,7 @@ func (x *GetPredictResponse) String() string {
 func (*GetPredictResponse) ProtoMessage() {}
 
 func (x *GetPredictResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[20]
+	mi := &file_workbench_workbench_message_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1708,7 +2163,7 @@ func (x *GetPredictResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPredictResponse.ProtoReflect.Descriptor instead.
 func (*GetPredictResponse) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{20}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetPredictResponse) GetRegistrationId() string {
@@ -1733,17 +2188,20 @@ func (x *GetPredictResponse) GetJob() *PredictJobView {
 }
 
 type GetEvalDaySeriesRequest struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	EvalDate       string                 `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
-	GranularityMin *int32                 `protobuf:"varint,3,opt,name=granularity_min,proto3,oneof" json:"granularity_min,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 评估日 YYYY-MM-DD
+	EvalDate string `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
+	// 步长分钟；缺省按注册
+	GranularityMin *int32 `protobuf:"varint,3,opt,name=granularity_min,proto3,oneof" json:"granularity_min,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
 func (x *GetEvalDaySeriesRequest) Reset() {
 	*x = GetEvalDaySeriesRequest{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[21]
+	mi := &file_workbench_workbench_message_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1755,7 +2213,7 @@ func (x *GetEvalDaySeriesRequest) String() string {
 func (*GetEvalDaySeriesRequest) ProtoMessage() {}
 
 func (x *GetEvalDaySeriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[21]
+	mi := &file_workbench_workbench_message_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1768,7 +2226,7 @@ func (x *GetEvalDaySeriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEvalDaySeriesRequest.ProtoReflect.Descriptor instead.
 func (*GetEvalDaySeriesRequest) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{21}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *GetEvalDaySeriesRequest) GetRegistrationId() string {
@@ -1793,15 +2251,16 @@ func (x *GetEvalDaySeriesRequest) GetGranularityMin() int32 {
 }
 
 type GetEvalDaySeriesResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Series        *EvalDaySeries         `protobuf:"bytes,1,opt,name=series,proto3" json:"series,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 评估日曲线
+	Series        *EvalDaySeries `protobuf:"bytes,1,opt,name=series,proto3" json:"series,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetEvalDaySeriesResponse) Reset() {
 	*x = GetEvalDaySeriesResponse{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[22]
+	mi := &file_workbench_workbench_message_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1813,7 +2272,7 @@ func (x *GetEvalDaySeriesResponse) String() string {
 func (*GetEvalDaySeriesResponse) ProtoMessage() {}
 
 func (x *GetEvalDaySeriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[22]
+	mi := &file_workbench_workbench_message_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1826,7 +2285,7 @@ func (x *GetEvalDaySeriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEvalDaySeriesResponse.ProtoReflect.Descriptor instead.
 func (*GetEvalDaySeriesResponse) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{22}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *GetEvalDaySeriesResponse) GetSeries() *EvalDaySeries {
@@ -1837,16 +2296,18 @@ func (x *GetEvalDaySeriesResponse) GetSeries() *EvalDaySeries {
 }
 
 type GetEvalDayMetricsRequest struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	EvalDate       string                 `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 评估日 YYYY-MM-DD
+	EvalDate      string `protobuf:"bytes,2,opt,name=eval_date,proto3" json:"eval_date,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetEvalDayMetricsRequest) Reset() {
 	*x = GetEvalDayMetricsRequest{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[23]
+	mi := &file_workbench_workbench_message_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1858,7 +2319,7 @@ func (x *GetEvalDayMetricsRequest) String() string {
 func (*GetEvalDayMetricsRequest) ProtoMessage() {}
 
 func (x *GetEvalDayMetricsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[23]
+	mi := &file_workbench_workbench_message_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1871,7 +2332,7 @@ func (x *GetEvalDayMetricsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEvalDayMetricsRequest.ProtoReflect.Descriptor instead.
 func (*GetEvalDayMetricsRequest) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{23}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *GetEvalDayMetricsRequest) GetRegistrationId() string {
@@ -1889,15 +2350,16 @@ func (x *GetEvalDayMetricsRequest) GetEvalDate() string {
 }
 
 type GetEvalDayMetricsResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metrics       *EvalDayMetrics        `protobuf:"bytes,1,opt,name=metrics,proto3" json:"metrics,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 单日 KPI
+	Metrics       *EvalDayMetrics `protobuf:"bytes,1,opt,name=metrics,proto3" json:"metrics,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetEvalDayMetricsResponse) Reset() {
 	*x = GetEvalDayMetricsResponse{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[24]
+	mi := &file_workbench_workbench_message_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1909,7 +2371,7 @@ func (x *GetEvalDayMetricsResponse) String() string {
 func (*GetEvalDayMetricsResponse) ProtoMessage() {}
 
 func (x *GetEvalDayMetricsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[24]
+	mi := &file_workbench_workbench_message_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1922,7 +2384,7 @@ func (x *GetEvalDayMetricsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEvalDayMetricsResponse.ProtoReflect.Descriptor instead.
 func (*GetEvalDayMetricsResponse) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{24}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *GetEvalDayMetricsResponse) GetMetrics() *EvalDayMetrics {
@@ -1933,10 +2395,13 @@ func (x *GetEvalDayMetricsResponse) GetMetrics() *EvalDayMetrics {
 }
 
 type ListEvalDailyMetricsRequest struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	RegistrationId string                 `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
-	Page           *int32                 `protobuf:"varint,2,opt,name=page,proto3,oneof" json:"page,omitempty"`
-	PageSize       *int32                 `protobuf:"varint,3,opt,name=page_size,proto3,oneof" json:"page_size,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 场站 registration_id
+	RegistrationId string `protobuf:"bytes,1,opt,name=registration_id,proto3" json:"registration_id,omitempty"`
+	// 页码，从 1 起；缺省 1
+	Page *int32 `protobuf:"varint,2,opt,name=page,proto3,oneof" json:"page,omitempty"`
+	// 每页条数；缺省由服务端定
+	PageSize *int32 `protobuf:"varint,3,opt,name=page_size,proto3,oneof" json:"page_size,omitempty"`
 	// 含当日及以前；不可选未来
 	EndDate       *string `protobuf:"bytes,4,opt,name=end_date,proto3,oneof" json:"end_date,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1945,7 +2410,7 @@ type ListEvalDailyMetricsRequest struct {
 
 func (x *ListEvalDailyMetricsRequest) Reset() {
 	*x = ListEvalDailyMetricsRequest{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[25]
+	mi := &file_workbench_workbench_message_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1957,7 +2422,7 @@ func (x *ListEvalDailyMetricsRequest) String() string {
 func (*ListEvalDailyMetricsRequest) ProtoMessage() {}
 
 func (x *ListEvalDailyMetricsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[25]
+	mi := &file_workbench_workbench_message_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1970,7 +2435,7 @@ func (x *ListEvalDailyMetricsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEvalDailyMetricsRequest.ProtoReflect.Descriptor instead.
 func (*ListEvalDailyMetricsRequest) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{25}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *ListEvalDailyMetricsRequest) GetRegistrationId() string {
@@ -2002,15 +2467,16 @@ func (x *ListEvalDailyMetricsRequest) GetEndDate() string {
 }
 
 type ListEvalDailyMetricsResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Page          *EvalDayMetricsPage    `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 分页结果
+	Page          *EvalDayMetricsPage `protobuf:"bytes,1,opt,name=page,proto3" json:"page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ListEvalDailyMetricsResponse) Reset() {
 	*x = ListEvalDailyMetricsResponse{}
-	mi := &file_workbench_workbench_message_proto_msgTypes[26]
+	mi := &file_workbench_workbench_message_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2022,7 +2488,7 @@ func (x *ListEvalDailyMetricsResponse) String() string {
 func (*ListEvalDailyMetricsResponse) ProtoMessage() {}
 
 func (x *ListEvalDailyMetricsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_workbench_workbench_message_proto_msgTypes[26]
+	mi := &file_workbench_workbench_message_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2035,7 +2501,7 @@ func (x *ListEvalDailyMetricsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEvalDailyMetricsResponse.ProtoReflect.Descriptor instead.
 func (*ListEvalDailyMetricsResponse) Descriptor() ([]byte, []int) {
-	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{26}
+	return file_workbench_workbench_message_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *ListEvalDailyMetricsResponse) GetPage() *EvalDayMetricsPage {
@@ -2079,16 +2545,34 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"checked_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"checked_atB\n" +
 	"\n" +
-	"\b_weather\"\xb5\x02\n" +
+	"\b_weather\"\xe9\x02\n" +
 	"\x0fFusionModelView\x12(\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x12\x1c\n" +
 	"\tmodel_key\x18\x02 \x01(\tR\tmodel_key\x12\x18\n" +
 	"\aversion\x18\x03 \x01(\tR\aversion\x12C\n" +
 	"\x06status\x18\x04 \x01(\x0e2+.fusion.ai.proto.workbench.ModelReadyStatusR\x06status\x12-\n" +
 	"\x0flast_trained_at\x18\x05 \x01(\tH\x00R\x0flast_trained_at\x88\x01\x01\x12'\n" +
-	"\fartifact_uri\x18\x06 \x01(\tH\x01R\fartifact_uri\x88\x01\x01B\x12\n" +
+	"\fartifact_uri\x18\x06 \x01(\tH\x01R\fartifact_uri\x88\x01\x01\x122\n" +
+	"\x14current_train_job_id\x18\a \x01(\tR\x14current_train_job_idB\x12\n" +
 	"\x10_last_trained_atB\x0f\n" +
-	"\r_artifact_uri\"\xb7\x05\n" +
+	"\r_artifact_uri\"Z\n" +
+	"\fTrainLogLine\x12\x10\n" +
+	"\x03seq\x18\x01 \x01(\x03R\x03seq\x12\x0e\n" +
+	"\x02ts\x18\x02 \x01(\tR\x02ts\x12\x14\n" +
+	"\x05level\x18\x03 \x01(\tR\x05level\x12\x12\n" +
+	"\x04line\x18\x04 \x01(\tR\x04line\"\xd0\x02\n" +
+	"\fTrainJobView\x12\x16\n" +
+	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x12(\n" +
+	"\x0fregistration_id\x18\x02 \x01(\tR\x0fregistration_id\x12<\n" +
+	"\x06status\x18\x03 \x01(\x0e2$.fusion.ai.proto.workbench.JobStatusR\x06status\x12#\n" +
+	"\n" +
+	"started_at\x18\x04 \x01(\tH\x00R\n" +
+	"started_at\x88\x01\x01\x12%\n" +
+	"\vfinished_at\x18\x05 \x01(\tH\x01R\vfinished_at\x88\x01\x01\x12\x18\n" +
+	"\alog_seq\x18\x06 \x01(\x03R\alog_seq\x12;\n" +
+	"\x04logs\x18\a \x03(\v2'.fusion.ai.proto.workbench.TrainLogLineR\x04logsB\r\n" +
+	"\v_started_atB\x0e\n" +
+	"\f_finished_at\"\xe3\x05\n" +
 	"\x0ePredictJobView\x12\x16\n" +
 	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x12(\n" +
 	"\x0fregistration_id\x18\x02 \x01(\tR\x0fregistration_id\x12<\n" +
@@ -2111,10 +2595,10 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"\vfinished_at\x18\x0e \x01(\tH\x01R\vfinished_at\x88\x01\x01\x12#\n" +
 	"\n" +
 	"updated_at\x18\x0f \x01(\tH\x02R\n" +
-	"updated_at\x88\x01\x01\x1a9\n" +
+	"updated_at\x88\x01\x01\x1ae\n" +
 	"\vStagesEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\r\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12@\n" +
+	"\x05value\x18\x02 \x01(\x0e2*.fusion.ai.proto.workbench.StageStepStatusR\x05value:\x028\x01B\r\n" +
 	"\v_started_atB\x0e\n" +
 	"\f_finished_atB\r\n" +
 	"\v_updated_at\"\x8e\x01\n" +
@@ -2198,7 +2682,16 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"\x0e_horizon_hours\"p\n" +
 	"\x18CreatePredictJobResponse\x12\x16\n" +
 	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x12<\n" +
-	"\x06status\x18\x02 \x01(\x0e2$.fusion.ai.proto.workbench.JobStatusR\x06status\"H\n" +
+	"\x06status\x18\x02 \x01(\x0e2$.fusion.ai.proto.workbench.JobStatusR\x06status\"F\n" +
+	"\x0fGetTrainRequest\x123\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\"\x89\x02\n" +
+	"\x10GetTrainResponse\x12(\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x122\n" +
+	"\x14current_train_job_id\x18\x02 \x01(\tR\x14current_train_job_id\x12E\n" +
+	"\x05model\x18\x03 \x01(\v2*.fusion.ai.proto.workbench.FusionModelViewH\x00R\x05model\x88\x01\x01\x12>\n" +
+	"\x03job\x18\x04 \x01(\v2'.fusion.ai.proto.workbench.TrainJobViewH\x01R\x03job\x88\x01\x01B\b\n" +
+	"\x06_modelB\x06\n" +
+	"\x04_job\"H\n" +
 	"\x11GetPredictRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\"\xc0\x01\n" +
 	"\x12GetPredictResponse\x12(\n" +
@@ -2238,20 +2731,27 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"\x12CoverageSeriesKind\x12$\n" +
 	" COVERAGE_SERIES_KIND_UNSPECIFIED\x10\x00\x12\x1e\n" +
 	"\x1aCOVERAGE_SERIES_KIND_POWER\x10\x01\x12 \n" +
-	"\x1cCOVERAGE_SERIES_KIND_WEATHER\x10\x02*\xb3\x01\n" +
+	"\x1cCOVERAGE_SERIES_KIND_WEATHER\x10\x02*\xd2\x01\n" +
 	"\x10ModelReadyStatus\x12\"\n" +
 	"\x1eMODEL_READY_STATUS_UNSPECIFIED\x10\x00\x12\x1c\n" +
 	"\x18MODEL_READY_STATUS_READY\x10\x01\x12\x1f\n" +
 	"\x1bMODEL_READY_STATUS_TRAINING\x10\x02\x12\x1c\n" +
 	"\x18MODEL_READY_STATUS_STALE\x10\x03\x12\x1e\n" +
-	"\x1aMODEL_READY_STATUS_MISSING\x10\x04*\xa1\x01\n" +
+	"\x1aMODEL_READY_STATUS_MISSING\x10\x04\x12\x1d\n" +
+	"\x19MODEL_READY_STATUS_FAILED\x10\x05*\xa1\x01\n" +
 	"\tJobStatus\x12\x1a\n" +
 	"\x16JOB_STATUS_UNSPECIFIED\x10\x00\x12\x15\n" +
 	"\x11JOB_STATUS_QUEUED\x10\x01\x12\x16\n" +
 	"\x12JOB_STATUS_RUNNING\x10\x02\x12\x18\n" +
 	"\x14JOB_STATUS_SUCCEEDED\x10\x03\x12\x15\n" +
 	"\x11JOB_STATUS_FAILED\x10\x04\x12\x18\n" +
-	"\x14JOB_STATUS_CANCELLED\x10\x05B\xe3\x01\n" +
+	"\x14JOB_STATUS_CANCELLED\x10\x05*\xac\x01\n" +
+	"\x0fStageStepStatus\x12!\n" +
+	"\x1dSTAGE_STEP_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n" +
+	"\x19STAGE_STEP_STATUS_PENDING\x10\x01\x12\x1d\n" +
+	"\x19STAGE_STEP_STATUS_RUNNING\x10\x02\x12\x1a\n" +
+	"\x16STAGE_STEP_STATUS_DONE\x10\x03\x12\x1c\n" +
+	"\x18STAGE_STEP_STATUS_FAILED\x10\x04B\xe3\x01\n" +
 	"\x1dcom.fusion.ai.proto.workbenchB\x15WorkbenchMessageProtoP\x01Z#fusion.ai.proto.workbench;workbench\xa2\x02\x04FAPW\xaa\x02\x19Fusion.Ai.Proto.Workbench\xca\x02\x19Fusion\\Ai\\Proto\\Workbench\xe2\x02%Fusion\\Ai\\Proto\\Workbench\\GPBMetadata\xea\x02\x1cFusion::Ai::Proto::Workbenchb\x06proto3"
 
 var (
@@ -2266,69 +2766,79 @@ func file_workbench_workbench_message_proto_rawDescGZIP() []byte {
 	return file_workbench_workbench_message_proto_rawDescData
 }
 
-var file_workbench_workbench_message_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_workbench_workbench_message_proto_msgTypes = make([]protoimpl.MessageInfo, 28)
+var file_workbench_workbench_message_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
+var file_workbench_workbench_message_proto_msgTypes = make([]protoimpl.MessageInfo, 32)
 var file_workbench_workbench_message_proto_goTypes = []any{
 	(ReadyCheckStatus)(0),                // 0: fusion.ai.proto.workbench.ReadyCheckStatus
 	(CoverageSeriesKind)(0),              // 1: fusion.ai.proto.workbench.CoverageSeriesKind
 	(ModelReadyStatus)(0),                // 2: fusion.ai.proto.workbench.ModelReadyStatus
 	(JobStatus)(0),                       // 3: fusion.ai.proto.workbench.JobStatus
-	(*GapInterval)(nil),                  // 4: fusion.ai.proto.workbench.GapInterval
-	(*CoveragePoint)(nil),                // 5: fusion.ai.proto.workbench.CoveragePoint
-	(*CoverageBand)(nil),                 // 6: fusion.ai.proto.workbench.CoverageBand
-	(*DataReadyCheck)(nil),               // 7: fusion.ai.proto.workbench.DataReadyCheck
-	(*FusionModelView)(nil),              // 8: fusion.ai.proto.workbench.FusionModelView
-	(*PredictJobView)(nil),               // 9: fusion.ai.proto.workbench.PredictJobView
-	(*SeriesPoint)(nil),                  // 10: fusion.ai.proto.workbench.SeriesPoint
-	(*EvalDaySeries)(nil),                // 11: fusion.ai.proto.workbench.EvalDaySeries
-	(*EvalDayMetrics)(nil),               // 12: fusion.ai.proto.workbench.EvalDayMetrics
-	(*EvalDayMetricsRow)(nil),            // 13: fusion.ai.proto.workbench.EvalDayMetricsRow
-	(*EvalDayMetricsPage)(nil),           // 14: fusion.ai.proto.workbench.EvalDayMetricsPage
-	(*GetDataReadyCheckRequest)(nil),     // 15: fusion.ai.proto.workbench.GetDataReadyCheckRequest
-	(*GetDataReadyCheckResponse)(nil),    // 16: fusion.ai.proto.workbench.GetDataReadyCheckResponse
-	(*GetFusionModelRequest)(nil),        // 17: fusion.ai.proto.workbench.GetFusionModelRequest
-	(*GetFusionModelResponse)(nil),       // 18: fusion.ai.proto.workbench.GetFusionModelResponse
-	(*CreateTrainJobRequest)(nil),        // 19: fusion.ai.proto.workbench.CreateTrainJobRequest
-	(*CreateTrainJobResponse)(nil),       // 20: fusion.ai.proto.workbench.CreateTrainJobResponse
-	(*CreatePredictJobRequest)(nil),      // 21: fusion.ai.proto.workbench.CreatePredictJobRequest
-	(*CreatePredictJobResponse)(nil),     // 22: fusion.ai.proto.workbench.CreatePredictJobResponse
-	(*GetPredictRequest)(nil),            // 23: fusion.ai.proto.workbench.GetPredictRequest
-	(*GetPredictResponse)(nil),           // 24: fusion.ai.proto.workbench.GetPredictResponse
-	(*GetEvalDaySeriesRequest)(nil),      // 25: fusion.ai.proto.workbench.GetEvalDaySeriesRequest
-	(*GetEvalDaySeriesResponse)(nil),     // 26: fusion.ai.proto.workbench.GetEvalDaySeriesResponse
-	(*GetEvalDayMetricsRequest)(nil),     // 27: fusion.ai.proto.workbench.GetEvalDayMetricsRequest
-	(*GetEvalDayMetricsResponse)(nil),    // 28: fusion.ai.proto.workbench.GetEvalDayMetricsResponse
-	(*ListEvalDailyMetricsRequest)(nil),  // 29: fusion.ai.proto.workbench.ListEvalDailyMetricsRequest
-	(*ListEvalDailyMetricsResponse)(nil), // 30: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse
-	nil,                                  // 31: fusion.ai.proto.workbench.PredictJobView.StagesEntry
-	(*timestamppb.Timestamp)(nil),        // 32: google.protobuf.Timestamp
+	(StageStepStatus)(0),                 // 4: fusion.ai.proto.workbench.StageStepStatus
+	(*GapInterval)(nil),                  // 5: fusion.ai.proto.workbench.GapInterval
+	(*CoveragePoint)(nil),                // 6: fusion.ai.proto.workbench.CoveragePoint
+	(*CoverageBand)(nil),                 // 7: fusion.ai.proto.workbench.CoverageBand
+	(*DataReadyCheck)(nil),               // 8: fusion.ai.proto.workbench.DataReadyCheck
+	(*FusionModelView)(nil),              // 9: fusion.ai.proto.workbench.FusionModelView
+	(*TrainLogLine)(nil),                 // 10: fusion.ai.proto.workbench.TrainLogLine
+	(*TrainJobView)(nil),                 // 11: fusion.ai.proto.workbench.TrainJobView
+	(*PredictJobView)(nil),               // 12: fusion.ai.proto.workbench.PredictJobView
+	(*SeriesPoint)(nil),                  // 13: fusion.ai.proto.workbench.SeriesPoint
+	(*EvalDaySeries)(nil),                // 14: fusion.ai.proto.workbench.EvalDaySeries
+	(*EvalDayMetrics)(nil),               // 15: fusion.ai.proto.workbench.EvalDayMetrics
+	(*EvalDayMetricsRow)(nil),            // 16: fusion.ai.proto.workbench.EvalDayMetricsRow
+	(*EvalDayMetricsPage)(nil),           // 17: fusion.ai.proto.workbench.EvalDayMetricsPage
+	(*GetDataReadyCheckRequest)(nil),     // 18: fusion.ai.proto.workbench.GetDataReadyCheckRequest
+	(*GetDataReadyCheckResponse)(nil),    // 19: fusion.ai.proto.workbench.GetDataReadyCheckResponse
+	(*GetFusionModelRequest)(nil),        // 20: fusion.ai.proto.workbench.GetFusionModelRequest
+	(*GetFusionModelResponse)(nil),       // 21: fusion.ai.proto.workbench.GetFusionModelResponse
+	(*CreateTrainJobRequest)(nil),        // 22: fusion.ai.proto.workbench.CreateTrainJobRequest
+	(*CreateTrainJobResponse)(nil),       // 23: fusion.ai.proto.workbench.CreateTrainJobResponse
+	(*CreatePredictJobRequest)(nil),      // 24: fusion.ai.proto.workbench.CreatePredictJobRequest
+	(*CreatePredictJobResponse)(nil),     // 25: fusion.ai.proto.workbench.CreatePredictJobResponse
+	(*GetTrainRequest)(nil),              // 26: fusion.ai.proto.workbench.GetTrainRequest
+	(*GetTrainResponse)(nil),             // 27: fusion.ai.proto.workbench.GetTrainResponse
+	(*GetPredictRequest)(nil),            // 28: fusion.ai.proto.workbench.GetPredictRequest
+	(*GetPredictResponse)(nil),           // 29: fusion.ai.proto.workbench.GetPredictResponse
+	(*GetEvalDaySeriesRequest)(nil),      // 30: fusion.ai.proto.workbench.GetEvalDaySeriesRequest
+	(*GetEvalDaySeriesResponse)(nil),     // 31: fusion.ai.proto.workbench.GetEvalDaySeriesResponse
+	(*GetEvalDayMetricsRequest)(nil),     // 32: fusion.ai.proto.workbench.GetEvalDayMetricsRequest
+	(*GetEvalDayMetricsResponse)(nil),    // 33: fusion.ai.proto.workbench.GetEvalDayMetricsResponse
+	(*ListEvalDailyMetricsRequest)(nil),  // 34: fusion.ai.proto.workbench.ListEvalDailyMetricsRequest
+	(*ListEvalDailyMetricsResponse)(nil), // 35: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse
+	nil,                                  // 36: fusion.ai.proto.workbench.PredictJobView.StagesEntry
+	(*timestamppb.Timestamp)(nil),        // 37: google.protobuf.Timestamp
 }
 var file_workbench_workbench_message_proto_depIdxs = []int32{
 	1,  // 0: fusion.ai.proto.workbench.CoverageBand.kind:type_name -> fusion.ai.proto.workbench.CoverageSeriesKind
-	5,  // 1: fusion.ai.proto.workbench.CoverageBand.points:type_name -> fusion.ai.proto.workbench.CoveragePoint
-	4,  // 2: fusion.ai.proto.workbench.CoverageBand.gaps:type_name -> fusion.ai.proto.workbench.GapInterval
+	6,  // 1: fusion.ai.proto.workbench.CoverageBand.points:type_name -> fusion.ai.proto.workbench.CoveragePoint
+	5,  // 2: fusion.ai.proto.workbench.CoverageBand.gaps:type_name -> fusion.ai.proto.workbench.GapInterval
 	0,  // 3: fusion.ai.proto.workbench.DataReadyCheck.status:type_name -> fusion.ai.proto.workbench.ReadyCheckStatus
-	6,  // 4: fusion.ai.proto.workbench.DataReadyCheck.power:type_name -> fusion.ai.proto.workbench.CoverageBand
-	6,  // 5: fusion.ai.proto.workbench.DataReadyCheck.weather:type_name -> fusion.ai.proto.workbench.CoverageBand
-	32, // 6: fusion.ai.proto.workbench.DataReadyCheck.checked_at:type_name -> google.protobuf.Timestamp
+	7,  // 4: fusion.ai.proto.workbench.DataReadyCheck.power:type_name -> fusion.ai.proto.workbench.CoverageBand
+	7,  // 5: fusion.ai.proto.workbench.DataReadyCheck.weather:type_name -> fusion.ai.proto.workbench.CoverageBand
+	37, // 6: fusion.ai.proto.workbench.DataReadyCheck.checked_at:type_name -> google.protobuf.Timestamp
 	2,  // 7: fusion.ai.proto.workbench.FusionModelView.status:type_name -> fusion.ai.proto.workbench.ModelReadyStatus
-	3,  // 8: fusion.ai.proto.workbench.PredictJobView.status:type_name -> fusion.ai.proto.workbench.JobStatus
-	31, // 9: fusion.ai.proto.workbench.PredictJobView.stages:type_name -> fusion.ai.proto.workbench.PredictJobView.StagesEntry
-	10, // 10: fusion.ai.proto.workbench.EvalDaySeries.points:type_name -> fusion.ai.proto.workbench.SeriesPoint
-	13, // 11: fusion.ai.proto.workbench.EvalDayMetricsPage.rows:type_name -> fusion.ai.proto.workbench.EvalDayMetricsRow
-	7,  // 12: fusion.ai.proto.workbench.GetDataReadyCheckResponse.check:type_name -> fusion.ai.proto.workbench.DataReadyCheck
-	8,  // 13: fusion.ai.proto.workbench.GetFusionModelResponse.model:type_name -> fusion.ai.proto.workbench.FusionModelView
-	3,  // 14: fusion.ai.proto.workbench.CreateTrainJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
-	3,  // 15: fusion.ai.proto.workbench.CreatePredictJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
-	9,  // 16: fusion.ai.proto.workbench.GetPredictResponse.job:type_name -> fusion.ai.proto.workbench.PredictJobView
-	11, // 17: fusion.ai.proto.workbench.GetEvalDaySeriesResponse.series:type_name -> fusion.ai.proto.workbench.EvalDaySeries
-	12, // 18: fusion.ai.proto.workbench.GetEvalDayMetricsResponse.metrics:type_name -> fusion.ai.proto.workbench.EvalDayMetrics
-	14, // 19: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse.page:type_name -> fusion.ai.proto.workbench.EvalDayMetricsPage
-	20, // [20:20] is the sub-list for method output_type
-	20, // [20:20] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	3,  // 8: fusion.ai.proto.workbench.TrainJobView.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	10, // 9: fusion.ai.proto.workbench.TrainJobView.logs:type_name -> fusion.ai.proto.workbench.TrainLogLine
+	3,  // 10: fusion.ai.proto.workbench.PredictJobView.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	36, // 11: fusion.ai.proto.workbench.PredictJobView.stages:type_name -> fusion.ai.proto.workbench.PredictJobView.StagesEntry
+	13, // 12: fusion.ai.proto.workbench.EvalDaySeries.points:type_name -> fusion.ai.proto.workbench.SeriesPoint
+	16, // 13: fusion.ai.proto.workbench.EvalDayMetricsPage.rows:type_name -> fusion.ai.proto.workbench.EvalDayMetricsRow
+	8,  // 14: fusion.ai.proto.workbench.GetDataReadyCheckResponse.check:type_name -> fusion.ai.proto.workbench.DataReadyCheck
+	9,  // 15: fusion.ai.proto.workbench.GetFusionModelResponse.model:type_name -> fusion.ai.proto.workbench.FusionModelView
+	3,  // 16: fusion.ai.proto.workbench.CreateTrainJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	3,  // 17: fusion.ai.proto.workbench.CreatePredictJobResponse.status:type_name -> fusion.ai.proto.workbench.JobStatus
+	9,  // 18: fusion.ai.proto.workbench.GetTrainResponse.model:type_name -> fusion.ai.proto.workbench.FusionModelView
+	11, // 19: fusion.ai.proto.workbench.GetTrainResponse.job:type_name -> fusion.ai.proto.workbench.TrainJobView
+	12, // 20: fusion.ai.proto.workbench.GetPredictResponse.job:type_name -> fusion.ai.proto.workbench.PredictJobView
+	14, // 21: fusion.ai.proto.workbench.GetEvalDaySeriesResponse.series:type_name -> fusion.ai.proto.workbench.EvalDaySeries
+	15, // 22: fusion.ai.proto.workbench.GetEvalDayMetricsResponse.metrics:type_name -> fusion.ai.proto.workbench.EvalDayMetrics
+	17, // 23: fusion.ai.proto.workbench.ListEvalDailyMetricsResponse.page:type_name -> fusion.ai.proto.workbench.EvalDayMetricsPage
+	4,  // 24: fusion.ai.proto.workbench.PredictJobView.StagesEntry.value:type_name -> fusion.ai.proto.workbench.StageStepStatus
+	25, // [25:25] is the sub-list for method output_type
+	25, // [25:25] is the sub-list for method input_type
+	25, // [25:25] is the sub-list for extension type_name
+	25, // [25:25] is the sub-list for extension extendee
+	0,  // [0:25] is the sub-list for field type_name
 }
 
 func init() { file_workbench_workbench_message_proto_init() }
@@ -2339,23 +2849,25 @@ func file_workbench_workbench_message_proto_init() {
 	file_workbench_workbench_message_proto_msgTypes[1].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[3].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[4].OneofWrappers = []any{}
-	file_workbench_workbench_message_proto_msgTypes[5].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[6].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[7].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[8].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[9].OneofWrappers = []any{}
+	file_workbench_workbench_message_proto_msgTypes[10].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[11].OneofWrappers = []any{}
-	file_workbench_workbench_message_proto_msgTypes[17].OneofWrappers = []any{}
-	file_workbench_workbench_message_proto_msgTypes[20].OneofWrappers = []any{}
-	file_workbench_workbench_message_proto_msgTypes[21].OneofWrappers = []any{}
+	file_workbench_workbench_message_proto_msgTypes[13].OneofWrappers = []any{}
+	file_workbench_workbench_message_proto_msgTypes[19].OneofWrappers = []any{}
+	file_workbench_workbench_message_proto_msgTypes[22].OneofWrappers = []any{}
+	file_workbench_workbench_message_proto_msgTypes[24].OneofWrappers = []any{}
 	file_workbench_workbench_message_proto_msgTypes[25].OneofWrappers = []any{}
+	file_workbench_workbench_message_proto_msgTypes[29].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_workbench_workbench_message_proto_rawDesc), len(file_workbench_workbench_message_proto_rawDesc)),
-			NumEnums:      4,
-			NumMessages:   28,
+			NumEnums:      5,
+			NumMessages:   32,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

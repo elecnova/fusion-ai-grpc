@@ -15,14 +15,20 @@ use Google\Protobuf\RepeatedField;
 class SeriesPoint extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 点时间 Unix 毫秒
+     *
      * Generated from protobuf field <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      */
     protected $ts_ms = 0;
     /**
+     * 预测功率 kW；缺测不填
+     *
      * Generated from protobuf field <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
      */
     protected $predicted_kw = null;
     /**
+     * 真实功率 kW；缺测不填
+     *
      * Generated from protobuf field <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
      */
     protected $actual_kw = null;
@@ -34,8 +40,11 @@ class SeriesPoint extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $ts_ms
+     *           点时间 Unix 毫秒
      *     @type float $predicted_kw
+     *           预测功率 kW；缺测不填
      *     @type float $actual_kw
+     *           真实功率 kW；缺测不填
      * }
      */
     public function __construct($data = null)
@@ -45,6 +54,8 @@ class SeriesPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 点时间 Unix 毫秒
+     *
      * Generated from protobuf field <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @return int|string
      */
@@ -54,6 +65,8 @@ class SeriesPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 点时间 Unix 毫秒
+     *
      * Generated from protobuf field <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
      * @param int|string $var
      * @return $this
@@ -67,6 +80,8 @@ class SeriesPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测功率 kW；缺测不填
+     *
      * Generated from protobuf field <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
      * @return float
      */
@@ -86,6 +101,8 @@ class SeriesPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测功率 kW；缺测不填
+     *
      * Generated from protobuf field <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
      * @param float $var
      * @return $this
@@ -98,6 +115,8 @@ class SeriesPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 真实功率 kW；缺测不填
+     *
      * Generated from protobuf field <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
      * @return float
      */
@@ -117,6 +136,8 @@ class SeriesPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 真实功率 kW；缺测不填
+     *
      * Generated from protobuf field <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
      * @param float $var
      * @return $this

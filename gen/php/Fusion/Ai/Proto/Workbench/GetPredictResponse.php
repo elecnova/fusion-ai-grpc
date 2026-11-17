@@ -10,11 +10,15 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * GetPredictResponse 预测进页快照；无任务时 job 不填。之后进度靠 WS predict/*，不要轮询。
+ *
  * Generated from protobuf message <code>fusion.ai.proto.workbench.GetPredictResponse</code>
  */
 class GetPredictResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      */
     protected $registration_id = '';
@@ -38,6 +42,7 @@ class GetPredictResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           场站 registration_id
      *     @type string $current_predict_job_id
      *           当前预测任务 id；无任务时为空
      *     @type \Fusion\Ai\Proto\Workbench\PredictJobView $job
@@ -51,6 +56,8 @@ class GetPredictResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return string
      */
@@ -60,6 +67,8 @@ class GetPredictResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param string $var
      * @return $this

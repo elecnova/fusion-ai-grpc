@@ -34,6 +34,7 @@ private static final long serialVersionUID = 0L;
     status_ = 0;
     lastTrainedAt_ = "";
     artifactUri_ = "";
+    currentTrainJobId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -59,6 +60,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 模型所属 registration；本期训练多为光伏通用模型常量
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
@@ -76,6 +81,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 模型所属 registration；本期训练多为光伏通用模型常量
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -145,6 +154,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
   /**
+   * <pre>
+   * 模型版本号，如 v2026.10.29；无则空
+   * </pre>
+   *
    * <code>string version = 3 [json_name = "version"];</code>
    * @return The version.
    */
@@ -162,6 +175,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 模型版本号，如 v2026.10.29；无则空
+   * </pre>
+   *
    * <code>string version = 3 [json_name = "version"];</code>
    * @return The bytes for version.
    */
@@ -183,6 +200,10 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_FIELD_NUMBER = 4;
   private int status_ = 0;
   /**
+   * <pre>
+   * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
@@ -190,6 +211,10 @@ private static final long serialVersionUID = 0L;
     return status_;
   }
   /**
+   * <pre>
+   * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
    * @return The status.
    */
@@ -264,6 +289,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object artifactUri_ = "";
   /**
+   * <pre>
+   * 产物 URI（可选）
+   * </pre>
+   *
    * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
    * @return Whether the artifactUri field is set.
    */
@@ -272,6 +301,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
+   * <pre>
+   * 产物 URI（可选）
+   * </pre>
+   *
    * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
    * @return The artifactUri.
    */
@@ -289,6 +322,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 产物 URI（可选）
+   * </pre>
+   *
    * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
    * @return The bytes for artifactUri.
    */
@@ -301,6 +338,53 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       artifactUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CURRENT_TRAIN_JOB_ID_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currentTrainJobId_ = "";
+  /**
+   * <pre>
+   * 当前训练任务 id；无任务时为空
+   * </pre>
+   *
+   * <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+   * @return The currentTrainJobId.
+   */
+  @java.lang.Override
+  public java.lang.String getCurrentTrainJobId() {
+    java.lang.Object ref = currentTrainJobId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      currentTrainJobId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 当前训练任务 id；无任务时为空
+   * </pre>
+   *
+   * <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+   * @return The bytes for currentTrainJobId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCurrentTrainJobIdBytes() {
+    java.lang.Object ref = currentTrainJobId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      currentTrainJobId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -339,6 +423,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, artifactUri_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currentTrainJobId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, currentTrainJobId_);
+    }
     getUnknownFields().writeTo(output);
   }
   private int computeSerializedSize_0() {
@@ -361,6 +448,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, artifactUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currentTrainJobId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, currentTrainJobId_);
     }
     return size;
   }
@@ -403,6 +493,8 @@ private static final long serialVersionUID = 0L;
       if (!getArtifactUri()
           .equals(other.getArtifactUri())) return false;
     }
+    if (!getCurrentTrainJobId()
+        .equals(other.getCurrentTrainJobId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -430,6 +522,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ARTIFACT_URI_FIELD_NUMBER;
       hash = (53 * hash) + getArtifactUri().hashCode();
     }
+    hash = (37 * hash) + CURRENT_TRAIN_JOB_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrentTrainJobId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -567,6 +661,7 @@ private static final long serialVersionUID = 0L;
       status_ = 0;
       lastTrainedAt_ = "";
       artifactUri_ = "";
+      currentTrainJobId_ = "";
       return this;
     }
 
@@ -621,6 +716,9 @@ private static final long serialVersionUID = 0L;
         result.artifactUri_ = artifactUri_;
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.currentTrainJobId_ = currentTrainJobId_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -662,6 +760,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasArtifactUri()) {
         artifactUri_ = other.artifactUri_;
         bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getCurrentTrainJobId().isEmpty()) {
+        currentTrainJobId_ = other.currentTrainJobId_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -718,6 +821,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 50
+            case 58: {
+              currentTrainJobId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -737,6 +845,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 模型所属 registration；本期训练多为光伏通用模型常量
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The registrationId.
      */
@@ -753,6 +865,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型所属 registration；本期训练多为光伏通用模型常量
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return The bytes for registrationId.
      */
@@ -770,6 +886,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型所属 registration；本期训练多为光伏通用模型常量
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -783,6 +903,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型所属 registration；本期训练多为光伏通用模型常量
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return This builder for chaining.
      */
@@ -793,6 +917,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型所属 registration；本期训练多为光伏通用模型常量
+     * </pre>
+     *
      * <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.
@@ -901,6 +1029,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
+     * <pre>
+     * 模型版本号，如 v2026.10.29；无则空
+     * </pre>
+     *
      * <code>string version = 3 [json_name = "version"];</code>
      * @return The version.
      */
@@ -917,6 +1049,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型版本号，如 v2026.10.29；无则空
+     * </pre>
+     *
      * <code>string version = 3 [json_name = "version"];</code>
      * @return The bytes for version.
      */
@@ -934,6 +1070,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 模型版本号，如 v2026.10.29；无则空
+     * </pre>
+     *
      * <code>string version = 3 [json_name = "version"];</code>
      * @param value The version to set.
      * @return This builder for chaining.
@@ -947,6 +1087,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型版本号，如 v2026.10.29；无则空
+     * </pre>
+     *
      * <code>string version = 3 [json_name = "version"];</code>
      * @return This builder for chaining.
      */
@@ -957,6 +1101,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 模型版本号，如 v2026.10.29；无则空
+     * </pre>
+     *
      * <code>string version = 3 [json_name = "version"];</code>
      * @param value The bytes for version to set.
      * @return This builder for chaining.
@@ -973,6 +1121,10 @@ private static final long serialVersionUID = 0L;
 
     private int status_ = 0;
     /**
+     * <pre>
+     * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
      * @return The enum numeric value on the wire for status.
      */
@@ -980,6 +1132,10 @@ private static final long serialVersionUID = 0L;
       return status_;
     }
     /**
+     * <pre>
+     * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
@@ -991,6 +1147,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
      * @return The status.
      */
@@ -1000,6 +1160,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fusion.ai.proto.workbench.ModelReadyStatus.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
      * @param value The status to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
@@ -1013,6 +1177,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 卡片状态：READY / TRAINING / STALE / MISSING / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.ModelReadyStatus status = 4 [json_name = "status"];</code>
      * @return This builder for chaining.
      */
@@ -1134,6 +1302,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object artifactUri_ = "";
     /**
+     * <pre>
+     * 产物 URI（可选）
+     * </pre>
+     *
      * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      * @return Whether the artifactUri field is set.
      */
@@ -1141,6 +1313,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
+     * <pre>
+     * 产物 URI（可选）
+     * </pre>
+     *
      * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      * @return The artifactUri.
      */
@@ -1157,6 +1333,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 产物 URI（可选）
+     * </pre>
+     *
      * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      * @return The bytes for artifactUri.
      */
@@ -1174,6 +1354,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 产物 URI（可选）
+     * </pre>
+     *
      * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      * @param value The artifactUri to set.
      * @return This builder for chaining.
@@ -1187,6 +1371,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 产物 URI（可选）
+     * </pre>
+     *
      * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      * @return This builder for chaining.
      */
@@ -1197,6 +1385,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 产物 URI（可选）
+     * </pre>
+     *
      * <code>optional string artifact_uri = 6 [json_name = "artifact_uri"];</code>
      * @param value The bytes for artifactUri to set.
      * @return This builder for chaining.
@@ -1207,6 +1399,98 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       artifactUri_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object currentTrainJobId_ = "";
+    /**
+     * <pre>
+     * 当前训练任务 id；无任务时为空
+     * </pre>
+     *
+     * <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+     * @return The currentTrainJobId.
+     */
+    public java.lang.String getCurrentTrainJobId() {
+      java.lang.Object ref = currentTrainJobId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currentTrainJobId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 当前训练任务 id；无任务时为空
+     * </pre>
+     *
+     * <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+     * @return The bytes for currentTrainJobId.
+     */
+    public com.google.protobuf.ByteString
+        getCurrentTrainJobIdBytes() {
+      java.lang.Object ref = currentTrainJobId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currentTrainJobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 当前训练任务 id；无任务时为空
+     * </pre>
+     *
+     * <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+     * @param value The currentTrainJobId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentTrainJobId(
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      currentTrainJobId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当前训练任务 id；无任务时为空
+     * </pre>
+     *
+     * <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCurrentTrainJobId() {
+      currentTrainJobId_ = getDefaultInstance().getCurrentTrainJobId();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当前训练任务 id；无任务时为空
+     * </pre>
+     *
+     * <code>string current_train_job_id = 7 [json_name = "current_train_job_id"];</code>
+     * @param value The bytes for currentTrainJobId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentTrainJobIdBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      currentTrainJobId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

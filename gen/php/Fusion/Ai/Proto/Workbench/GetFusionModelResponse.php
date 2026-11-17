@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class GetFusionModelResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 融合模型卡片
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      */
     protected $model = null;
@@ -26,6 +28,7 @@ class GetFusionModelResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Fusion\Ai\Proto\Workbench\FusionModelView $model
+     *           融合模型卡片
      * }
      */
     public function __construct($data = null)
@@ -35,6 +38,8 @@ class GetFusionModelResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 融合模型卡片
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      * @return \Fusion\Ai\Proto\Workbench\FusionModelView|null
      */
@@ -54,6 +59,8 @@ class GetFusionModelResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 融合模型卡片
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.FusionModelView model = 1 [json_name = "model"];</code>
      * @param \Fusion\Ai\Proto\Workbench\FusionModelView $var
      * @return $this

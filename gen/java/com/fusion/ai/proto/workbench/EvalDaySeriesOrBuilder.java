@@ -11,11 +11,19 @@ public interface EvalDaySeriesOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
   java.lang.String getRegistrationId();
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 1 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -23,11 +31,19 @@ public interface EvalDaySeriesOrBuilder extends
       getRegistrationIdBytes();
 
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date"];</code>
    * @return The evalDate.
    */
   java.lang.String getEvalDate();
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 2 [json_name = "eval_date"];</code>
    * @return The bytes for evalDate.
    */
@@ -35,11 +51,19 @@ public interface EvalDaySeriesOrBuilder extends
       getEvalDateBytes();
 
   /**
+   * <pre>
+   * IANA 时区
+   * </pre>
+   *
    * <code>string timezone = 3 [json_name = "timezone"];</code>
    * @return The timezone.
    */
   java.lang.String getTimezone();
   /**
+   * <pre>
+   * IANA 时区
+   * </pre>
+   *
    * <code>string timezone = 3 [json_name = "timezone"];</code>
    * @return The bytes for timezone.
    */
@@ -47,17 +71,29 @@ public interface EvalDaySeriesOrBuilder extends
       getTimezoneBytes();
 
   /**
+   * <pre>
+   * 序列步长（分钟）
+   * </pre>
+   *
    * <code>int32 granularity_min = 4 [json_name = "granularity_min"];</code>
    * @return The granularityMin.
    */
   int getGranularityMin();
 
   /**
+   * <pre>
+   * 模型 key
+   * </pre>
+   *
    * <code>string model_key = 5 [json_name = "model_key"];</code>
    * @return The modelKey.
    */
   java.lang.String getModelKey();
   /**
+   * <pre>
+   * 模型 key
+   * </pre>
+   *
    * <code>string model_key = 5 [json_name = "model_key"];</code>
    * @return The bytes for modelKey.
    */
@@ -65,16 +101,28 @@ public interface EvalDaySeriesOrBuilder extends
       getModelKeyBytes();
 
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 6 [json_name = "model_version"];</code>
    * @return Whether the modelVersion field is set.
    */
   boolean hasModelVersion();
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 6 [json_name = "model_version"];</code>
    * @return The modelVersion.
    */
   java.lang.String getModelVersion();
   /**
+   * <pre>
+   * 模型版本（可选）
+   * </pre>
+   *
    * <code>optional string model_version = 6 [json_name = "model_version"];</code>
    * @return The bytes for modelVersion.
    */
@@ -82,24 +130,44 @@ public interface EvalDaySeriesOrBuilder extends
       getModelVersionBytes();
 
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   java.util.List<com.fusion.ai.proto.workbench.SeriesPoint> 
       getPointsList();
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   com.fusion.ai.proto.workbench.SeriesPoint getPoints(int index);
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   int getPointsCount();
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   java.util.List<? extends com.fusion.ai.proto.workbench.SeriesPointOrBuilder> 
       getPointsOrBuilderList();
   /**
+   * <pre>
+   * 预测 vs 真实点列
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
    */
   com.fusion.ai.proto.workbench.SeriesPointOrBuilder getPointsOrBuilder(

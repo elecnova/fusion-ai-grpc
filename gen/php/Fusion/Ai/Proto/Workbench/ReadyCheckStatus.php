@@ -8,23 +8,33 @@ namespace Fusion\Ai\Proto\Workbench;
 use UnexpectedValueException;
 
 /**
+ * ReadyCheckStatus 今日数据就绪总览（左栏绿/黄/红）。
+ *
  * Protobuf type <code>fusion.ai.proto.workbench.ReadyCheckStatus</code>
  */
 class ReadyCheckStatus
 {
     /**
+     * 未设置 / 未知
+     *
      * Generated from protobuf enum <code>READY_CHECK_STATUS_UNSPECIFIED = 0;</code>
      */
     const READY_CHECK_STATUS_UNSPECIFIED = 0;
     /**
+     * 通过：覆盖足够，可训练/预测
+     *
      * Generated from protobuf enum <code>READY_CHECK_STATUS_PASS = 1;</code>
      */
     const READY_CHECK_STATUS_PASS = 1;
     /**
+     * 告警：有缺口或天气缺失，可继续但需关注
+     *
      * Generated from protobuf enum <code>READY_CHECK_STATUS_WARN = 2;</code>
      */
     const READY_CHECK_STATUS_WARN = 2;
     /**
+     * 失败：严重缺数或离线，不建议发起
+     *
      * Generated from protobuf enum <code>READY_CHECK_STATUS_FAIL = 3;</code>
      */
     const READY_CHECK_STATUS_FAIL = 3;

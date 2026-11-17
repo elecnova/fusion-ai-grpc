@@ -11,42 +11,74 @@ public interface EvalDayMetricsPageOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   java.util.List<com.fusion.ai.proto.workbench.EvalDayMetricsRow> 
       getRowsList();
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   com.fusion.ai.proto.workbench.EvalDayMetricsRow getRows(int index);
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   int getRowsCount();
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   java.util.List<? extends com.fusion.ai.proto.workbench.EvalDayMetricsRowOrBuilder> 
       getRowsOrBuilderList();
   /**
+   * <pre>
+   * 历史评估行
+   * </pre>
+   *
    * <code>repeated .fusion.ai.proto.workbench.EvalDayMetricsRow rows = 1 [json_name = "rows"];</code>
    */
   com.fusion.ai.proto.workbench.EvalDayMetricsRowOrBuilder getRowsOrBuilder(
       int index);
 
   /**
+   * <pre>
+   * 总行数
+   * </pre>
+   *
    * <code>int32 total = 2 [json_name = "total"];</code>
    * @return The total.
    */
   int getTotal();
 
   /**
+   * <pre>
+   * 当前页（从 1 起）
+   * </pre>
+   *
    * <code>int32 page = 3 [json_name = "page"];</code>
    * @return The page.
    */
   int getPage();
 
   /**
+   * <pre>
+   * 每页条数
+   * </pre>
+   *
    * <code>int32 page_size = 4 [json_name = "page_size"];</code>
    * @return The pageSize.
    */

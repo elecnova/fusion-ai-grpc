@@ -15,30 +15,44 @@ use Google\Protobuf\RepeatedField;
 class EvalDaySeries extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      */
     protected $registration_id = '';
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 2 [json_name = "eval_date"];</code>
      */
     protected $eval_date = '';
     /**
+     * IANA 时区
+     *
      * Generated from protobuf field <code>string timezone = 3 [json_name = "timezone"];</code>
      */
     protected $timezone = '';
     /**
+     * 序列步长（分钟）
+     *
      * Generated from protobuf field <code>int32 granularity_min = 4 [json_name = "granularity_min"];</code>
      */
     protected $granularity_min = 0;
     /**
+     * 模型 key
+     *
      * Generated from protobuf field <code>string model_key = 5 [json_name = "model_key"];</code>
      */
     protected $model_key = '';
     /**
+     * 模型版本（可选）
+     *
      * Generated from protobuf field <code>optional string model_version = 6 [json_name = "model_version"];</code>
      */
     protected $model_version = null;
     /**
+     * 预测 vs 真实点列
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      */
     private $points;
@@ -50,12 +64,19 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $registration_id
+     *           场站 registration_id
      *     @type string $eval_date
+     *           评估日 YYYY-MM-DD
      *     @type string $timezone
+     *           IANA 时区
      *     @type int $granularity_min
+     *           序列步长（分钟）
      *     @type string $model_key
+     *           模型 key
      *     @type string $model_version
+     *           模型版本（可选）
      *     @type \Fusion\Ai\Proto\Workbench\SeriesPoint[] $points
+     *           预测 vs 真实点列
      * }
      */
     public function __construct($data = null)
@@ -65,6 +86,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @return string
      */
@@ -74,6 +97,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 场站 registration_id
+     *
      * Generated from protobuf field <code>string registration_id = 1 [json_name = "registration_id"];</code>
      * @param string $var
      * @return $this
@@ -87,6 +112,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @return string
      */
@@ -96,6 +123,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 评估日 YYYY-MM-DD
+     *
      * Generated from protobuf field <code>string eval_date = 2 [json_name = "eval_date"];</code>
      * @param string $var
      * @return $this
@@ -109,6 +138,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * IANA 时区
+     *
      * Generated from protobuf field <code>string timezone = 3 [json_name = "timezone"];</code>
      * @return string
      */
@@ -118,6 +149,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * IANA 时区
+     *
      * Generated from protobuf field <code>string timezone = 3 [json_name = "timezone"];</code>
      * @param string $var
      * @return $this
@@ -131,6 +164,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 序列步长（分钟）
+     *
      * Generated from protobuf field <code>int32 granularity_min = 4 [json_name = "granularity_min"];</code>
      * @return int
      */
@@ -140,6 +175,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 序列步长（分钟）
+     *
      * Generated from protobuf field <code>int32 granularity_min = 4 [json_name = "granularity_min"];</code>
      * @param int $var
      * @return $this
@@ -153,6 +190,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型 key
+     *
      * Generated from protobuf field <code>string model_key = 5 [json_name = "model_key"];</code>
      * @return string
      */
@@ -162,6 +201,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型 key
+     *
      * Generated from protobuf field <code>string model_key = 5 [json_name = "model_key"];</code>
      * @param string $var
      * @return $this
@@ -175,6 +216,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型版本（可选）
+     *
      * Generated from protobuf field <code>optional string model_version = 6 [json_name = "model_version"];</code>
      * @return string
      */
@@ -194,6 +237,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 模型版本（可选）
+     *
      * Generated from protobuf field <code>optional string model_version = 6 [json_name = "model_version"];</code>
      * @param string $var
      * @return $this
@@ -207,6 +252,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测 vs 真实点列
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      * @return RepeatedField<\Fusion\Ai\Proto\Workbench\SeriesPoint>
      */
@@ -216,6 +263,8 @@ class EvalDaySeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 预测 vs 真实点列
+     *
      * Generated from protobuf field <code>repeated .fusion.ai.proto.workbench.SeriesPoint points = 7 [json_name = "points"];</code>
      * @param \Fusion\Ai\Proto\Workbench\SeriesPoint[] $var
      * @return $this

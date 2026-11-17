@@ -11,28 +11,48 @@ public interface SeriesPointOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 点时间 Unix 毫秒
+   * </pre>
+   *
    * <code>int64 ts_ms = 1 [json_name = "ts_ms"];</code>
    * @return The tsMs.
    */
   long getTsMs();
 
   /**
+   * <pre>
+   * 预测功率 kW；缺测不填
+   * </pre>
+   *
    * <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
    * @return Whether the predictedKw field is set.
    */
   boolean hasPredictedKw();
   /**
+   * <pre>
+   * 预测功率 kW；缺测不填
+   * </pre>
+   *
    * <code>optional double predicted_kw = 2 [json_name = "predicted_kw"];</code>
    * @return The predictedKw.
    */
   double getPredictedKw();
 
   /**
+   * <pre>
+   * 真实功率 kW；缺测不填
+   * </pre>
+   *
    * <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
    * @return Whether the actualKw field is set.
    */
   boolean hasActualKw();
   /**
+   * <pre>
+   * 真实功率 kW；缺测不填
+   * </pre>
+   *
    * <code>optional double actual_kw = 3 [json_name = "actual_kw"];</code>
    * @return The actualKw.
    */

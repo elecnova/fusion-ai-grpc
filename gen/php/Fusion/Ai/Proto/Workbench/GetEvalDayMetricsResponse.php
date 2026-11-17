@@ -15,6 +15,8 @@ use Google\Protobuf\RepeatedField;
 class GetEvalDayMetricsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 单日 KPI
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      */
     protected $metrics = null;
@@ -26,6 +28,7 @@ class GetEvalDayMetricsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Fusion\Ai\Proto\Workbench\EvalDayMetrics $metrics
+     *           单日 KPI
      * }
      */
     public function __construct($data = null)
@@ -35,6 +38,8 @@ class GetEvalDayMetricsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 单日 KPI
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      * @return \Fusion\Ai\Proto\Workbench\EvalDayMetrics|null
      */
@@ -54,6 +59,8 @@ class GetEvalDayMetricsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 单日 KPI
+     *
      * Generated from protobuf field <code>.fusion.ai.proto.workbench.EvalDayMetrics metrics = 1 [json_name = "metrics"];</code>
      * @param \Fusion\Ai\Proto\Workbench\EvalDayMetrics $var
      * @return $this

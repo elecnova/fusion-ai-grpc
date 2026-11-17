@@ -54,6 +54,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object evalDate_ = "";
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 1 [json_name = "eval_date"];</code>
    * @return The evalDate.
    */
@@ -71,6 +75,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 1 [json_name = "eval_date"];</code>
    * @return The bytes for evalDate.
    */
@@ -92,6 +100,10 @@ private static final long serialVersionUID = 0L;
   public static final int MAPE_FIELD_NUMBER = 2;
   private double mape_ = 0D;
   /**
+   * <pre>
+   * MAPE 百分比数值
+   * </pre>
+   *
    * <code>optional double mape = 2 [json_name = "mape"];</code>
    * @return Whether the mape field is set.
    */
@@ -100,6 +112,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   * <pre>
+   * MAPE 百分比数值
+   * </pre>
+   *
    * <code>optional double mape = 2 [json_name = "mape"];</code>
    * @return The mape.
    */
@@ -111,6 +127,10 @@ private static final long serialVersionUID = 0L;
   public static final int RMSE_FIELD_NUMBER = 3;
   private double rmse_ = 0D;
   /**
+   * <pre>
+   * RMSE（kW）
+   * </pre>
+   *
    * <code>optional double rmse = 3 [json_name = "rmse"];</code>
    * @return Whether the rmse field is set.
    */
@@ -119,6 +139,10 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
+   * <pre>
+   * RMSE（kW）
+   * </pre>
+   *
    * <code>optional double rmse = 3 [json_name = "rmse"];</code>
    * @return The rmse.
    */
@@ -489,6 +513,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object evalDate_ = "";
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 1 [json_name = "eval_date"];</code>
      * @return The evalDate.
      */
@@ -505,6 +533,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 1 [json_name = "eval_date"];</code>
      * @return The bytes for evalDate.
      */
@@ -522,6 +554,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 1 [json_name = "eval_date"];</code>
      * @param value The evalDate to set.
      * @return This builder for chaining.
@@ -535,6 +571,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 1 [json_name = "eval_date"];</code>
      * @return This builder for chaining.
      */
@@ -545,6 +585,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 评估日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 1 [json_name = "eval_date"];</code>
      * @param value The bytes for evalDate to set.
      * @return This builder for chaining.
@@ -561,6 +605,10 @@ private static final long serialVersionUID = 0L;
 
     private double mape_ ;
     /**
+     * <pre>
+     * MAPE 百分比数值
+     * </pre>
+     *
      * <code>optional double mape = 2 [json_name = "mape"];</code>
      * @return Whether the mape field is set.
      */
@@ -569,6 +617,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
+     * <pre>
+     * MAPE 百分比数值
+     * </pre>
+     *
      * <code>optional double mape = 2 [json_name = "mape"];</code>
      * @return The mape.
      */
@@ -577,6 +629,10 @@ private static final long serialVersionUID = 0L;
       return mape_;
     }
     /**
+     * <pre>
+     * MAPE 百分比数值
+     * </pre>
+     *
      * <code>optional double mape = 2 [json_name = "mape"];</code>
      * @param value The mape to set.
      * @return This builder for chaining.
@@ -589,6 +645,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * MAPE 百分比数值
+     * </pre>
+     *
      * <code>optional double mape = 2 [json_name = "mape"];</code>
      * @return This builder for chaining.
      */
@@ -601,6 +661,10 @@ private static final long serialVersionUID = 0L;
 
     private double rmse_ ;
     /**
+     * <pre>
+     * RMSE（kW）
+     * </pre>
+     *
      * <code>optional double rmse = 3 [json_name = "rmse"];</code>
      * @return Whether the rmse field is set.
      */
@@ -609,6 +673,10 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
+     * <pre>
+     * RMSE（kW）
+     * </pre>
+     *
      * <code>optional double rmse = 3 [json_name = "rmse"];</code>
      * @return The rmse.
      */
@@ -617,6 +685,10 @@ private static final long serialVersionUID = 0L;
       return rmse_;
     }
     /**
+     * <pre>
+     * RMSE（kW）
+     * </pre>
+     *
      * <code>optional double rmse = 3 [json_name = "rmse"];</code>
      * @param value The rmse to set.
      * @return This builder for chaining.
@@ -629,6 +701,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * RMSE（kW）
+     * </pre>
+     *
      * <code>optional double rmse = 3 [json_name = "rmse"];</code>
      * @return This builder for chaining.
      */

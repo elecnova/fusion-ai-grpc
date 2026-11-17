@@ -30,6 +30,7 @@ const (
 	WorkbenchService_GetDataReadyCheck_FullMethodName    = "/fusion.ai.proto.workbench.WorkbenchService/GetDataReadyCheck"
 	WorkbenchService_GetFusionModel_FullMethodName       = "/fusion.ai.proto.workbench.WorkbenchService/GetFusionModel"
 	WorkbenchService_CreateTrainJob_FullMethodName       = "/fusion.ai.proto.workbench.WorkbenchService/CreateTrainJob"
+	WorkbenchService_GetTrain_FullMethodName             = "/fusion.ai.proto.workbench.WorkbenchService/GetTrain"
 	WorkbenchService_CreatePredictJob_FullMethodName     = "/fusion.ai.proto.workbench.WorkbenchService/CreatePredictJob"
 	WorkbenchService_GetPredict_FullMethodName           = "/fusion.ai.proto.workbench.WorkbenchService/GetPredict"
 	WorkbenchService_GetEvalDaySeries_FullMethodName     = "/fusion.ai.proto.workbench.WorkbenchService/GetEvalDaySeries"
@@ -51,6 +52,9 @@ type WorkbenchServiceClient interface {
 	GetFusionModel(ctx context.Context, in *GetFusionModelRequest, opts ...grpc.CallOption) (*GetFusionModelResponse, error)
 	// 左栏：再次训练
 	CreateTrainJob(ctx context.Context, in *CreateTrainJobRequest, opts ...grpc.CallOption) (*CreateTrainJobResponse, error)
+	// 左栏：进页训练快照（model + current_train_job_id + job/logs；无任务时 job 为空）
+	// 之后进度靠 WS train/*（model_updated / job_updated / logs_appended），不要轮询。
+	GetTrain(ctx context.Context, in *GetTrainRequest, opts ...grpc.CallOption) (*GetTrainResponse, error)
 	// 中栏：触发预测
 	CreatePredictJob(ctx context.Context, in *CreatePredictJobRequest, opts ...grpc.CallOption) (*CreatePredictJobResponse, error)
 	// 中栏：进页预测进度快照（current + 当前 job；无任务时 job 为空）
@@ -96,6 +100,16 @@ func (c *workbenchServiceClient) CreateTrainJob(ctx context.Context, in *CreateT
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CreateTrainJobResponse)
 	err := c.cc.Invoke(ctx, WorkbenchService_CreateTrainJob_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workbenchServiceClient) GetTrain(ctx context.Context, in *GetTrainRequest, opts ...grpc.CallOption) (*GetTrainResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTrainResponse)
+	err := c.cc.Invoke(ctx, WorkbenchService_GetTrain_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -166,6 +180,9 @@ type WorkbenchServiceServer interface {
 	GetFusionModel(context.Context, *GetFusionModelRequest) (*GetFusionModelResponse, error)
 	// 左栏：再次训练
 	CreateTrainJob(context.Context, *CreateTrainJobRequest) (*CreateTrainJobResponse, error)
+	// 左栏：进页训练快照（model + current_train_job_id + job/logs；无任务时 job 为空）
+	// 之后进度靠 WS train/*（model_updated / job_updated / logs_appended），不要轮询。
+	GetTrain(context.Context, *GetTrainRequest) (*GetTrainResponse, error)
 	// 中栏：触发预测
 	CreatePredictJob(context.Context, *CreatePredictJobRequest) (*CreatePredictJobResponse, error)
 	// 中栏：进页预测进度快照（current + 当前 job；无任务时 job 为空）
@@ -195,6 +212,9 @@ func (UnimplementedWorkbenchServiceServer) GetFusionModel(context.Context, *GetF
 }
 func (UnimplementedWorkbenchServiceServer) CreateTrainJob(context.Context, *CreateTrainJobRequest) (*CreateTrainJobResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateTrainJob not implemented")
+}
+func (UnimplementedWorkbenchServiceServer) GetTrain(context.Context, *GetTrainRequest) (*GetTrainResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTrain not implemented")
 }
 func (UnimplementedWorkbenchServiceServer) CreatePredictJob(context.Context, *CreatePredictJobRequest) (*CreatePredictJobResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreatePredictJob not implemented")
@@ -282,6 +302,24 @@ func _WorkbenchService_CreateTrainJob_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkbenchServiceServer).CreateTrainJob(ctx, req.(*CreateTrainJobRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkbenchService_GetTrain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTrainRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkbenchServiceServer).GetTrain(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkbenchService_GetTrain_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkbenchServiceServer).GetTrain(ctx, req.(*GetTrainRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -394,6 +432,10 @@ var WorkbenchService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateTrainJob",
 			Handler:    _WorkbenchService_CreateTrainJob_Handler,
+		},
+		{
+			MethodName: "GetTrain",
+			Handler:    _WorkbenchService_GetTrain_Handler,
 		},
 		{
 			MethodName: "CreatePredictJob",

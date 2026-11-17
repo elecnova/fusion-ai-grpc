@@ -7,8 +7,8 @@ package com.fusion.ai.proto.workbench;
 
 /**
  * <pre>
- * 五步 stages 键：data_ready | model_loaded | infer | persist | compare_refresh
- * 每步取值：pending | running | done | failed
+ * PredictJobView 单次预测任务。
+ * stages 键（固定五步）：data_ready | model_loaded | infer | persist | compare_refresh
  * </pre>
  *
  * Protobuf type {@code fusion.ai.proto.workbench.PredictJobView}
@@ -80,6 +80,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
   /**
+   * <pre>
+   * 预测任务 id，如 pd-8291
+   * </pre>
+   *
    * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The jobId.
    */
@@ -97,6 +101,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 预测任务 id，如 pd-8291
+   * </pre>
+   *
    * <code>string job_id = 1 [json_name = "job_id"];</code>
    * @return The bytes for jobId.
    */
@@ -119,6 +127,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object registrationId_ = "";
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 2 [json_name = "registration_id"];</code>
    * @return The registrationId.
    */
@@ -136,6 +148,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 场站 registration_id
+   * </pre>
+   *
    * <code>string registration_id = 2 [json_name = "registration_id"];</code>
    * @return The bytes for registrationId.
    */
@@ -157,6 +173,10 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_FIELD_NUMBER = 3;
   private int status_ = 0;
   /**
+   * <pre>
+   * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
@@ -164,6 +184,10 @@ private static final long serialVersionUID = 0L;
     return status_;
   }
   /**
+   * <pre>
+   * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+   * </pre>
+   *
    * <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
    * @return The status.
    */
@@ -176,7 +200,7 @@ private static final long serialVersionUID = 0L;
   private int progressPct_ = 0;
   /**
    * <pre>
-   * 0~100
+   * 总进度 0~100
    * </pre>
    *
    * <code>int32 progress_pct = 4 [json_name = "progress_pct"];</code>
@@ -192,7 +216,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object stage_ = "";
   /**
    * <pre>
-   * 当前步键，如 infer
+   * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
    * </pre>
    *
    * <code>string stage = 5 [json_name = "stage"];</code>
@@ -213,7 +237,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 当前步键，如 infer
+   * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
    * </pre>
    *
    * <code>string stage = 5 [json_name = "stage"];</code>
@@ -237,19 +261,19 @@ private static final long serialVersionUID = 0L;
   public static final int STAGES_FIELD_NUMBER = 6;
   private static final class StagesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
+        java.lang.String, java.lang.Integer> defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
+            .<java.lang.String, java.lang.Integer>newDefaultInstance(
                 com.fusion.ai.proto.workbench.WorkbenchMessageProto.internal_static_fusion_ai_proto_workbench_PredictJobView_StagesEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+                com.google.protobuf.WireFormat.FieldType.ENUM,
+                com.fusion.ai.proto.workbench.StageStepStatus.STAGE_STEP_STATUS_UNSPECIFIED.getNumber());
   }
   @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> stages_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      java.lang.String, java.lang.Integer> stages_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
   internalGetStages() {
     if (stages_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
@@ -257,11 +281,28 @@ private static final long serialVersionUID = 0L;
     }
     return stages_;
   }
+  private static final
+  com.google.protobuf.Internal.MapAdapter.Converter<
+      java.lang.Integer, com.fusion.ai.proto.workbench.StageStepStatus> stagesValueConverter =
+          com.google.protobuf.Internal.MapAdapter.newEnumConverter(
+              com.fusion.ai.proto.workbench.StageStepStatus.internalGetValueMap(),
+              com.fusion.ai.proto.workbench.StageStepStatus.UNRECOGNIZED);
+  private static final java.util.Map<java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus>
+  internalGetAdaptedStagesMap(
+      java.util.Map<java.lang.String, java.lang.Integer> map) {
+    return new com.google.protobuf.Internal.MapAdapter<
+        java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus, java.lang.Integer>(
+            map, stagesValueConverter);
+  }
   public int getStagesCount() {
     return internalGetStages().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
    */
   @java.lang.Override
   public boolean containsStages(
@@ -274,38 +315,109 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getStages() {
+  public java.util.Map<java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus>
+  getStages() {
     return getStagesMap();
   }
   /**
-   * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
    */
   @java.lang.Override
-  public java.util.Map<java.lang.String, java.lang.String> getStagesMap() {
-    return internalGetStages().getMap();
-  }
+  public java.util.Map<java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus>
+  getStagesMap() {
+    return internalGetAdaptedStagesMap(
+        internalGetStages().getMap());}
   /**
-   * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
    */
   @java.lang.Override
   public /* nullable */
-java.lang.String getStagesOrDefault(
+com.fusion.ai.proto.workbench.StageStepStatus getStagesOrDefault(
       java.lang.String key,
       /* nullable */
-java.lang.String defaultValue) {
+com.fusion.ai.proto.workbench.StageStepStatus defaultValue) {
     java.util.Objects.requireNonNull(key, "map key");
-    java.util.Map<java.lang.String, java.lang.String> map =
+    java.util.Map<java.lang.String, java.lang.Integer> map =
+        internalGetStages().getMap();
+    return map.containsKey(key)
+           ? stagesValueConverter.doForward(map.get(key))
+           : defaultValue;
+  }
+  /**
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+   */
+  @java.lang.Override
+  public com.fusion.ai.proto.workbench.StageStepStatus getStagesOrThrow(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key, "map key");
+    java.util.Map<java.lang.String, java.lang.Integer> map =
+        internalGetStages().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return stagesValueConverter.doForward(map.get(key));
+  }
+  /**
+   * Use {@link #getStagesValueMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Integer>
+  getStagesValue() {
+    return getStagesValueMap();
+  }
+  /**
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.Integer>
+  getStagesValueMap() {
+    return internalGetStages().getMap();
+  }
+  /**
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+   */
+  @java.lang.Override
+  public int getStagesValueOrDefault(
+      java.lang.String key,
+      int defaultValue) {
+    java.util.Objects.requireNonNull(key, "map key");
+    java.util.Map<java.lang.String, java.lang.Integer> map =
         internalGetStages().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+   * <pre>
+   * 五步状态表；key=步名，value=StageStepStatus
+   * </pre>
+   *
+   * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
    */
   @java.lang.Override
-  public java.lang.String getStagesOrThrow(
+  public int getStagesValueOrThrow(
       java.lang.String key) {
     java.util.Objects.requireNonNull(key, "map key");
-    java.util.Map<java.lang.String, java.lang.String> map =
+    java.util.Map<java.lang.String, java.lang.Integer> map =
         internalGetStages().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
@@ -317,6 +429,10 @@ java.lang.String defaultValue) {
   @SuppressWarnings("serial")
   private volatile java.lang.Object evalDate_ = "";
   /**
+   * <pre>
+   * 评估日 / 预测锚定日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 7 [json_name = "eval_date"];</code>
    * @return The evalDate.
    */
@@ -334,6 +450,10 @@ java.lang.String defaultValue) {
     }
   }
   /**
+   * <pre>
+   * 评估日 / 预测锚定日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 7 [json_name = "eval_date"];</code>
    * @return The bytes for evalDate.
    */
@@ -355,6 +475,10 @@ java.lang.String defaultValue) {
   public static final int DAY_OFFSET_FIELD_NUMBER = 8;
   private int dayOffset_ = 0;
   /**
+   * <pre>
+   * 相对评估日的偏移天数；0=当日
+   * </pre>
+   *
    * <code>int32 day_offset = 8 [json_name = "day_offset"];</code>
    * @return The dayOffset.
    */
@@ -366,6 +490,10 @@ java.lang.String defaultValue) {
   public static final int GRANULARITY_MIN_FIELD_NUMBER = 9;
   private int granularityMin_ = 0;
   /**
+   * <pre>
+   * 预测步长（分钟）：5 / 15 / 30 / 60
+   * </pre>
+   *
    * <code>int32 granularity_min = 9 [json_name = "granularity_min"];</code>
    * @return The granularityMin.
    */
@@ -377,6 +505,10 @@ java.lang.String defaultValue) {
   public static final int HORIZON_HOURS_FIELD_NUMBER = 10;
   private int horizonHours_ = 0;
   /**
+   * <pre>
+   * 预测时长（小时），常见 24
+   * </pre>
+   *
    * <code>int32 horizon_hours = 10 [json_name = "horizon_hours"];</code>
    * @return The horizonHours.
    */
@@ -389,6 +521,10 @@ java.lang.String defaultValue) {
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelId_ = "";
   /**
+   * <pre>
+   * 使用的模型 id / key，如 fusion-ai
+   * </pre>
+   *
    * <code>string model_id = 11 [json_name = "model_id"];</code>
    * @return The modelId.
    */
@@ -406,6 +542,10 @@ java.lang.String defaultValue) {
     }
   }
   /**
+   * <pre>
+   * 使用的模型 id / key，如 fusion-ai
+   * </pre>
+   *
    * <code>string model_id = 11 [json_name = "model_id"];</code>
    * @return The bytes for modelId.
    */
@@ -428,6 +568,10 @@ java.lang.String defaultValue) {
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
   /**
+   * <pre>
+   * 人类可读提示（失败原因或当前步说明）
+   * </pre>
+   *
    * <code>string message = 12 [json_name = "message"];</code>
    * @return The message.
    */
@@ -445,6 +589,10 @@ java.lang.String defaultValue) {
     }
   }
   /**
+   * <pre>
+   * 人类可读提示（失败原因或当前步说明）
+   * </pre>
+   *
    * <code>string message = 12 [json_name = "message"];</code>
    * @return The bytes for message.
    */
@@ -468,7 +616,7 @@ java.lang.String defaultValue) {
   private volatile java.lang.Object startedAt_ = "";
   /**
    * <pre>
-   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
    * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
@@ -481,7 +629,7 @@ java.lang.String defaultValue) {
   }
   /**
    * <pre>
-   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
    * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
@@ -503,7 +651,7 @@ java.lang.String defaultValue) {
   }
   /**
    * <pre>
-   * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+   * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
    * 例：2026-11-17T16:12:00+08:00
    * </pre>
    *
@@ -529,6 +677,10 @@ java.lang.String defaultValue) {
   @SuppressWarnings("serial")
   private volatile java.lang.Object finishedAt_ = "";
   /**
+   * <pre>
+   * 结束时间；未结束不填
+   * </pre>
+   *
    * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
    * @return Whether the finishedAt field is set.
    */
@@ -537,6 +689,10 @@ java.lang.String defaultValue) {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
+   * <pre>
+   * 结束时间；未结束不填
+   * </pre>
+   *
    * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
    * @return The finishedAt.
    */
@@ -554,6 +710,10 @@ java.lang.String defaultValue) {
     }
   }
   /**
+   * <pre>
+   * 结束时间；未结束不填
+   * </pre>
+   *
    * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
    * @return The bytes for finishedAt.
    */
@@ -576,6 +736,10 @@ java.lang.String defaultValue) {
   @SuppressWarnings("serial")
   private volatile java.lang.Object updatedAt_ = "";
   /**
+   * <pre>
+   * 最近一次状态更新时间
+   * </pre>
+   *
    * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
    * @return Whether the updatedAt field is set.
    */
@@ -584,6 +748,10 @@ java.lang.String defaultValue) {
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
+   * <pre>
+   * 最近一次状态更新时间
+   * </pre>
+   *
    * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
    * @return The updatedAt.
    */
@@ -601,6 +769,10 @@ java.lang.String defaultValue) {
     }
   }
   /**
+   * <pre>
+   * 最近一次状态更新时间
+   * </pre>
+   *
    * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
    * @return The bytes for updatedAt.
    */
@@ -702,9 +874,9 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(stage_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, stage_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+    for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
          : internalGetStages().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
       stages__ = StagesDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
@@ -952,8 +1124,8 @@ java.lang.String defaultValue) {
   }
   /**
    * <pre>
-   * 五步 stages 键：data_ready | model_loaded | infer | persist | compare_refresh
-   * 每步取值：pending | running | done | failed
+   * PredictJobView 单次预测任务。
+   * stages 键（固定五步）：data_ready | model_loaded | infer | persist | compare_refresh
    * </pre>
    *
    * Protobuf type {@code fusion.ai.proto.workbench.PredictJobView}
@@ -1237,7 +1409,7 @@ java.lang.String defaultValue) {
               break;
             } // case 42
             case 50: {
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
               stages__ = input.readMessage(
                   StagesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableStages().getMutableMap().put(
@@ -1309,6 +1481,10 @@ java.lang.String defaultValue) {
 
     private java.lang.Object jobId_ = "";
     /**
+     * <pre>
+     * 预测任务 id，如 pd-8291
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return The jobId.
      */
@@ -1325,6 +1501,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 预测任务 id，如 pd-8291
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return The bytes for jobId.
      */
@@ -1342,6 +1522,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 预测任务 id，如 pd-8291
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @param value The jobId to set.
      * @return This builder for chaining.
@@ -1355,6 +1539,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 预测任务 id，如 pd-8291
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @return This builder for chaining.
      */
@@ -1365,6 +1553,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 预测任务 id，如 pd-8291
+     * </pre>
+     *
      * <code>string job_id = 1 [json_name = "job_id"];</code>
      * @param value The bytes for jobId to set.
      * @return This builder for chaining.
@@ -1381,6 +1573,10 @@ java.lang.String defaultValue) {
 
     private java.lang.Object registrationId_ = "";
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 2 [json_name = "registration_id"];</code>
      * @return The registrationId.
      */
@@ -1397,6 +1593,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 2 [json_name = "registration_id"];</code>
      * @return The bytes for registrationId.
      */
@@ -1414,6 +1614,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 2 [json_name = "registration_id"];</code>
      * @param value The registrationId to set.
      * @return This builder for chaining.
@@ -1427,6 +1631,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 2 [json_name = "registration_id"];</code>
      * @return This builder for chaining.
      */
@@ -1437,6 +1645,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 场站 registration_id
+     * </pre>
+     *
      * <code>string registration_id = 2 [json_name = "registration_id"];</code>
      * @param value The bytes for registrationId to set.
      * @return This builder for chaining.
@@ -1453,6 +1665,10 @@ java.lang.String defaultValue) {
 
     private int status_ = 0;
     /**
+     * <pre>
+     * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
      * @return The enum numeric value on the wire for status.
      */
@@ -1460,6 +1676,10 @@ java.lang.String defaultValue) {
       return status_;
     }
     /**
+     * <pre>
+     * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
@@ -1471,6 +1691,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
      * @return The status.
      */
@@ -1480,6 +1704,10 @@ java.lang.String defaultValue) {
       return result == null ? com.fusion.ai.proto.workbench.JobStatus.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
      * @param value The status to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
@@ -1493,6 +1721,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 整单状态：QUEUED / RUNNING / SUCCEEDED / FAILED
+     * </pre>
+     *
      * <code>.fusion.ai.proto.workbench.JobStatus status = 3 [json_name = "status"];</code>
      * @return This builder for chaining.
      */
@@ -1506,7 +1738,7 @@ java.lang.String defaultValue) {
     private int progressPct_ ;
     /**
      * <pre>
-     * 0~100
+     * 总进度 0~100
      * </pre>
      *
      * <code>int32 progress_pct = 4 [json_name = "progress_pct"];</code>
@@ -1518,7 +1750,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 0~100
+     * 总进度 0~100
      * </pre>
      *
      * <code>int32 progress_pct = 4 [json_name = "progress_pct"];</code>
@@ -1534,7 +1766,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 0~100
+     * 总进度 0~100
      * </pre>
      *
      * <code>int32 progress_pct = 4 [json_name = "progress_pct"];</code>
@@ -1550,7 +1782,7 @@ java.lang.String defaultValue) {
     private java.lang.Object stage_ = "";
     /**
      * <pre>
-     * 当前步键，如 infer
+     * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
      * </pre>
      *
      * <code>string stage = 5 [json_name = "stage"];</code>
@@ -1570,7 +1802,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 当前步键，如 infer
+     * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
      * </pre>
      *
      * <code>string stage = 5 [json_name = "stage"];</code>
@@ -1591,7 +1823,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 当前步键，如 infer
+     * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
      * </pre>
      *
      * <code>string stage = 5 [json_name = "stage"];</code>
@@ -1608,7 +1840,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 当前步键，如 infer
+     * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
      * </pre>
      *
      * <code>string stage = 5 [json_name = "stage"];</code>
@@ -1622,7 +1854,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 当前步键，如 infer
+     * 当前步键，如 infer；与 stages 中 RUNNING 的那一步一致
      * </pre>
      *
      * <code>string stage = 5 [json_name = "stage"];</code>
@@ -1640,8 +1872,8 @@ java.lang.String defaultValue) {
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> stages_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        java.lang.String, java.lang.Integer> stages_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
         internalGetStages() {
       if (stages_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -1649,7 +1881,7 @@ java.lang.String defaultValue) {
       }
       return stages_;
     }
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
         internalGetMutableStages() {
       if (stages_ == null) {
         stages_ = com.google.protobuf.MapField.newMapField(
@@ -1666,7 +1898,11 @@ java.lang.String defaultValue) {
       return internalGetStages().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
      */
     @java.lang.Override
     public boolean containsStages(
@@ -1679,38 +1915,109 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getStages() {
+    public java.util.Map<java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus>
+    getStages() {
       return getStagesMap();
     }
     /**
-     * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getStagesMap() {
-      return internalGetStages().getMap();
-    }
+    public java.util.Map<java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus>
+    getStagesMap() {
+      return internalGetAdaptedStagesMap(
+          internalGetStages().getMap());}
     /**
-     * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
      */
     @java.lang.Override
     public /* nullable */
-java.lang.String getStagesOrDefault(
+com.fusion.ai.proto.workbench.StageStepStatus getStagesOrDefault(
         java.lang.String key,
         /* nullable */
-java.lang.String defaultValue) {
+com.fusion.ai.proto.workbench.StageStepStatus defaultValue) {
       java.util.Objects.requireNonNull(key, "map key");
-      java.util.Map<java.lang.String, java.lang.String> map =
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetStages().getMap();
+      return map.containsKey(key)
+             ? stagesValueConverter.doForward(map.get(key))
+             : defaultValue;
+    }
+    /**
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+     */
+    @java.lang.Override
+    public com.fusion.ai.proto.workbench.StageStepStatus getStagesOrThrow(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key, "map key");
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetStages().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return stagesValueConverter.doForward(map.get(key));
+    }
+    /**
+     * Use {@link #getStagesValueMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer>
+    getStagesValue() {
+      return getStagesValueMap();
+    }
+    /**
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Integer>
+    getStagesValueMap() {
+      return internalGetStages().getMap();
+    }
+    /**
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+     */
+    @java.lang.Override
+    public int getStagesValueOrDefault(
+        java.lang.String key,
+        int defaultValue) {
+      java.util.Objects.requireNonNull(key, "map key");
+      java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetStages().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
      */
     @java.lang.Override
-    public java.lang.String getStagesOrThrow(
+    public int getStagesValueOrThrow(
         java.lang.String key) {
       java.util.Objects.requireNonNull(key, "map key");
-      java.util.Map<java.lang.String, java.lang.String> map =
+      java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetStages().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -1724,7 +2031,11 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
      */
     public Builder removeStages(
         java.lang.String key) {
@@ -1737,29 +2048,79 @@ java.lang.String defaultValue) {
      * Use alternate mutation accessors instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
+    public java.util.Map<java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus>
         getMutableStages() {
+      bitField0_ |= 0x00000020;
+      return internalGetAdaptedStagesMap(
+           internalGetMutableStages().getMutableMap());
+    }
+    /**
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+     */
+    public Builder putStages(
+        java.lang.String key,
+        com.fusion.ai.proto.workbench.StageStepStatus value) {
+      java.util.Objects.requireNonNull(key, "map key");
+
+      internalGetMutableStages().getMutableMap()
+          .put(key, stagesValueConverter.doBackward(value));
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+    /**
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
+     */
+    public Builder putAllStages(
+        java.util.Map<java.lang.String, com.fusion.ai.proto.workbench.StageStepStatus> values) {
+      internalGetAdaptedStagesMap(
+          internalGetMutableStages().getMutableMap())
+              .putAll(values);
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer>
+    getMutableStagesValue() {
       bitField0_ |= 0x00000020;
       return internalGetMutableStages().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
      */
-    public Builder putStages(
+    public Builder putStagesValue(
         java.lang.String key,
-        java.lang.String value) {
+        int value) {
       java.util.Objects.requireNonNull(key, "map key");
-      java.util.Objects.requireNonNull(value, "map value");
+
       internalGetMutableStages().getMutableMap()
           .put(key, value);
       bitField0_ |= 0x00000020;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; stages = 6 [json_name = "stages"];</code>
+     * <pre>
+     * 五步状态表；key=步名，value=StageStepStatus
+     * </pre>
+     *
+     * <code>map&lt;string, .fusion.ai.proto.workbench.StageStepStatus&gt; stages = 6 [json_name = "stages"];</code>
      */
-    public Builder putAllStages(
-        java.util.Map<java.lang.String, java.lang.String> values) {
+    public Builder putAllStagesValue(
+        java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableStages().getMutableMap()
           .putAll(values);
       bitField0_ |= 0x00000020;
@@ -1768,6 +2129,10 @@ java.lang.String defaultValue) {
 
     private java.lang.Object evalDate_ = "";
     /**
+     * <pre>
+     * 评估日 / 预测锚定日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 7 [json_name = "eval_date"];</code>
      * @return The evalDate.
      */
@@ -1784,6 +2149,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 评估日 / 预测锚定日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 7 [json_name = "eval_date"];</code>
      * @return The bytes for evalDate.
      */
@@ -1801,6 +2170,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 评估日 / 预测锚定日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 7 [json_name = "eval_date"];</code>
      * @param value The evalDate to set.
      * @return This builder for chaining.
@@ -1814,6 +2187,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 评估日 / 预测锚定日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 7 [json_name = "eval_date"];</code>
      * @return This builder for chaining.
      */
@@ -1824,6 +2201,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 评估日 / 预测锚定日 YYYY-MM-DD
+     * </pre>
+     *
      * <code>string eval_date = 7 [json_name = "eval_date"];</code>
      * @param value The bytes for evalDate to set.
      * @return This builder for chaining.
@@ -1840,6 +2221,10 @@ java.lang.String defaultValue) {
 
     private int dayOffset_ ;
     /**
+     * <pre>
+     * 相对评估日的偏移天数；0=当日
+     * </pre>
+     *
      * <code>int32 day_offset = 8 [json_name = "day_offset"];</code>
      * @return The dayOffset.
      */
@@ -1848,6 +2233,10 @@ java.lang.String defaultValue) {
       return dayOffset_;
     }
     /**
+     * <pre>
+     * 相对评估日的偏移天数；0=当日
+     * </pre>
+     *
      * <code>int32 day_offset = 8 [json_name = "day_offset"];</code>
      * @param value The dayOffset to set.
      * @return This builder for chaining.
@@ -1860,6 +2249,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 相对评估日的偏移天数；0=当日
+     * </pre>
+     *
      * <code>int32 day_offset = 8 [json_name = "day_offset"];</code>
      * @return This builder for chaining.
      */
@@ -1872,6 +2265,10 @@ java.lang.String defaultValue) {
 
     private int granularityMin_ ;
     /**
+     * <pre>
+     * 预测步长（分钟）：5 / 15 / 30 / 60
+     * </pre>
+     *
      * <code>int32 granularity_min = 9 [json_name = "granularity_min"];</code>
      * @return The granularityMin.
      */
@@ -1880,6 +2277,10 @@ java.lang.String defaultValue) {
       return granularityMin_;
     }
     /**
+     * <pre>
+     * 预测步长（分钟）：5 / 15 / 30 / 60
+     * </pre>
+     *
      * <code>int32 granularity_min = 9 [json_name = "granularity_min"];</code>
      * @param value The granularityMin to set.
      * @return This builder for chaining.
@@ -1892,6 +2293,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 预测步长（分钟）：5 / 15 / 30 / 60
+     * </pre>
+     *
      * <code>int32 granularity_min = 9 [json_name = "granularity_min"];</code>
      * @return This builder for chaining.
      */
@@ -1904,6 +2309,10 @@ java.lang.String defaultValue) {
 
     private int horizonHours_ ;
     /**
+     * <pre>
+     * 预测时长（小时），常见 24
+     * </pre>
+     *
      * <code>int32 horizon_hours = 10 [json_name = "horizon_hours"];</code>
      * @return The horizonHours.
      */
@@ -1912,6 +2321,10 @@ java.lang.String defaultValue) {
       return horizonHours_;
     }
     /**
+     * <pre>
+     * 预测时长（小时），常见 24
+     * </pre>
+     *
      * <code>int32 horizon_hours = 10 [json_name = "horizon_hours"];</code>
      * @param value The horizonHours to set.
      * @return This builder for chaining.
@@ -1924,6 +2337,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 预测时长（小时），常见 24
+     * </pre>
+     *
      * <code>int32 horizon_hours = 10 [json_name = "horizon_hours"];</code>
      * @return This builder for chaining.
      */
@@ -1936,6 +2353,10 @@ java.lang.String defaultValue) {
 
     private java.lang.Object modelId_ = "";
     /**
+     * <pre>
+     * 使用的模型 id / key，如 fusion-ai
+     * </pre>
+     *
      * <code>string model_id = 11 [json_name = "model_id"];</code>
      * @return The modelId.
      */
@@ -1952,6 +2373,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 使用的模型 id / key，如 fusion-ai
+     * </pre>
+     *
      * <code>string model_id = 11 [json_name = "model_id"];</code>
      * @return The bytes for modelId.
      */
@@ -1969,6 +2394,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 使用的模型 id / key，如 fusion-ai
+     * </pre>
+     *
      * <code>string model_id = 11 [json_name = "model_id"];</code>
      * @param value The modelId to set.
      * @return This builder for chaining.
@@ -1982,6 +2411,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 使用的模型 id / key，如 fusion-ai
+     * </pre>
+     *
      * <code>string model_id = 11 [json_name = "model_id"];</code>
      * @return This builder for chaining.
      */
@@ -1992,6 +2425,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 使用的模型 id / key，如 fusion-ai
+     * </pre>
+     *
      * <code>string model_id = 11 [json_name = "model_id"];</code>
      * @param value The bytes for modelId to set.
      * @return This builder for chaining.
@@ -2008,6 +2445,10 @@ java.lang.String defaultValue) {
 
     private java.lang.Object message_ = "";
     /**
+     * <pre>
+     * 人类可读提示（失败原因或当前步说明）
+     * </pre>
+     *
      * <code>string message = 12 [json_name = "message"];</code>
      * @return The message.
      */
@@ -2024,6 +2465,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 人类可读提示（失败原因或当前步说明）
+     * </pre>
+     *
      * <code>string message = 12 [json_name = "message"];</code>
      * @return The bytes for message.
      */
@@ -2041,6 +2486,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 人类可读提示（失败原因或当前步说明）
+     * </pre>
+     *
      * <code>string message = 12 [json_name = "message"];</code>
      * @param value The message to set.
      * @return This builder for chaining.
@@ -2054,6 +2503,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 人类可读提示（失败原因或当前步说明）
+     * </pre>
+     *
      * <code>string message = 12 [json_name = "message"];</code>
      * @return This builder for chaining.
      */
@@ -2064,6 +2517,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 人类可读提示（失败原因或当前步说明）
+     * </pre>
+     *
      * <code>string message = 12 [json_name = "message"];</code>
      * @param value The bytes for message to set.
      * @return This builder for chaining.
@@ -2081,7 +2538,7 @@ java.lang.String defaultValue) {
     private java.lang.Object startedAt_ = "";
     /**
      * <pre>
-     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
@@ -2093,7 +2550,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
@@ -2114,7 +2571,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
@@ -2136,7 +2593,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
@@ -2154,7 +2611,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
@@ -2169,7 +2626,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * 开始/结束/更新时间。带数值时区偏移的字符串，秒固定两位；etcd 缺秒（或缺分）时补 00。
+     * 开始时间。带数值时区偏移，秒两位；etcd 缺分/秒补 00
      * 例：2026-11-17T16:12:00+08:00
      * </pre>
      *
@@ -2189,6 +2646,10 @@ java.lang.String defaultValue) {
 
     private java.lang.Object finishedAt_ = "";
     /**
+     * <pre>
+     * 结束时间；未结束不填
+     * </pre>
+     *
      * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      * @return Whether the finishedAt field is set.
      */
@@ -2196,6 +2657,10 @@ java.lang.String defaultValue) {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
+     * <pre>
+     * 结束时间；未结束不填
+     * </pre>
+     *
      * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      * @return The finishedAt.
      */
@@ -2212,6 +2677,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 结束时间；未结束不填
+     * </pre>
+     *
      * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      * @return The bytes for finishedAt.
      */
@@ -2229,6 +2698,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 结束时间；未结束不填
+     * </pre>
+     *
      * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      * @param value The finishedAt to set.
      * @return This builder for chaining.
@@ -2242,6 +2715,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 结束时间；未结束不填
+     * </pre>
+     *
      * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      * @return This builder for chaining.
      */
@@ -2252,6 +2729,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 结束时间；未结束不填
+     * </pre>
+     *
      * <code>optional string finished_at = 14 [json_name = "finished_at"];</code>
      * @param value The bytes for finishedAt to set.
      * @return This builder for chaining.
@@ -2268,6 +2749,10 @@ java.lang.String defaultValue) {
 
     private java.lang.Object updatedAt_ = "";
     /**
+     * <pre>
+     * 最近一次状态更新时间
+     * </pre>
+     *
      * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      * @return Whether the updatedAt field is set.
      */
@@ -2275,6 +2760,10 @@ java.lang.String defaultValue) {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
+     * <pre>
+     * 最近一次状态更新时间
+     * </pre>
+     *
      * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      * @return The updatedAt.
      */
@@ -2291,6 +2780,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 最近一次状态更新时间
+     * </pre>
+     *
      * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      * @return The bytes for updatedAt.
      */
@@ -2308,6 +2801,10 @@ java.lang.String defaultValue) {
       }
     }
     /**
+     * <pre>
+     * 最近一次状态更新时间
+     * </pre>
+     *
      * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
@@ -2321,6 +2818,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 最近一次状态更新时间
+     * </pre>
+     *
      * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      * @return This builder for chaining.
      */
@@ -2331,6 +2832,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
+     * <pre>
+     * 最近一次状态更新时间
+     * </pre>
+     *
      * <code>optional string updated_at = 15 [json_name = "updated_at"];</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.

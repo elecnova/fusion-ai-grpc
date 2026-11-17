@@ -11,11 +11,19 @@ public interface EvalDayMetricsRowOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 1 [json_name = "eval_date"];</code>
    * @return The evalDate.
    */
   java.lang.String getEvalDate();
   /**
+   * <pre>
+   * 评估日 YYYY-MM-DD
+   * </pre>
+   *
    * <code>string eval_date = 1 [json_name = "eval_date"];</code>
    * @return The bytes for evalDate.
    */
@@ -23,22 +31,38 @@ public interface EvalDayMetricsRowOrBuilder extends
       getEvalDateBytes();
 
   /**
+   * <pre>
+   * MAPE 百分比数值
+   * </pre>
+   *
    * <code>optional double mape = 2 [json_name = "mape"];</code>
    * @return Whether the mape field is set.
    */
   boolean hasMape();
   /**
+   * <pre>
+   * MAPE 百分比数值
+   * </pre>
+   *
    * <code>optional double mape = 2 [json_name = "mape"];</code>
    * @return The mape.
    */
   double getMape();
 
   /**
+   * <pre>
+   * RMSE（kW）
+   * </pre>
+   *
    * <code>optional double rmse = 3 [json_name = "rmse"];</code>
    * @return Whether the rmse field is set.
    */
   boolean hasRmse();
   /**
+   * <pre>
+   * RMSE（kW）
+   * </pre>
+   *
    * <code>optional double rmse = 3 [json_name = "rmse"];</code>
    * @return The rmse.
    */
