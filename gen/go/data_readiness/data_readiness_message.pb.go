@@ -629,13 +629,16 @@ type DataSiteRow struct {
 	Trend_7D         []*CoverageTrendPoint  `protobuf:"bytes,7,rep,name=trend_7d,proto3" json:"trend_7d,omitempty"`
 	WeatherStatus    *WeatherStatus         `protobuf:"varint,8,opt,name=weather_status,proto3,enum=fusion.ai.proto.data_readiness.WeatherStatus,oneof" json:"weather_status,omitempty"`
 	WeatherDisplay   *string                `protobuf:"bytes,9,opt,name=weather_display,proto3,oneof" json:"weather_display,omitempty"`
-	LastPushAt       *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=last_push_at,proto3,oneof" json:"last_push_at,omitempty"`
-	LastIngestAt     *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=last_ingest_at,proto3,oneof" json:"last_ingest_at,omitempty"`
-	GapPoints_7D     int32                  `protobuf:"varint,12,opt,name=gap_points_7d,proto3" json:"gap_points_7d,omitempty"`
-	ReadinessStatus  ReadinessStatus        `protobuf:"varint,13,opt,name=readiness_status,proto3,enum=fusion.ai.proto.data_readiness.ReadinessStatus" json:"readiness_status,omitempty"`
-	WorkbenchHref    string                 `protobuf:"bytes,14,opt,name=workbench_href,proto3" json:"workbench_href,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+	// 例：2026-11-20T23:55:00+08:00；无则不填。
+	LastPushAt *string `protobuf:"bytes,10,opt,name=last_push_at,proto3,oneof" json:"last_push_at,omitempty"`
+	// 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+	LastIngestAt    *string         `protobuf:"bytes,11,opt,name=last_ingest_at,proto3,oneof" json:"last_ingest_at,omitempty"`
+	GapPoints_7D    int32           `protobuf:"varint,12,opt,name=gap_points_7d,proto3" json:"gap_points_7d,omitempty"`
+	ReadinessStatus ReadinessStatus `protobuf:"varint,13,opt,name=readiness_status,proto3,enum=fusion.ai.proto.data_readiness.ReadinessStatus" json:"readiness_status,omitempty"`
+	WorkbenchHref   string          `protobuf:"bytes,14,opt,name=workbench_href,proto3" json:"workbench_href,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *DataSiteRow) Reset() {
@@ -731,18 +734,18 @@ func (x *DataSiteRow) GetWeatherDisplay() string {
 	return ""
 }
 
-func (x *DataSiteRow) GetLastPushAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.LastPushAt
+func (x *DataSiteRow) GetLastPushAt() string {
+	if x != nil && x.LastPushAt != nil {
+		return *x.LastPushAt
 	}
-	return nil
+	return ""
 }
 
-func (x *DataSiteRow) GetLastIngestAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.LastIngestAt
+func (x *DataSiteRow) GetLastIngestAt() string {
+	if x != nil && x.LastIngestAt != nil {
+		return *x.LastIngestAt
 	}
-	return nil
+	return ""
 }
 
 func (x *DataSiteRow) GetGapPoints_7D() int32 {
@@ -2811,7 +2814,7 @@ const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"\x16_weather_missing_count\"H\n" +
 	"\x12CoverageTrendPoint\x12\x1c\n" +
 	"\tstat_date\x18\x01 \x01(\tR\tstat_date\x12\x14\n" +
-	"\x05ratio\x18\x02 \x01(\x01R\x05ratio\"\x89\a\n" +
+	"\x05ratio\x18\x02 \x01(\x01R\x05ratio\"\xd1\x06\n" +
 	"\vDataSiteRow\x12(\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x12\x18\n" +
 	"\asite_id\x18\x02 \x01(\tR\asite_id\x12\x1c\n" +
@@ -2821,10 +2824,10 @@ const file_data_readiness_data_readiness_message_proto_rawDesc = "" +
 	"\x11coverage_ratio_7d\x18\x06 \x01(\x01H\x00R\x11coverage_ratio_7d\x88\x01\x01\x12N\n" +
 	"\btrend_7d\x18\a \x03(\v22.fusion.ai.proto.data_readiness.CoverageTrendPointR\btrend_7d\x12Z\n" +
 	"\x0eweather_status\x18\b \x01(\x0e2-.fusion.ai.proto.data_readiness.WeatherStatusH\x01R\x0eweather_status\x88\x01\x01\x12-\n" +
-	"\x0fweather_display\x18\t \x01(\tH\x02R\x0fweather_display\x88\x01\x01\x12C\n" +
+	"\x0fweather_display\x18\t \x01(\tH\x02R\x0fweather_display\x88\x01\x01\x12'\n" +
 	"\flast_push_at\x18\n" +
-	" \x01(\v2\x1a.google.protobuf.TimestampH\x03R\flast_push_at\x88\x01\x01\x12G\n" +
-	"\x0elast_ingest_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampH\x04R\x0elast_ingest_at\x88\x01\x01\x12$\n" +
+	" \x01(\tH\x03R\flast_push_at\x88\x01\x01\x12+\n" +
+	"\x0elast_ingest_at\x18\v \x01(\tH\x04R\x0elast_ingest_at\x88\x01\x01\x12$\n" +
 	"\rgap_points_7d\x18\f \x01(\x05R\rgap_points_7d\x12[\n" +
 	"\x10readiness_status\x18\r \x01(\x0e2/.fusion.ai.proto.data_readiness.ReadinessStatusR\x10readiness_status\x12&\n" +
 	"\x0eworkbench_href\x18\x0e \x01(\tR\x0eworkbench_hrefB\x14\n" +
@@ -3124,45 +3127,43 @@ var file_data_readiness_data_readiness_message_proto_depIdxs = []int32{
 	2,  // 0: fusion.ai.proto.data_readiness.DataSiteRow.data_source:type_name -> fusion.ai.proto.data_readiness.DataSource
 	9,  // 1: fusion.ai.proto.data_readiness.DataSiteRow.trend_7d:type_name -> fusion.ai.proto.data_readiness.CoverageTrendPoint
 	1,  // 2: fusion.ai.proto.data_readiness.DataSiteRow.weather_status:type_name -> fusion.ai.proto.data_readiness.WeatherStatus
-	44, // 3: fusion.ai.proto.data_readiness.DataSiteRow.last_push_at:type_name -> google.protobuf.Timestamp
-	44, // 4: fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at:type_name -> google.protobuf.Timestamp
-	0,  // 5: fusion.ai.proto.data_readiness.DataSiteRow.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
-	10, // 6: fusion.ai.proto.data_readiness.DataSiteRowPage.rows:type_name -> fusion.ai.proto.data_readiness.DataSiteRow
-	7,  // 7: fusion.ai.proto.data_readiness.HeatmapDay.level:type_name -> fusion.ai.proto.data_readiness.HeatmapLevel
-	2,  // 8: fusion.ai.proto.data_readiness.DataSiteReadiness.data_source:type_name -> fusion.ai.proto.data_readiness.DataSource
-	0,  // 9: fusion.ai.proto.data_readiness.DataSiteReadiness.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
-	1,  // 10: fusion.ai.proto.data_readiness.DataSiteReadiness.weather_status:type_name -> fusion.ai.proto.data_readiness.WeatherStatus
-	12, // 11: fusion.ai.proto.data_readiness.DataSiteReadiness.heatmap_14d:type_name -> fusion.ai.proto.data_readiness.HeatmapDay
-	14, // 12: fusion.ai.proto.data_readiness.PipelineStats.push_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
-	14, // 13: fusion.ai.proto.data_readiness.PipelineStats.weather_job_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
-	14, // 14: fusion.ai.proto.data_readiness.PipelineStats.excel_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
-	14, // 15: fusion.ai.proto.data_readiness.PipelineStats.validation_queue_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
-	1,  // 16: fusion.ai.proto.data_readiness.WeatherSiteView.weather_status:type_name -> fusion.ai.proto.data_readiness.WeatherStatus
-	44, // 17: fusion.ai.proto.data_readiness.WeatherSiteView.last_success_at:type_name -> google.protobuf.Timestamp
-	6,  // 18: fusion.ai.proto.data_readiness.WeatherSyncTaskView.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTaskStatus
-	4,  // 19: fusion.ai.proto.data_readiness.WeatherSyncRunView.trigger:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTrigger
-	3,  // 20: fusion.ai.proto.data_readiness.WeatherSyncRunView.mode:type_name -> fusion.ai.proto.data_readiness.WeatherSyncMode
-	5,  // 21: fusion.ai.proto.data_readiness.WeatherSyncRunView.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
-	44, // 22: fusion.ai.proto.data_readiness.WeatherSyncRunView.started_at:type_name -> google.protobuf.Timestamp
-	44, // 23: fusion.ai.proto.data_readiness.WeatherSyncRunView.finished_at:type_name -> google.protobuf.Timestamp
-	17, // 24: fusion.ai.proto.data_readiness.WeatherSyncRunView.tasks:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTaskView
-	8,  // 25: fusion.ai.proto.data_readiness.GetDataOverviewResponse.overview:type_name -> fusion.ai.proto.data_readiness.DataOverview
-	0,  // 26: fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
-	11, // 27: fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.page:type_name -> fusion.ai.proto.data_readiness.DataSiteRowPage
-	13, // 28: fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse.readiness:type_name -> fusion.ai.proto.data_readiness.DataSiteReadiness
-	15, // 29: fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse.stats:type_name -> fusion.ai.proto.data_readiness.PipelineStats
-	16, // 30: fusion.ai.proto.data_readiness.GetWeatherSiteResponse.site:type_name -> fusion.ai.proto.data_readiness.WeatherSiteView
-	18, // 31: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunView
-	3,  // 32: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.mode:type_name -> fusion.ai.proto.data_readiness.WeatherSyncMode
-	4,  // 33: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.trigger:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTrigger
-	5,  // 34: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
-	32, // 35: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.partial_errors:type_name -> fusion.ai.proto.data_readiness.WeatherSyncPartialError
-	5,  // 36: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
-	37, // [37:37] is the sub-list for method output_type
-	37, // [37:37] is the sub-list for method input_type
-	37, // [37:37] is the sub-list for extension type_name
-	37, // [37:37] is the sub-list for extension extendee
-	0,  // [0:37] is the sub-list for field type_name
+	0,  // 3: fusion.ai.proto.data_readiness.DataSiteRow.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
+	10, // 4: fusion.ai.proto.data_readiness.DataSiteRowPage.rows:type_name -> fusion.ai.proto.data_readiness.DataSiteRow
+	7,  // 5: fusion.ai.proto.data_readiness.HeatmapDay.level:type_name -> fusion.ai.proto.data_readiness.HeatmapLevel
+	2,  // 6: fusion.ai.proto.data_readiness.DataSiteReadiness.data_source:type_name -> fusion.ai.proto.data_readiness.DataSource
+	0,  // 7: fusion.ai.proto.data_readiness.DataSiteReadiness.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
+	1,  // 8: fusion.ai.proto.data_readiness.DataSiteReadiness.weather_status:type_name -> fusion.ai.proto.data_readiness.WeatherStatus
+	12, // 9: fusion.ai.proto.data_readiness.DataSiteReadiness.heatmap_14d:type_name -> fusion.ai.proto.data_readiness.HeatmapDay
+	14, // 10: fusion.ai.proto.data_readiness.PipelineStats.push_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
+	14, // 11: fusion.ai.proto.data_readiness.PipelineStats.weather_job_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
+	14, // 12: fusion.ai.proto.data_readiness.PipelineStats.excel_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
+	14, // 13: fusion.ai.proto.data_readiness.PipelineStats.validation_queue_line:type_name -> fusion.ai.proto.data_readiness.PipelineLine
+	1,  // 14: fusion.ai.proto.data_readiness.WeatherSiteView.weather_status:type_name -> fusion.ai.proto.data_readiness.WeatherStatus
+	44, // 15: fusion.ai.proto.data_readiness.WeatherSiteView.last_success_at:type_name -> google.protobuf.Timestamp
+	6,  // 16: fusion.ai.proto.data_readiness.WeatherSyncTaskView.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTaskStatus
+	4,  // 17: fusion.ai.proto.data_readiness.WeatherSyncRunView.trigger:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTrigger
+	3,  // 18: fusion.ai.proto.data_readiness.WeatherSyncRunView.mode:type_name -> fusion.ai.proto.data_readiness.WeatherSyncMode
+	5,  // 19: fusion.ai.proto.data_readiness.WeatherSyncRunView.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
+	44, // 20: fusion.ai.proto.data_readiness.WeatherSyncRunView.started_at:type_name -> google.protobuf.Timestamp
+	44, // 21: fusion.ai.proto.data_readiness.WeatherSyncRunView.finished_at:type_name -> google.protobuf.Timestamp
+	17, // 22: fusion.ai.proto.data_readiness.WeatherSyncRunView.tasks:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTaskView
+	8,  // 23: fusion.ai.proto.data_readiness.GetDataOverviewResponse.overview:type_name -> fusion.ai.proto.data_readiness.DataOverview
+	0,  // 24: fusion.ai.proto.data_readiness.ListDataSiteRowsRequest.readiness_status:type_name -> fusion.ai.proto.data_readiness.ReadinessStatus
+	11, // 25: fusion.ai.proto.data_readiness.ListDataSiteRowsResponse.page:type_name -> fusion.ai.proto.data_readiness.DataSiteRowPage
+	13, // 26: fusion.ai.proto.data_readiness.GetDataSiteReadinessResponse.readiness:type_name -> fusion.ai.proto.data_readiness.DataSiteReadiness
+	15, // 27: fusion.ai.proto.data_readiness.GetDataPipelineStatsResponse.stats:type_name -> fusion.ai.proto.data_readiness.PipelineStats
+	16, // 28: fusion.ai.proto.data_readiness.GetWeatherSiteResponse.site:type_name -> fusion.ai.proto.data_readiness.WeatherSiteView
+	18, // 29: fusion.ai.proto.data_readiness.GetWeatherSyncRunResponse.run:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunView
+	3,  // 30: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.mode:type_name -> fusion.ai.proto.data_readiness.WeatherSyncMode
+	4,  // 31: fusion.ai.proto.data_readiness.BatchSyncWeatherRequest.trigger:type_name -> fusion.ai.proto.data_readiness.WeatherSyncTrigger
+	5,  // 32: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
+	32, // 33: fusion.ai.proto.data_readiness.BatchSyncWeatherResponse.partial_errors:type_name -> fusion.ai.proto.data_readiness.WeatherSyncPartialError
+	5,  // 34: fusion.ai.proto.data_readiness.RetryFailedWeatherSyncResponse.status:type_name -> fusion.ai.proto.data_readiness.WeatherSyncRunStatus
+	35, // [35:35] is the sub-list for method output_type
+	35, // [35:35] is the sub-list for method input_type
+	35, // [35:35] is the sub-list for extension type_name
+	35, // [35:35] is the sub-list for extension extendee
+	0,  // [0:35] is the sub-list for field type_name
 }
 
 func init() { file_data_readiness_data_readiness_message_proto_init() }

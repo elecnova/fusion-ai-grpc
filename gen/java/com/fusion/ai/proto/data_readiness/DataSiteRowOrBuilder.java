@@ -138,34 +138,65 @@ public interface DataSiteRowOrBuilder extends
       getWeatherDisplayBytes();
 
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+   * <pre>
+   * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+   * 例：2026-11-20T23:55:00+08:00；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
    * @return Whether the lastPushAt field is set.
    */
   boolean hasLastPushAt();
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+   * <pre>
+   * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+   * 例：2026-11-20T23:55:00+08:00；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
    * @return The lastPushAt.
    */
-  com.google.protobuf.Timestamp getLastPushAt();
+  java.lang.String getLastPushAt();
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+   * <pre>
+   * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+   * 例：2026-11-20T23:55:00+08:00；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
+   * @return The bytes for lastPushAt.
    */
-  com.google.protobuf.TimestampOrBuilder getLastPushAtOrBuilder();
+  com.google.protobuf.ByteString
+      getLastPushAtBytes();
 
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+   * <pre>
+   * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    * @return Whether the lastIngestAt field is set.
    */
   boolean hasLastIngestAt();
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+   * <pre>
+   * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    * @return The lastIngestAt.
    */
-  com.google.protobuf.Timestamp getLastIngestAt();
+  java.lang.String getLastIngestAt();
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+   * <pre>
+   * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+   * @return The bytes for lastIngestAt.
    */
-  com.google.protobuf.TimestampOrBuilder getLastIngestAtOrBuilder();
+  com.google.protobuf.ByteString
+      getLastIngestAtBytes();
 
   /**
    * <code>int32 gap_points_7d = 12 [json_name = "gap_points_7d"];</code>

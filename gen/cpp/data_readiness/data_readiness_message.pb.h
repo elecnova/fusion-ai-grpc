@@ -7267,9 +7267,9 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
     kSiteNameFieldNumber = 3,
     kServiceTypeFieldNumber = 4,
     kWeatherDisplayFieldNumber = 9,
-    kWorkbenchHrefFieldNumber = 14,
     kLastPushAtFieldNumber = 10,
     kLastIngestAtFieldNumber = 11,
+    kWorkbenchHrefFieldNumber = 14,
     kCoverageRatio7DFieldNumber = 6,
     kDataSourceFieldNumber = 5,
     kWeatherStatusFieldNumber = 8,
@@ -7372,6 +7372,38 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   ::std::string* PROTOBUF_NONNULL _internal_mutable_weather_display();
 
   public:
+  // optional string last_push_at = 10 [json_name = "last_push_at"];
+  [[nodiscard]] bool has_last_push_at() const;
+  void clear_last_push_at() ;
+  [[nodiscard]] const ::std::string& last_push_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_last_push_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_last_push_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_last_push_at();
+  void set_allocated_last_push_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_last_push_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_last_push_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_last_push_at();
+
+  public:
+  // optional string last_ingest_at = 11 [json_name = "last_ingest_at"];
+  [[nodiscard]] bool has_last_ingest_at() const;
+  void clear_last_ingest_at() ;
+  [[nodiscard]] const ::std::string& last_ingest_at() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_last_ingest_at(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_last_ingest_at();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_last_ingest_at();
+  void set_allocated_last_ingest_at(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_last_ingest_at() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_last_ingest_at(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_last_ingest_at();
+
+  public:
   // string workbench_href = 14 [json_name = "workbench_href"];
   void clear_workbench_href() ;
   [[nodiscard]] const ::std::string& workbench_href() const;
@@ -7385,36 +7417,6 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   const ::std::string& _internal_workbench_href() const;
   PROTOBUF_ALWAYS_INLINE void _internal_set_workbench_href(const ::std::string& value);
   ::std::string* PROTOBUF_NONNULL _internal_mutable_workbench_href();
-
-  public:
-  // optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];
-  [[nodiscard]] bool has_last_push_at() const;
-  void clear_last_push_at() ;
-  [[nodiscard]] const ::google::protobuf::Timestamp& last_push_at() const;
-  [[nodiscard]] ::google::protobuf::Timestamp* PROTOBUF_NULLABLE release_last_push_at();
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL mutable_last_push_at();
-  void set_allocated_last_push_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_last_push_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  ::google::protobuf::Timestamp* PROTOBUF_NULLABLE unsafe_arena_release_last_push_at();
-
-  private:
-  const ::google::protobuf::Timestamp& _internal_last_push_at() const;
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_last_push_at();
-
-  public:
-  // optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];
-  [[nodiscard]] bool has_last_ingest_at() const;
-  void clear_last_ingest_at() ;
-  [[nodiscard]] const ::google::protobuf::Timestamp& last_ingest_at() const;
-  [[nodiscard]] ::google::protobuf::Timestamp* PROTOBUF_NULLABLE release_last_ingest_at();
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL mutable_last_ingest_at();
-  void set_allocated_last_ingest_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_last_ingest_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value);
-  ::google::protobuf::Timestamp* PROTOBUF_NULLABLE unsafe_arena_release_last_ingest_at();
-
-  private:
-  const ::google::protobuf::Timestamp& _internal_last_ingest_at() const;
-  ::google::protobuf::Timestamp* PROTOBUF_NONNULL _internal_mutable_last_ingest_at();
 
   public:
   // optional double coverage_ratio_7d = 6 [json_name = "coverage_ratio_7d"];
@@ -7474,7 +7476,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
   class _Internal;
   using ParseTableT_ =
       ::google::protobuf::internal::TcParseTable<4, 14,
-                          3, 131,
+                          1, 157,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
       const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL class_data);
@@ -7508,9 +7510,9 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED DataSiteRow final : public ::google
     ::google::protobuf::internal::ArenaStringPtr site_name_;
     ::google::protobuf::internal::ArenaStringPtr service_type_;
     ::google::protobuf::internal::ArenaStringPtr weather_display_;
+    ::google::protobuf::internal::ArenaStringPtr last_push_at_;
+    ::google::protobuf::internal::ArenaStringPtr last_ingest_at_;
     ::google::protobuf::internal::ArenaStringPtr workbench_href_;
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE last_push_at_;
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE last_ingest_at_;
     double coverage_ratio_7d_;
     int data_source_;
     int weather_status_;
@@ -10196,189 +10198,139 @@ inline void DataSiteRow::set_allocated_weather_display(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteRow.weather_display)
 }
 
-// optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];
+// optional string last_push_at = 10 [json_name = "last_push_at"];
 inline bool DataSiteRow::has_last_push_at() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000080U);
-  PROTOBUF_ASSUME(!value || _impl_.last_push_at_ != nullptr);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000040U);
   return value;
 }
-inline const ::google::protobuf::Timestamp& DataSiteRow::_internal_last_push_at() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::google::protobuf::Timestamp* p = _impl_.last_push_at_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::google::protobuf::Timestamp>(&::google::protobuf::Timestamp_globals_);
+inline void DataSiteRow::clear_last_push_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.last_push_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
 }
-inline const ::google::protobuf::Timestamp& DataSiteRow::last_push_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::std::string& DataSiteRow::last_push_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteRow.last_push_at)
   return _internal_last_push_at();
 }
-inline void DataSiteRow::unsafe_arena_set_allocated_last_push_at(
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void DataSiteRow::set_last_push_at(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.last_push_at_);
-  }
-  _impl_.last_push_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000080U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.DataSiteRow.last_push_at)
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  _impl_.last_push_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteRow.last_push_at)
 }
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE DataSiteRow::release_last_push_at() {
+inline ::std::string* PROTOBUF_NONNULL DataSiteRow::mutable_last_push_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ::std::string* _s = _internal_mutable_last_push_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteRow.last_push_at)
+  return _s;
+}
+inline const ::std::string& DataSiteRow::_internal_last_push_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.last_push_at_.Get();
+}
+inline void DataSiteRow::_internal_set_last_push_at(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
-  ::google::protobuf::Timestamp* released = _impl_.last_push_at_;
-  _impl_.last_push_at_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
+  _impl_.last_push_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteRow::_internal_mutable_last_push_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.last_push_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE DataSiteRow::release_last_push_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteRow.last_push_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000040U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  auto* released = _impl_.last_push_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.last_push_at_.Set("", GetArena());
   }
   return released;
 }
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE DataSiteRow::unsafe_arena_release_last_push_at() {
+inline void DataSiteRow::set_allocated_last_push_at(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteRow.last_push_at)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
-  ::google::protobuf::Timestamp* temp = _impl_.last_push_at_;
-  _impl_.last_push_at_ = nullptr;
-  return temp;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL DataSiteRow::_internal_mutable_last_push_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.last_push_at_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
-    _impl_.last_push_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
-  }
-  return _impl_.last_push_at_;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL DataSiteRow::mutable_last_push_at()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
-  ::google::protobuf::Timestamp* _msg = _internal_mutable_last_push_at();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteRow.last_push_at)
-  return _msg;
-}
-inline void DataSiteRow::set_allocated_last_push_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.last_push_at_);
-  }
-
   if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000040U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
   }
-
-  _impl_.last_push_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  _impl_.last_push_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.last_push_at_.IsDefault()) {
+    _impl_.last_push_at_.Set("", GetArena());
+  }
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteRow.last_push_at)
 }
 
-// optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];
+// optional string last_ingest_at = 11 [json_name = "last_ingest_at"];
 inline bool DataSiteRow::has_last_ingest_at() const {
-  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000100U);
-  PROTOBUF_ASSUME(!value || _impl_.last_ingest_at_ != nullptr);
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00000080U);
   return value;
 }
-inline const ::google::protobuf::Timestamp& DataSiteRow::_internal_last_ingest_at() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::google::protobuf::Timestamp* p = _impl_.last_ingest_at_;
-  return p != nullptr ? *p : *::google::protobuf::internal::MessageGlobalsBase::ToDefaultInstance<::google::protobuf::Timestamp>(&::google::protobuf::Timestamp_globals_);
+inline void DataSiteRow::clear_last_ingest_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.last_ingest_at_.ClearToEmpty();
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
 }
-inline const ::google::protobuf::Timestamp& DataSiteRow::last_ingest_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::std::string& DataSiteRow::last_ingest_at() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at)
   return _internal_last_ingest_at();
 }
-inline void DataSiteRow::unsafe_arena_set_allocated_last_ingest_at(
-    ::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void DataSiteRow::set_last_ingest_at(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.last_ingest_at_);
-  }
-  _impl_.last_ingest_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
-  if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000100U);
-  } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at)
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  _impl_.last_ingest_at_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at)
 }
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE DataSiteRow::release_last_ingest_at() {
+inline ::std::string* PROTOBUF_NONNULL DataSiteRow::mutable_last_ingest_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  SetHasBit(_impl_._has_bits_[0], 0x00000080U);
+  ::std::string* _s = _internal_mutable_last_ingest_at();
+  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at)
+  return _s;
+}
+inline const ::std::string& DataSiteRow::_internal_last_ingest_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.last_ingest_at_.Get();
+}
+inline void DataSiteRow::_internal_set_last_ingest_at(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
-  ::google::protobuf::Timestamp* released = _impl_.last_ingest_at_;
-  _impl_.last_ingest_at_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
+  _impl_.last_ingest_at_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL DataSiteRow::_internal_mutable_last_ingest_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.last_ingest_at_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE DataSiteRow::release_last_ingest_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at)
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000080U)) {
+    return nullptr;
+  }
+  ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
+  auto* released = _impl_.last_ingest_at_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.last_ingest_at_.Set("", GetArena());
   }
   return released;
 }
-inline ::google::protobuf::Timestamp* PROTOBUF_NULLABLE DataSiteRow::unsafe_arena_release_last_ingest_at() {
+inline void DataSiteRow::set_allocated_last_ingest_at(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at)
-
-  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
-  ::google::protobuf::Timestamp* temp = _impl_.last_ingest_at_;
-  _impl_.last_ingest_at_ = nullptr;
-  return temp;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL DataSiteRow::_internal_mutable_last_ingest_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.last_ingest_at_ == nullptr) {
-    auto* p = Super_::DefaultConstruct<::google::protobuf::Timestamp>(GetArena());
-    _impl_.last_ingest_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(p);
-  }
-  return _impl_.last_ingest_at_;
-}
-inline ::google::protobuf::Timestamp* PROTOBUF_NONNULL DataSiteRow::mutable_last_ingest_at()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
-  ::google::protobuf::Timestamp* _msg = _internal_mutable_last_ingest_at();
-  // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at)
-  return _msg;
-}
-inline void DataSiteRow::set_allocated_last_ingest_at(::google::protobuf::Timestamp* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.last_ingest_at_);
-  }
-
   if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    SetHasBit(_impl_._has_bits_[0], 0x00000100U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000080U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000080U);
   }
-
-  _impl_.last_ingest_at_ = reinterpret_cast<::google::protobuf::Timestamp*>(value);
+  _impl_.last_ingest_at_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.last_ingest_at_.IsDefault()) {
+    _impl_.last_ingest_at_.Set("", GetArena());
+  }
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.data_readiness.DataSiteRow.last_ingest_at)
 }
 
@@ -10434,7 +10386,7 @@ inline void DataSiteRow::_internal_set_readiness_status(::fusion::ai::proto::dat
 inline void DataSiteRow::clear_workbench_href() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.workbench_href_.ClearToEmpty();
-  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
 }
 inline const ::std::string& DataSiteRow::workbench_href() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -10444,13 +10396,13 @@ inline const ::std::string& DataSiteRow::workbench_href() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void DataSiteRow::set_workbench_href(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   _impl_.workbench_href_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:fusion.ai.proto.data_readiness.DataSiteRow.workbench_href)
 }
 inline ::std::string* PROTOBUF_NONNULL DataSiteRow::mutable_workbench_href()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+  SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   ::std::string* _s = _internal_mutable_workbench_href();
   // @@protoc_insertion_point(field_mutable:fusion.ai.proto.data_readiness.DataSiteRow.workbench_href)
   return _s;
@@ -10470,10 +10422,10 @@ inline ::std::string* PROTOBUF_NONNULL DataSiteRow::_internal_mutable_workbench_
 inline ::std::string* PROTOBUF_NULLABLE DataSiteRow::release_workbench_href() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:fusion.ai.proto.data_readiness.DataSiteRow.workbench_href)
-  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000040U)) {
+  if (!CheckHasBit(_impl_._has_bits_[0], 0x00000100U)) {
     return nullptr;
   }
-  ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+  ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
   auto* released = _impl_.workbench_href_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.workbench_href_.Set("", GetArena());
@@ -10483,9 +10435,9 @@ inline ::std::string* PROTOBUF_NULLABLE DataSiteRow::release_workbench_href() {
 inline void DataSiteRow::set_allocated_workbench_href(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    SetHasBit(_impl_._has_bits_[0], 0x00000040U);
+    SetHasBit(_impl_._has_bits_[0], 0x00000100U);
   } else {
-    ClearHasBit(_impl_._has_bits_[0], 0x00000040U);
+    ClearHasBit(_impl_._has_bits_[0], 0x00000100U);
   }
   _impl_.workbench_href_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.workbench_href_.IsDefault()) {

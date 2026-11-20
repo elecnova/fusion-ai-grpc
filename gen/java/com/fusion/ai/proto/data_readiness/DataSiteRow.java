@@ -40,6 +40,8 @@ private static final long serialVersionUID = 0L;
     trend7D_ = java.util.Collections.emptyList();
     weatherStatus_ = 0;
     weatherDisplay_ = "";
+    lastPushAt_ = "";
+    lastIngestAt_ = "";
     readinessStatus_ = 0;
     workbenchHref_ = "";
   }
@@ -370,9 +372,15 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LAST_PUSH_AT_FIELD_NUMBER = 10;
-  private com.google.protobuf.Timestamp lastPushAt_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastPushAt_ = "";
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+   * <pre>
+   * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+   * 例：2026-11-20T23:55:00+08:00；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
    * @return Whether the lastPushAt field is set.
    */
   @java.lang.Override
@@ -380,25 +388,60 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+   * <pre>
+   * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+   * 例：2026-11-20T23:55:00+08:00；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
    * @return The lastPushAt.
    */
   @java.lang.Override
-  public com.google.protobuf.Timestamp getLastPushAt() {
-    return lastPushAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastPushAt_;
+  public java.lang.String getLastPushAt() {
+    java.lang.Object ref = lastPushAt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      lastPushAt_ = s;
+      return s;
+    }
   }
   /**
-   * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+   * <pre>
+   * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+   * 例：2026-11-20T23:55:00+08:00；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
+   * @return The bytes for lastPushAt.
    */
   @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getLastPushAtOrBuilder() {
-    return lastPushAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastPushAt_;
+  public com.google.protobuf.ByteString
+      getLastPushAtBytes() {
+    java.lang.Object ref = lastPushAt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      lastPushAt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LAST_INGEST_AT_FIELD_NUMBER = 11;
-  private com.google.protobuf.Timestamp lastIngestAt_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastIngestAt_ = "";
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+   * <pre>
+   * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    * @return Whether the lastIngestAt field is set.
    */
   @java.lang.Override
@@ -406,19 +449,47 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+   * <pre>
+   * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
    * @return The lastIngestAt.
    */
   @java.lang.Override
-  public com.google.protobuf.Timestamp getLastIngestAt() {
-    return lastIngestAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastIngestAt_;
+  public java.lang.String getLastIngestAt() {
+    java.lang.Object ref = lastIngestAt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      lastIngestAt_ = s;
+      return s;
+    }
   }
   /**
-   * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+   * <pre>
+   * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+   * </pre>
+   *
+   * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+   * @return The bytes for lastIngestAt.
    */
   @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getLastIngestAtOrBuilder() {
-    return lastIngestAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastIngestAt_;
+  public com.google.protobuf.ByteString
+      getLastIngestAtBytes() {
+    java.lang.Object ref = lastIngestAt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      lastIngestAt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int GAP_POINTS_7D_FIELD_NUMBER = 12;
@@ -531,10 +602,10 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessage.writeString(output, 9, weatherDisplay_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(10, getLastPushAt());
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, lastPushAt_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(11, getLastIngestAt());
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, lastIngestAt_);
     }
     if (gapPoints7D_ != 0) {
       output.writeInt32(12, gapPoints7D_);
@@ -586,12 +657,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessage.computeStringSize(9, weatherDisplay_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getLastPushAt());
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, lastPushAt_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getLastIngestAt());
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, lastIngestAt_);
     }
     if (gapPoints7D_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -844,21 +913,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.fusion.ai.proto.data_readiness.DataSiteRow.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetTrend7DFieldBuilder();
-        internalGetLastPushAtFieldBuilder();
-        internalGetLastIngestAtFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -879,16 +940,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
       weatherStatus_ = 0;
       weatherDisplay_ = "";
-      lastPushAt_ = null;
-      if (lastPushAtBuilder_ != null) {
-        lastPushAtBuilder_.dispose();
-        lastPushAtBuilder_ = null;
-      }
-      lastIngestAt_ = null;
-      if (lastIngestAtBuilder_ != null) {
-        lastIngestAtBuilder_.dispose();
-        lastIngestAtBuilder_ = null;
-      }
+      lastPushAt_ = "";
+      lastIngestAt_ = "";
       gapPoints7D_ = 0;
       readinessStatus_ = 0;
       workbenchHref_ = "";
@@ -967,15 +1020,11 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.lastPushAt_ = lastPushAtBuilder_ == null
-            ? lastPushAt_
-            : lastPushAtBuilder_.build();
+        result.lastPushAt_ = lastPushAt_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.lastIngestAt_ = lastIngestAtBuilder_ == null
-            ? lastIngestAt_
-            : lastIngestAtBuilder_.build();
+        result.lastIngestAt_ = lastIngestAt_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
@@ -1063,10 +1112,14 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasLastPushAt()) {
-        mergeLastPushAt(other.getLastPushAt());
+        lastPushAt_ = other.lastPushAt_;
+        bitField0_ |= 0x00000200;
+        onChanged();
       }
       if (other.hasLastIngestAt()) {
-        mergeLastIngestAt(other.getLastIngestAt());
+        lastIngestAt_ = other.lastIngestAt_;
+        bitField0_ |= 0x00000400;
+        onChanged();
       }
       if (other.getGapPoints7D() != 0) {
         setGapPoints7D(other.getGapPoints7D());
@@ -1157,16 +1210,12 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 74
             case 82: {
-              input.readMessage(
-                  internalGetLastPushAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              lastPushAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000200;
               break;
             } // case 82
             case 90: {
-              input.readMessage(
-                  internalGetLastIngestAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              lastIngestAt_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000400;
               break;
             } // case 90
@@ -1954,242 +2003,216 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Timestamp lastPushAt_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastPushAtBuilder_;
+    private java.lang.Object lastPushAt_ = "";
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+     * <pre>
+     * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     * 例：2026-11-20T23:55:00+08:00；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
      * @return Whether the lastPushAt field is set.
      */
     public boolean hasLastPushAt() {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+     * <pre>
+     * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     * 例：2026-11-20T23:55:00+08:00；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
      * @return The lastPushAt.
      */
-    public com.google.protobuf.Timestamp getLastPushAt() {
-      if (lastPushAtBuilder_ == null) {
-        return lastPushAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastPushAt_;
+    public java.lang.String getLastPushAt() {
+      java.lang.Object ref = lastPushAt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastPushAt_ = s;
+        return s;
       } else {
-        return lastPushAtBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+     * <pre>
+     * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     * 例：2026-11-20T23:55:00+08:00；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
+     * @return The bytes for lastPushAt.
      */
-    public Builder setLastPushAt(com.google.protobuf.Timestamp value) {
-      if (lastPushAtBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        lastPushAt_ = value;
+    public com.google.protobuf.ByteString
+        getLastPushAtBytes() {
+      java.lang.Object ref = lastPushAt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastPushAt_ = b;
+        return b;
       } else {
-        lastPushAtBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+     * <pre>
+     * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     * 例：2026-11-20T23:55:00+08:00；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
+     * @param value The lastPushAt to set.
+     * @return This builder for chaining.
      */
     public Builder setLastPushAt(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (lastPushAtBuilder_ == null) {
-        lastPushAt_ = builderForValue.build();
-      } else {
-        lastPushAtBuilder_.setMessage(builderForValue.build());
-      }
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      lastPushAt_ = value;
       bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
-     */
-    public Builder mergeLastPushAt(com.google.protobuf.Timestamp value) {
-      if (lastPushAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0) &&
-          lastPushAt_ != null &&
-          lastPushAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getLastPushAtBuilder().mergeFrom(value);
-        } else {
-          lastPushAt_ = value;
-        }
-      } else {
-        lastPushAtBuilder_.mergeFrom(value);
-      }
-      if (lastPushAt_ != null) {
-        bitField0_ |= 0x00000200;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+     * <pre>
+     * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     * 例：2026-11-20T23:55:00+08:00；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearLastPushAt() {
+      lastPushAt_ = getDefaultInstance().getLastPushAt();
       bitField0_ = (bitField0_ & ~0x00000200);
-      lastPushAt_ = null;
-      if (lastPushAtBuilder_ != null) {
-        lastPushAtBuilder_.dispose();
-        lastPushAtBuilder_ = null;
-      }
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+     * <pre>
+     * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     * 例：2026-11-20T23:55:00+08:00；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
+     * @param value The bytes for lastPushAt to set.
+     * @return This builder for chaining.
      */
-    public com.google.protobuf.Timestamp.Builder getLastPushAtBuilder() {
+    public Builder setLastPushAtBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      lastPushAt_ = value;
       bitField0_ |= 0x00000200;
       onChanged();
-      return internalGetLastPushAtFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getLastPushAtOrBuilder() {
-      if (lastPushAtBuilder_ != null) {
-        return lastPushAtBuilder_.getMessageOrBuilder();
-      } else {
-        return lastPushAt_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastPushAt_;
-      }
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetLastPushAtFieldBuilder() {
-      if (lastPushAtBuilder_ == null) {
-        lastPushAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastPushAt(),
-                getParentForChildren(),
-                isClean());
-        lastPushAt_ = null;
-      }
-      return lastPushAtBuilder_;
+      return this;
     }
 
-    private com.google.protobuf.Timestamp lastIngestAt_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastIngestAtBuilder_;
+    private java.lang.Object lastIngestAt_ = "";
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * <pre>
+     * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      * @return Whether the lastIngestAt field is set.
      */
     public boolean hasLastIngestAt() {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * <pre>
+     * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      * @return The lastIngestAt.
      */
-    public com.google.protobuf.Timestamp getLastIngestAt() {
-      if (lastIngestAtBuilder_ == null) {
-        return lastIngestAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastIngestAt_;
+    public java.lang.String getLastIngestAt() {
+      java.lang.Object ref = lastIngestAt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastIngestAt_ = s;
+        return s;
       } else {
-        return lastIngestAtBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * <pre>
+     * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * @return The bytes for lastIngestAt.
      */
-    public Builder setLastIngestAt(com.google.protobuf.Timestamp value) {
-      if (lastIngestAtBuilder_ == null) {
-        java.util.Objects.requireNonNull(value);
-        lastIngestAt_ = value;
+    public com.google.protobuf.ByteString
+        getLastIngestAtBytes() {
+      java.lang.Object ref = lastIngestAt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastIngestAt_ = b;
+        return b;
       } else {
-        lastIngestAtBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * <pre>
+     * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * @param value The lastIngestAt to set.
+     * @return This builder for chaining.
      */
     public Builder setLastIngestAt(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (lastIngestAtBuilder_ == null) {
-        lastIngestAt_ = builderForValue.build();
-      } else {
-        lastIngestAtBuilder_.setMessage(builderForValue.build());
-      }
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(value);
+      lastIngestAt_ = value;
       bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
-     */
-    public Builder mergeLastIngestAt(com.google.protobuf.Timestamp value) {
-      if (lastIngestAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0) &&
-          lastIngestAt_ != null &&
-          lastIngestAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getLastIngestAtBuilder().mergeFrom(value);
-        } else {
-          lastIngestAt_ = value;
-        }
-      } else {
-        lastIngestAtBuilder_.mergeFrom(value);
-      }
-      if (lastIngestAt_ != null) {
-        bitField0_ |= 0x00000400;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * <pre>
+     * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearLastIngestAt() {
+      lastIngestAt_ = getDefaultInstance().getLastIngestAt();
       bitField0_ = (bitField0_ & ~0x00000400);
-      lastIngestAt_ = null;
-      if (lastIngestAtBuilder_ != null) {
-        lastIngestAtBuilder_.dispose();
-        lastIngestAtBuilder_ = null;
-      }
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * <pre>
+     * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+     * </pre>
+     *
+     * <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * @param value The bytes for lastIngestAt to set.
+     * @return This builder for chaining.
      */
-    public com.google.protobuf.Timestamp.Builder getLastIngestAtBuilder() {
+    public Builder setLastIngestAtBytes(
+        com.google.protobuf.ByteString value) {
+      java.util.Objects.requireNonNull(value);
+      checkByteStringIsUtf8(value);
+      lastIngestAt_ = value;
       bitField0_ |= 0x00000400;
       onChanged();
-      return internalGetLastIngestAtFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getLastIngestAtOrBuilder() {
-      if (lastIngestAtBuilder_ != null) {
-        return lastIngestAtBuilder_.getMessageOrBuilder();
-      } else {
-        return lastIngestAt_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastIngestAt_;
-      }
-    }
-    /**
-     * <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetLastIngestAtFieldBuilder() {
-      if (lastIngestAtBuilder_ == null) {
-        lastIngestAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastIngestAt(),
-                getParentForChildren(),
-                isClean());
-        lastIngestAt_ = null;
-      }
-      return lastIngestAtBuilder_;
+      return this;
     }
 
     private int gapPoints7D_ ;

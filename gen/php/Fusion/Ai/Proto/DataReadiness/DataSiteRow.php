@@ -53,11 +53,16 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
      */
     protected $weather_display = null;
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
+     * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     * 例：2026-11-20T23:55:00+08:00；无则不填。
+     *
+     * Generated from protobuf field <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
      */
     protected $last_push_at = null;
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+     *
+     * Generated from protobuf field <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
      */
     protected $last_ingest_at = null;
     /**
@@ -88,8 +93,11 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
      *     @type \Fusion\Ai\Proto\DataReadiness\CoverageTrendPoint[] $trend_7d
      *     @type int $weather_status
      *     @type string $weather_display
-     *     @type \Google\Protobuf\Timestamp $last_push_at
-     *     @type \Google\Protobuf\Timestamp $last_ingest_at
+     *     @type string $last_push_at
+     *           最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     *           例：2026-11-20T23:55:00+08:00；无则不填。
+     *     @type string $last_ingest_at
+     *           最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
      *     @type int $gap_points_7d
      *     @type int $readiness_status
      *     @type string $workbench_href
@@ -329,12 +337,15 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
-     * @return \Google\Protobuf\Timestamp|null
+     * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     * 例：2026-11-20T23:55:00+08:00；无则不填。
+     *
+     * Generated from protobuf field <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
+     * @return string
      */
     public function getLastPushAt()
     {
-        return $this->last_push_at;
+        return isset($this->last_push_at) ? $this->last_push_at : '';
     }
 
     public function hasLastPushAt()
@@ -348,24 +359,30 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_push_at = 10 [json_name = "last_push_at"];</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * 最后 Push 时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位。
+     * 例：2026-11-20T23:55:00+08:00；无则不填。
+     *
+     * Generated from protobuf field <code>optional string last_push_at = 10 [json_name = "last_push_at"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setLastPushAt(\Google\Protobuf\Timestamp|null $var)
+    public function setLastPushAt(string $var)
     {
+        GPBUtil::checkString($var, true);
         $this->last_push_at = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
-     * @return \Google\Protobuf\Timestamp|null
+     * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+     *
+     * Generated from protobuf field <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * @return string
      */
     public function getLastIngestAt()
     {
-        return $this->last_ingest_at;
+        return isset($this->last_ingest_at) ? $this->last_ingest_at : '';
     }
 
     public function hasLastIngestAt()
@@ -379,12 +396,15 @@ class DataSiteRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.protobuf.Timestamp last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * 最后入库时间。服务器时区、带数值偏移的 RFC3339 字符串，秒两位；无则不填。
+     *
+     * Generated from protobuf field <code>optional string last_ingest_at = 11 [json_name = "last_ingest_at"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setLastIngestAt(\Google\Protobuf\Timestamp|null $var)
+    public function setLastIngestAt(string $var)
     {
+        GPBUtil::checkString($var, true);
         $this->last_ingest_at = $var;
 
         return $this;
