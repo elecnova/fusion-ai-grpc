@@ -103,4 +103,16 @@ public interface GetTrainResponseOrBuilder extends
    * <code>optional .fusion.ai.proto.workbench.TrainJobView job = 4 [json_name = "job"];</code>
    */
   com.fusion.ai.proto.workbench.TrainJobViewOrBuilder getJobOrBuilder();
+
+  /**
+   * <pre>
+   * 再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+   * false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+   * 约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
+   * </pre>
+   *
+   * <code>bool can_start_train = 5 [json_name = "can_start_train"];</code>
+   * @return The canStartTrain.
+   */
+  boolean getCanStartTrain();
 }

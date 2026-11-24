@@ -34,6 +34,14 @@ class GetPredictResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .fusion.ai.proto.workbench.PredictJobView job = 3 [json_name = "job"];</code>
      */
     protected $job = null;
+    /**
+     * 触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+     * false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+     * 约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
+     *
+     * Generated from protobuf field <code>bool can_start_predict = 4 [json_name = "can_start_predict"];</code>
+     */
+    protected $can_start_predict = false;
 
     /**
      * Constructor.
@@ -47,6 +55,10 @@ class GetPredictResponse extends \Google\Protobuf\Internal\Message
      *           当前预测任务 id；无任务时为空
      *     @type \Fusion\Ai\Proto\Workbench\PredictJobView $job
      *           当前 job 全量；无任务时不填
+     *     @type bool $can_start_predict
+     *           触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+     *           false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+     *           约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
      * }
      */
     public function __construct($data = null)
@@ -138,6 +150,35 @@ class GetPredictResponse extends \Google\Protobuf\Internal\Message
     public function setJob(\Fusion\Ai\Proto\Workbench\PredictJobView|null $var)
     {
         $this->job = $var;
+
+        return $this;
+    }
+
+    /**
+     * 触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+     * false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+     * 约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
+     *
+     * Generated from protobuf field <code>bool can_start_predict = 4 [json_name = "can_start_predict"];</code>
+     * @return bool
+     */
+    public function getCanStartPredict()
+    {
+        return $this->can_start_predict;
+    }
+
+    /**
+     * 触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+     * false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+     * 约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
+     *
+     * Generated from protobuf field <code>bool can_start_predict = 4 [json_name = "can_start_predict"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCanStartPredict(bool $var)
+    {
+        $this->can_start_predict = $var;
 
         return $this;
     }

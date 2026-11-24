@@ -225,6 +225,23 @@ private static final long serialVersionUID = 0L;
     return job_ == null ? com.fusion.ai.proto.workbench.TrainJobView.getDefaultInstance() : job_;
   }
 
+  public static final int CAN_START_TRAIN_FIELD_NUMBER = 5;
+  private boolean canStartTrain_ = false;
+  /**
+   * <pre>
+   * 再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+   * false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+   * 约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
+   * </pre>
+   *
+   * <code>bool can_start_train = 5 [json_name = "can_start_train"];</code>
+   * @return The canStartTrain.
+   */
+  @java.lang.Override
+  public boolean getCanStartTrain() {
+    return canStartTrain_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -251,6 +268,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getJob());
     }
+    if (canStartTrain_ != false) {
+      output.writeBool(5, canStartTrain_);
+    }
     getUnknownFields().writeTo(output);
   }
   private int computeSerializedSize_0() {
@@ -268,6 +288,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getJob());
+    }
+    if (canStartTrain_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, canStartTrain_);
     }
     return size;
   }
@@ -307,6 +331,8 @@ private static final long serialVersionUID = 0L;
       if (!getJob()
           .equals(other.getJob())) return false;
     }
+    if (getCanStartTrain()
+        != other.getCanStartTrain()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -330,6 +356,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + JOB_FIELD_NUMBER;
       hash = (53 * hash) + getJob().hashCode();
     }
+    hash = (37 * hash) + CAN_START_TRAIN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getCanStartTrain());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -484,6 +513,7 @@ private static final long serialVersionUID = 0L;
         jobBuilder_.dispose();
         jobBuilder_ = null;
       }
+      canStartTrain_ = false;
       return this;
     }
 
@@ -536,6 +566,9 @@ private static final long serialVersionUID = 0L;
             : jobBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.canStartTrain_ = canStartTrain_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -566,6 +599,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasJob()) {
         mergeJob(other.getJob());
+      }
+      if (other.getCanStartTrain() != false) {
+        setCanStartTrain(other.getCanStartTrain());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -615,6 +651,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
+            case 40: {
+              canStartTrain_ = input.readBool();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 40
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1124,6 +1165,56 @@ private static final long serialVersionUID = 0L;
         job_ = null;
       }
       return jobBuilder_;
+    }
+
+    private boolean canStartTrain_ ;
+    /**
+     * <pre>
+     * 再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+     * false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+     * 约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
+     * </pre>
+     *
+     * <code>bool can_start_train = 5 [json_name = "can_start_train"];</code>
+     * @return The canStartTrain.
+     */
+    @java.lang.Override
+    public boolean getCanStartTrain() {
+      return canStartTrain_;
+    }
+    /**
+     * <pre>
+     * 再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+     * false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+     * 约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
+     * </pre>
+     *
+     * <code>bool can_start_train = 5 [json_name = "can_start_train"];</code>
+     * @param value The canStartTrain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanStartTrain(boolean value) {
+
+      canStartTrain_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+     * false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+     * 约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
+     * </pre>
+     *
+     * <code>bool can_start_train = 5 [json_name = "can_start_train"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCanStartTrain() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      canStartTrain_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:fusion.ai.proto.workbench.GetTrainResponse)

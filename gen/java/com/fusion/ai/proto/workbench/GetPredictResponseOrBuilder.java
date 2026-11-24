@@ -76,4 +76,16 @@ public interface GetPredictResponseOrBuilder extends
    * <code>optional .fusion.ai.proto.workbench.PredictJobView job = 3 [json_name = "job"];</code>
    */
   com.fusion.ai.proto.workbench.PredictJobViewOrBuilder getJobOrBuilder();
+
+  /**
+   * <pre>
+   * 触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+   * false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+   * 约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
+   * </pre>
+   *
+   * <code>bool can_start_predict = 4 [json_name = "can_start_predict"];</code>
+   * @return The canStartPredict.
+   */
+  boolean getCanStartPredict();
 }

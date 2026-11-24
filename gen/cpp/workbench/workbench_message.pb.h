@@ -7253,6 +7253,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetTrainResponse final : public ::g
     kCurrentTrainJobIdFieldNumber = 2,
     kModelFieldNumber = 3,
     kJobFieldNumber = 4,
+    kCanStartTrainFieldNumber = 5,
   };
   // string registration_id = 1 [json_name = "registration_id"];
   void clear_registration_id() ;
@@ -7314,11 +7315,21 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetTrainResponse final : public ::g
   ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NONNULL _internal_mutable_job();
 
   public:
+  // bool can_start_train = 5 [json_name = "can_start_train"];
+  void clear_can_start_train() ;
+  [[nodiscard]] bool can_start_train() const;
+  void set_can_start_train(bool value);
+
+  private:
+  bool _internal_can_start_train() const;
+  void _internal_set_can_start_train(bool value);
+
+  public:
   // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.GetTrainResponse)
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<2, 4,
+      ::google::protobuf::internal::TcParseTable<3, 5,
                           2, 86,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
@@ -7351,6 +7362,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetTrainResponse final : public ::g
     ::google::protobuf::internal::ArenaStringPtr current_train_job_id_;
     ::fusion::ai::proto::workbench::FusionModelView* PROTOBUF_NULLABLE model_;
     ::fusion::ai::proto::workbench::TrainJobView* PROTOBUF_NULLABLE job_;
+    bool can_start_train_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -7509,6 +7521,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPredictResponse final : public :
     kRegistrationIdFieldNumber = 1,
     kCurrentPredictJobIdFieldNumber = 2,
     kJobFieldNumber = 3,
+    kCanStartPredictFieldNumber = 4,
   };
   // string registration_id = 1 [json_name = "registration_id"];
   void clear_registration_id() ;
@@ -7555,11 +7568,21 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPredictResponse final : public :
   ::fusion::ai::proto::workbench::PredictJobView* PROTOBUF_NONNULL _internal_mutable_job();
 
   public:
+  // bool can_start_predict = 4 [json_name = "can_start_predict"];
+  void clear_can_start_predict() ;
+  [[nodiscard]] bool can_start_predict() const;
+  void set_can_start_predict(bool value);
+
+  private:
+  bool _internal_can_start_predict() const;
+  void _internal_set_can_start_predict(bool value);
+
+  public:
   // @@protoc_insertion_point(class_scope:fusion.ai.proto.workbench.GetPredictResponse)
  private:
   class _Internal;
   using ParseTableT_ =
-      ::google::protobuf::internal::TcParseTable<2, 3,
+      ::google::protobuf::internal::TcParseTable<2, 4,
                           1, 90,
                           2>;
   static constexpr ParseTableT_ InternalGenerateParseTable_(
@@ -7591,6 +7614,7 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED GetPredictResponse final : public :
     ::google::protobuf::internal::ArenaStringPtr registration_id_;
     ::google::protobuf::internal::ArenaStringPtr current_predict_job_id_;
     ::fusion::ai::proto::workbench::PredictJobView* PROTOBUF_NULLABLE job_;
+    bool can_start_predict_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -13577,6 +13601,30 @@ inline void GetTrainResponse::set_allocated_job(::fusion::ai::proto::workbench::
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.GetTrainResponse.job)
 }
 
+// bool can_start_train = 5 [json_name = "can_start_train"];
+inline void GetTrainResponse::clear_can_start_train() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.can_start_train_ = false;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000010U);
+}
+inline bool GetTrainResponse::can_start_train() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.GetTrainResponse.can_start_train)
+  return _internal_can_start_train();
+}
+inline void GetTrainResponse::set_can_start_train(bool value) {
+  _internal_set_can_start_train(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000010U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.GetTrainResponse.can_start_train)
+}
+inline bool GetTrainResponse::_internal_can_start_train() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.can_start_train_;
+}
+inline void GetTrainResponse::_internal_set_can_start_train(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.can_start_train_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // GetPredictRequest
@@ -13873,6 +13921,30 @@ inline void GetPredictResponse::set_allocated_job(::fusion::ai::proto::workbench
 
   _impl_.job_ = reinterpret_cast<::fusion::ai::proto::workbench::PredictJobView*>(value);
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.workbench.GetPredictResponse.job)
+}
+
+// bool can_start_predict = 4 [json_name = "can_start_predict"];
+inline void GetPredictResponse::clear_can_start_predict() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.can_start_predict_ = false;
+  ClearHasBit(_impl_._has_bits_[0], 0x00000008U);
+}
+inline bool GetPredictResponse::can_start_predict() const {
+  // @@protoc_insertion_point(field_get:fusion.ai.proto.workbench.GetPredictResponse.can_start_predict)
+  return _internal_can_start_predict();
+}
+inline void GetPredictResponse::set_can_start_predict(bool value) {
+  _internal_set_can_start_predict(value);
+  SetHasBit(_impl_._has_bits_[0], 0x00000008U);
+  // @@protoc_insertion_point(field_set:fusion.ai.proto.workbench.GetPredictResponse.can_start_predict)
+}
+inline bool GetPredictResponse::_internal_can_start_predict() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.can_start_predict_;
+}
+inline void GetPredictResponse::_internal_set_can_start_predict(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.can_start_predict_ = value;
 }
 
 // -------------------------------------------------------------------

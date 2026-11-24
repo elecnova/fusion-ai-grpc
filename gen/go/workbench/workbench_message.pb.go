@@ -2015,7 +2015,11 @@ type GetTrainResponse struct {
 	// 融合模型卡片（与 GetFusionModel 同结构，便于一页拉齐）
 	Model *FusionModelView `protobuf:"bytes,3,opt,name=model,proto3,oneof" json:"model,omitempty"`
 	// 当前训练 job 全量（含日志栈）；无任务时不填
-	Job           *TrainJobView `protobuf:"bytes,4,opt,name=job,proto3,oneof" json:"job,omitempty"`
+	Job *TrainJobView `protobuf:"bytes,4,opt,name=job,proto3,oneof" json:"job,omitempty"`
+	// 再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+	// false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+	// 约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
+	CanStartTrain bool `protobuf:"varint,5,opt,name=can_start_train,proto3" json:"can_start_train,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2078,6 +2082,13 @@ func (x *GetTrainResponse) GetJob() *TrainJobView {
 	return nil
 }
 
+func (x *GetTrainResponse) GetCanStartTrain() bool {
+	if x != nil {
+		return x.CanStartTrain
+	}
+	return false
+}
+
 type GetPredictRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 场站 registration_id
@@ -2131,9 +2142,13 @@ type GetPredictResponse struct {
 	// 当前预测任务 id；无任务时为空
 	CurrentPredictJobId string `protobuf:"bytes,2,opt,name=current_predict_job_id,proto3" json:"current_predict_job_id,omitempty"`
 	// 当前 job 全量；无任务时不填
-	Job           *PredictJobView `protobuf:"bytes,3,opt,name=job,proto3,oneof" json:"job,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Job *PredictJobView `protobuf:"bytes,3,opt,name=job,proto3,oneof" json:"job,omitempty"`
+	// 触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+	// false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+	// 约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
+	CanStartPredict bool `protobuf:"varint,4,opt,name=can_start_predict,proto3" json:"can_start_predict,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *GetPredictResponse) Reset() {
@@ -2185,6 +2200,13 @@ func (x *GetPredictResponse) GetJob() *PredictJobView {
 		return x.Job
 	}
 	return nil
+}
+
+func (x *GetPredictResponse) GetCanStartPredict() bool {
+	if x != nil {
+		return x.CanStartPredict
+	}
+	return false
 }
 
 type GetEvalDaySeriesRequest struct {
@@ -2684,20 +2706,22 @@ const file_workbench_workbench_message_proto_rawDesc = "" +
 	"\x06job_id\x18\x01 \x01(\tR\x06job_id\x12<\n" +
 	"\x06status\x18\x02 \x01(\x0e2$.fusion.ai.proto.workbench.JobStatusR\x06status\"F\n" +
 	"\x0fGetTrainRequest\x123\n" +
-	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\"\x89\x02\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\"\xb3\x02\n" +
 	"\x10GetTrainResponse\x12(\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x122\n" +
 	"\x14current_train_job_id\x18\x02 \x01(\tR\x14current_train_job_id\x12E\n" +
 	"\x05model\x18\x03 \x01(\v2*.fusion.ai.proto.workbench.FusionModelViewH\x00R\x05model\x88\x01\x01\x12>\n" +
-	"\x03job\x18\x04 \x01(\v2'.fusion.ai.proto.workbench.TrainJobViewH\x01R\x03job\x88\x01\x01B\b\n" +
+	"\x03job\x18\x04 \x01(\v2'.fusion.ai.proto.workbench.TrainJobViewH\x01R\x03job\x88\x01\x01\x12(\n" +
+	"\x0fcan_start_train\x18\x05 \x01(\bR\x0fcan_start_trainB\b\n" +
 	"\x06_modelB\x06\n" +
 	"\x04_job\"H\n" +
 	"\x11GetPredictRequest\x123\n" +
-	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\"\xc0\x01\n" +
+	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\"\xee\x01\n" +
 	"\x12GetPredictResponse\x12(\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tR\x0fregistration_id\x126\n" +
 	"\x16current_predict_job_id\x18\x02 \x01(\tR\x16current_predict_job_id\x12@\n" +
-	"\x03job\x18\x03 \x01(\v2).fusion.ai.proto.workbench.PredictJobViewH\x00R\x03job\x88\x01\x01B\x06\n" +
+	"\x03job\x18\x03 \x01(\v2).fusion.ai.proto.workbench.PredictJobViewH\x00R\x03job\x88\x01\x01\x12,\n" +
+	"\x11can_start_predict\x18\x04 \x01(\bR\x11can_start_predictB\x06\n" +
 	"\x04_job\"\xe3\x01\n" +
 	"\x17GetEvalDaySeriesRequest\x123\n" +
 	"\x0fregistration_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x0fregistration_id\x12A\n" +

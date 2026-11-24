@@ -319,70 +319,73 @@ public final class WorkbenchMessageProto extends com.google.protobuf.GeneratedFi
       "\026\n\006job_id\030\001 \001(\tR\006job_id\022<\n\006status\030\002 \001(\0162" +
       "$.fusion.ai.proto.workbench.JobStatusR\006s" +
       "tatus\"F\n\017GetTrainRequest\0223\n\017registration" +
-      "_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\"\211\002" +
+      "_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\"\263\002" +
       "\n\020GetTrainResponse\022(\n\017registration_id\030\001 " +
       "\001(\tR\017registration_id\0222\n\024current_train_jo" +
       "b_id\030\002 \001(\tR\024current_train_job_id\022E\n\005mode" +
       "l\030\003 \001(\0132*.fusion.ai.proto.workbench.Fusi" +
       "onModelViewH\000R\005model\210\001\001\022>\n\003job\030\004 \001(\0132\'.f" +
       "usion.ai.proto.workbench.TrainJobViewH\001R" +
-      "\003job\210\001\001B\010\n\006_modelB\006\n\004_job\"H\n\021GetPredictR" +
-      "equest\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020\001" +
-      "\030@R\017registration_id\"\300\001\n\022GetPredictRespon" +
-      "se\022(\n\017registration_id\030\001 \001(\tR\017registratio" +
-      "n_id\0226\n\026current_predict_job_id\030\002 \001(\tR\026cu" +
-      "rrent_predict_job_id\022@\n\003job\030\003 \001(\0132).fusi" +
-      "on.ai.proto.workbench.PredictJobViewH\000R\003" +
-      "job\210\001\001B\006\n\004_job\"\343\001\n\027GetEvalDaySeriesReque" +
-      "st\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017" +
-      "registration_id\022A\n\teval_date\030\002 \001(\tB#\272H r" +
-      "\0362\034^[0-9]{4}-[0-9]{2}-[0-9]{2}$R\teval_da" +
-      "te\022<\n\017granularity_min\030\003 \001(\005B\r\272H\n\032\0100\0050\0170\036" +
-      "0<H\000R\017granularity_min\210\001\001B\022\n\020_granularity" +
-      "_min\"\\\n\030GetEvalDaySeriesResponse\022@\n\006seri" +
-      "es\030\001 \001(\0132(.fusion.ai.proto.workbench.Eva" +
-      "lDaySeriesR\006series\"\222\001\n\030GetEvalDayMetrics" +
-      "Request\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004\020" +
-      "\001\030@R\017registration_id\022A\n\teval_date\030\002 \001(\tB" +
-      "#\272H r\0362\034^[0-9]{4}-[0-9]{2}-[0-9]{2}$R\tev" +
-      "al_date\"`\n\031GetEvalDayMetricsResponse\022C\n\007" +
-      "metrics\030\001 \001(\0132).fusion.ai.proto.workbenc" +
-      "h.EvalDayMetricsR\007metrics\"\370\001\n\033ListEvalDa" +
-      "ilyMetricsRequest\0223\n\017registration_id\030\001 \001" +
-      "(\tB\t\272H\006r\004\020\001\030@R\017registration_id\022\027\n\004page\030\002" +
-      " \001(\005H\000R\004page\210\001\001\022!\n\tpage_size\030\003 \001(\005H\001R\tpa" +
-      "ge_size\210\001\001\022D\n\010end_date\030\004 \001(\tB#\272H r\0362\034^[0" +
-      "-9]{4}-[0-9]{2}-[0-9]{2}$H\002R\010end_date\210\001\001" +
-      "B\007\n\005_pageB\014\n\n_page_sizeB\013\n\t_end_date\"a\n\034" +
-      "ListEvalDailyMetricsResponse\022A\n\004page\030\001 \001" +
-      "(\0132-.fusion.ai.proto.workbench.EvalDayMe" +
-      "tricsPageR\004page*\215\001\n\020ReadyCheckStatus\022\"\n\036" +
-      "READY_CHECK_STATUS_UNSPECIFIED\020\000\022\033\n\027READ" +
-      "Y_CHECK_STATUS_PASS\020\001\022\033\n\027READY_CHECK_STA" +
-      "TUS_WARN\020\002\022\033\n\027READY_CHECK_STATUS_FAIL\020\003*" +
-      "|\n\022CoverageSeriesKind\022$\n COVERAGE_SERIES" +
-      "_KIND_UNSPECIFIED\020\000\022\036\n\032COVERAGE_SERIES_K" +
-      "IND_POWER\020\001\022 \n\034COVERAGE_SERIES_KIND_WEAT" +
-      "HER\020\002*\322\001\n\020ModelReadyStatus\022\"\n\036MODEL_READ" +
-      "Y_STATUS_UNSPECIFIED\020\000\022\034\n\030MODEL_READY_ST" +
-      "ATUS_READY\020\001\022\037\n\033MODEL_READY_STATUS_TRAIN" +
-      "ING\020\002\022\034\n\030MODEL_READY_STATUS_STALE\020\003\022\036\n\032M" +
-      "ODEL_READY_STATUS_MISSING\020\004\022\035\n\031MODEL_REA" +
-      "DY_STATUS_FAILED\020\005*\241\001\n\tJobStatus\022\032\n\026JOB_" +
-      "STATUS_UNSPECIFIED\020\000\022\025\n\021JOB_STATUS_QUEUE" +
-      "D\020\001\022\026\n\022JOB_STATUS_RUNNING\020\002\022\030\n\024JOB_STATU" +
-      "S_SUCCEEDED\020\003\022\025\n\021JOB_STATUS_FAILED\020\004\022\030\n\024" +
-      "JOB_STATUS_CANCELLED\020\005*\254\001\n\017StageStepStat" +
-      "us\022!\n\035STAGE_STEP_STATUS_UNSPECIFIED\020\000\022\035\n" +
-      "\031STAGE_STEP_STATUS_PENDING\020\001\022\035\n\031STAGE_ST" +
-      "EP_STATUS_RUNNING\020\002\022\032\n\026STAGE_STEP_STATUS" +
-      "_DONE\020\003\022\034\n\030STAGE_STEP_STATUS_FAILED\020\004B\343\001" +
-      "\n\035com.fusion.ai.proto.workbenchB\025Workben" +
-      "chMessageProtoP\001Z#fusion.ai.proto.workbe" +
-      "nch;workbench\242\002\004FAPW\252\002\031Fusion.Ai.Proto.W" +
-      "orkbench\312\002\031Fusion\\Ai\\Proto\\Workbench\342\002%F" +
-      "usion\\Ai\\Proto\\Workbench\\GPBMetadata\352\002\034F" +
-      "usion::Ai::Proto::Workbenchb\006proto3"
+      "\003job\210\001\001\022(\n\017can_start_train\030\005 \001(\010R\017can_st" +
+      "art_trainB\010\n\006_modelB\006\n\004_job\"H\n\021GetPredic" +
+      "tRequest\0223\n\017registration_id\030\001 \001(\tB\t\272H\006r\004" +
+      "\020\001\030@R\017registration_id\"\356\001\n\022GetPredictResp" +
+      "onse\022(\n\017registration_id\030\001 \001(\tR\017registrat" +
+      "ion_id\0226\n\026current_predict_job_id\030\002 \001(\tR\026" +
+      "current_predict_job_id\022@\n\003job\030\003 \001(\0132).fu" +
+      "sion.ai.proto.workbench.PredictJobViewH\000" +
+      "R\003job\210\001\001\022,\n\021can_start_predict\030\004 \001(\010R\021can" +
+      "_start_predictB\006\n\004_job\"\343\001\n\027GetEvalDaySer" +
+      "iesRequest\0223\n\017registration_id\030\001 \001(\tB\t\272H\006" +
+      "r\004\020\001\030@R\017registration_id\022A\n\teval_date\030\002 \001" +
+      "(\tB#\272H r\0362\034^[0-9]{4}-[0-9]{2}-[0-9]{2}$R" +
+      "\teval_date\022<\n\017granularity_min\030\003 \001(\005B\r\272H\n" +
+      "\032\0100\0050\0170\0360<H\000R\017granularity_min\210\001\001B\022\n\020_gra" +
+      "nularity_min\"\\\n\030GetEvalDaySeriesResponse" +
+      "\022@\n\006series\030\001 \001(\0132(.fusion.ai.proto.workb" +
+      "ench.EvalDaySeriesR\006series\"\222\001\n\030GetEvalDa" +
+      "yMetricsRequest\0223\n\017registration_id\030\001 \001(\t" +
+      "B\t\272H\006r\004\020\001\030@R\017registration_id\022A\n\teval_dat" +
+      "e\030\002 \001(\tB#\272H r\0362\034^[0-9]{4}-[0-9]{2}-[0-9]" +
+      "{2}$R\teval_date\"`\n\031GetEvalDayMetricsResp" +
+      "onse\022C\n\007metrics\030\001 \001(\0132).fusion.ai.proto." +
+      "workbench.EvalDayMetricsR\007metrics\"\370\001\n\033Li" +
+      "stEvalDailyMetricsRequest\0223\n\017registratio" +
+      "n_id\030\001 \001(\tB\t\272H\006r\004\020\001\030@R\017registration_id\022\027" +
+      "\n\004page\030\002 \001(\005H\000R\004page\210\001\001\022!\n\tpage_size\030\003 \001" +
+      "(\005H\001R\tpage_size\210\001\001\022D\n\010end_date\030\004 \001(\tB#\272H" +
+      " r\0362\034^[0-9]{4}-[0-9]{2}-[0-9]{2}$H\002R\010end" +
+      "_date\210\001\001B\007\n\005_pageB\014\n\n_page_sizeB\013\n\t_end_" +
+      "date\"a\n\034ListEvalDailyMetricsResponse\022A\n\004" +
+      "page\030\001 \001(\0132-.fusion.ai.proto.workbench.E" +
+      "valDayMetricsPageR\004page*\215\001\n\020ReadyCheckSt" +
+      "atus\022\"\n\036READY_CHECK_STATUS_UNSPECIFIED\020\000" +
+      "\022\033\n\027READY_CHECK_STATUS_PASS\020\001\022\033\n\027READY_C" +
+      "HECK_STATUS_WARN\020\002\022\033\n\027READY_CHECK_STATUS" +
+      "_FAIL\020\003*|\n\022CoverageSeriesKind\022$\n COVERAG" +
+      "E_SERIES_KIND_UNSPECIFIED\020\000\022\036\n\032COVERAGE_" +
+      "SERIES_KIND_POWER\020\001\022 \n\034COVERAGE_SERIES_K" +
+      "IND_WEATHER\020\002*\322\001\n\020ModelReadyStatus\022\"\n\036MO" +
+      "DEL_READY_STATUS_UNSPECIFIED\020\000\022\034\n\030MODEL_" +
+      "READY_STATUS_READY\020\001\022\037\n\033MODEL_READY_STAT" +
+      "US_TRAINING\020\002\022\034\n\030MODEL_READY_STATUS_STAL" +
+      "E\020\003\022\036\n\032MODEL_READY_STATUS_MISSING\020\004\022\035\n\031M" +
+      "ODEL_READY_STATUS_FAILED\020\005*\241\001\n\tJobStatus" +
+      "\022\032\n\026JOB_STATUS_UNSPECIFIED\020\000\022\025\n\021JOB_STAT" +
+      "US_QUEUED\020\001\022\026\n\022JOB_STATUS_RUNNING\020\002\022\030\n\024J" +
+      "OB_STATUS_SUCCEEDED\020\003\022\025\n\021JOB_STATUS_FAIL" +
+      "ED\020\004\022\030\n\024JOB_STATUS_CANCELLED\020\005*\254\001\n\017Stage" +
+      "StepStatus\022!\n\035STAGE_STEP_STATUS_UNSPECIF" +
+      "IED\020\000\022\035\n\031STAGE_STEP_STATUS_PENDING\020\001\022\035\n\031" +
+      "STAGE_STEP_STATUS_RUNNING\020\002\022\032\n\026STAGE_STE" +
+      "P_STATUS_DONE\020\003\022\034\n\030STAGE_STEP_STATUS_FAI" +
+      "LED\020\004B\343\001\n\035com.fusion.ai.proto.workbenchB" +
+      "\025WorkbenchMessageProtoP\001Z#fusion.ai.prot" +
+      "o.workbench;workbench\242\002\004FAPW\252\002\031Fusion.Ai" +
+      ".Proto.Workbench\312\002\031Fusion\\Ai\\Proto\\Workb" +
+      "ench\342\002%Fusion\\Ai\\Proto\\Workbench\\GPBMeta" +
+      "data\352\002\034Fusion::Ai::Proto::Workbenchb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -533,7 +536,7 @@ public final class WorkbenchMessageProto extends com.google.protobuf.GeneratedFi
     internal_static_fusion_ai_proto_workbench_GetTrainResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_workbench_GetTrainResponse_descriptor,
-        new java.lang.String[] { "RegistrationId", "CurrentTrainJobId", "Model", "Job", });
+        new java.lang.String[] { "RegistrationId", "CurrentTrainJobId", "Model", "Job", "CanStartTrain", });
     internal_static_fusion_ai_proto_workbench_GetPredictRequest_descriptor =
       getDescriptor().getMessageType(23);
     internal_static_fusion_ai_proto_workbench_GetPredictRequest_fieldAccessorTable = new
@@ -545,7 +548,7 @@ public final class WorkbenchMessageProto extends com.google.protobuf.GeneratedFi
     internal_static_fusion_ai_proto_workbench_GetPredictResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_fusion_ai_proto_workbench_GetPredictResponse_descriptor,
-        new java.lang.String[] { "RegistrationId", "CurrentPredictJobId", "Job", });
+        new java.lang.String[] { "RegistrationId", "CurrentPredictJobId", "Job", "CanStartPredict", });
     internal_static_fusion_ai_proto_workbench_GetEvalDaySeriesRequest_descriptor =
       getDescriptor().getMessageType(25);
     internal_static_fusion_ai_proto_workbench_GetEvalDaySeriesRequest_fieldAccessorTable = new

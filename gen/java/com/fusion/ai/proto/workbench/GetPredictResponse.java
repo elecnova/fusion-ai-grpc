@@ -187,6 +187,23 @@ private static final long serialVersionUID = 0L;
     return job_ == null ? com.fusion.ai.proto.workbench.PredictJobView.getDefaultInstance() : job_;
   }
 
+  public static final int CAN_START_PREDICT_FIELD_NUMBER = 4;
+  private boolean canStartPredict_ = false;
+  /**
+   * <pre>
+   * 触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+   * false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+   * 约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
+   * </pre>
+   *
+   * <code>bool can_start_predict = 4 [json_name = "can_start_predict"];</code>
+   * @return The canStartPredict.
+   */
+  @java.lang.Override
+  public boolean getCanStartPredict() {
+    return canStartPredict_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -210,6 +227,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getJob());
     }
+    if (canStartPredict_ != false) {
+      output.writeBool(4, canStartPredict_);
+    }
     getUnknownFields().writeTo(output);
   }
   private int computeSerializedSize_0() {
@@ -223,6 +243,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getJob());
+    }
+    if (canStartPredict_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, canStartPredict_);
     }
     return size;
   }
@@ -257,6 +281,8 @@ private static final long serialVersionUID = 0L;
       if (!getJob()
           .equals(other.getJob())) return false;
     }
+    if (getCanStartPredict()
+        != other.getCanStartPredict()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -276,6 +302,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + JOB_FIELD_NUMBER;
       hash = (53 * hash) + getJob().hashCode();
     }
+    hash = (37 * hash) + CAN_START_PREDICT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getCanStartPredict());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -424,6 +453,7 @@ private static final long serialVersionUID = 0L;
         jobBuilder_.dispose();
         jobBuilder_ = null;
       }
+      canStartPredict_ = false;
       return this;
     }
 
@@ -470,6 +500,9 @@ private static final long serialVersionUID = 0L;
             : jobBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.canStartPredict_ = canStartPredict_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -497,6 +530,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasJob()) {
         mergeJob(other.getJob());
+      }
+      if (other.getCanStartPredict() != false) {
+        setCanStartPredict(other.getCanStartPredict());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -539,6 +575,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
+            case 32: {
+              canStartPredict_ = input.readBool();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 32
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -893,6 +934,56 @@ private static final long serialVersionUID = 0L;
         job_ = null;
       }
       return jobBuilder_;
+    }
+
+    private boolean canStartPredict_ ;
+    /**
+     * <pre>
+     * 触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+     * false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+     * 约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
+     * </pre>
+     *
+     * <code>bool can_start_predict = 4 [json_name = "can_start_predict"];</code>
+     * @return The canStartPredict.
+     */
+    @java.lang.Override
+    public boolean getCanStartPredict() {
+      return canStartPredict_;
+    }
+    /**
+     * <pre>
+     * 触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+     * false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+     * 约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
+     * </pre>
+     *
+     * <code>bool can_start_predict = 4 [json_name = "can_start_predict"];</code>
+     * @param value The canStartPredict to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanStartPredict(boolean value) {
+
+      canStartPredict_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 触发预测按钮是否可点。API 根据 current job 状态派生，不写回 etcd。
+     * false=预测进行中（job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，失败也可重试）。
+     * 约定：算法必须 finish_predict；前端 disabled=!can_start_predict。WS predict/job_updated 同名字段增量覆盖。
+     * </pre>
+     *
+     * <code>bool can_start_predict = 4 [json_name = "can_start_predict"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCanStartPredict() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      canStartPredict_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:fusion.ai.proto.workbench.GetPredictResponse)

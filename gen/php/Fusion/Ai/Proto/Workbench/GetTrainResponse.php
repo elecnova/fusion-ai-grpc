@@ -40,6 +40,14 @@ class GetTrainResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .fusion.ai.proto.workbench.TrainJobView job = 4 [json_name = "job"];</code>
      */
     protected $job = null;
+    /**
+     * 再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+     * false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+     * 约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
+     *
+     * Generated from protobuf field <code>bool can_start_train = 5 [json_name = "can_start_train"];</code>
+     */
+    protected $can_start_train = false;
 
     /**
      * Constructor.
@@ -55,6 +63,10 @@ class GetTrainResponse extends \Google\Protobuf\Internal\Message
      *           融合模型卡片（与 GetFusionModel 同结构，便于一页拉齐）
      *     @type \Fusion\Ai\Proto\Workbench\TrainJobView $job
      *           当前训练 job 全量（含日志栈）；无任务时不填
+     *     @type bool $can_start_train
+     *           再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+     *           false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+     *           约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
      * }
      */
     public function __construct($data = null)
@@ -181,6 +193,35 @@ class GetTrainResponse extends \Google\Protobuf\Internal\Message
     public function setJob(\Fusion\Ai\Proto\Workbench\TrainJobView|null $var)
     {
         $this->job = $var;
+
+        return $this;
+    }
+
+    /**
+     * 再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+     * false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+     * 约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
+     *
+     * Generated from protobuf field <code>bool can_start_train = 5 [json_name = "can_start_train"];</code>
+     * @return bool
+     */
+    public function getCanStartTrain()
+    {
+        return $this->can_start_train;
+    }
+
+    /**
+     * 再次训练按钮是否可点。API 根据 model/job 状态派生，不写回 etcd。
+     * false=训练进行中（model=training 或 job=queued/running）；true=无任务或已终态（succeeded/failed/cancelled，可重试）。
+     * 约定：算法必须 finish_train；前端 disabled=!can_start_train。WS train/model_updated、train/job_updated 同名字段增量覆盖。
+     *
+     * Generated from protobuf field <code>bool can_start_train = 5 [json_name = "can_start_train"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCanStartTrain(bool $var)
+    {
+        $this->can_start_train = $var;
 
         return $this;
     }
