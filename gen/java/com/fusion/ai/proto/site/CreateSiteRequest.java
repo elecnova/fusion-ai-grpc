@@ -337,10 +337,22 @@ private static final long serialVersionUID = 0L;
   private double ratedP_ = 0D;
   /**
    * <pre>
-   * 额定功率
+   * 额定功率（选填；传了必须 &gt; 0）
    * </pre>
    *
-   * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * @return Whether the ratedP field is set.
+   */
+  @java.lang.Override
+  public boolean hasRatedP() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * 额定功率（选填；传了必须 &gt; 0）
+   * </pre>
+   *
+   * <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
    * @return The ratedP.
    */
   @java.lang.Override
@@ -354,7 +366,7 @@ private static final long serialVersionUID = 0L;
       emptyIntList();
   /**
    * <pre>
-   * 支持的预测步长，单位分钟，可选 5、15、30、60
+   * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
    * </pre>
    *
    * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -367,7 +379,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 支持的预测步长，单位分钟，可选 5、15、30、60
+   * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
    * </pre>
    *
    * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -378,7 +390,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 支持的预测步长，单位分钟，可选 5、15、30、60
+   * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
    * </pre>
    *
    * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -456,10 +468,22 @@ private static final long serialVersionUID = 0L;
   private int operation_ = 0;
   /**
    * <pre>
-   * 操作类型：1-predict，2-train
+   * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
    * </pre>
    *
-   * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * @return Whether the operation field is set.
+   */
+  @java.lang.Override
+  public boolean hasOperation() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <pre>
+   * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
+   * </pre>
+   *
+   * <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
    * @return The operation.
    */
   @java.lang.Override
@@ -479,7 +503,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasHisdays() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <pre>
@@ -627,7 +651,7 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(8, azimuthDeg_);
     }
-    if (java.lang.Double.doubleToRawLongBits(ratedP_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(9, ratedP_);
     }
     if (getGranularityList().size() > 0) {
@@ -643,10 +667,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceAttr_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, sourceAttr_);
     }
-    if (operation_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(13, operation_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt32(14, hisdays_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdTime_)) {
@@ -687,7 +711,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(8, azimuthDeg_);
     }
-    if (java.lang.Double.doubleToRawLongBits(ratedP_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(9, ratedP_);
     }
@@ -712,11 +736,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceAttr_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(12, sourceAttr_);
     }
-    if (operation_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(13, operation_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(14, hisdays_);
     }
@@ -776,17 +800,23 @@ private static final long serialVersionUID = 0L;
           != java.lang.Double.doubleToLongBits(
               other.getAzimuthDeg())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getRatedP())
-        != java.lang.Double.doubleToLongBits(
-            other.getRatedP())) return false;
+    if (hasRatedP() != other.hasRatedP()) return false;
+    if (hasRatedP()) {
+      if (java.lang.Double.doubleToLongBits(getRatedP())
+          != java.lang.Double.doubleToLongBits(
+              other.getRatedP())) return false;
+    }
     if (!getGranularityList()
         .equals(other.getGranularityList())) return false;
     if (getDataSource()
         != other.getDataSource()) return false;
     if (!getSourceAttr()
         .equals(other.getSourceAttr())) return false;
-    if (getOperation()
-        != other.getOperation()) return false;
+    if (hasOperation() != other.hasOperation()) return false;
+    if (hasOperation()) {
+      if (getOperation()
+          != other.getOperation()) return false;
+    }
     if (hasHisdays() != other.hasHisdays()) return false;
     if (hasHisdays()) {
       if (getHisdays()
@@ -831,9 +861,11 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getAzimuthDeg()));
     }
-    hash = (37 * hash) + RATED_P_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getRatedP()));
+    if (hasRatedP()) {
+      hash = (37 * hash) + RATED_P_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRatedP()));
+    }
     if (getGranularityCount() > 0) {
       hash = (37 * hash) + GRANULARITY_FIELD_NUMBER;
       hash = (53 * hash) + getGranularityList().hashCode();
@@ -842,8 +874,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDataSource();
     hash = (37 * hash) + SOURCE_ATTR_FIELD_NUMBER;
     hash = (53 * hash) + getSourceAttr().hashCode();
-    hash = (37 * hash) + OPERATION_FIELD_NUMBER;
-    hash = (53 * hash) + getOperation();
+    if (hasOperation()) {
+      hash = (37 * hash) + OPERATION_FIELD_NUMBER;
+      hash = (53 * hash) + getOperation();
+    }
     if (hasHisdays()) {
       hash = (37 * hash) + HISDAYS_FIELD_NUMBER;
       hash = (53 * hash) + getHisdays();
@@ -1065,6 +1099,7 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.ratedP_ = ratedP_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         granularity_.makeImmutable();
@@ -1078,10 +1113,11 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.operation_ = operation_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.hisdays_ = hisdays_;
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.createdTime_ = createdTime_;
@@ -1136,7 +1172,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasAzimuthDeg()) {
         setAzimuthDeg(other.getAzimuthDeg());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getRatedP()) != 0) {
+      if (other.hasRatedP()) {
         setRatedP(other.getRatedP());
       }
       if (!other.granularity_.isEmpty()) {
@@ -1158,7 +1194,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000800;
         onChanged();
       }
-      if (other.getOperation() != 0) {
+      if (other.hasOperation()) {
         setOperation(other.getOperation());
       }
       if (other.hasHisdays()) {
@@ -1877,10 +1913,22 @@ private static final long serialVersionUID = 0L;
     private double ratedP_ ;
     /**
      * <pre>
-     * 额定功率
+     * 额定功率（选填；传了必须 &gt; 0）
      * </pre>
      *
-     * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * @return Whether the ratedP field is set.
+     */
+    @java.lang.Override
+    public boolean hasRatedP() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <pre>
+     * 额定功率（选填；传了必须 &gt; 0）
+     * </pre>
+     *
+     * <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
      * @return The ratedP.
      */
     @java.lang.Override
@@ -1889,10 +1937,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 额定功率
+     * 额定功率（选填；传了必须 &gt; 0）
      * </pre>
      *
-     * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
      * @param value The ratedP to set.
      * @return This builder for chaining.
      */
@@ -1905,10 +1953,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 额定功率
+     * 额定功率（选填；传了必须 &gt; 0）
      * </pre>
      *
-     * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+     * <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearRatedP() {
@@ -1927,7 +1975,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1940,7 +1988,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1951,7 +1999,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1963,7 +2011,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1982,7 +2030,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -1999,7 +2047,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -2017,7 +2065,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      * </pre>
      *
      * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -2169,10 +2217,22 @@ private static final long serialVersionUID = 0L;
     private int operation_ ;
     /**
      * <pre>
-     * 操作类型：1-predict，2-train
+     * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
      * </pre>
      *
-     * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * @return Whether the operation field is set.
+     */
+    @java.lang.Override
+    public boolean hasOperation() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <pre>
+     * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
+     * </pre>
+     *
+     * <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
      * @return The operation.
      */
     @java.lang.Override
@@ -2181,10 +2241,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 操作类型：1-predict，2-train
+     * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
      * </pre>
      *
-     * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
      * @param value The operation to set.
      * @return This builder for chaining.
      */
@@ -2197,10 +2257,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 操作类型：1-predict，2-train
+     * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
      * </pre>
      *
-     * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+     * <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOperation() {

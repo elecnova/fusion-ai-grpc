@@ -150,17 +150,26 @@ public interface CreateSiteRequestOrBuilder extends
 
   /**
    * <pre>
-   * 额定功率
+   * 额定功率（选填；传了必须 &gt; 0）
    * </pre>
    *
-   * <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
+   * @return Whether the ratedP field is set.
+   */
+  boolean hasRatedP();
+  /**
+   * <pre>
+   * 额定功率（选填；传了必须 &gt; 0）
+   * </pre>
+   *
+   * <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = { ... }</code>
    * @return The ratedP.
    */
   double getRatedP();
 
   /**
    * <pre>
-   * 支持的预测步长，单位分钟，可选 5、15、30、60
+   * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
    * </pre>
    *
    * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -169,7 +178,7 @@ public interface CreateSiteRequestOrBuilder extends
   java.util.List<java.lang.Integer> getGranularityList();
   /**
    * <pre>
-   * 支持的预测步长，单位分钟，可选 5、15、30、60
+   * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
    * </pre>
    *
    * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -178,7 +187,7 @@ public interface CreateSiteRequestOrBuilder extends
   int getGranularityCount();
   /**
    * <pre>
-   * 支持的预测步长，单位分钟，可选 5、15、30、60
+   * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
    * </pre>
    *
    * <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = { ... }</code>
@@ -219,10 +228,19 @@ public interface CreateSiteRequestOrBuilder extends
 
   /**
    * <pre>
-   * 操作类型：1-predict，2-train
+   * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
    * </pre>
    *
-   * <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
+   * @return Whether the operation field is set.
+   */
+  boolean hasOperation();
+  /**
+   * <pre>
+   * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
+   * </pre>
+   *
+   * <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = { ... }</code>
    * @return The operation.
    */
   int getOperation();

@@ -51,16 +51,16 @@ type CreateSiteRequest struct {
 	TiltDeg *float64 `protobuf:"fixed64,7,opt,name=tilt_deg,proto3,oneof" json:"tilt_deg,omitempty"`
 	// 光伏组件安装方位角，单位度，范围 [0, 360]
 	AzimuthDeg *float64 `protobuf:"fixed64,8,opt,name=azimuth_deg,proto3,oneof" json:"azimuth_deg,omitempty"`
-	// 额定功率
-	RatedP float64 `protobuf:"fixed64,9,opt,name=rated_p,proto3" json:"rated_p,omitempty"`
-	// 支持的预测步长，单位分钟，可选 5、15、30、60
+	// 额定功率（选填；传了必须 > 0）
+	RatedP *float64 `protobuf:"fixed64,9,opt,name=rated_p,proto3,oneof" json:"rated_p,omitempty"`
+	// 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
 	Granularity []int32 `protobuf:"varint,10,rep,packed,name=granularity,proto3" json:"granularity,omitempty"`
 	// 数据源类型：1-pull，2-push，3-file
 	DataSource int32 `protobuf:"varint,11,opt,name=data_source,proto3" json:"data_source,omitempty"`
 	// 数据源属性：pull 对应外部接口地址，file 对应文件 URL
 	SourceAttr string `protobuf:"bytes,12,opt,name=source_attr,proto3" json:"source_attr,omitempty"`
-	// 操作类型：1-predict，2-train
-	Operation int32 `protobuf:"varint,13,opt,name=operation,proto3" json:"operation,omitempty"`
+	// 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
+	Operation *int32 `protobuf:"varint,13,opt,name=operation,proto3,oneof" json:"operation,omitempty"`
 	// 历史数据天数，未指定时由业务层采用模型默认值
 	Hisdays *int32 `protobuf:"varint,14,opt,name=hisdays,proto3,oneof" json:"hisdays,omitempty"`
 	// 配置创建时间，ISO 8601 格式
@@ -158,8 +158,8 @@ func (x *CreateSiteRequest) GetAzimuthDeg() float64 {
 }
 
 func (x *CreateSiteRequest) GetRatedP() float64 {
-	if x != nil {
-		return x.RatedP
+	if x != nil && x.RatedP != nil {
+		return *x.RatedP
 	}
 	return 0
 }
@@ -186,8 +186,8 @@ func (x *CreateSiteRequest) GetSourceAttr() string {
 }
 
 func (x *CreateSiteRequest) GetOperation() int32 {
-	if x != nil {
-		return x.Operation
+	if x != nil && x.Operation != nil {
+		return *x.Operation
 	}
 	return 0
 }
@@ -1260,28 +1260,32 @@ var File_site_site_message_proto protoreflect.FileDescriptor
 
 const file_site_site_message_proto_rawDesc = "" +
 	"\n" +
-	"\x17site/site_message.proto\x12\x14fusion.ai.proto.site\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa8\x06\n" +
+	"\x17site/site_message.proto\x12\x14fusion.ai.proto.site\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd2\x06\n" +
 	"\x11CreateSiteRequest\x12-\n" +
 	"\fservice_type\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\fservice_type\x12#\n" +
-	"\asite_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18<R\asite_id\x12%\n" +
-	"\tsite_name\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18xR\tsite_name\x12#\n" +
-	"\btimezone\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18@R\btimezone\x125\n" +
+	"\asite_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18<R\asite_id\x12'\n" +
+	"\tsite_name\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18xR\tsite_name\x12%\n" +
+	"\btimezone\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\btimezone\x125\n" +
 	"\tlongitude\x18\x05 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x123\n" +
 	"\blatitude\x18\x06 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x128\n" +
 	"\btilt_deg\x18\a \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x00\x00\x00H\x00R\btilt_deg\x88\x01\x01\x12>\n" +
-	"\vazimuth_deg\x18\b \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00H\x01R\vazimuth_deg\x88\x01\x01\x12(\n" +
-	"\arated_p\x18\t \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00R\arated_p\x126\n" +
+	"\vazimuth_deg\x18\b \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80v@)\x00\x00\x00\x00\x00\x00\x00\x00H\x01R\vazimuth_deg\x88\x01\x01\x12-\n" +
+	"\arated_p\x18\t \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\arated_p\x88\x01\x01\x128\n" +
 	"\vgranularity\x18\n" +
-	" \x03(\x05B\x14\xbaH\x11\x92\x01\x0e\x18\x01\"\n" +
+	" \x03(\x05B\x16\xbaH\x13\x92\x01\x10\b\x01\x18\x01\"\n" +
 	"\x1a\b0\x050\x0f0\x1e0<R\vgranularity\x12-\n" +
 	"\vdata_source\x18\v \x01(\x05B\v\xbaH\b\x1a\x060\x010\x020\x03R\vdata_source\x12*\n" +
-	"\vsource_attr\x18\f \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12'\n" +
-	"\toperation\x18\r \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02R\toperation\x12&\n" +
-	"\ahisdays\x18\x0e \x01(\x05B\a\xbaH\x04\x1a\x02 \x00H\x02R\ahisdays\x88\x01\x01\x12+\n" +
+	"\vsource_attr\x18\f \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\vsource_attr\x12,\n" +
+	"\toperation\x18\r \x01(\x05B\t\xbaH\x06\x1a\x040\x010\x02H\x03R\toperation\x88\x01\x01\x12&\n" +
+	"\ahisdays\x18\x0e \x01(\x05B\a\xbaH\x04\x1a\x02 \x00H\x04R\ahisdays\x88\x01\x01\x12+\n" +
 	"\fcreated_time\x18\x0f \x01(\tB\a\xbaH\x04r\x02\x18(R\fcreated_time\x12)\n" +
 	"\vupdate_time\x18\x10 \x01(\tB\a\xbaH\x04r\x02\x18(R\vupdate_timeB\v\n" +
 	"\t_tilt_degB\x0e\n" +
 	"\f_azimuth_degB\n" +
+	"\n" +
+	"\b_rated_pB\f\n" +
+	"\n" +
+	"_operationB\n" +
 	"\n" +
 	"\b_hisdays\"\x90\x02\n" +
 	"\x12CreateSiteResponse\x12+\n" +

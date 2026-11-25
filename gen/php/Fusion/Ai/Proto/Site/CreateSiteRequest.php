@@ -65,13 +65,13 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
      */
     protected $azimuth_deg = null;
     /**
-     * 额定功率
+     * 额定功率（选填；传了必须 > 0）
      *
-     * Generated from protobuf field <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {</code>
      */
-    protected $rated_p = 0.0;
+    protected $rated_p = null;
     /**
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      *
      * Generated from protobuf field <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {</code>
      */
@@ -89,11 +89,11 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
      */
     protected $source_attr = '';
     /**
-     * 操作类型：1-predict，2-train
+     * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
      *
-     * Generated from protobuf field <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {</code>
      */
-    protected $operation = 0;
+    protected $operation = null;
     /**
      * 历史数据天数，未指定时由业务层采用模型默认值
      *
@@ -136,15 +136,15 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
      *     @type float $azimuth_deg
      *           光伏组件安装方位角，单位度，范围 [0, 360]
      *     @type float $rated_p
-     *           额定功率
+     *           额定功率（选填；传了必须 > 0）
      *     @type int[] $granularity
-     *           支持的预测步长，单位分钟，可选 5、15、30、60
+     *           支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      *     @type int $data_source
      *           数据源类型：1-pull，2-push，3-file
      *     @type string $source_attr
      *           数据源属性：pull 对应外部接口地址，file 对应文件 URL
      *     @type int $operation
-     *           操作类型：1-predict，2-train
+     *           操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
      *     @type int $hisdays
      *           历史数据天数，未指定时由业务层采用模型默认值
      *     @type string $created_time
@@ -384,20 +384,30 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 额定功率
+     * 额定功率（选填；传了必须 > 0）
      *
-     * Generated from protobuf field <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {</code>
      * @return float
      */
     public function getRatedP()
     {
-        return $this->rated_p;
+        return isset($this->rated_p) ? $this->rated_p : 0.0;
+    }
+
+    public function hasRatedP()
+    {
+        return isset($this->rated_p);
+    }
+
+    public function clearRatedP()
+    {
+        unset($this->rated_p);
     }
 
     /**
-     * 额定功率
+     * 额定功率（选填；传了必须 > 0）
      *
-     * Generated from protobuf field <code>double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {</code>
      * @param float $var
      * @return $this
      */
@@ -409,7 +419,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      *
      * Generated from protobuf field <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {</code>
      * @return RepeatedField<int>
@@ -420,7 +430,7 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 支持的预测步长，单位分钟，可选 5、15、30、60
+     * 支持的预测步长，单位分钟，至少一项；可选 5、15、30、60
      *
      * Generated from protobuf field <code>repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {</code>
      * @param int[] $var
@@ -487,20 +497,30 @@ class CreateSiteRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 操作类型：1-predict，2-train
+     * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
      *
-     * Generated from protobuf field <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {</code>
      * @return int
      */
     public function getOperation()
     {
-        return $this->operation;
+        return isset($this->operation) ? $this->operation : 0;
+    }
+
+    public function hasOperation()
+    {
+        return isset($this->operation);
+    }
+
+    public function clearOperation()
+    {
+        unset($this->operation);
     }
 
     /**
-     * 操作类型：1-predict，2-train
+     * 操作类型：1-predict，2-train（选填；传了必须为 1 或 2；未传由业务默认 predict）
      *
-     * Generated from protobuf field <code>int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {</code>
+     * Generated from protobuf field <code>optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {</code>
      * @param int $var
      * @return $this
      */

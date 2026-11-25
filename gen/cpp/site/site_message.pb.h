@@ -3290,7 +3290,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateSiteRequest final : public ::
   void _internal_set_azimuth_deg(double value);
 
   public:
-  // double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
+  // optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
+  [[nodiscard]] bool has_rated_p() const;
   void clear_rated_p() ;
   [[nodiscard]] double rated_p() const;
   void set_rated_p(double value);
@@ -3310,7 +3311,8 @@ class  PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED CreateSiteRequest final : public ::
   void _internal_set_data_source(::int32_t value);
 
   public:
-  // int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
+  // optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
+  [[nodiscard]] bool has_operation() const;
   void clear_operation() ;
   [[nodiscard]] ::int32_t operation() const;
   void set_operation(::int32_t value);
@@ -4042,7 +4044,11 @@ inline void CreateSiteRequest::_internal_set_azimuth_deg(double value) {
   _impl_.azimuth_deg_ = value;
 }
 
-// double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
+// optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
+inline bool CreateSiteRequest::has_rated_p() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00001000U);
+  return value;
+}
 inline void CreateSiteRequest::clear_rated_p() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rated_p_ = 0;
@@ -4205,7 +4211,11 @@ inline void CreateSiteRequest::set_allocated_source_attr(::std::string* PROTOBUF
   // @@protoc_insertion_point(field_set_allocated:fusion.ai.proto.site.CreateSiteRequest.source_attr)
 }
 
-// int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
+// optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
+inline bool CreateSiteRequest::has_operation() const {
+  bool value = CheckHasBit(_impl_._has_bits_[0], 0x00004000U);
+  return value;
+}
 inline void CreateSiteRequest::clear_operation() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.operation_ = 0;

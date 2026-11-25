@@ -1997,7 +1997,7 @@ constexpr CreateSiteRequest::ParseTableT_ CreateSiteRequest::InternalGeneratePar
       {::_pbi::TcParser::FastF64S1,
        {65, 11, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.azimuth_deg_)}},
-      // double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
+      // optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
       {::_pbi::TcParser::FastF64S1,
        {73, 12, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.rated_p_)}},
@@ -2013,7 +2013,7 @@ constexpr CreateSiteRequest::ParseTableT_ CreateSiteRequest::InternalGeneratePar
       {::_pbi::TcParser::FastUS1,
        {98, 5, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.source_attr_)}},
-      // int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
+      // optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
       {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreateSiteRequest, _impl_.operation_), 14>(),
        {104, 14, 0,
         PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.operation_)}},
@@ -2044,7 +2044,7 @@ constexpr CreateSiteRequest::ParseTableT_ CreateSiteRequest::InternalGeneratePar
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.tilt_deg_), _Internal::kHasBitsOffset + 10, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
       // optional double azimuth_deg = 8 [json_name = "azimuth_deg", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.azimuth_deg_), _Internal::kHasBitsOffset + 11, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-      // double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
+      // optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.rated_p_), _Internal::kHasBitsOffset + 12, 0, (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
       // repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.granularity_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
@@ -2052,7 +2052,7 @@ constexpr CreateSiteRequest::ParseTableT_ CreateSiteRequest::InternalGeneratePar
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.data_source_), _Internal::kHasBitsOffset + 13, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
       // string source_attr = 12 [json_name = "source_attr", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.source_attr_), _Internal::kHasBitsOffset + 5, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-      // int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
+      // optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.operation_), _Internal::kHasBitsOffset + 14, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
       // optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {
       {PROTOBUF_FIELD_OFFSET(CreateSiteRequest, _impl_.hisdays_), _Internal::kHasBitsOffset + 15, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
@@ -2662,134 +2662,135 @@ const char descriptor_table_protodef_site_2fsite_5fmessage_2eproto[] ABSL_ATTRIB
     protodesc_cold) = {
     "\n\027site/site_message.proto\022\024fusion.ai.pro"
     "to.site\032\033buf/validate/validate.proto\032\037go"
-    "ogle/protobuf/timestamp.proto\"\250\006\n\021Create"
+    "ogle/protobuf/timestamp.proto\"\322\006\n\021Create"
     "SiteRequest\022-\n\014service_type\030\001 \001(\tB\t\272H\006r\004"
     "\020\001\030dR\014service_type\022#\n\007site_id\030\002 \001(\tB\t\272H\006"
-    "r\004\020\001\030<R\007site_id\022%\n\tsite_name\030\003 \001(\tB\007\272H\004r"
-    "\002\030xR\tsite_name\022#\n\010timezone\030\004 \001(\tB\007\272H\004r\002\030"
-    "@R\010timezone\0225\n\tlongitude\030\005 \001(\001B\027\272H\024\022\022\031\000\000"
-    "\000\000\000\200f@)\000\000\000\000\000\200f\300R\tlongitude\0223\n\010latitude\030\006"
-    " \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300R\010latitude\022"
-    "8\n\010tilt_deg\030\007 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000"
-    "\000\000H\000R\010tilt_deg\210\001\001\022>\n\013azimuth_deg\030\010 \001(\001B\027"
-    "\272H\024\022\022\031\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H\001R\013azimuth_deg\210\001"
-    "\001\022(\n\007rated_p\030\t \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000R\007rate"
-    "d_p\0226\n\013granularity\030\n \003(\005B\024\272H\021\222\001\016\030\001\"\n\032\0100\005"
-    "0\0170\0360<R\013granularity\022-\n\013data_source\030\013 \001(\005"
-    "B\013\272H\010\032\0060\0010\0020\003R\013data_source\022*\n\013source_att"
-    "r\030\014 \001(\tB\010\272H\005r\003\030\200\020R\013source_attr\022\'\n\toperat"
-    "ion\030\r \001(\005B\t\272H\006\032\0040\0010\002R\toperation\022&\n\007hisda"
-    "ys\030\016 \001(\005B\007\272H\004\032\002 \000H\002R\007hisdays\210\001\001\022+\n\014creat"
-    "ed_time\030\017 \001(\tB\007\272H\004r\002\030(R\014created_time\022)\n\013"
-    "update_time\030\020 \001(\tB\007\272H\004r\002\030(R\013update_timeB"
-    "\013\n\t_tilt_degB\016\n\014_azimuth_degB\n\n\010_hisdays"
-    "\"\220\002\n\022CreateSiteResponse\022+\n\005state\030\001 \001(\tB\025"
+    "r\004\020\001\030<R\007site_id\022\'\n\tsite_name\030\003 \001(\tB\t\272H\006r"
+    "\004\020\001\030xR\tsite_name\022%\n\010timezone\030\004 \001(\tB\t\272H\006r"
+    "\004\020\001\030@R\010timezone\0225\n\tlongitude\030\005 \001(\001B\027\272H\024\022"
+    "\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300R\tlongitude\0223\n\010latitu"
+    "de\030\006 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300R\010latit"
+    "ude\0228\n\010tilt_deg\030\007 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000"
+    "\000\000\000\000\000\000H\000R\010tilt_deg\210\001\001\022>\n\013azimuth_deg\030\010 \001"
+    "(\001B\027\272H\024\022\022\031\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H\001R\013azimuth_d"
+    "eg\210\001\001\022-\n\007rated_p\030\t \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000H\002"
+    "R\007rated_p\210\001\001\0228\n\013granularity\030\n \003(\005B\026\272H\023\222\001"
+    "\020\010\001\030\001\"\n\032\0100\0050\0170\0360<R\013granularity\022-\n\013data_s"
+    "ource\030\013 \001(\005B\013\272H\010\032\0060\0010\0020\003R\013data_source\022*\n"
+    "\013source_attr\030\014 \001(\tB\010\272H\005r\003\030\200\020R\013source_att"
+    "r\022,\n\toperation\030\r \001(\005B\t\272H\006\032\0040\0010\002H\003R\topera"
+    "tion\210\001\001\022&\n\007hisdays\030\016 \001(\005B\007\272H\004\032\002 \000H\004R\007his"
+    "days\210\001\001\022+\n\014created_time\030\017 \001(\tB\007\272H\004r\002\030(R\014"
+    "created_time\022)\n\013update_time\030\020 \001(\tB\007\272H\004r\002"
+    "\030(R\013update_timeB\013\n\t_tilt_degB\016\n\014_azimuth"
+    "_degB\n\n\010_rated_pB\014\n\n_operationB\n\n\010_hisda"
+    "ys\"\220\002\n\022CreateSiteResponse\022+\n\005state\030\001 \001(\t"
+    "B\025\272H\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002"
+    " \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message"
+    "\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration"
+    "_id\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\nc"
+    "reated_at\030\005 \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\n"
+    "updated_at\030\006 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"\310\006"
+    "\n\021UpdateSiteRequest\0221\n\017registration_id\030\001"
+    " \001(\tB\007\272H\004r\002\020\001R\017registration_id\022+\n\tsite_n"
+    "ame\030\002 \001(\tB\010\272H\005r\003\030\310\001H\000R\tsite_name\210\001\001\022(\n\010t"
+    "imezone\030\003 \001(\tB\007\272H\004r\002\030@H\001R\010timezone\210\001\001\022:\n"
+    "\tlongitude\030\004 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f"
+    "\300H\002R\tlongitude\210\001\001\0228\n\010latitude\030\005 \001(\001B\027\272H\024"
+    "\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300H\003R\010latitude\210\001\001\0228\n\010t"
+    "ilt_deg\030\006 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\004"
+    "R\010tilt_deg\210\001\001\022>\n\013azimuth_deg\030\007 \001(\001B\027\272H\024\022"
+    "\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H\005R\013azimuth_deg\210\001\001\022-\n"
+    "\007rated_p\030\010 \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000H\006R\007rated_"
+    "p\210\001\001\0226\n\013granularity\030\t \003(\005B\024\272H\021\222\001\016\030\001\"\n\032\0100"
+    "\0050\0170\0360<R\013granularity\0222\n\013data_source\030\n \001("
+    "\005B\013\272H\010\032\0060\0010\0020\003H\007R\013data_source\210\001\001\022/\n\013sour"
+    "ce_attr\030\013 \001(\tB\010\272H\005r\003\030\200\020H\010R\013source_attr\210\001"
+    "\001\022,\n\toperation\030\014 \001(\005B\t\272H\006\032\0040\0010\002H\tR\topera"
+    "tion\210\001\001\022&\n\007hisdays\030\r \001(\005B\007\272H\004\032\002 \000H\nR\007his"
+    "days\210\001\001B\014\n\n_site_nameB\013\n\t_timezoneB\014\n\n_l"
+    "ongitudeB\013\n\t_latitudeB\013\n\t_tilt_degB\016\n\014_a"
+    "zimuth_degB\n\n\010_rated_pB\016\n\014_data_sourceB\016"
+    "\n\014_source_attrB\014\n\n_operationB\n\n\010_hisdays"
+    "\"\347\001\n\022UpdateSiteResponse\022+\n\005state\030\001 \001(\tB\025"
     "\272H\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002 \001"
     "(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003"
     " \001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_i"
-    "d\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\ncre"
-    "ated_at\030\005 \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nup"
-    "dated_at\030\006 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"\310\006\n\021"
-    "UpdateSiteRequest\0221\n\017registration_id\030\001 \001"
-    "(\tB\007\272H\004r\002\020\001R\017registration_id\022+\n\tsite_nam"
-    "e\030\002 \001(\tB\010\272H\005r\003\030\310\001H\000R\tsite_name\210\001\001\022(\n\010tim"
-    "ezone\030\003 \001(\tB\007\272H\004r\002\030@H\001R\010timezone\210\001\001\022:\n\tl"
-    "ongitude\030\004 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300H"
-    "\002R\tlongitude\210\001\001\0228\n\010latitude\030\005 \001(\001B\027\272H\024\022\022"
-    "\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300H\003R\010latitude\210\001\001\0228\n\010til"
-    "t_deg\030\006 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\004R\010"
-    "tilt_deg\210\001\001\022>\n\013azimuth_deg\030\007 \001(\001B\027\272H\024\022\022\021"
-    "\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H\005R\013azimuth_deg\210\001\001\022-\n\007r"
-    "ated_p\030\010 \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000H\006R\007rated_p\210"
-    "\001\001\0226\n\013granularity\030\t \003(\005B\024\272H\021\222\001\016\030\001\"\n\032\0100\0050"
-    "\0170\0360<R\013granularity\0222\n\013data_source\030\n \001(\005B"
-    "\013\272H\010\032\0060\0010\0020\003H\007R\013data_source\210\001\001\022/\n\013source"
-    "_attr\030\013 \001(\tB\010\272H\005r\003\030\200\020H\010R\013source_attr\210\001\001\022"
-    ",\n\toperation\030\014 \001(\005B\t\272H\006\032\0040\0010\002H\tR\toperati"
-    "on\210\001\001\022&\n\007hisdays\030\r \001(\005B\007\272H\004\032\002 \000H\nR\007hisda"
-    "ys\210\001\001B\014\n\n_site_nameB\013\n\t_timezoneB\014\n\n_lon"
-    "gitudeB\013\n\t_latitudeB\013\n\t_tilt_degB\016\n\014_azi"
-    "muth_degB\n\n\010_rated_pB\016\n\014_data_sourceB\016\n\014"
-    "_source_attrB\014\n\n_operationB\n\n\010_hisdays\"\347"
-    "\001\n\022UpdateSiteResponse\022+\n\005state\030\001 \001(\tB\025\272H"
-    "\022r\020R\007successR\005errorR\005state\022%\n\004code\030\002 \001(\t"
-    "B\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007message\030\003 \001"
-    "(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registration_id\030"
-    "\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\nupdat"
-    "ed_at\030\005 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"F\n\021Dele"
-    "teSiteRequest\0221\n\017registration_id\030\001 \001(\tB\007"
-    "\272H\004r\002\020\001R\017registration_id\"\362\001\n\022DeleteSiteR"
-    "esponse\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007successR\005"
-    "errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-9"
-    "]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007m"
-    "essage\0221\n\017registration_id\030\004 \001(\tB\007\272H\004r\002\020\001"
-    "R\017registration_id\022\030\n\007deleted\030\005 \001(\010R\007dele"
-    "ted\022\030\n\007changed\030\006 \001(\010R\007changed\"\256\007\n\020SiteRe"
-    "gistration\0221\n\017registration_id\030\001 \001(\tB\007\272H\004"
-    "r\002\020\001R\017registration_id\022+\n\014service_type\030\002 "
-    "\001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007site_id\030\003 "
-    "\001(\tB\007\272H\004r\002\020\001R\007site_id\022%\n\tsite_name\030\004 \001(\t"
-    "B\007\272H\004r\002\030xR\tsite_name\022#\n\010timezone\030\005 \001(\tB\007"
-    "\272H\004r\002\030@R\010timezone\022:\n\tlongitude\030\006 \001(\001B\027\272H"
-    "\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300H\000R\tlongitude\210\001\001\0228\n"
-    "\010latitude\030\007 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300"
-    "H\001R\010latitude\210\001\001\0228\n\010tilt_deg\030\010 \001(\001B\027\272H\024\022\022"
-    "\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\002R\010tilt_deg\210\001\001\022>\n\013azi"
-    "muth_deg\030\t \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H"
-    "\003R\013azimuth_deg\210\001\001\022-\n\007rated_p\030\n \001(\001B\016\272H\013\022"
-    "\t!\000\000\000\000\000\000\000\000H\004R\007rated_p\210\001\001\0226\n\013granularity\030"
-    "\013 \003(\005B\024\272H\021\222\001\016\030\001\"\n\032\0100\0050\0170\0360<R\013granularity"
-    "\0222\n\013data_source\030\014 \001(\005B\013\272H\010\032\0060\0010\0020\003H\005R\013da"
-    "ta_source\210\001\001\022*\n\013source_attr\030\r \001(\tB\010\272H\005r\003"
-    "\030\200\020R\013source_attr\022,\n\toperation\030\016 \001(\005B\t\272H\006"
-    "\032\0040\0010\002H\006R\toperation\210\001\001\022&\n\007hisdays\030\017 \001(\005B"
-    "\007\272H\004\032\002 \000H\007R\007hisdays\210\001\001\022\'\n\ncreated_at\030\020 \001"
-    "(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nupdated_at\030\021 "
-    "\001(\tB\007\272H\004r\002\020\001R\nupdated_atB\014\n\n_longitudeB\013"
-    "\n\t_latitudeB\013\n\t_tilt_degB\016\n\014_azimuth_deg"
-    "B\n\n\010_rated_pB\016\n\014_data_sourceB\014\n\n_operati"
-    "onB\n\n\010_hisdays\"3\n\016GetSiteRequest\022!\n\007site"
-    "_id\030\001 \001(\tB\007\272H\004r\002\020\001R\007site_id\"H\n\023GetSiteBy"
-    "RegRequest\0221\n\017registration_id\030\001 \001(\tB\007\272H\004"
-    "r\002\020\001R\017registration_id\"\203\002\n\017GetSiteRespons"
-    "e\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007successR\005errorR"
-    "\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R"
-    "\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007message"
-    "\022!\n\007site_id\030\004 \001(\tB\007\272H\004r\002\020\001R\007site_id\022V\n\rr"
-    "egistrations\030\005 \003(\0132&.fusion.ai.proto.sit"
-    "e.SiteRegistrationB\010\272H\005\222\001\002\020\003R\rregistrati"
-    "ons\"\224\010\n\024GetSiteByRegResponse\022+\n\005state\030\001 "
-    "\001(\tB\025\272H\022r\020R\007successR\005errorR\005state\022%\n\004cod"
-    "e\030\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007mess"
-    "age\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registrat"
-    "ion_id\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022+"
-    "\n\014service_type\030\005 \001(\tB\007\272H\004r\002\020\001R\014service_t"
-    "ype\022!\n\007site_id\030\006 \001(\tB\007\272H\004r\002\020\001R\007site_id\022%"
-    "\n\tsite_name\030\007 \001(\tB\007\272H\004r\002\030xR\tsite_name\022#\n"
-    "\010timezone\030\010 \001(\tB\007\272H\004r\002\030@R\010timezone\022:\n\tlo"
-    "ngitude\030\t \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300H\000"
-    "R\tlongitude\210\001\001\0228\n\010latitude\030\n \001(\001B\027\272H\024\022\022\031"
-    "\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300H\001R\010latitude\210\001\001\0228\n\010tilt"
-    "_deg\030\013 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\002R\010t"
-    "ilt_deg\210\001\001\022>\n\013azimuth_deg\030\014 \001(\001B\027\272H\024\022\022\021\000"
-    "\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H\003R\013azimuth_deg\210\001\001\022-\n\007ra"
-    "ted_p\030\r \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000H\004R\007rated_p\210\001"
-    "\001\0226\n\013granularity\030\016 \003(\005B\024\272H\021\222\001\016\030\001\"\n\032\0100\0050\017"
-    "0\0360<R\013granularity\022-\n\013data_source\030\017 \001(\005B\013"
-    "\272H\010\032\0060\0010\0020\003R\013data_source\022*\n\013source_attr\030"
-    "\020 \001(\tB\010\272H\005r\003\030\200\020R\013source_attr\022,\n\toperatio"
-    "n\030\021 \001(\005B\t\272H\006\032\0040\0010\002H\005R\toperation\210\001\001\022&\n\007hi"
-    "sdays\030\022 \001(\005B\007\272H\004\032\002 \000H\006R\007hisdays\210\001\001\022\'\n\ncr"
-    "eated_at\030\023 \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nu"
-    "pdated_at\030\024 \001(\tB\007\272H\004r\002\020\001R\nupdated_atB\014\n\n"
-    "_longitudeB\013\n\t_latitudeB\013\n\t_tilt_degB\016\n\014"
-    "_azimuth_degB\n\n\010_rated_pB\014\n\n_operationB\n"
-    "\n\010_hisdaysB\273\001\n\030com.fusion.ai.proto.siteB"
-    "\020SiteMessageProtoP\001Z\031fusion.ai.proto.sit"
-    "e;site\242\002\004FAPS\252\002\024Fusion.Ai.Proto.Site\312\002\024F"
-    "usion\\Ai\\Proto\\Site\342\002 Fusion\\Ai\\Proto\\Si"
-    "te\\GPBMetadata\352\002\027Fusion::Ai::Proto::Site"
-    "b\006proto3"
+    "d\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id\022\'\n\nupd"
+    "ated_at\030\005 \001(\tB\007\272H\004r\002\020\001R\nupdated_at\"F\n\021De"
+    "leteSiteRequest\0221\n\017registration_id\030\001 \001(\t"
+    "B\007\272H\004r\002\020\001R\017registration_id\"\362\001\n\022DeleteSit"
+    "eResponse\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007success"
+    "R\005errorR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0"
+    "-9]{5}$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R"
+    "\007message\0221\n\017registration_id\030\004 \001(\tB\007\272H\004r\002"
+    "\020\001R\017registration_id\022\030\n\007deleted\030\005 \001(\010R\007de"
+    "leted\022\030\n\007changed\030\006 \001(\010R\007changed\"\256\007\n\020Site"
+    "Registration\0221\n\017registration_id\030\001 \001(\tB\007\272"
+    "H\004r\002\020\001R\017registration_id\022+\n\014service_type\030"
+    "\002 \001(\tB\007\272H\004r\002\020\001R\014service_type\022!\n\007site_id\030"
+    "\003 \001(\tB\007\272H\004r\002\020\001R\007site_id\022%\n\tsite_name\030\004 \001"
+    "(\tB\007\272H\004r\002\030xR\tsite_name\022#\n\010timezone\030\005 \001(\t"
+    "B\007\272H\004r\002\030@R\010timezone\022:\n\tlongitude\030\006 \001(\001B\027"
+    "\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300H\000R\tlongitude\210\001\001\022"
+    "8\n\010latitude\030\007 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200"
+    "V\300H\001R\010latitude\210\001\001\0228\n\010tilt_deg\030\010 \001(\001B\027\272H\024"
+    "\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\002R\010tilt_deg\210\001\001\022>\n\013a"
+    "zimuth_deg\030\t \001(\001B\027\272H\024\022\022\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000"
+    "\000H\003R\013azimuth_deg\210\001\001\022-\n\007rated_p\030\n \001(\001B\016\272H"
+    "\013\022\t!\000\000\000\000\000\000\000\000H\004R\007rated_p\210\001\001\0226\n\013granularit"
+    "y\030\013 \003(\005B\024\272H\021\222\001\016\030\001\"\n\032\0100\0050\0170\0360<R\013granulari"
+    "ty\0222\n\013data_source\030\014 \001(\005B\013\272H\010\032\0060\0010\0020\003H\005R\013"
+    "data_source\210\001\001\022*\n\013source_attr\030\r \001(\tB\010\272H\005"
+    "r\003\030\200\020R\013source_attr\022,\n\toperation\030\016 \001(\005B\t\272"
+    "H\006\032\0040\0010\002H\006R\toperation\210\001\001\022&\n\007hisdays\030\017 \001("
+    "\005B\007\272H\004\032\002 \000H\007R\007hisdays\210\001\001\022\'\n\ncreated_at\030\020"
+    " \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n\nupdated_at\030"
+    "\021 \001(\tB\007\272H\004r\002\020\001R\nupdated_atB\014\n\n_longitude"
+    "B\013\n\t_latitudeB\013\n\t_tilt_degB\016\n\014_azimuth_d"
+    "egB\n\n\010_rated_pB\016\n\014_data_sourceB\014\n\n_opera"
+    "tionB\n\n\010_hisdays\"3\n\016GetSiteRequest\022!\n\007si"
+    "te_id\030\001 \001(\tB\007\272H\004r\002\020\001R\007site_id\"H\n\023GetSite"
+    "ByRegRequest\0221\n\017registration_id\030\001 \001(\tB\007\272"
+    "H\004r\002\020\001R\017registration_id\"\203\002\n\017GetSiteRespo"
+    "nse\022+\n\005state\030\001 \001(\tB\025\272H\022r\020R\007successR\005erro"
+    "rR\005state\022%\n\004code\030\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}"
+    "$R\004code\022!\n\007message\030\003 \001(\tB\007\272H\004r\002\020\001R\007messa"
+    "ge\022!\n\007site_id\030\004 \001(\tB\007\272H\004r\002\020\001R\007site_id\022V\n"
+    "\rregistrations\030\005 \003(\0132&.fusion.ai.proto.s"
+    "ite.SiteRegistrationB\010\272H\005\222\001\002\020\003R\rregistra"
+    "tions\"\224\010\n\024GetSiteByRegResponse\022+\n\005state\030"
+    "\001 \001(\tB\025\272H\022r\020R\007successR\005errorR\005state\022%\n\004c"
+    "ode\030\002 \001(\tB\021\272H\016r\0142\n^[0-9]{5}$R\004code\022!\n\007me"
+    "ssage\030\003 \001(\tB\007\272H\004r\002\020\001R\007message\0221\n\017registr"
+    "ation_id\030\004 \001(\tB\007\272H\004r\002\020\001R\017registration_id"
+    "\022+\n\014service_type\030\005 \001(\tB\007\272H\004r\002\020\001R\014service"
+    "_type\022!\n\007site_id\030\006 \001(\tB\007\272H\004r\002\020\001R\007site_id"
+    "\022%\n\tsite_name\030\007 \001(\tB\007\272H\004r\002\030xR\tsite_name\022"
+    "#\n\010timezone\030\010 \001(\tB\007\272H\004r\002\030@R\010timezone\022:\n\t"
+    "longitude\030\t \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200f@)\000\000\000\000\000\200f\300"
+    "H\000R\tlongitude\210\001\001\0228\n\010latitude\030\n \001(\001B\027\272H\024\022"
+    "\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\200V\300H\001R\010latitude\210\001\001\0228\n\010ti"
+    "lt_deg\030\013 \001(\001B\027\272H\024\022\022\031\000\000\000\000\000\200V@)\000\000\000\000\000\000\000\000H\002R"
+    "\010tilt_deg\210\001\001\022>\n\013azimuth_deg\030\014 \001(\001B\027\272H\024\022\022"
+    "\021\000\000\000\000\000\200v@)\000\000\000\000\000\000\000\000H\003R\013azimuth_deg\210\001\001\022-\n\007"
+    "rated_p\030\r \001(\001B\016\272H\013\022\t!\000\000\000\000\000\000\000\000H\004R\007rated_p"
+    "\210\001\001\0226\n\013granularity\030\016 \003(\005B\024\272H\021\222\001\016\030\001\"\n\032\0100\005"
+    "0\0170\0360<R\013granularity\022-\n\013data_source\030\017 \001(\005"
+    "B\013\272H\010\032\0060\0010\0020\003R\013data_source\022*\n\013source_att"
+    "r\030\020 \001(\tB\010\272H\005r\003\030\200\020R\013source_attr\022,\n\toperat"
+    "ion\030\021 \001(\005B\t\272H\006\032\0040\0010\002H\005R\toperation\210\001\001\022&\n\007"
+    "hisdays\030\022 \001(\005B\007\272H\004\032\002 \000H\006R\007hisdays\210\001\001\022\'\n\n"
+    "created_at\030\023 \001(\tB\007\272H\004r\002\020\001R\ncreated_at\022\'\n"
+    "\nupdated_at\030\024 \001(\tB\007\272H\004r\002\020\001R\nupdated_atB\014"
+    "\n\n_longitudeB\013\n\t_latitudeB\013\n\t_tilt_degB\016"
+    "\n\014_azimuth_degB\n\n\010_rated_pB\014\n\n_operation"
+    "B\n\n\010_hisdaysB\273\001\n\030com.fusion.ai.proto.sit"
+    "eB\020SiteMessageProtoP\001Z\031fusion.ai.proto.s"
+    "ite;site\242\002\004FAPS\252\002\024Fusion.Ai.Proto.Site\312\002"
+    "\024Fusion\\Ai\\Proto\\Site\342\002 Fusion\\Ai\\Proto\\"
+    "Site\\GPBMetadata\352\002\027Fusion::Ai::Proto::Si"
+    "teb\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_site_2fsite_5fmessage_2eproto_deps[2] = {
@@ -2800,7 +2801,7 @@ static ::absl::once_flag descriptor_table_site_2fsite_5fmessage_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_site_2fsite_5fmessage_2eproto = {
     false,
     false,
-    5168,
+    5210,
     descriptor_table_protodef_site_2fsite_5fmessage_2eproto,
     "site/site_message.proto",
     &descriptor_table_site_2fsite_5fmessage_2eproto_once,
@@ -3079,13 +3080,11 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
         8, this_._internal_azimuth_deg(), target);
   }
 
-  // double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
+  // optional double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00001000U)) {
-    if (::absl::bit_cast<::uint64_t>(this_._internal_rated_p()) != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          9, this_._internal_rated_p(), target);
-    }
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
+        9, this_._internal_rated_p(), target);
   }
 
   // repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {
@@ -3118,13 +3117,11 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
     }
   }
 
-  // int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
+  // optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
   if (CheckHasBit(cached_has_bits, 0x00004000U)) {
-    if (this_._internal_operation() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<13>(
-              stream, this_._internal_operation(), target);
-    }
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<13>(
+            stream, this_._internal_operation(), target);
   }
 
   // optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {
@@ -3177,7 +3174,7 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += ::absl::popcount(0x00000c00U & cached_has_bits) * 9;
+  total_size += ::absl::popcount(0x00001c00U & cached_has_bits) * 9;
   if (BatchCheckHasBit(cached_has_bits, 0x000000ffU)) {
     // repeated int32 granularity = 10 [json_name = "granularity", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000001U)) {
@@ -3236,7 +3233,7 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
       }
     }
   }
-  if (BatchCheckHasBit(cached_has_bits, 0x0000f300U)) {
+  if (BatchCheckHasBit(cached_has_bits, 0x0000e300U)) {
     // double longitude = 5 [json_name = "longitude", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00000100U)) {
       if (::absl::bit_cast<::uint64_t>(this_._internal_longitude()) != 0) {
@@ -3249,12 +3246,6 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
         total_size += 9;
       }
     }
-    // double rated_p = 9 [json_name = "rated_p", (.buf.validate.field) = {
-    if (CheckHasBit(cached_has_bits, 0x00001000U)) {
-      if (::absl::bit_cast<::uint64_t>(this_._internal_rated_p()) != 0) {
-        total_size += 9;
-      }
-    }
     // int32 data_source = 11 [json_name = "data_source", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00002000U)) {
       if (this_._internal_data_source() != 0) {
@@ -3262,12 +3253,10 @@ PROTOBUF_NOINLINE void CreateSiteRequest::Clear() {
             this_._internal_data_source());
       }
     }
-    // int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
+    // optional int32 operation = 13 [json_name = "operation", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00004000U)) {
-      if (this_._internal_operation() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-            this_._internal_operation());
-      }
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this_._internal_operation());
     }
     // optional int32 hisdays = 14 [json_name = "hisdays", (.buf.validate.field) = {
     if (CheckHasBit(cached_has_bits, 0x00008000U)) {
@@ -3378,9 +3367,7 @@ void CreateSiteRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
       _this->_impl_.azimuth_deg_ = from._impl_.azimuth_deg_;
     }
     if (CheckHasBit(cached_has_bits, 0x00001000U)) {
-      if (::absl::bit_cast<::uint64_t>(from._internal_rated_p()) != 0) {
-        _this->_impl_.rated_p_ = from._impl_.rated_p_;
-      }
+      _this->_impl_.rated_p_ = from._impl_.rated_p_;
     }
     if (CheckHasBit(cached_has_bits, 0x00002000U)) {
       if (from._internal_data_source() != 0) {
@@ -3388,9 +3375,7 @@ void CreateSiteRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
       }
     }
     if (CheckHasBit(cached_has_bits, 0x00004000U)) {
-      if (from._internal_operation() != 0) {
-        _this->_impl_.operation_ = from._impl_.operation_;
-      }
+      _this->_impl_.operation_ = from._impl_.operation_;
     }
     if (CheckHasBit(cached_has_bits, 0x00008000U)) {
       _this->_impl_.hisdays_ = from._impl_.hisdays_;
